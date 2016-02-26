@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using S7.Net;
- 
+
 
 namespace WindowsFormsApplication1
 {
@@ -20,10 +20,10 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
 
-            // new timer 
+            // new timer
 
             System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
-            t.Interval = 500;
+            t.Interval = 150;
             t.Tick += new EventHandler(timer_Tick);
             t.Start();
         }
@@ -39,11 +39,13 @@ namespace WindowsFormsApplication1
                 if (plc.IsAvailable)
                 {
                     ErrorCode connectionResult = plc.Open();
+                    //MessageBox.Show("PLC connected", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
                     if (connectionResult.Equals(ErrorCode.NoError))
                     {
-                        // get data 
-                        label1.Text = plc.Read("DB1.DBX0.0").ToString();
+                        // get data
+                        label1.Text = plc.Read("QW162").ToString();
                     }
                     else
                     {
@@ -54,7 +56,6 @@ namespace WindowsFormsApplication1
                 {
                     MessageBox.Show("Device unavailable", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
         }
     }

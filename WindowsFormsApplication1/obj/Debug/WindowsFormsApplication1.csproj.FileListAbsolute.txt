@@ -8,3 +8,13 @@ c:\users\sevak.mardirosian\documents\visual studio 2012\Projects\WindowsFormsApp
 c:\users\sevak.mardirosian\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 c:\users\sevak.mardirosian\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 c:\users\sevak.mardirosian\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+E:\scarabee_lane_sim\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+E:\scarabee_lane_sim\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+E:\scarabee_lane_sim\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+E:\scarabee_lane_sim\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+E:\scarabee_lane_sim\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+E:\scarabee_lane_sim\WindowsFormsApplication1\bin\Debug\S7.Net.dll
+E:\scarabee_lane_sim\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+E:\scarabee_lane_sim\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+E:\scarabee_lane_sim\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\scarabee_lane_sim\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
