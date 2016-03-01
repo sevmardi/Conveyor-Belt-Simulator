@@ -1,0 +1,13 @@
+E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\bin\Debug\scarabee_lane_emulator.exe.config
+E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\bin\Debug\scarabee_lane_emulator.exe
+E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\bin\Debug\scarabee_lane_emulator.pdb
+E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\obj\Debug\scarabee_lane_emulator.csprojResolveAssemblyReference.cache
+E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\obj\Debug\MainWindow.baml
+E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\obj\Debug\MainWindow.g.cs
+E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\obj\Debug\App.g.cs
+E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\obj\Debug\scarabee_lane_emulator_MarkupCompile.cache
+E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\obj\Debug\scarabee_lane_emulator.g.resources
+E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\obj\Debug\scarabee_lane_emulator.Properties.Resources.resources
+E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\obj\Debug\scarabee_lane_emulator.csproj.GenerateResource.Cache
+E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\obj\Debug\scarabee_lane_emulator.exe
+E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\obj\Debug\scarabee_lane_emulator.pdb
