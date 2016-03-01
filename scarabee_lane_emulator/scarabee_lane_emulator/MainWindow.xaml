@@ -3,6 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Button Content="Disconnect" HorizontalAlignment="Left" Margin="128,75,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Connect" HorizontalAlignment="Left" Margin="27,75,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" RenderTransformOrigin="0.883,0.626"/>
+        <TextBlock HorizontalAlignment="Left" Margin="27,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.246,0.511"><Run Language="nl-nl" Text="IP Adress"/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="27,31,0,0" TextWrapping="Wrap" Text="192.168.2.16" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="168,32,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="35"/>
+        <TextBlock HorizontalAlignment="Left" Margin="168,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.246,0.511"><Run Language="nl-nl" Text="Rack"/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="226,32,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="35"/>
+        <TextBlock HorizontalAlignment="Left" Margin="226,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.246,0.511"><Run Language="nl-nl" Text="Slot"/></TextBlock>
+
     </Grid>
 </Window>

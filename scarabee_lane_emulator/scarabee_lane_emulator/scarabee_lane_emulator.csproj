@@ -37,6 +37,12 @@
     <Reference Include="libnodave.net">
       <HintPath>C:\Users\sevak.mardirosian\Desktop\libnodave-0.8.5\libnodave-0.8.5\Dot.NET\libnodave.net.dll</HintPath>
     </Reference>
+    <Reference Include="S7.Net">
+      <HintPath>..\packages\S7netplus.0.1.1\lib\net45\S7.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="snap7.net">
+      <HintPath>.\snap7.net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -87,6 +93,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

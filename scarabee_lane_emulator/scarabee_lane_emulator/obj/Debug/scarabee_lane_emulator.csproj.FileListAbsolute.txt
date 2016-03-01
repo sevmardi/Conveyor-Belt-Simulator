@@ -11,3 +11,6 @@ E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\obj\Debug\sca
 E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\obj\Debug\scarabee_lane_emulator.csproj.GenerateResource.Cache
 E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\obj\Debug\scarabee_lane_emulator.exe
 E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\obj\Debug\scarabee_lane_emulator.pdb
+E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\bin\Debug\libnodave.net.dll
+E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\bin\Debug\S7.Net.dll
+E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\bin\Debug\snap7.net.dll
