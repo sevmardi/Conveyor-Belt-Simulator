@@ -4,28 +4,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.ComponentModel;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Drawing;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Forms;
 using Snap7;
-using S7.Net;
+
 
 namespace scarabee_lane_emulator
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    
-    
-    public partial class MainWindow : Window
+
+
+    public partial class MainWindow : Form
     {
 
-      //  Dim Buffer(65536) as byte
+        private S7Client Client;
+        private byte[] Buffer = new byte[65536];
+
+
+        private void ShowResult(int Result)
+        {
+            // This function returns a textual explaination of the error code
+            TextError.Text = Client.ErrorText(Result);
+        }
 
         public MainWindow()
         {
