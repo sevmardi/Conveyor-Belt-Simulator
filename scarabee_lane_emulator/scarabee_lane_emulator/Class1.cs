@@ -8,11 +8,18 @@ using System.Windows.Forms;
 
 namespace scarabee_lane_emulator
 {
-    class Program
+    static class Program
     {
-        Application.EnableVisualStyles();
-        Application.SetCompatibleTextRenderingDefault(false);
-        Application.Run(new MainForm());
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainForm());
+        }
     }
 
 }
