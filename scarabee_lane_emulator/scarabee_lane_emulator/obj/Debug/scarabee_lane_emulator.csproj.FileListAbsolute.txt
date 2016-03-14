@@ -12,3 +12,5 @@ E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\obj\Debug\sca
 E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\obj\Debug\scarabee_lane_emulator.exe
 E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\obj\Debug\scarabee_lane_emulator.pdb
 E:\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\bin\Debug\S7.Net.dll
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\bin\Debug\scarabee_lane_emulator.exe.config
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\scarabee_lane_emulator\scarabee_lane_emulator\obj\Debug\scarabee_lane_emulator.exe

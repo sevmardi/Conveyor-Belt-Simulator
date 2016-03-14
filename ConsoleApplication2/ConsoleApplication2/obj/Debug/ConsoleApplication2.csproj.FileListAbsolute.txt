@@ -5,3 +5,6 @@ C:\Users\sevak.mardirosian\documents\visual studio 2012\Projects\ConsoleApplicat
 C:\Users\sevak.mardirosian\documents\visual studio 2012\Projects\ConsoleApplication2\ConsoleApplication2\obj\Debug\ConsoleApplication2.csprojResolveAssemblyReference.cache
 C:\Users\sevak.mardirosian\documents\visual studio 2012\Projects\ConsoleApplication2\ConsoleApplication2\obj\Debug\ConsoleApplication2.exe
 C:\Users\sevak.mardirosian\documents\visual studio 2012\Projects\ConsoleApplication2\ConsoleApplication2\obj\Debug\ConsoleApplication2.pdb
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\ConsoleApplication2\ConsoleApplication2\bin\Debug\ConsoleApplication2.exe.config
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\ConsoleApplication2\ConsoleApplication2\obj\Debug\ConsoleApplication2.exe
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\ConsoleApplication2\ConsoleApplication2\obj\Debug\ConsoleApplication2.pdb

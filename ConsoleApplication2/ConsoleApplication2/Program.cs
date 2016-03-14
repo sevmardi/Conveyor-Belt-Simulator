@@ -42,7 +42,8 @@ namespace ConsoleApplication2
 
                // res = client.MBRead(1, 4, buffer);
                 //res = client.DBGet(1, buffer, ref size);
-                res = client.ReadArea(8, 18, 0, S7Client.S7WLBit, buffer);
+
+                res = client.ReadArea(S7Client.S7AreaPE, 0, 8, 1, S7Client.S7WLBit, buffer);
                 Check(res, "MBRead");
                 //  https://sourceforge.net/p/snap7/discussion/general/thread/6e232d36/
               //  https://sourceforge.net/p/snap7/discussion/general/thread/e958097d/?limit=25
