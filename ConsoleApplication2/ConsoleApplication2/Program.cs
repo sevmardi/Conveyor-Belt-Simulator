@@ -13,41 +13,14 @@ namespace ConsoleApplication2
     {
         static S7Client client = null;
 
-        static bool Check(int res, string function)
-        {
-            if (res != 0)
-            {
-                if (res < 0)
-                    Console.WriteLine(function + " - Snap7 Library Error");
-                else
-                    Console.WriteLine(function + " - " + client.ErrorText(res));
-            }
-            return res == 0;
-        }
-
-
         static void Main(string[] args)
         {
-            S7Client client = new S7Client();
-            int res = client.ConnectTo(args[0], 0, 1);
-            int error = client.ConnectTo("192.168.0.10", 0, 2);
-            if(Check(res,"Connect to"))
-            {
-                byte[] buffer = new byte[30];
-                byte[] E = new byte[200];
-                int size = 10;
-                S7Client.S7DataItem[] items = new S7Client.S7DataItem[2];
-
-             
-
-               // res = client.MBRead(1, 4, buffer);
-                //res = client.DBGet(1, buffer, ref size);
-
-                res = client.ReadArea(S7Client.S7AreaPE, 0, 8, 1, S7Client.S7WLBit, buffer);
-                Check(res, "MBRead");
-                //  https://sourceforge.net/p/snap7/discussion/general/thread/6e232d36/
-              //  https://sourceforge.net/p/snap7/discussion/general/thread/e958097d/?limit=25
-            }
+                 S7Client client = new S7Client();
+                int res = client.ConnectTo("192.168.2.16", 0, 0);
+         
+                byte[] buffer = new byte[1];
+                           
+                res = client.WriteArea(S7Client.S7AreaPA, 0, 8, 1, S7Client.S7WLBit, buffer);
         }
     }
 }
