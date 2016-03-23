@@ -1,0 +1,8 @@
+E:\scarabee_lane_sim\Lane_Simulator_DEMO\obj\x64\Debug\CSClient.exe
+E:\scarabee_lane_sim\bin\x64\CSClient.exe
+E:\scarabee_lane_sim\bin\x64\CSClient.pdb
+E:\scarabee_lane_sim\Lane_Simulator_DEMO\obj\x64\Debug\Lane_Simulator_DEMO.csprojResolveAssemblyReference.cache
+E:\scarabee_lane_sim\Lane_Simulator_DEMO\obj\x64\Debug\CSClient.MainForm.resources
+E:\scarabee_lane_sim\Lane_Simulator_DEMO\obj\x64\Debug\CSClient.Properties.Resources.resources
+E:\scarabee_lane_sim\Lane_Simulator_DEMO\obj\x64\Debug\Lane_Simulator_DEMO.csproj.GenerateResource.Cache
+E:\scarabee_lane_sim\Lane_Simulator_DEMO\obj\x64\Debug\CSClient.pdb

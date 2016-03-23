@@ -36,11 +36,11 @@
             this.TextError.BackColor = System.Drawing.Color.White;
             this.TextError.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.TextError.ForeColor = System.Drawing.Color.Black;
-            this.TextError.Location = new System.Drawing.Point(0, 463);
+            this.TextError.Location = new System.Drawing.Point(0, 585);
             this.TextError.Margin = new System.Windows.Forms.Padding(4);
             this.TextError.Name = "TextError";
             this.TextError.ReadOnly = true;
-            this.TextError.Size = new System.Drawing.Size(950, 22);
+            this.TextError.Size = new System.Drawing.Size(1143, 22);
             this.TextError.TabIndex = 22;
             this.TextError.TextChanged += new System.EventHandler(this.TextError_TextChanged);
             // 
@@ -48,7 +48,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 485);
+            this.ClientSize = new System.Drawing.Size(1143, 607);
             this.Controls.Add(this.TextError);
             this.Name = "Form1";
             this.Text = "Form1";
