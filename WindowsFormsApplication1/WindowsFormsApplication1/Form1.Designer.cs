@@ -28,30 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.TextError = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(21, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 44);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // TextError
             // 
             this.TextError.BackColor = System.Drawing.Color.White;
             this.TextError.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.TextError.ForeColor = System.Drawing.Color.Black;
-            this.TextError.Location = new System.Drawing.Point(0, 233);
+            this.TextError.Location = new System.Drawing.Point(0, 463);
             this.TextError.Margin = new System.Windows.Forms.Padding(4);
             this.TextError.Name = "TextError";
             this.TextError.ReadOnly = true;
-            this.TextError.Size = new System.Drawing.Size(282, 22);
+            this.TextError.Size = new System.Drawing.Size(950, 22);
             this.TextError.TabIndex = 22;
             this.TextError.TextChanged += new System.EventHandler(this.TextError_TextChanged);
             // 
@@ -59,9 +48,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 255);
+            this.ClientSize = new System.Drawing.Size(950, 485);
             this.Controls.Add(this.TextError);
-            this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -71,7 +59,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
         internal System.Windows.Forms.TextBox TextError;
     }
 }

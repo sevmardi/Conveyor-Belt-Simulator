@@ -20,7 +20,7 @@ namespace WindowsFormsApplication1
         private void ShowResult(int Result)
         {
             // This function returns a textual explaination of the error code
-           // TextError.Text = Client.ErrorText(Result);
+            TextError.Text = Client.ErrorText(Result);
         }
 
 
