@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Snap7;
-
+using SSL_WPF.MainPanel;
 
 namespace SSL_WPF
 {
@@ -42,12 +42,13 @@ namespace SSL_WPF
 
             if (Result == 0)
             {
-
                 // Make connection with PLC using IP, slot, etc..
-                
+               
             }
-
-
+            else
+            {
+                MessageBox.Show("Not right");
+            }
         }
     }
 }
