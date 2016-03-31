@@ -33,6 +33,7 @@ namespace SSL_WPF
 
         private void ConnectBtn_Click(object sender, RoutedEventArgs e)
         {
+            // Make connection with PLC using IP, slot, etc..
             int Result;
             int Rack = System.Convert.ToInt32(TxtRack.Text);
             int Slot = System.Convert.ToInt32(TxtSlot.Text);
@@ -41,7 +42,7 @@ namespace SSL_WPF
 
             if (Result == 0)
             {
-                // Make connection with PLC using IP, slot, etc..
+                
                 DialogResult = true;
                 this.Close();
             }
