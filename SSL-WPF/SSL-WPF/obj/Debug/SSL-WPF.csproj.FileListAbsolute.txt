@@ -22,7 +22,7 @@ E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL-WPF_MarkupCompile.cache
 E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL-WPF.g.resources
 E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL_WPF.Properties.Resources.resources
 E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL-WPF.csproj.GenerateResource.Cache
-E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\MainPanel.baml
-E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\MainPanel.g.cs
 E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\ConnectPanel.baml
 E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\ConnectPanel.g.cs
+E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\MainWindow.baml
+E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\MainWindow.g.cs
