@@ -13,23 +13,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Snap7;
-using SSL_WPF.MainPanel;
+
 
 namespace SSL_WPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ConnectPanel : Window
     {
         private S7Client Client;
         private byte[] Buffer = new byte[65536];
 
-        public MainWindow()
+        public ConnectPanel()
         {
             InitializeComponent();
             Client = new S7Client();
-           
         }
 
         private void ConnectBtn_Click(object sender, RoutedEventArgs e)
@@ -43,12 +42,19 @@ namespace SSL_WPF
             if (Result == 0)
             {
                 // Make connection with PLC using IP, slot, etc..
-               
+                DialogResult = true;
+                this.Close();
             }
             else
             {
                 MessageBox.Show("Not right");
             }
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            this.Close();
         }
     }
 }
