@@ -11,6 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.ComponentModel;
+using System.Reflection;
+using System.Windows.Media.Animation;
+using System.Windows.Navigation;
 
 namespace SSL_WPF
 {
@@ -19,6 +23,12 @@ namespace SSL_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public static string APP_TITLE;
+        public static string APP_VERSION;
+        public static string APP_COPYRIGHT;
+        public static string LOAD_ON_START = "";
+
         public MainWindow()
         {
             InitializeComponent();

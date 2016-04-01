@@ -1,11 +1,12 @@
 ﻿<Window x:Class="SSL_WPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SSL_WPF"
         Title="SSL - Lane Simulator"
         WindowStartupLocation="CenterScreen"
         Height="450" Width="600"
         Loaded="Window_Loaded">
-    
+        
     <Grid>
         <Menu VerticalAlignment="Top" Margin="0,0,-0.4,0">
             <MenuItem x:Name="mnuFile"

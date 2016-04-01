@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\App.xaml
-2984227322
+41962393436
 
-11-1583523407
+13-1372528745
 121886138872
-MainWindow.xaml;ConnectPanel.xaml;
+GateCanvas.xaml;GateSelector.xaml;MainWindow.xaml;ConnectPanel.xaml;
 
-False
+True
 
