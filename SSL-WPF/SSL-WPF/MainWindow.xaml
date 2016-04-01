@@ -7,7 +7,7 @@
         WindowStartupLocation="CenterScreen"
         Height="450" Width="600"
         Loaded="Window_Loaded"
-        >
+        Icon="Images/ram.png">
         
     <Grid>
         <Grid.RowDefinitions>

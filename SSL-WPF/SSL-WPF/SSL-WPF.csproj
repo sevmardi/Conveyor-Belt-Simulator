@@ -36,6 +36,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -44,9 +46,11 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -66,6 +70,7 @@
     <Compile Include="SSLSelector.xaml.cs">
       <DependentUpon>SSLSelector.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SSL_Sim.cs" />
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -113,6 +118,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -123,7 +129,42 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="imgs\" />
+    <Resource Include="Images\ActualSizeHS.png" />
+    <Resource Include="Images\BehindTextHS.png" />
+    <Resource Include="Images\CanvasScaleHS.png" />
+    <Resource Include="Images\CopyAsImage.png" />
+    <Resource Include="Images\CopyHS.png" />
+    <Resource Include="Images\CutHS.png" />
+    <Resource Include="Images\DeleteHS.png" />
+    <Resource Include="Images\Edit_RedoHS.png" />
+    <Resource Include="Images\Edit_UndoHS.png" />
+    <Resource Include="Images\Hard_Drive.png" />
+    <Resource Include="Images\hare.png" />
+    <Resource Include="Images\Help.png" />
+    <Resource Include="Images\ImportXMLHS.png" />
+    <Resource Include="Images\InsertPictureHS.png" />
+    <Resource Include="Images\LegendHS.png" />
+    <Resource Include="Images\NewDocumentHS.png" />
+    <Resource Include="Images\openHS.png" />
+    <Resource Include="Images\PageWidthHS.png" />
+    <Resource Include="Images\PasteHS.png" />
+    <Resource Include="Images\PauseHS.png" />
+    <Resource Include="Images\PrintHS.png" />
+    <Resource Include="Images\PrintPreviewHS.png" />
+    <Resource Include="Images\PrintSetupHS.png" />
+    <Resource Include="Images\ProtectFormHS.png" />
+    <Resource Include="Images\ram.ico" />
+    <Resource Include="Images\ram.png" />
+    <Resource Include="Images\RecordHS.png" />
+    <Resource Include="Images\RefreshDocViewHS.png" />
+    <Resource Include="Images\saveAsHS.png" />
+    <Resource Include="Images\SaveAsImage.png" />
+    <Resource Include="Images\saveHS.png" />
+    <Resource Include="Images\splash.png" />
+    <Resource Include="Images\Steamroller-32x32.png" />
+    <Resource Include="Images\turtle.png" />
+    <Resource Include="Images\wire_color.png" />
+    <Resource Include="Images\ZoomHS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

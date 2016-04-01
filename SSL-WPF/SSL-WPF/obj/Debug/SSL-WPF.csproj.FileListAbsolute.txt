@@ -33,3 +33,12 @@ E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLCanvas.g.cs
 E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLSelector.g.cs
 E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL.baml
 E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL.g.cs
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\ConnectPanel.baml
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL.baml
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLSelector.baml
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\ConnectPanel.g.cs
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL.g.cs
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLCanvas.g.cs
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLSelector.g.cs
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL-WPF_MarkupCompile.lref
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLCanvas.baml
