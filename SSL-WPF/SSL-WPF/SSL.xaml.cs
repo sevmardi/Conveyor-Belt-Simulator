@@ -15,21 +15,10 @@ using System.Windows.Shapes;
 namespace SSL_WPF
 {
     /// <summary>
-    /// Interaction logic for SSLCanvas.xaml
+    /// Interaction logic for SSL.xaml
     /// </summary>
-    public partial class SSLCanvas : UserControl
+    public partial class SSL : UserControl
     {
-        private const double ANGLE_SNAP_DEG = 10;
-        private const double DELTA_SNAP = 5;
-        private const double GRID_SIZE = 32;
-
-  
-
-        protected SSLCanvas()
-        {
-
-        }
-
-        
+    
     }
 }

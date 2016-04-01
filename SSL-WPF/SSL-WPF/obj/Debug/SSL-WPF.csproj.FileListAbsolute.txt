@@ -27,9 +27,9 @@ E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\ConnectPanel.g.cs
 E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\MainWindow.baml
 E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\MainWindow.g.cs
 E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL-WPF_MarkupCompile.lref
-E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\MainPanel\MainPanel.baml
-E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\GateCanvas.baml
-E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\GateSelector.baml
-E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\GateCanvas.g.cs
-E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\GateSelector.g.cs
-E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLCanvas.baml
+E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLSelector.baml
+E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLCanvas.g.cs
+E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLSelector.g.cs
+E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL.baml
+E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL.g.cs

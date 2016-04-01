@@ -1,9 +1,6 @@
-﻿<UserControl x:Class="SSL_WPF.SSLCanvas"
+﻿<UserControl x:Class="SSL_WPF.SSL"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="clr-namespace:SSL_WPF"
         >
-
-  
 
 </UserControl>

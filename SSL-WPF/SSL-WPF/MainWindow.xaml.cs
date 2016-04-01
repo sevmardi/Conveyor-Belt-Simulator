@@ -15,6 +15,7 @@ using System.ComponentModel;
 using System.Reflection;
 using System.Windows.Media.Animation;
 using System.Windows.Navigation;
+using System.Windows.Controls.Primitives;
 
 namespace SSL_WPF
 {
@@ -27,6 +28,7 @@ namespace SSL_WPF
         public static string APP_VERSION;
         public static string APP_COPYRIGHT;
         public static string LOAD_ON_START = "";
+       
 
         public MainWindow()
         {
@@ -52,6 +54,8 @@ namespace SSL_WPF
             else
                 this.Close();
         }
+
+
 
     }
 }

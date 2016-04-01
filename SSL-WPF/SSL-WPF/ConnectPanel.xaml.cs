@@ -34,22 +34,26 @@ namespace SSL_WPF
         private void ConnectBtn_Click(object sender, RoutedEventArgs e)
         {
             // Make connection with PLC using IP, slot, etc..
-            int Result;
-            int Rack = System.Convert.ToInt32(TxtRack.Text);
-            int Slot = System.Convert.ToInt32(TxtSlot.Text);
+            //int Result;
+            //int Rack = System.Convert.ToInt32(TxtRack.Text);
+            //int Slot = System.Convert.ToInt32(TxtSlot.Text);
 
-            Result = Client.ConnectTo(TxtIP.Text, Rack, Slot);
+            //Result = Client.ConnectTo(TxtIP.Text, Rack, Slot);
 
-            if (Result == 0)
-            {
+            //if (Result == 0)
+            //{
                 
-                DialogResult = true;
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Not right");
-            }
+            //    DialogResult = true;
+            //    this.Close();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Not right");
+            //}
+
+          
+            DialogResult = true;
+            this.Close();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
