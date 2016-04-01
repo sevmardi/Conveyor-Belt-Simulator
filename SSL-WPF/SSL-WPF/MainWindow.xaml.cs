@@ -23,7 +23,6 @@ namespace SSL_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-
         public static string APP_TITLE;
         public static string APP_VERSION;
         public static string APP_COPYRIGHT;

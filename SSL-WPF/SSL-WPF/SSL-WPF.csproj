@@ -53,21 +53,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="GateCanvas.xaml.cs">
-      <DependentUpon>GateCanvas.xaml</DependentUpon>
+    <Compile Include="SSLCanvas.xaml.cs">
+      <DependentUpon>SSLCanvas.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GateSelector.xaml.cs">
-      <DependentUpon>GateSelector.xaml</DependentUpon>
+    <Compile Include="SSLSelector.xaml.cs">
+      <DependentUpon>SSLSelector.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="snap7.net.cs" />
-    <Page Include="GateCanvas.xaml">
+    <Page Include="SSLCanvas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GateSelector.xaml">
+    <Page Include="SSLSelector.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

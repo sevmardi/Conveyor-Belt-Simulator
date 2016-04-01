@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace SSL_WPF
 {
     /// <summary>
-    /// Interaction logic for GateSelector.xaml
+    /// Interaction logic for SSLCanvas.xaml
     /// </summary>
-    public partial class GateSelector : Window
+    public partial class SSLCanvas : Window
     {
-        public GateSelector()
+        public SSLCanvas()
         {
             InitializeComponent();
         }

@@ -32,3 +32,4 @@ E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\GateCanvas.baml
 E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\GateSelector.baml
 E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\GateCanvas.g.cs
 E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\GateSelector.g.cs
+E:\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\GeneratedInternalTypeHelper.g.cs

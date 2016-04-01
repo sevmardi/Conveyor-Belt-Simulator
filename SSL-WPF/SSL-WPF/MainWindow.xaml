@@ -8,6 +8,13 @@
         Loaded="Window_Loaded">
         
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+       
+
         <Menu VerticalAlignment="Top" Margin="0,0,-0.4,0">
             <MenuItem x:Name="mnuFile"
     			Header="_File">
@@ -26,5 +33,9 @@
             </MenuItem>
         </Menu>
 
+        <local:SSLCanvas x:Name="gateCanvas" Grid.Column="1" Grid.Row="1" Loaded="gateCanvas_Loaded" />
+        
+        
+        
     </Grid>
 </Window>
