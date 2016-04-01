@@ -3,7 +3,28 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:SSL_WPF"
         >
+   
+            <Canvas.Background>
+                <!-- see http://mark-dot-net.blogspot.com/2007/06/creating-hatched-patterned-brush-in-wpf.html -->
+                <VisualBrush 
+      TileMode="Tile" Viewport="0,0,32,32" 
+      ViewportUnits="Absolute" Viewbox="0,0,32,32"    
+      ViewboxUnits="Absolute">
+                    <VisualBrush.Visual>
+                        <Canvas>
+                            <Rectangle Fill="LightGray" Width="32" Height="32" />
+                            <Path Stroke="DarkGray" Data="M 0 0 l 0 32" />
+                            <Path Stroke="DarkGray" Data="M 0 32 l 32 0" />
+                        </Canvas>
+                    </VisualBrush.Visual>
+                </VisualBrush>
 
-  
+
+            </Canvas.Background>
+            <Rectangle Name="dragSelect" Stroke="Blue" StrokeThickness="1" HorizontalAlignment="Left" Margin="0,0,0,0" Visibility="Hidden" />
+           
+        </Canvas>
+    
+
 
 </UserControl>

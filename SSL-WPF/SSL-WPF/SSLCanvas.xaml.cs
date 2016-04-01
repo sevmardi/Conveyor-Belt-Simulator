@@ -23,12 +23,9 @@ namespace SSL_WPF
         private const double DELTA_SNAP = 5;
         private const double GRID_SIZE = 32;
 
-  
 
-        protected SSLCanvas()
-        {
 
-        }
+        
 
         
     }
