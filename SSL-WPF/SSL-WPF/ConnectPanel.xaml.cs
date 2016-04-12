@@ -18,7 +18,7 @@ using Snap7;
 namespace SSL_WPF
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Window1.xaml
     /// </summary>
     public partial class ConnectPanel : Window
     {

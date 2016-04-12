@@ -24,6 +24,8 @@ namespace SSL_WPF
         private const double GRID_SIZE = 32;
 
 
+        private double _zoom = 1.0;
+
 
         
 

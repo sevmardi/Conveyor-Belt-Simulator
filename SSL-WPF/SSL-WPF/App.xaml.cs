@@ -13,5 +13,10 @@ namespace SSL_WPF
     /// </summary>
     public partial class App : Application
     {
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            if (e.Args.Count() > 0)
+                Window1.LOAD_ON_START = e.Args[0]; 
+        }
     }
 }

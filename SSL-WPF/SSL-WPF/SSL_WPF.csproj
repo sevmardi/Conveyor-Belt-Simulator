@@ -57,8 +57,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
     <Compile Include="SaveClose.xaml.cs">
       <DependentUpon>SaveClose.xaml</DependentUpon>
@@ -77,7 +77,7 @@
       <DependentUpon>SSLSelector.xaml</DependentUpon>
     </Compile>
     <Compile Include="SSL_Sim.cs" />
-    <Page Include="MainWindow.xaml">
+    <Page Include="Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

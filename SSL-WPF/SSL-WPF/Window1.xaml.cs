@@ -20,17 +20,19 @@ using System.Windows.Controls.Primitives;
 namespace SSL_WPF
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Window1 : Window
     {
         public static string APP_TITLE;
         public static string APP_VERSION;
         public static string APP_COPYRIGHT;
+
         public static string LOAD_ON_START = "";
        
 
-        public MainWindow()
+
+        public Window1()
         {
             InitializeComponent();
         }
@@ -49,6 +51,7 @@ namespace SSL_WPF
 
             if (connectpanel.DialogResult.HasValue && connectpanel.DialogResult.Value)
             {
+                //do something
                 MessageBox.Show("Connected!");
             }
             else

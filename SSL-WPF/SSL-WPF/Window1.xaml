@@ -1,4 +1,4 @@
-﻿<Window x:Class="SSL_WPF.MainWindow"
+﻿<Window x:Class="SSL_WPF.Window1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         
@@ -6,7 +6,7 @@
       
         Title="SSL - Lane Simulator"
         WindowStartupLocation="CenterScreen"
-        Height="450" Width="600"
+        Height="450" Width="800"
         Loaded="Window_Loaded"
         Icon="Images/ram.png">
 
