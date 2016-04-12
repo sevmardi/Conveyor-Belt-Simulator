@@ -7,5 +7,6 @@ namespace SSL_WPF
 {
     public class SSL_Sim
     {
+
     }
 }

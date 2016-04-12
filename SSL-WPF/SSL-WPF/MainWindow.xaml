@@ -22,7 +22,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <local:SSLCanvas x:Name="gateCanvas" Grid.Column="1" Grid.Row="1" Loaded="gateCanvas_Loaded" />
+        
 
     
 

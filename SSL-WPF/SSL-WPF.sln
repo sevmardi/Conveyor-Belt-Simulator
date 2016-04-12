@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSL-WPF", "SSL-WPF\SSL-WPF.csproj", "{701881B2-A99B-4C24-8EA1-DB1007FE1EAA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSL_WPF", "SSL-WPF\SSL_WPF.csproj", "{701881B2-A99B-4C24-8EA1-DB1007FE1EAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

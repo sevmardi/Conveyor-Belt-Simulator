@@ -60,6 +60,12 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SaveClose.xaml.cs">
+      <DependentUpon>SaveClose.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShadowBox.xaml.cs">
+      <DependentUpon>ShadowBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="snap7.net.cs" />
     <Compile Include="SSL.xaml.cs">
       <DependentUpon>SSL.xaml</DependentUpon>
@@ -87,6 +93,14 @@
       <DependentUpon>ConnectPanel.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SaveClose.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShadowBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SSL.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

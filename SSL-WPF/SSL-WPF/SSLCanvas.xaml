@@ -3,7 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:SSL_WPF"
         >
-   
+
+    <ScrollViewer>
+        <Canvas>
             <Canvas.Background>
                 <!-- see http://mark-dot-net.blogspot.com/2007/06/creating-hatched-patterned-brush-in-wpf.html -->
                 <VisualBrush 
@@ -22,9 +24,10 @@
 
             </Canvas.Background>
             <Rectangle Name="dragSelect" Stroke="Blue" StrokeThickness="1" HorizontalAlignment="Left" Margin="0,0,0,0" Visibility="Hidden" />
-           
+            
         </Canvas>
-    
+    </ScrollViewer>
+
 
 
 </UserControl>
