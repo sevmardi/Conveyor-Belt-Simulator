@@ -77,6 +77,9 @@
       <DependentUpon>SSLSelector.xaml</DependentUpon>
     </Compile>
     <Compile Include="SSL_Sim.cs" />
+    <Compile Include="Wire.xaml.cs">
+      <DependentUpon>Wire.xaml</DependentUpon>
+    </Compile>
     <Page Include="Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -110,6 +113,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SSLSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Wire.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -29,9 +29,8 @@ namespace SSL_WPF
         public static string APP_COPYRIGHT;
 
         public static string LOAD_ON_START = "";
-       
-
-
+        private string _filename;
+        private ShadowBox sbZoom, sbSpeed, sbGates;
         public Window1()
         {
             InitializeComponent();
