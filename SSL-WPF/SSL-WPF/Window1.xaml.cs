@@ -29,12 +29,43 @@ namespace SSL_WPF
         public static string APP_COPYRIGHT;
 
         public static string LOAD_ON_START = "";
+
         private string _filename;
+        private EditLevel _myEditLevel;
         private ShadowBox sbZoom, sbSpeed, sbGates;
-        public Window1()
+
+        private Rectangle ICBounds;
+        private Line ICBounds_Line1, ICBounds_Line2;
+
+        #region Constructors
+        public Window1(EditLevel e)
         {
             InitializeComponent();
+            _myEditLevel = e;
+
+            SSLCanvas.Circuit.Start();
+
+
+            // Everybody gets zoom
+            sbZoom = new ShadowBox();
+            sbZoom.Margin = new Thickness(20);
+            Grid1.Children.Remove(spZoom);
+            sbZoom.Children.Add(spZoom);
+            spZoom.Background = Brushes.Transparent;
+            sbZoom.VerticalAlignment = VerticalAlignment.Top;
+            sbZoom.HorizontalAlignment = HorizontalAlignment.Right;
+            Grid1.Children.Add(sbZoom);
+            Grid.SetColumn(sbZoom, 1);
+            Grid.SetRow(sbZoom, 1);
+
+
+            // everybody gets view keys
+            this.PreviewKeyDown += new KeyEventHandler(Window1_View_KeyDown);
+
+
         }
+
+        #endregion
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -56,6 +87,56 @@ namespace SSL_WPF
             else
                 this.Close();
         }
+
+
+        public void RefreshSSLCanvas()
+        {
+            Grid1.Children.Remove(SSLCanvas);
+
+
+            SSLCanvas.Circuit.Stop();
+
+
+        }
+
+
+        /// <summary>
+        /// The "edit" permissions of a window
+        /// </summary>
+        public enum EditLevel
+        {
+            /// <summary>
+            /// Full applies only to the main window.  Full indicates all application
+            /// control.  Only one full window should exist.
+            /// </summary>
+            FULL,
+
+            /// <summary>
+            /// Edit applies changes to be applied to the circuit, but not application-level
+            /// operations like creating an IC or saving.
+            /// </summary>
+            EDIT,
+
+            /// <summary>
+            /// View allows only observation of a circuit.
+            /// </summary>
+            VIEW
+        }
+
+
+        /// <summary>
+        /// Gets the edit level of this window
+        /// </summary>
+        public EditLevel MyEditLevel
+        {
+            get
+            {
+                return _myEditLevel;
+            }
+        }
+
+
+
 
 
 

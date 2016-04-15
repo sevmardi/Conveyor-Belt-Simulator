@@ -19,15 +19,25 @@ namespace SSL_WPF
     /// </summary>
     public partial class SSLCanvas : UserControl
     {
+
+        private bool ReadyToSelect = false;
+
+        private bool _ro = false;
+        private bool _iso = false;
+
         private const double ANGLE_SNAP_DEG = 10;
         private const double DELTA_SNAP = 5;
         private const double GRID_SIZE = 32;
+
+        private Brush oldBackground;
+        private bool _mute;
 
 
         private double _zoom = 1.0;
 
 
-        
+
+
 
         
     }

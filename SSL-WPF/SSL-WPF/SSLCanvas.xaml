@@ -4,8 +4,8 @@
         xmlns:local="clr-namespace:SSL_WPF"
         >
 
-    <ScrollViewer>
-        <Canvas>
+    <ScrollViewer Name="GCScroller"  >
+        <Canvas Name="GC" >
             <Canvas.Background>
                 <!-- see http://mark-dot-net.blogspot.com/2007/06/creating-hatched-patterned-brush-in-wpf.html -->
                 <VisualBrush 
@@ -24,7 +24,7 @@
 
             </Canvas.Background>
             <Rectangle Name="dragSelect" Stroke="Blue" StrokeThickness="1" HorizontalAlignment="Left" Margin="0,0,0,0" Visibility="Hidden" />
-            
+            <local:Wire x:Name="dragWire" />
         </Canvas>
     </ScrollViewer>
 

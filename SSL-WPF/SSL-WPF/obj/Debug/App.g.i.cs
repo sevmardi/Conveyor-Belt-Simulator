@@ -80,7 +80,6 @@ namespace SSL_WPF {
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
         public static void Main() {
- 
             SSL_WPF.App app = new SSL_WPF.App();
             app.InitializeComponent();
             app.Run();

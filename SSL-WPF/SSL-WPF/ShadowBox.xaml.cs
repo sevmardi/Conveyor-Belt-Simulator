@@ -37,7 +37,7 @@ namespace SSL_WPF
                 spContent.Orientation = value;
             }
         }
-        public UIElementCollection Childrem
+        public UIElementCollection Children
         {
             get
             {

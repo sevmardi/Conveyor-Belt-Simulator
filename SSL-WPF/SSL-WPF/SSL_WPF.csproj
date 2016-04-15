@@ -57,6 +57,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AttributesPanel.xaml.cs">
+      <DependentUpon>AttributesPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UndoRedo\UndoManager.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
@@ -80,6 +84,10 @@
     <Compile Include="Wire.xaml.cs">
       <DependentUpon>Wire.xaml</DependentUpon>
     </Compile>
+    <Page Include="AttributesPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -186,6 +194,10 @@
     <Resource Include="Images\turtle.png" />
     <Resource Include="Images\wire_color.png" />
     <Resource Include="Images\ZoomHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DragDrop\" />
+    <Folder Include="UI\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
