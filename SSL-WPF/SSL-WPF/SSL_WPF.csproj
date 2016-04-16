@@ -57,7 +57,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AttributesPanel.xaml.cs">
+    <Compile Include="AttributesPanel\AttributesPanel.xaml.cs">
       <DependentUpon>AttributesPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="UndoRedo\UndoManager.cs" />
@@ -84,7 +84,7 @@
     <Compile Include="Wire.xaml.cs">
       <DependentUpon>Wire.xaml</DependentUpon>
     </Compile>
-    <Page Include="AttributesPanel.xaml">
+    <Page Include="AttributesPanel\AttributesPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
