@@ -59,3 +59,5 @@ C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\S
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL_WPF.csproj.GenerateResource.Cache
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\AttributesPanel.baml
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\AttributesPanel.g.cs
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\AttributesPanel\AttributesPanel.baml
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\AttributesPanel\AttributesPanel.g.cs

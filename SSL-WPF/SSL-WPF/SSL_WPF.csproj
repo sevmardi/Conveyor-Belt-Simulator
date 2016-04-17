@@ -60,6 +60,10 @@
     <Compile Include="AttributesPanel\AttributesPanel.xaml.cs">
       <DependentUpon>AttributesPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Fader.cs" />
+    <Compile Include="UndoRedo\GateUndos.cs" />
+    <Compile Include="UndoRedo\IUndoable.cs" />
+    <Compile Include="UndoRedo\Transaction.cs" />
     <Compile Include="UndoRedo\UndoManager.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
