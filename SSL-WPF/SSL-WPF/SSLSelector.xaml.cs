@@ -19,9 +19,54 @@ namespace SSL_WPF
     /// </summary>
     public partial class SSLSelector : Window
     {
+        private UndoRedo.UndoManager undoProvider;
+        private bool _ro = false;
+        private string _icname;
+        private const double MAX_SIZE = 100;
+
         public SSLSelector()
         {
             InitializeComponent();
         }
+
+
+        /// <summary>
+        /// If an undo manager is provided, changes to UI will be undoable.
+        /// </summary>
+        public UndoRedo.UndoManager UndoProvider
+        {
+            set
+            {
+                undoProvider = value;
+            }
+        }
+
+
+        public bool isReadyOnly
+        {
+            set
+            {
+                foreach (SSL g in spSSL.Children)
+                {
+                    g.isReadyOnly = value;
+                    g.ContextMenu.IsEnabled = !value;
+                    SetInfoLine(g as UISSL.IC);
+                }
+                _ro = value;
+            }
+        }
+
+            
+        private void SetInfoLine()
+        {
+            string inf = "Left-drag to place";
+
+            if(! _ro)
+                inf += ", double-click to edit, type to rename";
+            InfoLine.SetInfo(inf);
+        }
+
+
+
     }
 }

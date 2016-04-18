@@ -61,6 +61,7 @@
       <DependentUpon>AttributesPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="Fader.cs" />
+    <Compile Include="InfoLine.cs" />
     <Compile Include="UndoRedo\GateUndos.cs" />
     <Compile Include="UndoRedo\IUndoable.cs" />
     <Compile Include="UndoRedo\Transaction.cs" />
@@ -201,7 +202,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DragDrop\" />
-    <Folder Include="UI\" />
+    <Folder Include="UISSL\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
