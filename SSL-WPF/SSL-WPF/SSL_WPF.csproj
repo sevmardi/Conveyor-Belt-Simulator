@@ -60,6 +60,7 @@
     <Compile Include="AttributesPanel\AttributesPanel.xaml.cs">
       <DependentUpon>AttributesPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Events\EventDispatcher.cs" />
     <Compile Include="Fader.cs" />
     <Compile Include="InfoLine.cs" />
     <Compile Include="UndoRedo\GateUndos.cs" />
