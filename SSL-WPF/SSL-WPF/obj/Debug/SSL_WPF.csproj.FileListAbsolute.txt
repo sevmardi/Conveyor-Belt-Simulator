@@ -65,3 +65,6 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\S
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL-WPF.pdb
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLLayout\SSLLeftLayout.baml
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLLayout\SSLLeftLayout.g.cs
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\Save\SaveClose.baml
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLLayout\SSLLeftLayout.g.cs
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\Save\SaveClose.g.cs

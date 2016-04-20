@@ -61,6 +61,7 @@
       <DependentUpon>AttributesPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="DragDrop\DragDropAdornerBase.cs" />
+    <Compile Include="DragDrop\DragDropHelper.cs" />
     <Compile Include="Events\EventDispatcher.cs" />
     <Compile Include="Fader.cs" />
     <Compile Include="Info\InfoLine.cs" />
