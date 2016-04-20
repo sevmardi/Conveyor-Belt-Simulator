@@ -16,6 +16,8 @@ using System.Reflection;
 using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using System.Windows.Controls.Primitives;
+using SSL_WPF.Info;
+using SSL_WPF.Save;
 
 namespace SSL_WPF
 {
@@ -37,21 +39,21 @@ namespace SSL_WPF
         private Rectangle ICBounds;
         private Line ICBounds_Line1, ICBounds_Line2;
 
-        #region Constructors
-        public Window1(EditLevel e)
+       
+        public Window1()
         {
             InitializeComponent();
-            _myEditLevel = e;
+           // _myEditLevel = e;
 
-            SSLCanvas.Circuit.Start();
+           // SSLCanvas.Circuit.Start();
 
 
             // Everybody gets zoom
             sbZoom = new ShadowBox();
             sbZoom.Margin = new Thickness(20);
-            Grid1.Children.Remove(spZoom);
-            sbZoom.Children.Add(spZoom);
-            spZoom.Background = Brushes.Transparent;
+           // Grid1.Children.Remove(spZoom);
+          //  sbZoom.Children.Add(spZoom);
+          //  spZoom.Background = Brushes.Transparent;
             sbZoom.VerticalAlignment = VerticalAlignment.Top;
             sbZoom.HorizontalAlignment = HorizontalAlignment.Right;
             Grid1.Children.Add(sbZoom);
@@ -60,12 +62,12 @@ namespace SSL_WPF
 
 
             // everybody gets view keys
-            this.PreviewKeyDown += new KeyEventHandler(Window1_View_KeyDown);
+           // this.PreviewKeyDown += new KeyEventHandler(Window1_View_KeyDown);
 
 
         }
 
-        #endregion
+      
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -91,10 +93,10 @@ namespace SSL_WPF
 
         public void RefreshSSLCanvas()
         {
-            Grid1.Children.Remove(SSLCanvas);
+           // Grid1.Children.Remove(SSLCanvas);
 
 
-            SSLCanvas.Circuit.Stop();
+            // SSLCanvas.Circuit.Stop();
 
 
         }
@@ -135,9 +137,50 @@ namespace SSL_WPF
             }
         }
 
+        private void Window1_Closing(object sender, CancelEventArgs e)
+        {
+            // only the orginal full window 
+            e.Cancel = !QuerySave();
+        }
 
 
+        private bool QuerySave()
+        {
+            if (!((UndoRedo.UndoManager)Resources["undoManager"]).isASavePoint)
+            {
 
+                SaveClose sc = new SaveClose(String.IsNullOrEmpty(_filename) ? "[Untitled]" : _filename);
+                sc.ShowDialog();
+                switch (sc.Selected)
+                {
+                    case SaveClose.Result.SAVE:
+                        break;
+                    case SaveClose.Result.DONT_SAVE:
+                        break;
+                    case SaveClose.Result.CANCEL:
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            return true;
+        }
+        private void InfoLine_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (String.IsNullOrEmpty(InfoLine.GetInstance().CurrentInfoLine) || !this.IsActive)
+            {
+                lblInfoLine.Visibility = Visibility.Collapsed;
+                spAppInfo.Visibility = Visibility.Visible;
+
+            }
+            else
+            {
+                lblInfoLine.Text = InfoLine.GetInstance().CurrentInfoLine;
+                lblInfoLine.Visibility = Visibility.Visible;
+                spAppInfo.Visibility = Visibility.Collapsed;
+            }
+        }
 
 
     }

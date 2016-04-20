@@ -35,10 +35,51 @@ namespace SSL_WPF
 
         private double _zoom = 1.0;
 
+        public SSLCanvas()
+        {
+            InitializeComponent();
+        }
 
+        private void SizeCanvas()
+        {
+            // green team notes:  increased size to make scroll bars visible on start
+            // this will ensure the mouse center zoom method works on start up
+            double maxx = (SSLScroller.ViewportWidth / _zoom);
+            double maxy = (SSLScroller.ViewportHeight / _zoom);
 
+            //foreach (Gate g in gates.Values)
+            //{
+            //    maxx = Math.Max(maxx, g.Margin.Left + g.Width + 64);
+            //    maxy = Math.Max(maxy, g.Margin.Top + g.Height + 64);
 
+            //}
 
-        
+           // GC.Width = maxx;
+            //GC.Height = maxy;
+
+        }
+        public bool DisableSizeCanvas { get; set; }
+
+        private void SSLScroller_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (!_mute && !DisableSizeCanvas)
+                SizeCanvas();
+        }
+
+        private void SSLScroller_LayoutUpdated(object sender, EventArgs e)
+        {
+            if (!_mute && !DisableSizeCanvas)
+                SizeCanvas();
+        }
+
+        private void SSLScroller_ScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
+
+            //if (dragging == DragState.MOVE)
+            //{
+            //    System.Threading.Thread.Sleep(100); // don't let them scroll themselves into oblivion
+            //}
+
+        }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows;
 using System.ComponentModel;
 
-namespace SSL_WPF
+namespace SSL_WPF.Info
 {
     /// <summary>
     /// Provides an attached property to specify one-line help information.

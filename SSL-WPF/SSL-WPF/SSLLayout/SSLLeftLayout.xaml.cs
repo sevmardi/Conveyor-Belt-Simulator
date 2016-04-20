@@ -10,28 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SSL_WPF.AttributesPanel
+namespace SSL_WPF.SSLLayout
 {
     /// <summary>
-    /// Interaction logic for AttributesPanel.xaml
+    /// Interaction logic for SSLLeftLayout.xaml
     /// </summary>
-    public partial class AttributesPanel : Window
+    public partial class SSLLeftLayout : UserControl
     {
-        public AttributesPanel()
+        public SSLLeftLayout()
         {
             InitializeComponent();
-        }
-
-        private void WriteIOBtn(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ReadIOBtn(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

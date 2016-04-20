@@ -17,7 +17,7 @@ namespace SSL_WPF
     /// <summary>
     /// Interaction logic for SSLSelector.xaml
     /// </summary>
-    public partial class SSLSelector : Window
+    public partial class SSLSelector : UserControl
     {
         private UndoRedo.UndoManager undoProvider;
         private bool _ro = false;
@@ -33,38 +33,38 @@ namespace SSL_WPF
         /// <summary>
         /// If an undo manager is provided, changes to UI will be undoable.
         /// </summary>
-        public UndoRedo.UndoManager UndoProvider
-        {
-            set
-            {
-                undoProvider = value;
-            }
-        }
+        //public UndoRedo.UndoManager UndoProvider
+        //{
+        //    set
+        //    {
+        //        undoProvider = value;
+        //    }
+        //}
 
 
-        public bool isReadyOnly
-        {
-            set
-            {
-                foreach (SSL g in spSSL.Children)
-                {
-                    g.isReadyOnly = value;
-                    g.ContextMenu.IsEnabled = !value;
-                    SetInfoLine(g as UISSL.IC);
-                }
-                _ro = value;
-            }
-        }
+        //public bool isReadyOnly
+        //{
+        //    set
+        //    {
+        //        foreach (SSL g in spSSL.Children)
+        //        {
+        //            g.isReadyOnly = value;
+        //            g.ContextMenu.IsEnabled = !value;
+        //            SetInfoLine(g as UISSL.IC);
+        //        }
+        //        _ro = value;
+        //    }
+        //}
 
             
-        private void SetInfoLine()
-        {
-            string inf = "Left-drag to place";
+        //private void SetInfoLine()
+        //{
+        //    string inf = "Left-drag to place";
 
-            if(! _ro)
-                inf += ", double-click to edit, type to rename";
-            InfoLine.SetInfo(inf);
-        }
+        //    if(! _ro)
+        //        inf += ", double-click to edit, type to rename";
+        //    InfoLine.SetInfo(inf);
+        //}
 
 
 

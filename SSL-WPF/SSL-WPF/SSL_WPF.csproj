@@ -60,17 +60,21 @@
     <Compile Include="AttributesPanel\AttributesPanel.xaml.cs">
       <DependentUpon>AttributesPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DragDrop\DragDropAdornerBase.cs" />
     <Compile Include="Events\EventDispatcher.cs" />
     <Compile Include="Fader.cs" />
-    <Compile Include="InfoLine.cs" />
-    <Compile Include="UndoRedo\GateUndos.cs" />
+    <Compile Include="Info\InfoLine.cs" />
+    <Compile Include="SSLLayout\SSLLeftLayout.xaml.cs">
+      <DependentUpon>SSLLeftLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UndoRedo\SSLUndos.cs" />
     <Compile Include="UndoRedo\IUndoable.cs" />
     <Compile Include="UndoRedo\Transaction.cs" />
     <Compile Include="UndoRedo\UndoManager.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SaveClose.xaml.cs">
+    <Compile Include="Save\SaveClose.xaml.cs">
       <DependentUpon>SaveClose.xaml</DependentUpon>
     </Compile>
     <Compile Include="ShadowBox.xaml.cs">
@@ -94,6 +98,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SSLLayout\SSLLeftLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -110,7 +118,7 @@
       <DependentUpon>ConnectPanel.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SaveClose.xaml">
+    <Page Include="Save\SaveClose.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,7 +210,6 @@
     <Resource Include="Images\ZoomHS.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DragDrop\" />
     <Folder Include="UISSL\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

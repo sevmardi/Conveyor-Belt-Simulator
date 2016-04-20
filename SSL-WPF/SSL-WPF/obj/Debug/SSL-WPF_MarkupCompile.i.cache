@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\
 SSL_WPF
 none
 false
 DEBUG;TRACE
-C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\App.xaml
-9-2100945710
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\App.xaml
+10275174887
 
-26180860736
+28-1397304481
 16-1880411717
-AttributesPanel\AttributesPanel.xaml;Window1.xaml;ConnectPanel.xaml;SaveClose.xaml;ShadowBox.xaml;SSL.xaml;SSLCanvas.xaml;SSLSelector.xaml;Wire.xaml;
+AttributesPanel\AttributesPanel.xaml;SSLLayout\SSLLeftLayout.xaml;Window1.xaml;ConnectPanel.xaml;Save\SaveClose.xaml;ShadowBox.xaml;SSL.xaml;SSLCanvas.xaml;SSLSelector.xaml;Wire.xaml;
 
 False
 

@@ -20,13 +20,13 @@ namespace SSL_WPF.UndoRedo
         private delegate void setName(string n);
         private setName snf;
 
-        public ChangeUserText(SSL ssl, string oldText, string newText, setName snf)
-        {
-            this.ssl = ssl;
-            this.oldText = oldText;
-            this.newText = newText;
-            this.snf = snf;
-        }
+        //public ChangeUserText(SSL ssl, string oldText, string newText, setName snf)
+        //{
+        //    this.ssl = ssl;
+        //    this.oldText = oldText;
+        //    this.newText = newText;
+        //    this.snf = snf;
+        //}
 
         #region IUndoable Members
 

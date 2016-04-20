@@ -1,32 +1,3 @@
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\bin\Debug\SSL-WPF.exe.config
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\bin\Debug\SSL-WPF.exe
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\bin\Debug\SSL-WPF.pdb
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\ConnectPanel.baml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SaveClose.baml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\ShadowBox.baml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL.baml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLSelector.baml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\App.baml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\Window1.g.cs
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\ConnectPanel.g.cs
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SaveClose.g.cs
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\ShadowBox.g.cs
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL.g.cs
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLCanvas.g.cs
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLSelector.g.cs
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\App.g.cs
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL-WPF_MarkupCompile.cache
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL-WPF_MarkupCompile.lref
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\Window1.baml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLCanvas.baml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL-WPF.g.resources
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL_WPF.Properties.Resources.resources
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL_WPF.csproj.GenerateResource.Cache
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL-WPF.exe
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL-WPF.pdb
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL_WPF.csprojResolveAssemblyReference.cache
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\Wire.baml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\Wire.g.cs
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\bin\Debug\SSL-WPF.exe.config
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL-WPF.exe
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL-WPF.pdb
@@ -61,3 +32,36 @@ C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\A
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\AttributesPanel.g.cs
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\AttributesPanel\AttributesPanel.baml
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\AttributesPanel\AttributesPanel.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\AttributesPanel\AttributesPanel.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\ConnectPanel.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\Save\SaveClose.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\ShadowBox.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\Wire.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\App.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\AttributesPanel\AttributesPanel.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\Window1.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\ConnectPanel.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\Save\SaveClose.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\ShadowBox.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLCanvas.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLSelector.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\Wire.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\App.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL-WPF_MarkupCompile.cache
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL-WPF_MarkupCompile.lref
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\bin\Debug\SSL-WPF.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\bin\Debug\SSL-WPF.exe
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\bin\Debug\SSL-WPF.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\Window1.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLCanvas.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLSelector.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL-WPF.g.resources
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL_WPF.Properties.Resources.resources
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL_WPF.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL-WPF.exe
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL-WPF.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLLayout\SSLLeftLayout.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLLayout\SSLLeftLayout.g.cs
