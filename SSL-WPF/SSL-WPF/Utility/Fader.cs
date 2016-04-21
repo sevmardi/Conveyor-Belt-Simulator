@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Windows.Media.Animation;
 using System.Windows;
 
-namespace SSL_WPF
+namespace SSL_WPF.Utility
 {
     /// <summary>
     /// Allows UI elements to be faded in and out.

@@ -191,7 +191,7 @@
                     <Canvas.RenderTransform>
                       <MatrixTransform Matrix="0 -61.785845 253.1713 0 846.52 1357.074"/>
                     </Canvas.RenderTransform>
-                    <Image xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="image204284" Source="3_img2.png" Width="1" Height="1" Stretch="Fill">
+                    <Image xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="image204284" Width="1" Height="1" Stretch="Fill">
                       <Image.RenderTransform>
                         <MatrixTransform Matrix="1 0 0 -1 0 1"/>
                       </Image.RenderTransform>

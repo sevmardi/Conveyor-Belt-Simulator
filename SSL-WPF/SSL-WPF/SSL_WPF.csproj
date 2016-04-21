@@ -60,6 +60,7 @@
     <Compile Include="AttributesPanel\AttributesPanel.xaml.cs">
       <DependentUpon>AttributesPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ConnectedWire.cs" />
     <Compile Include="DragDrop\DragDropAdornerBase.cs" />
     <Compile Include="DragDrop\DragDropHelper.cs" />
     <Compile Include="DragDrop\DropPreviewAdorner.cs" />
@@ -67,10 +68,14 @@
       <DependentUpon>SSLDragDropAdorner.xaml</DependentUpon>
     </Compile>
     <Compile Include="Events\EventDispatcher.cs" />
-    <Compile Include="Fader.cs" />
+    <Compile Include="Utility\Fader.cs" />
     <Compile Include="Info\InfoLine.cs" />
     <Compile Include="SSLLayout\SSLLeftLayout.xaml.cs">
       <DependentUpon>SSLLeftLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SSLLocation.cs" />
+    <Compile Include="Terminal\Terminal.xaml.cs">
+      <DependentUpon>Terminal.xaml</DependentUpon>
     </Compile>
     <Compile Include="UndoRedo\SSLUndos.cs" />
     <Compile Include="UndoRedo\IUndoable.cs" />
@@ -108,6 +113,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SSLLayout\SSLLeftLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Terminal\Terminal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

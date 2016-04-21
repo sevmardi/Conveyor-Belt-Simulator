@@ -20,7 +20,7 @@ namespace SSL_WPF.DragDrop
     /// Interaction logic for DragDropAdornerBase.xaml
     /// </summary>
     /// 
-    class DragDropAdornerBase : UserControl
+    public class DragDropAdornerBase : UserControl
     {
         
         public DragDropAdornerBase()

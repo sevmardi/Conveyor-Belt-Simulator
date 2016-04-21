@@ -63,7 +63,7 @@ namespace SSL_WPF
         /// <summary>
         /// Set the flow (on or off) for this wire.  
         /// </summary>
-        public bool value
+        public bool Value
         {
             set
             {

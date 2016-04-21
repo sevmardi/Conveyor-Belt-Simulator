@@ -68,3 +68,7 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\S
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\Save\SaveClose.baml
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSLLayout\SSLLeftLayout.g.cs
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\Save\SaveClose.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL_WPF.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\DragDrop\SSLDragDropAdorner.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\Terminal\Terminal.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\Terminal\Terminal.g.cs
