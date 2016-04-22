@@ -85,6 +85,7 @@ namespace SSL_WPF
             {
                 //do something
                 MessageBox.Show("Connected!");
+                
             }
             else
                 this.Close();

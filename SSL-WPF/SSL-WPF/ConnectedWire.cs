@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 
+
+
 namespace SSL_WPF
 {
     /// <summary>
@@ -13,7 +15,7 @@ namespace SSL_WPF
     public class ConnectedWire : Wire
     {
         private SSL.TerminalID origin, dest;
-        private SSL.AbstractSSL originSSL, destSSL;
+        private Components.AbstractComponents originSSL, destSSL;
 
         public SSL.TerminalID OriginTerminalID
         {
@@ -31,22 +33,22 @@ namespace SSL_WPF
             }
         }
 
-        public SSL.AbstractGate OriginGate
+        public Components.AbstractComponents OriginGate
         {
             get
             {
-                return originGate;
+                return originSSL;
             }
         }
 
-        public SSL.AbstractGate DestinationGate
+        public Components.AbstractComponents DestinationGate
         {
             get
             {
                 return destSSL;
             }
         }
-        public ConnectedWire(SSL.AbstractGate originGate, SSL.TerminalID origin, SSL.AbstractGate destGate, SSL.TerminalID dest)
+        public ConnectedWire(Components.AbstractComponents originGate, SSL.TerminalID origin, Components.AbstractComponents destGate, SSL.TerminalID dest)
             : base()
         {
 

@@ -238,6 +238,7 @@
 
         <TextBlock Name="lblInfoLine" Background="#EEEEEE" Grid.Row="2" Grid.ColumnSpan="2"  Padding="10,0,0,0" Visibility="Hidden" />
         <Canvas x:Name="adornerLayer" Visibility="Collapsed"/>
-        
+        <Ellipse x:Name="sensor_1" Fill="Red" HorizontalAlignment="Left" Height="10" Margin="-221,296,0,0" Grid.RowSpan="2" Stroke="Black" VerticalAlignment="Top" Width="10" RenderTransformOrigin="1,0.545" />
+
     </Grid>
 </Window>
