@@ -1,0 +1,7 @@
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\LedControl\obj\Debug\LedControl.Properties.Resources.resources
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\LedControl\obj\Debug\LedControl.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\LedControl\obj\Debug\LedControl.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\LedControl\obj\Debug\Led.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\LedControl\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\LedControl\obj\Debug\LedControl_MarkupCompile.cache
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\LedControl\obj\Debug\LedControl_MarkupCompile.lref
