@@ -2,3 +2,7 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\S
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\Components\bin\Debug\Components.pdb
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\Components\obj\Debug\Components.dll
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\Components\obj\Debug\Components.pdb
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\Components\bin\Debug\Components.dll
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\Components\bin\Debug\Components.pdb
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\Components\obj\Debug\Components.dll
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\Components\obj\Debug\Components.pdb

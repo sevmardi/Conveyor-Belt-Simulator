@@ -16,6 +16,7 @@ using System.Windows.Media.Effects;
 using System.ComponentModel;
 using SSL_WPF.Events;
 using SSL_WPF.Terminal;
+using Components;
 
 namespace SSL_WPF
 {
@@ -27,7 +28,7 @@ namespace SSL_WPF
         private DropShadowEffect glow;
         protected TerminalID[] _termsid;
         private bool _sel;
-        protected SSL.AbstractGate _gate;
+        protected AbstractComponents _gate;
 
 
         /// <summary>
@@ -65,12 +66,12 @@ namespace SSL_WPF
             /// <summary>
             /// Actual terminal being displayed
             /// </summary>
-            public Terminal t;
+            public Terminal.Terminal t;
 
             /// <summary>
             /// Gate being referenced
             /// </summary>
-            public SSL.AbstractGate abgate;
+            public AbstractComponents abgate;
             public TerminalID(bool isInput, int ID, Position pos)
             {
                 this.isInput = isInput;
@@ -82,12 +83,12 @@ namespace SSL_WPF
             }
         }
 
-        private Terminal AddTerminal(Grid grid, int pos, bool isInput)
+        private Terminal.Terminal AddTerminal(Grid grid, int pos, bool isInput)
         {
             ColumnDefinition cd = new ColumnDefinition();
             cd.Width = new GridLength(1, GridUnitType.Star);
             grid.ColumnDefinitions.Add(cd);
-            Terminal myt = new Terminal(isInput);
+            Terminal.Terminal myt = new Terminal.Terminal(isInput);
             grid.Children.Add(myt);
             Grid.SetColumn(myt, pos);
 
@@ -97,7 +98,7 @@ namespace SSL_WPF
         /// <summary>
         /// The gate "behind" this visual gate
         /// </summary>
-        public SSL.AbstractGate AbGate
+        public AbstractComponents AbGate
         {
             get
             {
@@ -163,21 +164,21 @@ namespace SSL_WPF
             return null;
         }
 
-        private void _gate_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            foreach (TerminalID tid in _termsid)
-            {
-                if (ShowTrueFalse)
-                    tid.t.Value = tid.isInput ? _gate[tid.ID] : _gate.Output[tid.ID];
-                else
-                    tid.t.Value = false;
-            }
+        //private void _gate_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        //{
+        //    foreach (TerminalID tid in _termsid)
+        //    {
+        //        if (ShowTrueFalse)
+        //            tid.t.Value = tid.isInput ? _gate[tid.ID] : _gate.Output[tid.ID];
+        //        else
+        //            tid.t.Value = false;
+        //    }
 
-            ToolTip = _gate.Name;
-        }
+        //    ToolTip = _gate.Name;
+        //}
 
 
-         public SSL(SSL.AbstractGate gate, TerminalID[] termsid)
+        public SSL(AbstractComponents gate, TerminalID[] termsid)
         {
             InitializeComponent();
             _gate = gate;

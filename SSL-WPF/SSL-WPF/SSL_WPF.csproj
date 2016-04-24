@@ -73,7 +73,7 @@
     <Compile Include="SSLLayout\SSLLeftLayout.xaml.cs">
       <DependentUpon>SSLLeftLayout.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SSLLocation.cs" />
+    <Compile Include="Location\SSLLocation.cs" />
     <Compile Include="Terminal\Terminal.xaml.cs">
       <DependentUpon>Terminal.xaml</DependentUpon>
     </Compile>
@@ -87,21 +87,21 @@
     <Compile Include="Save\SaveClose.xaml.cs">
       <DependentUpon>SaveClose.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ShadowBox.xaml.cs">
+    <Compile Include="ShadowBox\ShadowBox.xaml.cs">
       <DependentUpon>ShadowBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="snap7.net.cs" />
+    <Compile Include="Library\snap7.net.cs" />
     <Compile Include="SSL.xaml.cs">
       <DependentUpon>SSL.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SSLCanvas.xaml.cs">
+    <Compile Include="Canvas\SSLCanvas.xaml.cs">
       <DependentUpon>SSLCanvas.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SSLSelector.xaml.cs">
+    <Compile Include="Selector\SSLSelector.xaml.cs">
       <DependentUpon>SSLSelector.xaml</DependentUpon>
     </Compile>
     <Compile Include="SSL_Sim.cs" />
-    <Compile Include="Wire.xaml.cs">
+    <Compile Include="Wires\Wire.xaml.cs">
       <DependentUpon>Wire.xaml</DependentUpon>
     </Compile>
     <Page Include="AttributesPanel\AttributesPanel.xaml">
@@ -140,7 +140,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ShadowBox.xaml">
+    <Page Include="ShadowBox\ShadowBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -148,15 +148,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SSLCanvas.xaml">
+    <Page Include="Canvas\SSLCanvas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SSLSelector.xaml">
+    <Page Include="Selector\SSLSelector.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Wire.xaml">
+    <Page Include="Wires\Wire.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
