@@ -240,7 +240,7 @@
                     <PathGeometry Figures="m 533.75029 460.32226 69.82793 69.72991 -69.82793 0 0 -69.72991 z" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Ellipse Fill="Red" Height="6" Canvas.Left="-32" Canvas.Top="474" Width="6" x:Name="_0102_D1"/>
+            <Ellipse Fill="Red" Height="6" Canvas.Left="-28" Canvas.Top="481" Width="6" x:Name="_0102_D1"/>
             <Ellipse Fill="Red" Height="6" Canvas.Left="-6" Canvas.Top="513" Width="6" x:Name="_0103_D1"/>
             <Ellipse Fill="Red" Height="6" Canvas.Left="24" Canvas.Top="538" Width="6" x:Name="_0104_D1"/>
             <Ellipse Fill="Red" Height="6" Canvas.Left="76" Canvas.Top="542" Width="6" x:Name="_0105_D1"/>
@@ -253,19 +253,21 @@
         <Button Content="Reset"  Canvas.Left="447" Canvas.Top="86" Width="75" Click="btnRest_Click" />
         <Button Content="Stop System"  Canvas.Left="554" Canvas.Top="86" Width="74" Click="btnStopSystem_Click" />
         <Rectangle Name="object_to_move" Fill="LightBlue" Height="46" Canvas.Left="-265" Stroke="Black" Canvas.Top="389" Width="32"/>
-        <Ellipse Fill="#FF0017FF" Height="6" Canvas.Left="-197" Canvas.Top="376" Width="6" x:Name="_0102_S1"/>
-        <Ellipse Fill="#FF0017FF" Height="6" Canvas.Left="-188" Canvas.Top="354" Width="6" x:Name="_0102_S2"/>
-        <Ellipse Fill="#FF0017FF" Height="6" Canvas.Left="-176" Canvas.Top="340" Width="6" x:Name="_0103_S1"/>
-        <Ellipse Fill="#FF0017FF" Height="6" Canvas.Left="-160" Canvas.Top="328" Width="6" x:Name="_0104_S1"/>
-        <Ellipse Fill="#FF0017FF" Height="6" Canvas.Left="-139" Canvas.Top="322" Width="6" x:Name="_0105_S1"/>
-        <Ellipse Fill="#FF0017FF" Height="6" Canvas.Left="-118" Canvas.Top="325" Width="6" x:Name="_0105_S2"/>
-        <Ellipse Fill="#FF0017FF" Height="6" Canvas.Left="-95" Canvas.Top="336" Width="6" x:Name="_0301_S1"/>
-        <Ellipse Fill="#FF0017FF" Height="6" Canvas.Left="-81" Canvas.Top="354" Width="6" x:Name="_0301_S2"/>
-        <Ellipse Fill="#FF0017FF" Height="6" Canvas.Left="-67" Canvas.Top="376" Width="6" x:Name="_0302_S1"/>
-        <Ellipse Fill="#FF0017FF" Height="6" Canvas.Top="386" Width="6" x:Name="_0303_S1" Canvas.Left="25"/>
-        <Ellipse Fill="#FF0017FF" Height="6" Canvas.Left="58" Canvas.Top="386" Width="6" x:Name="_0304_S1"/>
-        <Ellipse Fill="#FF0017FF" Height="6" Canvas.Left="84" Canvas.Top="386" Width="6" x:Name="_0304_S2"/>
-        <Ellipse Fill="#FF0017FF" Height="6" Canvas.Left="113" Canvas.Top="386" Width="6" x:Name="_0304_S3"/>
-        <Ellipse Fill="#FF0017FF" Height="6" Canvas.Left="160" Canvas.Top="386" Width="6" x:Name="_0701_S1"/>
+        <Ellipse Fill="#FFBCBCCF" Height="6" Canvas.Left="-197" Canvas.Top="376" Width="6" x:Name="_0102_S1"/>
+        <Ellipse Fill="#FFBCBCCF" Height="6" Canvas.Left="-188" Canvas.Top="354" Width="6" x:Name="_0102_S2"/>
+        <Ellipse Fill="#FFBCBCCF" Height="6" Canvas.Left="-176" Canvas.Top="340" Width="6" x:Name="_0103_S1"/>
+        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="-160" Canvas.Top="328" Width="6" x:Name="_0104_S1"/>
+        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="-139" Canvas.Top="322" Width="6" x:Name="_0105_S1"/>
+        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="-118" Canvas.Top="325" Width="6" x:Name="_0105_S2"/>
+        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="-95" Canvas.Top="336" Width="6" x:Name="_0301_S1"/>
+        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="-81" Canvas.Top="354" Width="6" x:Name="_0301_S2"/>
+        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="-67" Canvas.Top="376" Width="6" x:Name="_0302_S1"/>
+        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Top="386" Width="6" x:Name="_0303_S1" Canvas.Left="25"/>
+        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="58" Canvas.Top="386" Width="6" x:Name="_0304_S1"/>
+        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="84" Canvas.Top="386" Width="6" x:Name="_0304_S2"/>
+        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="113" Canvas.Top="386" Width="6" x:Name="_0304_S3"/>
+        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="160" Canvas.Top="386" Width="6" x:Name="_0701_S1"/>
+        <Button Content="Connect to PLC"  Canvas.Left="464" Canvas.Top="27" Width="140" Click="btnConnectToPLC_Click" Height="37"/>
+        <Button Content="Disconnect"  Canvas.Left="655" Canvas.Top="27" Width="140" Click="btnDisconnect_Click" Height="37"/>
     </Canvas>
 </Window>

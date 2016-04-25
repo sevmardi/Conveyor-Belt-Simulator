@@ -26,15 +26,25 @@ namespace WpfApplication1
         public MainWindow()
         {
             InitializeComponent();
-            myclient = new S7Client();
-
-            myclient.ConnectTo("192.168.2.16", 0, 0);
+             
 
             object_to_move.Visibility = Visibility.Hidden;
-          
          
         }
 
+        private void EstablishContact()
+        {
+            myclient = new S7Client();
+            myclient.ConnectTo("192.168.2.16", 0, 0);
+
+            if (myclient.Connected())
+            {
+                MessageBox.Show("Connection Established");
+            }
+            else
+                MessageBox.Show("Something went wrong");
+
+        }
         private void btnStartSystem_Click(object sender, RoutedEventArgs e)
         {
             if (myclient.Connected())
@@ -43,7 +53,19 @@ namespace WpfApplication1
                 myclient.WriteArea(S7Client.S7AreaPE, DBNumber, 448, amount, wordlen, buffer);
                 object_to_move.Visibility = Visibility.Visible;
                 _0102_S1.Fill = new SolidColorBrush(Colors.Red);
-
+                _0102_S2.Fill = new SolidColorBrush(Colors.Red);
+                _0103_S1.Fill = new SolidColorBrush(Colors.Red);
+                _0104_S1.Fill = new SolidColorBrush(Colors.Red);
+                _0105_S1.Fill = new SolidColorBrush(Colors.Red);
+                _0105_S2.Fill = new SolidColorBrush(Colors.Red);
+                _0301_S1.Fill = new SolidColorBrush(Colors.Red);
+                _0301_S2.Fill = new SolidColorBrush(Colors.Red);
+                _0302_S1.Fill = new SolidColorBrush(Colors.Red);
+                _0303_S1.Fill = new SolidColorBrush(Colors.Red);
+                _0304_S1.Fill = new SolidColorBrush(Colors.Red);
+                _0304_S2.Fill = new SolidColorBrush(Colors.Red);
+                _0304_S3.Fill = new SolidColorBrush(Colors.Red);
+                _0701_S1.Fill = new SolidColorBrush(Colors.Red);
             }
           
 
@@ -81,6 +103,21 @@ namespace WpfApplication1
             myclient.WriteArea(S7Client.S7AreaPE, DBNumber, 448, amount, wordlen, buffer);
          //   object_to_move.Visibility = Visibility.Hidden;
            
+        }
+
+
+
+
+
+        private void btnConnectToPLC_Click(object sender, RoutedEventArgs e)
+        {
+            EstablishContact();
+        }
+
+        private void btnDisconnect_Click(object sender, RoutedEventArgs e)
+        {
+            myclient.Disconnect();
+            MessageBox.Show("Disconnectd!");
         }
 
         
