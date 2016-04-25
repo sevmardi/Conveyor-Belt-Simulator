@@ -5,6 +5,8 @@ using System.ComponentModel;
 using Snap7;
 using System.Runtime.InteropServices;
 using System;
+using System.Windows.Media.Animation;
+using System.Windows.Controls;
 
 namespace WpfApplication1
 {
@@ -40,6 +42,7 @@ namespace WpfApplication1
             if (myclient.Connected())
             {
                 MessageBox.Show("Connection Established");
+                stopsystem();
             }
             else
                 MessageBox.Show("Something went wrong");
@@ -66,6 +69,8 @@ namespace WpfApplication1
                 _0304_S2.Fill = new SolidColorBrush(Colors.Red);
                 _0304_S3.Fill = new SolidColorBrush(Colors.Red);
                 _0701_S1.Fill = new SolidColorBrush(Colors.Red);
+
+                StartAnimation();
             }
           
 
@@ -101,7 +106,7 @@ namespace WpfApplication1
         {
             buffer[0] = 0;
             myclient.WriteArea(S7Client.S7AreaPE, DBNumber, 448, amount, wordlen, buffer);
-         //   object_to_move.Visibility = Visibility.Hidden;
+            object_to_move.Visibility = Visibility.Hidden;
            
         }
 
@@ -118,9 +123,24 @@ namespace WpfApplication1
         {
             myclient.Disconnect();
             MessageBox.Show("Disconnectd!");
+            stopsystem();
         }
 
-        
+        private void StartAnimation()
+        {
+            path139798.Freeze();
+            path139750.Freeze();
+            DoubleAnimationUsingPath daPath = new DoubleAnimationUsingPath();
+            daPath.Duration = TimeSpan.FromSeconds(5);
+            daPath.RepeatBehavior = RepeatBehavior.Forever;
+            daPath.AccelerationRatio = 0.6;
+            daPath.DecelerationRatio = 0.4;
+            daPath.AutoReverse = false;
+            daPath.PathGeometry = path139798;
+            daPath.PathGeometry = path139750;
+            daPath.Source = PathAnimationSource.X;
+            object_to_move.BeginAnimation(Canvas.LeftProperty, daPath);
+        }
         
     }
 }
