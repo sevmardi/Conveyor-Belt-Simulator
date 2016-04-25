@@ -10,4 +10,3 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplica
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication1\obj\Debug\WpfApplication1.csproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication1\obj\Debug\WpfApplication1.exe
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication1\obj\Debug\WpfApplication1.pdb
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication1\obj\Debug\WpfApplication1.csprojResolveAssemblyReference.cache
