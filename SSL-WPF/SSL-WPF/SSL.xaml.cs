@@ -28,7 +28,7 @@ namespace SSL_WPF
         private DropShadowEffect glow;
         protected TerminalID[] _termsid;
         private bool _sel;
-        protected AbstractComponents _gate;
+        protected Components.AbstractComponents _gate;
 
 
         /// <summary>
@@ -164,18 +164,18 @@ namespace SSL_WPF
             return null;
         }
 
-        //private void _gate_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        //{
-        //    foreach (TerminalID tid in _termsid)
-        //    {
-        //        if (ShowTrueFalse)
-        //            tid.t.Value = tid.isInput ? _gate[tid.ID] : _gate.Output[tid.ID];
-        //        else
-        //            tid.t.Value = false;
-        //    }
+        private void _gate_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            //foreach (TerminalID tid in _termsid)
+            //{
+            //    if (ShowTrueFalse)
+            //        tid.t.Value = tid.isInput ? _gate[tid.ID] : _gate.Output[tid.ID];
+            //    else
+            //        tid.t.Value = false;
+            //}
 
-        //    ToolTip = _gate.Name;
-        //}
+            //ToolTip = _gate.Name;
+        }
 
 
         public SSL(AbstractComponents gate, TerminalID[] termsid)

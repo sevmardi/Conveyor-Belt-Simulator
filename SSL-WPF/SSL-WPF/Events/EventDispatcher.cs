@@ -12,8 +12,9 @@ namespace SSL_WPF.Events
     class EventDispatcher
     {
         public static Dispatcher BatchDispatcher { get; set; }
-      
-        protected Thread bw;
+        protected static Dictionary<KeyValuePair<Components.AbstractComponents, PropertyChangedEventHandler>, Action> BatchNotifications = new Dictionary<KeyValuePair<Components.AbstractComponents, PropertyChangedEventHandler>, Action>();
+
+        protected static Thread  bw;
            
          protected static void bw_DoWork()
          {
@@ -25,7 +26,7 @@ namespace SSL_WPF.Events
                      List<Action> toBeDispatched = new List<Action>();
                      lock (BatchNotifications)
                      {
-                         toBeDispatched.AddRange(BatchNotifications.values);
+                         toBeDispatched.AddRange(BatchNotifications.Values);
 
                          BatchNotifications.Clear();
                      }
@@ -43,6 +44,26 @@ namespace SSL_WPF.Events
                  System.Threading.Thread.Sleep(100);
 
              }
+         }
+
+
+         public static PropertyChangedEventHandler CreateBatchDispatchedHandler(Components.AbstractComponents g, PropertyChangedEventHandler handler)
+         {
+             if (bw == null)
+             {
+                 bw = new Thread(bw_DoWork);
+                 bw.IsBackground = true;
+                 bw.Priority = ThreadPriority.BelowNormal;
+                 bw.Start();
+             }
+             return new PropertyChangedEventHandler((sender, e) =>
+             {
+                 lock (BatchNotifications)
+                 {
+                     BatchNotifications[new KeyValuePair<Components.AbstractComponents, PropertyChangedEventHandler>(g, handler)] = new Action(() => { handler(sender, e); });
+
+                 }
+             });
          }
 
        

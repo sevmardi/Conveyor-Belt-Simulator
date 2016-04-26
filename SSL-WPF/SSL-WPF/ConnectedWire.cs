@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using SSL_WPF.Events;
 
 
 
@@ -48,7 +49,7 @@ namespace SSL_WPF
                 return destSSL;
             }
         }
-        public ConnectedWire(Components.AbstractComponents originGate, SSL.TerminalID origin, Components.AbstractComponents destGate, SSL.TerminalID dest)
+        public ConnectedWire(Components.AbstractComponents originSSL, SSL.TerminalID origin, Components.AbstractComponents destSSL, SSL.TerminalID dest)
             : base()
         {
 
@@ -58,12 +59,12 @@ namespace SSL_WPF
             }
 
             Value = false;
-            this.originGate = originGate;
-            this.destGate = destGate;
+            this.originSSL = originSSL;
+            this.destSSL = destSSL;
             this.origin = origin;
             this.dest = dest;
             //originGate.PropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(originGate_PropertyChanged);
-            originGate.PropertyChanged += EventDispatcher.CreateBatchDispatchedHandler(originGate, originGate_PropertyChanged);
+            originSSL.PropertyChanged += EventDispatcher.CreateBatchDispatchedHandler(originSSL, originGate_PropertyChanged);
             Connect();
 
 
@@ -71,7 +72,7 @@ namespace SSL_WPF
 
         private void originGate_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            Value = ShowTrueFalse && originGate.Output[origin.ID];
+            Value = ShowTrueFalse && originSSL.Output[origin.ID];
         }
 
         public void Connect()
