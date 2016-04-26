@@ -9,9 +9,18 @@ namespace Components
     public abstract class AbstractComponents : INotifyPropertyChanged
     {
         private bool[] outp;
+        private bool[] inp;
 
+        #region INotifyPropertyChanged Members
+
+        protected void NotifyPropertyChanged(string property)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(property));
+        }
         public event PropertyChangedEventHandler PropertyChanged;
 
+        #endregion
         /// <summary>
         /// Retrieve an output value.
         /// </summary>

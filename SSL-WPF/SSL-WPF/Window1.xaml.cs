@@ -149,7 +149,6 @@ namespace SSL_WPF
         {
             if (!((UndoRedo.UndoManager)Resources["undoManager"]).isASavePoint)
             {
-
                 SaveClose sc = new SaveClose(String.IsNullOrEmpty(_filename) ? "[Untitled]" : _filename);
                 sc.ShowDialog();
                 switch (sc.Selected)
@@ -167,6 +166,7 @@ namespace SSL_WPF
 
             return true;
         }
+
         private void InfoLine_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             if (String.IsNullOrEmpty(InfoLine.GetInstance().CurrentInfoLine) || !this.IsActive)

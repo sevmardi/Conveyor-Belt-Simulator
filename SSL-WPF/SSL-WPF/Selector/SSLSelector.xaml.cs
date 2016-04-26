@@ -11,8 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SSL_WPF.Info;
 
-namespace SSL_WPF
+namespace SSL_WPF.Selector
 {
     /// <summary>
     /// Interaction logic for SSLSelector.xaml
@@ -56,15 +57,16 @@ namespace SSL_WPF
         //    }
         //}
 
-            
-        //private void SetInfoLine()
+
+        //private void SetInfoLine(string c)
         //{
         //    string inf = "Left-drag to place";
 
-        //    if(! _ro)
+        //    if (!_ro)
         //        inf += ", double-click to edit, type to rename";
-        //    InfoLine.SetInfo(inf);
+        //    InfoLine.SetInfo(c, inf);
         //}
+
 
 
 
