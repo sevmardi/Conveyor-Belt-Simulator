@@ -23,6 +23,7 @@ namespace LaneTop
         public MainWindow()
         {
             InitializeComponent();
+
         }
     }
 }
