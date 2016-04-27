@@ -103,16 +103,6 @@
                     <PathGeometry Figures="m 225.33374 520.00585 -46.2941 0 -78.25138 87.53909 126.75378 0 0 -87.5675 -2.2083 0.0284 z" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path2106444" Fill="{StaticResource linearGradient7412-5}" StrokeThickness="1.89388382" Stroke="#FF00A508" StrokeMiterLimit="10" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Canvas.Left="-199.5" Canvas.Top="-181.5">
-                <Path.Data>
-                    <PathGeometry Figures="m 423.62412 616.00132 0 4.7347" FillRule="NonZero"/>
-                </Path.Data>
-            </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path2106566" Fill="{StaticResource linearGradient7412-5}" StrokeThickness="1.89388382" Stroke="#FF00A508" StrokeMiterLimit="10" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Canvas.Left="-199.5" Canvas.Top="-181.5">
-                <Path.Data>
-                    <PathGeometry Figures="m 344.63932 616.00132 0 4.7347" FillRule="NonZero"/>
-                </Path.Data>
-            </Path>
             <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path2106663" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
                     <PathGeometry Figures="m 229.66344 607.62447 69.24028 0 0 -87.72278 -69.24028 0 0 87.72278 z" FillRule="nonzero"/>
@@ -134,9 +124,7 @@
                 </Path.Data>
             </Path>
         </Canvas>
-        <Path Stroke="DarkGoldenRod" StrokeThickness="3" 
-Data="M 10,200 C 200,25 400,350 400,175 H 280" Canvas.Left="-168" Canvas.Top="338" />
-        <Rectangle Height="53" Canvas.Left="-195" Canvas.Top="549" Width="60" Stroke="Beige">
+        <Rectangle Height="53" Canvas.Left="-323" Canvas.Top="451" Width="60" Stroke="Beige">
             <Rectangle.Fill>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlDarkDarkColorKey}}"/>
             </Rectangle.Fill>
