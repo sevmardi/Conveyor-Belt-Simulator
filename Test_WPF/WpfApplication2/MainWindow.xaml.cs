@@ -17,28 +17,32 @@ namespace WpfApplication2
         {
             InitializeComponent();
 
-            path2.Freeze(); // For performance benefits. 
-            DoubleAnimationUsingPath daPath = new DoubleAnimationUsingPath();
-            daPath.Duration = TimeSpan.FromSeconds(5);
-            daPath.RepeatBehavior = RepeatBehavior.Forever;
-            daPath.AccelerationRatio = 0.6;
-            daPath.DecelerationRatio = 0.4;
-            daPath.AutoReverse = true;
-            daPath.PathGeometry = path2;
-            daPath.Source = PathAnimationSource.X;
-            circle2.BeginAnimation(Canvas.LeftProperty, daPath);
+            //path2.Freeze(); // For performance benefits. 
+            //DoubleAnimationUsingPath daPath = new DoubleAnimationUsingPath();
+            //daPath.Duration = TimeSpan.FromSeconds(5);
+            //daPath.RepeatBehavior = RepeatBehavior.Forever;
+            //daPath.AccelerationRatio = 0.6;
+            //daPath.DecelerationRatio = 0.4;
+            //daPath.AutoReverse = true;
+            //daPath.PathGeometry = path2;
+            //daPath.Source = PathAnimationSource.X;
+            //circle2.BeginAnimation(Canvas.LeftProperty, daPath);
 
-            daPath = new DoubleAnimationUsingPath();
-            daPath.Duration = TimeSpan.FromSeconds(5);
-            daPath.RepeatBehavior = RepeatBehavior.Forever;
-            daPath.AccelerationRatio = 0.6;
-            daPath.DecelerationRatio = 0.4;
-            daPath.AutoReverse = true;
-            daPath.PathGeometry = path2;
-            daPath.Source = PathAnimationSource.Y;
-            circle2.BeginAnimation(Canvas.TopProperty, daPath);
+            //daPath = new DoubleAnimationUsingPath();
+            //daPath.Duration = TimeSpan.FromSeconds(5);
+            //daPath.RepeatBehavior = RepeatBehavior.Forever;
+            //daPath.AccelerationRatio = 0.6;
+            //daPath.DecelerationRatio = 0.4;
+            //daPath.AutoReverse = true;
+            //daPath.PathGeometry = path2;
+            //daPath.Source = PathAnimationSource.Y;
+            //circle2.BeginAnimation(Canvas.TopProperty, daPath);
+
+
+            var sub = FindResource("Weeeee") as Storyboard;
 
            
+
         }
     }
 }

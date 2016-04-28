@@ -1,0 +1,13 @@
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication3\bin\Debug\WpfApplication3.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication3\bin\Debug\WpfApplication3.exe
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication3\bin\Debug\WpfApplication3.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication3\obj\Debug\MainWindow.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication3\obj\Debug\MainWindow.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication3\obj\Debug\App.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication3\obj\Debug\WpfApplication3_MarkupCompile.cache
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication3\obj\Debug\WpfApplication3.g.resources
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication3\obj\Debug\WpfApplication3.Properties.Resources.resources
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication3\obj\Debug\WpfApplication3.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication3\obj\Debug\WpfApplication3.exe
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication3\obj\Debug\WpfApplication3.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication3\obj\Debug\WpfApplication3.csprojResolveAssemblyReference.cache

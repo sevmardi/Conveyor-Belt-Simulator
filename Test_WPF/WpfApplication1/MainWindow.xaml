@@ -192,7 +192,7 @@
                 </Path.Data>
             </Path>
             <Rectangle Name="object_to_move" Fill="LightBlue" Height="27" Canvas.Left="-67" Stroke="Black" Canvas.Top="411" Width="62"/>
-            <Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="-28" Canvas.Top="481" Width="6" x:Name="_0102_D1"/>
+            <Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="-41" Canvas.Top="506" Width="6" x:Name="_0102_D1"/>
             <Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="-6" Canvas.Top="513" Width="6" x:Name="_0103_D1"/>
             <Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="24" Canvas.Top="538" Width="6" x:Name="_0104_D1"/>
             <Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="76" Canvas.Top="542" Width="6" x:Name="_0105_D1"/>

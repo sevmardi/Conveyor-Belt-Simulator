@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaneTop", "LaneTop\LaneTop.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication2", "WpfApplication2\WpfApplication2.csproj", "{1B4CA6DB-AF66-4698-89AA-87D621714A5B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication3", "WpfApplication3\WpfApplication3.csproj", "{5A10F587-9B58-4601-8DF2-CCE14D612DF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,16 @@ Global
 		{1B4CA6DB-AF66-4698-89AA-87D621714A5B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1B4CA6DB-AF66-4698-89AA-87D621714A5B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1B4CA6DB-AF66-4698-89AA-87D621714A5B}.Release|x86.ActiveCfg = Release|Any CPU
+		{5A10F587-9B58-4601-8DF2-CCE14D612DF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A10F587-9B58-4601-8DF2-CCE14D612DF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A10F587-9B58-4601-8DF2-CCE14D612DF9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5A10F587-9B58-4601-8DF2-CCE14D612DF9}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5A10F587-9B58-4601-8DF2-CCE14D612DF9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5A10F587-9B58-4601-8DF2-CCE14D612DF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A10F587-9B58-4601-8DF2-CCE14D612DF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A10F587-9B58-4601-8DF2-CCE14D612DF9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5A10F587-9B58-4601-8DF2-CCE14D612DF9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5A10F587-9B58-4601-8DF2-CCE14D612DF9}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
