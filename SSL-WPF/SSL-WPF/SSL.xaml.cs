@@ -21,7 +21,9 @@ using Components;
 namespace SSL_WPF
 {
     /// <summary>
-    /// Interaction logic for SSL.xaml
+    /// A graphical wrapper around a single gate.  Allows for the gates inputs and outputs
+    /// (terminals) to be represented graphically on any of the four sides.
+    /// Provides resizing and selection capabilities.
     /// </summary>
     public partial class SSL : UserControl, IEnumerable<SSL.TerminalID>
     {
@@ -166,15 +168,15 @@ namespace SSL_WPF
 
         private void _gate_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            //foreach (TerminalID tid in _termsid)
-            //{
-            //    if (ShowTrueFalse)
-            //        tid.t.Value = tid.isInput ? _gate[tid.ID] : _gate.Output[tid.ID];
-            //    else
-            //        tid.t.Value = false;
-            //}
+            foreach (TerminalID tid in _termsid)
+            {
+                if (ShowTrueFalse)
+                    tid.t.Value = tid.isInput ? _gate[tid.ID] : _gate.Output[tid.ID];
+                else
+                    tid.t.Value = false;
+            }
 
-            //ToolTip = _gate.Name;
+            ToolTip = _gate.Name;
         }
 
 

@@ -74,6 +74,7 @@
       <DependentUpon>SSLDragDropAdorner.xaml</DependentUpon>
     </Compile>
     <Compile Include="Events\EventDispatcher.cs" />
+    <Compile Include="SensorsList.cs" />
     <Compile Include="Utility\Fader.cs" />
     <Compile Include="Info\InfoLine.cs" />
     <Compile Include="SSLLayout\SSLLeftLayout.xaml.cs">
@@ -234,9 +235,7 @@
     <Resource Include="Images\wire_color.png" />
     <Resource Include="Images\ZoomHS.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UISSL\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Components\Components.csproj">
       <Project>{04524B1D-A27E-46BD-A034-A983F696D293}</Project>

@@ -192,14 +192,7 @@
                 </Path.Data>
             </Path>
             <Rectangle Name="object_to_move" Fill="LightBlue" Height="27" Canvas.Left="-67" Stroke="Black" Canvas.Top="411" Width="62"/>
-            <Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="-41" Canvas.Top="506" Width="6" x:Name="_0102_D1"/>
-            <Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="-6" Canvas.Top="513" Width="6" x:Name="_0103_D1"/>
-            <Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="24" Canvas.Top="538" Width="6" x:Name="_0104_D1"/>
-            <Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="76" Canvas.Top="542" Width="6" x:Name="_0105_D1"/>
-            <Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="123" Canvas.Top="519" Width="6" x:Name="_0301_D1"/>
-            <Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="145" Canvas.Top="493" Width="6" x:Name="_0302_D1"/>
-            <Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="177" Canvas.Top="493" Width="6" x:Name="_0303_D1"/>
-            <Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="267" Canvas.Top="493" Width="6" x:Name="_0304_D1"/>
+           
         </Canvas>
         <Button Content="Start System"  Canvas.Left="342" Canvas.Top="86" Width="75" Click="btnStartSystem_Click"/>
         <Button Content="Reset"  Canvas.Left="447" Canvas.Top="86" Width="75" Click="btnRest_Click" />
@@ -219,6 +212,7 @@
         <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="84" Canvas.Top="386" Width="6" x:Name="_0304_S2"/>
         <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="113" Canvas.Top="386" Width="6" x:Name="_0304_S3"/>
         <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="160" Canvas.Top="386" Width="6" x:Name="_0701_S1"/>
+        
         <Button Content="Connect to PLC"  Canvas.Left="464" Canvas.Top="27" Width="140" Click="btnConnectToPLC_Click" Height="37"/>
         <Button Content="Disconnect"  Canvas.Left="655" Canvas.Top="27" Width="140" Click="btnDisconnect_Click" Height="37"/>
     </Canvas>

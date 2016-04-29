@@ -5,17 +5,36 @@
         Title="MainWindow" Height="690" Width="1544">
 	<Window.Resources>
 		<Storyboard x:Key="Storyboard1">
-			<DoubleAnimationUsingPath Duration="0:0:10" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="rectangle">
+			
+            <!-- path 1--> 
+            <DoubleAnimationUsingPath 
+                Duration="0:0:2" 
+                Source="X" 
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)"
+                Storyboard.TargetName="object_to_move">
 				<DoubleAnimationUsingPath.PathGeometry>
-					<PathGeometry Figures="M5.5849898,-54.66085 L20.196981,-124.4264 L69.31316,-154.65093 L153.69204,-157.16939 L202.80755,-138.27926 L245.62588,-103.01676 L318.67032,-89.163642 L389.19615,-91.682391 L419.42104,-94.201141 L479.87117,-94.201141 L537.80281,-87.904267 L590.69637,-89.163642 L671.2962,-89.163642 L721.67126,-90.423017 L754.41522,-86.644892 L755.67459,-140.79801 L801.01262,-173.54175 L884.13171,-194.9516 L969.76968,-199.98901 L1018.8855,-188.65496 L1108.3013,-198.73001 L1186.3826,-182.35806 L1248.0926,-179.83929 L1298.4677,-143.31723 L1331.2118,-96.720115 L1345.065,-58.93867 L1341.2871,-50.123"/>
+					<PathGeometry Figures="M-1.75,-21 L6.75,-53.25 L29.75,-91.25 L49.75,-114.75 L56.75,-119.75"/>
 				</DoubleAnimationUsingPath.PathGeometry>
 			</DoubleAnimationUsingPath>
-			<DoubleAnimationUsingPath Duration="0:0:10" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="rectangle">
+			
+            <DoubleAnimationUsingPath
+                Duration="0:0:2" 
+                Source="Y" 
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" 
+                Storyboard.TargetName="object_to_move">
 				<DoubleAnimationUsingPath.PathGeometry>
-					<PathGeometry Figures="M5.5849898,-54.66085 L20.196981,-124.4264 L69.31316,-154.65093 L153.69204,-157.16939 L202.80755,-138.27926 L245.62588,-103.01676 L318.67032,-89.163642 L389.19615,-91.682391 L419.42104,-94.201141 L479.87117,-94.201141 L537.80281,-87.904267 L590.69637,-89.163642 L671.2962,-89.163642 L721.67126,-90.423017 L754.41522,-86.644892 L755.67459,-140.79801 L801.01262,-173.54175 L884.13171,-194.9516 L969.76968,-199.98901 L1018.8855,-188.65496 L1108.3013,-198.73001 L1186.3826,-182.35806 L1248.0926,-179.83929 L1298.4677,-143.31723 L1331.2118,-96.720115 L1345.065,-58.93867 L1341.2871,-50.123"/>
+					<PathGeometry Figures="M-1.75,-21 L6.75,-53.25 L29.75,-91.25 L49.75,-114.75 L56.75,-119.75"/>
 				</DoubleAnimationUsingPath.PathGeometry>
 			</DoubleAnimationUsingPath>
+
+ 
+            <!-- transfering the cube-->
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="object_to_move">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="-29.525"/>
+			</DoubleAnimationUsingKeyFrames>
 		</Storyboard>
+	
+
 	</Window.Resources>
 	<Window.Triggers>
 		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
@@ -41,7 +60,7 @@
 		</Canvas.RenderTransform>
 		<!--Unknown tag: sodipodi:namedview-->
 		<!--Unknown tag: metadata-->
-		<Canvas x:Name="layer1">
+		<Canvas x:Name="Lane" d:IsLocked="True">
 			<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1396666" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
 				<Path.Data>
 					<PathGeometry Figures="m 60.28756 552.08218 45.1466 -97.56912 c 29.0294 14.34618 53.51348 36.49707 70.68158 63.73488 l 0.231 0.39961 c 0 0 -66.47528 74.36714 -78.93698 88.30989 0 0 -3.4166 -35.77924 -37.1222 -54.87526" FillRule="nonzero"/>
@@ -54,7 +73,7 @@
 			</Path>
 			<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1396740" Canvas.Left="-199.5" Canvas.Top="-181.5">
 				<Path.Fill>
-					<SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
+					<SolidColorBrush Color="#FFC7C9C2"/>
 				</Path.Fill>
 				<Path.Data>
 					<PathGeometry Figures="m -110.14954 504.29078 c -22.2057 28.62982 -35.7244 64.33522 -36.5709 103.16931 l 101.177 0 6.3597 0.0303 c 0.7972 -14.38028 6.1154 -27.54843 14.5393 -38.13145 l 1.8181 -2.18743 c 3.6892 -4.25556 7.8994 -8.04522 12.5394 -11.26675 l -54.6612 -92.61468 c -16.4825 10.37848 -31.1089 23.43302 -43.2734 38.55378 l -1.928 2.4469 z" FillRule="nonzero"/>
@@ -143,37 +162,121 @@
 					<PathGeometry Figures="m 1201.3943 454.91191 c 24.7209 14.50525 45.6521 34.77172 60.9452 58.96039 l -69.9582 47.849 c -8.2176 -13.46555 -19.8138 -24.63754 -33.6089 -32.34945 l 42.6219 -74.45994 z" FillRule="nonzero"/>
 				</Path.Data>
 			</Path>
-
-			<Rectangle x:Name="rectangle" Height="53" Canvas.Left="-323" Canvas.Top="451" Width="60" Stroke="Beige" RenderTransformOrigin="0.5,0.5">
-				<Rectangle.RenderTransform>
-					<TransformGroup>
-						<ScaleTransform/>
-						<SkewTransform/>
-						<RotateTransform/>
-						<TranslateTransform/>
-					</TransformGroup>
-				</Rectangle.RenderTransform>
-				<Rectangle.Fill>
-					<SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlDarkDarkColorKey}}"/>
-				</Rectangle.Fill>
-			</Rectangle>
 		</Canvas>
-		<Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="-239" Canvas.Top="419" Width="6" x:Name="_0102_D1"/>
-		<Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="-228" Canvas.Top="394" Width="6" x:Name="_0103_D1"/>
-		<Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="-209" Canvas.Top="377" Width="6" x:Name="_0104_D1"/>
-		<Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="-179" Canvas.Top="368" Width="6" x:Name="_0105_D1"/>
-		<Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="-144" Canvas.Top="377" Width="6" x:Name="_0301_D1"/>
-		<Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="-125" Canvas.Top="394" Width="6" x:Name="_0302_D1"/>
-		<Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="-115" Canvas.Top="419" Width="6" x:Name="_0303_D1"/>
-		<Ellipse Fill="#FFD1C9C9" Height="6" Canvas.Left="-91" Canvas.Top="430" Width="6" x:Name="_0304_D1"/>
-		<Path Data="M-287.91517,422.33931 L-273.30277,352.57373 -224.18522,322.34919 -139.80398,319.83073 -90.687097,338.72087 -47.867568,373.98338 25.17891,387.83651 95.706711,385.31776 125.93245,382.79901 186.38427,382.79901 244.31753,389.09589 297.21257,387.83651 377.81466,387.83651 428.19112,386.57713 460.936,390.35526 462.19541,336.20212 507.5347,303.45837 590.65612,282.04851 676.29648,277.0111 725.41367,288.34515 814.83195,278.27009 892.91546,294.64206 954.62716,297.16082 1005.0037,333.6829&#xD;&#xA;1037.7487,380.28003 1051.6023,418.06149 1047.8243,426.87717" Height="150.866" Canvas.Left="-287.915" Stretch="Fill" Stroke="Black" Canvas.Top="277.011" Width="1340.48" d:IsHidden="True" d:IsLocked="True"/>
-		<Path Data="M-297.75,425.5 L-289.25,393.25 -266.25,355.25 -246.25,331.75 -239.25,326.75" Height="99.75" Canvas.Left="-297.75" Stretch="Fill" Stroke="Black" Canvas.Top="326.75" Width="59.5" d:IsLocked="True"/>
-		<Path Data="M-234,324.25 L-236,325.25 -238,326.5 -229.5,322 -220.25,318 -188.33333,308.5 -161.66717,307.33333 -142.00022,308.66699 -131.83357,310.50029 -123.66728,311.8336 -117.33363,313.6669" Height="20.167" Canvas.Left="-238" Stretch="Fill" Stroke="Black" Canvas.Top="307.333" Width="121.667" d:IsLocked="True"/>
-		<Path Data="M-113.33333,316.33333 L-107.00034,321.83368 -97.500335,329.16779 -86.167002,340.3345 -78.166568,348.66857 -71.99943,355.50184 -66.665977,363.50213 -61.165484,372.50248 -59.831771,375.00257" Height="59.667" Canvas.Left="-113.333" Stretch="Fill" Stroke="Black" Canvas.Top="316.333" Width="54.5" d:IsLocked="True"/>
-		<Path Data="M-56.25,379.25 L-49.375,379.875 -37.625,381.125 -25.875,381.625 -15.375,382.75 -3.875,383.625 6.25,383.5 13.5,384 18.75,384.125 22.625,384 27,384" Height="5.875" Canvas.Left="-56.25" Stretch="Fill" Stroke="Black" Canvas.Top="379.25" Width="84.25" d:IsLocked="True"/>
-		<Path Data="M30.875,384.375 L40.625,384.375 49.75,384.375 60.25,384.125 71.75,384.125 79.5,384.125 90.125,384.125 98.75,384.125" Height="1.25" Canvas.Left="30.875" Stretch="Fill" Stroke="Black" Canvas.Top="384.125" Width="68.875" d:IsLocked="True"/>
-		<Path Data="M102,384.5 L125.83333,384.5 142.66724,384.5 157.83366,384.5 178.83425,384.5 200.66826,384.5 218.33482,384.5 236.50211,384.5 251.66901,384.5 260.83546,384.5 268.50257,384.5" Height="1" Canvas.Left="102" Stretch="Fill" Stroke="Black" Canvas.Top="384.5" Width="167.5" d:IsLocked="True"/>
-		<Path Data="M270.75,384.8125 L286.75,384.8125 298.25,384.8125 309.375,384.8125 315,384.8125" Height="1" Canvas.Left="270.75" Stretch="Fill" Stroke="Black" Canvas.Top="384.812" Width="45.25" d:IsLocked="True"/>
+        
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-238.25" Canvas.Top="420.5" Width="6" x:Name="_0102_S1"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-226.667" Canvas.Top="389.5" Width="6" x:Name="_0102_S2"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-206.5" Canvas.Top="370" Width="6" x:Name="_0103_S1"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-190" Canvas.Top="363" Width="6" x:Name="_0104_S1"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-164.333" Canvas.Top="363" Width="6" x:Name="_0105_S1"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-143.333" Canvas.Top="370" Width="6" x:Name="_0105_S2"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-130.333" Canvas.Top="378.25" Width="6" x:Name="_0301_S1"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-116.666" Canvas.Top="395.167" Width="6" x:Name="_0301_S2"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-108.333" Canvas.Top="416.333" Width="6" x:Name="_0302_S1"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Top="427.877" Width="6" x:Name="_0303_S1" Canvas.Left="-49"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-16" Canvas.Top="427.877" Width="6" x:Name="_0304_S1"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="10" Canvas.Top="427.877" Width="6" x:Name="_0304_S2"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="39" Canvas.Top="427.877" Width="6" x:Name="_0304_S3"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="122.75" Canvas.Top="427.877" Width="6" x:Name="_0701_S1" RenderTransformOrigin="0.5,0.5">
+        	<Ellipse.RenderTransform>
+        		<TransformGroup>
+        			<ScaleTransform/>
+        			<SkewTransform/>
+        			<RotateTransform/>
+        			<TranslateTransform/>
+        		</TransformGroup>
+        	</Ellipse.RenderTransform>
+        </Ellipse>
+
+
+        <Ellipse Fill="#FFD61212" Height="6" Canvas.Left="-291" Canvas.Top="389.5" Width="6" x:Name="_0102_D1" RenderTransformOrigin="0.5,0.5">
+        	<Ellipse.RenderTransform>
+        		<TransformGroup>
+        			<ScaleTransform/>
+        			<SkewTransform/>
+        			<RotateTransform/>
+        			<TranslateTransform/>
+        		</TransformGroup>
+        	</Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse Fill="#FFD61212" Height="6" Canvas.Left="-267.167" Canvas.Top="350" Width="6" x:Name="_0103_D1" RenderTransformOrigin="0.5,0.5">
+        	<Ellipse.RenderTransform>
+        		<TransformGroup>
+        			<ScaleTransform/>
+        			<SkewTransform/>
+        			<RotateTransform/>
+        			<TranslateTransform/>
+        		</TransformGroup>
+        	</Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse Fill="#FFD61010" Height="6" Canvas.Left="-233.208" Canvas.Top="319.583" Width="6" x:Name="_0104_D1" RenderTransformOrigin="0.5,0.5">
+        	<Ellipse.RenderTransform>
+        		<TransformGroup>
+        			<ScaleTransform/>
+        			<SkewTransform/>
+        			<RotateTransform/>
+        			<TranslateTransform/>
+        		</TransformGroup>
+        	</Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse Fill="#FFD61010" Height="6" Canvas.Left="-190" Canvas.Top="304.75" Width="6" x:Name="_0105_D1" RenderTransformOrigin="0.5,0.5">
+        	<Ellipse.RenderTransform>
+        		<TransformGroup>
+        			<ScaleTransform/>
+        			<SkewTransform/>
+        			<RotateTransform/>
+        			<TranslateTransform/>
+        		</TransformGroup>
+        	</Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse Fill="#FFD60E0E" Height="6" Canvas.Left="-113.333" Canvas.Top="316.333" Width="6" x:Name="_0301_D1" RenderTransformOrigin="0.5,0.5">
+        	<Ellipse.RenderTransform>
+        		<TransformGroup>
+        			<ScaleTransform/>
+        			<SkewTransform/>
+        			<RotateTransform/>
+        			<TranslateTransform/>
+        		</TransformGroup>
+        	</Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse Fill="#FFD60E0E" Height="6" Canvas.Left="-71" Canvas.Top="358.75" Width="6" x:Name="_0302_D1" RenderTransformOrigin="0.5,0.5">
+        	<Ellipse.RenderTransform>
+        		<TransformGroup>
+        			<ScaleTransform/>
+        			<SkewTransform/>
+        			<RotateTransform/>
+        			<TranslateTransform/>
+        		</TransformGroup>
+        	</Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse Fill="#FFD61111" Height="6" Canvas.Left="-27.5" Canvas.Top="379.5" Width="6" x:Name="_0303_D1" RenderTransformOrigin="0.5,0.5">
+        	<Ellipse.RenderTransform>
+        		<TransformGroup>
+        			<ScaleTransform/>
+        			<SkewTransform/>
+        			<RotateTransform/>
+        			<TranslateTransform/>
+        		</TransformGroup>
+        	</Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse Fill="#FFD61111" Height="6" Canvas.Left="91" Canvas.Top="380.5" Width="6" x:Name="_0304_D1" RenderTransformOrigin="0.5,0.5">
+        	<Ellipse.RenderTransform>
+        		<TransformGroup>
+        			<ScaleTransform/>
+        			<SkewTransform/>
+        			<RotateTransform/>
+        			<TranslateTransform/>
+        		</TransformGroup>
+        	</Ellipse.RenderTransform>
+        </Ellipse>
+   
+		<Path Data="M-297.75,425.5 L-289.25,393.25 -266.25,355.25 -246.25,331.75 -239.25,326.75" Height="99.75" Canvas.Left="-297.75" Stretch="Fill" Stroke="Black" Canvas.Top="326.75" Width="59.5"/>
+		<Path Data="M-234,324.25 L-236,325.25 -238,326.5 -229.5,322 -220.25,318 -188.33333,308.5 -161.66717,307.33333 -142.00022,308.66699 -131.83357,310.50029 -123.66728,311.8336 -117.33363,313.6669" Height="20.167" Canvas.Left="-238" Stretch="Fill" Stroke="Black" Canvas.Top="307.333" Width="121.667"/>
+		<Path Data="M-113.33333,316.33333 L-107.00034,321.83368 -97.500335,329.16779 -86.167002,340.3345 -78.166568,348.66857 -71.99943,355.50184 -66.665977,363.50213 -61.165484,372.50248 -59.831771,375.00257" Height="59.667" Canvas.Left="-113.333" Stretch="Fill" Stroke="Black" Canvas.Top="316.333" Width="54.5"/>
+		<Path Data="M-56.25,379.25 L-49.375,379.875 -37.625,381.125 -25.875,381.625 -15.375,382.75 -3.875,383.625 6.25,383.5 13.5,384 18.75,384.125 22.625,384 27,384" Height="5.875" Canvas.Left="-56.25" Stretch="Fill" Stroke="Black" Canvas.Top="379.25" Width="84.25"/>
+		<Path Data="M30.875,384.375 L40.625,384.375 49.75,384.375 60.25,384.125 71.75,384.125 79.5,384.125 90.125,384.125 98.75,384.125" Height="1.25" Canvas.Left="30.875" Stretch="Fill" Stroke="Black" Canvas.Top="384.125" Width="68.875"/>
+		<Path Data="M102,384.5 L125.83333,384.5 142.66724,384.5 157.83366,384.5 178.83425,384.5 200.66826,384.5 218.33482,384.5 236.50211,384.5 251.66901,384.5 260.83546,384.5 268.50257,384.5" Height="1" Canvas.Left="102" Stretch="Fill" Stroke="Black" Canvas.Top="384.5" Width="167.5"/>
+		<Path Data="M270.75,384.8125 L286.75,384.8125 298.25,384.8125 309.375,384.8125 315,384.8125" Height="1" Canvas.Left="270.75" Stretch="Fill" Stroke="Black" Canvas.Top="384.812" Width="45.25"/>
 		<Path Data="M318.0625,384.6875 L330.313,384.6875 342.93899,384.6875 354.87771,384.6875 366.2534,384.6875" Height="1" Canvas.Left="318.062" Stretch="Fill" Stroke="Black" Canvas.Top="384.688" Width="49.188"/>
 		<Path Data="M369,385.0625 L383.25,385.0625 398.3125,385.0625 409.12568,385.0625 417.68831,385.0625 421.81394,385.0625" Height="1" Canvas.Left="369" Stretch="Fill" Stroke="Black" Canvas.Top="385.062" Width="53.813"/>
 		<Path Data="M424.33333,385.41667 L446.66701,385.41667 465.83308,385.41667 486.1666,385.41667 506.24935,385.41667 510.74931,385.41667" Height="1" Canvas.Left="424.333" Stretch="Fill" Stroke="Black" Canvas.Top="385.417" Width="87.417"/>
@@ -187,7 +290,22 @@
 		<Path Data="M513.875,384.875 L618.16667,385.5 708.49942,385.5 750.83259,385.5 787.49952,385.5 813.8328,385.5 822.49982,385.5" Height="1.625" Canvas.Left="513.875" Stretch="Fill" Stroke="Black" Canvas.Top="384.875" Width="309.625"/>
 		<Path Data="M826,380.33333 L835.16667,359.50034 838.66623,348.50033 841.16578,338.33367" Height="43" Canvas.Left="826" Stretch="Fill" Stroke="Black" Canvas.Top="338.333" Width="16.167"/>
 		<Path Data="M841.83333,334.33333 L857.83365,311.16701 880.00104,298.33318 895.33466,292.16683 910.33537,288.83313" Height="46.5" Canvas.Left="841.833" Stretch="Fill" Stroke="Black" Canvas.Top="288.833" Width="69.5"/>
-    
+        <Rectangle x:Name="object_to_move" Height="31" Canvas.Left="-316.5" Stroke="Black" Canvas.Top="431.5" Width="42" Fill="#FFDA6C11" RenderTransformOrigin="0.5,0.5">
+			<Rectangle.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform/>
+					<SkewTransform/>
+					<RotateTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</Rectangle.RenderTransform>
+		</Rectangle>
+        <Button Content="Start System"  Canvas.Left="342" Canvas.Top="86" Width="75" Click="btnStartSystem_Click"/>
+        <Button Content="Reset"  Canvas.Left="447" Canvas.Top="86" Width="75" Click="btnRest_Click" />
+        <Button Content="Stop System"  Canvas.Left="554" Canvas.Top="86" Width="74" Click="btnStopSystem_Click" />
+        <Button Content="Connect to PLC"  Canvas.Left="464" Canvas.Top="27" Width="140" Click="btnConnectToPLC_Click" Height="37"/>
+        <Button Content="Disconnect"  Canvas.Left="655" Canvas.Top="27" Width="140" Click="btnDisconnect_Click" Height="37"/>
 
-	</Canvas>
+
+    </Canvas>
 </Window>

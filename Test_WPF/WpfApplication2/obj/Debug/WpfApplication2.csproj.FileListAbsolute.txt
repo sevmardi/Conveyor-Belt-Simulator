@@ -22,3 +22,4 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplica
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication2\obj\Debug\WpfApplication2.csproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication2\obj\Debug\WpfApplication2.exe
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication2\obj\Debug\WpfApplication2.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\Test_WPF\WpfApplication2\obj\Debug\WpfApplication2.csprojResolveAssemblyReference.cache

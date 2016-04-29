@@ -343,7 +343,7 @@ namespace SSL_WPF.DragDrop
         #endregion
 
     }
-    #region method
+
     public class DragDropEventArgs : EventArgs
     {
 
@@ -358,5 +358,5 @@ namespace SSL_WPF.DragDrop
             DropTarget = dropTarget;
         }
     }
-#endregion method
+
 }

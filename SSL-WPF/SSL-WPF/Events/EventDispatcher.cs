@@ -9,6 +9,12 @@ using System.ComponentModel;
 
 namespace SSL_WPF.Events
 {
+
+    /// <summary>
+    /// Just a quick wrapper class to allow events which occur in a non-UI thread
+    /// to be "transferred" over to the UI thread so they can perform UI updates.
+    /// </summary>
+    /// 
     class EventDispatcher
     {
         public static Dispatcher BatchDispatcher { get; set; }
@@ -66,8 +72,26 @@ namespace SSL_WPF.Events
              });
          }
 
-       
+         public static PropertyChangedEventHandler CreateDispatchedHandler(Dispatcher disp, PropertyChangedEventHandler handler)
+         {
 
+             return CreateDispatchedHandler(disp, System.Windows.Threading.DispatcherPriority.ApplicationIdle, handler);
+
+         }
+
+
+         public static PropertyChangedEventHandler CreateDispatchedHandler(Dispatcher disp, DispatcherPriority dp, PropertyChangedEventHandler handler)
+         {
+
+
+             return new PropertyChangedEventHandler((sender, e) =>
+             {
+
+                 disp.BeginInvoke(handler, dp, sender, e);
+
+             }
+                 );
+         }
       
     }
 }
