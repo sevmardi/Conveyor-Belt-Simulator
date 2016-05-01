@@ -43,7 +43,7 @@ namespace SSL_WPF
 
 
         private Dictionary<Components.AbstractComponents, SSL> SSLs = new Dictionary<AbstractComponents, SSL>();
-        private DragState dragging = DragState.None;
+        private DragState dragging = DragState.NONE;
         private bool ReadyToSelect = false;
         private Point mp;
         private Point sp;
@@ -115,5 +115,17 @@ namespace SSL_WPF
             //}
 
         }
+
+        protected enum DragState
+        {
+            NONE, MOVE, CONNECT_TO, CONNECT_FROM
+        }
+
+
+
+
+   
+
+
     }
 }

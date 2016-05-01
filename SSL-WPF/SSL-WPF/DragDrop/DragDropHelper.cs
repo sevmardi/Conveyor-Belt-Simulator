@@ -227,7 +227,7 @@ namespace SSL_WPF.DragDrop
                         //Unnamed team edit: turn off the size canvas method in order to resize the canvas, to increase scroll area.
                         gc.DisableSizeCanvas = true;
                         //increase scroll area.
-                        gc.SSL.Width += 5;
+                        gc.CanvasSSL.Width += 5;
                     }
                     if (currentPoint.X < _dropBoundingBox.Left + 50)
                     {
@@ -245,7 +245,7 @@ namespace SSL_WPF.DragDrop
                         ((SSLCanvas)_dropTarget).SSLScroller.ScrollToVerticalOffset(
                             ((SSLCanvas)_dropTarget).SSLScroller.VerticalOffset + 10);
                         gc.DisableSizeCanvas = true;
-                        gc.SSL.Height += 5;
+                        gc.CanvasSSL.Height += 5;
                     }
                     if (e.GetPosition(_adornerLayer).X > _dropBoundingBox.Left &&
                         e.GetPosition(_adornerLayer).X < _dropBoundingBox.Right &&

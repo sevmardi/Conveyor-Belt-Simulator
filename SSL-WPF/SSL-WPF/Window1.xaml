@@ -14,7 +14,29 @@
 
 
 
-    
+    <Window.Resources>
+        <undoRedo:UndoManager x:Key="undoManager" />
+        <Style x:Key="TgButtonStyle" TargetType="{x:Type ToggleButton}">
+            <Setter Property="ToolTipService.ShowOnDisabled" Value="True" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsEnabled}" Value="False">
+                    <Setter Property="Opacity" Value="0.50" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="TButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+
+            <Setter Property="ToolTipService.ShowOnDisabled" Value="True" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsEnabled}" Value="False">
+                    <Setter Property="Opacity" Value="0.50" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+
+    </Window.Resources>
+
     <Grid Name="Grid1">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -26,10 +48,11 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-      
+        <selector:SSLSelector x:Name="spGates" Grid.Row="1" />
         <local:SSLCanvas x:Name="SSLCanvas" Grid.Column="1" Grid.Row="1" />
 
-        <selector:SSLSelector x:Name="spGates" Grid.Row="1" />
+
+
 
 
 

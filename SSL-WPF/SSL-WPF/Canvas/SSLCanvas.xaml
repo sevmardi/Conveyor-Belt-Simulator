@@ -5,7 +5,7 @@
         >
 
     <ScrollViewer Name="SSLScroller" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" SizeChanged="SSLScroller_SizeChanged" LayoutUpdated="SSLScroller_LayoutUpdated" ScrollChanged="SSLScroller_ScrollChanged">
-        <Canvas Name="SSL" >
+        <Canvas Name="CanvasSSL" >
             <Canvas.Background>
                 <!-- see http://mark-dot-net.blogspot.com/2007/06/creating-hatched-patterned-brush-in-wpf.html -->
                 <VisualBrush TileMode="Tile" Viewport="0,0,32,32"  ViewportUnits="Absolute" Viewbox="0,0,32,32"  ViewboxUnits="Absolute">
