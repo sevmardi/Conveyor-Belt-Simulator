@@ -86,3 +86,5 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\S
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL-WPF.g.resources
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL_WPF.Properties.Resources.resources
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\obj\Debug\SSL_WPF.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\bin\Debug\PLCTags.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\SSL-WPF\bin\Debug\PLCTags.pdb

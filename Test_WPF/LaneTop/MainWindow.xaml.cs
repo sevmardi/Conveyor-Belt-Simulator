@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Snap7;
+using System.Windows.Media.Animation;
+using System.Runtime.InteropServices;
 namespace LaneTop
 {
     /// <summary>
@@ -20,7 +22,7 @@ namespace LaneTop
     /// </summary>
     public partial class MainWindow : Window
     {
-         private S7Client myclient;
+        private S7Client myclient;
         int amount = 1;
         int DBNumber = 0;
         int area;
@@ -29,11 +31,25 @@ namespace LaneTop
         int res;
 
         static S7Client.S7DataItem[] items = new S7Client.S7DataItem[20];
+       
+
+
+
+        public static int Degraded_Mode = 12;
+        public static int Start_Button = 448;
+        public static int Stop_Button = 322;
 
         public MainWindow()
         {
             InitializeComponent();
           //  object_to_move.Visibility = Visibility.Hidden;
+
+            //Path path = this.FindName("path1") as Path;
+
+            //path.IsEnabled = false;
+
+           
+            
         }
 
         private void EstablishContact()
@@ -43,8 +59,9 @@ namespace LaneTop
 
             if (myclient.Connected())
             {
-                MessageBox.Show("Connection Established");
-                stopsystem();
+               // MessageBox.Show("Connection Established");
+                //stopsystem();
+                
             }
             else
                 MessageBox.Show("Something went wrong");
@@ -53,31 +70,30 @@ namespace LaneTop
 
         private void btnStartSystem_Click(object sender, RoutedEventArgs e)
         {
-            if (myclient.Connected())
-            {
-                buffer[0] = 1;
-                myclient.WriteArea(S7Client.S7AreaPE, DBNumber, 448, amount, wordlen, buffer);
-                object_to_move.Visibility = Visibility.Visible;
-                _0102_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0102_S2.Fill = new SolidColorBrush(Colors.Red);
-                _0103_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0104_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0105_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0105_S2.Fill = new SolidColorBrush(Colors.Red);
-                _0301_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0301_S2.Fill = new SolidColorBrush(Colors.Red);
-                _0302_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0303_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0304_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0304_S2.Fill = new SolidColorBrush(Colors.Red);
-                _0304_S3.Fill = new SolidColorBrush(Colors.Red);
-                _0701_S1.Fill = new SolidColorBrush(Colors.Red);
+            //if (myclient.Connected())
+            //{
+            //    buffer[0] = 1;
+            //    myclient.WriteArea(S7Client.S7AreaPE, DBNumber, 448, amount, wordlen, buffer);
+            //    object_to_move.Visibility = Visibility.Visible;
+            //    _0102_S1.Fill = new SolidColorBrush(Colors.Red);
+            //    _0102_S2.Fill = new SolidColorBrush(Colors.Red);
+            //    _0103_S1.Fill = new SolidColorBrush(Colors.Red);
+            //    _0104_S1.Fill = new SolidColorBrush(Colors.Red);
+            //    _0105_S1.Fill = new SolidColorBrush(Colors.Red);
+            //    _0105_S2.Fill = new SolidColorBrush(Colors.Red);
+            //    _0301_S1.Fill = new SolidColorBrush(Colors.Red);
+            //    _0301_S2.Fill = new SolidColorBrush(Colors.Red);
+            //    _0302_S1.Fill = new SolidColorBrush(Colors.Red);
+            //    _0303_S1.Fill = new SolidColorBrush(Colors.Red);
+            //    _0304_S1.Fill = new SolidColorBrush(Colors.Red);
+            //    _0304_S2.Fill = new SolidColorBrush(Colors.Red);
+            //    _0304_S3.Fill = new SolidColorBrush(Colors.Red);
+            //    _0701_S1.Fill = new SolidColorBrush(Colors.Red);
 
-                StartAnimation();
-            }
+               
+            //}
+          //  StartAnimation();
         }
-
-
 
         private void btnRest_Click(object sender, RoutedEventArgs e)
         {
@@ -88,9 +104,13 @@ namespace LaneTop
 
         private void btnStopSystem_Click(object sender, RoutedEventArgs e)
         {
-            buffer[0] = 1;
-            myclient.WriteArea(S7Client.S7AreaPE, DBNumber, 322, amount, wordlen, buffer);
-            stopsystem();
+            //buffer[0] = 1;
+            //myclient.WriteArea(S7Client.S7AreaPE, DBNumber, 322, amount, wordlen, buffer);
+            //stopsystem();
+
+            Storyboard sb = new Storyboard();
+            sb = (Storyboard)this.Resources["Storyboard1"];
+            sb.Pause();
         }
 
         protected void stopsystem()
@@ -114,6 +134,8 @@ namespace LaneTop
 
         private void StartAnimation()
         {
+    
+
             //path139798.Freeze();
             //path139750.Freeze();
             //DoubleAnimationUsingPath daPath = new DoubleAnimationUsingPath();
@@ -127,7 +149,113 @@ namespace LaneTop
             //daPath.Source = PathAnimationSource.X;
             //object_to_move.BeginAnimation(Canvas.LeftProperty, daPath);
         }
-        
+
+        public void StartUp()
+        {
+            byte[] buffer = new byte[20];
+            buffer[0] = 0;
+
+            items[0].Area = S7Client.S7AreaPE;
+            items[0].Amount = 1;
+            items[0].DBNumber = 0;
+            items[0].WordLen = S7Client.S7WLBit;
+            items[0].Start = Start_Button;
+            GCHandle myGcHandle = GCHandle.Alloc(buffer, GCHandleType.Pinned);
+            IntPtr systemstat = myGcHandle.AddrOfPinnedObject();
+            items[0].pData = systemstat;
+            myGcHandle.Free();
+
+
+
+            items[1].Area = S7Client.S7AreaPE;
+            items[1].Amount = 1;
+            items[1].DBNumber = 0;
+            items[1].WordLen = S7Client.S7WLBit;
+            items[1].Start = Stop_Button;
+            GCHandle myGcHandle1 = GCHandle.Alloc(buffer, GCHandleType.Pinned);
+            IntPtr systemstp = myGcHandle1.AddrOfPinnedObject();
+            items[1].pData = systemstp;
+            myGcHandle1.Free();
+
+            res = myclient.WriteMultiVars(items, 20);
+
+            myclient = null;
+
+
+        }
+
+        private void StartAnimationBtn_Click(object sender, RoutedEventArgs e)
+        {
+        //https://msdn.microsoft.com/en-us/library/cc295328.aspx
+            //Storyboard myStoryboard;
+            //myStoryboard = (Storyboard)this.Resources["Storyboard1"];
+            //myStoryboard.Begin(this);
+            var sub = FindResource("Storyboard1") as Storyboard;
+            
+            if (sub != null)
+            {
+                sub.Begin();
+
+            }
+
+            durationTime();
+        }
+
+        private void StopAnimationBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var sub = FindResource("Storyboard1") as Storyboard;
+            sub.Pause();
+        }
+
+
+
+        private void durationTime()
+        {
+            var sub = FindResource("Storyboard1") as Storyboard;
+
+            if (sub.Duration.Equals("0:0:5"))
+            {
+                sub.Stop();
+            }
+
+            sub.Duration.TimeSpan("0:0:4");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }

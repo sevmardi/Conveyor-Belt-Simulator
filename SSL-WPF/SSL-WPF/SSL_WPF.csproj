@@ -241,6 +241,10 @@
       <Project>{04524B1D-A27E-46BD-A034-A983F696D293}</Project>
       <Name>Components</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PLCTags\PLCTags.csproj">
+      <Project>{846a241e-2b5d-4514-b1a7-228987572c2d}</Project>
+      <Name>PLCTags</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

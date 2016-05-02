@@ -28,18 +28,10 @@ namespace WpfApplication4
            
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Storyboard sb = (Storyboard)this.Resources["sb1"];
-            sb.Begin();
-        }
+  
+  
 
-        private void StopBtn(object sender, RoutedEventArgs e)
-        {
-            Storyboard sb = (Storyboard)this.Resources["sb1"];
-            sb.Pause();
-        }
-
+   
 
     }
 }

@@ -46,8 +46,8 @@ namespace WpfApplication3
         private void Stop_Click(object sender, RoutedEventArgs e)
         {
             var sub = FindResource("ellipseSB") as Storyboard;
-          
-          
+
+            sub.Pause();
         }
     }
 }

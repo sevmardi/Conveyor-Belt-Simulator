@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Snap7;
-
+using PLCTags;
 
 namespace SSL_WPF
 {
@@ -60,6 +60,11 @@ namespace SSL_WPF
         {
             DialogResult = false;
             this.Close();
+        }
+
+        private void StartUp()
+        {
+
         }
     }
 }
