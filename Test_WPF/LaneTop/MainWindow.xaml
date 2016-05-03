@@ -418,6 +418,8 @@
         <Button Content="Disconnect"  Canvas.Left="655" Canvas.Top="27" Width="140" Click="btnDisconnect_Click" Height="37"/>
         <Button Content="StartAnimation"  Canvas.Left="342" Canvas.Top="124" Width="75" x:Name="StartAnimationBtn" Click="StartAnimationBtn_Click"/>
         <Button Content="StopAnimation"  Canvas.Left="436" Canvas.Top="124" Width="75" x:Name="StopAnimationBtn" Click="StopAnimationBtn_Click" />
+        <Button Content="Continue"  Canvas.Left="538" Canvas.Top="124" Width="75" x:Name="ContinueAnimationBtn_Copy" Click="ContinueAnimationBtn_Copy_Click" />
+        <Button Content="Reset"  Canvas.Left="636" Canvas.Top="124" Width="75" x:Name="ResetAnimationBtn_Copy1" Click="ResetAnimationBtn_Copy1_Click" />
 
 
     </Canvas>

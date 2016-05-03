@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LaneAnimation.cs" />
+    <Compile Include="PLCCalls.cs" />
+    <Compile Include="PLCTags.cs" />
     <Compile Include="snap7.net.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
