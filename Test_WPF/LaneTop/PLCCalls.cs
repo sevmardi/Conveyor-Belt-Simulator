@@ -6,44 +6,36 @@ using System.Threading.Tasks;
 using Snap7;
 using System.Windows;
 using System.Runtime.InteropServices;
+
+
 namespace LaneTop
 {
-    class PLCCalls
+    class PlcCalls
     {
-        public static  S7Client myclient;
-        public static PLCTags tags;
+        //** Snap7 client library **//
+        public static S7Client Client;
+
         //List<PLCTags> tags = new List<PLCTags>();
-       
-        private static int amount = 1;
-        private static int DBNumber = 0;
-        private static int area;
-        private static int wordlen = S7Client.S7WLBit;
-        private static byte[] buffer = new byte[500];
-        private static int res;
+
+        private const int Amount = 1;
+        private const int DbNumber = 0;
+        private static readonly int Wordlen = S7Client.S7WLBit;
+        private static readonly byte[] Buffer = new byte[500];
+        private static int _res;
 
 
-        static S7Client.S7DataItem[] items = new S7Client.S7DataItem[20];
+        static readonly S7Client.S7DataItem[] Items = new S7Client.S7DataItem[20];
 
-        public PLCCalls()
-        {
-             PLCTags tags = new PLCTags();
-        }
 
         /// <summary>
         /// Establish connection
         /// </summary>
         public static void EstablishContact()
         {
-            myclient = new S7Client();
-            myclient.ConnectTo("192.168.2.16", 0, 0);
+            Client = new S7Client();
+            Client.ConnectTo("192.168.2.16", 0, 0);
 
-            if (myclient.Connected())
-            {
-                MessageBox.Show("Connection Established");
-                //stopsystem();
-            }
-            else
-                MessageBox.Show("Something went wrong");
+            MessageBox.Show(Client.Connected() ? "Connection Established" : "Something went wrong");
         }
 
         /// <summary>
@@ -51,61 +43,129 @@ namespace LaneTop
         /// </summary>
         public static void Disconnect()
         {
-            myclient.Disconnect();
+            Client.Disconnect();
+            Client = null;
             MessageBox.Show("cool man, we're good");
         }
 
-        /// <summary>
-        /// Stop plc
-        /// </summary>
-        public static void StopSystem()
+        public static void StartBtnInput()
         {
-            buffer[0] = 0;
-            myclient.WriteArea(S7Client.S7AreaPE, DBNumber, 448, amount, wordlen, buffer);
+            Buffer[0] = 1;
+           _res =  Client.WriteArea(S7Client.S7AreaPE, DbNumber, PlcTags.StartButtonInput, Amount, Wordlen, Buffer);
         }
 
-        /// <summary>
-        /// Reset system
-        /// </summary>
-        public static void ResetSystem()
+        public static void StopBtnInput()
         {
-            buffer[0] = 1;
-            myclient.WriteArea(S7Client.S7AreaMK, DBNumber, 7997, amount, wordlen, buffer);
+            _res = Client.ReadArea(S7Client.S7AreaPE, DbNumber, PlcTags.StopButtonInput, Amount, Wordlen, Buffer);
+
+            if (_res == 0)
+            {
+                if (Buffer[0] == 0)
+                {
+                    Buffer[0] = 1;
+                    Client.WriteArea(S7Client.S7AreaPE, DbNumber, PlcTags.StopButtonInput, Amount, Wordlen, Buffer);
+                }
+                else
+                {
+                    Buffer[0] = 0;
+                    Client.WriteArea(S7Client.S7AreaPE, DbNumber, PlcTags.StopButtonInput, Amount, Wordlen, Buffer);
+                }
+            }
         }
 
 
-        public void StartUp()
+        public static void ResetBtn()
         {
-            GCHandle myGcHandle = GCHandle.Alloc(buffer, GCHandleType.Pinned);
-            IntPtr systemstat = myGcHandle.AddrOfPinnedObject();
-
-            buffer[0] = 0;
-
-            items[0].Area = S7Client.S7AreaPE;
-            items[0].Amount = 1;
-            items[0].DBNumber = 0;
-            items[0].WordLen = S7Client.S7WLBit;
-            items[0].Start = PLCTags.Start_Button_Input;
-            items[0].pData = systemstat;
-
-            items[1].Area = S7Client.S7AreaPE;
-            items[1].Amount = 1;
-            items[1].DBNumber = 0;
-            items[1].WordLen = S7Client.S7WLBit;
-            items[1].Start = 50;
-            items[1].pData = systemstat;
-
-
-            res = myclient.WriteMultiVars(items, 20);
-
-            myclient = null;
-
-
+            Buffer[0] = 1;
+            Client.WriteArea(S7Client.S7AreaMK, DbNumber, PlcTags.ResetButtonMerker, Amount, Wordlen, Buffer);
         }
 
 
 
+        #region Startup
+                /// <summary>
+                /// The first startup in which amount of Inputs & meker(s) are set to true, this to avoid
+                /// any headahcs during simulation 
+                /// </summary>
+                public static void StartUp()
+                {
+                    GCHandle myGcHandle = GCHandle.Alloc(Buffer, GCHandleType.Pinned);
+                    IntPtr startupPtr = myGcHandle.AddrOfPinnedObject();
+
+                    Buffer[0] = 1;
+
+                    Items[0].Area = S7Client.S7AreaPE;
+                    Items[0].Amount = 1;
+                    Items[0].DBNumber = 0;
+                    Items[0].WordLen = S7Client.S7WLBit;
+                    Items[0].Start = PlcTags.NoodstopReclaimerInput;
+                    Items[0].pData = startupPtr;
+
+                    Items[1].Area = S7Client.S7AreaPE;
+                    Items[1].Amount = 1;
+                    Items[1].DBNumber = 0;
+                    Items[1].WordLen = S7Client.S7WLBit;
+                    Items[1].Start = PlcTags.NoodstopDivestInput;
+                    Items[1].pData = startupPtr;
 
 
+                    Items[2].Area = S7Client.S7AreaPE;
+                    Items[2].Amount = 1;
+                    Items[2].DBNumber = 0;
+                    Items[2].WordLen = S7Client.S7WLBit;
+                    Items[2].Start = PlcTags.NoodstopXrayInput;
+                    Items[2].pData = startupPtr;
+
+                    Items[3].Area = S7Client.S7AreaPE;
+                    Items[3].Amount = 1;
+                    Items[3].DBNumber = 0;
+                    Items[3].WordLen = S7Client.S7WLBit;
+                    Items[3].Start = PlcTags.SwitchDegradedModeInput;
+                    Items[3].pData = startupPtr;            
+            
+                    _res = Client.WriteMultiVars(Items, 20);
+           
+                }
+
+        #endregion
+
+        #region sensors 
+                public static void SensorsOnTrueBatch1()
+                {
+                    GCHandle myGcHandle = GCHandle.Alloc(Buffer, GCHandleType.Pinned);
+                    IntPtr batch1 = myGcHandle.AddrOfPinnedObject();
+
+                    Items[0].Area = S7Client.S7AreaPE;
+                    Items[0].Amount = 1;
+                    Items[0].DBNumber = 0;
+                    Items[0].WordLen = S7Client.S7WLBit;
+                    Items[0].Start = PlcTags._0102_S1;
+                    Items[0].pData = batch1;
+
+                    Items[1].Area = S7Client.S7AreaPE;
+                    Items[1].Amount = 1;
+                    Items[1].DBNumber = 0;
+                    Items[1].WordLen = S7Client.S7WLBit;
+                    Items[1].Start = PlcTags._0102_S2;
+                    Items[1].pData = batch1;
+
+
+                    Items[2].Area = S7Client.S7AreaPE;
+                    Items[2].Amount = 1;
+                    Items[2].DBNumber = 0;
+                    Items[2].WordLen = S7Client.S7WLBit;
+                    Items[2].Start = PlcTags._0103_S1;
+                    Items[2].pData = batch1;
+
+                    Items[3].Area = S7Client.S7AreaPE;
+                    Items[3].Amount = 1;
+                    Items[3].DBNumber = 0;
+                    Items[3].WordLen = S7Client.S7WLBit;
+                    Items[3].Start = PlcTags._0104_S1;
+                    Items[3].pData = batch1;            
+
+                } 
+
+        #endregion
     }
 }

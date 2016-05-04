@@ -6,27 +6,27 @@
 
     <Window.Resources>
         <Storyboard x:Key="Storyboard1">
-            <DoubleAnimationUsingPath Duration="0:0:2"   BeginTime="0:0:0 " Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2"   BeginTime="0:0:0 " Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry >
                     <PathGeometry Figures="M-1.75,-21 L6.75,-53.25 L29.75,-91.25 L49.75,-114.75 L56.75,-119.75"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath Duration="0:0:2"   BeginTime="0:0:0" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2"   BeginTime="0:0:0" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M-1.75,-21 L6.75,-53.25 L29.75,-91.25 L49.75,-114.75 L56.75,-119.75"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath Duration="0:0:2"   BeginTime="0:0:3" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2"   BeginTime="0:0:3" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M62.000021,-122.25004 L60.00001,-121.25002 L58,-120 L66.500045,-124.50008 L75.750093,-128.50015 L107.66693,-138.00032 L134.33323,-139.16701 L154.00028,-137.83333 L164.16699,-136 L172.33332,-134.66666 L178.667,-132.83333"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath Duration="0:0:2"    BeginTime="0:0:3" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2"    BeginTime="0:0:3" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M62.000021,-122.25004 L60.00001,-121.25002 L58,-120 L66.500045,-124.50008 L75.750093,-128.50015 L107.66693,-138.00032 L134.33323,-139.16701 L154.00028,-137.83333 L164.16699,-136 L172.33332,-134.66666 L178.667,-132.83333"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="ObjectToMove">
                 <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="-41.873"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:4.6" Value="15.521"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:5.4" Value="32.832"/>
@@ -34,107 +34,107 @@
                 <EasingDoubleKeyFrame KeyTime="0:0:10.6" Value="-2.864"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:15.4" Value="0.632"/>
             </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:6" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:6" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M182.667,-130.16701 L188.9998,-124.66687 L198.49953,-117.33304 L209.83254,-106.16675 L217.83274,-97.832997 L223.9997,-90.999986 L229.33299,-82.999998 L234.83333,-73.999989 L236.167,-71.499993"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath Duration="0:0:2" Source="Y" BeginTime="0:0:6" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2" Source="Y" BeginTime="0:0:6" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M182.667,-130.16701 L188.9998,-124.66687 L198.49953,-117.33304 L209.83254,-106.16675 L217.83274,-97.832997 L223.9997,-90.999986 L229.33299,-82.999998 L234.83333,-73.999989 L236.167,-71.499993"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
 
-            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:10" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:10" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M239.75,-67.25 L246.625,-66.625 L258.375,-65.375 L270.125,-64.875 L280.625,-63.75 L292.125,-62.875 L302.25,-63 L309.5,-62.5 L314.75,-62.375 L318.625,-62.5 L323,-62.5"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:10" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:10" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M239.75,-67.25 L246.625,-66.625 L258.375,-65.375 L270.125,-64.875 L280.625,-63.75 L292.125,-62.875 L302.25,-63 L309.5,-62.5 L314.75,-62.375 L318.625,-62.5 L323,-62.5"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
 
-            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:15" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:15" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M326.875,-62.125 L336.625,-62.125 L345.75,-62.125 L356.25,-62.375 L367.75,-62.375 L375.5,-62.375 L386.125,-62.375 L394.75,-62.375"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:15" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:15" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M326.875,-62.125 L336.625,-62.125 L345.75,-62.125 L356.25,-62.375 L367.75,-62.375 L375.5,-62.375 L386.125,-62.375 L394.75,-62.375"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
 
-            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:20" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:20" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M398,-62 L421.83296,-62 L438.66661,-62 L453.8328,-62 L474.83307,-62 L496.66674,-62 L514.33303,-62 L532.50004,-62 L547.66671,-62 L556.83301,-62 L564.50001,-62"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath Duration="0:0:2"  BeginTime="0:0:20"  Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2"  BeginTime="0:0:20"  Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M398,-62 L421.83296,-62 L438.66661,-62 L453.8328,-62 L474.83307,-62 L496.66674,-62 L514.33303,-62 L532.50004,-62 L547.66671,-62 L556.83301,-62 L564.50001,-62"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:25" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:25" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M566.75,-61.688 L582.75,-61.688 L594.25,-61.688 L605.375,-61.688 L611,-61.688"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:25" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:25" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M566.75,-61.688 L582.75,-61.688 L594.25,-61.688 L605.375,-61.688 L611,-61.688"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:30" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:30" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M614.062,-61.812 L626.31177,-61.812 L638.937,-61.812 L650.875,-61.812 L662.25001,-61.812"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:30" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:30" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M614.062,-61.812 L626.31177,-61.812 L638.937,-61.812 L650.875,-61.812 L662.25001,-61.812"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:35" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:35" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M665,-61.438 L679.24975,-61.438 L694.31198,-61.438 L705.12497,-61.438 L713.68745,-61.438 L717.81301,-61.438"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:35" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:35" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M665,-61.438 L679.24975,-61.438 L694.31198,-61.438 L705.12497,-61.438 L713.68745,-61.438 L717.81301,-61.438"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
 
-            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:40" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:40" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M720.75,-63.25 L735.12517,-70.374885 L747.37531,-78.749749 L755.5004,-86.874618 L762.43798,-93.812005 L767.24998,-102.87501 L767.99999,-108.5"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:40" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:40" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M720.75,-63.25 L735.12517,-70.374885 L747.37531,-78.749749 L755.5004,-86.874618 L762.43798,-93.812005 L767.24998,-102.87501 L767.99999,-108.5"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:42" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:42" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M768.33299,-110.75 L769.91723,-132.49961 L771.9172,-145.08272 L777.91723,-151.58302 L790.16718,-156.91668 L800.00027,-158.49968 L806.667,-159.333"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:42" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:42" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M768.33299,-110.75 L769.91723,-132.49961 L771.9172,-145.08272 L777.91723,-151.58302 L790.16718,-156.91668 L800.00027,-158.49968 L806.667,-159.333"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
 
-            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:43" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:43" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M811.25,-159.25 L866.75,-159.25 L962.25,-159.25 L1003.5,-159.25 L1065,-159.25 L1097.5,-159.25 L1117.5,-159.25"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:43" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="object_to_move">
+            <DoubleAnimationUsingPath Duration="0:0:2" BeginTime="0:0:43" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M811.25,-159.25 L866.75,-159.25 L962.25,-159.25 L1003.5,-159.25 L1065,-159.25 L1097.5,-159.25 L1117.5,-159.25"/>
                 </DoubleAnimationUsingPath.PathGeometry>
@@ -155,7 +155,7 @@
 
     <Canvas x:Name="LaneTop" Width="744" Height="1052">
         <Canvas.Resources>
-            <LinearGradientBrush xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="linearGradient7412-5" MappingMode="RelativeToBoundingBox" StartPoint="0,0" EndPoint="1,1">
+            <LinearGradientBrush xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="LinearGradient7412-5" MappingMode="RelativeToBoundingBox" StartPoint="0,0" EndPoint="1,1">
                 <LinearGradientBrush.Transform>
                     <MatrixTransform Matrix="-1.3258514e-5 0 0 4.6354661e-6 -369471.48 -481913.63"/>
                 </LinearGradientBrush.Transform>
@@ -172,17 +172,17 @@
         <!--Unknown tag: sodipodi:namedview-->
         <!--Unknown tag: metadata-->
         <Canvas x:Name="Lane" d:IsLocked="True">
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1396666" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1396666" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
                     <PathGeometry Figures="m 60.28756 552.08218 45.1466 -97.56912 c 29.0294 14.34618 53.51348 36.49707 70.68158 63.73488 l 0.231 0.39961 c 0 0 -66.47528 74.36714 -78.93698 88.30989 0 0 -3.4166 -35.77924 -37.1222 -54.87526" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1396708" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1396708" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
                     <PathGeometry Figures="m 49.19586 437.78193 c -6.9223 -0.8333 -13.9618 -1.28028 -21.1093 -1.28028 -33.177 0 -64.1934 9.24408 -90.6224 25.29093 l 54.6197 92.54275 c 10.4162 -6.60207 22.7588 -10.43909 36.0027 -10.43909 3.1401 0 6.229 0.2178 9.2535 0.63447 l 3.7271 0.62875 c 5.8749 1.14768 11.4733 3.05484 16.6928 5.62104 l 45.1161 -97.50471 c -15.7382 -7.4581 -32.7641 -12.63789 -50.6576 -15.1075 l -3.0226 -0.38636 z" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1396740" Canvas.Left="-199.5" Canvas.Top="-181.5">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1396740" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Fill>
                     <SolidColorBrush Color="#FFC7C9C2"/>
                 </Path.Fill>
@@ -190,17 +190,17 @@
                     <PathGeometry Figures="m -110.14954 504.29078 c -22.2057 28.62982 -35.7244 64.33522 -36.5709 103.16931 l 101.177 0 6.3597 0.0303 c 0.7972 -14.38028 6.1154 -27.54843 14.5393 -38.13145 l 1.8181 -2.18743 c 3.6892 -4.25556 7.8994 -8.04522 12.5394 -11.26675 l -54.6612 -92.61468 c -16.4825 10.37848 -31.1089 23.43302 -43.2734 38.55378 l -1.928 2.4469 z" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1396765" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1396765" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
                     <PathGeometry Figures="m 515.35392 607.2817 -45.3075 0 0 -87.67167 45.3075 0 0 87.67167 z" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1396780" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1396780" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
                     <PathGeometry Figures="m 517.31972 519.61003 49.1257 0 0 87.67167 -49.1257 0 0 -87.67167 z" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1396826" Canvas.Left="-199.5" Canvas.Top="-181.5">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1396826" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Fill>
                     <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
                 </Path.Fill>
@@ -208,96 +208,92 @@
                     <PathGeometry Figures="m 710.76282 430.20734 c -48.2675 0.13259 -87.361 39.26589 -87.4292 87.54857 l 87.6717 0 0 -68.89003 0 -16.33474 0 -2.3238 -0.2425 0 z" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1396883" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" StrokeThickness="1.84394515" StrokeMiterLimit="10" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Canvas.Left="-199.5" Canvas.Top="-181.5">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1396883" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" StrokeThickness="1.84394515" StrokeMiterLimit="10" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
                     <PathGeometry Figures="m 1023.2975 607.2817 -310.39828 0 0 -87.67167 310.39828 0 0 87.67167 z" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397029" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1397029" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
                     <PathGeometry Figures="m 1023.248 517.81653 -310.34878 0 0 -87.67169 310.34878 0 0 87.67169 z" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397042" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" StrokeThickness="1.84394515" StrokeMiterLimit="10" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Canvas.Left="-199.5" Canvas.Top="-181.5">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1397042" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" StrokeThickness="1.84394515" StrokeMiterLimit="10" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
                     <PathGeometry Figures="m 568.34822 519.61003 53.4892 0 0 87.67167 -53.4892 0 0 -87.67167 z" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397066" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" StrokeThickness="1.84394515" StrokeMiterLimit="10" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Canvas.Left="-199.5" Canvas.Top="-181.5">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1397066" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" StrokeThickness="1.84394515" StrokeMiterLimit="10" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
                     <PathGeometry Figures="m 623.33362 607.2192 87.6717 0 0 -87.54859 -87.6717 0 0 87.54859 z" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397086" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1397086" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
                     <PathGeometry Figures="m 1024.7518 517.81653 87.6603 0 0 -87.67169 -87.6603 0 0 87.67169 z" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397120" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1397120" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
                     <PathGeometry Figures="m 1112.2821 519.83124 c -44.9248 3.123 -80.4389 41.05181 -80.6264 87.45007 l -6.9051 0 0 -87.65651 87.6603 0" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397148" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1397148" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
                     <PathGeometry Figures="m 1040.4445 502.11811 56.2729 0 0 -56.27297 -56.2729 0 0 56.27297 z" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397228" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1397228" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
                     <PathGeometry Figures="m 300.85922 519.79884 22.9936 0 0 -0.0397 19.7911 0 0 -8.86906 7.8691 0 74.0054 0 0 8.86906 19.6206 0 0 0.0397 23.5258 0 0 87.69818 -43.1256 0 0 -0.0133 -0.021 0 0 8.51678 -75.1928 0 -6.6817 0 0 -8.51678 -19.7911 0 0 -0.0132 -22.9936 0 0 -87.67167 z" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397884" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1397884" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
                     <PathGeometry Figures="m 225.33374 520.00585 -46.2941 0 -78.25138 87.53909 126.75378 0 0 -87.5675 -2.2083 0.0284 z" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path2106663" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path2106663" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
                     <PathGeometry Figures="m 229.66344 607.62447 69.24028 0 0 -87.72278 -69.24028 0 0 87.72278 z" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path2107424" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path2107424" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
                     <PathGeometry Figures="m 1193.3419 563.35818 69.9903 -47.87172 c 16.8537 27.29467 26.5902 59.45091 26.5902 93.8855 0 0.42045 0 0.83899 -0.01 1.25944 l 0.01 0.18561 -1.2765 0 -70.1798 0 -12.7306 -0.0152 c 0.01 -0.47536 0.011 -0.95261 0.011 -1.42986 0 -16.77794 -4.5302 -32.4896 -12.405 -46.01382" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path2107465" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path2107465" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
                     <PathGeometry Figures="m 1114.288 430.43783 c 31.0691 0.56627 60.1971 9.06223 85.4653 23.53152 l -42.6484 74.50349 c -12.5792 -6.69299 -26.8932 -10.5584 -42.1048 -10.69666 l -0.8523 -0.004 0 -17.38397 0 -59.42248 0 -8.53953 0 -1.98857 0.1402 0 z" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path2107506" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path2107506" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
                     <PathGeometry Figures="m 1201.3943 454.91191 c 24.7209 14.50525 45.6521 34.77172 60.9452 58.96039 l -69.9582 47.849 c -8.2176 -13.46555 -19.8138 -24.63754 -33.6089 -32.34945 l 42.6219 -74.45994 z" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
         </Canvas>
 
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-238.25" Canvas.Top="420.5" Width="6" x:Name="_0102_S1"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-226.667" Canvas.Top="389.5" Width="6" x:Name="_0102_S2"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-206.5" Canvas.Top="370" Width="6" x:Name="_0103_S1"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-190" Canvas.Top="363" Width="6" x:Name="_0104_S1"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-164.333" Canvas.Top="363" Width="6" x:Name="_0105_S1"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-143.333" Canvas.Top="370" Width="6" x:Name="_0105_S2"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-130.333" Canvas.Top="378.25" Width="6" x:Name="_0301_S1"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-116.666" Canvas.Top="395.167" Width="6" x:Name="_0301_S2"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-108.333" Canvas.Top="416.333" Width="6" x:Name="_0302_S1"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Top="427.877" Width="6" x:Name="_0303_S1" Canvas.Left="-49"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-16" Canvas.Top="427.877" Width="6" x:Name="_0304_S1"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="10" Canvas.Top="427.877" Width="6" x:Name="_0304_S2"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="39" Canvas.Top="427.877" Width="6" x:Name="_0304_S3"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="122.75" Canvas.Top="427.877" Width="6" x:Name="_0701_S1" RenderTransformOrigin="0.5,0.5">
-            <Ellipse.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Ellipse.RenderTransform>
-        </Ellipse>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-244" Canvas.Top="419" Width="6" x:Name="_0102_S1"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-233" Canvas.Top="388" Width="6" x:Name="_0102_S2"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-210" Canvas.Top="365" Width="6" x:Name="_0103_S1"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-188" Canvas.Top="357" Width="6" x:Name="_0104_S1"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-164" Canvas.Top="357" Width="6" x:Name="_0105_S1"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-138" Canvas.Top="367" Width="6" x:Name="_0105_S2"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-125" Canvas.Top="377" Width="6" x:Name="_0301_S1"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-113" Canvas.Top="392" Width="6" x:Name="_0301_S2"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-104" Canvas.Top="415" Width="6" x:Name="_0302_S1"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Top="419" Width="6" x:Name="_0303_S1" Canvas.Left="-52"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="-22" Canvas.Top="419" Width="6" x:Name="_0304_S1"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="10" Canvas.Top="419" Width="6" x:Name="_0304_S2"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="39" Canvas.Top="419" Width="6" x:Name="_0304_S3"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="120" Canvas.Top="380" Width="6" x:Name="_0701_S1"/>
+
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="538" Canvas.Top="419" Width="6" x:Name="_1003_S2"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="580" Canvas.Top="419" Width="6" x:Name="_1101_S1"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="621" Canvas.Top="419" Width="6" x:Name="_1101_S2"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="665" Canvas.Top="419" Width="6" x:Name="_1101_S3"/>
 
 
         <Ellipse Fill="#FFD61212" Height="6" Canvas.Left="-291" Canvas.Top="389.5" Width="6" x:Name="_0102_D1" RenderTransformOrigin="0.5,0.5">
@@ -381,7 +377,77 @@
             </Ellipse.RenderTransform>
         </Ellipse>
 
-        <Path Data="M-297.75,425.5 L-289.25,393.25 -266.25,355.25 -246.25,331.75 -239.25,326.75" Height="99.75" Canvas.Left="-297.75" Stretch="Fill" Stroke="Black" Canvas.Top="326.75" Width="59.5" d:IsHidden="True" Name="path1"/>
+        <Ellipse Fill="#FFD61111" Height="6" Canvas.Left="310" Canvas.Top="381" Width="6" x:Name="_0702_D1" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+
+        <Ellipse Fill="#FFD61111" Height="6" Canvas.Left="367" Canvas.Top="381" Width="6" x:Name="_1001_D1" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+
+        <Ellipse Fill="#FFD61111" Height="6" Canvas.Left="419" Canvas.Top="381" Width="6" x:Name="_1002_D1" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+
+        <Ellipse Fill="#FFD61111" Height="6" Canvas.Left="436" Canvas.Top="381" Width="6" x:Name="_1003_D2" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+
+
+        <Ellipse Fill="#FFD61111" Height="6" Canvas.Left="464" Canvas.Top="381" Width="6" x:Name="_1003_D1" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+
+        <Ellipse Fill="#FFD61111" Height="6" Canvas.Left="494" Canvas.Top="381" Width="6" x:Name="_1003_D3" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+
+
+
+
+        <Path Data="M-297.75,425.5 L-289.25,393.25 -266.25,355.25 -246.25,331.75 -239.25,326.75" Height="99.75" Canvas.Left="-297.75" Stretch="Fill" Stroke="Black" Canvas.Top="326.75" Width="59.5" d:IsHidden="True" Name="Path1"/>
         <Path Data="M-234,324.25 L-236,325.25 -238,326.5 -229.5,322 -220.25,318 -188.33333,308.5 -161.66717,307.33333 -142.00022,308.66699 -131.83357,310.50029 -123.66728,311.8336 -117.33363,313.6669" Height="20.167" Canvas.Left="-238" Stretch="Fill" Stroke="Black" Canvas.Top="307.333" Width="121.667" d:IsHidden="True"/>
         <Path Data="M-113.33333,316.33333 L-107.00034,321.83368 -97.500335,329.16779 -86.167002,340.3345 -78.166568,348.66857 -71.99943,355.50184 -66.665977,363.50213 -61.165484,372.50248 -59.831771,375.00257" Height="59.667" Canvas.Left="-113.333" Stretch="Fill" Stroke="Black" Canvas.Top="316.333" Width="54.5" d:IsHidden="True"/>
         <Path Data="M-56.25,379.25 L-49.375,379.875 -37.625,381.125 -25.875,381.625 -15.375,382.75 -3.875,383.625 6.25,383.5 13.5,384 18.75,384.125 22.625,384 27,384" Height="5.875" Canvas.Left="-56.25" Stretch="Fill" Stroke="Black" Canvas.Top="379.25" Width="84.25" d:IsHidden="True"/>
@@ -401,7 +467,7 @@
         <Path Data="M513.875,384.875 L618.16667,385.5 708.49942,385.5 750.83259,385.5 787.49952,385.5 813.8328,385.5 822.49982,385.5" Height="1.625" Canvas.Left="513.875" Stretch="Fill" Stroke="Black" Canvas.Top="384.875" Width="309.625" d:IsHidden="True"/>
         <Path Data="M826,380.33333 L835.16667,359.50034 838.66623,348.50033 841.16578,338.33367" Height="43" Canvas.Left="826" Stretch="Fill" Stroke="Black" Canvas.Top="338.333" Width="16.167" d:IsHidden="True"/>
         <Path Data="M841.83333,334.33333 L857.83365,311.16701 880.00104,298.33318 895.33466,292.16683 910.33537,288.83313" Height="46.5" Canvas.Left="841.833" Stretch="Fill" Stroke="Black" Canvas.Top="288.833" Width="69.5" d:IsHidden="True"/>
-        <Rectangle x:Name="object_to_move" Height="31" Canvas.Left="-316.5" Stroke="Black" Canvas.Top="431.5" Width="42" Fill="#FFDA6C11" RenderTransformOrigin="0.5,0.5">
+        <Rectangle x:Name="ObjectToMove" Height="31" Canvas.Left="-316.5" Stroke="Black" Canvas.Top="431.5" Width="42" Fill="#FFDA6C11" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -418,8 +484,27 @@
         <Button Content="Disconnect"  Canvas.Left="655" Canvas.Top="27" Width="140" Click="btnDisconnect_Click" Height="37"/>
         <Button Content="StartAnimation"  Canvas.Left="342" Canvas.Top="124" Width="75" x:Name="StartAnimationBtn" Click="StartAnimationBtn_Click"/>
         <Button Content="StopAnimation"  Canvas.Left="436" Canvas.Top="124" Width="75" x:Name="StopAnimationBtn" Click="StopAnimationBtn_Click" />
-        <Button Content="Continue"  Canvas.Left="538" Canvas.Top="124" Width="75" x:Name="ContinueAnimationBtn_Copy" Click="ContinueAnimationBtn_Copy_Click" />
-        <Button Content="Reset"  Canvas.Left="636" Canvas.Top="124" Width="75" x:Name="ResetAnimationBtn_Copy1" Click="ResetAnimationBtn_Copy1_Click" />
+        <Button Content="Continue"  Canvas.Left="538" Canvas.Top="124" Width="75" x:Name="ContinueAnimationBtnCopy" Click="ContinueAnimationBtn_Copy_Click" />
+        <Button Content="Reset"  Canvas.Left="636" Canvas.Top="124" Width="75" x:Name="ResetAnimationBtnCopy1" Click="ResetAnimationBtn_Copy1_Click" />
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="450" Canvas.Top="381" Width="6" x:Name="_1003_S4"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="478" Canvas.Top="381" Width="6" x:Name="_1005_S5"/>
+        <Ellipse Fill="#FFD61111" Height="6" Canvas.Left="518" Canvas.Top="381" Width="6" x:Name="_1003_D4" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="246" Canvas.Top="419" Width="6" x:Name="_0701_S2"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="280" Canvas.Top="419" Width="6" x:Name="_0702_S1"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="318" Canvas.Top="419" Width="6" x:Name="_0702_S2"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="358" Canvas.Top="419" Width="6" x:Name="_1001_S1"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="390" Canvas.Top="419" Width="6" x:Name="_1001_S2"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="415" Canvas.Top="419" Width="6" x:Name="_1002_S1"/>
+        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="426" Canvas.Top="419" Width="6" x:Name="_1002_S2"/>
 
 
     </Canvas>

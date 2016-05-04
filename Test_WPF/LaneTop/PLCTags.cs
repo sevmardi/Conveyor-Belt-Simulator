@@ -6,28 +6,29 @@ using System.Threading.Tasks;
 
 namespace LaneTop
 {
-    class PLCTags
+    class PlcTags
     {
         //System general
-        public static int Start_Button_Input = 448;
-        public static int Stop_Button_Input = 322;
-        public static int Reset_Button_Merker = 7997;
-        public static int Degraded_Mode_Merker = 162;
-        public static int LMcomFail_Merker = 74;
-        public static int RFIDcomFail_Merker = 12;
-        public static int System_Start_Merker = 7336;
-        public static int System_Stop_Merker = 7337;
-        public static int System_Reset_Merker = 323;
-        public static int NoodstopReclaimer_Input = 594;
-        public static int NoodstopDivest_Input = 592;
-        public static int NoodstopXray_Input = 593;
-        public static int SwitchDegraded_Mode_Input = 288;
-        public static int TechnicalError_Merker = 169;
+        public static int StartButtonInput = 448;
+        public static int StopButtonInput = 322;
+        public static int ResetButtonMerker = 7997;
+        public static int DegradedModeMerker = 162;
+        public static int LMcomFailMerker = 74;
+        public static int RfiDcomFailMerker = 12;
+        public static int SystemStartMerker = 7336;
+        public static int SystemStopMerker = 7337;
+        public static int SystemResetMerker = 323;
+
+        public static int NoodstopReclaimerInput = 594;
+        public static int NoodstopDivestInput = 592;
+        public static int NoodstopXrayInput = 593;
+        public static int SwitchDegradedModeInput = 288;
+        public static int TechnicalErrorMerker = 169;
 
 
         // LANE TOP - SENSORS
-        public static int _0102_S1 = 16;
-        public static int _0102_S2 = 17;
+        internal static int _0102_S1 = 16;
+        internal static int _0102_S2 = 17;
         public static int _0103_S1 = 18;
         public static int _0104_S1 = 144;
         public static int _0105_S1 = 156;
@@ -58,7 +59,7 @@ namespace LaneTop
         public static int _1102_S1 = 295;
         public static int _1102_S2 = 420;
         public static int _1102_S3 = 421;
-    
+
         // LANE TOP - MOTORS
         public static int _0102_D1 = 16;
         public static int _0103_D1 = 18;
@@ -77,10 +78,5 @@ namespace LaneTop
         public static int _1004_D1 = 280;
         public static int _1004_D2 = 282;
         public static int _1004_D3 = 332;
-        
-        
-        
-        
-        
-        }
+    }
 }

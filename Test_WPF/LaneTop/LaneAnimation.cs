@@ -9,7 +9,7 @@ namespace LaneTop
 {
     class LaneAnimation
     {
-       public  Storyboard sb = new Storyboard();
+       public  Storyboard Sb = new Storyboard();
 
         /// <summary>
         /// Constructor

@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Events\TagsEvents.cs" />
     <Compile Include="LaneAnimation.cs" />
     <Compile Include="PLCCalls.cs" />
     <Compile Include="PLCTags.cs" />

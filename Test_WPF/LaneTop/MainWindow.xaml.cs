@@ -24,8 +24,7 @@ namespace LaneTop
     public partial class MainWindow : Window
     {
        
-     
-        private LaneAnimation laneanimatin;
+        private LaneAnimation _laneanimatin;
 
         public MainWindow()
         {
@@ -38,9 +37,9 @@ namespace LaneTop
 
         private void btnStartSystem_Click(object sender, RoutedEventArgs e)
         {
-            if (PLCCalls.myclient.Connected())
+            if (PlcCalls.Client.Connected())
             {
-                object_to_move.Visibility = Visibility.Visible;
+                 ObjectToMove.Visibility = Visibility.Visible;
                 _0102_S1.Fill = new SolidColorBrush(Colors.Red);
                 _0102_S2.Fill = new SolidColorBrush(Colors.Red);
                 _0103_S1.Fill = new SolidColorBrush(Colors.Red);
@@ -56,48 +55,43 @@ namespace LaneTop
                 _0304_S3.Fill = new SolidColorBrush(Colors.Red);
                 _0701_S1.Fill = new SolidColorBrush(Colors.Red);
 
+                PlcCalls.StartUp();
+             
+               
+
             }
          
         }
 
         private void btnRest_Click(object sender, RoutedEventArgs e)
         {
-            PLCCalls.ResetSystem();
-            object_to_move.Visibility = Visibility.Visible;
+           
+            ObjectToMove.Visibility = Visibility.Visible;
         }
 
         private void btnStopSystem_Click(object sender, RoutedEventArgs e)
         {
-            //buffer[0] = 1;
-            //myclient.WriteArea(S7Client.S7AreaPE, DBNumber, 322, amount, wordlen, buffer);
-            //stopsystem();
+            PlcCalls.StopBtnInput();
+          //  _laneanimatin.Sb.Pause();
 
-            laneanimatin.sb.Pause();
-
-        }
-
-        protected void stopsystem()
-        {
-            PLCCalls.StopSystem();
-            object_to_move.Visibility = Visibility.Hidden;
         }
 
         private void btnConnectToPLC_Click(object sender, RoutedEventArgs e)
         {
-            PLCCalls.EstablishContact();
+            PlcCalls.EstablishContact();
         }
 
         private void btnDisconnect_Click(object sender, RoutedEventArgs e)
         {
-            PLCCalls.Disconnect();
+            PlcCalls.Disconnect();
           
-            stopsystem();
+          
         }
 
         private void StartAnimation()
         {
-            laneanimatin.sb.Begin();
-            laneanimatin.sb.Seek(TimeSpan.FromMilliseconds(1000));
+            _laneanimatin.Sb.Begin();
+            _laneanimatin.Sb.Seek(TimeSpan.FromMilliseconds(1000));
          
 
             
