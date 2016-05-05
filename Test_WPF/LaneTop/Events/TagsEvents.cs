@@ -36,6 +36,7 @@ namespace LaneTop.Events
         private List<string> TagValues = new List<string>();
         private List<string> oldValues = new List<string>();
         private List<string> newValues = new List<string>();
+
         private void AddTagList(DataTable dt)
         {
             int ILoop = 0;
@@ -58,6 +59,11 @@ namespace LaneTop.Events
                 iLoop = iLoop + 1;
             }
             //newValues = oldValues
+        }
+
+        private object ReadTag(string vals)
+        {
+            throw new NotImplementedException();
         }
 
 
