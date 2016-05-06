@@ -29,19 +29,18 @@ namespace WpfApplication3
     
         }
 
-
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var sub = FindResource("ellipseSB") as Storyboard;
             if (sub != null)
             {
-                sub.Begin();
-              
-            }
+               sub.Begin();
+               
 
+            }
     
         }
+
 
         private void Stop_Click(object sender, RoutedEventArgs e)
         {

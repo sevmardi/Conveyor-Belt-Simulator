@@ -33,9 +33,9 @@ namespace LaneTop
         public static int _0104_S1 = 144;
         public static int _0105_S1 = 156;
         public static int _0105_S2 = 157;
-        public static int _0301_S1 = 116;
-        public static int _0301_S2 = 117;
-        public static int _0302_S1 = 118;
+        public static int _0301_S1 = 36;
+        public static int _0301_S2 = 37;
+        public static int _0302_S1 = 38;
         public static int _0303_S1 = 164;
         public static int _0304_S1 = 165;
         public static int _0304_S2 = 166;

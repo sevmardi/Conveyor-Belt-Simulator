@@ -9,17 +9,32 @@ namespace LaneTop
 {
     class LaneAnimation
     {
-       public  Storyboard Sb = new Storyboard();
+       public  Storyboard SB;
 
         /// <summary>
         /// Constructor
         /// </summary>
        public LaneAnimation()
        {
-         //
+            SB = new Storyboard();
        }
-    
-            
+
+       private bool AnimationPaused()
+       {
+           
+           bool pauze = false;
+
+           if (SB.GetIsPaused())
+           {
+               SB.Resume();
+               pauze = true;
+
+               return pauze;
+           }
+
+           return pauze;
+
+       } 
          
 
     }

@@ -59,7 +59,12 @@
     <Compile Include="LaneAnimation.cs" />
     <Compile Include="PLCCalls.cs" />
     <Compile Include="PLCTags.cs" />
+    <Compile Include="SectionA.cs" />
+    <Compile Include="SectionB.cs" />
+    <Compile Include="SectionC.cs" />
+    <Compile Include="SectionD.cs" />
     <Compile Include="snap7.net.cs" />
+    <Compile Include="Trays.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

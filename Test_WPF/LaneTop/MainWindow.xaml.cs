@@ -1,20 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Snap7;
 using System.Windows.Media.Animation;
-using System.Runtime.InteropServices;
 
 namespace LaneTop
 {
@@ -33,7 +20,6 @@ namespace LaneTop
             //laneanimatin.sb = (Storyboard)this.Resources["Storyboard1"];
         }
 
-   
 
         private void btnStartSystem_Click(object sender, RoutedEventArgs e)
         {
@@ -42,23 +28,10 @@ namespace LaneTop
                  ObjectToMove.Visibility = Visibility.Visible;
                 _0102_S1.Fill = new SolidColorBrush(Colors.Red);
                 _0102_S2.Fill = new SolidColorBrush(Colors.Red);
-                _0103_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0104_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0105_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0105_S2.Fill = new SolidColorBrush(Colors.Red);
-                _0301_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0301_S2.Fill = new SolidColorBrush(Colors.Red);
-                _0302_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0303_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0304_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0304_S2.Fill = new SolidColorBrush(Colors.Red);
-                _0304_S3.Fill = new SolidColorBrush(Colors.Red);
-                _0701_S1.Fill = new SolidColorBrush(Colors.Red);
 
+
+                PlcCalls.AllSensorsOnTrue();
                 PlcCalls.StartUp();
-             
-               
-
             }
          
         }
@@ -72,7 +45,7 @@ namespace LaneTop
         private void btnStopSystem_Click(object sender, RoutedEventArgs e)
         {
             PlcCalls.StopBtnInput();
-          //  _laneanimatin.Sb.Pause();
+        
 
         }
 
@@ -84,59 +57,21 @@ namespace LaneTop
         private void btnDisconnect_Click(object sender, RoutedEventArgs e)
         {
             PlcCalls.Disconnect();
-          
-          
+ 
         }
-
-        private void StartAnimation()
-        {
-            _laneanimatin.Sb.Begin();
-            _laneanimatin.Sb.Seek(TimeSpan.FromMilliseconds(1000));
-         
-
-            
-        }
-
 
 
         private void StartAnimationBtn_Click(object sender, RoutedEventArgs e)
         {
-        //https://msdn.microsoft.com/en-us/library/cc295328.aspx
-            //Storyboard myStoryboard;
-            //myStoryboard = (Storyboard)this.Resources["Storyboard1"];
-            //myStoryboard.Begin(this);
-            var sub = FindResource("Storyboard1") as Storyboard;
+            //https://msdn.microsoft.com/en-us/library/cc295328.aspx
 
-            if (sub != null)
-            {
-               
-                sub.Begin();
-
-              
-            }
- 
-
+            var sub1 = FindResource("Storyboard1") as Storyboard;
            
-        }
+            if (sub1 != null) 
+                
+                sub1.Begin();
+           
 
-
-
-        private bool AnimationPaused()
-        {
-            var sub = FindResource("Storyboard1") as Storyboard;
-            bool pauze = false;
-
-            if (sub.GetIsPaused())
-            {
-
-                sub.Resume();
-                pauze = true;
-
-                return pauze;
-            }
-
-            return pauze;
-        
         }
 
 
@@ -145,7 +80,7 @@ namespace LaneTop
         {
             var sub = FindResource("Storyboard1") as Storyboard;
             sub.Pause();
-            StartAnimationBtn.IsEnabled = false;
+           
 
         }
         //http://stackoverflow.com/questions/21703266/change-button-background-color-on-eventtrigger-in-wpf
@@ -159,12 +94,10 @@ namespace LaneTop
         private void ResetAnimationBtn_Copy1_Click(object sender, RoutedEventArgs e)
         {
             var sub = FindResource("Storyboard1") as Storyboard;
-            sub.Seek(TimeSpan.Zero);
-            StartAnimationBtn.IsEnabled = true;
+            if (sub != null) sub.Seek(TimeSpan.Zero);
+           
         }
 
-  
-        
 
 
 
@@ -182,23 +115,31 @@ namespace LaneTop
 
 
 
+        private void Timeline_OnCompleted(object sender, EventArgs e)
+        {
+            var thing = this.FindResource("Storyboard3");
+
+            var OtherSB = (Storyboard)thing;
+            OtherSB.Begin();
+        }
+
+        private void Timeline_OnCompleted4(object sender, EventArgs e)
+        {
+       
+            var thing = this.FindResource("Storyboard4");
+
+            var OtherSB = (Storyboard)thing;
+            OtherSB.Begin();
+        }
 
 
+        private void MyStoryboardCompleted(object sender, EventArgs e)
+        {
+            var thing = this.FindResource("Storyboard2");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            var OtherSB = (Storyboard)thing;
+            OtherSB.Begin();
+        }
 
     }
 }

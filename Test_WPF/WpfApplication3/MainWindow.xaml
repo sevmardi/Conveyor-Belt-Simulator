@@ -8,13 +8,14 @@
             <DoubleAnimationUsingPath Storyboard.TargetName="ellipse"
         		Storyboard.TargetProperty="(Canvas.Left)"
         		PathGeometry="{StaticResource path}"
-        		Duration="0:0:10" RepeatBehavior="Forever"
-        		AutoReverse="True" Source="X" />
-            <DoubleAnimationUsingPath Storyboard.TargetName="ellipse"
+        		Duration="0:0:2" RepeatBehavior="Forever"
+        		 Source="X" />
+            <DoubleAnimationUsingPath 
+                Storyboard.TargetName="ellipse"
         		Storyboard.TargetProperty="(Canvas.Top)"
         		PathGeometry="{StaticResource path}"
-        		Duration="0:0:10" RepeatBehavior="Forever"
-        		AutoReverse="True" Source="Y" />
+        		Duration="0:0:2" RepeatBehavior="Forever"
+        		 Source="Y" />
         </Storyboard>
     </Window.Resources>
     <Grid x:Name="grid">
