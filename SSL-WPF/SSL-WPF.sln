@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSL_WPF", "SSL-WPF\SSL_WPF.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Components", "Components\Components.csproj", "{04524B1D-A27E-46BD-A034-A983F696D293}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLCTags", "PLCTags\PLCTags.csproj", "{846A241E-2B5D-4514-B1A7-228987572C2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLC", "PLCTags\PLC.csproj", "{846A241E-2B5D-4514-B1A7-228987572C2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

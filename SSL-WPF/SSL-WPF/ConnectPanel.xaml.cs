@@ -12,8 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Snap7;
-using PLCTags;
+
+using PLC;
 
 namespace SSL_WPF
 {
@@ -22,13 +22,11 @@ namespace SSL_WPF
     /// </summary>
     public partial class ConnectPanel : Window
     {
-        private S7Client Client;
-        private byte[] Buffer = new byte[65536];
 
         public ConnectPanel()
         {
             InitializeComponent();
-            Client = new S7Client();
+          
         }
 
         private void ConnectBtn_Click(object sender, RoutedEventArgs e)
@@ -62,9 +60,5 @@ namespace SSL_WPF
             this.Close();
         }
 
-        private void StartUp()
-        {
-
-        }
     }
 }

@@ -97,7 +97,6 @@
     <Compile Include="ShadowBox\ShadowBox.xaml.cs">
       <DependentUpon>ShadowBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Library\snap7.net.cs" />
     <Compile Include="SSL.xaml.cs">
       <DependentUpon>SSL.xaml</DependentUpon>
     </Compile>
@@ -235,15 +234,17 @@
     <Resource Include="Images\wire_color.png" />
     <Resource Include="Images\ZoomHS.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Components\Components.csproj">
       <Project>{04524B1D-A27E-46BD-A034-A983F696D293}</Project>
       <Name>Components</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PLCTags\PLCTags.csproj">
+    <ProjectReference Include="..\PLCTags\PLC.csproj">
       <Project>{846a241e-2b5d-4514-b1a7-228987572c2d}</Project>
-      <Name>PLCTags</Name>
+      <Name>PLC</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
