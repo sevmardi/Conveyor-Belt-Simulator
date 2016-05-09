@@ -114,7 +114,10 @@ namespace LaneTop
             }
         }
 
-        #region Startup
+
+
+
+        
 
         /// <summary>
         /// The first startup in which amount of Inputs & meker(s) are set to true, this to avoid
@@ -159,11 +162,8 @@ namespace LaneTop
             _res = Client.WriteMultiVars(Items, 20);
         }
 
-        #endregion
 
-
-
-        public static void AllSensorsOnTrue()
+        public static void SectionA()
         {
             GCHandle myGcHandle = GCHandle.Alloc(Buffer, GCHandleType.Pinned);
             IntPtr sensortIntPtr = myGcHandle.AddrOfPinnedObject();
@@ -215,43 +215,369 @@ namespace LaneTop
             Items[5].WordLen = S7Client.S7WLBit;
             Items[5].Start = PlcTags._0105_S2;
             Items[5].pData = sensortIntPtr;
+      
+            _res = Client.WriteMultiVars(Items, 6);
+        }
 
+        public static void SectionB()
+        {
+
+            GCHandle myGcHandle = GCHandle.Alloc(Buffer, GCHandleType.Pinned);
+            IntPtr sensortIntPtr = myGcHandle.AddrOfPinnedObject();
+
+            Buffer[0] = 1;
+
+            Items[0].Area = S7Client.S7AreaPE;
+            Items[0].Amount = 1;
+            Items[0].DBNumber = 0;
+            Items[0].WordLen = S7Client.S7WLBit;
+            Items[0].Start = PlcTags._0301_S1;
+            Items[0].pData = sensortIntPtr;
+
+
+            Items[1].Area = S7Client.S7AreaPE;
+            Items[1].Amount = 1;
+            Items[1].DBNumber = 0;
+            Items[1].WordLen = S7Client.S7WLBit;
+            Items[1].Start = PlcTags._0301_S2;
+            Items[1].pData = sensortIntPtr;
+
+
+            Items[2].Area = S7Client.S7AreaPE;
+            Items[2].Amount = 1;
+            Items[2].DBNumber = 0;
+            Items[2].WordLen = S7Client.S7WLBit;
+            Items[2].Start = PlcTags._0302_S1;
+            Items[2].pData = sensortIntPtr;
+
+            Items[3].Area = S7Client.S7AreaPE;
+            Items[3].Amount = 1;
+            Items[3].DBNumber = 0;
+            Items[3].WordLen = S7Client.S7WLBit;
+            Items[3].Start = PlcTags._0303_S1;
+            Items[3].pData = sensortIntPtr;
+
+            Items[4].Area = S7Client.S7AreaPE;
+            Items[4].Amount = 1;
+            Items[4].DBNumber = 0;
+            Items[4].WordLen = S7Client.S7WLBit;
+            Items[4].Start = PlcTags._0304_S1;
+            Items[4].pData = sensortIntPtr;
+
+            Items[5].Area = S7Client.S7AreaPE;
+            Items[5].Amount = 1;
+            Items[5].DBNumber = 0;
+            Items[5].WordLen = S7Client.S7WLBit;
+            Items[5].Start = PlcTags._0304_S2;
+            Items[5].pData = sensortIntPtr;
 
             Items[6].Area = S7Client.S7AreaPE;
             Items[6].Amount = 1;
             Items[6].DBNumber = 0;
             Items[6].WordLen = S7Client.S7WLBit;
-            Items[6].Start = PlcTags._0301_S1;
+            Items[6].Start = PlcTags._0304_S3;
             Items[6].pData = sensortIntPtr;
-
 
             Items[7].Area = S7Client.S7AreaPE;
             Items[7].Amount = 1;
             Items[7].DBNumber = 0;
             Items[7].WordLen = S7Client.S7WLBit;
-            Items[7].Start = PlcTags._0301_S2;
+            Items[7].Start = PlcTags._0701_S1;
             Items[7].pData = sensortIntPtr;
 
+            _res = Client.WriteMultiVars(Items, 9);
+        }
+
+        public static void SectionC()
+        {
+            GCHandle myGcHandle = GCHandle.Alloc(Buffer, GCHandleType.Pinned);
+            IntPtr sensortIntPtr = myGcHandle.AddrOfPinnedObject();
+
+            Buffer[0] = 1;
+
+            Items[0].Area = S7Client.S7AreaPE;
+            Items[0].Amount = 1;
+            Items[0].DBNumber = 0;
+            Items[0].WordLen = S7Client.S7WLBit;
+            Items[0].Start = PlcTags._0701_S2;
+            Items[0].pData = sensortIntPtr;
+
+
+            Items[1].Area = S7Client.S7AreaPE;
+            Items[1].Amount = 1;
+            Items[1].DBNumber = 0;
+            Items[1].WordLen = S7Client.S7WLBit;
+            Items[1].Start = PlcTags._0702_S1;
+            Items[1].pData = sensortIntPtr;
+
+
+            Items[2].Area = S7Client.S7AreaPE;
+            Items[2].Amount = 1;
+            Items[2].DBNumber = 0;
+            Items[2].WordLen = S7Client.S7WLBit;
+            Items[2].Start = PlcTags._0702_S2;
+            Items[2].pData = sensortIntPtr;
+
+            _res = Client.WriteMultiVars(Items, 4);
+                
+        }
+
+        public static void SectionD()
+        {
+            GCHandle myGcHandle = GCHandle.Alloc(Buffer, GCHandleType.Pinned);
+            IntPtr sensortIntPtr = myGcHandle.AddrOfPinnedObject();
+
+            Buffer[0] = 1;
+
+            Items[0].Area = S7Client.S7AreaPE;
+            Items[0].Amount = 1;
+            Items[0].DBNumber = 0;
+            Items[0].WordLen = S7Client.S7WLBit;
+            Items[0].Start = PlcTags._1001_S1;
+            Items[0].pData = sensortIntPtr;
+
+
+            Items[1].Area = S7Client.S7AreaPE;
+            Items[1].Amount = 1;
+            Items[1].DBNumber = 0;
+            Items[1].WordLen = S7Client.S7WLBit;
+            Items[1].Start = PlcTags._1001_S2;
+            Items[1].pData = sensortIntPtr;
+
+
+            Items[2].Area = S7Client.S7AreaPE;
+            Items[2].Amount = 1;
+            Items[2].DBNumber = 0;
+            Items[2].WordLen = S7Client.S7WLBit;
+            Items[2].Start = PlcTags._1002_S1;
+            Items[2].pData = sensortIntPtr;
+
+            Items[3].Area = S7Client.S7AreaPE;
+            Items[3].Amount = 1;
+            Items[3].DBNumber = 0;
+            Items[3].WordLen = S7Client.S7WLBit;
+            Items[3].Start = PlcTags._1002_S2;
+            Items[3].pData = sensortIntPtr;
+
+            Items[4].Area = S7Client.S7AreaPE;
+            Items[4].Amount = 1;
+            Items[4].DBNumber = 0;
+            Items[4].WordLen = S7Client.S7WLBit;
+            Items[4].Start = PlcTags._1003_S1;
+            Items[4].pData = sensortIntPtr;
+
+            Items[5].Area = S7Client.S7AreaPE;
+            Items[5].Amount = 1;
+            Items[5].DBNumber = 0;
+            Items[5].WordLen = S7Client.S7WLBit;
+            Items[5].Start = PlcTags._1003_S4;
+            Items[5].pData = sensortIntPtr;
+
+            Items[6].Area = S7Client.S7AreaPE;
+            Items[6].Amount = 1;
+            Items[6].DBNumber = 0;
+            Items[6].WordLen = S7Client.S7WLBit;
+            Items[6].Start = PlcTags._1003_S5;
+            Items[6].pData = sensortIntPtr;
+
+            Items[7].Area = S7Client.S7AreaPE;
+            Items[7].Amount = 1;
+            Items[7].DBNumber = 0;
+            Items[7].WordLen = S7Client.S7WLBit;
+            Items[7].Start = PlcTags._1003_S2;
+            Items[7].pData = sensortIntPtr;
 
             Items[8].Area = S7Client.S7AreaPE;
             Items[8].Amount = 1;
             Items[8].DBNumber = 0;
             Items[8].WordLen = S7Client.S7WLBit;
-            Items[8].Start = PlcTags._0302_S1;
+            Items[8].Start = PlcTags._1004_S1;
             Items[8].pData = sensortIntPtr;
 
             Items[9].Area = S7Client.S7AreaPE;
             Items[9].Amount = 1;
             Items[9].DBNumber = 0;
             Items[9].WordLen = S7Client.S7WLBit;
-            Items[9].Start = PlcTags._0303_S1;
+            Items[9].Start = PlcTags._1003_S3;
             Items[9].pData = sensortIntPtr;
 
-            
-            _res = Client.WriteMultiVars(Items, 20);
+            Items[10].Area = S7Client.S7AreaPE;
+            Items[10].Amount = 1;
+            Items[10].DBNumber = 0;
+            Items[10].WordLen = S7Client.S7WLBit;
+            Items[10].Start = PlcTags._1004_S2;
+            Items[10].pData = sensortIntPtr;
+
+            _res = Client.WriteMultiVars(Items, 13);
         }
 
+        public static void SectionE()
+        {
+            GCHandle myGcHandle = GCHandle.Alloc(Buffer, GCHandleType.Pinned);
+            IntPtr sensortIntPtr = myGcHandle.AddrOfPinnedObject();
 
+            Buffer[0] = 1;
+
+            Items[0].Area = S7Client.S7AreaPE;
+            Items[0].Amount = 1;
+            Items[0].DBNumber = 0;
+            Items[0].WordLen = S7Client.S7WLBit;
+            Items[0].Start = PlcTags._1101_S1;
+            Items[0].pData = sensortIntPtr;
+
+
+            Items[1].Area = S7Client.S7AreaPE;
+            Items[1].Amount = 1;
+            Items[1].DBNumber = 0;
+            Items[1].WordLen = S7Client.S7WLBit;
+            Items[1].Start = PlcTags._1101_S2;
+            Items[1].pData = sensortIntPtr;
+
+
+            Items[2].Area = S7Client.S7AreaPE;
+            Items[2].Amount = 1;
+            Items[2].DBNumber = 0;
+            Items[2].WordLen = S7Client.S7WLBit;
+            Items[2].Start = PlcTags._1101_S3;
+            Items[2].pData = sensortIntPtr;
+
+
+            Items[3].Area = S7Client.S7AreaPE;
+            Items[3].Amount = 1;
+            Items[3].DBNumber = 0;
+            Items[3].WordLen = S7Client.S7WLBit;
+            Items[3].Start = PlcTags._1102_S1;
+            Items[3].pData = sensortIntPtr;
+
+
+            Items[4].Area = S7Client.S7AreaPE;
+            Items[4].Amount = 1;
+            Items[4].DBNumber = 0;
+            Items[4].WordLen = S7Client.S7WLBit;
+            Items[4].Start = PlcTags._1102_S2;
+            Items[4].pData = sensortIntPtr;
+
+
+            Items[5].Area = S7Client.S7AreaPE;
+            Items[5].Amount = 1;
+            Items[5].DBNumber = 0;
+            Items[5].WordLen = S7Client.S7WLBit;
+            Items[5].Start = PlcTags._1102_S3;
+            Items[5].pData = sensortIntPtr;
+
+            _res = Client.WriteMultiVars(Items, 7);
+
+        }
+
+        public static void SectionF()
+        {
+            GCHandle myGcHandle = GCHandle.Alloc(Buffer, GCHandleType.Pinned);
+            IntPtr sensortIntPtr = myGcHandle.AddrOfPinnedObject();
+
+            Buffer[0] = 1;
+
+            Items[0].Area = S7Client.S7AreaPE;
+            Items[0].Amount = 1;
+            Items[0].DBNumber = 0;
+            Items[0].WordLen = S7Client.S7WLBit;
+            Items[0].Start = PlcTags._1601_S1;
+            Items[0].pData = sensortIntPtr;
+
+
+            Items[1].Area = S7Client.S7AreaPE;
+            Items[1].Amount = 1;
+            Items[1].DBNumber = 0;
+            Items[1].WordLen = S7Client.S7WLBit;
+            Items[1].Start = PlcTags._1601_S2;
+            Items[1].pData = sensortIntPtr;
+
+
+            Items[2].Area = S7Client.S7AreaPE;
+            Items[2].Amount = 1;
+            Items[2].DBNumber = 0;
+            Items[2].WordLen = S7Client.S7WLBit;
+            Items[2].Start = PlcTags._1601_S3;
+            Items[2].pData = sensortIntPtr;
+
+            Items[3].Area = S7Client.S7AreaPE;
+            Items[3].Amount = 1;
+            Items[3].DBNumber = 0;
+            Items[3].WordLen = S7Client.S7WLBit;
+            Items[3].Start = PlcTags._1602_S1;
+            Items[3].pData = sensortIntPtr;
+
+            Items[4].Area = S7Client.S7AreaPE;
+            Items[4].Amount = 1;
+            Items[4].DBNumber = 0;
+            Items[4].WordLen = S7Client.S7WLBit;
+            Items[4].Start = PlcTags._1602_S2;
+            Items[4].pData = sensortIntPtr;
+
+            Items[5].Area = S7Client.S7AreaPE;
+            Items[5].Amount = 1;
+            Items[5].DBNumber = 0;
+            Items[5].WordLen = S7Client.S7WLBit;
+            Items[5].Start = PlcTags._1602_S3;
+            Items[5].pData = sensortIntPtr;
+
+            _res = Client.WriteMultiVars(Items, 7);
+
+        }
+
+        public static void SectionG()
+        {
+            GCHandle myGcHandle = GCHandle.Alloc(Buffer, GCHandleType.Pinned);
+            IntPtr sensortIntPtr = myGcHandle.AddrOfPinnedObject();
+
+            Buffer[0] = 1;
+
+            Items[0].Area = S7Client.S7AreaPE;
+            Items[0].Amount = 1;
+            Items[0].DBNumber = 0;
+            Items[0].WordLen = S7Client.S7WLBit;
+            Items[0].Start = PlcTags._1701_S1;
+            Items[0].pData = sensortIntPtr;
+
+            Items[1].Area = S7Client.S7AreaPE;
+            Items[1].Amount = 1;
+            Items[1].DBNumber = 0;
+            Items[1].WordLen = S7Client.S7WLBit;
+            Items[1].Start = PlcTags._1701_S2;
+            Items[1].pData = sensortIntPtr;
+
+            Items[2].Area = S7Client.S7AreaPE;
+            Items[2].Amount = 1;
+            Items[2].DBNumber = 0;
+            Items[2].WordLen = S7Client.S7WLBit;
+            Items[2].Start = PlcTags.SafetySensorReclaim;
+            Items[2].pData = sensortIntPtr;
+
+            Items[3].Area = S7Client.S7AreaPE;
+            Items[3].Amount = 1;
+            Items[3].DBNumber = 0;
+            Items[3].WordLen = S7Client.S7WLBit;
+            Items[3].Start = PlcTags.SafetySensorReject;
+            Items[3].pData = sensortIntPtr;
+
+            Items[4].Area = S7Client.S7AreaPE;
+            Items[4].Amount = 1;
+            Items[4].DBNumber = 0;
+            Items[4].WordLen = S7Client.S7WLBit;
+            Items[4].Start = PlcTags._1702_S1;
+            Items[4].pData = sensortIntPtr;
+
+            Items[5].Area = S7Client.S7AreaPE;
+            Items[5].Amount = 1;
+            Items[5].DBNumber = 0;
+            Items[5].WordLen = S7Client.S7WLBit;
+            Items[5].Start = PlcTags._1702_S2;
+            Items[5].pData = sensortIntPtr;
+
+  
+
+            _res = Client.WriteMultiVars(Items, 7);
+
+        }
 
 
 

@@ -12,12 +12,13 @@ namespace LaneTop
     {
        
         private LaneAnimation _laneanimatin;
-
+        SectionA _sectionA;
         public MainWindow()
         {
-
+             _sectionA = new SectionA(this);
             InitializeComponent();
             //laneanimatin.sb = (Storyboard)this.Resources["Storyboard1"];
+            ObjectToMove.Visibility = Visibility.Hidden;
         }
 
 
@@ -25,20 +26,35 @@ namespace LaneTop
         {
             if (PlcCalls.Client.Connected())
             {
-                 ObjectToMove.Visibility = Visibility.Visible;
-                _0102_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0102_S2.Fill = new SolidColorBrush(Colors.Red);
+               
+               PlcCalls.SectionA();
+               PlcCalls.SectionB();
+               PlcCalls.SectionC();
+               PlcCalls.SectionD();
+               PlcCalls.SectionE();
+               PlcCalls.SectionF();
+               PlcCalls.SectionG();
+               PlcCalls.StartUp();
 
+               ObjectToMove.Visibility = Visibility.Visible;
+              
+                // Sensors section-A
+               _0102_S1.Fill = new SolidColorBrush(Colors.Red);
+               _0102_S2.Fill = new SolidColorBrush(Colors.Red);
+               _0103_S1.Fill = new SolidColorBrush(Colors.Red);
+               _0104_S1.Fill = new SolidColorBrush(Colors.Red);
+               _0105_S1.Fill = new SolidColorBrush(Colors.Red);
+               _0105_S2.Fill = new SolidColorBrush(Colors.Red);
 
-                PlcCalls.AllSensorsOnTrue();
-                PlcCalls.StartUp();
+                // Sensors section-B
+
             }
          
         }
 
         private void btnRest_Click(object sender, RoutedEventArgs e)
         {
-           
+            PlcCalls.ResetBtn();
             ObjectToMove.Visibility = Visibility.Visible;
         }
 
@@ -66,12 +82,11 @@ namespace LaneTop
             //https://msdn.microsoft.com/en-us/library/cc295328.aspx
 
             var sub1 = FindResource("Storyboard1") as Storyboard;
-           
-            if (sub1 != null) 
-                
-                sub1.Begin();
-           
+            
+            if (sub1 != null)
 
+                SetMotorOnInSectionA();
+                sub1.Begin();
         }
 
 
@@ -80,9 +95,9 @@ namespace LaneTop
         {
             var sub = FindResource("Storyboard1") as Storyboard;
             sub.Pause();
-           
 
         }
+
         //http://stackoverflow.com/questions/21703266/change-button-background-color-on-eventtrigger-in-wpf
         private void ContinueAnimationBtn_Copy_Click(object sender, RoutedEventArgs e)
         {
@@ -100,7 +115,11 @@ namespace LaneTop
 
 
 
-
+        private void SetMotorOnInSectionA()
+        {
+             _sectionA.Executor();
+            
+        }
 
 
 

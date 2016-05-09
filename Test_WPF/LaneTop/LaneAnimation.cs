@@ -34,7 +34,14 @@ namespace LaneTop
 
            return pauze;
 
-       } 
+       }
+        /// <summary>
+        /// Stop Animation
+        /// </summary>
+        public  void StopAnimation()
+        {
+           SB.Stop();
+        }
          
 
     }
