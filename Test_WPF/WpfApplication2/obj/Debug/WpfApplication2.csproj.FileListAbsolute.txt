@@ -27,7 +27,6 @@ C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\Test_WPF\WpfApplication2\ob
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\WpfApplication2\bin\Debug\WpfApplication2.exe.config
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\WpfApplication2\bin\Debug\WpfApplication2.exe
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\WpfApplication2\bin\Debug\WpfApplication2.pdb
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\WpfApplication2\obj\Debug\WpfApplication2.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\WpfApplication2\obj\Debug\MainWindow.baml
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\WpfApplication2\obj\Debug\MainWindow.g.cs
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\WpfApplication2\obj\Debug\App.g.cs

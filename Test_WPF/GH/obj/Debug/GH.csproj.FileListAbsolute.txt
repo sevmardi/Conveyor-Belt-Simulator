@@ -13,7 +13,6 @@ C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\Test_WPF\GH\obj\Debug\GH.pd
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\GH\bin\Debug\GH.exe.config
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\GH\bin\Debug\GH.exe
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\GH\bin\Debug\GH.pdb
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\GH\obj\Debug\GH.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\GH\obj\Debug\MainWindow.baml
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\GH\obj\Debug\MainWindow.g.cs
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\GH\obj\Debug\App.g.cs

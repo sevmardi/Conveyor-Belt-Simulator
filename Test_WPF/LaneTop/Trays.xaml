@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="LaneTop.Trays"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             x:Name="UserControl22" Height="90" Width="60"
+            >
+    <Viewbox Stretch="Fill">
+        <Grid>
+            
+    </Grid>
+    </Viewbox>
+</UserControl>

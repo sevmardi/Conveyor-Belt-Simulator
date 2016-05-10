@@ -26,16 +26,16 @@ namespace LaneTop
         {
             if (PlcCalls.Client.Connected())
             {
-               
-               PlcCalls.SectionA();
-               PlcCalls.SectionB();
-               PlcCalls.SectionC();
-               PlcCalls.SectionD();
-               PlcCalls.SectionE();
-               PlcCalls.SectionF();
-               PlcCalls.SectionG();
-               PlcCalls.StartUp();
 
+                PlcCalls.SectionA();
+                PlcCalls.SectionB();
+                PlcCalls.SectionC();
+                PlcCalls.SectionD();
+                PlcCalls.SectionE();
+                PlcCalls.SectionF();
+                PlcCalls.SectionG();
+                PlcCalls.StartUp();
+               
                ObjectToMove.Visibility = Visibility.Visible;
               
                 // Sensors section-A
@@ -46,7 +46,7 @@ namespace LaneTop
                _0105_S1.Fill = new SolidColorBrush(Colors.Red);
                _0105_S2.Fill = new SolidColorBrush(Colors.Red);
 
-                // Sensors section-B
+                
 
             }
          
@@ -54,15 +54,29 @@ namespace LaneTop
 
         private void btnRest_Click(object sender, RoutedEventArgs e)
         {
-            PlcCalls.ResetBtn();
-            ObjectToMove.Visibility = Visibility.Visible;
+           // PlcCalls.ResetBtn();
+            var sb1 = FindResource("Storyboard1") as Storyboard;
+            if (sb1 != null) sb1.Resume();
+            var sb2 = FindResource("Storyboard2") as Storyboard;
+            if (sb2 != null) sb2.Resume();
+            var sb3 = FindResource("Storyboard3") as Storyboard;
+            if (sb3 != null) sb3.Resume();
+            var sb4 = FindResource("Storyboard4") as Storyboard;
+            if (sb4 != null) sb4.Resume();
         }
 
         private void btnStopSystem_Click(object sender, RoutedEventArgs e)
         {
-            PlcCalls.StopBtnInput();
-        
+           // PlcCalls.StopBtnInput();
 
+            var sb1 = FindResource("Storyboard1") as Storyboard;
+            if (sb1 != null) sb1.Pause();
+            var sb2 = FindResource("Storyboard2") as Storyboard;
+            if (sb2 != null) sb2.Pause();
+            //var sb3 = FindResource("Storyboard3") as Storyboard;
+            //if (sb3 != null) sb3.Pause();
+            //var sb4 = FindResource("Storyboard4") as Storyboard;
+            //if (sb4 != null) sb4.Pause();
         }
 
         private void btnConnectToPLC_Click(object sender, RoutedEventArgs e)
@@ -73,7 +87,9 @@ namespace LaneTop
         private void btnDisconnect_Click(object sender, RoutedEventArgs e)
         {
             PlcCalls.Disconnect();
- 
+
+            Disconnect.IsEnabled = false;
+
         }
 
 
@@ -91,29 +107,6 @@ namespace LaneTop
 
 
 
-        private void StopAnimationBtn_Click(object sender, RoutedEventArgs e)
-        {
-            var sub = FindResource("Storyboard1") as Storyboard;
-            sub.Pause();
-
-        }
-
-        //http://stackoverflow.com/questions/21703266/change-button-background-color-on-eventtrigger-in-wpf
-        private void ContinueAnimationBtn_Copy_Click(object sender, RoutedEventArgs e)
-        {
-            var sub = FindResource("Storyboard1") as Storyboard;
-            sub.Resume();
-           
-        }
-
-        private void ResetAnimationBtn_Copy1_Click(object sender, RoutedEventArgs e)
-        {
-            var sub = FindResource("Storyboard1") as Storyboard;
-            if (sub != null) sub.Seek(TimeSpan.Zero);
-           
-        }
-
-
 
         private void SetMotorOnInSectionA()
         {
@@ -122,10 +115,7 @@ namespace LaneTop
         }
 
 
-
-
-
-
+        
 
 
 

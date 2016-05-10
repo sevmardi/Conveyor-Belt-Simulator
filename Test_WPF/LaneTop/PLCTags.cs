@@ -27,11 +27,13 @@ namespace LaneTop
 
 
         // LANE TOP - SENSORS
+        //SECTION-A
         internal static int _0102_S1 = 16;
         internal static int _0102_S2 = 17;
         public static int _0103_S1 = 18;
         public static int _0104_S1 = 144;
         public static int _0105_S1 = 156;
+
         public static int _0105_S2 = 157;
         public static int _0301_S1 = 36;
         public static int _0301_S2 = 37;
@@ -82,25 +84,35 @@ namespace LaneTop
         public static int _1702_S1 = 446;
         public static int _1702_S2 = 447;
 
-
-
-        // LANE TOP - MOTORS
+        // MOTORS - SECTION-A
         public static int _0102_D1 = 16;
         public static int _0103_D1 = 18;
         public static int _0104_D1 = 144;
         public static int _0105_D1 = 156;
+        
+        // MOTORS - SECTION-B
         public static int _0301_D1 = 36;
         public static int _0302_D1 = 38;
         public static int _0303_D1 = 164;
         public static int _0304_D1 = 166;
+       
+        //MOTORS - SECTION-C
+        public static int _0702_D1 = 40;
+
+        //MOTORS - SECTION-D
+        public static int _1001_D1 = 000;
+        public static int _1002_D1 = 274;
         public static int _1003_D2 = 284;
-        public static int _1003_D1_Merker = 535;
+        public static int _1003_D1 = 535;
         public static int _1003_D3 = 286;
         public static int _1003_D4 = 412;
-        public static int _0702_D1 = 40;
-        public static int _1002_D1 = 274;
         public static int _1004_D1 = 280;
         public static int _1004_D2 = 282;
         public static int _1004_D3 = 332;
+
+        //MOTORS - SECTION-E
+        public static int _1701_D1 = 000;
+        public static int _1702_D1 = 000;
+        
     }
 }
