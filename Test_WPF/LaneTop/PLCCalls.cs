@@ -73,23 +73,12 @@ namespace LaneTop
         /// <summary>
         /// Stop the system by either 
         /// </summary>
-        public static void StopBtnInput()
+        public  void StopBtnInput()
         {
-            _res = Client.ReadArea(S7Client.S7AreaPE, DBNumber, PlcTags.StopButtonInput, Amount, Wordlen, Buffer);
+            Buffer[0] = 0;
+            Client.WriteArea(S7Client.S7AreaPE, DBNumber, PlcTags.StopButtonInput, Amount, Wordlen, Buffer);
+            Client.WriteArea(S7Client.S7AreaPE, DBNumber, PlcTags.StartButtonInput, Amount, Wordlen, Buffer);
 
-            if (_res == 0)
-            {
-                if (Buffer[0] == 0)
-                {
-                    Buffer[0] = 1;
-                    Client.WriteArea(S7Client.S7AreaPE, DBNumber, PlcTags.StopButtonInput, Amount, Wordlen, Buffer);
-                }
-                else
-                {
-                    Buffer[0] = 0;
-                    Client.WriteArea(S7Client.S7AreaPE, DBNumber, PlcTags.StopButtonInput, Amount, Wordlen, Buffer);
-                }
-            }
         }
 
         /// <summary>
@@ -158,6 +147,24 @@ namespace LaneTop
             Items[3].WordLen = S7Client.S7WLBit;
             Items[3].Start = PlcTags.SwitchDegradedModeInput;
             Items[3].pData = startupPtr;
+
+
+            Items[4].Area = S7Client.S7AreaPE;
+            Items[4].Amount = 1;
+            Items[4].DBNumber = 0;
+            Items[4].WordLen = S7Client.S7WLBit;
+            Items[4].Start = PlcTags.StartButtonInput;
+            Items[4].pData = startupPtr;
+
+
+            Items[5].Area = S7Client.S7AreaPE;
+            Items[5].Amount = 1;
+            Items[5].DBNumber = 0;
+            Items[5].WordLen = S7Client.S7WLBit;
+            Items[5].Start = PlcTags.StopButtonInput;
+            Items[5].pData = startupPtr;
+
+
 
             _res = Client.WriteMultiVars(Items, 20);
         }

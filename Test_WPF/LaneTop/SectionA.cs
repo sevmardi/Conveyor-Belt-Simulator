@@ -28,7 +28,7 @@ namespace LaneTop
             SixthSensor();
         }
 
-
+        //MOTORS
         public void _0102_D1()
         {
             _res = PlcCalls.Client.ReadArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PlcTags._0102_D1, PlcCalls.Amount,
@@ -136,9 +136,9 @@ namespace LaneTop
             Buffer[0] = 1;
             PlcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PlcTags._0102_S1, PlcCalls.Amount,
                 PlcCalls.Wordlen, Buffer);
-            Buffer[0] = 0;
-            _res = PlcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PlcTags._0102_D1, PlcCalls.Amount,
-                PlcCalls.Wordlen, Buffer);
+            //Buffer[0] = 0;
+            //_res = PlcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PlcTags._0102_D1, PlcCalls.Amount,
+            //    PlcCalls.Wordlen, Buffer);
 
             main.Dispatcher.Invoke((Action) (() =>
             {
@@ -181,9 +181,9 @@ namespace LaneTop
             Buffer[0] = 1;
             PlcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PlcTags._0102_S2, PlcCalls.Amount,
                 PlcCalls.Wordlen, Buffer);
-            Buffer[0] = 0;
-            _res = PlcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PlcTags._0103_D1, PlcCalls.Amount,
-                PlcCalls.Wordlen, Buffer);
+            //Buffer[0] = 0;
+            //_res = PlcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PlcTags._0103_D1, PlcCalls.Amount,
+            //    PlcCalls.Wordlen, Buffer);
 
             main.Dispatcher.Invoke((Action) (() =>
             {

@@ -12,6 +12,7 @@ namespace LaneTop
         public static int StartButtonInput = 448;
         public static int StopButtonInput = 322;
         public static int ResetButtonMerker = 7997;
+
         public static int DegradedModeMerker = 162;
         public static int LMcomFailMerker = 74;
         public static int RfiDcomFailMerker = 12;

@@ -4,80 +4,80 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="LaneTop.MainWindow"
         Title="MainWindow" Height="690" Width="1800">
     <Window.Resources>
-        
-    	<Storyboard x:Key="Storyboard1">
+
+        <Storyboard x:Key="Storyboard1">
             <DoubleAnimationUsingPath Duration="0:0:3"  Name="PathWithNoName"   Completed="MyStoryboardCompleted" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
-    			<DoubleAnimationUsingPath.PathGeometry>
-    				<PathGeometry Figures="M1.5,-18.667014 L8.1669813,-54.00002 L31.833186,-94.666719 L60.166999,-116.33299"/>
-    			</DoubleAnimationUsingPath.PathGeometry>
-    		</DoubleAnimationUsingPath>
+                <DoubleAnimationUsingPath.PathGeometry>
+                    <PathGeometry Figures="M1.5,-18.667014 L8.1669813,-54.00002 L31.833186,-94.666719 L60.166999,-116.33299"/>
+                </DoubleAnimationUsingPath.PathGeometry>
+            </DoubleAnimationUsingPath>
             <DoubleAnimationUsingPath Duration="0:0:3"   Completed="MyStoryboardCompleted"  Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
-    			<DoubleAnimationUsingPath.PathGeometry>
-    				<PathGeometry Figures="M1.5,-18.667014 L8.1669813,-54.00002 L31.833186,-94.666719 L60.166999,-116.33299"/>
-    			</DoubleAnimationUsingPath.PathGeometry>
-    		</DoubleAnimationUsingPath>
-    	</Storyboard>
-        
-    	<Storyboard x:Key="Storyboard2">
+                <DoubleAnimationUsingPath.PathGeometry>
+                    <PathGeometry Figures="M1.5,-18.667014 L8.1669813,-54.00002 L31.833186,-94.666719 L60.166999,-116.33299"/>
+                </DoubleAnimationUsingPath.PathGeometry>
+            </DoubleAnimationUsingPath>
+        </Storyboard>
+
+        <Storyboard x:Key="Storyboard2">
             <DoubleAnimationUsingPath Duration="0:0:3"  Source="X" Completed="Timeline_OnCompleted" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
-    			<DoubleAnimationUsingPath.PathGeometry>
-    				<PathGeometry Figures="M62.25,-115.75 L110,-134 L149,-129 L172.25,-122"/>
-    			</DoubleAnimationUsingPath.PathGeometry>
-    		</DoubleAnimationUsingPath>
+                <DoubleAnimationUsingPath.PathGeometry>
+                    <PathGeometry Figures="M62.25,-115.75 L110,-134 L149,-129 L172.25,-122"/>
+                </DoubleAnimationUsingPath.PathGeometry>
+            </DoubleAnimationUsingPath>
             <DoubleAnimationUsingPath Duration="0:0:3"   Source="Y" Completed="Timeline_OnCompleted" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
-    			<DoubleAnimationUsingPath.PathGeometry>
-    				<PathGeometry Figures="M62.25,-115.75 L110,-134 L149,-129 L172.25,-122"/>
-    			</DoubleAnimationUsingPath.PathGeometry>
-    		</DoubleAnimationUsingPath>
-    	</Storyboard>
-        
-    	<Storyboard x:Key="Storyboard3">
+                <DoubleAnimationUsingPath.PathGeometry>
+                    <PathGeometry Figures="M62.25,-115.75 L110,-134 L149,-129 L172.25,-122"/>
+                </DoubleAnimationUsingPath.PathGeometry>
+            </DoubleAnimationUsingPath>
+        </Storyboard>
+
+        <Storyboard x:Key="Storyboard3">
             <DoubleAnimationUsingPath Name="path3" Duration="0:0:2" Source="X" Completed="Timeline_OnCompleted4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
-    			<DoubleAnimationUsingPath.PathGeometry>
-    				<PathGeometry Figures="M177.75,-120.25 L197.75,-105.75 L217.5,-87.75 L235.25,-70.25"/>
-    			</DoubleAnimationUsingPath.PathGeometry>
-    		</DoubleAnimationUsingPath>
+                <DoubleAnimationUsingPath.PathGeometry>
+                    <PathGeometry Figures="M177.75,-120.25 L197.75,-105.75 L217.5,-87.75 L235.25,-70.25"/>
+                </DoubleAnimationUsingPath.PathGeometry>
+            </DoubleAnimationUsingPath>
             <DoubleAnimationUsingPath Duration="0:0:2" Source="Y"  Completed="Timeline_OnCompleted4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
-    			<DoubleAnimationUsingPath.PathGeometry>
-    				<PathGeometry Figures="M177.75,-120.25 L197.75,-105.75 L217.5,-87.75 L235.25,-70.25"/>
-    			</DoubleAnimationUsingPath.PathGeometry>
-    		</DoubleAnimationUsingPath>
-    	</Storyboard>
-        
-        
-    	<Storyboard x:Key="Storyboard4">
-    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path">
-    			<EasingDoubleKeyFrame KeyTime="0" Value="3.5"/>
-    		</DoubleAnimationUsingKeyFrames>
-    		<DoubleAnimationUsingPath Duration="0:0:2" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
-    			<DoubleAnimationUsingPath.PathGeometry >
-    				<PathGeometry   Figures="M238.75,-64.08299 L301.58333,-64 L323.25,-64"/>
-    			</DoubleAnimationUsingPath.PathGeometry>
-    		</DoubleAnimationUsingPath>
-    		<DoubleAnimationUsingPath Duration="0:0:2" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
-    			<DoubleAnimationUsingPath.PathGeometry>
-    				<PathGeometry Figures="M238.75,-64.08299 L301.58333,-64 L323.25,-64"/>
-    			</DoubleAnimationUsingPath.PathGeometry>
-    		</DoubleAnimationUsingPath>
-    	</Storyboard>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+                <DoubleAnimationUsingPath.PathGeometry>
+                    <PathGeometry Figures="M177.75,-120.25 L197.75,-105.75 L217.5,-87.75 L235.25,-70.25"/>
+                </DoubleAnimationUsingPath.PathGeometry>
+            </DoubleAnimationUsingPath>
+        </Storyboard>
+
+
+        <Storyboard x:Key="Storyboard4">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path">
+                <EasingDoubleKeyFrame KeyTime="0" Value="3.5"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingPath Duration="0:0:2" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
+                <DoubleAnimationUsingPath.PathGeometry >
+                    <PathGeometry   Figures="M238.75,-64.08299 L301.58333,-64 L323.25,-64"/>
+                </DoubleAnimationUsingPath.PathGeometry>
+            </DoubleAnimationUsingPath>
+            <DoubleAnimationUsingPath Duration="0:0:2" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
+                <DoubleAnimationUsingPath.PathGeometry>
+                    <PathGeometry Figures="M238.75,-64.08299 L301.58333,-64 L323.25,-64"/>
+                </DoubleAnimationUsingPath.PathGeometry>
+            </DoubleAnimationUsingPath>
+        </Storyboard>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </Window.Resources>
 
 
@@ -249,19 +249,19 @@
         <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-203.75" Canvas.Top="362.75" Width="6" x:Name="_0104_S1"/>
         <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-177.5" Canvas.Top="356.75" Width="6" x:Name="_0105_S1"/>
         <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-151" Canvas.Top="362.75" Width="6" x:Name="_0105_S2"/>
-        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-133" Canvas.Top="371" Width="6" x:Name="_0301_S3"/>
-        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-113" Canvas.Top="392" Width="6" x:Name="_0301_S4"/>
-        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-104" Canvas.Top="415" Width="6" x:Name="_0302_S2"/>
-        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Top="419" Width="6" x:Name="_0303_S2" Canvas.Left="-52"/>
-        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-22" Canvas.Top="419" Width="6" x:Name="_0304_S4"/>
-        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="10" Canvas.Top="419" Width="6" x:Name="_0304_S5"/>
-        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="39" Canvas.Top="419" Width="6" x:Name="_0304_S6"/>
-        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="120" Canvas.Top="380" Width="6" x:Name="_0701_S3"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-133" Canvas.Top="371" Width="6" x:Name="_0301_S1"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-113" Canvas.Top="392" Width="6" x:Name="_0301_S2"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-104" Canvas.Top="415" Width="6" x:Name="_0302_S1"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Top="419" Width="6" x:Name="_0303_S1" Canvas.Left="-52"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-22" Canvas.Top="419" Width="6" x:Name="_0304_S1"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="10" Canvas.Top="419" Width="6" x:Name="_0304_S2"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="39" Canvas.Top="419" Width="6" x:Name="_0304_S3"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="120" Canvas.Top="380" Width="6" x:Name="_0701_S1"/>
 
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="538" Canvas.Top="419" Width="6" x:Name="_1003_S2"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="580" Canvas.Top="419" Width="6" x:Name="_1101_S4"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="621" Canvas.Top="419" Width="6" x:Name="_1101_S5"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="665" Canvas.Top="419" Width="6" x:Name="_1101_S6"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="538" Canvas.Top="419" Width="6" x:Name="_1003_S2"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="580" Canvas.Top="419" Width="6" x:Name="_1101_S4"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="621" Canvas.Top="419" Width="6" x:Name="_1101_S5"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="665" Canvas.Top="419" Width="6" x:Name="_1101_S6"/>
 
 
         <Ellipse Height="6" Canvas.Left="-291" Canvas.Top="389.5" Width="6" x:Name="_0102_D1" RenderTransformOrigin="0.5,0.5" Fill="#FFDACF84">
@@ -345,7 +345,7 @@
             </Ellipse.RenderTransform>
         </Ellipse>
 
-        <Ellipse Fill="#FFD61111" Height="6" Canvas.Left="310" Canvas.Top="381" Width="6" x:Name="_0702_D2" RenderTransformOrigin="0.5,0.5">
+        <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="310" Canvas.Top="381" Width="6" x:Name="_0702_D2" RenderTransformOrigin="0.5,0.5">
             <Ellipse.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -356,7 +356,7 @@
             </Ellipse.RenderTransform>
         </Ellipse>
 
-        <Ellipse Fill="#FFD61111" Height="6" Canvas.Left="367" Canvas.Top="381" Width="6" x:Name="_1001_D2" RenderTransformOrigin="0.5,0.5">
+        <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="367" Canvas.Top="381" Width="6" x:Name="_1001_D2" RenderTransformOrigin="0.5,0.5">
             <Ellipse.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -367,7 +367,7 @@
             </Ellipse.RenderTransform>
         </Ellipse>
 
-        <Ellipse Fill="#FFD61111" Height="6" Canvas.Left="419" Canvas.Top="381" Width="6" x:Name="_1002_D2" RenderTransformOrigin="0.5,0.5">
+        <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="419" Canvas.Top="381" Width="6" x:Name="_1002_D2" RenderTransformOrigin="0.5,0.5">
             <Ellipse.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -378,7 +378,7 @@
             </Ellipse.RenderTransform>
         </Ellipse>
 
-        <Ellipse Fill="#FFD61111" Height="6" Canvas.Left="436" Canvas.Top="381" Width="6" x:Name="_1003_D5" RenderTransformOrigin="0.5,0.5">
+        <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="436" Canvas.Top="381" Width="6" x:Name="_1003_D5" RenderTransformOrigin="0.5,0.5">
             <Ellipse.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -390,7 +390,7 @@
         </Ellipse>
 
 
-        <Ellipse Fill="#FFD61111" Height="6" Canvas.Left="464" Canvas.Top="381" Width="6" x:Name="_1003_D6" RenderTransformOrigin="0.5,0.5">
+        <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="464" Canvas.Top="381" Width="6" x:Name="_1003_D6" RenderTransformOrigin="0.5,0.5">
             <Ellipse.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -401,7 +401,7 @@
             </Ellipse.RenderTransform>
         </Ellipse>
 
-        <Ellipse Fill="#FFD61111" Height="6" Canvas.Left="494" Canvas.Top="381" Width="6" x:Name="_1003_D7" RenderTransformOrigin="0.5,0.5">
+        <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="494" Canvas.Top="381" Width="6" x:Name="_1003_D7" RenderTransformOrigin="0.5,0.5">
             <Ellipse.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -422,15 +422,15 @@
             </Rectangle.RenderTransform>
         </Rectangle>
         <Button Content="Start System"  Canvas.Left="212" Canvas.Top="86" Width="75" Click="btnStartSystem_Click"/>
-        <Button Content="Reset"  Canvas.Left="330.25" Canvas.Top="86" Width="75" Click="btnRest_Click" />
-        <Button Content="Stop System"  Canvas.Left="448" Canvas.Top="86" Width="74" Click="btnStopSystem_Click" />
+        <Button Content="Reset"  Canvas.Left="447" Canvas.Top="86" Width="75" Click="btnRest_Click" />
+        <Button Content="Stop System"  Canvas.Left="343" Canvas.Top="86" Width="74" Click="btnStopSystem_Click" />
         <Button Content="Connect to PLC"  Canvas.Left="188.417" Canvas.Top="10" Width="140" Click="btnConnectToPLC_Click" Height="37"/>
         <Button Content="Disconnect"  Canvas.Left="382" Canvas.Top="10" Width="140" Click="btnDisconnect_Click" Height="37" Name="Disconnect"/>
-        <Button Content="Drop trays "  Canvas.Left="342" Canvas.Top="124" Width="75" x:Name="StartAnimationBtn1" Click="StartAnimationBtn_Click"/>
-      
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="450" Canvas.Top="381" Width="6" x:Name="_1003_S6"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="478" Canvas.Top="381" Width="6" x:Name="_1005_S1"/>
-        <Ellipse Fill="#FFD61111" Height="6" Canvas.Left="518" Canvas.Top="381" Width="6" x:Name="_1003_D8" RenderTransformOrigin="0.5,0.5">
+        <Button Content="Start Sim&#xD;&#xA;"  Canvas.Left="27" Canvas.Top="106" Width="99" x:Name="StartAnimationBtn1" Click="StartAnimationBtn_Click" Height="42" />
+
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="450" Canvas.Top="381" Width="6" x:Name="_1003_S6"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="478" Canvas.Top="381" Width="6" x:Name="_1005_S1"/>
+        <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="518" Canvas.Top="381" Width="6" x:Name="_1003_D8" RenderTransformOrigin="0.5,0.5">
             <Ellipse.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -440,13 +440,13 @@
                 </TransformGroup>
             </Ellipse.RenderTransform>
         </Ellipse>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="239" Canvas.Top="419" Width="6" x:Name="_0701_S4"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="270.75" Canvas.Top="419" Width="6" x:Name="_0702_S3"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="306.75" Canvas.Top="419" Width="6" x:Name="_0702_S4"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="330.25" Canvas.Top="419" Width="6" x:Name="_1001_S3"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="355.25" Canvas.Top="419" Width="6" x:Name="_1001_S4"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="393" Canvas.Top="419" Width="6" x:Name="_1002_S3"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="416.813" Canvas.Top="419" Width="6" x:Name="_1002_S4"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="239" Canvas.Top="419" Width="6" x:Name="_0701_S4"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="270.75" Canvas.Top="419" Width="6" x:Name="_0702_S3"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="306.75" Canvas.Top="419" Width="6" x:Name="_0702_S4"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="330.25" Canvas.Top="419" Width="6" x:Name="_1001_S3"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="355.25" Canvas.Top="419" Width="6" x:Name="_1001_S4"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="393" Canvas.Top="419" Width="6" x:Name="_1002_S3"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="416.813" Canvas.Top="419" Width="6" x:Name="_1002_S4"/>
         <Ellipse Fill="#FF494949" Height="6" Canvas.Left="355.25" Canvas.Top="381" Width="6" x:Name="_1020_R2" RenderTransformOrigin="0.5,0.5">
             <Ellipse.RenderTransform>
                 <TransformGroup>
@@ -457,13 +457,13 @@
                 </TransformGroup>
             </Ellipse.RenderTransform>
         </Ellipse>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="425.979" Canvas.Top="419" Width="6" x:Name="_1003_S7"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="425.979" Canvas.Top="419" Width="6" x:Name="_1003_S7"/>
         <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="538" Canvas.Top="247.75" Width="6" x:Name="_1004_S2"/>
         <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="580" Canvas.Top="247.75" Width="6" x:Name="_1102_S1"/>
         <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="621" Canvas.Top="247.75" Width="6" x:Name="_1102_S2"/>
         <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="665" Canvas.Top="247.75" Width="6" x:Name="_1102_S3"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="424.75" Canvas.Top="330.75" Width="6" x:Name="_1004_S4"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="438.583" Canvas.Top="330.75" Width="6" x:Name="_1003_S8"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="424.75" Canvas.Top="330.75" Width="6" x:Name="_1004_S4"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="438.583" Canvas.Top="330.75" Width="6" x:Name="_1003_S8"/>
         <Ellipse Fill="#FFD61111" Height="6" Canvas.Left="472.333" Canvas.Top="307.058" Width="6" x:Name="_1004_D4" RenderTransformOrigin="0.5,0.5">
             <Ellipse.RenderTransform>
                 <TransformGroup>
@@ -500,10 +500,10 @@
         <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="748.75" Canvas.Top="247.75" Width="6" x:Name="_1102_S1_Copy1"/>
         <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="789.75" Canvas.Top="247.75" Width="6" x:Name="_1102_S2_Copy1"/>
         <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="833.75" Canvas.Top="247.75" Width="6" x:Name="_1102_S3_Copy1"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="714.667" Canvas.Top="419" Width="6" x:Name="_1003_S2_Copy1"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="756.667" Canvas.Top="419" Width="6" x:Name="_1101_S1_Copy1"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="797.667" Canvas.Top="419" Width="6" x:Name="_1101_S2_Copy1"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="841.667" Canvas.Top="419" Width="6" x:Name="_1101_S3_Copy1"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="714.667" Canvas.Top="419" Width="6" x:Name="_1003_S2_Copy1"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="756.667" Canvas.Top="419" Width="6" x:Name="_1101_S1_Copy1"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="797.667" Canvas.Top="419" Width="6" x:Name="_1101_S2_Copy1"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="841.667" Canvas.Top="419" Width="6" x:Name="_1101_S3_Copy1"/>
         <Path x:Name="SectionA1" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5" Canvas.Left="-140" StrokeThickness="2" Canvas.Top="161.6" Width="2" Stretch="Fill" d:IsLocked="True"/>
         <Path x:Name="SectionA_Copy2" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5" Canvas.Left="138" StrokeThickness="2" Canvas.Top="161.6" Width="2" Stretch="Fill" d:IsLocked="True"/>
         <TextBlock Height="28.666" Canvas.Left="-164.667" TextWrapping="Wrap" Canvas.Top="519.667" Width="57.667" d:IsLocked="True"><Run Language="nl-nl" Text="Section-A"/></TextBlock>
@@ -518,19 +518,19 @@
         <Path Data="M-233.25,331.25 L-185.5,313 -146.5,318 -123.25,325" Height="18.25" Canvas.Left="-233.25" Stretch="Fill" Canvas.Top="313" Width="110" d:IsLocked="True"/>
         <Path Data="M0,0 L20,14.5 L39.75,32.5 L57.5,50" Height="50" Canvas.Left="-117.75" Canvas.Top="326.75" Width="57.5"/>
         <Path x:Name="path" Data="M1.2621774E-29,1.0172526E-05 L62.833333,0.083 L84.5,0.083" Height="0.083" Canvas.Left="-56.75" Canvas.Top="379.417" Width="84.5" RenderTransformOrigin="0.5,0.5">
-        	<Path.RenderTransform>
-        		<TransformGroup>
-        			<ScaleTransform/>
-        			<SkewTransform/>
-        			<RotateTransform/>
-        			<TranslateTransform/>
-        		</TransformGroup>
-        	</Path.RenderTransform>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
         </Path>
         <Path x:Name="SectionA_Copy4" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5" Canvas.Left="816.25" StrokeThickness="2" Canvas.Top="162" Width="2" Stretch="Fill"/>
         <TextBlock Height="29" Canvas.Left="737.75" TextWrapping="Wrap" Canvas.Top="519.333" Width="58"><Run Language="nl-nl" Text="Section-F"/></TextBlock>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="876.292" Canvas.Top="419" Width="6" x:Name="_1101_S3_Copy"/>
-        <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="888.792" Canvas.Top="419" Width="6" x:Name="_1101_S3_Copy2"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="876.292" Canvas.Top="419" Width="6" x:Name="_1101_S3_Copy"/>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="888.792" Canvas.Top="419" Width="6" x:Name="_1101_S3_Copy2"/>
         <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="882.125" Canvas.Top="345.333" Width="6" x:Name="_1101_S3_Copy3"/>
         <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="882.125" Canvas.Top="334.333" Width="6" x:Name="_1101_S3_Copy4"/>
         <Ellipse Fill="#FF0735D1" Height="6" Canvas.Left="876.292" Canvas.Top="249.125" Width="6" x:Name="_1101_S3_Copy5"/>

@@ -66,9 +66,7 @@ C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\Test_WPF\LaneTop\bin\Debug\
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\Test_WPF\LaneTop\bin\Debug\zh-Hant\Microsoft.Expression.Drawing.resources.dll
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\LaneTop.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\MainWindow.baml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\Trays.baml
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\MainWindow.g.cs
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\Trays.g.cs
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\App.g.cs
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\LaneTop_MarkupCompile.cache
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\LaneTop.g.resources
