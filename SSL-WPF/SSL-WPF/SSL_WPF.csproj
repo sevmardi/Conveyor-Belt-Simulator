@@ -67,6 +67,7 @@
       <DependentUpon>AttributesPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="ConnectedWire.cs" />
+    <Compile Include="Conveyor\SectionA.cs" />
     <Compile Include="DragDrop\DragDropAdornerBase.cs" />
     <Compile Include="DragDrop\DragDropHelper.cs" />
     <Compile Include="DragDrop\DropPreviewAdorner.cs" />
