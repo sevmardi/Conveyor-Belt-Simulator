@@ -4,6 +4,7 @@
         Title="Window1" Height="300" Width="300">
     <Window.Resources>
         <PathGeometry x:Key="path" Figures="M 0,50 A 50,50 0 1 1 100,50 " />
+        
         <Storyboard x:Key="ellipseSB">
             <DoubleAnimationUsingPath Storyboard.TargetName="ellipse"
         		Storyboard.TargetProperty="(Canvas.Left)"

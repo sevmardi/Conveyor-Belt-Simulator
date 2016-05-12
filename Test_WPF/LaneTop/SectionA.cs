@@ -21,11 +21,11 @@ namespace LaneTop
         public  void Executor()
         {
             _0102_S1Read();
-            SecondSensor();
-            ThirdSensor();
-            FourthSensor();
-            FifthSensor();
-            SixthSensor();
+         //   SecondSensor();
+            //ThirdSensor();
+            //FourthSensor();
+            //FifthSensor();
+            //SixthSensor();
         }
 
         //MOTORS
@@ -38,9 +38,9 @@ namespace LaneTop
             {
                 if (Buffer[0] == 0)
                 {
-                    Buffer[0] = 1;
-                    _res = PlcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PlcTags._0102_D1,
-                        PlcCalls.Amount, PlcCalls.Wordlen, Buffer);
+                    //Buffer[0] = 1;
+                    //_res = PlcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PlcTags._0102_D1,
+                    //    PlcCalls.Amount, PlcCalls.Wordlen, Buffer);
                     main._0102_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
                 }
             }
@@ -55,9 +55,9 @@ namespace LaneTop
             {
                 if (Buffer[0] == 0)
                 {
-                    Buffer[0] = 1;
-                    _res = PlcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PlcTags._0103_D1,
-                        PlcCalls.Amount, PlcCalls.Wordlen, Buffer);
+                    //Buffer[0] = 1;
+                    //_res = PlcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PlcTags._0103_D1,
+                    //    PlcCalls.Amount, PlcCalls.Wordlen, Buffer);
                       main.Dispatcher.Invoke((Action)(() =>
                        {
                            main._0103_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
@@ -76,9 +76,9 @@ namespace LaneTop
             {
                 if (Buffer[0] == 0)
                 {
-                    Buffer[0] = 1;
-                    _res = PlcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PlcTags._0104_D1,
-                        PlcCalls.Amount, PlcCalls.Wordlen, Buffer);
+                    //Buffer[0] = 1;
+                    //_res = PlcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PlcTags._0104_D1,
+                    //    PlcCalls.Amount, PlcCalls.Wordlen, Buffer);
                     main.Dispatcher.Invoke((Action)(() =>
                     {
                         main._0104_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
@@ -389,7 +389,7 @@ namespace LaneTop
         {
             Timer aTimer = new Timer();
             aTimer.Elapsed += new ElapsedEventHandler(_0102_S1Write);
-            aTimer.Interval = 3000;
+            aTimer.Interval = 1000;
             aTimer.Enabled = true;
 
             aTimer.Elapsed += (s, e) =>

@@ -97,3 +97,7 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\T
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\LaneTop\bin\Debug\zh-Hant\Microsoft.Expression.Drawing.resources.dll
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\LaneTop.exe
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\LaneTop.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\Tray.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\Tray.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\LaneTop_MarkupCompile.lref
