@@ -58,6 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Buffer.cs" />
     <Compile Include="Events\TagsEvents.cs" />
     <Compile Include="LaneAnimation.cs" />
     <Compile Include="PLCCalls.cs" />
@@ -67,9 +68,11 @@
     <Compile Include="SectionC.cs" />
     <Compile Include="SectionD.cs" />
     <Compile Include="Lib\snap7.net.cs" />
+    <Compile Include="Semaphore.cs" />
     <Compile Include="Tray.xaml.cs">
       <DependentUpon>Tray.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WaitPanelController.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

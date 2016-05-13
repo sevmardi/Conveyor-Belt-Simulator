@@ -1,9 +1,10 @@
 ﻿using System;
-using System.ComponentModel;
+
 using System.Globalization;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace LaneTop
@@ -13,19 +14,21 @@ namespace LaneTop
     /// </summary>
     public partial class MainWindow : Window
     {
-        private DispatcherTimer Timer = new DispatcherTimer();
+        private readonly DispatcherTimer _timer = new DispatcherTimer();
         private LaneAnimation _laneanimatin;
-        SectionA _sectionA;
+        readonly SectionA _sectionA;
         private PlcCalls PLC;
         private double T = 0.0;
         public MainWindow()
         {
-            this.Timer.Interval = new TimeSpan(0, 0, 0, 0, 15);
-            this.Timer.Tick += new EventHandler(this.Timer_Tick);
+            this._timer.Interval = new TimeSpan(0, 0, 0, 0, 15);
+            this._timer.Tick += new EventHandler(this.Timer_Tick);
+
              _sectionA = new SectionA(this);
             InitializeComponent();
+           
             //laneanimatin.sb = (Storyboard)this.Resources["Storyboard1"];
-            tray.Visibility = Visibility.Hidden;
+            //newObject.Visibility = Visibility.Hidden;
            // StartAnimationBtn1.IsEnabled = false;
             PLC = new PlcCalls();
         }
@@ -48,7 +51,7 @@ namespace LaneTop
                 PlcCalls.SectionG();
 
 
-                tray.Visibility = Visibility.Visible;
+                //ObjectToMove.Visibility = Visibility.Visible;
               
                 // Sensors section-A
                _0102_S1.Fill = new SolidColorBrush(Colors.Red);
@@ -115,7 +118,9 @@ namespace LaneTop
             {
                //Storyboard.SetTargetName(sub1, Tray);
                 sub1.Begin();
-               // SetMotorOnInSectionA();
+                CreateNewObject();
+
+                // SetMotorOnInSectionA();
             }
                
                     
@@ -130,16 +135,6 @@ namespace LaneTop
              _sectionA.Executor();
         }
 
-
-        public void test()
-        {
-            var sub1 = FindResource("Storyboard1") as Storyboard;
-
-            sub1.Completed += new EventHandler(this.storyboard_Completed);
-           // Storyboard.SetTarget(sub1);
-
-            sub1.Children.Add((Timeline)sub1);
-        }
 
         private void storyboard_Completed(object sender, EventArgs e)
         {
@@ -164,7 +159,18 @@ namespace LaneTop
         }
 
 
+        public void CreateNewObject()
+        {
+            ObjectToMove  = new Rectangle();
+            ObjectToMove.Fill = new SolidColorBrush(Colors.Green);
+            ObjectToMove.Height = 31;
+            ObjectToMove.Width = 42;
+            ObjectToMove.Stroke = (Brush)Brushes.Black;
+            ObjectToMove.StrokeThickness = 1.5;
 
+           
+
+        }
 
 
 

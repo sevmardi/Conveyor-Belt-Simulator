@@ -22,4 +22,3 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\T
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\GH\obj\Debug\GH.csproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\GH\obj\Debug\GH.exe
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\GH\obj\Debug\GH.pdb
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\GH\obj\Debug\GH.csprojResolveAssemblyReference.cache

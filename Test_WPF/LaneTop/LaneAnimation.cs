@@ -42,7 +42,11 @@ namespace LaneTop
         {
            SB.Stop();
         }
-         
+
+        public void AddAnimation()
+        {
+            
+        }
 
     }
 }

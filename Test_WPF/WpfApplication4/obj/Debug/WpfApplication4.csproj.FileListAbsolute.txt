@@ -36,4 +36,3 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\T
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\WpfApplication4\obj\Debug\WpfApplication4.csproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\WpfApplication4\obj\Debug\WpfApplication4.exe
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\WpfApplication4\obj\Debug\WpfApplication4.pdb
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\WpfApplication4\obj\Debug\WpfApplication4.csprojResolveAssemblyReference.cache
