@@ -1,0 +1,13 @@
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\bin\Debug\LaneSimulator.exe.config
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\bin\Debug\LaneSimulator.exe
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\bin\Debug\LaneSimulator.pdb
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\LaneSimulator.csprojResolveAssemblyReference.cache
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\MainWindow.baml
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\MainWindow.g.cs
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\App.g.cs
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\LaneSimulator_MarkupCompile.cache
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\LaneSimulator.g.resources
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\LaneSimulator.Properties.Resources.resources
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\LaneSimulator.csproj.GenerateResource.Cache
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\LaneSimulator.exe
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\LaneSimulator.pdb
