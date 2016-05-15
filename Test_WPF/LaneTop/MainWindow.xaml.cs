@@ -168,7 +168,10 @@ namespace LaneTop
             ObjectToMove.Stroke = (Brush)Brushes.Black;
             ObjectToMove.StrokeThickness = 1.5;
 
-           
+            //http://stackoverflow.com/questions/2029680/wpf-c-sharp-path-how-to-get-from-a-string-with-path-data-to-geometry-in-code-n
+            var shitload = new Path();
+            shitload.Data = Geometry.Parse("M-294,428.33333 L-287.33333,393.00034 -263.66823,352.33366 -235.33574,330.6674");
+
 
         }
 

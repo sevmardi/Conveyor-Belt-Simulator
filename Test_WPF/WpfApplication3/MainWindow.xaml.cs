@@ -48,5 +48,11 @@ namespace WpfApplication3
 
             sub.Pause();
         }
+
+        private void DoubleAnimationUsingPath()
+        {
+            DoubleAnimationUsingPath db = new DoubleAnimationUsingPath();
+
+        }
     }
 }

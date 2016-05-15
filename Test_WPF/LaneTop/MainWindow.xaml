@@ -16,6 +16,7 @@
                 Source="X" 
                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
                  Storyboard.TargetName="ObjectToMove"
+               
                 >
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M1.5,-18.667014 L8.1669813,-54.00002 L31.833186,-94.666719 L60.166999,-116.33299"/>
@@ -30,10 +31,10 @@
                 Storyboard.TargetName="ObjectToMove"
                 >
 
-
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M1.5,-18.667014 L8.1669813,-54.00002 L31.833186,-94.666719 L60.166999,-116.33299"/>
                 </DoubleAnimationUsingPath.PathGeometry>
+                
             </DoubleAnimationUsingPath>
         </Storyboard>
 
@@ -546,8 +547,11 @@
         <Path x:Name="SectionA_Copy" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5" Canvas.Left="554" StrokeThickness="2" Canvas.Top="161.6" Width="2" Stretch="Fill"/>
         <TextBlock Height="29" Canvas.Left="498" TextWrapping="Wrap" Canvas.Top="520" Width="58"><Run Language="nl-nl" Text="Section-D"/></TextBlock>
         <Path x:Name="SectionA_Copy1" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5" Canvas.Left="682.5" StrokeThickness="2" Canvas.Top="161.6" Width="2" Stretch="Fill"/>
+        
         <TextBlock Height="29" Canvas.Left="626" TextWrapping="Wrap" Canvas.Top="520" Width="58"><Run Language="nl-nl" Text="Section-E"/></TextBlock>
+        
         <Path x:Name="StartPointPath" Data="M-294,428.33333 L-287.33333,393.00034 -263.66823,352.33366 -235.33574,330.6674" Height="97.666" Canvas.Left="-294" Stretch="Fill" Canvas.Top="330.667" Width="58.667"/>
+        
         <Path Data="M-233.25,331.25 L-185.5,313 -146.5,318 -123.25,325" Height="18.25" Canvas.Left="-233.25" Stretch="Fill" Canvas.Top="313" Width="110"/>
         <Path Data="M0,0 L20,14.5 L39.75,32.5 L57.5,50" Height="50" Canvas.Left="-117.75" Canvas.Top="326.75" Width="57.5"/>
         <Path x:Name="path" Data="M1.2621774E-29,1.0172526E-05 L62.833333,0.083 L84.5,0.083" Height="0.083" Canvas.Left="-56.75" Canvas.Top="379.417" Width="84.5" RenderTransformOrigin="0.5,0.5">

@@ -8,5 +8,6 @@ namespace LaneSimulator.Utility
 {
     class Fader
     {
+
     }
 }

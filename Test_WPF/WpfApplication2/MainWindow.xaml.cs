@@ -16,7 +16,7 @@ namespace WpfApplication2
         public MainWindow()
         {
             InitializeComponent();
-
+         
             //path2.Freeze(); // For performance benefits. 
             //DoubleAnimationUsingPath daPath = new DoubleAnimationUsingPath();
             //daPath.Duration = TimeSpan.FromSeconds(5);
@@ -39,10 +39,16 @@ namespace WpfApplication2
             //circle2.BeginAnimation(Canvas.TopProperty, daPath);
 
 
-            var sub = FindResource("Weeeee") as Storyboard;
+         
 
            
 
+
         }
+
+
+ 
+
+        
     }
 }

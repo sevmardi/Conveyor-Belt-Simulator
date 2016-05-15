@@ -53,7 +53,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Events\Buffer.cs" />
+    <Compile Include="Events\Semaphore.cs" />
     <Compile Include="Libs\snap7.net.cs" />
+    <Compile Include="Objects\Tray.xaml.cs">
+      <DependentUpon>Tray.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PLC\PlcCalls.cs" />
+    <Compile Include="PLC\PLCTags.cs" />
+    <Compile Include="SSL\Canvas.xaml.cs">
+      <DependentUpon>Canvas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\DragDrop\DragDropAdornerBase.cs" />
+    <Compile Include="Utility\Fader.cs" />
+    <Compile Include="Views\AttributesPanel.xaml.cs">
+      <DependentUpon>AttributesPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConnectPanel.xaml.cs">
+      <DependentUpon>ConnectPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InfoLine.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -72,6 +91,22 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Objects\Tray.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SSL\Canvas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AttributesPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ConnectPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -101,16 +136,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Animation\" />
-    <Folder Include="AttributesPanel\" />
-    <Folder Include="DragDrop\" />
-    <Folder Include="Events\" />
     <Folder Include="Images\" />
-    <Folder Include="Info\" />
-    <Folder Include="PLC\" />
     <Folder Include="Save\" />
     <Folder Include="ShadowBox\" />
-    <Folder Include="Utility\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

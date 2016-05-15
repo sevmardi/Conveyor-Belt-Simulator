@@ -100,3 +100,6 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\T
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\Tray.g.cs
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\LaneTop_MarkupCompile.lref
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\LaneTop.csprojResolveAssemblyReference.cache
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\Tray.baml
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\Tray.g.cs
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\LaneTop_MarkupCompile.lref

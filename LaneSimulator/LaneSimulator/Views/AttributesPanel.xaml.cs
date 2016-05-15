@@ -18,11 +18,21 @@ namespace LaneSimulator.Views
     /// <summary>
     /// Interaction logic for AttributesPanel.xaml
     /// </summary>
-    public partial class AttributesPanel : Page
+    public partial class AttributesPanel
     {
         public AttributesPanel()
         {
             InitializeComponent();
+        }
+
+        private void WriteIOBtn(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ReadIOBtn(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

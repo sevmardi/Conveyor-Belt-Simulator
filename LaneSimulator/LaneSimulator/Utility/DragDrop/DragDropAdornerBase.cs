@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LaneSimulator.Info
+namespace LaneSimulator.Utility.DragDrop
 {
-    class InforLine
+    class DragDropAdornerBase
     {
     }
 }

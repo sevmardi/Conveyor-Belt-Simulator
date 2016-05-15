@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LaneSimulator.Views;
 
 namespace LaneSimulator
 {
@@ -20,9 +21,40 @@ namespace LaneSimulator
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public static string APP_TITLE;
+        public static string APP_VERSION;
+        public static string APP_COPYRIGHT;
+
         public MainWindow()
         {
             InitializeComponent();
         }
+
+
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            DisplayConnectScreen();
+        }
+
+
+        private void DisplayConnectScreen()
+        {
+            ConnectPanel connectpanel = new ConnectPanel();
+
+            connectpanel.Owner = this;
+            connectpanel.ShowDialog();
+
+            if (connectpanel.DialogResult.HasValue && connectpanel.DialogResult.Value)
+            {
+                //do something
+                MessageBox.Show("Connected!");
+
+            }
+            else
+                this.Close();
+        }
+
     }
 }
