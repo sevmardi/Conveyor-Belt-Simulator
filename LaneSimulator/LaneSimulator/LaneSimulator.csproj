@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Conveyor\SimulationAnimation.cs" />
     <Compile Include="Events\Buffer.cs" />
     <Compile Include="Events\Semaphore.cs" />
     <Compile Include="Events\TagsEvents.cs" />
@@ -142,9 +143,6 @@
     <Folder Include="ShadowBox\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Snowman-Tray.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\ActualSizeHS.png" />
     <Resource Include="Images\BehindTextHS.png" />
     <Resource Include="Images\CanvasScaleHS.png" />
@@ -180,6 +178,9 @@
     <Resource Include="Images\turtle.png" />
     <Resource Include="Images\wire_color.png" />
     <Resource Include="Images\ZoomHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tray_object.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

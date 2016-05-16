@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Media.Animation;
 using LaneSimulator.PLC;
@@ -125,6 +126,12 @@ namespace LaneSimulator
 
         }
 
+        private void Window1_Closing(object sender, CancelEventArgs e)
+        {
+            // only the orginal full window 
+           // e.Cancel = !QuerySave();
+            PlcCalls.Disconnect();
+        }
 
 
     }
