@@ -55,6 +55,7 @@
     </ApplicationDefinition>
     <Compile Include="Events\Buffer.cs" />
     <Compile Include="Events\Semaphore.cs" />
+    <Compile Include="Events\TagsEvents.cs" />
     <Compile Include="Libs\snap7.net.cs" />
     <Compile Include="Objects\Tray.xaml.cs">
       <DependentUpon>Tray.xaml</DependentUpon>

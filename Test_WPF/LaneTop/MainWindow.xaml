@@ -134,6 +134,8 @@
         </Canvas.RenderTransform>
         <!--Unknown tag: sodipodi:namedview-->
         <!--Unknown tag: metadata-->
+        
+        
         <Canvas x:Name="Lane1">
             <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
