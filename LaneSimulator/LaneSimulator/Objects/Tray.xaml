@@ -5,7 +5,8 @@
           
             >
     <Grid x:Name="LayoutRoot" Height="58" Width="50">
-        <Rectangle Fill="#FFD4CEC8" HorizontalAlignment="Left" Height="58" Stroke="Black" VerticalAlignment="Top" Width="50"/>
+
+        <Image Margin="9.875,8,11.125,8" Source="../Images/tray_object.png"/>
 
     </Grid>
 </UserControl>

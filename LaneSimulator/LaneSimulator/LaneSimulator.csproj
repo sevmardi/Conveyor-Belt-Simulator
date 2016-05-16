@@ -66,6 +66,7 @@
       <DependentUpon>Canvas.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utility\DragDrop\DragDropAdornerBase.cs" />
+    <Compile Include="Utility\DragDrop\DropPreviewAdorner.cs" />
     <Compile Include="Utility\Fader.cs" />
     <Compile Include="Views\AttributesPanel.xaml.cs">
       <DependentUpon>AttributesPanel.xaml</DependentUpon>
@@ -137,9 +138,48 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\" />
     <Folder Include="Save\" />
     <Folder Include="ShadowBox\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Snowman-Tray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ActualSizeHS.png" />
+    <Resource Include="Images\BehindTextHS.png" />
+    <Resource Include="Images\CanvasScaleHS.png" />
+    <Resource Include="Images\CopyAsImage.png" />
+    <Resource Include="Images\CopyHS.png" />
+    <Resource Include="Images\CutHS.png" />
+    <Resource Include="Images\DeleteHS.png" />
+    <Resource Include="Images\Edit_RedoHS.png" />
+    <Resource Include="Images\Edit_UndoHS.png" />
+    <Resource Include="Images\Hard_Drive.png" />
+    <Resource Include="Images\hare.png" />
+    <Resource Include="Images\Help.png" />
+    <Resource Include="Images\ImportXMLHS.png" />
+    <Resource Include="Images\InsertPictureHS.png" />
+    <Resource Include="Images\LegendHS.png" />
+    <Resource Include="Images\NewDocumentHS.png" />
+    <Resource Include="Images\openHS.png" />
+    <Resource Include="Images\PageWidthHS.png" />
+    <Resource Include="Images\PasteHS.png" />
+    <Resource Include="Images\PauseHS.png" />
+    <Resource Include="Images\PrintHS.png" />
+    <Resource Include="Images\PrintPreviewHS.png" />
+    <Resource Include="Images\PrintSetupHS.png" />
+    <Resource Include="Images\ProtectFormHS.png" />
+    <Resource Include="Images\ram.ico" />
+    <Resource Include="Images\ram.png" />
+    <Resource Include="Images\RecordHS.png" />
+    <Resource Include="Images\RefreshDocViewHS.png" />
+    <Resource Include="Images\saveAsHS.png" />
+    <Resource Include="Images\SaveAsImage.png" />
+    <Resource Include="Images\saveHS.png" />
+    <Resource Include="Images\Steamroller-32x32.png" />
+    <Resource Include="Images\turtle.png" />
+    <Resource Include="Images\wire_color.png" />
+    <Resource Include="Images\ZoomHS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

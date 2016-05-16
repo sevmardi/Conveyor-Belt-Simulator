@@ -20,3 +20,4 @@ C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Views\ConnectPanel.g.cs
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\LaneSimulator_MarkupCompile.lref
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\SSL\Canvas.baml
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\LaneSimulator.csprojResolveAssemblyReference.cache
