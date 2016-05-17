@@ -59,11 +59,18 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Buffer.cs" />
+    <Compile Include="Conveyor.cs" />
+    <Compile Include="ConveyorView.xaml.cs">
+      <DependentUpon>ConveyorView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Events\TagsEvents.cs" />
     <Compile Include="LaneAnimation.cs" />
     <Compile Include="PLCCalls.cs" />
     <Compile Include="PLCTags.cs" />
     <Compile Include="SectionA.cs" />
+    <Compile Include="SectionA.xaml.cs">
+      <DependentUpon>SectionA.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SectionB.cs" />
     <Compile Include="SectionC.cs" />
     <Compile Include="SectionD.cs" />
@@ -73,6 +80,10 @@
       <DependentUpon>Tray.xaml</DependentUpon>
     </Compile>
     <Compile Include="WaitPanelController.cs" />
+    <Page Include="ConveyorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -85,6 +96,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SectionA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Tray.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

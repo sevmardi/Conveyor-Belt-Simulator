@@ -11,11 +11,10 @@
         <Storyboard x:Key="Storyboard1" >
             <DoubleAnimationUsingPath 
                 Duration="0:0:3" 
-               
                 Completed="MyStoryboardCompleted" 
                 Source="X" 
                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
-                 Storyboard.TargetName="ObjectToMove"
+                Storyboard.TargetName="ObjectToMove" IsCumulative="True" IsAdditive="True" FrameworkElement.FlowDirection="LeftToRight"
                
                 >
                 <DoubleAnimationUsingPath.PathGeometry>

@@ -1,7 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Globalization;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media.Animation;
+using System.Windows.Threading;
 using LaneSimulator.PLC;
 using LaneSimulator.Views;
 
@@ -16,10 +19,16 @@ namespace LaneSimulator
         public static string APP_TITLE;
         public static string APP_VERSION;
         public static string APP_COPYRIGHT;
+        
+        private double T = 0.0;
+        private DispatcherTimer Timer1 = new DispatcherTimer();
 
         public MainWindow()
         {
             InitializeComponent();
+            this.Timer1.Interval = new TimeSpan(0, 0, 0, 0, 100);
+            this.Timer1.Tick += new EventHandler(this.Timer1_Tick);
+            this.Closing += new CancelEventHandler(Window1_Closing);
         }
 
 
@@ -39,6 +48,7 @@ namespace LaneSimulator
             if (connectpanel.DialogResult.HasValue && connectpanel.DialogResult.Value)
             {
                 //do something
+               
                 MessageBox.Show("Connected!");
 
             }
@@ -79,6 +89,7 @@ namespace LaneSimulator
             {
                 //Storyboard.SetTargetName(sub1, Tray);
                 sub1.Begin();
+                Timer1.Start();
                 //CreateNewObject();
 
                 // SetMotorOnInSectionA();
@@ -130,9 +141,34 @@ namespace LaneSimulator
         {
             // only the orginal full window 
            // e.Cancel = !QuerySave();
-            PlcCalls.Disconnect();
+            //PlcCalls.Disconnect();
+            MessageBox.Show("sure thing buddy");
         }
 
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            this.Timer_Lable.Text = (this.T = this.T + 0.1).ToString("0.00", (IFormatProvider)CultureInfo.InvariantCulture);
+        }
+        //TODO
+        private void Total()
+        {
+            //
+        }
 
+        private void InfoLine_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (String.IsNullOrEmpty(InfoLine.GetInstance().CurrentInfoLine) || !this.IsActive)
+            {
+                lblInfoLine.Visibility = Visibility.Collapsed;
+                spAppInfo.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                lblInfoLine.Text = InfoLine.GetInstance().CurrentInfoLine;
+                lblInfoLine.Visibility = Visibility.Visible;
+                spAppInfo.Visibility = Visibility.Collapsed;
+            }
+
+        }
     }
 }

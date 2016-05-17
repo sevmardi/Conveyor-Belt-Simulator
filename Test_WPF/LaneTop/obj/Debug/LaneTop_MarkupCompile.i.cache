@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\LaneTop\obj\Debug\
 LaneTop
 none
 false
 DEBUG;TRACE
-C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\Test_WPF\LaneTop\App.xaml
-2-1521783673
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\LaneTop\App.xaml
+4-1162843518
 
-221980443277
+252013340392
 1612266962
-MainWindow.xaml;Tray.xaml;
+ConveyorView.xaml;MainWindow.xaml;SectionA.xaml;Tray.xaml;
 
-True
+False
 

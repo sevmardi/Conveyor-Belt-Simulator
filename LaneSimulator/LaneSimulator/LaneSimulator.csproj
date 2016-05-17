@@ -76,6 +76,9 @@
       <DependentUpon>ConnectPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\InfoLine.cs" />
+    <Compile Include="Views\MainCanvas.xaml.cs">
+      <DependentUpon>MainCanvas.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -107,6 +110,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ConnectPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainCanvas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

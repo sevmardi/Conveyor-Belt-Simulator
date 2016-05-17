@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\
 LaneSimulator
 none
 false
 DEBUG;TRACE
-C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\App.xaml
-52117947168
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\App.xaml
+61642963349
 
-302119559395
+31480626865
 12-1401562060
-MainWindow.xaml;Objects\Tray.xaml;SSL\Canvas.xaml;Views\AttributesPanel.xaml;Views\ConnectPanel.xaml;
+MainWindow.xaml;Objects\Tray.xaml;SSL\Canvas.xaml;Views\AttributesPanel.xaml;Views\ConnectPanel.xaml;Views\MainCanvas.xaml;
 
 False
 

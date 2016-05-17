@@ -3,25 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="StyleTriggerEnterExitActions" Height="200" Width="200" UseLayoutRounding="True">
     <Canvas>
-        <Canvas.Resources>
-            <PathGeometry x:Key="MyGeometry" 
-          Figures="M 0,30 A 30,30 180 0 1 60,30 30,30 180 0 1 0,30"/>
-        </Canvas.Resources>
-        <Ellipse Width="50" Height="50" Fill="Green">
-            <Ellipse.Triggers>
-                <EventTrigger RoutedEvent="Window.Loaded">
-                    <BeginStoryboard>
-                        <Storyboard RepeatBehavior="Forever">
-                            <DoubleAnimationUsingPath Source="X" 
-                          Storyboard.TargetProperty="(Canvas.Left)" 
-                          PathGeometry="{StaticResource MyGeometry}"/>
-                            <DoubleAnimationUsingPath Source="Y" 
-                          Storyboard.TargetProperty="(Canvas.Top)" 
-                          PathGeometry="{StaticResource MyGeometry}"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Ellipse.Triggers>
-        </Ellipse>
+        
+
     </Canvas>
 </Window>

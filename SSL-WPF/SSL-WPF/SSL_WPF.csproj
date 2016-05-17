@@ -75,6 +75,7 @@
       <DependentUpon>SSLDragDropAdorner.xaml</DependentUpon>
     </Compile>
     <Compile Include="Events\EventDispatcher.cs" />
+    <Compile Include="SensorsList.cs" />
     <Compile Include="Utility\Fader.cs" />
     <Compile Include="Info\InfoLine.cs" />
     <Compile Include="SSLLayout\SSLLeftLayout.xaml.cs">
@@ -106,6 +107,7 @@
     <Compile Include="Selector\SSLSelector.xaml.cs">
       <DependentUpon>SSLSelector.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SSL_Sim.cs" />
     <Compile Include="Wires\Wire.xaml.cs">
       <DependentUpon>Wire.xaml</DependentUpon>
     </Compile>

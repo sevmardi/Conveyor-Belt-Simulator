@@ -90,7 +90,7 @@ namespace LaneTop
             if (sb3 != null) sb3.Pause();
             var sb4 = FindResource("Storyboard4") as Storyboard;
             if (sb4 != null) sb4.Pause();
-
+        
 
         }
 
@@ -118,9 +118,9 @@ namespace LaneTop
             {
                //Storyboard.SetTargetName(sub1, Tray);
                 sub1.Begin();
-                CreateNewObject();
+                //CreateNewObject();
 
-                // SetMotorOnInSectionA();
+                SetMotorOnInSectionA();
             }
                
                     
@@ -177,7 +177,12 @@ namespace LaneTop
 
 
 
+        public void test()
+        {
+          
 
+           
+        }
 
 
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Media.Animation;
 
@@ -10,6 +11,8 @@ namespace LaneTop
     class LaneAnimation
     {
        public  Storyboard SB;
+
+       protected int delay;
 
         /// <summary>
         /// Constructor
@@ -45,9 +48,16 @@ namespace LaneTop
 
         public void AddAnimation()
         {
-            
+
+            Thread.Sleep(delay);
+
+
         }
 
 
+        public void storyboard1()
+        {
+            
+        }
     }
 }

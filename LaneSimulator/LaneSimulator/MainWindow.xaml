@@ -601,6 +601,13 @@
             </Border>
         </Viewbox>
 
+        <StackPanel Name="spAppInfo" Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" Background="#EEEEEE">
+            <TextBlock Name="lblAppTitle" Margin="10,0,0,0" />
+            <TextBlock Name="lblAppVersion" Margin="10,0,0,0" />
+            <TextBlock Name="lblAppCopyright" Margin="10,0,0,0" />
+        </StackPanel>
+        
+        <TextBlock Name="lblInfoLine" Background="#EEEEEE" Grid.Row="2" Grid.ColumnSpan="2"  Padding="10,0,0,0" Visibility="Hidden" />
     </Canvas>
 
 </Window>

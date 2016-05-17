@@ -21,7 +21,7 @@ namespace LaneTop
         public  void Executor()
         {
             _0102_S1Read();
-         //   SecondSensor();
+            //SecondSensor();
             //ThirdSensor();
             //FourthSensor();
             //FifthSensor();
@@ -125,6 +125,10 @@ namespace LaneTop
                         PlcCalls.Wordlen, Buffer);
                     main._0102_S1.Fill = new SolidColorBrush(Colors.DarkGray);
                     _0102_D1();
+                }
+                if (Buffer[0] == 0)
+                {
+                    
                 }
             }
             
