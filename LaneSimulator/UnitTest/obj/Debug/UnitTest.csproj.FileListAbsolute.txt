@@ -1,0 +1,5 @@
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\UnitTest\bin\Debug\UnitTest.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\UnitTest\bin\Debug\UnitTest.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\UnitTest\obj\Debug\UnitTest.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\UnitTest\obj\Debug\UnitTest.pdb

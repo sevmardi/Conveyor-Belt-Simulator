@@ -1,12 +1,11 @@
-﻿<UserControl x:Class="LaneSimulator.Objects.Tray"
+﻿<UserControl x:Class="LaneSimulator.Models.Components.Tray"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-
           
-            >
+            
+             >
     <Grid x:Name="LayoutRoot" Height="58" Width="50">
-
-        <Image Margin="9.875,8,11.125,8" Source="../Images/tray_object.png"/>
+        <Image Margin="9.875,8,11.125,8" Source="../../Images/tray_object.png"/>
 
     </Grid>
 </UserControl>

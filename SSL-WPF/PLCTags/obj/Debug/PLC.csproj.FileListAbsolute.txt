@@ -3,3 +3,8 @@ C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\PLCTags\obj\Debug\P
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\PLCTags\bin\Debug\PLCTags.dll
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\PLCTags\bin\Debug\PLCTags.pdb
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\SSL-WPF\PLCTags\obj\Debug\PLCTags.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\PLCTags\bin\Debug\PLCTags.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\PLCTags\bin\Debug\PLCTags.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\PLCTags\obj\Debug\PLC.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\PLCTags\obj\Debug\PLCTags.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\SSL-WPF\PLCTags\obj\Debug\PLCTags.pdb

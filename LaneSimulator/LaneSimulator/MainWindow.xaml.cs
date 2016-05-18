@@ -7,6 +7,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Threading;
 using LaneSimulator.PLC;
 using LaneSimulator.Views;
+using Buffer = LaneSimulator.Events.Buffer;
 
 namespace LaneSimulator
 {
@@ -19,7 +20,8 @@ namespace LaneSimulator
         public static string APP_TITLE;
         public static string APP_VERSION;
         public static string APP_COPYRIGHT;
-        
+        private bool Ispaused = false;
+
         private double T = 0.0;
         private DispatcherTimer Timer1 = new DispatcherTimer();
 
@@ -28,34 +30,34 @@ namespace LaneSimulator
             InitializeComponent();
             this.Timer1.Interval = new TimeSpan(0, 0, 0, 0, 100);
             this.Timer1.Tick += new EventHandler(this.Timer1_Tick);
-            this.Closing += new CancelEventHandler(Window1_Closing);
+           // this.Closing += new CancelEventHandler(Window1_Closing);
         }
 
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            DisplayConnectScreen();
-        }
-
-
-        private void DisplayConnectScreen()
-        {
             ConnectPanel connectpanel = new ConnectPanel();
-
             connectpanel.Owner = this;
-            connectpanel.ShowDialog();
-
-            if (connectpanel.DialogResult.HasValue && connectpanel.DialogResult.Value)
-            {
-                //do something
-               
-                MessageBox.Show("Connected!");
-
-            }
-            else
-                this.Close();
+            connectpanel.ShowDialog(); 
         }
 
+
+        public void reset()
+        {
+            T = 0.0;
+            Timer_Lable.Text = "0.00";
+            tray_Wrap.Children.Clear();
+            Total();
+
+        }
+
+        /// <summary>
+        /// Fetch the count the trays which already been through the conveyor. 
+        /// </summary>
+        private void Total()
+        {
+            this.total_text1.Text = (this.tray_Wrap.Children.Count).ToString();
+        }
 
 
         private void btnRest_Click(object sender, RoutedEventArgs e)
@@ -75,8 +77,6 @@ namespace LaneSimulator
             //if (sb3 != null) sb3.Pause();
             //var sb4 = FindResource("Storyboard4") as Storyboard;
             //if (sb4 != null) sb4.Pause();
-
-
         }
 
         private void StartAnimationBtn_Click(object sender, RoutedEventArgs e)
@@ -95,10 +95,7 @@ namespace LaneSimulator
                 // SetMotorOnInSectionA();
             }
 
-
-
         }
-
 
 
         private void SetMotorOnInSectionA()
@@ -137,23 +134,20 @@ namespace LaneSimulator
 
         }
 
-        private void Window1_Closing(object sender, CancelEventArgs e)
-        {
-            // only the orginal full window 
-           // e.Cancel = !QuerySave();
-            //PlcCalls.Disconnect();
-            MessageBox.Show("sure thing buddy");
-        }
+        //private void Window1_Closing(object sender, CancelEventArgs e)
+        //{
+        //    // only the orginal full window 
+        //   // e.Cancel = !QuerySave();
+        //    //PlcCalls.Disconnect();
+        //   // MessageBox.Show("sure thing buddy");
+        //}
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
             this.Timer_Lable.Text = (this.T = this.T + 0.1).ToString("0.00", (IFormatProvider)CultureInfo.InvariantCulture);
         }
-        //TODO
-        private void Total()
-        {
-            //
-        }
+
+
 
         private void InfoLine_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
@@ -170,5 +164,7 @@ namespace LaneSimulator
             }
 
         }
+
+
     }
 }

@@ -1,9 +1,10 @@
-﻿using LaneSimulator.Objects;
+﻿
 using System.Threading;
+using LaneSimulator.Models.Components;
 
 namespace LaneSimulator.Events
 {
-    class Buffer
+   public class Buffer
     {
         private Tray tray;
         private bool ReachingPoint = true;

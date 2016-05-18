@@ -118,7 +118,7 @@
 
     <Canvas x:Name="LaneTop_Copy" Width="744" Height="1052" Margin="524,0,524,-393">
         <Canvas.Resources>
-            <LinearGradientBrush xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="LinearGradient7412-5" MappingMode="RelativeToBoundingBox" StartPoint="0,0" EndPoint="1,1">
+            <LinearGradientBrush  x:Key="LinearGradient7412-5" MappingMode="RelativeToBoundingBox" StartPoint="0,0" EndPoint="1,1">
                 <LinearGradientBrush.Transform>
                     <MatrixTransform Matrix="-1.3258514e-5 0 0 4.6354661e-6 -369471.48 -481913.63"/>
                 </LinearGradientBrush.Transform>
@@ -441,6 +441,14 @@
             </Ellipse.RenderTransform>
         </Ellipse>
 
+
+
+        <Border BorderBrush="#FF55933F" BorderThickness="2" CornerRadius="5" Margin="3.099,28.203,0,0" Visibility="Hidden">
+            <ScrollViewer x:Name="tray_Panel">
+                <WrapPanel x:Name="tray_Wrap" Orientation="Horizontal"/>
+            </ScrollViewer>
+        </Border>
+        
 
         <!--object to move-->
         <Rectangle x:Name="ObjectToMove" Height="31" Canvas.Left="-316.5" Stroke="Black" Canvas.Top="431.5" Width="42" Fill="#FFDA6C11" RenderTransformOrigin="0.5,0.5">

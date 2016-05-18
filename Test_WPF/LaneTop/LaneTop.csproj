@@ -68,9 +68,6 @@
     <Compile Include="PLCCalls.cs" />
     <Compile Include="PLCTags.cs" />
     <Compile Include="SectionA.cs" />
-    <Compile Include="SectionA.xaml.cs">
-      <DependentUpon>SectionA.xaml</DependentUpon>
-    </Compile>
     <Compile Include="SectionB.cs" />
     <Compile Include="SectionC.cs" />
     <Compile Include="SectionD.cs" />
@@ -96,10 +93,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SectionA.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Tray.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

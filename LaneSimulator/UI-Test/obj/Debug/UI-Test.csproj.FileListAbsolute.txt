@@ -1,0 +1,5 @@
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\UI-Test\bin\Debug\UI-Test.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\UI-Test\bin\Debug\UI-Test.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\UI-Test\obj\Debug\UI-Test.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\UI-Test\obj\Debug\UI-Test.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\UI-Test\obj\Debug\UI-Test.pdb

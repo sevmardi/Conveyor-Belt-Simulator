@@ -58,7 +58,7 @@
     <Compile Include="Events\Semaphore.cs" />
     <Compile Include="Events\TagsEvents.cs" />
     <Compile Include="Libs\snap7.net.cs" />
-    <Compile Include="Objects\Tray.xaml.cs">
+    <Compile Include="Models\Components\Tray.xaml.cs">
       <DependentUpon>Tray.xaml</DependentUpon>
     </Compile>
     <Compile Include="PLC\PlcCalls.cs" />
@@ -97,7 +97,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Objects\Tray.xaml">
+    <Page Include="Models\Components\Tray.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,7 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Save\" />
-    <Folder Include="ShadowBox\" />
+    <Folder Include="Views\ShadowBox\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\ActualSizeHS.png" />

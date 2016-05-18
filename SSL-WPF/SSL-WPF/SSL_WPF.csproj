@@ -67,7 +67,6 @@
       <DependentUpon>AttributesPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="ConnectedWire.cs" />
-    <Compile Include="Conveyor\SectionA.cs" />
     <Compile Include="DragDrop\DragDropAdornerBase.cs" />
     <Compile Include="DragDrop\DragDropHelper.cs" />
     <Compile Include="DragDrop\DropPreviewAdorner.cs" />
@@ -247,6 +246,9 @@
       <Project>{846a241e-2b5d-4514-b1a7-228987572c2d}</Project>
       <Name>PLC</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Conveyor\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
