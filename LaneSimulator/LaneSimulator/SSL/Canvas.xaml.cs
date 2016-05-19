@@ -20,9 +20,52 @@ namespace LaneSimulator.SSL
     /// </summary>
     public partial class Canvas : UserControl
     {
+        private DragState dragging = DragState.NONE;
+
+        private const double ANGLE_SNAP_DEG = 10;
+        private const double DELTA_SNAP = 5;
+        private const double GRID_SIZE = 32;
+
+
+
+
         public Canvas()
         {
             InitializeComponent();
         }
+
+
+
+        protected enum DragState
+        {
+            NONE, MOVE
+        }
+
+
+        public void Scroller_LayoutUpdated(object sender, EventArgs e)
+        {
+            //
+
+        }
+        private void Scroller_ScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
+            //
+        }
+
+        private void Scroller_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            
+        }
+
+        private void SizeCanvas()
+        {
+            //    
+        }
+
+ 
+
+
+       
+
     }
 }

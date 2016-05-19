@@ -62,7 +62,7 @@ namespace LaneSimulator
 
         private void btnRest_Click(object sender, RoutedEventArgs e)
         {
-          //  PlcCalls.ResetBtn();
+            PlcCalls.ResetBtn();
         }
 
         private void btnStopSystem_Click(object sender, RoutedEventArgs e)
@@ -134,36 +134,41 @@ namespace LaneSimulator
 
         }
 
-        //private void Window1_Closing(object sender, CancelEventArgs e)
-        //{
-        //    // only the orginal full window 
-        //   // e.Cancel = !QuerySave();
-        //    //PlcCalls.Disconnect();
-        //   // MessageBox.Show("sure thing buddy");
-        //}
+        private void Window1_Closing(object sender, CancelEventArgs e)
+        {
+            // only the orginal full window 
+            // e.Cancel = !QuerySave();
+            //PlcCalls.Disconnect();
+            // MessageBox.Show("sure thing buddy");
+        }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
             this.Timer_Lable.Text = (this.T = this.T + 0.1).ToString("0.00", (IFormatProvider)CultureInfo.InvariantCulture);
         }
 
-
-
-        private void InfoLine_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        private void btnConnectToPLC_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrEmpty(InfoLine.GetInstance().CurrentInfoLine) || !this.IsActive)
-            {
-                lblInfoLine.Visibility = Visibility.Collapsed;
-                spAppInfo.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                lblInfoLine.Text = InfoLine.GetInstance().CurrentInfoLine;
-                lblInfoLine.Visibility = Visibility.Visible;
-                spAppInfo.Visibility = Visibility.Collapsed;
-            }
 
         }
+
+
+
+        //private void InfoLine_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        //{
+        //    if (String.IsNullOrEmpty(InfoLine.GetInstance().CurrentInfoLine) || !this.IsActive)
+        //    {
+        //        lblInfoLine.Visibility = Visibility.Collapsed;
+        //        spAppInfo.Visibility = Visibility.Visible;
+        //    }
+        //    else
+        //    {
+        //        lblInfoLine.Text = InfoLine.GetInstance().CurrentInfoLine;
+        //        lblInfoLine.Visibility = Visibility.Visible;
+        //        spAppInfo.Visibility = Visibility.Collapsed;
+        //    }
+
+        //}
 
 
     }

@@ -4,7 +4,8 @@
         xmlns:local="clr-namespace:SSL_WPF"
         >
 
-    <ScrollViewer Name="SSLScroller" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" SizeChanged="SSLScroller_SizeChanged" LayoutUpdated="SSLScroller_LayoutUpdated" ScrollChanged="SSLScroller_ScrollChanged">
+    <ScrollViewer Name="SSLScroller" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" 
+                  SizeChanged="SSLScroller_SizeChanged" LayoutUpdated="SSLScroller_LayoutUpdated" ScrollChanged="SSLScroller_ScrollChanged">
         <Canvas Name="CanvasSSL" >
             <Canvas.Background>
                 <!-- see http://mark-dot-net.blogspot.com/2007/06/creating-hatched-patterned-brush-in-wpf.html -->

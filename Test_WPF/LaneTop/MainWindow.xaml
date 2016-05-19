@@ -75,9 +75,7 @@
 		<Canvas.RenderTransform>
 			<TranslateTransform X="0" Y="0"/>
 		</Canvas.RenderTransform>
-		<!--Unknown tag: sodipodi:namedview-->
-        <!--Unknown tag: metadata-->
-        
+      
         
 		<Canvas x:Name="Lane1" d:IsLocked="True">
 			<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
@@ -201,24 +199,6 @@
 		</Canvas>
 
 		<Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-243.75" Canvas.Top="420.25" Width="6" x:Name="_0102_S1"/>
-
-
-
-
-
-        <!--<Rectangle x:Name="myRectangle" Fill="Blue" Width="200" Height="30">
-        <Rectangle.RenderTransform>
-            <ScaleTransform x:Name="rectScaleTransform" />
-        </Rectangle.RenderTransform>
-     </Rectangle>-->
-
-
-
-
-
-
-
-
 		<Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-234" Canvas.Top="392" Width="6" x:Name="_0102_S2"/>
 		<Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-218.75" Canvas.Top="371" Width="6" x:Name="_0103_S1"/>
 		<Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-203.75" Canvas.Top="362.75" Width="6" x:Name="_0104_S1"/>
@@ -232,7 +212,6 @@
 		<Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="10" Canvas.Top="419" Width="6" x:Name="_0304_S2"/>
 		<Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="39" Canvas.Top="419" Width="6" x:Name="_0304_S3"/>
 		<Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="120" Canvas.Top="380" Width="6" x:Name="_0701_S1"/>
-
 		<Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="538" Canvas.Top="419" Width="6" x:Name="_1003_S2"/>
 		<Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="580" Canvas.Top="419" Width="6" x:Name="_1101_S4"/>
 		<Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="621" Canvas.Top="419" Width="6" x:Name="_1101_S5"/>
