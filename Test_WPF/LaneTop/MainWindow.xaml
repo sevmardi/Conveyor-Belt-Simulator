@@ -10,16 +10,13 @@
         
     >
 	<Window.Resources>
-		
-       
-            
-      
+
         <Storyboard x:Key="Storyboard1">
-			
-            
             <DoubleAnimationUsingPath 
                 Duration="0:0:2"
                 Source="X" 
+                BeginTime="0:0:0"
+                Completed="MyStoryboardCompleted"
                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
                 Storyboard.TargetName="ObjectToMove">
 				
@@ -28,26 +25,65 @@
 				</DoubleAnimationUsingPath.PathGeometry>
 			
             </DoubleAnimationUsingPath>
-			
-            
-            <DoubleAnimationUsingPath Duration="0:0:2" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
-				<DoubleAnimationUsingPath.PathGeometry>
+
+
+            <DoubleAnimationUsingPath 
+                Duration="0:0:2" 
+                BeginTime="0:0:0" 
+                Source="Y" 
+                  Completed="MyStoryboardCompleted"
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" 
+                Storyboard.TargetName="ObjectToMove">
+				
+                <DoubleAnimationUsingPath.PathGeometry>
 					<PathGeometry Figures="M-5,-14.333514 L1.6669813,-49.66652 L25.333186,-90.333219 L53.666999,-111.99949"/>
 				</DoubleAnimationUsingPath.PathGeometry>
+                
+                
 			</DoubleAnimationUsingPath>
 		
         </Storyboard>
-
-
         
-        
+        <Storyboard x:Key="Storyboard2">
+        	<DoubleAnimationUsingPath 
+                Duration="0:0:2"  
+                Source="X" 
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
+                Storyboard.TargetName="ObjectToMove"
+                >
+        		
+                <DoubleAnimationUsingPath.PathGeometry> 
+        			<PathGeometry Figures="M55.75,-111.4165 L103.5,-129.6665 L142.5,-124.6665 L165.75,-117.6665"/>
+        		</DoubleAnimationUsingPath.PathGeometry>
+                
+                
+        	</DoubleAnimationUsingPath>
+
+            <DoubleAnimationUsingPath 
+                Duration="0:0:2" 
+               
+                Source="Y" 
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" 
+                Storyboard.TargetName="ObjectToMove"
+       
+                >
+        		
+                <DoubleAnimationUsingPath.PathGeometry>
+        			<PathGeometry Figures="M55.75,-111.4165 L103.5,-129.6665 L142.5,-124.6665 L165.75,-117.6665"/>
+        		</DoubleAnimationUsingPath.PathGeometry>
+                
+        	</DoubleAnimationUsingPath>
+            
+        </Storyboard>
+
     </Window.Resources>
 	
     
     <Window.Triggers>
 		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
 			<BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
-		</EventTrigger>
+           
+        </EventTrigger>
 	</Window.Triggers>
 
 

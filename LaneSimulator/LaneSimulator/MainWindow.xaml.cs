@@ -3,7 +3,9 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Shapes;
 using System.Windows.Threading;
 using LaneSimulator.PLC;
 using LaneSimulator.Views;
@@ -103,6 +105,15 @@ namespace LaneSimulator
            // _sectionA.Executor();
         }
 
+        private void MyStoryboardCompleted(object sender, EventArgs e)
+        {
+            var thing = this.FindResource("Storyboard2");
+
+            var OtherSB = (Storyboard)thing;
+            OtherSB.Begin();
+        }
+
+
         private void Timeline_OnCompleted(object sender, EventArgs e)
         {
             var thing = this.FindResource("Storyboard3");
@@ -121,13 +132,7 @@ namespace LaneSimulator
         }
 
 
-        private void MyStoryboardCompleted(object sender, EventArgs e)
-        {
-            var thing = this.FindResource("Storyboard2");
 
-            var OtherSB = (Storyboard)thing;
-            OtherSB.Begin();
-        }
 
         private void btnStartSystem_Click(object sender, RoutedEventArgs e)
         {
@@ -170,6 +175,16 @@ namespace LaneSimulator
 
         //}
 
+        private void NewRectangle()
+        {
+            Rectangle newobject = new Rectangle();
+            newobject.Width = 40;
+            newobject.Height = 40;
+            newobject.Stroke = (Brush)Brushes.Black;
 
+            newobject.StrokeThickness = 1.5;
+
+
+        }
     }
 }

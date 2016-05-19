@@ -36,3 +36,16 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\T
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\WpfApplication3\obj\Debug\WpfApplication3.csproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\WpfApplication3\obj\Debug\WpfApplication3.exe
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\WpfApplication3\obj\Debug\WpfApplication3.pdb
+C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\Test_WPF\WpfApplication3\bin\Debug\WpfApplication3.exe.config
+C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\Test_WPF\WpfApplication3\bin\Debug\WpfApplication3.exe
+C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\Test_WPF\WpfApplication3\bin\Debug\WpfApplication3.pdb
+C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\Test_WPF\WpfApplication3\obj\Debug\WpfApplication3.csprojResolveAssemblyReference.cache
+C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\Test_WPF\WpfApplication3\obj\Debug\MainWindow.baml
+C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\Test_WPF\WpfApplication3\obj\Debug\MainWindow.g.cs
+C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\Test_WPF\WpfApplication3\obj\Debug\App.g.cs
+C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\Test_WPF\WpfApplication3\obj\Debug\WpfApplication3_MarkupCompile.cache
+C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\Test_WPF\WpfApplication3\obj\Debug\WpfApplication3.g.resources
+C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\Test_WPF\WpfApplication3\obj\Debug\WpfApplication3.Properties.Resources.resources
+C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\Test_WPF\WpfApplication3\obj\Debug\WpfApplication3.csproj.GenerateResource.Cache
+C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\Test_WPF\WpfApplication3\obj\Debug\WpfApplication3.exe
+C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\Test_WPF\WpfApplication3\obj\Debug\WpfApplication3.pdb
