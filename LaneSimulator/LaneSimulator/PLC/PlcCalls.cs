@@ -1,40 +1,42 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using System.Windows;
 using Snap7;
 
 namespace LaneSimulator.PLC
 {
-    class PlcCalls
+    public class PlcCalls
     {
         //** Snap7 client library **//
-        public static S7Client Client;
-
+        public  S7Client Client;
+        
         //private static LaneAnimation _laneanimatin;
 
         public const int Amount = 1;
-        public const int DBNumber = 0;
+        public const int DbNumber = 0;
         public static readonly int Wordlen = S7Client.S7WLBit;
         private static readonly byte[] Buffer = new byte[500];
         private static int _res;
-
-
+       
         static readonly S7Client.S7DataItem[] Items = new S7Client.S7DataItem[20];
 
-
-        /// <summary>
-        /// Establish connection
-        /// </summary>
-        public static void EstablishContact()
+        public PlcCalls()
         {
             Client = new S7Client();
-            Client.ConnectTo("192.168.2.16", 0, 0);
         }
+        
+        public int ConnectToPlc(string ipAdress, int rack, int slot )
+        {
+            var result = Client.ConnectTo(ipAdress, rack, slot);
+           
+            return result;
+
+        }
+
 
         /// <summary>
         /// Disconnect from PLC 
         /// </summary>
-        public static void Disconnect()
+        public void Disconnect()
         {
             Client.Disconnect();
             Client = null;
@@ -44,20 +46,20 @@ namespace LaneSimulator.PLC
         /// <summary>
         /// Start the system by setting the press button either True or False
         /// </summary>
-        public static void StartBtnInput()
+        public  void StartBtnInput()
         {
-            _res = Client.WriteArea(S7Client.S7AreaPE, DBNumber, PLCTags.StartButtonInput, Amount, Wordlen, Buffer);
+            _res = Client.WriteArea(S7Client.S7AreaPE, DbNumber, PLCTags.StartButtonInput, Amount, Wordlen, Buffer);
             if (_res == 0)
             {
                 if (Buffer[0] == 0)
                 {
                     Buffer[0] = 1;
-                    Client.WriteArea(S7Client.S7AreaPE, DBNumber, PLCTags.StartButtonInput, Amount, Wordlen, Buffer);
+                    Client.WriteArea(S7Client.S7AreaPE, DbNumber, PLCTags.StartButtonInput, Amount, Wordlen, Buffer);
                 }
                 else
                 {
                     Buffer[0] = 0;
-                    Client.WriteArea(S7Client.S7AreaPE, DBNumber, PLCTags.StartButtonInput, Amount, Wordlen, Buffer);
+                    Client.WriteArea(S7Client.S7AreaPE, DbNumber, PLCTags.StartButtonInput, Amount, Wordlen, Buffer);
                 }
             }
 
@@ -70,29 +72,29 @@ namespace LaneSimulator.PLC
         public void StopBtnInput()
         {
             Buffer[0] = 0;
-            Client.WriteArea(S7Client.S7AreaPE, DBNumber, PLCTags.StopButtonInput, Amount, Wordlen, Buffer);
-            Client.WriteArea(S7Client.S7AreaPE, DBNumber, PLCTags.StartButtonInput, Amount, Wordlen, Buffer);
+            Client.WriteArea(S7Client.S7AreaPE, DbNumber, PLCTags.StopButtonInput, Amount, Wordlen, Buffer);
+            Client.WriteArea(S7Client.S7AreaPE, DbNumber, PLCTags.StartButtonInput, Amount, Wordlen, Buffer);
         }
 
 
         /// <summary>
         /// RESET System
         /// </summary>
-        public static void ResetBtn()
+        public  void ResetBtn()
         {
-            _res = Client.ReadArea(S7Client.S7AreaMK, DBNumber, PLCTags.ResetButtonMerker, Amount, Wordlen, Buffer);
+            _res = Client.ReadArea(S7Client.S7AreaMK, DbNumber, PLCTags.ResetButtonMerker, Amount, Wordlen, Buffer);
 
             if (_res == 0)
             {
                 if (Buffer[0] == 0)
                 {
                     Buffer[0] = 1;
-                    Client.WriteArea(S7Client.S7AreaMK, DBNumber, PLCTags.ResetButtonMerker, Amount, Wordlen, Buffer);
+                    Client.WriteArea(S7Client.S7AreaMK, DbNumber, PLCTags.ResetButtonMerker, Amount, Wordlen, Buffer);
                 }
                 else
                 {
                     Buffer[0] = 0;
-                    Client.WriteArea(S7Client.S7AreaMK, DBNumber, PLCTags.ResetButtonMerker, Amount, Wordlen, Buffer);
+                    Client.WriteArea(S7Client.S7AreaMK, DbNumber, PLCTags.ResetButtonMerker, Amount, Wordlen, Buffer);
                 }
             }
         }
@@ -101,7 +103,7 @@ namespace LaneSimulator.PLC
         /// The first startup in which amount of Inputs & meker(s) are set to true, this to avoid
         /// any headahcs during simulation 
         /// </summary>
-        public static void StartUp()
+        public  void StartUp()
         {
             GCHandle myGcHandle = GCHandle.Alloc(Buffer, GCHandleType.Pinned);
             IntPtr startupPtr = myGcHandle.AddrOfPinnedObject();
@@ -158,8 +160,7 @@ namespace LaneSimulator.PLC
             _res = Client.WriteMultiVars(Items, 20);
         }
 
-
-        public static void SectionA()
+        public  void SectionA()
         {
             GCHandle myGcHandle = GCHandle.Alloc(Buffer, GCHandleType.Pinned);
             IntPtr sensortIntPtr = myGcHandle.AddrOfPinnedObject();
@@ -215,7 +216,7 @@ namespace LaneSimulator.PLC
             _res = Client.WriteMultiVars(Items, 6);
         }
 
-        public static void SectionB()
+        public  void SectionB()
         {
 
             GCHandle myGcHandle = GCHandle.Alloc(Buffer, GCHandleType.Pinned);
@@ -284,7 +285,7 @@ namespace LaneSimulator.PLC
             _res = Client.WriteMultiVars(Items, 9);
         }
 
-        public static void SectionC()
+        public  void SectionC()
         {
             GCHandle myGcHandle = GCHandle.Alloc(Buffer, GCHandleType.Pinned);
             IntPtr sensortIntPtr = myGcHandle.AddrOfPinnedObject();
@@ -318,7 +319,7 @@ namespace LaneSimulator.PLC
 
         }
 
-        public static void SectionD()
+        public  void SectionD()
         {
             GCHandle myGcHandle = GCHandle.Alloc(Buffer, GCHandleType.Pinned);
             IntPtr sensortIntPtr = myGcHandle.AddrOfPinnedObject();
@@ -407,7 +408,7 @@ namespace LaneSimulator.PLC
             _res = Client.WriteMultiVars(Items, 13);
         }
 
-        public static void SectionE()
+        public  void SectionE()
         {
             GCHandle myGcHandle = GCHandle.Alloc(Buffer, GCHandleType.Pinned);
             IntPtr sensortIntPtr = myGcHandle.AddrOfPinnedObject();
@@ -465,7 +466,7 @@ namespace LaneSimulator.PLC
 
         }
 
-        public static void SectionF()
+        public  void SectionF()
         {
             GCHandle myGcHandle = GCHandle.Alloc(Buffer, GCHandleType.Pinned);
             IntPtr sensortIntPtr = myGcHandle.AddrOfPinnedObject();
@@ -520,7 +521,7 @@ namespace LaneSimulator.PLC
 
         }
 
-        public static void SectionG()
+        public  void SectionG()
         {
             GCHandle myGcHandle = GCHandle.Alloc(Buffer, GCHandleType.Pinned);
             IntPtr sensortIntPtr = myGcHandle.AddrOfPinnedObject();

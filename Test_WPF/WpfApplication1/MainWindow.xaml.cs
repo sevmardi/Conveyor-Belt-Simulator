@@ -29,7 +29,6 @@ namespace WpfApplication1
         {
             InitializeComponent();
              
-
             object_to_move.Visibility = Visibility.Hidden;
          
         }

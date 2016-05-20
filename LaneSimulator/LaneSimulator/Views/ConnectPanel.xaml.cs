@@ -1,45 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Snap7;
+﻿using System.Windows;
+using LaneSimulator.PLC;
+
 namespace LaneSimulator.Views
 {
     /// <summary>
     /// Interaction logic for ConnectPanel.xaml
     /// </summary>
-    public partial class ConnectPanel : Window
+    public partial class ConnectPanel
     {
-        private S7Client Client;
+        private readonly PlcCalls _plcCalls;
 
         public ConnectPanel()
         {
+            _plcCalls = new PlcCalls();
             InitializeComponent();
-            Client = new S7Client();
         }
 
         private void ConnectBtn_Click(object sender, RoutedEventArgs e)
         {
             // Make connection with PLC using IP, slot, etc..
-            int Result;
-            int Rack = System.Convert.ToInt32(TxtRack.Text);
-            int Slot = System.Convert.ToInt32(TxtSlot.Text);
+            int rack = System.Convert.ToInt32(TxtRack.Text);
+            int slot = System.Convert.ToInt32(TxtSlot.Text);
 
-            Result = Client.ConnectTo(TxtIP.Text, Rack, Slot);
-
-            if (Result == 0)
+            //Result = plcCalls.Client.ConnectTo(TxtIP.Text, Rack, Slot);
+            var result = _plcCalls.ConnectToPlc(TxtIP.Text, rack, slot);
+            if (result == 0)
             {
                 DialogResult = true;
-                this.Close();
+                Close();
+                MessageBox.Show("cool");
             }
             else
             {
@@ -82,7 +71,7 @@ namespace LaneSimulator.Views
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;
-            this.Close();
+            Close();
         }
 
     }

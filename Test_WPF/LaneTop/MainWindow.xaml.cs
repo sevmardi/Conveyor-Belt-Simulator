@@ -18,19 +18,21 @@ namespace LaneTop
         private LaneAnimation _laneanimatin;
         readonly SectionA _sectionA;
         private PlcCalls PLC;
+        private Tray _tray;
         private double T = 0.0;
+       
         public MainWindow()
         {
-            this._timer.Interval = new TimeSpan(0, 0, 0, 0, 15);
-            this._timer.Tick += new EventHandler(this.Timer_Tick);
+          
 
-             _sectionA = new SectionA(this);
+          
             InitializeComponent();
-           
+      
             //laneanimatin.sb = (Storyboard)this.Resources["Storyboard1"];
             //newObject.Visibility = Visibility.Hidden;
            // StartAnimationBtn1.IsEnabled = false;
             PLC = new PlcCalls();
+            _tray = new Tray();
         }
 
 
@@ -117,23 +119,26 @@ namespace LaneTop
             if (sub1 != null)
             {
                //Storyboard.SetTargetName(sub1, Tray);
-                sub1.Begin();
+                sub1.Begin(ObjectToMove);
+              //  Storyboard.SetTargetName(sub1, _tray);
+                
+                
+                
+                
+                
                 //CreateNewObject();
 
-                SetMotorOnInSectionA();
+               // SetMotorOnInSectionA();
             }
                
-                    
+            
+     
         
         }
 
 
 
 
-        private void SetMotorOnInSectionA()
-        {
-             _sectionA.Executor();
-        }
 
 
         private void storyboard_Completed(object sender, EventArgs e)
@@ -142,31 +147,15 @@ namespace LaneTop
         }
 
 
-        public void Total()
-        {
-            //this.total_text1.Text = 
-        }
-
-        private void Timer1_Tick(object sender, EventArgs e)
-        {
-            this.Timer_Lable.Text = (this.T = this.T + 0.1).ToString("0.00", (IFormatProvider)CultureInfo.InvariantCulture);
-        }
-
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
 
         public void CreateNewObject()
         {
-            ObjectToMove  = new Rectangle();
-            ObjectToMove.Fill = new SolidColorBrush(Colors.Green);
-            ObjectToMove.Height = 31;
-            ObjectToMove.Width = 42;
-            ObjectToMove.Stroke = (Brush)Brushes.Black;
-            ObjectToMove.StrokeThickness = 1.5;
+            //ObjectToMove  = new Rectangle();
+            //ObjectToMove.Fill = new SolidColorBrush(Colors.Green);
+            //ObjectToMove.Height = 31;
+            //ObjectToMove.Width = 42;
+            //ObjectToMove.Stroke = (Brush)Brushes.Black;
+            //ObjectToMove.StrokeThickness = 1.5;
 
             //http://stackoverflow.com/questions/2029680/wpf-c-sharp-path-how-to-get-from-a-string-with-path-data-to-geometry-in-code-n
             var shitload = new Path();
@@ -175,22 +164,13 @@ namespace LaneTop
 
         }
 
-
-
-        public void test()
+        private void MyStoryboardCompleted(object sender, EventArgs e)
         {
-          
+            var thing = this.FindResource("Storyboard2");
 
-           
+            var OtherSB = (Storyboard)thing;
+            OtherSB.Begin();
         }
-
-
-
-
-
-
-
-
 
 
         private void Timeline_OnCompleted(object sender, EventArgs e)
@@ -211,13 +191,7 @@ namespace LaneTop
         }
 
 
-        private void MyStoryboardCompleted(object sender, EventArgs e)
-        {
-            var thing = this.FindResource("Storyboard2");
-
-            var OtherSB = (Storyboard)thing;
-            OtherSB.Begin();
-        }
+   
 
     }
 }

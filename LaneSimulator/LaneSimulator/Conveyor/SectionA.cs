@@ -11,27 +11,29 @@ namespace LaneSimulator.Conveyor
         private static int _res;
         private static readonly byte[] Buffer = new byte[500];
      //   private static LaneAnimation _laneanimatin;
+        private PlcCalls plcCalls;
 
         MainWindow main;
 
-        public SectionA(MainWindow mw)
-        {
-            main = mw;
-        }
+        //public SectionA()
+        //{
+        //   // main = mw;
+        //}
+
         public void Executor()
         {
             _0102_S1Read();
-            //   SecondSensor();
-            //ThirdSensor();
-            //FourthSensor();
-            //FifthSensor();
-            //SixthSensor();
+            SecondSensor();
+            ThirdSensor();
+            FourthSensor();
+            FifthSensor();
+            SixthSensor();
         }
 
         //MOTORS
         public void _0102_D1()
         {
-            _res = PlcCalls.Client.ReadArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PLCTags._0102_D1, PlcCalls.Amount,
+            _res = plcCalls.Client.ReadArea(S7Client.S7AreaPA, PlcCalls.DbNumber, PLCTags._0102_D1, PlcCalls.Amount,
                 PlcCalls.Wordlen, Buffer);
 
             if (_res == 0)
@@ -48,7 +50,7 @@ namespace LaneSimulator.Conveyor
 
         public void _0103_D1()
         {
-            _res = PlcCalls.Client.ReadArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PLCTags._0103_D1, PlcCalls.Amount,
+            _res = plcCalls.Client.ReadArea(S7Client.S7AreaPA, PlcCalls.DbNumber, PLCTags._0103_D1, PlcCalls.Amount,
                 PlcCalls.Wordlen, Buffer);
 
             if (_res == 0)
@@ -69,7 +71,7 @@ namespace LaneSimulator.Conveyor
 
         public void _0104_D1()
         {
-            _res = PlcCalls.Client.ReadArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PLCTags._0104_D1, PlcCalls.Amount,
+            _res = plcCalls.Client.ReadArea(S7Client.S7AreaPA, PlcCalls.DbNumber, PLCTags._0104_D1, PlcCalls.Amount,
                 PlcCalls.Wordlen, Buffer);
 
             if (_res == 0)
@@ -90,7 +92,7 @@ namespace LaneSimulator.Conveyor
 
         public void _0105_D1()
         {
-            _res = PlcCalls.Client.ReadArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PLCTags._0105_D1, PlcCalls.Amount,
+            _res = plcCalls.Client.ReadArea(S7Client.S7AreaPA, PlcCalls.DbNumber, PLCTags._0105_D1, PlcCalls.Amount,
                 PlcCalls.Wordlen, Buffer);
 
             if (_res == 0)
@@ -98,7 +100,7 @@ namespace LaneSimulator.Conveyor
                 if (Buffer[0] == 0)
                 {
                     Buffer[0] = 1;
-                    _res = PlcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PLCTags._0105_D1,
+                    _res = plcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DbNumber, PLCTags._0105_D1,
                         PlcCalls.Amount, PlcCalls.Wordlen, Buffer);
                     main.Dispatcher.Invoke((Action)(() =>
                     {
@@ -113,7 +115,7 @@ namespace LaneSimulator.Conveyor
         // SENSORS
         public void _0102_S1Read()
         {
-            _res = PlcCalls.Client.ReadArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PLCTags._0102_S1, PlcCalls.Amount,
+            _res = plcCalls.Client.ReadArea(S7Client.S7AreaPE, PlcCalls.DbNumber, PLCTags._0102_S1, PlcCalls.Amount,
                 PlcCalls.Wordlen, Buffer);
 
             if (_res == 0)
@@ -121,7 +123,7 @@ namespace LaneSimulator.Conveyor
                 if (Buffer[0] == 1)
                 {
                     Buffer[0] = 0;
-                    PlcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PLCTags._0102_S1, PlcCalls.Amount,
+                    plcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DbNumber, PLCTags._0102_S1, PlcCalls.Amount,
                         PlcCalls.Wordlen, Buffer);
                     main._0102_S1.Fill = new SolidColorBrush(Colors.DarkGray);
                     _0102_D1();
@@ -134,7 +136,7 @@ namespace LaneSimulator.Conveyor
         public void _0102_S1Write(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
-            PlcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PLCTags._0102_S1, PlcCalls.Amount,
+            plcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DbNumber, PLCTags._0102_S1, PlcCalls.Amount,
                 PlcCalls.Wordlen, Buffer);
             //Buffer[0] = 0;
             //_res = PlcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PLCTags._0102_D1, PlcCalls.Amount,
@@ -150,7 +152,7 @@ namespace LaneSimulator.Conveyor
 
         public void _0102_S2Read(object source, ElapsedEventArgs e)
         {
-            _res = PlcCalls.Client.ReadArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PLCTags._0102_S2, PlcCalls.Amount,
+            _res = plcCalls.Client.ReadArea(S7Client.S7AreaPE, PlcCalls.DbNumber, PLCTags._0102_S2, PlcCalls.Amount,
                 PlcCalls.Wordlen, Buffer);
 
             if (_res == 0)
@@ -158,7 +160,7 @@ namespace LaneSimulator.Conveyor
                 if (Buffer[0] == 1)
                 {
                     Buffer[0] = 0;
-                    PlcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PLCTags._0102_S2, PlcCalls.Amount,
+                    plcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DbNumber, PLCTags._0102_S2, PlcCalls.Amount,
                         PlcCalls.Wordlen, Buffer);
 
                     main.Dispatcher.Invoke((Action)(() =>
@@ -179,7 +181,7 @@ namespace LaneSimulator.Conveyor
         public void _0102_S2Write(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
-            PlcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PLCTags._0102_S2, PlcCalls.Amount,
+            plcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DbNumber, PLCTags._0102_S2, PlcCalls.Amount,
                 PlcCalls.Wordlen, Buffer);
             //Buffer[0] = 0;
             //_res = PlcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PLCTags._0103_D1, PlcCalls.Amount,
@@ -194,7 +196,7 @@ namespace LaneSimulator.Conveyor
 
         public void _0103_S1Read(object source, ElapsedEventArgs e)
         {
-            _res = PlcCalls.Client.ReadArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PLCTags._0103_S1, PlcCalls.Amount,
+            _res = plcCalls.Client.ReadArea(S7Client.S7AreaPE, PlcCalls.DbNumber, PLCTags._0103_S1, PlcCalls.Amount,
                 PlcCalls.Wordlen, Buffer);
 
             if (_res == 0)
@@ -202,7 +204,7 @@ namespace LaneSimulator.Conveyor
                 if (Buffer[0] == 1)
                 {
                     Buffer[0] = 0;
-                    PlcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PLCTags._0103_S1, PlcCalls.Amount,
+                    plcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DbNumber, PLCTags._0103_S1, PlcCalls.Amount,
                         PlcCalls.Wordlen, Buffer);
 
                     main.Dispatcher.Invoke((Action)(() =>
@@ -223,10 +225,10 @@ namespace LaneSimulator.Conveyor
         public void _0103_S1Write(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
-            PlcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PLCTags._0103_S1, PlcCalls.Amount,
+            plcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DbNumber, PLCTags._0103_S1, PlcCalls.Amount,
                 PlcCalls.Wordlen, Buffer);
             Buffer[0] = 0;
-            _res = PlcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PLCTags._0104_D1, PlcCalls.Amount,
+            _res = plcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DbNumber, PLCTags._0104_D1, PlcCalls.Amount,
                 PlcCalls.Wordlen, Buffer);
 
             main.Dispatcher.Invoke((Action)(() =>
@@ -238,7 +240,7 @@ namespace LaneSimulator.Conveyor
 
         public void _0104_S1Read(object source, ElapsedEventArgs e)
         {
-            _res = PlcCalls.Client.ReadArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PLCTags._0104_S1, PlcCalls.Amount,
+            _res = plcCalls.Client.ReadArea(S7Client.S7AreaPE, PlcCalls.DbNumber, PLCTags._0104_S1, PlcCalls.Amount,
                 PlcCalls.Wordlen, Buffer);
 
             if (_res == 0)
@@ -246,7 +248,7 @@ namespace LaneSimulator.Conveyor
                 if (Buffer[0] == 1)
                 {
                     Buffer[0] = 0;
-                    PlcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PLCTags._0104_S1, PlcCalls.Amount,
+                    plcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DbNumber, PLCTags._0104_S1, PlcCalls.Amount,
                         PlcCalls.Wordlen, Buffer);
 
                     main.Dispatcher.Invoke((Action)(() =>
@@ -265,7 +267,7 @@ namespace LaneSimulator.Conveyor
         public void _0104_S1Write(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
-            PlcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PLCTags._0104_S1, PlcCalls.Amount,
+            plcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DbNumber, PLCTags._0104_S1, PlcCalls.Amount,
                 PlcCalls.Wordlen, Buffer);
             //Buffer[0] = 0;
             //_res = PlcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PLCTags._0105_D1, PlcCalls.Amount,
@@ -280,7 +282,7 @@ namespace LaneSimulator.Conveyor
 
         public void _0105_S1Read(object source, ElapsedEventArgs e)
         {
-            _res = PlcCalls.Client.ReadArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PLCTags._0105_S1, PlcCalls.Amount,
+            _res = plcCalls.Client.ReadArea(S7Client.S7AreaPE, PlcCalls.DbNumber, PLCTags._0105_S1, PlcCalls.Amount,
                 PlcCalls.Wordlen, Buffer);
 
             if (_res == 0)
@@ -288,7 +290,7 @@ namespace LaneSimulator.Conveyor
                 if (Buffer[0] == 1)
                 {
                     Buffer[0] = 0;
-                    PlcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PLCTags._0105_S1, PlcCalls.Amount,
+                    plcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DbNumber, PLCTags._0105_S1, PlcCalls.Amount,
                         PlcCalls.Wordlen, Buffer);
 
                     main.Dispatcher.Invoke((Action)(() =>
@@ -307,10 +309,10 @@ namespace LaneSimulator.Conveyor
         public void _0105_S1Write(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
-            PlcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PLCTags._0105_S1, PlcCalls.Amount,
+            plcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DbNumber, PLCTags._0105_S1, PlcCalls.Amount,
                 PlcCalls.Wordlen, Buffer);
             Buffer[0] = 0;
-            _res = PlcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PLCTags._0105_D1, PlcCalls.Amount,
+            _res = plcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DbNumber, PLCTags._0105_D1, PlcCalls.Amount,
                 PlcCalls.Wordlen, Buffer);
 
             main.Dispatcher.Invoke((Action)(() =>
@@ -322,7 +324,7 @@ namespace LaneSimulator.Conveyor
 
         public void _0105_S2Read(object source, ElapsedEventArgs e)
         {
-            _res = PlcCalls.Client.ReadArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PLCTags._0105_S2, PlcCalls.Amount,
+            _res = plcCalls.Client.ReadArea(S7Client.S7AreaPE, PlcCalls.DbNumber, PLCTags._0105_S2, PlcCalls.Amount,
                 PlcCalls.Wordlen, Buffer);
 
             if (_res == 0)
@@ -330,7 +332,7 @@ namespace LaneSimulator.Conveyor
                 if (Buffer[0] == 1)
                 {
                     Buffer[0] = 0;
-                    PlcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PLCTags._0105_S2, PlcCalls.Amount,
+                    plcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DbNumber, PLCTags._0105_S2, PlcCalls.Amount,
                         PlcCalls.Wordlen, Buffer);
 
                     main.Dispatcher.Invoke((Action)(() =>
@@ -349,7 +351,7 @@ namespace LaneSimulator.Conveyor
         public void _0105_S2Write(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
-            PlcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PLCTags._0105_S2, PlcCalls.Amount,
+            plcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DbNumber, PLCTags._0105_S2, PlcCalls.Amount,
                 PlcCalls.Wordlen, Buffer);
             //Buffer[0] = 0;
             //_res = PlcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PLCTags._0105_D1, PlcCalls.Amount,

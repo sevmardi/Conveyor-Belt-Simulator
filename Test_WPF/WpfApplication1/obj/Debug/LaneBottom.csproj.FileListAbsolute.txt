@@ -48,3 +48,4 @@ C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project
 C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\Test_WPF\WpfApplication1\obj\Debug\LaneBottom.csproj.GenerateResource.Cache
 C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\Test_WPF\WpfApplication1\obj\Debug\WpfApplication1.exe
 C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\Test_WPF\WpfApplication1\obj\Debug\WpfApplication1.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\WpfApplication1\obj\Debug\LaneBottom.csprojResolveAssemblyReference.cache

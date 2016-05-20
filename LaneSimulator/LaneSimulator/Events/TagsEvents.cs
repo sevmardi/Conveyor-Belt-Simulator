@@ -7,9 +7,9 @@ namespace LaneSimulator.Events
 {
     class TagsEvents
     {
-        public delegate void DataChangedEventHandler(string TagName, int NewValue);
+        public delegate void DataChangedEventHandler(string address, double newValue);
 
-        private Timer tmr = new Timer();
+        private readonly Timer _tmr = new Timer();
 
         public event DataChangedEventHandler OnDataChanged;
 
@@ -17,21 +17,21 @@ namespace LaneSimulator.Events
         {
             AddTagList(dt);
             SetInitialVales();
-            tmr.Elapsed += timerticks;
-            tmr.Interval = 250;
-            tmr.Enabled = true;
-            tmr.Start();
+            _tmr.Elapsed += Timerticks;
+            _tmr.Interval = 250;
+            _tmr.Enabled = true;
+            _tmr.Start();
         }
 
         private void StopTimer()
         {
-            tmr.Enabled = false;
-            tmr.Stop();
+            _tmr.Enabled = false;
+            _tmr.Stop();
         }
 
-        private List<string> TagValues = new List<string>();
-        private List<string> oldValues = new List<string>();
-        private List<string> newValues = new List<string>();
+        private readonly List<string> _tagValues = new List<string>();
+        private readonly List<string> _oldValues = new List<string>();
+        private readonly List<string> _newValues = new List<string>();
 
         private void AddTagList(DataTable dt)
         {
@@ -39,7 +39,7 @@ namespace LaneSimulator.Events
 
             foreach (DataRow row in dt.Rows)
             {
-                TagValues.Add((string)row["Path"]);
+                _tagValues.Add((string)row["Path"]);
                 ILoop = ILoop + 1;
             }
         }
@@ -47,11 +47,11 @@ namespace LaneSimulator.Events
         private void SetInitialVales()
         {
             int iLoop = 0;
-            foreach (string vals in TagValues)
+            foreach (string vals in _tagValues)
             {
                 var rd = ReadTag(vals);
-                oldValues.Add(rd.ToString());
-                newValues.Add(rd.ToString());
+                _oldValues.Add(rd.ToString());
+                _newValues.Add(rd.ToString());
                 iLoop = iLoop + 1;
             }
             //newValues = oldValues
@@ -63,18 +63,18 @@ namespace LaneSimulator.Events
         }
 
 
-        private void timerticks(object sender, EventArgs eventArgs)
+        private void Timerticks(object sender, EventArgs eventArgs)
         {
             int iLoop = 0;
-            foreach (string vals in TagValues)
+            foreach (string vals in _tagValues)
             {
-                oldValues[iLoop] = ReadTag(vals).ToString();
-                if (oldValues[iLoop] != newValues[iLoop])
+                _oldValues[iLoop] = ReadTag(vals).ToString();
+                if (_oldValues[iLoop] != _newValues[iLoop])
                 {
-                    newValues[iLoop] = oldValues[iLoop];
+                    _newValues[iLoop] = _oldValues[iLoop];
                     if (OnDataChanged != null)
                     {
-                        OnDataChanged(vals, Convert.ToInt32(newValues[iLoop]));
+                        OnDataChanged(vals, Convert.ToInt32(_newValues[iLoop]));
                     }
                 }
                 iLoop = iLoop + 1;

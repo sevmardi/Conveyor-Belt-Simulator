@@ -11,81 +11,76 @@
     >
 	<Window.Resources>
 
-        <Storyboard x:Key="Storyboard1">
+        <Storyboard x:Key="Storyboard1" >
             <DoubleAnimationUsingPath 
-                Duration="0:0:2"
+                Duration="0:0:3"  
                 Source="X" 
-                BeginTime="0:0:0"
-                Completed="MyStoryboardCompleted"
-                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
-                Storyboard.TargetName="ObjectToMove">
-				
-                <DoubleAnimationUsingPath.PathGeometry>
-					<PathGeometry Figures="M-5,-14.333514 L1.6669813,-49.66652 L25.333186,-90.333219 L53.666999,-111.99949"/>
-				</DoubleAnimationUsingPath.PathGeometry>
-			
-            </DoubleAnimationUsingPath>
-
-
-            <DoubleAnimationUsingPath 
-                Duration="0:0:2" 
-                BeginTime="0:0:0" 
-                Source="Y" 
-                  Completed="MyStoryboardCompleted"
-                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" 
-                Storyboard.TargetName="ObjectToMove">
-				
-                <DoubleAnimationUsingPath.PathGeometry>
-					<PathGeometry Figures="M-5,-14.333514 L1.6669813,-49.66652 L25.333186,-90.333219 L53.666999,-111.99949"/>
-				</DoubleAnimationUsingPath.PathGeometry>
-                
-                
-			</DoubleAnimationUsingPath>
-		
-        </Storyboard>
-        
-        <Storyboard x:Key="Storyboard2">
-        	<DoubleAnimationUsingPath 
-                Duration="0:0:2"  
-                Source="X" 
-                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
-                Storyboard.TargetName="ObjectToMove"
-                >
-        		
-                <DoubleAnimationUsingPath.PathGeometry> 
-        			<PathGeometry Figures="M55.75,-111.4165 L103.5,-129.6665 L142.5,-124.6665 L165.75,-117.6665"/>
-        		</DoubleAnimationUsingPath.PathGeometry>
-                
-                
-        	</DoubleAnimationUsingPath>
-
-            <DoubleAnimationUsingPath 
-                Duration="0:0:2" 
-               
-                Source="Y" 
-                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" 
-                Storyboard.TargetName="ObjectToMove"
-       
-                >
-        		
-                <DoubleAnimationUsingPath.PathGeometry>
-        			<PathGeometry Figures="M55.75,-111.4165 L103.5,-129.6665 L142.5,-124.6665 L165.75,-117.6665"/>
-        		</DoubleAnimationUsingPath.PathGeometry>
-                
-        	</DoubleAnimationUsingPath>
             
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
+                >
+                <DoubleAnimationUsingPath.PathGeometry>
+                    <PathGeometry Figures="M1.5,-18.667014 L8.1669813,-54.00002 L31.833186,-94.666719 L60.166999,-116.33299"/>
+                </DoubleAnimationUsingPath.PathGeometry>
+
+            </DoubleAnimationUsingPath>
+            <DoubleAnimationUsingPath 
+                Duration="0:0:3"   
+                Source="Y"
+                  
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" 
+                >
+
+                <DoubleAnimationUsingPath.PathGeometry>
+                    <PathGeometry Figures="M1.5,-18.667014 L8.1669813,-54.00002 L31.833186,-94.666719 L60.166999,-116.33299"/>
+                </DoubleAnimationUsingPath.PathGeometry>
+
+            </DoubleAnimationUsingPath>
         </Storyboard>
+	    <!--<Storyboard x:Key="Storyboard2">
+	        <DoubleAnimationUsingPath
+	            Duration="0:0:3"
+	            Source="X"
+	            Completed="Timeline_OnCompleted"
+	            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+
+	            <DoubleAnimationUsingPath.PathGeometry>
+	                <PathGeometry Figures="M62.25,-115.75 L110,-134 L149,-129 L172.25,-122" />
+	            </DoubleAnimationUsingPath.PathGeometry>
+
+	        </DoubleAnimationUsingPath>
+
+	        <DoubleAnimationUsingPath
+	            Duration="0:0:3"
+	            Source="Y"
+	            Completed="Timeline_OnCompleted"
+	            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+
+	            <DoubleAnimationUsingPath.PathGeometry>
+	                <PathGeometry Figures="M62.25,-115.75 L110,-134 L149,-129 L172.25,-122" />
+	            </DoubleAnimationUsingPath.PathGeometry>
+
+	        </DoubleAnimationUsingPath>
+	    </Storyboard>
+        <Storyboard x:Key="Storyboard3">
+            <DoubleAnimationUsingPath Name="path3" Duration="0:0:2" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" >
+                <DoubleAnimationUsingPath.PathGeometry>
+                    <PathGeometry Figures="M177.75,-120.25 L197.75,-105.75 L217.5,-87.75 L235.25,-70.25"/>
+                </DoubleAnimationUsingPath.PathGeometry>
+            </DoubleAnimationUsingPath>
+            <DoubleAnimationUsingPath Duration="0:0:2" Source="Y"  Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" >
+                <DoubleAnimationUsingPath.PathGeometry>
+                    <PathGeometry Figures="M177.75,-120.25 L197.75,-105.75 L217.5,-87.75 L235.25,-70.25"/>
+                </DoubleAnimationUsingPath.PathGeometry>
+            </DoubleAnimationUsingPath>
+        </Storyboard>-->
+
+
+
 
     </Window.Resources>
 	
     
-    <Window.Triggers>
-		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
-			<BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
-           
-        </EventTrigger>
-	</Window.Triggers>
-
+   
 
 
 
@@ -546,17 +541,22 @@
 					TextAlignment="Center" TextWrapping="Wrap" Foreground="#FF9F2323"/>
 			</Border>
 		</Viewbox>
-		<Rectangle x:Name="ObjectToMove" Fill="#FFDA6C11" Height="28.667" Canvas.Left="-307.5" Stroke="Black" Canvas.Top="428.333" Width="37" RenderTransformOrigin="0.5,0.5">
-			<Rectangle.RenderTransform>
-				<TransformGroup>
-					<ScaleTransform/>
-					<SkewTransform/>
-					<RotateTransform/>
-					<TranslateTransform/>
-				</TransformGroup>
-			</Rectangle.RenderTransform>
-		</Rectangle>
-		<Path x:Name="_5" Data="M30.5,379.33333 L99.416667,379.33333" Height="0" Canvas.Left="30.5" Stretch="Fill" Canvas.Top="382.068" Width="68.917"/>
+       
+            <Rectangle x:Name="ObjectToMove" Height="31" Canvas.Left="-316.5" Stroke="Black" Canvas.Top="431.5" Width="42" Fill="#FFDA6C11" RenderTransformOrigin="0.5,0.5">
+
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+
+   
+
+        <Path x:Name="_5" Data="M30.5,379.33333 L99.416667,379.33333" Height="0" Canvas.Left="30.5" Stretch="Fill" Canvas.Top="382.068" Width="68.917"/>
 		<Path x:Name="_6" Data="M30.5,379.33333 L99.416667,379.33333" Height="0" Canvas.Left="102" Stretch="Fill" Canvas.Top="383" Width="36"/>
 		<Path x:Name="XRayPath" Data="M30.5,379.33333 L99.416667,379.33333" Height="0" Canvas.Left="140" Stretch="Fill" Canvas.Top="383" Width="82.292"/>
 		<Path x:Name="_7" Data="M30.5,379.33333 L99.416667,379.33333" Height="0" Canvas.Left="226.583" Stretch="Fill" Canvas.Top="382.988" Width="41.917"/>

@@ -57,6 +57,12 @@
     <Compile Include="Events\Buffer.cs" />
     <Compile Include="Events\Semaphore.cs" />
     <Compile Include="Events\TagsEvents.cs" />
+    <Compile Include="Lanes\LaneTop.xaml.cs">
+      <DependentUpon>LaneTop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LaneTOp.xaml.cs">
+      <DependentUpon>LaneTOp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Libs\snap7.net.cs" />
     <Compile Include="Models\Components\Tray.xaml.cs">
       <DependentUpon>Tray.xaml</DependentUpon>
@@ -79,6 +85,14 @@
     <Compile Include="Views\MainCanvas.xaml.cs">
       <DependentUpon>MainCanvas.xaml</DependentUpon>
     </Compile>
+    <Page Include="Lanes\LaneTop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LaneTOp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
