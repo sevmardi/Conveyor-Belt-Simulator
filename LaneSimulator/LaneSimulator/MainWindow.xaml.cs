@@ -188,7 +188,7 @@ namespace LaneSimulator
             // only the orginal full window 
            
             // e.Cancel = !QuerySave();
-            //PlcCalls.Disconnect();
+            _plcCalls.Disconnect();
             //StopStoryboard1();
             //StopStorboard2();
             //StopStorboard3();

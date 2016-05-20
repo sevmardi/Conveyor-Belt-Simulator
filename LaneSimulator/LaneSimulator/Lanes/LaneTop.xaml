@@ -446,7 +446,7 @@
                     </LinearGradientBrush>
                 </Border.Background>
                 <TextBlock x:Name="Timer_Lable" FontFamily="/WpfApplication1;component/Fonts/#LCD" FontSize="48" Text="0.0"
-					TextAlignment="Center" TextWrapping="Wrap" Foreground="#FF9F2323"/>
+					TextAlignment="Center" TextWrapping="Wrap" Foreground="#FF9F2323" HorizontalAlignment="Left" Width="113"/>
             </Border>
         </Viewbox>
 
