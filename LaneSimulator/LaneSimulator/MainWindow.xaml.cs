@@ -34,7 +34,7 @@ namespace LaneSimulator
             InitializeComponent();
             Timer1.Interval = new TimeSpan(0, 0, 0, 0, 100);
             Timer1.Tick += new EventHandler(this.Timer1_Tick);
-            Closing += new CancelEventHandler(Window1_Closing);
+            Closing += new CancelEventHandler(MainWindow1Closing);
             _sectionA = new SectionA();
          //   ObjectToMove.Visibility = Visibility.Hidden;
            _plcCalls = new PlcCalls();
@@ -51,8 +51,8 @@ namespace LaneSimulator
         public void ResetTimer()
         {
             T = 0.0;
-            Timer_Lable.Text = "0.00";
-            tray_Wrap.Children.Clear();
+           // Timer_Lable.Text = "0.00";
+        //    tray_Wrap.Children.Clear();
             Total();
         }
 
@@ -61,7 +61,7 @@ namespace LaneSimulator
         /// </summary>
         private void Total()
         {
-            this.total_text1.Text = (this.tray_Wrap.Children.Count).ToString();
+         //   this.total_text1.Text = (this.tray_Wrap.Children.Count).ToString();
         }
 
         private void btnRest_Click(object sender, RoutedEventArgs e)
@@ -166,7 +166,6 @@ namespace LaneSimulator
             OtherSB.Begin();
         }
 
-
         private void Timeline_OnCompleted(object sender, EventArgs e)
         {
             var thing = this.FindResource("Storyboard3");
@@ -184,18 +183,24 @@ namespace LaneSimulator
             OtherSB.Begin();
         }
 
-        private void Window1_Closing(object sender, CancelEventArgs e)
+        private void MainWindow1Closing(object sender, CancelEventArgs e)
         {
             // only the orginal full window 
+           
             // e.Cancel = !QuerySave();
             //PlcCalls.Disconnect();
-            // MessageBox.Show("sure thing buddy");
+            //StopStoryboard1();
+            //StopStorboard2();
+            //StopStorboard3();
+            //StopStoryboard4();
+            //_plcCalls.StopBtnInput();
+             MessageBox.Show("sure thing buddy");
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            this.Timer_Lable.Text = (this.T = this.T + 0.1).ToString("0.00",
-                (IFormatProvider) CultureInfo.InvariantCulture);
+            //this.Timer_Lable.Text = (this.T = this.T + 0.1).ToString("0.00",
+            //    (IFormatProvider)CultureInfo.InvariantCulture);
         }
 
 
@@ -217,6 +222,7 @@ namespace LaneSimulator
 
        
         //TEST
+       
         private void NewRectangle()
         {
             Rectangle newobject = new Rectangle();

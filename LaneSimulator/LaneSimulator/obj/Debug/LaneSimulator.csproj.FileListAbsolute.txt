@@ -78,3 +78,4 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\L
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\LaneTOp.baml
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Lanes\LaneTop.g.cs
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\LaneTOp.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\GeneratedInternalTypeHelper.g.cs
