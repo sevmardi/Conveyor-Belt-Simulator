@@ -50,3 +50,7 @@ C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project
 C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\Test_WPF\WpfApplication2\obj\Debug\WpfApplication2.g.resources
 C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\Test_WPF\WpfApplication2\obj\Debug\WpfApplication2.Properties.Resources.resources
 C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\Test_WPF\WpfApplication2\obj\Debug\WpfApplication2.csproj.GenerateResource.Cache
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\Test_WPF\WpfApplication2\obj\Debug\ObjectToMove.baml
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\Test_WPF\WpfApplication2\obj\Debug\ObjectToMove.g.cs
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\Test_WPF\WpfApplication2\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\Test_WPF\WpfApplication2\obj\Debug\WpfApplication2_MarkupCompile.lref

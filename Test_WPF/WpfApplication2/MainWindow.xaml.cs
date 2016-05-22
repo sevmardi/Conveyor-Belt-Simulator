@@ -13,42 +13,26 @@ namespace WpfApplication2
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private ObjectToMove _pMove;
         public MainWindow()
         {
             InitializeComponent();
-         
-            //path2.Freeze(); // For performance benefits. 
-            //DoubleAnimationUsingPath daPath = new DoubleAnimationUsingPath();
-            //daPath.Duration = TimeSpan.FromSeconds(5);
-            //daPath.RepeatBehavior = RepeatBehavior.Forever;
-            //daPath.AccelerationRatio = 0.6;
-            //daPath.DecelerationRatio = 0.4;
-            //daPath.AutoReverse = true;
-            //daPath.PathGeometry = path2;
-            //daPath.Source = PathAnimationSource.X;
-            //circle2.BeginAnimation(Canvas.LeftProperty, daPath);
 
-            //daPath = new DoubleAnimationUsingPath();
-            //daPath.Duration = TimeSpan.FromSeconds(5);
-            //daPath.RepeatBehavior = RepeatBehavior.Forever;
-            //daPath.AccelerationRatio = 0.6;
-            //daPath.DecelerationRatio = 0.4;
-            //daPath.AutoReverse = true;
-            //daPath.PathGeometry = path2;
-            //daPath.Source = PathAnimationSource.Y;
-            //circle2.BeginAnimation(Canvas.TopProperty, daPath);
-
-
-         
-
-           
-
-
+            _pMove = new ObjectToMove();
         }
 
 
- 
+        private void TestAnimation()
+        {
+            var sub1 = FindResource("Storyboard1") as Storyboard;
 
-        
+            if (sub1 != null) sub1.Begin(_pMove);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            TestAnimation();
+        }
     }
 }
