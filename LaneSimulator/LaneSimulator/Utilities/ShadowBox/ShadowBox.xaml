@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="LaneSimulator.Utilities.ShadowBox.ShadowBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             >
+
+    <UserControl.Resources>
+        <Style TargetType="Border" x:Key="FadeStyle">
+            <Setter Property="Opacity" Value="0.2" />
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Border.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                Storyboard.TargetProperty="Opacity"
+                                To="0.8" Duration="0:0:0.25" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+                <EventTrigger RoutedEvent="Border.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                Storyboard.TargetProperty="Opacity"
+                                To="0.2" Duration="0:0:0.5" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+            </Style.Triggers>
+        </Style>
+
+    </UserControl.Resources>
+
+    <Border HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Yellow" BorderThickness="3"
+            CornerRadius="10" Padding="2"
+            Style="{StaticResource FadeStyle}" Name="OuterBorder">
+        
+        <Grid Name="Grid1">
+            <!-- Rounded mask (stretches to fill Grid) -->
+            <Border Name="Mask" Background="White" CornerRadius="7" />
+            <!-- Main content container -->
+
+            <StackPanel Name="SpContent" Orientation="Horizontal">
+                <!-- Use a VisualBrush of 'mask' as the opacity mask -->
+                <StackPanel.OpacityMask>
+                    <VisualBrush Visual="{Binding ElementName=Mask}" />
+                </StackPanel.OpacityMask>
+
+
+            </StackPanel>
+
+        </Grid>
+    </Border>
+
+
+</UserControl>

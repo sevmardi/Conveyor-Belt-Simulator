@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ec="http://schemas.microsoft.com/expression/2010/controls" mc:Ignorable="d"
         x:Class="LaneSimulator.MainWindow"
-        xmlns:SSL="clr-namespace:LaneSimulator.SSL"
+        xmlns:Canvas="clr-namespace:LaneSimulator.SSL"
         xmlns:LaneTop="clr-namespace:LaneSimulator.Lanes"
         Title="Lane Simulator" Height="600" Width="1000"
         Icon="Images/ram.png"
@@ -118,7 +118,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <SSL:Canvas x:Name="SSLCanvas" Grid.Column="1" Grid.Row="1" d:IsLocked="True"/>
+        <Canvas:Canvas x:Name="SSLCanvas" Grid.Column="1" Grid.Row="1" d:IsLocked="True"/>
 
 
         <StackPanel Orientation="Horizontal" Name="TotalOfObjects" Visibility="Hidden">

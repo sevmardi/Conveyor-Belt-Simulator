@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\App.xaml
-81641263813
+9-17559020
 
-29-1029541715
+31570691397
 12-1401562060
-Lanes\LaneTop.xaml;LaneTOp.xaml;MainWindow.xaml;Models\Components\Tray.xaml;SSL\Canvas.xaml;Views\AttributesPanel.xaml;Views\ConnectPanel.xaml;Views\MainCanvas.xaml;
+Lanes\LaneTop.xaml;LaneTOp.xaml;MainWindow.xaml;Models\Components\Tray.xaml;Canvas\SSLCanvas.xaml;Utilities\ShadowBox\ShadowBox.xaml;Views\AttributesPanel.xaml;Views\ConnectPanel.xaml;Views\MainCanvas.xaml;
 
 False
 

@@ -43,9 +43,24 @@ namespace LaneSimulator
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            DisplayConnectScreen();
+        }
+
+        private void DisplayConnectScreen()
+        {
             ConnectPanel connectpanel = new ConnectPanel();
             connectpanel.Owner = this;
-            connectpanel.ShowDialog(); 
+            connectpanel.ShowDialog();
+
+            if (connectpanel.DialogResult.HasValue && connectpanel.DialogResult.Value)
+            {
+                //do something
+                MessageBox.Show("Connected!");
+
+            }
+            else
+
+                Close();
         }
 
         public void ResetTimer()

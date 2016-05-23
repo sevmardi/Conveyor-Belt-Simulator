@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Media;
@@ -14,7 +10,7 @@ using System.Windows.Shapes;
 //    http://blogs.msdn.com/marcelolr/archive/2006/03/03/543301.aspx
 // </summary>
 
-namespace LaneSimulator.DragDrop
+namespace LaneSimulator.Utilities.DragDrop
 {
     class DropPreviewAdorner : Adorner
     {

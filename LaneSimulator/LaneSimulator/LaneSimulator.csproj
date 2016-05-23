@@ -57,6 +57,12 @@
     <Compile Include="Events\Buffer.cs" />
     <Compile Include="Events\Semaphore.cs" />
     <Compile Include="Events\TagsEvents.cs" />
+    <Compile Include="Lanes\GH-Window.xaml.cs">
+      <DependentUpon>GH-Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lanes\GH.xaml.cs">
+      <DependentUpon>GH.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Lanes\LaneTop.xaml.cs">
       <DependentUpon>LaneTop.xaml</DependentUpon>
     </Compile>
@@ -69,12 +75,16 @@
     </Compile>
     <Compile Include="PLC\PlcCalls.cs" />
     <Compile Include="PLC\PLCTags.cs" />
-    <Compile Include="SSL\Canvas.xaml.cs">
-      <DependentUpon>Canvas.xaml</DependentUpon>
+    <Compile Include="Canvas\SSLCanvas.xaml.cs">
+      <DependentUpon>SSLCanvas.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Utility\DragDrop\DragDropAdornerBase.cs" />
-    <Compile Include="Utility\DragDrop\DropPreviewAdorner.cs" />
-    <Compile Include="Utility\Fader.cs" />
+    <Compile Include="Utilities\DragDrop\DragDropAdornerBase.cs" />
+    <Compile Include="Utilities\DragDrop\DragDropHelper.cs" />
+    <Compile Include="Utilities\DragDrop\DropPreviewAdorner.cs" />
+    <Compile Include="Utilities\Fader.cs" />
+    <Compile Include="Utilities\ShadowBox\ShadowBox.xaml.cs">
+      <DependentUpon>ShadowBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AttributesPanel.xaml.cs">
       <DependentUpon>AttributesPanel.xaml</DependentUpon>
     </Compile>
@@ -85,6 +95,14 @@
     <Compile Include="Views\MainCanvas.xaml.cs">
       <DependentUpon>MainCanvas.xaml</DependentUpon>
     </Compile>
+    <Page Include="Lanes\GH-Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lanes\GH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Lanes\LaneTop.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -115,7 +133,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SSL\Canvas.xaml">
+    <Page Include="Canvas\SSLCanvas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utilities\ShadowBox\ShadowBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -159,10 +181,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Save\" />
-    <Folder Include="Views\ShadowBox\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\ActualSizeHS.png" />
     <Resource Include="Images\BehindTextHS.png" />
