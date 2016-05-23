@@ -9,10 +9,10 @@
         Title="MainWindow" Height="690" Width="1800"
         
     >
-    <Window.Resources>
-        <!--<Style TargetType="local:Tray">
+    <Window.Resources >
+        <Style TargetType="local:Tray">
             <Style.Resources>
-                <Storyboard x:Key="Storyboard1">
+                <Storyboard x:Key="Storyboard1" >
                     <DoubleAnimationUsingPath
                         Duration="0:0:3"
                         Source="X"
@@ -35,11 +35,12 @@
 
                     </DoubleAnimationUsingPath>
                 </Storyboard>
-
             </Style.Resources>
 
-        </Style>-->
+        </Style>
 
+      
+        
         <!--<Style.Triggers>
             <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                 <BeginStoryboard Storyboard="{StaticResource Weeeee}"/>
@@ -47,7 +48,7 @@
         </Style.Triggers>-->
         
 
-        <Storyboard x:Key="Storyboard1" >
+        <!--<Storyboard x:Key="Storyboard1" >
             <DoubleAnimationUsingPath 
             Duration="0:0:3"  
             Source="X" 
@@ -124,7 +125,7 @@
                     <PathGeometry Figures="M177.75,-120.25 L197.75,-105.75 L217.5,-87.75 L235.25,-70.25"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
-        </Storyboard>
+        </Storyboard>-->
 
 
 

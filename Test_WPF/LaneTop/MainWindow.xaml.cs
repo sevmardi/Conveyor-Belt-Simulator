@@ -115,7 +115,8 @@ namespace LaneTop
             //https://msdn.microsoft.com/en-us/library/cc295328.aspx
 
             var sub1 = FindResource("Storyboard1") as Storyboard;
-        
+
+           
 
             if (sub1 != null)
             {

@@ -75,7 +75,7 @@
     </Compile>
     <Compile Include="PLC\PlcCalls.cs" />
     <Compile Include="PLC\PLCTags.cs" />
-    <Compile Include="Canvas\SSLCanvas.xaml.cs">
+    <Compile Include="SSLCanvas.xaml.cs">
       <DependentUpon>SSLCanvas.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utilities\DragDrop\DragDropAdornerBase.cs" />
@@ -133,7 +133,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Canvas\SSLCanvas.xaml">
+    <Page Include="SSLCanvas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

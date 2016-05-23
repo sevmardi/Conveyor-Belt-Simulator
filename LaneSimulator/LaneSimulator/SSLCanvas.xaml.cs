@@ -13,12 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LaneSimulator.SSL
+namespace LaneSimulator
 {
     /// <summary>
-    /// Interaction logic for Canvas.xaml
+    /// Interaction logic for SSLCanvas.xaml
     /// </summary>
-    public partial class Canvas : UserControl
+    public partial class SSLCanvas : UserControl
     {
         private DragState dragging = DragState.NONE;
 
@@ -26,15 +26,10 @@ namespace LaneSimulator.SSL
         private const double DELTA_SNAP = 5;
         private const double GRID_SIZE = 32;
 
-
-
-
-        public Canvas()
+        public SSLCanvas()
         {
             InitializeComponent();
         }
-
-
 
         protected enum DragState
         {
@@ -54,7 +49,7 @@ namespace LaneSimulator.SSL
 
         private void Scroller_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            
+
         }
 
         private void SizeCanvas()
@@ -62,10 +57,7 @@ namespace LaneSimulator.SSL
             //    
         }
 
- 
-
-
-       
+        public bool DisableSizeCanvas { get; set; }
 
     }
 }

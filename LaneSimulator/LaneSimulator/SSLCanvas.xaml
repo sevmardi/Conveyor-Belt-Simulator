@@ -1,16 +1,18 @@
-﻿<UserControl x:Class="LaneSimulator.SSL.Canvas"
+﻿<UserControl x:Class="LaneSimulator.SSLCanvas"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-            xmlns:local="clr-namespace:LaneSimulator.SSL"
-          >
+            
+             >
+
+
 
     <ScrollViewer Name="Scroller" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" 
                   SizeChanged="Scroller_SizeChanged" 
                   LayoutUpdated="Scroller_LayoutUpdated"
                   ScrollChanged="Scroller_ScrollChanged">
-        <Canvas Name="CanvasSSL" >
+        <Canvas Name="GC" >
             <Canvas.Background>
                 <!-- see http://mark-dot-net.blogspot.com/2007/06/creating-hatched-patterned-brush-in-wpf.html -->
                 <VisualBrush TileMode="Tile" Viewport="0,0,32,32"  ViewportUnits="Absolute" Viewbox="0,0,32,32"  ViewboxUnits="Absolute">
@@ -26,11 +28,10 @@
 
             </Canvas.Background>
             <Rectangle Name="dragSelect" Stroke="Blue" StrokeThickness="1" HorizontalAlignment="Left" Margin="0,0,0,0" Visibility="Hidden" />
-            
+
         </Canvas>
     </ScrollViewer>
-    
-    
-    
-    
+
+
+
 </UserControl>
