@@ -208,7 +208,7 @@ namespace LaneSimulator
             //StopStorboard3();
             //StopStoryboard4();
             //_plcCalls.StopBtnInput();
-             MessageBox.Show("sure thing buddy");
+            //MessageBox.Show("sure thing buddy");
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
