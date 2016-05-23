@@ -23,13 +23,17 @@ namespace LaneSimulator.Views
             int slot = System.Convert.ToInt32(TxtSlot.Text);
 
             //Result = plcCalls.Client.ConnectTo(TxtIP.Text, Rack, Slot);
-            var result = _plcCalls.ConnectToPlc(TxtIP.Text, rack, slot);
-            if (result == 0)
+             _plcCalls.ConnectToPlc(TxtIP.Text, rack, slot);
+            
+            if (_plcCalls.Client.Connected())
             {
                 DialogResult = true;
                 Close();
                 MessageBox.Show("cool");
+                _plcCalls.StartUp();
+                _plcCalls.SectionA();
             }
+
             else
             {
                 MessageBox.Show("Not right");

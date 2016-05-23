@@ -44,16 +44,12 @@ namespace SSL_WPF
             {
 
                 DialogResult = true;
-                this.Close();
+                Close();
             }
             else
             {
                 MessageBox.Show("Not right");
             }
-
-          
-            DialogResult = true;
-            this.Close();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

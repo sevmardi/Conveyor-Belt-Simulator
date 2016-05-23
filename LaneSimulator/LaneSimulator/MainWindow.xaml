@@ -121,7 +121,7 @@
         <Canvas:Canvas x:Name="SSLCanvas" Grid.Column="1" Grid.Row="1" d:IsLocked="True"/>
 
 
-        <StackPanel Orientation="Horizontal" Name="TotalOfObjects" Visibility="Hidden">
+        <!--<StackPanel Orientation="Horizontal" Name="TotalOfObjects" Visibility="Hidden">
 
             <Viewbox Stretch="Fill" Width="114" HorizontalAlignment="Right" Canvas.Left="1093" Canvas.Top="16">
                 <Grid Height="96.907" Width="138.264">
@@ -150,7 +150,7 @@
 					TextAlignment="Center" TextWrapping="Wrap" Foreground="#FF9F2323" HorizontalAlignment="Left" Width="113"/>
                 </Border>
             </Viewbox>
-        </StackPanel>
+        </StackPanel>-->
 
 
 

@@ -115,11 +115,12 @@ namespace LaneTop
             //https://msdn.microsoft.com/en-us/library/cc295328.aspx
 
             var sub1 = FindResource("Storyboard1") as Storyboard;
+        
 
             if (sub1 != null)
             {
                //Storyboard.SetTargetName(sub1, Tray);
-                sub1.Begin(_tray);
+                sub1.Begin(ObjectToMove);
               //  Storyboard.SetTargetName(sub1, _tray);
 
                 //CreateNewObject();
@@ -134,13 +135,6 @@ namespace LaneTop
 
 
 
-
-
-
-        private void storyboard_Completed(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
 
 
@@ -160,7 +154,7 @@ namespace LaneTop
             var thing = this.FindResource("Storyboard2");
 
             var OtherSB = (Storyboard)thing;
-            OtherSB.Begin();
+            OtherSB.Begin(ObjectToMove);
         }
 
 
@@ -169,18 +163,14 @@ namespace LaneTop
             var thing = this.FindResource("Storyboard3");
 
             var OtherSB = (Storyboard)thing;
-            OtherSB.Begin();
+            OtherSB.Begin(ObjectToMove);
         }
 
-        private void Timeline_OnCompleted4(object sender, EventArgs e)
+
+        public void AddAnimation()
         {
-       
-            var thing = this.FindResource("Storyboard4");
-
-            var OtherSB = (Storyboard)thing;
-            OtherSB.Begin();
-        }
-
+            
+        }   
 
    
 

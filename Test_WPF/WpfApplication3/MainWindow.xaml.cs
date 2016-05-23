@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -55,7 +56,38 @@ namespace WpfApplication3
 
         }
 
-       
+
+        private void Window_ContentRendered(object sender, EventArgs e)
+        {
+            Control box = new Control { Template = (ControlTemplate)Resources["RectangleTemplate"] };
+            root.Children.Add(box);
+            timer();
             
+        }
+
+        private void timer()
+        {
+
+            Timer tr = new Timer();
+
+            tr.Interval = 2500;
+            tr.Elapsed += new ElapsedEventHandler(rectanglebuild);
+            tr.Enabled = true;
+        }
+
+        private void rectanglebuild(object sender, ElapsedEventArgs e)
+        {
+       
+
+            Application.Current.Dispatcher.Invoke((Action)delegate
+            {
+
+                Control box = new Control { Template = (ControlTemplate)Resources["RectangleTemplate"] };
+                root.Children.Add(box);
+
+            });
+
+        }
+
     }
 }

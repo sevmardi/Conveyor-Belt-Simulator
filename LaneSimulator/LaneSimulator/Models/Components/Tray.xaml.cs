@@ -44,6 +44,11 @@ namespace LaneSimulator.Models.Components
             return ret;
         }
 
+        public void RresolveCollision(Tray other)
+        {
+            //
+        }
+
 
     }
 }

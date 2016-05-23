@@ -38,7 +38,6 @@ namespace LaneSimulator
             _sectionA = new SectionA();
          //   ObjectToMove.Visibility = Visibility.Hidden;
            _plcCalls = new PlcCalls();
-           
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
