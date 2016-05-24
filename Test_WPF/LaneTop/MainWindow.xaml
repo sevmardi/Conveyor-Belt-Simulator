@@ -10,37 +10,37 @@
         
     >
     <Window.Resources >
- 
- 
-        <Style TargetType="local:Tray" x:Key="asd">
-            <Style.Resources >
-
-                <Storyboard x:Key="Storyboard1" >
-                    <DoubleAnimationUsingPath
+        <Storyboard x:Key="Storyboard1" >
+            <DoubleAnimationUsingPath
                         Duration="0:0:3"
                         Source="X"
                         Storyboard.TargetProperty="(TranslateTransform.X)">
-                        <DoubleAnimationUsingPath.PathGeometry>
-                            <PathGeometry
+                <DoubleAnimationUsingPath.PathGeometry>
+                    <PathGeometry
                                 Figures="M1.5,-18.667014 L8.1669813,-54.00002 L31.833186,-94.666719 L60.166999,-116.33299" />
-                        </DoubleAnimationUsingPath.PathGeometry>
+                </DoubleAnimationUsingPath.PathGeometry>
 
-                    </DoubleAnimationUsingPath>
-                    <DoubleAnimationUsingPath
+            </DoubleAnimationUsingPath>
+            <DoubleAnimationUsingPath
                         Duration="0:0:3"
                         Source="Y"
                         Storyboard.TargetProperty="(TranslateTransform.Y)">
 
-                        <DoubleAnimationUsingPath.PathGeometry>
-                            <PathGeometry
+                <DoubleAnimationUsingPath.PathGeometry>
+                    <PathGeometry
                                 Figures="M1.5,-18.667014 L8.1669813,-54.00002 L31.833186,-94.666719 L60.166999,-116.33299" />
-                        </DoubleAnimationUsingPath.PathGeometry>
+                </DoubleAnimationUsingPath.PathGeometry>
 
-                    </DoubleAnimationUsingPath>
-                </Storyboard>
+            </DoubleAnimationUsingPath>
+        </Storyboard>
 
 
-            </Style.Resources>
+        <Style TargetType="local:Tray" x:Key="NiftyRectangleAnim">
+            <!--<Style.Resources >
+
+               
+
+            </Style.Resources>-->
         
         </Style>
 
@@ -607,10 +607,10 @@
 
 
 
-        <!--<local:Tray x:Name="tray" Canvas.Left="-318" Canvas.Top="432" Height="31" Width="45"></local:Tray>-->
+        <local:Tray x:Name="tray" Canvas.Left="-318" Canvas.Top="432" Height="31" Width="45"></local:Tray>
 
 
-        <Rectangle x:Name="ObjectToMove" Height="31" Canvas.Left="-316.5" Stroke="Black" Canvas.Top="431.5" Width="42" Fill="#FFDA6C11" RenderTransformOrigin="0.5,0.5">
+        <!--<Rectangle x:Name="ObjectToMove" Height="31" Canvas.Left="-316.5" Stroke="Black" Canvas.Top="431.5" Width="42" Fill="#FFDA6C11" RenderTransformOrigin="0.5,0.5">
 
                 <Rectangle.RenderTransform>
                     <TransformGroup>
@@ -620,7 +620,7 @@
                         <TranslateTransform/>
                     </TransformGroup>
                 </Rectangle.RenderTransform>
-            </Rectangle>
+            </Rectangle>-->
 
 
 
