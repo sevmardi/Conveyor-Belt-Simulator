@@ -82,6 +82,9 @@
     <Compile Include="Utilities\DragDrop\DragDropHelper.cs" />
     <Compile Include="Utilities\DragDrop\DropPreviewAdorner.cs" />
     <Compile Include="Utilities\Fader.cs" />
+    <Compile Include="Utilities\Selector\ObjectSelector.xaml.cs">
+      <DependentUpon>ObjectSelector.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\ShadowBox\ShadowBox.xaml.cs">
       <DependentUpon>ShadowBox.xaml</DependentUpon>
     </Compile>
@@ -91,7 +94,7 @@
     <Compile Include="Views\ConnectPanel.xaml.cs">
       <DependentUpon>ConnectPanel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\InfoLine.cs" />
+    <Compile Include="Utilities\InfoLine.cs" />
     <Compile Include="Views\MainCanvas.xaml.cs">
       <DependentUpon>MainCanvas.xaml</DependentUpon>
     </Compile>
@@ -134,6 +137,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SSLCanvas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utilities\Selector\ObjectSelector.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

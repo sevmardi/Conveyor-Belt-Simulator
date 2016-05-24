@@ -6,6 +6,7 @@
     xmlns:ec="http://schemas.microsoft.com/expression/2010/controls" mc:Ignorable="d"
     x:Class="LaneSimulator.MainWindow"
     xmlns:LaneTop="clr-namespace:LaneSimulator.Lanes"
+     xmlns:selector="clr-namespace:LaneSimulator.Utilities.Selector"
      xmlns:local="clr-namespace:LaneSimulator"
     Title="Lane Simulator" Height="600" Width="1000"
     Icon="Images/ram.png"
@@ -101,8 +102,8 @@
             </DoubleAnimationUsingPath>
         </Storyboard>
 
-      
-        
+
+
     </Window.Resources>
 
     <Grid Name="Grid1">
@@ -112,13 +113,13 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" MinWidth="126" />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
 
         <local:SSLCanvas x:Name="SSLCanvas" Grid.Column="1" Grid.Row="1" d:IsLocked="True"/>
-
+        <selector:ObjectSelector x:Name="spGates" Grid.Row="1" Grid.Column="0" />
 
         <!--<StackPanel Orientation="Horizontal" Name="TotalOfObjects" Visibility="Hidden">
 
@@ -156,7 +157,7 @@
 
 
 
-            <StackPanel Name="spAppInfo" Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" Background="#EEEEEE">
+        <StackPanel Name="spAppInfo" Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" Background="#EEEEEE">
             <TextBlock Name="lblAppTitle" Margin="10,0,0,0" />
             <TextBlock Name="lblAppVersion" Margin="10,0,0,0" />
             <TextBlock Name="lblAppCopyright" Margin="10,0,0,0" />

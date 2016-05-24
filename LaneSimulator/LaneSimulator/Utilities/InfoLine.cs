@@ -1,12 +1,12 @@
 ﻿using System.ComponentModel;
 using System.Windows;
 
-namespace LaneSimulator.Views
+namespace LaneSimulator.Utilities
 {
     class InfoLine :  INotifyPropertyChanged
     {
         private InfoLine() { } // prohibit construction
-        private static InfoLine _inst = null;
+        private static InfoLine _inst;
         private string _infoline;
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace LaneSimulator.Views
             return (string)element.GetValue(InfoProperty);
         }
         public static readonly DependencyProperty InfoProperty =
-              DependencyProperty.RegisterAttached("Info", typeof(string), typeof(InfoLine), new UIPropertyMetadata("", InfoLine.InfoChanged));
+              DependencyProperty.RegisterAttached("Info", typeof(string), typeof(InfoLine), new UIPropertyMetadata("", InfoChanged));
 
 
         private static void InfoChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
