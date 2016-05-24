@@ -5,9 +5,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ec="http://schemas.microsoft.com/expression/2010/controls" mc:Ignorable="d"
     x:Class="LaneSimulator.MainWindow"
-    xmlns:LaneTop="clr-namespace:LaneSimulator.Lanes"
-     xmlns:selector="clr-namespace:LaneSimulator.Utilities.Selector"
-     xmlns:local="clr-namespace:LaneSimulator"
+   
+    xmlns:selector="clr-namespace:LaneSimulator.Utilities.Selector"
+    xmlns:local="clr-namespace:LaneSimulator"
+    xmlns:SectionA="clr-namespace:LaneSimulator.Lanes"
     Title="Lane Simulator" Height="600" Width="1000"
     Icon="Images/ram.png"
     Loaded="Window_Loaded"
@@ -137,8 +138,7 @@
 
         <local:SSLCanvas x:Name="SSLCanvas" Grid.Column="1" Grid.Row="1" d:IsLocked="True"/>
         <selector:ObjectSelector x:Name="sptrays" Grid.Row="1" Grid.Column="0" />
-
-
+       
 
         <StackPanel Orientation="Horizontal" Name="spSpeed">
             <Image Source="Images/turtle.png" Height="20"  />
@@ -227,7 +227,7 @@
             </ToolBar>
 
         </ToolBarTray>
-     
+    
         
         <!--<StackPanel Orientation="Horizontal" Name="TotalOfObjects" Visibility="Hidden">
 

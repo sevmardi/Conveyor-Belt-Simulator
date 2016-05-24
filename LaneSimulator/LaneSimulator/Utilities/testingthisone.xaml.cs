@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LaneSimulator
+namespace LaneSimulator.Utilities
 {
     /// <summary>
-    /// Interaction logic for LaneTOp.xaml
+    /// Interaction logic for testingthisone.xaml
     /// </summary>
-    public partial class LaneTOp : Window
+    public partial class testingthisone : UserControl
     {
-        public LaneTOp()
+        public testingthisone()
         {
             InitializeComponent();
         }

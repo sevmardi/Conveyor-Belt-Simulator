@@ -1,24 +1,28 @@
-﻿using System;
-using System.Timers;
-using System.Windows.Media;
+﻿using System.Windows.Controls;
 using LaneSimulator.PLC;
 using Snap7;
+using System.Timers;
+using System;
 
-namespace LaneSimulator.Conveyor
+namespace LaneSimulator.Lanes
 {
-    class SectionA
+    /// <summary>
+    /// Interaction logic for SectionA.xaml
+    /// </summary>
+    public partial class SectionA
     {
         private static int _res;
         private static readonly byte[] Buffer = new byte[500];
         private readonly PlcCalls _plcCalls;
-
         MainWindow main;
+
 
         public SectionA()
         {
-            // main = mw;
-            _plcCalls = new PlcCalls();
+            InitializeComponent();
+           
         }
+
 
         public void Executor()
         {
@@ -30,7 +34,8 @@ namespace LaneSimulator.Conveyor
             //SixthSensor();
         }
 
-         #region Motors section-A 
+
+        #region Motors section-A
         public void _0102_D1()
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._0102_D1, _plcCalls.Amount,
@@ -40,7 +45,7 @@ namespace LaneSimulator.Conveyor
             {
                 if (Buffer[0] == 0)
                 {
-                   // main._0102_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
+                    // main._0102_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
                 }
             }
         }
@@ -54,7 +59,7 @@ namespace LaneSimulator.Conveyor
             {
                 if (Buffer[0] == 0)
                 {
-                   // main._0103_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
+                    // main._0103_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
                 }
             }
         }
@@ -68,7 +73,7 @@ namespace LaneSimulator.Conveyor
             {
                 if (Buffer[0] == 1)
                 {
-                  //  main._0104_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
+                    //  main._0104_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
                 }
             }
         }
@@ -82,13 +87,12 @@ namespace LaneSimulator.Conveyor
             {
                 if (Buffer[0] == 1)
                 {
-                 //   main._0105_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
+                    //   main._0105_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
                 }
             }
         }
-#endregion
+        #endregion
 
-        // SENSORS
         public void _0102_S1Read()
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0102_S1, _plcCalls.Amount,
@@ -114,18 +118,19 @@ namespace LaneSimulator.Conveyor
             Buffer[0] = 1;
             _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0102_S1, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
-            
+
             //Buffer[0] = 0;
             //_res = _plcCalls.Client.WriteArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._0102_D1, _plcCalls.Amount,
             //    _plcCalls.Wordlen, Buffer);
 
             main.Dispatcher.Invoke((Action)(() =>
             {
-          //      main._0102_S1.Fill = new SolidColorBrush(Colors.Red);
-            //    main._0102_D1.Fill = new SolidColorBrush(Colors.DarkGray);
+                //      main._0102_S1.Fill = new SolidColorBrush(Colors.Red);
+                //    main._0102_D1.Fill = new SolidColorBrush(Colors.DarkGray);
             }));
 
         }
+
 
         //public void _0102_S2Read(object source, ElapsedEventArgs e)
         //{
@@ -342,28 +347,6 @@ namespace LaneSimulator.Conveyor
         //}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         protected void FirstSensor()
         {
             Timer aTimer = new Timer();
@@ -376,6 +359,7 @@ namespace LaneSimulator.Conveyor
                 aTimer.Stop();
             };
         }
+
 
         //protected void SecondSensor()
         //{
@@ -515,5 +499,6 @@ namespace LaneSimulator.Conveyor
         //        aTimer.Stop();
         //    };
         //}
+
     }
 }

@@ -71,9 +71,7 @@ C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project
 C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\LaneSimulator\LaneSimulator\obj\Debug\LaneSimulator.Properties.Resources.resources
 C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\LaneSimulator\LaneSimulator\obj\Debug\LaneSimulator.csproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Lanes\LaneTop.baml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\LaneTOp.baml
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Lanes\LaneTop.g.cs
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\LaneTOp.g.cs
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Utilities\ShadowBox\ShadowBox.baml
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Utilities\ShadowBox\ShadowBox.g.cs
@@ -95,3 +93,11 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\L
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\SSLCanvas.g.cs
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Utilities\Selector\ObjectSelector.g.cs
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Utilities\Selector\ObjectSelector.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Lanes\SectionA.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Lanes\SectionA.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Utilities\testingthisone.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Utilities\testingthisone.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Lanes\SectionB.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Lanes\SectionC.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Lanes\SectionB.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Lanes\SectionC.g.cs

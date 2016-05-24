@@ -63,8 +63,14 @@
     <Compile Include="Lanes\LaneTop.xaml.cs">
       <DependentUpon>LaneTop.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LaneTOp.xaml.cs">
-      <DependentUpon>LaneTOp.xaml</DependentUpon>
+    <Compile Include="Lanes\SectionA.xaml.cs">
+      <DependentUpon>SectionA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lanes\SectionB.xaml.cs">
+      <DependentUpon>SectionB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lanes\SectionC.xaml.cs">
+      <DependentUpon>SectionC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Libs\snap7.net.cs" />
     <Compile Include="Models\Components\Tray.xaml.cs">
@@ -85,6 +91,9 @@
     <Compile Include="Utilities\ShadowBox\ShadowBox.xaml.cs">
       <DependentUpon>ShadowBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\testingthisone.xaml.cs">
+      <DependentUpon>testingthisone.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AttributesPanel.xaml.cs">
       <DependentUpon>AttributesPanel.xaml</DependentUpon>
     </Compile>
@@ -103,7 +112,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LaneTOp.xaml">
+    <Page Include="Lanes\SectionA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lanes\SectionB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lanes\SectionC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -115,7 +132,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Conveyor\SectionA.cs" />
     <Compile Include="Conveyor\SectionB.cs" />
     <Compile Include="Conveyor\SectionC.cs" />
     <Compile Include="Conveyor\SectionD.cs" />
@@ -138,6 +154,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Utilities\ShadowBox\ShadowBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utilities\testingthisone.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

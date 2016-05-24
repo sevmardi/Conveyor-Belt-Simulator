@@ -9,6 +9,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using LaneSimulator.Conveyor;
+using LaneSimulator.Lanes;
 using LaneSimulator.PLC;
 using LaneSimulator.Utilities;
 using LaneSimulator.Utilities.Selector;
@@ -238,20 +239,7 @@ namespace LaneSimulator
         }
 
        
-        //TEST
-       
-        private void NewRectangle()
-        {
-            Rectangle newobject = new Rectangle();
-            newobject.Width = 40;
-            newobject.Height = 40;
-            newobject.Stroke = (Brush)Brushes.Black;
-
-            newobject.StrokeThickness = 1.5;
-
-
-        }
-
+     
             #region functions not implmented
 
                     private void btnNew_Click(object sender, RoutedEventArgs e)
