@@ -208,7 +208,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\ActualSizeHS.png" />
     <Resource Include="Images\BehindTextHS.png" />

@@ -22,7 +22,6 @@ namespace LaneSimulator.Views
             int rack = System.Convert.ToInt32(TxtRack.Text);
             int slot = System.Convert.ToInt32(TxtSlot.Text);
 
-            //Result = plcCalls.Client.ConnectTo(TxtIP.Text, Rack, Slot);
              _plcCalls.ConnectToPlc(TxtIP.Text, rack, slot);
             
             if (_plcCalls.Client.Connected())

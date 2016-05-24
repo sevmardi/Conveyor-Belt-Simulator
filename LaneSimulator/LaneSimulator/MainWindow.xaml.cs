@@ -2,12 +2,16 @@
 using System.ComponentModel;
 using System.Globalization;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
 using LaneSimulator.Lanes;
 using LaneSimulator.PLC;
 using LaneSimulator.Utilities;
+using LaneSimulator.Utilities.DragDrop;
+using LaneSimulator.Utilities.ShadowBox;
 using LaneSimulator.Views;
 
 namespace LaneSimulator
@@ -22,6 +26,7 @@ namespace LaneSimulator
         public static string APP_VERSION;
         public static string APP_COPYRIGHT;
         private bool Ispaused = false;
+        private ShadowBox sbZoom, sbSpeed, sslObjects;
         private readonly SectionA _sectionA;
         private readonly SSLCanvas _sslCanvas;
         private double T = 0.0;
@@ -37,9 +42,55 @@ namespace LaneSimulator
             Closing += new CancelEventHandler(MainWindow1Closing);
             _sectionA = new SectionA();
             _sslCanvas = new SSLCanvas();
-         //   ObjectToMove.Visibility = Visibility.Hidden;
+     
            _plcCalls = new PlcCalls();
+
+           // Everybody gets zoom
+           sbZoom = new ShadowBox();
+           sbZoom.Margin = new Thickness(20);
+           Grid1.Children.Remove(spZoom);
+           sbZoom.Children.Add(spZoom);
+           spZoom.Background = Brushes.Transparent;
+           sbZoom.VerticalAlignment = VerticalAlignment.Top;
+           sbZoom.HorizontalAlignment = HorizontalAlignment.Right;
+           Grid1.Children.Add(sbZoom);
+           Grid.SetColumn(sbZoom, 1);
+           Grid.SetRow(sbZoom, 1);
+
+           // drag/drop for edit or full
+            DragDropHelper.ItemDropped += new EventHandler<DragDropEventArgs>(DragDropHelper_ItemDropped);
+            Grid1.Children.Remove(SSLComponents);
+            sslObjects = new ShadowBox();
+            sslObjects.Margin = new Thickness(20, 20, 20, 20);
+            sslObjects.Children.Add(SSLComponents);
+            SSLComponents.Background = Brushes.Transparent;
+            sslObjects.VerticalAlignment = VerticalAlignment.Center;
+            sslObjects.HorizontalAlignment = HorizontalAlignment.Left;
+            Grid1.Children.Add(sslObjects);
+            Grid.SetColumn(sslObjects, 1);
+            Grid.SetRow(sslObjects, 1);
+ 
+           this.Loaded += (sender2, e2) =>
+           {
+             
+               
+               lblAppTitle.Text = APP_TITLE;
+               lblAppVersion.Text = APP_VERSION;
+               lblAppCopyright.Text = APP_COPYRIGHT;
+
+           };
+
         }
+
+        private void DragDropHelper_ItemDropped(object sender, DragDropEventArgs e)
+        {
+            if (e.DropTarget.IsDescendantOf(SSLCanvas) && this.IsActive)
+            {
+                
+            }
+        }
+
+
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -334,6 +385,23 @@ namespace LaneSimulator
         {
         }
 
-            #endregion
+          
+
+        private void btnActualSize_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void btnFitToScreen_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+  
+
+        private void slZoom_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+           
+        }
+         #endregion
     }
 }

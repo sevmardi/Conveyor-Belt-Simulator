@@ -11,7 +11,8 @@
     xmlns:SectionA="clr-namespace:LaneSimulator.Lanes"
     Title="Lane Simulator" Height="500" Width="650"
     Icon="Images/ram.png"
-    Loaded="Window_Loaded"
+    
+    
     WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
@@ -140,9 +141,25 @@
 
 
         <local:SSLCanvas x:Name="SSLCanvas" Grid.Column="1" Grid.Row="1" d:IsLocked="True"/>
-        <selector:ObjectSelector x:Name="sptrays" Grid.Row="1" Grid.Column="0" />
-       
+        <selector:ObjectSelector x:Name="SSLComponents" Grid.Row="1"  />
 
+
+        <StackPanel Orientation="Horizontal" Name="spZoom">
+            <Image Source="Images/ZoomHS.png" Height="20"  />
+            <Slider Name="slZoom" Minimum="0.01" Maximum="5" Value="1" SmallChange="0.01"  
+                    LargeChange="0.1" ToolTip="Adjust circuit zoom"
+                Width="60" Height="20" ValueChanged="slZoom_ValueChanged"/>
+
+
+            <Button Style="{StaticResource TButtonStyle}" Height="20" Name="btnActualSize" Click="btnActualSize_Click" ToolTip="Zoom to Default Size" >
+                <Image Source="Images/ActualSizeHS.png" />
+            </Button>
+            <Button Style="{StaticResource TButtonStyle}" Height="20" Name="btnFitToScreen" Click="btnFitToScreen_Click" ToolTip="Zoom to Fit Circuit in Window">
+                <Image Source="Images/PageWidthHS.png" />
+            </Button>
+
+        </StackPanel>
+        
         <StackPanel Orientation="Horizontal" Name="spSpeed">
             <Image Source="Images/turtle.png" Height="20"  />
             <Slider Name="slSpeed" Minimum="1" Maximum="10" SmallChange="2" LargeChange="5" Value="2" Width="60" Height="20" IsDirectionReversed="False" ToolTip="Adjust simulation speed"  />
