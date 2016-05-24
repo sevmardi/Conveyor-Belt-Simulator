@@ -9,7 +9,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using LaneSimulator;
 using LaneSimulator.Models.Components;
 using LaneSimulator.Utilities.DragDrop;
 using System;
