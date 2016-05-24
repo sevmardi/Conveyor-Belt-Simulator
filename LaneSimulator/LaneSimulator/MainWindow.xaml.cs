@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Runtime.Remoting.Channels;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
@@ -250,5 +251,124 @@ namespace LaneSimulator
 
 
         }
+
+            #region functions not implmented
+
+                    private void btnNew_Click(object sender, RoutedEventArgs e)
+                    {
+            
+                    }
+
+                    private void btnOpen_Click(object sender, RoutedEventArgs e)
+                    {
+           
+                    }
+
+                    private void btnSave_Click(object sender, RoutedEventArgs e)
+                    {
+           
+                    }
+
+                    private void btnSave_As_Click(object sender, RoutedEventArgs e)
+                    {
+           
+                    }
+
+                    private void btnCut_Click(object sender, RoutedEventArgs e)
+                    {
+            
+                    }
+
+                    private void btnCopy_Click(object sender, RoutedEventArgs e)
+                    {
+           
+                    }
+
+                    private void btnPaste_Click(object sender, RoutedEventArgs e)
+                    {
+            
+                    }
+
+                    private void btnFlatten_Click(object sender, RoutedEventArgs e)
+                    {
+           
+                    }
+
+                    private void btnAlignTopLeft_Click(object sender, RoutedEventArgs e)
+                    {
+            
+                    }
+
+                    private void btnCopyAsImage_Click(object sender, RoutedEventArgs e)
+                    {
+           
+                    }
+
+                    private void btnPrint_Click(object sender, RoutedEventArgs e)
+                    {
+            
+                    }
+
+                    private void btnSaveAsImage_Click(object sender, RoutedEventArgs e)
+                    {
+           
+                    }
+
+                    private void btnChart_Click(object sender, RoutedEventArgs e)
+                    {
+            
+                    }
+
+                    private void btnImportIC_Click(object sender, RoutedEventArgs e)
+                    {
+           
+                    }
+
+                    private void Image_MouseEnter(object sender, MouseEventArgs e)
+                    {
+            
+                    }
+
+                    private void btnCreateIC_Click(object sender, RoutedEventArgs e)
+                    {
+            
+                    }
+
+                    private void Image_MouseLeave(object sender, MouseEventArgs e)
+                    {
+            
+                    }
+
+                    private void btnShowTrueFalse_Checked(object sender, RoutedEventArgs e)
+                    {
+            
+                    }
+
+                    private void btnShowTrueFalse_Unchecked(object sender, RoutedEventArgs e)
+                    {
+            
+                    }
+
+                    private void btnShowHideToolbars_Checked(object sender, RoutedEventArgs e)
+                    {
+            
+                    }
+
+                    private void btnShowHideToolbars_Unchecked(object sender, RoutedEventArgs e)
+                    {
+            
+                    }
+
+                    private void btnUserMode_Checked(object sender, RoutedEventArgs e)
+                    {
+           
+                    }
+
+                    private void btnUserMode_Unchecked(object sender, RoutedEventArgs e)
+                    {
+            
+                    }
+
+            #endregion
     }
 }

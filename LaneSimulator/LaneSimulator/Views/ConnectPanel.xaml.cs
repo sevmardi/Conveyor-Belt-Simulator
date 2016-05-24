@@ -29,7 +29,7 @@ namespace LaneSimulator.Views
             {
                 DialogResult = true;
                 Close();
-                MessageBox.Show("cool");
+              
                 _plcCalls.StartUp();
                 _plcCalls.SectionA();
             }

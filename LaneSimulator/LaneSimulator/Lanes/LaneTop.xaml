@@ -424,31 +424,8 @@
         <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="888.792" Canvas.Top="249.125" Width="6" x:Name="_1101_S3_Copy6"/>
 
 
-        <Viewbox Stretch="Fill" Width="114" HorizontalAlignment="Right" Canvas.Left="1093" Canvas.Top="16">
-            <Grid Height="96.907" Width="138.264">
-                <TextBox x:Name="textBox1_Copy1" Height="42.634" HorizontalContentAlignment="Center"
-					VerticalContentAlignment="Center" Text="Total" FontFamily="/WpfApplication1;component/Fonts/#LCD"
-					Foreground="#FFB22121" Background="Black" FontSize="29.333" BorderThickness="2" Focusable="false"
-					Cursor="Arrow" VerticalAlignment="Top" BorderBrush="{x:Null}"/>
-                <TextBox x:Name="total_text1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="0"
-					FontFamily="/WpfApplication1;component/Fonts/#LCD" Foreground="#FFB22121" Background="Black"
-					FontSize="48" BorderThickness="2" Focusable="false" Cursor="Arrow" Margin="0,36.09,0,0"
-					BorderBrush="{x:Null}"/>
-            </Grid>
-        </Viewbox>
-
-        <Viewbox HorizontalAlignment="Right" Stretch="Fill" Width="114" Canvas.Left="1093" Canvas.Top="116">
-            <Border BorderBrush="#FF539D3F" BorderThickness="2" CornerRadius="5" Height="56.911" Width="116.667">
-                <Border.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="BurlyWood" Offset="0"/>
-                        <GradientStop Color="White" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-                <TextBlock x:Name="Timer_Lable" FontFamily="/WpfApplication1;component/Fonts/#LCD" FontSize="48" Text="0.0"
-					TextAlignment="Center" TextWrapping="Wrap" Foreground="#FF9F2323" HorizontalAlignment="Left" Width="113"/>
-            </Border>
-        </Viewbox>
+      
+  
 
         <Path x:Name="_5" Data="M30.5,379.33333 L99.416667,379.33333" Height="0" Canvas.Left="30.5" Stretch="Fill" Canvas.Top="382.068" Width="68.917"/>
         <Path x:Name="_6" Data="M30.5,379.33333 L99.416667,379.33333" Height="0" Canvas.Left="102" Stretch="Fill" Canvas.Top="383" Width="36"/>

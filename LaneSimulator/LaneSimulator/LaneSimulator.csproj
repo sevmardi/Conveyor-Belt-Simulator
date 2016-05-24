@@ -60,9 +60,6 @@
     <Compile Include="Lanes\GH-Window.xaml.cs">
       <DependentUpon>GH-Window.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Lanes\GH.xaml.cs">
-      <DependentUpon>GH.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Lanes\LaneTop.xaml.cs">
       <DependentUpon>LaneTop.xaml</DependentUpon>
     </Compile>
@@ -99,10 +96,6 @@
       <DependentUpon>MainCanvas.xaml</DependentUpon>
     </Compile>
     <Page Include="Lanes\GH-Window.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Lanes\GH.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

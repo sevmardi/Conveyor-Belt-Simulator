@@ -85,7 +85,6 @@
             </DoubleAnimationUsingPath>
         </Storyboard>
 
-
         <Storyboard x:Key="Storyboard4">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
                 <EasingDoubleKeyFrame KeyTime="0" Value="3.5"/>
@@ -101,6 +100,24 @@
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
         </Storyboard>
+
+        <Style x:Key="TgButtonStyle" TargetType="{x:Type ToggleButton}">
+            <Setter Property="ToolTipService.ShowOnDisabled" Value="True" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsEnabled}" Value="False">
+                    <Setter Property="Opacity" Value="0.50" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="TButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+
+            <Setter Property="ToolTipService.ShowOnDisabled" Value="True" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsEnabled}" Value="False">
+                    <Setter Property="Opacity" Value="0.50" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
 
 
 
@@ -129,7 +146,7 @@
             <Image Source="Images/hare.png" Height="20"  />
         </StackPanel>
         
-        <!--<ToolBarTray Grid.Row="0" Grid.ColumnSpan="2">
+        <ToolBarTray Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0">
             <ToolBar Height="28" Name="tbFile" Visibility="Collapsed" >
                 <Button Style="{StaticResource TButtonStyle}" Click="btnNew_Click" ToolTip="New File (Ctrl+N)">
                     <Image Source="Images/NewDocumentHS.png" />
@@ -181,15 +198,7 @@
                 
 
             </ToolBar>
-            <ToolBar Height="28" Name="tbUndo" Visibility="Collapsed">
-                <Button ToolTip="{Binding Source={StaticResource undoManager}, Path=UndoName}" Style="{StaticResource TButtonStyle}"  IsEnabled="{Binding Source={StaticResource undoManager}, Path=CanUndo}" Click="btnUndo_Click" Name="btnUndo">
-                    <Image Source="Images/Edit_UndoHS.png" />
-                </Button>
-                <Button ToolTip="{Binding Source={StaticResource undoManager}, Path=RedoName}" Style="{StaticResource TButtonStyle}" IsEnabled="{Binding Source={StaticResource undoManager}, Path=CanRedo}" Click="btnRedo_Click" Name="btnRedo">
-                    <Image Source="Images/Edit_RedoHS.png" />
-                </Button>
-                
-            </ToolBar>
+  
             <ToolBar Height="28" Name="tbIC" Visibility="Collapsed">
                 <Button Style="{StaticResource TButtonStyle}" Click="btnCreateIC_Click" ToolTip="Create IC">
                     <Image Source="Images/ram.png" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" />
@@ -217,7 +226,7 @@
 
             </ToolBar>
 
-        </ToolBarTray>-->
+        </ToolBarTray>
      
         
         <!--<StackPanel Orientation="Horizontal" Name="TotalOfObjects" Visibility="Hidden">
