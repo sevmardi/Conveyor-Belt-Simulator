@@ -10,8 +10,11 @@
         
     >
     <Window.Resources >
-        <Style TargetType="local:Tray">
-            <Style.Resources>
+ 
+ 
+        <Style TargetType="local:Tray" x:Key="asd">
+            <Style.Resources >
+
                 <Storyboard x:Key="Storyboard1" >
                     <DoubleAnimationUsingPath
                         Duration="0:0:3"
@@ -35,11 +38,13 @@
 
                     </DoubleAnimationUsingPath>
                 </Storyboard>
-            </Style.Resources>
 
+
+            </Style.Resources>
+        
         </Style>
 
-      
+          
         
         <!--<Style.Triggers>
             <EventTrigger RoutedEvent="FrameworkElement.Loaded">

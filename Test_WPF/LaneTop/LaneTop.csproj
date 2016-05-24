@@ -65,7 +65,6 @@
     </Compile>
     <Compile Include="Events\TagsEvents.cs" />
     <Compile Include="LaneAnimation.cs" />
-    <Compile Include="ObjectToMove.cs" />
     <Compile Include="PLCCalls.cs" />
     <Compile Include="PLCTags.cs" />
     <Compile Include="SectionA.cs" />
@@ -77,7 +76,6 @@
     <Compile Include="Tray.xaml.cs">
       <DependentUpon>Tray.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WaitPanelController.cs" />
     <Page Include="ConveyorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

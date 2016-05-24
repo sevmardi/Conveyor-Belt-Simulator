@@ -43,20 +43,6 @@ namespace WpfApplication3
         }
 
 
-        private void Stop_Click(object sender, RoutedEventArgs e)
-        {
-            var sub = FindResource("ellipseSB") as Storyboard;
-
-            sub.Pause();
-        }
-
-        private void DoubleAnimationUsingPath()
-        {
-            DoubleAnimationUsingPath db = new DoubleAnimationUsingPath();
-
-        }
-
-
         private void Window_ContentRendered(object sender, EventArgs e)
         {
             Control box = new Control { Template = (ControlTemplate)Resources["RectangleTemplate"] };

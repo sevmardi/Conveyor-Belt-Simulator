@@ -9,20 +9,20 @@
             <Rectangle Height="20" Width="30" Fill="Red">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
-                        <TranslateTransform/>
+                        <TranslateTransform />
                     </TransformGroup>
                 </Rectangle.RenderTransform>
                 <Rectangle.Triggers>
                     <EventTrigger RoutedEvent="Loaded">
                         <BeginStoryboard>
                             <Storyboard>
-                                <DoubleAnimationUsingPath 
-               Duration="0:0:3" 
-                Source="X" 
-                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)" 
-                >
+                                <DoubleAnimationUsingPath
+                                    Duration="0:0:3"
+                                    Source="X"
+                                    Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)">
                                     <DoubleAnimationUsingPath.PathGeometry>
-                                        <PathGeometry Figures="M1.5,-18.667014 L8.1669813,-54.00002 L31.833186,-94.666719 L60.166999,-116.33299"/>
+                                        <PathGeometry
+                                            Figures="M1.5,-18.667014 L8.1669813,-54.00002 L31.833186,-94.666719 L60.166999,-116.33299" />
                                     </DoubleAnimationUsingPath.PathGeometry>
                                 </DoubleAnimationUsingPath>
                             </Storyboard>

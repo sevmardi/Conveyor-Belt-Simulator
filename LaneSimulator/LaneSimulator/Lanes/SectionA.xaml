@@ -20,6 +20,8 @@
             </Path>
         </Canvas>
         <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="240" Canvas.Top="200" Width="6" x:Name="_0102_S1"/>
+        <Path x:Name="StartPointPath" Data="M-294,428.33333 L-287.33333,393.00034 -263.66823,352.33366 -235.33574,330.6674" Height="97.666" Canvas.Left="187.333" Stretch="Fill" Canvas.Top="108.334" Width="58.667"/>
+        <Path x:Name="_2" Data="M-233.25,331.25 L-185.5,313 -146.5,318 -123.25,325" Height="18.25" Canvas.Left="250.833" Stretch="Fill" Canvas.Top="96" Width="110"/>
 
     </Canvas>
 
