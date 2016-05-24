@@ -59,6 +59,7 @@ namespace LaneSimulator
 
            // drag/drop for edit or full
             DragDropHelper.ItemDropped += new EventHandler<DragDropEventArgs>(DragDropHelper_ItemDropped);
+            
             Grid1.Children.Remove(SSLComponents);
             sslObjects = new ShadowBox();
             sslObjects.Margin = new Thickness(20, 20, 20, 20);
@@ -69,11 +70,22 @@ namespace LaneSimulator
             Grid1.Children.Add(sslObjects);
             Grid.SetColumn(sslObjects, 1);
             Grid.SetRow(sslObjects, 1);
- 
+
+
+            Grid1.Children.Remove(spSpeed);
+            sbSpeed = new ShadowBox();
+            sbSpeed.Margin = new Thickness(20, 20, 175, 20);
+            sbSpeed.Children.Add(spSpeed);
+            spSpeed.Background = Brushes.Transparent;
+            sbSpeed.VerticalAlignment = VerticalAlignment.Top;
+            sbSpeed.HorizontalAlignment = HorizontalAlignment.Right;
+            Grid1.Children.Add(sbSpeed);
+            Grid.SetColumn(sbSpeed, 1);
+            Grid.SetRow(sbSpeed, 1);
+
            this.Loaded += (sender2, e2) =>
            {
              
-               
                lblAppTitle.Text = APP_TITLE;
                lblAppVersion.Text = APP_VERSION;
                lblAppCopyright.Text = APP_COPYRIGHT;
