@@ -113,14 +113,113 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" MinWidth="126" />
-            <ColumnDefinition />
+            <ColumnDefinition Width="Auto"  />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
 
         <local:SSLCanvas x:Name="SSLCanvas" Grid.Column="1" Grid.Row="1" d:IsLocked="True"/>
-        <selector:ObjectSelector x:Name="spGates" Grid.Row="1" Grid.Column="0" />
+        <selector:ObjectSelector x:Name="sptrays" Grid.Row="1" Grid.Column="0" />
 
+
+
+        <StackPanel Orientation="Horizontal" Name="spSpeed">
+            <Image Source="Images/turtle.png" Height="20"  />
+            <Slider Name="slSpeed" Minimum="1" Maximum="10" SmallChange="2" LargeChange="5" Value="2" Width="60" Height="20" IsDirectionReversed="False" ToolTip="Adjust simulation speed"  />
+            <Image Source="Images/hare.png" Height="20"  />
+        </StackPanel>
+        
+        <!--<ToolBarTray Grid.Row="0" Grid.ColumnSpan="2">
+            <ToolBar Height="28" Name="tbFile" Visibility="Collapsed" >
+                <Button Style="{StaticResource TButtonStyle}" Click="btnNew_Click" ToolTip="New File (Ctrl+N)">
+                    <Image Source="Images/NewDocumentHS.png" />
+                </Button>
+                <Button Style="{StaticResource TButtonStyle}" Click="btnOpen_Click" ToolTip="Open File (Ctrl+O)">
+                    <Image Source="Images/openHS.png" />
+                </Button>
+                <Button Style="{StaticResource TButtonStyle}" Click="btnSave_Click" ToolTip="Save File (Ctrl+S)" IsEnabled="False" Name="btnSave">
+                    <Image Source="Images/saveHS.png" />
+                </Button>
+                <Button Style="{StaticResource TButtonStyle}" Click="btnSave_As_Click" ToolTip="Save File As">
+                    <Image Source="Images/saveAsHS.png" />
+                </Button>
+            </ToolBar>
+            <ToolBar Height="28" Name="tbEdit" Visibility="Collapsed">
+                <Button Style="{StaticResource TButtonStyle}" Name="btnCut" Click="btnCut_Click" ToolTip="Cut (Ctrl+X)" IsEnabled="False" >
+                    <Image Source="Images/CutHS.png" />
+                </Button>
+                <Button Style="{StaticResource TButtonStyle}" Name="btnCopy" Click="btnCopy_Click" ToolTip="Copy (Ctrl+C)" IsEnabled="False">
+                    <Image Source="Images/CopyHS.png" />
+                </Button>
+                <Button Style="{StaticResource TButtonStyle}" Name="btnCopyAsImage" ToolTip="Copy As Image" Click="btnCopyAsImage_Click" IsEnabled="False">
+                    <Image Source="Images/CopyAsImage.png" />
+                </Button>
+                <Button Style="{StaticResource TButtonStyle}" Name="btnPaste" Click="btnPaste_Click" ToolTip="Paste (Ctrl+V)" IsEnabled="False">
+                    <Image Source="Images/PasteHS.png" />
+                </Button>
+                <Button Style="{StaticResource TButtonStyle}" Name="btnFlatten" Click="btnFlatten_Click" ToolTip="Flatten Circuit">
+                    <Image Source="Images/Steamroller-32x32.png" />
+                </Button>
+                <Button Style="{StaticResource TButtonStyle}" Name="btnAlignTopLeft" ToolTip="Align Circuit to Upper-Left" Click="btnAlignTopLeft_Click">
+                    <Image Source="Images/CanvasScaleHS.png" />
+                </Button>
+
+            </ToolBar>
+            <ToolBar Height="28" Name="tbPrinting">
+
+                <Button Style="{StaticResource TButtonStyle}" Name="btnPrint" Click="btnPrint_Click" ToolTip="Print Circuit (Ctrl+P)">
+                    <Image Source="Images/PrintHS.png" />
+                </Button>
+
+                <Button Style="{StaticResource TButtonStyle}" Name="btnSaveAsImage" ToolTip="Save Circuit as Image" Click="btnSaveAsImage_Click">
+                    <Image Source="Images/SaveAsImage.png" />
+                </Button>
+
+                <Button Style="{StaticResource TButtonStyle}" Name="btnChart" ToolTip="Show Logical Analyzer (Oscilloscope)" Click="btnChart_Click">
+                    <Image Source="Images/LegendHS.png" />
+                </Button>
+                
+
+            </ToolBar>
+            <ToolBar Height="28" Name="tbUndo" Visibility="Collapsed">
+                <Button ToolTip="{Binding Source={StaticResource undoManager}, Path=UndoName}" Style="{StaticResource TButtonStyle}"  IsEnabled="{Binding Source={StaticResource undoManager}, Path=CanUndo}" Click="btnUndo_Click" Name="btnUndo">
+                    <Image Source="Images/Edit_UndoHS.png" />
+                </Button>
+                <Button ToolTip="{Binding Source={StaticResource undoManager}, Path=RedoName}" Style="{StaticResource TButtonStyle}" IsEnabled="{Binding Source={StaticResource undoManager}, Path=CanRedo}" Click="btnRedo_Click" Name="btnRedo">
+                    <Image Source="Images/Edit_RedoHS.png" />
+                </Button>
+                
+            </ToolBar>
+            <ToolBar Height="28" Name="tbIC" Visibility="Collapsed">
+                <Button Style="{StaticResource TButtonStyle}" Click="btnCreateIC_Click" ToolTip="Create IC">
+                    <Image Source="Images/ram.png" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" />
+                </Button>
+                <Button Style="{StaticResource TButtonStyle}" Click="btnImportIC_Click" ToolTip="Import IC">
+                    <Image Source="Images/ImportXMLHS.png" />
+                </Button>
+
+
+            </ToolBar>
+            <ToolBar Height="28" Name="tbVis">
+                <ToggleButton Name="btnShowHideToolbars" IsChecked="True" Style="{StaticResource TgButtonStyle}" ToolTip="Show or Hide Tools" Checked="btnShowHideToolbars_Checked" Unchecked="btnShowHideToolbars_Unchecked">
+                    <Image Source="Images/BehindTextHS.png" />
+                </ToggleButton>
+                <ToggleButton Name="btnShowTrueFalse" IsChecked="True" ToolTip="Show or Hide True/False Coloration" Checked="btnShowTrueFalse_Checked" Unchecked="btnShowTrueFalse_Unchecked">
+                    <Image Source="Images/wire_color.png">
+                        <Image.RenderTransform>
+                            <RotateTransform Angle="90" CenterX="8" CenterY="8"  />
+                        </Image.RenderTransform>
+                    </Image>
+                </ToggleButton>
+                <ToggleButton Name="btnUserMode" ToolTip="End-User Mode" Checked="btnUserMode_Checked" Unchecked="btnUserMode_Unchecked">
+                    <Image Source="Images/ProtectFormHS.png" />
+                </ToggleButton>
+
+            </ToolBar>
+
+        </ToolBarTray>-->
+     
+        
         <!--<StackPanel Orientation="Horizontal" Name="TotalOfObjects" Visibility="Hidden">
 
             <Viewbox Stretch="Fill" Width="114" HorizontalAlignment="Right" Canvas.Left="1093" Canvas.Top="16">
@@ -164,5 +263,7 @@
             <TextBlock Name="lblLink"  Margin="10,0,0,0"></TextBlock>
         </StackPanel>
         <TextBlock Name="lblInfoLine" Background="#EEEEEE" Grid.Row="2" Grid.ColumnSpan="2"  Padding="10,0,0,0" Visibility="Hidden" />
+
+        <Canvas x:Name="adornerLayer" Visibility="Collapsed"/>
     </Grid>
 </Window>

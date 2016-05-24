@@ -9,6 +9,8 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using LaneSimulator.Conveyor;
 using LaneSimulator.PLC;
+using LaneSimulator.Utilities;
+using LaneSimulator.Utilities.Selector;
 using LaneSimulator.Views;
 
 namespace LaneSimulator
@@ -50,7 +52,7 @@ namespace LaneSimulator
             ConnectPanel connectpanel = new ConnectPanel();
             connectpanel.Owner = this;
             connectpanel.ShowDialog();
-
+          
             if (connectpanel.DialogResult.HasValue && connectpanel.DialogResult.Value)
             {
                 //do something
@@ -218,21 +220,21 @@ namespace LaneSimulator
         }
 
 
-        //private void InfoLine_PropertyChanged(object sender, PropertyChangedEventArgs e)
-        //{
-        //    if (String.IsNullOrEmpty(InfoLine.GetInstance().CurrentInfoLine) || !this.IsActive)
-        //    {
-        //        lblInfoLine.Visibility = Visibility.Collapsed;
-        //        spAppInfo.Visibility = Visibility.Visible;
-        //    }
-        //    else
-        //    {
-        //        lblInfoLine.Text = InfoLine.GetInstance().CurrentInfoLine;
-        //        lblInfoLine.Visibility = Visibility.Visible;
-        //        spAppInfo.Visibility = Visibility.Collapsed;
-        //    }
+        private void InfoLine_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (String.IsNullOrEmpty(InfoLine.GetInstance().CurrentInfoLine) || !this.IsActive)
+            {
+                lblInfoLine.Visibility = Visibility.Collapsed;
+                spAppInfo.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                lblInfoLine.Text = InfoLine.GetInstance().CurrentInfoLine;
+                lblInfoLine.Visibility = Visibility.Visible;
+                spAppInfo.Visibility = Visibility.Collapsed;
+            }
 
-        //}
+        }
 
        
         //TEST
