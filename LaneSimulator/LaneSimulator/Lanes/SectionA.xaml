@@ -19,5 +19,8 @@
                 </Path.Data>
             </Path>
         </Canvas>
+        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="240" Canvas.Top="200" Width="6" x:Name="_0102_S1"/>
+
     </Canvas>
+
 </UserControl>

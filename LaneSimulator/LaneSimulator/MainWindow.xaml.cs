@@ -28,6 +28,7 @@ namespace LaneSimulator
         public static string APP_COPYRIGHT;
         private bool Ispaused = false;
         private readonly SectionA _sectionA;
+        private readonly SSLCanvas _sslCanvas;
         private double T = 0.0;
         private DispatcherTimer Timer1 = new DispatcherTimer();
         private readonly PlcCalls _plcCalls;
@@ -40,6 +41,7 @@ namespace LaneSimulator
             Timer1.Tick += new EventHandler(this.Timer1_Tick);
             Closing += new CancelEventHandler(MainWindow1Closing);
             _sectionA = new SectionA();
+            _sslCanvas = new SSLCanvas();
          //   ObjectToMove.Visibility = Visibility.Hidden;
            _plcCalls = new PlcCalls();
         }
@@ -217,8 +219,8 @@ namespace LaneSimulator
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            //this.Timer_Lable.Text = (this.T = this.T + 0.1).ToString("0.00",
-            //    (IFormatProvider)CultureInfo.InvariantCulture);
+            this._sslCanvas.Timer_Lable.Text = (this.T = this.T + 0.1).ToString("0.00",
+                (IFormatProvider)CultureInfo.InvariantCulture);
         }
 
 

@@ -12,7 +12,6 @@ namespace LaneSimulator.Utilities.DragDrop
     /// 
     public class DragDropAdornerBase : UserControl
     {
-        
         public DragDropAdornerBase()
         {
             ScaleTransform scale = new ScaleTransform(1f, 1f);

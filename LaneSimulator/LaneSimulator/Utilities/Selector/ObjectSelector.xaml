@@ -8,7 +8,7 @@
 
     
     <UserControl.Resources>
-        <!--<dragDrop:GateDragDropAdorner x:Key="gateAdorner"/>-->
+        <dragDrop:ObjectDragDropAdorner x:Key="objectAdorner"/>
         <!--<selector:ExpanderHeightConverter x:Key="ExpanderHeightConverter" />-->
         
         <Style TargetType="{x:Type Expander}">
@@ -74,7 +74,7 @@
 
                 <trays:Tray x:Name="Tray" VerticalAlignment="Top"
                             dragDrop:DragDropHelper.IsDragSource="true"
-
+                             dragDrop:DragDropHelper.DragDropControl="{StaticResource objectAdorner}"
                             dragDrop:DragDropHelper.DropTarget="gateCanvas"
                             dragDrop:DragDropHelper.AdornerLayer="adornerLayer" />
 

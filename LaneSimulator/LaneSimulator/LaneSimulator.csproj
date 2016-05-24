@@ -84,6 +84,9 @@
     <Compile Include="Utilities\DragDrop\DragDropAdornerBase.cs" />
     <Compile Include="Utilities\DragDrop\DragDropHelper.cs" />
     <Compile Include="Utilities\DragDrop\DropPreviewAdorner.cs" />
+    <Compile Include="Utilities\DragDrop\ObjectDragDropAdorner.xaml.cs">
+      <DependentUpon>ObjectDragDropAdorner.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\Fader.cs" />
     <Compile Include="Utilities\Selector\ObjectSelector.xaml.cs">
       <DependentUpon>ObjectSelector.xaml</DependentUpon>
@@ -146,6 +149,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SSLCanvas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utilities\DragDrop\ObjectDragDropAdorner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
