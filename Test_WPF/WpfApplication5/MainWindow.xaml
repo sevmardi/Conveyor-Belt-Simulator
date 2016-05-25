@@ -4,20 +4,12 @@
          xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
         Title="MainWindow" Height="800" Width="1200">
     <Grid>
-        <Canvas x:Name="Animation_Path" Height="40.474" Left="3.409" Top="53.412" Width="253.425" Margin="27,344,911,385" RenderTransformOrigin="0.5,0.5">
-            <Canvas.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-53.748"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Canvas.RenderTransform>
+        <Canvas x:Name="Animation_Path" Height="40.474" Left="3.409" Top="53.412" Margin="27,344,897,385" RenderTransformOrigin="0.5,0.5"/>
+        <!--<Canvas x:Name="Animation_Path2" Height="40.474" Left="3.409" Top="53.412" Margin="300,344,624,385" RenderTransformOrigin="0.5,0.5"/>-->
 
-        </Canvas>
 
-      
-        <Button Content="Button" HorizontalAlignment="Left" Margin="588,252,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_5"/>
+        <Button Content="Start" HorizontalAlignment="Left" Margin="588,252,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_5"/>
+        <Button Content="Stop" HorizontalAlignment="Left" Margin="690,252,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_6"/>
 
     </Grid>
 </Window>

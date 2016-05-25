@@ -23,14 +23,15 @@ namespace WpfApplication5
     {
         private List<Storyboard> Slist = new List<Storyboard>();
         private bool Ispaused = false;
+        private Storyboard _storyboard;
 
         public MainWindow()
         {
             InitializeComponent();
-
+            _storyboard = new Storyboard();
         }
 
-        private void AddAnimation(Brush Color)
+        private void AddAnimation()
         {
             ObjectToMove move = new ObjectToMove();
             
@@ -44,17 +45,17 @@ namespace WpfApplication5
 
             DoubleAnimationUsingPath path1 = new DoubleAnimationUsingPath();
 
-            
 
-
-
-           this.Animation_Path.Children.Add((UIElement)move);
+            this.Animation_Path.Children.Add((UIElement)move);
             Canvas.SetLeft((UIElement)move, 220.0);
             Canvas.SetTop((UIElement)move, 4.0);
-            this.Slist.Add(new Storyboard());
-            
+            this.Slist.Add(_storyboard);
 
-            Storyboard storyboard = this.Slist[this.Slist.Count - 1];
+
+
+
+
+            _storyboard = this.Slist[this.Slist.Count - 1];
 
            // storyboard.Completed += new EventHandler(this.storyboard_Completed);
 
@@ -64,19 +65,19 @@ namespace WpfApplication5
             Storyboard.SetTarget((DependencyObject)doubleAnimation, (DependencyObject)move);
             Storyboard.SetTargetProperty((DependencyObject)doubleAnimation, new PropertyPath((object)Canvas.LeftProperty));
 
-            storyboard.Children.Add((Timeline)doubleAnimation);
+            _storyboard.Children.Add((Timeline)doubleAnimation);
 
             if (Slist.Count == 0)
             {
-                storyboard.Begin();
+                _storyboard.Begin();
             }
             else if (this.Ispaused)
             {
-                storyboard.Begin();
-                storyboard.Pause();
+                _storyboard.Begin();
+                _storyboard.Pause();
             }
             else
-                storyboard.Begin();
+                _storyboard.Begin();
 
 
 
@@ -90,7 +91,7 @@ namespace WpfApplication5
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-          AddAnimation((Brush) Brushes.LightBlue);
+          AddAnimation();
            // testingmethodonmsdn();
         }
 
@@ -164,75 +165,21 @@ namespace WpfApplication5
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+           SetStoryBoardActivity(Ispaused);
+        }
+
+        private void SetStoryBoardActivity(bool play)
+        {
+            if (play)
+            {
+                _storyboard.Resume(this);
+            }
+            else
+            {
+                _storyboard.Pause(this);
+            }
+        }
     }
 }
