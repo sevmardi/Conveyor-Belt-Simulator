@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="210" d:DesignWidth="390">
+             d:DesignHeight="210" d:DesignWidth="390" Background="Transparent">
 
     <Canvas x:Name="LaneToop" Width="744" Height="1052">
         <Canvas x:Name="LaneT">

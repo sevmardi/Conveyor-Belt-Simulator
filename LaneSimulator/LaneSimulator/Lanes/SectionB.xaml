@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="420">
+             d:DesignHeight="300" d:DesignWidth="420" Background="Transparent">
 
-    <Canvas x:Name="LaneToop" Width="744" Height="1052">
+    <Canvas x:Name="LaneToop" Width="744" Height="500">
         <Canvas x:Name="LaneT">
             <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-60" Canvas.Top="-374">
                 <Path.Data>
