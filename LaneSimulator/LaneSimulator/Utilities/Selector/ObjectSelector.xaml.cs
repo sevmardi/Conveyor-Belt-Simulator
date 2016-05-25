@@ -26,9 +26,14 @@ namespace LaneSimulator.Utilities.Selector
             InfoLine.SetInfo(tray, inf);
         }
 
-        private void AddDragDropGate(int pos, Tray tray)
+        private void AddDragDropObject(int pos, Tray tray)
         {
             
+        }
+
+        private void AddDragDropObject(int pos)
+        {
+            //call the bove stated Adddragdrop method and pass 
         }
     }
 

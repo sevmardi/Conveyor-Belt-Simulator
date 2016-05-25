@@ -26,7 +26,7 @@ namespace LaneSimulator
         public static string APP_VERSION;
         public static string APP_COPYRIGHT;
         private bool Ispaused = false;
-        private ShadowBox sbZoom, sbSpeed, sslObjects;
+        private ShadowBox sbZoom, sbSpeed, sslObjects, counter;
         private readonly SectionA _sectionA;
         private readonly SSLCanvas _sslCanvas;
         private double T = 0.0;
@@ -82,6 +82,17 @@ namespace LaneSimulator
             Grid1.Children.Add(sbSpeed);
             Grid.SetColumn(sbSpeed, 1);
             Grid.SetRow(sbSpeed, 1);
+
+            Grid1.Children.Remove(sslCounter);
+            counter = new ShadowBox();
+            counter.Margin = new Thickness(20, 20, 175, 20);
+            counter.Children.Add(sslCounter);
+            sslCounter.Background = Brushes.Transparent;
+            counter.VerticalAlignment = VerticalAlignment.Top;
+            counter.HorizontalAlignment = HorizontalAlignment.Right;
+            Grid1.Children.Add(counter);
+            Grid.SetColumn(counter, 1);
+            Grid.SetRow(counter, 1);
 
            this.Loaded += (sender2, e2) =>
            {

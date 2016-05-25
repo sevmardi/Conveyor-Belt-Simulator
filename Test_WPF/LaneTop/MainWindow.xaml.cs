@@ -171,9 +171,14 @@ namespace LaneTop
         public void AddAnimation()
         {
             
-        }   
+        }
 
-   
-
+        /// <summary>
+        /// Total of the objects
+        /// </summary>
+        public void total()
+        {
+            total_text1.Text = EndAnimation.Children.Count.ToString();
+        }
     }
 }

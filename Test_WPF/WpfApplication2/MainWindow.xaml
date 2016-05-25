@@ -5,7 +5,7 @@
         Title="StyleTriggerEnterExitActions" Height="1025" Width="1025" UseLayoutRounding="True">
     <Window.Resources>
 
-        <Style TargetType="{x:Type local:ObjectToMove}">
+        <Style TargetType="{x:Type local:ObjectToMove}" x:Key="object_style">
             <Style.Resources>
                 <!-- All your base are belong to us. -->
                 <Storyboard x:Key="Weeeee" RepeatBehavior="Forever">
@@ -13,7 +13,6 @@
                     <DoubleAnimationUsingPath 
                         Duration="0:0:3" 
                         Source="X" 
-                         
                         Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
                         <DoubleAnimationUsingPath.PathGeometry>
                             <PathGeometry Figures="M0.83299852,-4.019 L0.83299852,0.6089829 L0.61794496,0.94214186 C-7.6701996,14.489389 -12.443,30.392629 -12.443001,47.403001 C-12.443,96.887715 27.948303,137.003 77.773499,137.003 C113.58536,137.003 144.52365,116.27938 159.09367,86.248303 L159.90265,84.471135 L380.931,84.471135 L380.931,86.871121 L160.63918,86.871121 L160.4838,87.217053 C145.62575,118.25356 114.07582,139.671 77.556,139.671 C26.745804,139.671 -14.444,98.212666 -14.444,47.071218 C-14.444,29.491346 -9.5768454,13.055669 -1.124851,-0.94513857 z"/>

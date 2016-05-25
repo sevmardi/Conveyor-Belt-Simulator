@@ -41,17 +41,17 @@
                
 
             </Style.Resources>-->
-        
+
         </Style>
 
-          
-        
+
+
         <!--<Style.Triggers>
             <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                 <BeginStoryboard Storyboard="{StaticResource Weeeee}"/>
             </EventTrigger>
         </Style.Triggers>-->
-        
+
 
         <!--<Storyboard x:Key="Storyboard1" >
             <DoubleAnimationUsingPath 
@@ -135,7 +135,7 @@
 
 
 
-      
+
 
     </Window.Resources>
 
@@ -610,7 +610,7 @@
         <local:Tray x:Name="tray" Canvas.Left="-318" Canvas.Top="432" Height="31" Width="45"></local:Tray>
 
 
-        <!--<Rectangle x:Name="ObjectToMove" Height="31" Canvas.Left="-316.5" Stroke="Black" Canvas.Top="431.5" Width="42" Fill="#FFDA6C11" RenderTransformOrigin="0.5,0.5">
+        <Rectangle x:Name="ObjectToMove" Height="31" Canvas.Left="-316.5" Stroke="Black" Canvas.Top="431.5" Width="42" Fill="#FFDA6C11" RenderTransformOrigin="0.5,0.5">
 
                 <Rectangle.RenderTransform>
                     <TransformGroup>
@@ -620,7 +620,7 @@
                         <TranslateTransform/>
                     </TransformGroup>
                 </Rectangle.RenderTransform>
-            </Rectangle>-->
+            </Rectangle>
 
 
 
@@ -634,6 +634,7 @@
         <Path x:Name="_11" Data="M30.5,379.33333 L99.416667,379.33333" Height="0" Canvas.Left="424.188" Stretch="Fill" Canvas.Top="383" Width="87.562"/>
         <Path x:Name="_12" Data="M424.16667,384 L465.83299,364.83333 476.66673,335.00088" Height="46.5" Canvas.Left="424.167" Stretch="Fill" Canvas.Top="337.5" Width="48.833"/>
 
+        <WrapPanel x:Name="EndAnimation" Orientation="Horizontal" Height="44" Width="64" Canvas.Left="1077" Canvas.Top="432"/>
     </Canvas>
 
 </Window>

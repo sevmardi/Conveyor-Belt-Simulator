@@ -25,14 +25,20 @@ namespace WpfApplication2
 
         private void TestAnimation()
         {
-            var sub1 = FindResource("Storyboard1") as Storyboard;
+            var sub1 = FindResource("Weeeee") as Storyboard;
 
             if (sub1 != null) sub1.Begin(_pMove);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            TestAnimation();
+           // TestAnimation();
+
+            Style myStyle = TryFindResource("object_style" ) as Style;
+            
+       
+
+          //  Main.Children.Add(box);
         }
     }
 }

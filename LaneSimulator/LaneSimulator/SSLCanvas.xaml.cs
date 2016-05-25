@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.ComponentModel;
 using System.Globalization;
 
 using System.Windows;
@@ -16,6 +16,9 @@ namespace LaneSimulator
     /// </summary>
     public partial class SSLCanvas : UserControl
     {
+        public BindingList<Tray> selected = new BindingList<Tray>();
+
+
         private DragState dragging = DragState.NONE;
         private bool ReadyToSelect = false;
         private Point mp;
@@ -85,8 +88,7 @@ namespace LaneSimulator
 
 
         //mouse up event for canvas clicks
-
-        private void GateCanvas_MouseUp(object sender, MouseButtonEventArgs e)
+        private void SSLCanvas_MouseUp(object sender, MouseButtonEventArgs e)
         {
             dragging = DragState.NONE;
             dragSelect.Width = 0;
@@ -94,30 +96,62 @@ namespace LaneSimulator
             dragSelect.Margin = new Thickness(0, 0, 0, 0);
             dragSelect.Visibility = Visibility.Hidden;
 
-            //dragWire.Destination = new Point(0, 0);
-            //dragWire.Origin = new Point(0, 0);
-
-            // unhightlight all
-            //foreach (Gates.AbstractGate ag in gates.Keys)
-            //{
-
-            //    for (int i = 0; i < ag.Output.Length; i++)
-            //    {
-            //        gates[ag].FindTerminal(false, i).t.Highlight = false;
-            //    }
-
-            //    for (int i = 0; i < ag.NumberOfInputs; i++)
-            //    {
-            //        gates[ag].FindTerminal(true, i).t.Highlight = false;
-            //    }
-            //}
-
-            //if (UndoProvider != null && moves != null && moves.Count > 0)
-            //    UndoProvider.Add(moves);
-            //moves = null;
-
             ReadyToSelect = false;
         }
+
+        private void SSLCanvas_MouseMove(object sender, MouseEventArgs e)
+        {
+            Point mp2 = e.GetPosition(GC);
+
+            if (e.LeftButton == MouseButtonState.Pressed || e.RightButton == MouseButtonState.Pressed)
+            {
+                GC.BringIntoView(new Rect(new Point(mp2.X - 10, mp2.Y - 10),
+                 new Point(mp2.X + 10, mp2.Y + 10)));
+
+                switch (dragging)
+                {
+                        case DragState.MOVE:
+
+                        foreach (Tray tray in selected)
+                        {
+
+                            if (e.LeftButton == MouseButtonState.Pressed)
+                            {
+
+                            }
+
+                            if (e.RightButton == MouseButtonState.Pressed)
+                            {
+
+                            }
+                        }
+                        break;
+
+                        case DragState.NONE:
+                            // not dragging
+                            // creating a selection rectangle
+
+                        if (ReadyToSelect)
+                        {
+                            double x1 = Math.Min(mp2.X, sp.X);
+                            double width = Math.Abs(mp2.X - sp.X);
+
+                            double y1 = Math.Min(mp2.Y, sp.Y);
+                            double height = Math.Abs(mp2.Y - sp.Y);
+
+                            dragSelect.Margin = new Thickness(x1, y1, 0, 0);
+                            dragSelect.Width = width;
+                            dragSelect.Height = height;
+                            dragSelect.Visibility = Visibility.Visible;
+
+                            Rect select = new Rect(x1, y1, width, height);
+                        }
+                        break;
+                }
+
+            }
+        }
+
         // Green Team Notes:  This clears selection
         public void ClearSelection()
         {
@@ -181,5 +215,45 @@ namespace LaneSimulator
 
         }
 
+        public void AddObject(Tray tray)
+        {
+            tray = new Tray();
+
+        }
+
+        public void AddTray()
+        {
+            
+        }
+
+        public enum SELECTED_OBJECTS
+        {
+            ALL,
+
+            SELECTED,
+
+            SELECTED_IF_TWO_OR_MORE
+        }
+
+        public void SetZoomCenter()
+        {
+            double centerX = (Scroller.HorizontalOffset + Scroller.ViewportWidth / 2.0) / _zoom;
+            double centerY = (Scroller.VerticalOffset + Scroller.ViewportHeight / 2.0) / _zoom;
+            ZoomCenter = new Point(centerX, centerY);  
+        }
+
+        public Point ZoomCenter
+        {
+            get
+            {
+                return (Point)GetValue(ZoomCenterProperty);
+            }
+            set
+            {
+                SetValue(ZoomCenterProperty, value);
+            }
+        }
+
+        public static readonly DependencyProperty ZoomCenterProperty = DependencyProperty.Register("ZoomCenter", typeof(Point), typeof(SSLCanvas));
     }
 }

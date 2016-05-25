@@ -33,7 +33,7 @@
             <lanes:SectionB Grid.Row="0" Grid.Column="1" x:Name="SectionB" Canvas.Left="290" Canvas.Top="225"/>
             
             
-            <Viewbox Stretch="Fill" Width="114" HorizontalAlignment="Right" Canvas.Left="1600" Canvas.Top="25">
+            <!--<Viewbox Stretch="Fill" Width="114" HorizontalAlignment="Right" Canvas.Left="1600" Canvas.Top="25">
                 <Grid Height="96.907" Width="138.264">
                     <TextBox x:Name="textBox1_Copy1" Height="42.634" HorizontalContentAlignment="Center"
 					VerticalContentAlignment="Center" Text="Total" FontFamily="/WpfApplication1;component/Fonts/#LCD"
@@ -44,7 +44,7 @@
 					FontSize="48" BorderThickness="2" Focusable="false" Cursor="Arrow" Margin="0,36.09,0,0"
 					BorderBrush="{x:Null}"/>
                 </Grid>
-            </Viewbox>
+            </Viewbox>-->
 
             <Viewbox HorizontalAlignment="Right" Stretch="Fill" Width="114" Canvas.Left="1600" Canvas.Top="150">
                 <Border BorderBrush="#FF539D3F" BorderThickness="2" CornerRadius="5" Height="56.911" Width="116.667">

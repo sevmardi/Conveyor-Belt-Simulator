@@ -145,16 +145,16 @@
 
 
         <StackPanel Orientation="Horizontal" Name="spZoom">
-            <Image Source="Images/ZoomHS.png" Height="20"  />
-            <Slider Name="slZoom" Minimum="0.01" Maximum="5" Value="1" SmallChange="0.01"  
+            <Image Source="Images/ZoomHS.png" Height="20" />
+            <Slider Name="slZoom" Minimum="0.01" Maximum="5" Value="1" SmallChange="0.01"
                     LargeChange="0.1" ToolTip="Adjust circuit zoom"
-                Width="60" Height="20" ValueChanged="slZoom_ValueChanged"/>
-
-
-            <Button Style="{StaticResource TButtonStyle}" Height="20" Name="btnActualSize" Click="btnActualSize_Click" ToolTip="Zoom to Default Size" >
+                    Width="60" Height="20" ValueChanged="slZoom_ValueChanged" />
+            <Button Style="{StaticResource TButtonStyle}" Height="20" Name="btnActualSize" Click="btnActualSize_Click"
+                    ToolTip="Zoom to Default Size">
                 <Image Source="Images/ActualSizeHS.png" />
             </Button>
-            <Button Style="{StaticResource TButtonStyle}" Height="20" Name="btnFitToScreen" Click="btnFitToScreen_Click" ToolTip="Zoom to Fit Circuit in Window">
+            <Button Style="{StaticResource TButtonStyle}" Height="20" Name="btnFitToScreen"
+                    Click="btnFitToScreen_Click" ToolTip="Zoom to Fit Circuit in Window">
                 <Image Source="Images/PageWidthHS.png" />
             </Button>
 
@@ -164,6 +164,25 @@
             <Image Source="Images/turtle.png" Height="20"  />
             <Slider Name="slSpeed" Minimum="1" Maximum="10" SmallChange="2" LargeChange="5" Value="2" Width="60" Height="20" IsDirectionReversed="False" ToolTip="Adjust simulation speed"  />
             <Image Source="Images/hare.png" Height="20"  />
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Name="sslCounter">
+
+
+            <TextBox x:Name="textBox1_Copy1" Height="42.634" HorizontalContentAlignment="Center"
+                     VerticalContentAlignment="Center" Text="Total"
+                     FontFamily="/WpfApplication1;component/Fonts/#LCD"
+                     Foreground="#FFB22121" Background="Black" FontSize="29.333" BorderThickness="2"
+                     Focusable="false"
+                     Cursor="Arrow" VerticalAlignment="Top" BorderBrush="{x:Null}" />
+            <TextBox x:Name="total_text1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                     Text="0"
+                     FontFamily="/WpfApplication1;component/Fonts/#LCD" Foreground="#FFB22121"
+                     Background="Black"
+                     FontSize="48" BorderThickness="2" Focusable="false" Cursor="Arrow" Margin="0,36.09,0,0"
+                     BorderBrush="{x:Null}" />
+
+
         </StackPanel>
         
         <ToolBarTray Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0">
