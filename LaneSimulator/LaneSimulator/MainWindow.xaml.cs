@@ -419,12 +419,12 @@ namespace LaneSimulator
         {
 
         }
-  
+         #endregion
 
         private void slZoom_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-           
+            SSLCanvas.Zoom = slZoom.Value;
         }
-         #endregion
+        
     }
 }

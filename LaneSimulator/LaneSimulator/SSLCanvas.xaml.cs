@@ -255,5 +255,48 @@ namespace LaneSimulator
         }
 
         public static readonly DependencyProperty ZoomCenterProperty = DependencyProperty.Register("ZoomCenter", typeof(Point), typeof(SSLCanvas));
+
+        /// <summary>  
+        /// Indicate if the user provided value in ZoomCenter should be used  
+        /// </summary>  
+        /// 
+        public bool UseZoomCenter { get; set; }
+
+        /// <summary>  
+        /// Sets the zoom factor.  Changes to zoom occur based on the center of the displayed area,  
+        /// or, if UseZoomCenter is set to true, around the user defined zoom center.  
+        /// </summary>  
+        /// 
+        public double Zoom
+        {
+
+            get
+            {
+                return _zoom;
+            }
+
+            set
+            {
+
+
+                double centerX = (Scroller.HorizontalOffset + Scroller.ViewportWidth / 2.0) / _zoom;
+                double centerY = (Scroller.VerticalOffset + Scroller.ViewportHeight / 2.0) / _zoom;
+                _zoom = value;
+                GC.LayoutTransform = new ScaleTransform(value, value);
+                if (UseZoomCenter)
+                {
+                    centerX = ZoomCenter.X;
+                    centerY = ZoomCenter.Y;
+                }
+
+                if (!double.IsNaN(centerX))
+                {
+                    Scroller.ScrollToHorizontalOffset((centerX * _zoom) - Scroller.ViewportWidth / 2.0);
+                    Scroller.ScrollToVerticalOffset((centerY * _zoom) - Scroller.ViewportHeight / 2.0);
+                }
+
+            }
+        }
+
     }
 }
