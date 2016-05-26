@@ -103,9 +103,9 @@
             </DoubleAnimationUsingPath>
         </Storyboard>
 
-        
-        
-        
+
+
+
         <Style x:Key="TgButtonStyle" TargetType="{x:Type ToggleButton}">
             <Setter Property="ToolTipService.ShowOnDisabled" Value="True" />
             <Style.Triggers>
@@ -159,32 +159,29 @@
             </Button>
 
         </StackPanel>
-        
+
         <StackPanel Orientation="Horizontal" Name="spSpeed">
             <Image Source="Images/turtle.png" Height="20"  />
             <Slider Name="slSpeed" Minimum="1" Maximum="10" SmallChange="2" LargeChange="5" Value="2" Width="60" Height="20" IsDirectionReversed="False" ToolTip="Adjust simulation speed"  />
             <Image Source="Images/hare.png" Height="20"  />
         </StackPanel>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Name="sslCounter">
-
+        <!--<StackPanel Grid.Row="0" Orientation="Horizontal" Name="traysCounter">
 
             <TextBox x:Name="textBox1_Copy1" Height="42.634" HorizontalContentAlignment="Center"
                      VerticalContentAlignment="Center" Text="Total"
-                     FontFamily="/WpfApplication1;component/Fonts/#LCD"
+                   
                      Foreground="#FFB22121" Background="Black" FontSize="29.333" BorderThickness="2"
                      Focusable="false"
                      Cursor="Arrow" VerticalAlignment="Top" BorderBrush="{x:Null}" />
             <TextBox x:Name="total_text1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                      Text="0"
-                     FontFamily="/WpfApplication1;component/Fonts/#LCD" Foreground="#FFB22121"
+                      Foreground="#FFB22121"
                      Background="Black"
                      FontSize="48" BorderThickness="2" Focusable="false" Cursor="Arrow" Margin="0,36.09,0,0"
                      BorderBrush="{x:Null}" />
+        </StackPanel>-->
 
-
-        </StackPanel>
-        
         <ToolBarTray Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0">
             <ToolBar Height="28" Name="tbFile" Visibility="Collapsed" >
                 <Button Style="{StaticResource TButtonStyle}" Click="btnNew_Click" ToolTip="New File (Ctrl+N)">
@@ -234,10 +231,10 @@
                 <Button Style="{StaticResource TButtonStyle}" Name="btnChart" ToolTip="Show Logical Analyzer (Oscilloscope)" Click="btnChart_Click">
                     <Image Source="Images/LegendHS.png" />
                 </Button>
-                
+
 
             </ToolBar>
-  
+
             <ToolBar Height="28" Name="tbIC" Visibility="Collapsed">
                 <Button Style="{StaticResource TButtonStyle}" Click="btnCreateIC_Click" ToolTip="Create IC">
                     <Image Source="Images/ram.png" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" />
@@ -266,10 +263,12 @@
             </ToolBar>
 
         </ToolBarTray>
-    
-        
-   
 
+
+
+ 
+        
+        
         <StackPanel Name="spAppInfo" Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" Background="#EEEEEE">
             <TextBlock Name="lblAppTitle" Margin="10,0,0,0" />
             <TextBlock Name="lblAppVersion" Margin="10,0,0,0" />

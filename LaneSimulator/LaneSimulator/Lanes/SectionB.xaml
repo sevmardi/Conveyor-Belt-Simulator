@@ -1,12 +1,10 @@
 ﻿<UserControl x:Class="LaneSimulator.Lanes.SectionB"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="420" Background="Transparent">
+           
+            Background="Transparent">
 
-    <Canvas x:Name="LaneToop" Width="744" Height="500">
+    <Canvas x:Name="LaneToop" Width="250" Height="250">
         <Canvas x:Name="LaneT">
             <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-60" Canvas.Top="-374">
                 <Path.Data>
@@ -23,11 +21,7 @@
                     <PathGeometry Figures="m 229.66344 607.62447 69.24028 0 0 -87.72278 -69.24028 0 0 87.72278 z" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path14" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-60" Canvas.Top="-374">
-                <Path.Data>
-                    <PathGeometry Figures="m 300.85922 519.79884 22.9936 0 0 -0.0397 19.7911 0 0 -8.86906 7.8691 0 74.0054 0 0 8.86906 19.6206 0 0 0.0397 23.5258 0 0 87.69818 -43.1256 0 0 -0.0133 -0.021 0 0 8.51678 -75.1928 0 -6.6817 0 0 -8.51678 -19.7911 0 0 -0.0132 -22.9936 0 0 -87.67167 z" FillRule="nonzero"/>
-                </Path.Data>
-            </Path>
+   
 
         </Canvas>
     </Canvas>

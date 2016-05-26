@@ -74,8 +74,8 @@ namespace LaneSimulator
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            Timer_Lable.Text = (this.T = this.T + 0.1).ToString("0.00",
-                (IFormatProvider)CultureInfo.InvariantCulture);
+            //Timer_Lable.Text = (this.T = this.T + 0.1).ToString("0.00",
+            //    (IFormatProvider)CultureInfo.InvariantCulture);
         }
 
         //public Rect GetBounds(double padding, bool selectedOnly)

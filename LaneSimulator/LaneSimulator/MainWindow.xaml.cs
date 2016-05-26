@@ -45,17 +45,6 @@ namespace LaneSimulator
      
            _plcCalls = new PlcCalls();
 
-           // Everybody gets zoom
-           sbZoom = new ShadowBox();
-           sbZoom.Margin = new Thickness(20);
-           Grid1.Children.Remove(spZoom);
-           sbZoom.Children.Add(spZoom);
-           spZoom.Background = Brushes.Transparent;
-           sbZoom.VerticalAlignment = VerticalAlignment.Top;
-           sbZoom.HorizontalAlignment = HorizontalAlignment.Right;
-           Grid1.Children.Add(sbZoom);
-           Grid.SetColumn(sbZoom, 1);
-           Grid.SetRow(sbZoom, 1);
 
            // drag/drop for edit or full
             DragDropHelper.ItemDropped += new EventHandler<DragDropEventArgs>(DragDropHelper_ItemDropped);
@@ -71,7 +60,19 @@ namespace LaneSimulator
             Grid.SetColumn(sslObjects, 1);
             Grid.SetRow(sslObjects, 1);
 
+            // Everybody gets zoom
+            sbZoom = new ShadowBox();
+            sbZoom.Margin = new Thickness(20);
+            Grid1.Children.Remove(spZoom);
+            sbZoom.Children.Add(spZoom);
+            spZoom.Background = Brushes.Transparent;
+            sbZoom.VerticalAlignment = VerticalAlignment.Top;
+            sbZoom.HorizontalAlignment = HorizontalAlignment.Right;
+            Grid1.Children.Add(sbZoom);
+            Grid.SetColumn(sbZoom, 1);
+            Grid.SetRow(sbZoom, 1);
 
+            //Speed of simulation
             Grid1.Children.Remove(spSpeed);
             sbSpeed = new ShadowBox();
             sbSpeed.Margin = new Thickness(20, 20, 175, 20);
@@ -83,16 +84,17 @@ namespace LaneSimulator
             Grid.SetColumn(sbSpeed, 1);
             Grid.SetRow(sbSpeed, 1);
 
-            Grid1.Children.Remove(sslCounter);
-            counter = new ShadowBox();
-            counter.Margin = new Thickness(20, 20, 175, 20);
-            counter.Children.Add(sslCounter);
-            sslCounter.Background = Brushes.Transparent;
-            counter.VerticalAlignment = VerticalAlignment.Top;
-            counter.HorizontalAlignment = HorizontalAlignment.Right;
-            Grid1.Children.Add(counter);
-            Grid.SetColumn(counter, 1);
-            Grid.SetRow(counter, 1);
+            //TraysCounter
+            //Grid1.Children.Remove(traysCounter);
+            //counter = new ShadowBox();
+            //counter.Margin = new Thickness(20, 20, 175, 20);
+            //counter.Children.Add(traysCounter);
+            //traysCounter.Background = Brushes.Transparent;
+            //counter.VerticalAlignment = VerticalAlignment.Top;
+            //counter.HorizontalAlignment = HorizontalAlignment.Right;
+            //Grid1.Children.Add(counter);
+            //Grid.SetColumn(counter, 1);
+            //Grid.SetRow(counter, 1);
 
            this.Loaded += (sender2, e2) =>
            {
@@ -288,8 +290,8 @@ namespace LaneSimulator
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            _sslCanvas.Timer_Lable.Text = (this.T = this.T + 0.1).ToString("0.00",
-                (IFormatProvider)CultureInfo.InvariantCulture);
+            //_sslCanvas.Timer_Lable.Text = (this.T = this.T + 0.1).ToString("0.00",
+            //    (IFormatProvider)CultureInfo.InvariantCulture);
         }
 
 
@@ -424,6 +426,11 @@ namespace LaneSimulator
         private void slZoom_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             SSLCanvas.Zoom = slZoom.Value;
+        }
+
+        private void SectionB_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
         
     }
