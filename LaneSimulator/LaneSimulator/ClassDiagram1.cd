@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LaneSimulator.App" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.MainWindow" Collapsed="true">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RCkMEAISQAAEMgBQAAACBQ0IIVBIUBEgUCGgQAqE4RA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.SSLCanvas" Collapsed="true">
+    <Position X="3" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EQAiAACBACACIACIGAQSBAAIBAQCAIABAAACggAEggA=</HashCode>
+      <FileName>SSLCanvas.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Conveyor.SimulationAnimation" Collapsed="true">
+    <Position X="11.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAQBIAAAACAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Conveyor\SimulationAnimation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Events.Buffer" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAEAAIA=</HashCode>
+      <FileName>Events\Buffer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Events.Semaphore" Collapsed="true">
+    <Position X="6.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAYAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Events\Semaphore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Events.TagsEvents" Collapsed="true">
+    <Position X="4.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAJAIQAAAAEAgAAAIAAAAAAAAAAACBwAAAAA=</HashCode>
+      <FileName>Events\TagsEvents.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Lanes.GH_Window" Collapsed="true">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Lanes\GH-Window.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Lanes.LaneTop" Collapsed="true">
+    <Position X="11.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQCAAAAAAAAAAAAA=</HashCode>
+      <FileName>Lanes\LaneTop.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Lanes.SectionA" Collapsed="true">
+    <Position X="11.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAEkACAgABAARACAIAEAoAAAAAAAAAAAAAAAAAQAQ=</HashCode>
+      <FileName>Lanes\SectionA.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Lanes.SectionB" Collapsed="true">
+    <Position X="3" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Lanes\SectionB.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Lanes.SectionC" Collapsed="true">
+    <Position X="4.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Lanes\SectionC.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Snap7.S7Consts" Collapsed="true">
+    <Position X="4.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgGACAEAAACAAAAAAAgAgQQAAEAoIAAAAAAAAgAAA=</HashCode>
+      <FileName>Libs\snap7.net.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Snap7.S7" Collapsed="true">
+    <Position X="11.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CCSAwMAGBCQCQCMIAgAFSIAECJAIKIkKIBIAAEGggBI=</HashCode>
+      <FileName>Libs\snap7.net.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Snap7.S7MultiVar" Collapsed="true">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACIAAAAAAAAECAAAAAAAAAQgCAAAAAAAAAAAAAFAAAA=</HashCode>
+      <FileName>Libs\snap7.net.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Snap7.S7Client" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>/Px0dvcXNWWofGa7u+j19/9/v3vd4dHBSW8nx1V/qK4=</HashCode>
+      <FileName>Libs\snap7.net.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Snap7.S7Server" Collapsed="true">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>fB6O5TBP3aKvBlhSJrLZ8Ox/IJB6gEg3OiH0/lT07BQ=</HashCode>
+      <FileName>Libs\snap7.net.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Snap7.S7Partner" Collapsed="true">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>cQEEFMImOGRAghQBAkoCpahQEQQYwKAIMDWCIMEEgiw=</HashCode>
+      <FileName>Libs\snap7.net.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Models.Components.Tray" Collapsed="true">
+    <Position X="6.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAACEAgIAAAA=</HashCode>
+      <FileName>Models\Components\Tray.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.PLC.PlcCalls" Collapsed="true">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACWQMASiAAAICAABAAAEgACAAAAAIEAAAAAAAAAAAAQ=</HashCode>
+      <FileName>PLC\PlcCalls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.PLC.PLCTags" Collapsed="true">
+    <Position X="8.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAoQlDDAAAQBACWKYMIYxBSMYQAIgAGGIQAMQgAo=</HashCode>
+      <FileName>PLC\PLCTags.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Properties.Resources" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Properties.Settings" Collapsed="true">
+    <Position X="8.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Utilities.DragDrop.DragDropAdornerBase" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAEAAAAAAgAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\DragDrop\DragDropAdornerBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Utilities.DragDrop.DragDropHelper" Collapsed="true">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAABgggAQBBAABAAMAAIBAXAAABQJBAAUAwAAAASoAA=</HashCode>
+      <FileName>Utilities\DragDrop\DragDropHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Utilities.DragDrop.DragDropEventArgs" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAgAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\DragDrop\DragDropHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Utilities.DragDrop.DropPreviewAdorner" Collapsed="true">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAEAAAAAAAACCAAAACAAMAQAAAAAAAIAAAACEAAAAA=</HashCode>
+      <FileName>Utilities\DragDrop\DropPreviewAdorner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Utilities.DragDrop.ObjectDragDropAdorner" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\DragDrop\ObjectDragDropAdorner.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Utilities.Fader" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\Fader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Utilities.InfoLine" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAkAAQAAAAIAAAgAAAAEAhAAABEAAAAAAAACgAAA=</HashCode>
+      <FileName>Utilities\InfoLine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LaneSimulator.Utilities.Selector.ObjectSelector" Collapsed="true">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAEAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Utilities\Selector\ObjectSelector.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Utilities.Selector.ExpanderHeightConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\Selector\ObjectSelector.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LaneSimulator.Utilities.ShadowBox.ShadowBox" Collapsed="true">
+    <Position X="10" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\ShadowBox\ShadowBox.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Views.AttributesPanel" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\AttributesPanel.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LaneSimulator.Views.ConnectPanel" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAQAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\ConnectPanel.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="LaneSimulator.Utilities.DragDrop.DropState" Collapsed="true">
+    <Position X="3" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\DragDrop\DragDropAdornerBase.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

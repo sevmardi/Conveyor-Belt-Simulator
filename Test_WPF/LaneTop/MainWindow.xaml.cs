@@ -20,7 +20,7 @@ namespace LaneTop
         private PlcCalls PLC;
         private Tray _tray;
         private double T = 0.0;
-       
+        private LaneAnimation _animation;
         public MainWindow()
         {
           
@@ -33,6 +33,8 @@ namespace LaneTop
            // StartAnimationBtn1.IsEnabled = false;
             PLC = new PlcCalls();
             _tray = new Tray();
+            _animation = new LaneAnimation();
+
         }
 
 
@@ -56,21 +58,21 @@ namespace LaneTop
                 //ObjectToMove.Visibility = Visibility.Visible;
               
                 // Sensors section-A
-               _0102_S1.Fill = new SolidColorBrush(Colors.Red);
-               _0102_S2.Fill = new SolidColorBrush(Colors.Red);
-               _0103_S1.Fill = new SolidColorBrush(Colors.Red);
-               _0104_S1.Fill = new SolidColorBrush(Colors.Red);
-               _0105_S1.Fill = new SolidColorBrush(Colors.Red);
-               _0105_S2.Fill = new SolidColorBrush(Colors.Red);
-               _0301_S1.Fill = new SolidColorBrush(Colors.Red);
-               _0301_S2.Fill = new SolidColorBrush(Colors.Red);
-               _0302_S1.Fill = new SolidColorBrush(Colors.Red);
+               //_0102_S1.Fill = new SolidColorBrush(Colors.Red);
+               //_0102_S2.Fill = new SolidColorBrush(Colors.Red);
+               //_0103_S1.Fill = new SolidColorBrush(Colors.Red);
+               //_0104_S1.Fill = new SolidColorBrush(Colors.Red);
+               //_0105_S1.Fill = new SolidColorBrush(Colors.Red);
+               //_0105_S2.Fill = new SolidColorBrush(Colors.Red);
+               //_0301_S1.Fill = new SolidColorBrush(Colors.Red);
+               //_0301_S2.Fill = new SolidColorBrush(Colors.Red);
+               //_0302_S1.Fill = new SolidColorBrush(Colors.Red);
 
-               _0303_S1.Fill = new SolidColorBrush(Colors.Red);
-               _0304_S1.Fill = new SolidColorBrush(Colors.Red);
-               _0304_S2.Fill = new SolidColorBrush(Colors.Red);
-               _0304_S3.Fill = new SolidColorBrush(Colors.Red);
-               _0701_S1.Fill = new SolidColorBrush(Colors.Red);
+               //_0303_S1.Fill = new SolidColorBrush(Colors.Red);
+               //_0304_S1.Fill = new SolidColorBrush(Colors.Red);
+               //_0304_S2.Fill = new SolidColorBrush(Colors.Red);
+               //_0304_S3.Fill = new SolidColorBrush(Colors.Red);
+               //_0701_S1.Fill = new SolidColorBrush(Colors.Red);
             }
          
         }
@@ -112,26 +114,11 @@ namespace LaneTop
 
         private void StartAnimationBtn_Click(object sender, RoutedEventArgs e)
         {
-            //https://msdn.microsoft.com/en-us/library/cc295328.aspx
 
-            var sub1 = FindResource("Storyboard1") as Storyboard;
 
-           
+            _animation.storyboard1();
 
-            if (sub1 != null)
-            {
-               //Storyboard.SetTargetName(sub1, Tray);
-                sub1.Begin(ObjectToMove);
-              //  Storyboard.SetTargetName(sub1, _tray);
 
-                //CreateNewObject();
-
-               // SetMotorOnInSectionA();
-            }
-               
-            
-     
-        
         }
 
 
@@ -155,7 +142,7 @@ namespace LaneTop
             var thing = this.FindResource("Storyboard2");
 
             var OtherSB = (Storyboard)thing;
-            OtherSB.Begin(ObjectToMove);
+            //OtherSB.Begin(ObjectToMove);
         }
 
 
@@ -164,7 +151,7 @@ namespace LaneTop
             var thing = this.FindResource("Storyboard3");
 
             var OtherSB = (Storyboard)thing;
-            OtherSB.Begin(ObjectToMove);
+            //OtherSB.Begin(ObjectToMove);
         }
 
 
@@ -178,7 +165,7 @@ namespace LaneTop
         /// </summary>
         public void total()
         {
-            total_text1.Text = EndAnimation.Children.Count.ToString();
+            //total_text1.Text = EndAnimation.Children.Count.ToString();
         }
     }
 }

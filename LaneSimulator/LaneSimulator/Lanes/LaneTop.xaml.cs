@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LaneSimulator.Models.Components;
 
 namespace LaneSimulator.Lanes
 {
@@ -25,9 +26,15 @@ namespace LaneSimulator.Lanes
             InitializeComponent();
         }
 
-        private void total()
+        private void Total()
         {
-            total_text1.Text = (this.tray_Wrap.Children.Count).ToString();
+           total_text1.Text= (this.tray_Wrap.Children.Count).ToString();
+        }
+
+        private void storyboard_Completed()
+        {
+            this.tray_Wrap.Children.Add((UIElement) new Tray());
+
         }
     }
 }

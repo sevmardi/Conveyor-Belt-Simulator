@@ -11,17 +11,14 @@ namespace LaneTop
     class LaneAnimation
     {
        public  Storyboard SB;
-
+       private MainWindow _mainWindow;
        protected int delay;
 
-        /// <summary>
-        /// Constructor
-        /// </summary>
-       public LaneAnimation()
-       {
-            SB = new Storyboard();
-       }
 
+        public LaneAnimation()
+        {
+            //_mainWindow  = new MainWindow();
+        }
        private bool AnimationPaused()
        {
            
@@ -57,7 +54,8 @@ namespace LaneTop
 
         public void storyboard1()
         {
-            
+            var sub1 = _mainWindow.TryFindResource("Storyboard1") as Storyboard;
+            if (sub1 != null) sub1.Begin();
         }
     }
 }

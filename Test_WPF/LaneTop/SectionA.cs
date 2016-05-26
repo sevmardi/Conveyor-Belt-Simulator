@@ -41,7 +41,7 @@ namespace LaneTop
                     //Buffer[0] = 1;
                     //_res = PlcCalls.Client.WriteArea(S7Client.S7AreaPA, PlcCalls.DBNumber, PlcTags._0102_D1,
                     //    PlcCalls.Amount, PlcCalls.Wordlen, Buffer);
-                    main._0102_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
+                    //main._0102_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
                 }
             }
         }
@@ -60,7 +60,7 @@ namespace LaneTop
                     //    PlcCalls.Amount, PlcCalls.Wordlen, Buffer);
                       main.Dispatcher.Invoke((Action)(() =>
                        {
-                           main._0103_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
+                           //main._0103_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
                         }));
                    
                 }
@@ -81,7 +81,7 @@ namespace LaneTop
                     //    PlcCalls.Amount, PlcCalls.Wordlen, Buffer);
                     main.Dispatcher.Invoke((Action)(() =>
                     {
-                        main._0104_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
+                        //main._0104_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
                     }));
                    
                 }
@@ -102,7 +102,7 @@ namespace LaneTop
                         PlcCalls.Amount, PlcCalls.Wordlen, Buffer);
                     main.Dispatcher.Invoke((Action)(() =>
                     {
-                        main._0105_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
+                        //main._0105_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
                     }));
                    
                 }
@@ -123,7 +123,7 @@ namespace LaneTop
                     Buffer[0] = 0;
                     PlcCalls.Client.WriteArea(S7Client.S7AreaPE, PlcCalls.DBNumber, PlcTags._0102_S1, PlcCalls.Amount,
                         PlcCalls.Wordlen, Buffer);
-                    main._0102_S1.Fill = new SolidColorBrush(Colors.DarkGray);
+                    //main._0102_S1.Fill = new SolidColorBrush(Colors.DarkGray);
                     _0102_D1();
                 }
                 if (Buffer[0] == 0)
@@ -146,8 +146,8 @@ namespace LaneTop
 
             main.Dispatcher.Invoke((Action) (() =>
             {
-                main._0102_S1.Fill = new SolidColorBrush(Colors.Red);
-                main._0102_D1.Fill = new SolidColorBrush(Colors.DarkGray);
+                //main._0102_S1.Fill = new SolidColorBrush(Colors.Red);
+                //main._0102_D1.Fill = new SolidColorBrush(Colors.DarkGray);
             }));
 
         }
@@ -167,7 +167,7 @@ namespace LaneTop
 
                     main.Dispatcher.Invoke((Action)(() =>
                     {
-                        main._0102_S2.Fill = new SolidColorBrush(Colors.DarkGray);
+                        //main._0102_S2.Fill = new SolidColorBrush(Colors.DarkGray);
 
                     }));
 
@@ -191,8 +191,8 @@ namespace LaneTop
 
             main.Dispatcher.Invoke((Action) (() =>
             {
-                main._0102_S2.Fill = new SolidColorBrush(Colors.Red);
-                main._0103_D1.Fill = new SolidColorBrush(Colors.DarkGray);
+                //main._0102_S2.Fill = new SolidColorBrush(Colors.Red);
+                //main._0103_D1.Fill = new SolidColorBrush(Colors.DarkGray);
             }));
         }
 
@@ -211,7 +211,7 @@ namespace LaneTop
 
                     main.Dispatcher.Invoke((Action)(() =>
                     {
-                        main._0103_S1.Fill = new SolidColorBrush(Colors.DarkGray);
+                        //main._0103_S1.Fill = new SolidColorBrush(Colors.DarkGray);
 
                     }));
 
@@ -235,8 +235,8 @@ namespace LaneTop
 
             main.Dispatcher.Invoke((Action)(() =>
             {
-                main._0103_S1.Fill = new SolidColorBrush(Colors.Red);
-                main._0104_D1.Fill = new SolidColorBrush(Colors.DarkGray);
+                //main._0103_S1.Fill = new SolidColorBrush(Colors.Red);
+                //main._0104_D1.Fill = new SolidColorBrush(Colors.DarkGray);
             }));
         }
 
@@ -255,7 +255,7 @@ namespace LaneTop
 
                     main.Dispatcher.Invoke((Action)(() =>
                     {
-                        main._0104_S1.Fill = new SolidColorBrush(Colors.DarkGray);
+                        //main._0104_S1.Fill = new SolidColorBrush(Colors.DarkGray);
                          
                     }));
 
@@ -277,7 +277,7 @@ namespace LaneTop
 
             main.Dispatcher.Invoke((Action)(() =>
             {
-                main._0104_S1.Fill = new SolidColorBrush(Colors.Red);
+                //main._0104_S1.Fill = new SolidColorBrush(Colors.Red);
                 //main._0105_D1.Fill = new SolidColorBrush(Colors.DarkGray);
             }));
         }
@@ -297,7 +297,7 @@ namespace LaneTop
 
                     main.Dispatcher.Invoke((Action)(() =>
                     {
-                        main._0105_S1.Fill = new SolidColorBrush(Colors.DarkGray);
+                        //main._0105_S1.Fill = new SolidColorBrush(Colors.DarkGray);
 
                     }));
 
@@ -319,8 +319,8 @@ namespace LaneTop
 
             main.Dispatcher.Invoke((Action)(() =>
             {
-                main._0105_S1.Fill = new SolidColorBrush(Colors.Red);
-                main._0105_D1.Fill = new SolidColorBrush(Colors.DarkGray);
+                //main._0105_S1.Fill = new SolidColorBrush(Colors.Red);
+                //main._0105_D1.Fill = new SolidColorBrush(Colors.DarkGray);
             }));
         }
 
@@ -339,7 +339,7 @@ namespace LaneTop
 
                     main.Dispatcher.Invoke((Action)(() =>
                     {
-                        main._0105_S2.Fill = new SolidColorBrush(Colors.DarkGray);
+                        //main._0105_S2.Fill = new SolidColorBrush(Colors.DarkGray);
 
                     }));
 
@@ -361,7 +361,7 @@ namespace LaneTop
 
             main.Dispatcher.Invoke((Action)(() =>
             {
-                main._0105_S2.Fill = new SolidColorBrush(Colors.Red);
+                //main._0105_S2.Fill = new SolidColorBrush(Colors.Red);
                 //main._0105_D1.Fill = new SolidColorBrush(Colors.DarkGray);
             }));
         }
