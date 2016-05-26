@@ -24,5 +24,10 @@ namespace LaneSimulator.Lanes
         {
             InitializeComponent();
         }
+
+        private void total()
+        {
+            total_text1.Text = (this.tray_Wrap.Children.Count).ToString();
+        }
     }
 }
