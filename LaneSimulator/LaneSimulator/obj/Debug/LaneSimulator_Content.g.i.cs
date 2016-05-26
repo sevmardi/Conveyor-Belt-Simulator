@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/tray_object.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("changelog.txt")]
 
 

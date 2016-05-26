@@ -94,9 +94,6 @@
     <Compile Include="Utilities\ShadowBox\ShadowBox.xaml.cs">
       <DependentUpon>ShadowBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Utilities\testingthisone.xaml.cs">
-      <DependentUpon>testingthisone.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\AttributesPanel.xaml.cs">
       <DependentUpon>AttributesPanel.xaml</DependentUpon>
     </Compile>
@@ -156,10 +153,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Utilities\ShadowBox\ShadowBox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Utilities\testingthisone.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -242,6 +235,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\tray_object.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ChangeLog.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

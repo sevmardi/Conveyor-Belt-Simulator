@@ -160,11 +160,11 @@
 
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Name="spSpeed">
+        <!--<StackPanel Orientation="Horizontal" Name="spSpeed">
             <Image Source="Images/turtle.png" Height="20"  />
             <Slider Name="slSpeed" Minimum="1" Maximum="10" SmallChange="2" LargeChange="5" Value="2" Width="60" Height="20" IsDirectionReversed="False" ToolTip="Adjust simulation speed"  />
             <Image Source="Images/hare.png" Height="20"  />
-        </StackPanel>
+        </StackPanel>-->
 
         <!--<StackPanel Grid.Row="0" Orientation="Horizontal" Name="traysCounter">
 

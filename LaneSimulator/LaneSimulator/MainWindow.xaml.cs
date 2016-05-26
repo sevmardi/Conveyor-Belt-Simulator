@@ -73,16 +73,16 @@ namespace LaneSimulator
             Grid.SetRow(sbZoom, 1);
 
             //Speed of simulation
-            Grid1.Children.Remove(spSpeed);
-            sbSpeed = new ShadowBox();
-            sbSpeed.Margin = new Thickness(20, 20, 175, 20);
-            sbSpeed.Children.Add(spSpeed);
-            spSpeed.Background = Brushes.Transparent;
-            sbSpeed.VerticalAlignment = VerticalAlignment.Top;
-            sbSpeed.HorizontalAlignment = HorizontalAlignment.Right;
-            Grid1.Children.Add(sbSpeed);
-            Grid.SetColumn(sbSpeed, 1);
-            Grid.SetRow(sbSpeed, 1);
+            //Grid1.Children.Remove(spSpeed);
+            //sbSpeed = new ShadowBox();
+            //sbSpeed.Margin = new Thickness(20, 20, 175, 20);
+            //sbSpeed.Children.Add(spSpeed);
+            //spSpeed.Background = Brushes.Transparent;
+            //sbSpeed.VerticalAlignment = VerticalAlignment.Top;
+            //sbSpeed.HorizontalAlignment = HorizontalAlignment.Right;
+            //Grid1.Children.Add(sbSpeed);
+            //Grid.SetColumn(sbSpeed, 1);
+            //Grid.SetRow(sbSpeed, 1);
 
             //TraysCounter
             //Grid1.Children.Remove(traysCounter);
