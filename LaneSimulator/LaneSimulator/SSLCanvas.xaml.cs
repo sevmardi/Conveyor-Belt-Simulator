@@ -28,7 +28,7 @@ namespace LaneSimulator
         private double T = 0.0;
         private bool _mute;
         private Brush oldBackground;
-
+        private Tray _tray;
 
         private const double ANGLE_SNAP_DEG = 10;
         private const double DELTA_SNAP = 5;
@@ -296,6 +296,15 @@ namespace LaneSimulator
                 }
 
             }
+        }
+
+
+        /// <summary>
+        /// Remove a given tray from the canvas. 
+        /// </summary>
+        public void RemoveObject()
+        {
+          
         }
 
     }

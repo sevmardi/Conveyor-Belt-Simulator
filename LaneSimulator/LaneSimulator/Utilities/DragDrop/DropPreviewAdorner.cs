@@ -37,8 +37,7 @@ namespace LaneSimulator.Utilities.DragDrop
         /// </summary>
         /// <param name="adornedElement">The adorned element.</param>
         /// <param name="adorningElement">The adorning element.</param>
-        public DropPreviewAdorner(UIElement adornedElement, UIElement adorningElement)
-            : base(adornedElement)
+        public DropPreviewAdorner(UIElement adornedElement, UIElement adorningElement) : base(adornedElement)
         {
             VisualBrush brush = new VisualBrush(adorningElement);
             this.child = new Rectangle();
