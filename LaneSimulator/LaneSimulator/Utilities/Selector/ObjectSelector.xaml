@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:dragDrop="clr-namespace:LaneSimulator.Utilities.DragDrop"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             
+             xmlns:lanes="clr-namespace:LaneSimulator.Lanes"
              xmlns:trays="clr-namespace:LaneSimulator.Models.Components">
 
     
     <UserControl.Resources>
-        <dragDrop:ObjectDragDropAdorner x:Key="objectAdorner"/>
+        <dragDrop:ObjectDragDropAdorner x:Key="ObjectAdorner"/>
         <!--<selector:ExpanderHeightConverter x:Key="ExpanderHeightConverter" />-->
         
         <Style TargetType="{x:Type Expander}">
@@ -74,11 +74,19 @@
 
                 <trays:Tray x:Name="Tray" VerticalAlignment="Top"
                             dragDrop:DragDropHelper.IsDragSource="true"
-                             dragDrop:DragDropHelper.DragDropControl="{StaticResource objectAdorner}"
+                            dragDrop:DragDropHelper.DragDropControl="{StaticResource ObjectAdorner}"
                             dragDrop:DragDropHelper.DropTarget="gateCanvas"
                             dragDrop:DragDropHelper.AdornerLayer="adornerLayer" />
-
             </Expander>
+            <!--<Expander Header="Lane Sections" IsExpanded="True">
+
+                <lanes:SectionA x:Name="SectionA" VerticalAlignment="Top"
+                            dragDrop:DragDropHelper.IsDragSource="true"
+                            dragDrop:DragDropHelper.DragDropControl="{StaticResource ObjectAdorner}"
+                            dragDrop:DragDropHelper.DropTarget="gateCanvas"
+                            dragDrop:DragDropHelper.AdornerLayer="adornerLayer" />
+            </Expander>-->
+
         </StackPanel>
     </ScrollViewer>
 

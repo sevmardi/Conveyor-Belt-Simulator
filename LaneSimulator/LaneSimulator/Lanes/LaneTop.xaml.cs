@@ -36,5 +36,10 @@ namespace LaneSimulator.Lanes
             this.tray_Wrap.Children.Add((UIElement) new Tray());
 
         }
+
+        private void Timeline_OnCompleted(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

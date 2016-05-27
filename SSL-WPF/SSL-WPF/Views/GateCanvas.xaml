@@ -1,8 +1,0 @@
-﻿<Window x:Class="SSL_WPF.Views.GateCanvas"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="GateCanvas" Height="300" Width="300">
-    <Grid>
-        
-    </Grid>
-</Window>

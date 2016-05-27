@@ -8,291 +8,479 @@
 
     xmlns:selector="clr-namespace:LaneSimulator.Utilities.Selector"
     xmlns:local="clr-namespace:LaneSimulator"
-    xmlns:SectionA="clr-namespace:LaneSimulator.Lanes"
+    xmlns:lane="clr-namespace:LaneSimulator.Lanes"
+    xmlns:components="clr-namespace:LaneSimulator.Models.Components"
     Title="Lane Simulator" Height="500" Width="650"
     Icon="Images/ram.png"
-    
-    
-    WindowStartupLocation="CenterScreen">
+
+    WindowStartupLocation="CenterScreen" Background="Transparent">
 
     <Window.Resources>
-        <Storyboard x:Key="Storyboard1" >
-            <DoubleAnimationUsingPath 
-                Duration="0:0:3" 
-               
-                Completed="MyStoryboardCompleted" 
+
+        <Storyboard x:Key="Storyboard1">
+            <DoubleAnimationUsingPath    
+                Duration="0:0:2" 
                 Source="X" 
-                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
-                Storyboard.TargetName="ObjectToMove"
-               
-                >
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" >
+
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M1.5,-18.667014 L8.1669813,-54.00002 L31.833186,-94.666719 L60.166999,-116.33299"/>
                 </DoubleAnimationUsingPath.PathGeometry>
 
             </DoubleAnimationUsingPath>
             <DoubleAnimationUsingPath 
-                Duration="0:0:3"   
-                Completed="MyStoryboardCompleted"  
-                Source="Y"
-                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" 
-                Storyboard.TargetName="ObjectToMove"
-                >
-
-                <DoubleAnimationUsingPath.PathGeometry>
-                    <PathGeometry Figures="M1.5,-18.667014 L8.1669813,-54.00002 L31.833186,-94.666719 L60.166999,-116.33299"/>
-                </DoubleAnimationUsingPath.PathGeometry>
-
-            </DoubleAnimationUsingPath>
-        </Storyboard>
-
-        <Storyboard x:Key="Storyboard2">
-            <DoubleAnimationUsingPath 
-                Duration="0:0:3" 
-                Source="X" 
-                Completed="Timeline_OnCompleted" 
-                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
-                Storyboard.TargetName="ObjectToMove">
-
-                <DoubleAnimationUsingPath.PathGeometry>
-                    <PathGeometry Figures="M62.25,-115.75 L110,-134 L149,-129 L172.25,-122"/>
-                </DoubleAnimationUsingPath.PathGeometry>
-
-            </DoubleAnimationUsingPath>
-
-            <DoubleAnimationUsingPath 
-                Duration="0:0:3" 
+                Duration="0:0:2" 
                 Source="Y" 
-                Completed="Timeline_OnCompleted" 
-                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" 
-                Storyboard.TargetName="ObjectToMove">
-
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" >
                 <DoubleAnimationUsingPath.PathGeometry>
-                    <PathGeometry Figures="M62.25,-115.75 L110,-134 L149,-129 L172.25,-122"/>
-                </DoubleAnimationUsingPath.PathGeometry>
-
-            </DoubleAnimationUsingPath>
-        </Storyboard>
-
-        <Storyboard x:Key="Storyboard3">
-            <DoubleAnimationUsingPath Name="path3" Duration="0:0:2" Source="X" Completed="Timeline_OnCompleted4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
-                <DoubleAnimationUsingPath.PathGeometry>
-                    <PathGeometry Figures="M177.75,-120.25 L197.75,-105.75 L217.5,-87.75 L235.25,-70.25"/>
-                </DoubleAnimationUsingPath.PathGeometry>
-            </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath Duration="0:0:2" Source="Y"  Completed="Timeline_OnCompleted4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
-                <DoubleAnimationUsingPath.PathGeometry>
-                    <PathGeometry Figures="M177.75,-120.25 L197.75,-105.75 L217.5,-87.75 L235.25,-70.25"/>
+                    <PathGeometry Figures="M1.5,-18.667014 L8.1669813,-54.00002 L31.833186,-94.666719 L60.166999,-116.33299"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
         </Storyboard>
-
-        <Storyboard x:Key="Storyboard4">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
-                <EasingDoubleKeyFrame KeyTime="0" Value="3.5"/>
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingPath Duration="0:0:2" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
-                <DoubleAnimationUsingPath.PathGeometry >
-                    <PathGeometry   Figures="M238.75,-64.08299 L301.58333,-64 L323.25,-64"/>
-                </DoubleAnimationUsingPath.PathGeometry>
-            </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath Duration="0:0:2" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
-                <DoubleAnimationUsingPath.PathGeometry>
-                    <PathGeometry Figures="M238.75,-64.08299 L301.58333,-64 L323.25,-64"/>
-                </DoubleAnimationUsingPath.PathGeometry>
-            </DoubleAnimationUsingPath>
-        </Storyboard>
-
-
-
-
-        <Style x:Key="TgButtonStyle" TargetType="{x:Type ToggleButton}">
-            <Setter Property="ToolTipService.ShowOnDisabled" Value="True" />
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsEnabled}" Value="False">
-                    <Setter Property="Opacity" Value="0.50" />
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
-        <Style x:Key="TButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
-
-            <Setter Property="ToolTipService.ShowOnDisabled" Value="True" />
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsEnabled}" Value="False">
-                    <Setter Property="Opacity" Value="0.50" />
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
-
-
 
     </Window.Resources>
 
-    <Grid Name="Grid1">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
 
 
-        <local:SSLCanvas x:Name="SSLCanvas" Grid.Column="1" Grid.Row="1" d:IsLocked="True"/>
-        <selector:ObjectSelector x:Name="SSLComponents" Grid.Row="1"  />
+
+    <Canvas x:Name="LaneTopSection" Width="744" Height="1052">
+
+        <Canvas x:Name="lane"  d:IsLocked="True">
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
+                <Path.Data>
+                    <PathGeometry Figures="m 60.28756 552.08218 45.1466 -97.56912 c 29.0294 14.34618 53.51348 36.49707 70.68158 63.73488 l 0.231 0.39961 c 0 0 -66.47528 74.36714 -78.93698 88.30989 0 0 -3.4166 -35.77924 -37.1222 -54.87526" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path2" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-200.834" Canvas.Top="-180.834">
+                <Path.Data>
+                    <PathGeometry Figures="m 49.19586 437.78193 c -6.9223 -0.8333 -13.9618 -1.28028 -21.1093 -1.28028 -33.177 0 -64.1934 9.24408 -90.6224 25.29093 l 54.6197 92.54275 c 10.4162 -6.60207 22.7588 -10.43909 36.0027 -10.43909 3.1401 0 6.229 0.2178 9.2535 0.63447 l 3.7271 0.62875 c 5.8749 1.14768 11.4733 3.05484 16.6928 5.62104 l 45.1161 -97.50471 c -15.7382 -7.4581 -32.7641 -12.63789 -50.6576 -15.1075 l -3.0226 -0.38636 z" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path3" Canvas.Left="-199.5" Canvas.Top="-181.5" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" StrokeThickness="0">
+                <Path.Data>
+                    <PathGeometry Figures="m -110.14954 504.29078 c -22.2057 28.62982 -35.7244 64.33522 -36.5709 103.16931 l 101.177 0 6.3597 0.0303 c 0.7972 -14.38028 6.1154 -27.54843 14.5393 -38.13145 l 1.8181 -2.18743 c 3.6892 -4.25556 7.8994 -8.04522 12.5394 -11.26675 l -54.6612 -92.61468 c -16.4825 10.37848 -31.1089 23.43302 -43.2734 38.55378 l -1.928 2.4469 z" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path4" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
+                <Path.Data>
+                    <PathGeometry Figures="m 515.35392 607.2817 -45.3075 0 0 -87.67167 45.3075 0 0 87.67167 z" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path5" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
+                <Path.Data>
+                    <PathGeometry Figures="m 517.31972 519.61003 49.1257 0 0 87.67167 -49.1257 0 0 -87.67167 z" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path6" Canvas.Left="-199.5" Canvas.Top="-180.25">
+                <Path.Fill>
+                    <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
+                </Path.Fill>
+                <Path.Data>
+                    <PathGeometry Figures="m 710.76282 430.20734 c -48.2675 0.13259 -87.361 39.26589 -87.4292 87.54857 l 87.6717 0 0 -68.89003 0 -16.33474 0 -2.3238 -0.2425 0 z" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path7" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" StrokeThickness="1.84394515" StrokeMiterLimit="10" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Canvas.Left="511.58" Canvas.Top="337.34" Stretch="Fill" Width="175.422">
+                <Path.Data>
+                    <PathGeometry Figures="m 1023.2975 607.2817 -310.39828 0 0 -87.67167 310.39828 0 0 87.67167 z" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path8" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="511.754" Canvas.Top="250.04" Stretch="Fill" Width="175.248">
+                <Path.Data>
+                    <PathGeometry Figures="m 1023.248 517.81653 -310.34878 0 0 -87.67169 310.34878 0 0 87.67169 z" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path9" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" StrokeThickness="1.84394515" StrokeMiterLimit="10" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Canvas.Left="-199.5" Canvas.Top="-181.5">
+                <Path.Data>
+                    <PathGeometry Figures="m 568.34822 519.61003 53.4892 0 0 87.67167 -53.4892 0 0 -87.67167 z" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path10" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" StrokeThickness="1.84394515" StrokeMiterLimit="10" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Canvas.Left="-199.5" Canvas.Top="-182.168">
+                <Path.Data>
+                    <PathGeometry Figures="m 623.33362 607.2192 87.6717 0 0 -87.54859 -87.6717 0 0 87.54859 z" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path11" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-136.067" Canvas.Top="-180.578">
+                <Path.Data>
+                    <PathGeometry Figures="m 1024.7518 517.81653 87.6603 0 0 -87.67169 -87.6603 0 0 87.67169 z" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path12" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-136.458" Canvas.Top="-182.847">
+                <Path.Data>
+                    <PathGeometry Figures="m 1112.2821 519.83124 c -44.9248 3.123 -80.4389 41.05181 -80.6264 87.45007 l -6.9051 0 0 -87.65651 87.6603 0" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="BlackHole" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" Canvas.Left="-135.209" Canvas.Top="-177.84">
+                <Path.Data>
+                    <PathGeometry Figures="m 1040.4445 502.11811 56.2729 0 0 -56.27297 -56.2729 0 0 56.27297 z" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
 
 
-        <StackPanel Orientation="Horizontal" Name="spZoom">
-            <Image Source="Images/ZoomHS.png" Height="20" />
-            <Slider Name="slZoom" Minimum="0.01" Maximum="5" Value="1" SmallChange="0.01"
-                    LargeChange="0.1" ToolTip="Adjust circuit zoom"
-                    Width="60" Height="20" ValueChanged="slZoom_ValueChanged" />
-            <Button Style="{StaticResource TButtonStyle}" Height="20" Name="btnActualSize" Click="btnActualSize_Click"
-                    ToolTip="Zoom to Default Size">
-                <Image Source="Images/ActualSizeHS.png" />
-            </Button>
-            <Button Style="{StaticResource TButtonStyle}" Height="20" Name="btnFitToScreen"
-                    Click="btnFitToScreen_Click" ToolTip="Zoom to Fit Circuit in Window">
-                <Image Source="Images/PageWidthHS.png" />
-            </Button>
+            <Border x:Name="blackholechild" BorderBrush="#FF55933F" BorderThickness="2" CornerRadius="5" Margin="3.099,28.203,0,0" Visibility="Visible"/>
 
-        </StackPanel>
-   
 
-            <!--<StackPanel Grid.Row="0" Orientation="Horizontal" Name="traysCounter">
-                <Viewbox Stretch="Fill" Width="114.193" HorizontalAlignment="Right" Margin="0,27.177,-0.193,70.831">
-                    <Grid Height="96.907" Width="138.264">
-                        <TextBox x:Name="textBox1_Copy1" Height="42.634" HorizontalContentAlignment="Center"
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path14" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
+                <Path.Data>
+                    <PathGeometry Figures="m 300.85922 519.79884 22.9936 0 0 -0.0397 19.7911 0 0 -8.86906 7.8691 0 74.0054 0 0 8.86906 19.6206 0 0 0.0397 23.5258 0 0 87.69818 -43.1256 0 0 -0.0133 -0.021 0 0 8.51678 -75.1928 0 -6.6817 0 0 -8.51678 -19.7911 0 0 -0.0132 -22.9936 0 0 -87.67167 z" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path15" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
+                <Path.Data>
+                    <PathGeometry Figures="m 225.33374 520.00585 -46.2941 0 -78.25138 87.53909 126.75378 0 0 -87.5675 -2.2083 0.0284 z" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path16" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
+                <Path.Data>
+                    <PathGeometry Figures="m 229.66344 607.62447 69.24028 0 0 -87.72278 -69.24028 0 0 87.72278 z" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path17" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-140.329" Canvas.Top="-184.012">
+                <Path.Data>
+                    <PathGeometry Figures="m 1193.3419 563.35818 69.9903 -47.87172 c 16.8537 27.29467 26.5902 59.45091 26.5902 93.8855 0 0.42045 0 0.83899 -0.01 1.25944 l 0.01 0.18561 -1.2765 0 -70.1798 0 -12.7306 -0.0152 c 0.01 -0.47536 0.011 -0.95261 0.011 -1.42986 0 -16.77794 -4.5302 -32.4896 -12.405 -46.01382" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path18" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-137.854" Canvas.Top="-180.574">
+                <Path.Data>
+                    <PathGeometry Figures="m 1114.288 430.43783 c 31.0691 0.56627 60.1971 9.06223 85.4653 23.53152 l -42.6484 74.50349 c -12.5792 -6.69299 -26.8932 -10.5584 -42.1048 -10.69666 l -0.8523 -0.004 0 -17.38397 0 -59.42248 0 -8.53953 0 -1.98857 0.1402 0 z" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path19" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-139.489" Canvas.Top="-181.75">
+                <Path.Data>
+                    <PathGeometry Figures="m 1201.3943 454.91191 c 24.7209 14.50525 45.6521 34.77172 60.9452 58.96039 l -69.9582 47.849 c -8.2176 -13.46555 -19.8138 -24.63754 -33.6089 -32.34945 l 42.6219 -74.45994 z" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path x:Name="Path1396883_Copy2" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" StrokeThickness="1.84394515" StrokeMiterLimit="10" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Canvas.Left="511.58" Canvas.Top="337.34" Stretch="Fill" Width="175.422">
+                <Path.Data>
+                    <PathGeometry Figures="m 1023.2975 607.2817 -310.39828 0 0 -87.67167 310.39828 0 0 87.67167 z" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path x:Name="Path1397029_Copy2" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="511.754" Canvas.Top="250.04" Stretch="Fill" Width="175.248">
+                <Path.Data>
+                    <PathGeometry Figures="m 1023.248 517.81653 -310.34878 0 0 -87.67169 310.34878 0 0 87.67169 z" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path x:Name="Path1396883_Copy3" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" StrokeThickness="1.84394515" StrokeMiterLimit="10" StrokeLineJoin="Miter" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Canvas.Left="687.17" Canvas.Top="337.235" Stretch="Fill" Width="201.081">
+                <Path.Data>
+                    <PathGeometry Figures="m 1023.2975 607.2817 -310.39828 0 0 -87.67167 310.39828 0 0 87.67167 z" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path x:Name="Path1397029_Copy3" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="687.503" Canvas.Top="249.873" Stretch="Fill" Width="200.748">
+                <Path.Data>
+                    <PathGeometry Figures="m 1023.248 517.81653 -310.34878 0 0 -87.67169 310.34878 0 0 87.67169 z" FillRule="nonzero"/>
+                </Path.Data>
+            </Path>
+            <ScrollViewer x:Name="tray_Panel" Canvas.Left="945" Canvas.Top="268" Height="56" Visibility="Hidden">
+                <WrapPanel x:Name="tray_Wrap" Orientation="Horizontal"/>
+            </ScrollViewer>
+        </Canvas>
+        <Canvas x:Name="Sensors"  d:IsLocked="True">
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-243.75" Canvas.Top="420.25" Width="6" x:Name="_0102_S1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-234" Canvas.Top="392" Width="6" x:Name="_0102_S2"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-218.75" Canvas.Top="371" Width="6" x:Name="_0103_S1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-203.75" Canvas.Top="362.75" Width="6" x:Name="_0104_S1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-177.5" Canvas.Top="356.75" Width="6" x:Name="_0105_S1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-151" Canvas.Top="362.75" Width="6" x:Name="_0105_S2"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-133" Canvas.Top="371" Width="6" x:Name="_0301_S1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-113" Canvas.Top="392" Width="6" x:Name="_0301_S2"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-104" Canvas.Top="415" Width="6" x:Name="_0302_S1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Top="419" Width="6" x:Name="_0303_S1" Canvas.Left="-52"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-22" Canvas.Top="419" Width="6" x:Name="_0304_S1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="10" Canvas.Top="419" Width="6" x:Name="_0304_S2"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="39" Canvas.Top="419" Width="6" x:Name="_0304_S3"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="120" Canvas.Top="380" Width="6" x:Name="_0701_S1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="538" Canvas.Top="419" Width="6" x:Name="_1003_S2"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="580" Canvas.Top="419" Width="6" x:Name="_1101_S4"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="621" Canvas.Top="419" Width="6" x:Name="_1101_S5"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="665" Canvas.Top="419" Width="6" x:Name="_1101_S6"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="239" Canvas.Top="419" Width="6" x:Name="_0701_S4"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="270.75" Canvas.Top="419" Width="6" x:Name="_0702_S3"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="306.75" Canvas.Top="419" Width="6" x:Name="_0702_S4"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="330.25" Canvas.Top="419" Width="6" x:Name="_1001_S3"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="355.25" Canvas.Top="419" Width="6" x:Name="_1001_S4"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="393" Canvas.Top="419" Width="6" x:Name="_1002_S3"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="416.813" Canvas.Top="419" Width="6" x:Name="_1002_S4"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="425.979" Canvas.Top="419" Width="6" x:Name="_1003_S7"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="538" Canvas.Top="247.75" Width="6" x:Name="_1004_S2"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="580" Canvas.Top="247.75" Width="6" x:Name="_1102_S1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="621" Canvas.Top="247.75" Width="6" x:Name="_1102_S2"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="665" Canvas.Top="247.75" Width="6" x:Name="_1102_S3"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="424.75" Canvas.Top="330.75" Width="6" x:Name="_1004_S4"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="438.583" Canvas.Top="330.75" Width="6" x:Name="_1003_S8"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="706.75" Canvas.Top="247.75" Width="6" x:Name="_1004_S2_Copy1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="748.75" Canvas.Top="247.75" Width="6" x:Name="_1102_S1_Copy1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="789.75" Canvas.Top="247.75" Width="6" x:Name="_1102_S2_Copy1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="833.75" Canvas.Top="247.75" Width="6" x:Name="_1102_S3_Copy1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="714.667" Canvas.Top="419" Width="6" x:Name="_1003_S2_Copy1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="756.667" Canvas.Top="419" Width="6" x:Name="_1101_S1_Copy1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="797.667" Canvas.Top="419" Width="6" x:Name="_1101_S2_Copy1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="841.667" Canvas.Top="419" Width="6" x:Name="_1101_S3_Copy1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="450" Canvas.Top="381" Width="6" x:Name="_1003_S6"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="478" Canvas.Top="381" Width="6" x:Name="_1005_S1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="876.292" Canvas.Top="419" Width="6" x:Name="_1101_S3_Copy"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="888.792" Canvas.Top="419" Width="6" x:Name="_1101_S3_Copy2"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="882.125" Canvas.Top="345.333" Width="6" x:Name="_1101_S3_Copy3"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="882.125" Canvas.Top="334.333" Width="6" x:Name="_1101_S3_Copy4"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="876.292" Canvas.Top="249.125" Width="6" x:Name="_1101_S3_Copy5"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="888.792" Canvas.Top="249.125" Width="6" x:Name="_1101_S3_Copy6"/>
+
+        </Canvas>
+        <Canvas x:Name="Motors"  d:IsLocked="True">
+            <Ellipse Height="6" Canvas.Left="-291" Canvas.Top="389.5" Width="6" x:Name="_0102_D1" RenderTransformOrigin="0.5,0.5" Fill="#FFDACF84">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse Height="6" Canvas.Left="-267.167" Canvas.Top="350" Width="6" x:Name="_0103_D1" RenderTransformOrigin="0.5,0.5" Fill="#FFDACF84">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse Height="6" Canvas.Left="-229.708" Canvas.Top="324.333" Width="6" x:Name="_0104_D1" RenderTransformOrigin="0.5,0.5" Fill="#FFDACF84">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse Height="6" Canvas.Left="-151" Canvas.Top="316" Width="6" x:Name="_0105_D1" RenderTransformOrigin="0.5,0.5" Fill="#FFDACF84">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="-101.75" Canvas.Top="339.5" Width="6" x:Name="_0301_D2" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="-56.667" Canvas.Top="377" Width="6" x:Name="_0302_D2" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="21.5" Canvas.Top="381" Width="6" x:Name="_0303_D2" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="91" Canvas.Top="380.5" Width="6" x:Name="_0304_D2" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+
+            <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="310" Canvas.Top="381" Width="6" x:Name="_0702_D2" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+
+            <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="367" Canvas.Top="381" Width="6" x:Name="_1001_D2" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+
+            <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="419" Canvas.Top="381" Width="6" x:Name="_1002_D2" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+
+            <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="436" Canvas.Top="381" Width="6" x:Name="_1003_D5" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+
+
+            <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="464" Canvas.Top="381" Width="6" x:Name="_1003_D6" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+
+            <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="494" Canvas.Top="381" Width="6" x:Name="_1003_D7" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+
+            <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="518" Canvas.Top="381" Width="6" x:Name="_1003_D8" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+
+            <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="472.333" Canvas.Top="307.058" Width="6" x:Name="_1004_D4" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="487.583" Canvas.Top="288.25" Width="6" x:Name="_1004_D5" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="505.75" Canvas.Top="283.812" Width="6" x:Name="_1004_D6" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+
+
+            <Ellipse Fill="#FF494949" Height="6" Canvas.Left="355.25" Canvas.Top="381" Width="6" x:Name="_1020_R2" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+
+        </Canvas>
+
+
+        <!--<Rectangle x:Name="ObjectToMove" Height="31" Canvas.Left="-316.5" Stroke="Black" Canvas.Top="431.5" Width="42" Fill="#FFDA6C11" RenderTransformOrigin="0.5,0.5">
+
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>-->
+
+        <components:Tray x:Name="tray" Canvas.Left="-313" Canvas.Top="429" Height="45" Width="45" RenderTransformOrigin="0.5,0.5">
+            <components:Tray.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </components:Tray.RenderTransform>
+        </components:Tray>
+
+
+
+        <Viewbox Stretch="Fill" Width="114" HorizontalAlignment="Right" Canvas.Left="1023" Canvas.Top="156">
+            <Grid Height="96.907" Width="138.264">
+                <TextBox x:Name="textBox1_Copy1" Height="42.634" HorizontalContentAlignment="Center"
                      VerticalContentAlignment="Center" Text="Total" FontFamily="/WpfApplication1;component/Fonts/#LCD"
                      Foreground="#FFB22121" Background="Black" FontSize="29.333" BorderThickness="2" Focusable="false"
                      Cursor="Arrow" VerticalAlignment="Top" BorderBrush="{x:Null}"/>
-                        <TextBox x:Name="total_text1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="0"
+                <TextBox x:Name="total_text1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="0"
                      FontFamily="/WpfApplication1;component/Fonts/#LCD" Foreground="#FFB22121" Background="Black"
                      FontSize="48" BorderThickness="2" Focusable="false" Cursor="Arrow" Margin="0,36.09,0,0"
                      BorderBrush="{x:Null}"/>
-                    </Grid>
-                </Viewbox>
-            </StackPanel>-->
-   
-        <!--<StackPanel Orientation="Horizontal" Name="spSpeed">
-            <Image Source="Images/turtle.png" Height="20"  />
-            <Slider Name="slSpeed" Minimum="1" Maximum="10" SmallChange="2" LargeChange="5" Value="2" Width="60" Height="20" IsDirectionReversed="False" ToolTip="Adjust simulation speed"  />
-            <Image Source="Images/hare.png" Height="20"  />
-        </StackPanel>-->
-
-        <!--<StackPanel Grid.Row="0" Orientation="Horizontal" Name="traysCounter">
-
-            <TextBox x:Name="textBox1_Copy1" Height="42.634" HorizontalContentAlignment="Center"
-                     VerticalContentAlignment="Center" Text="Total"
-                   
-                     Foreground="#FFB22121" Background="Black" FontSize="29.333" BorderThickness="2"
-                     Focusable="false"
-                     Cursor="Arrow" VerticalAlignment="Top" BorderBrush="{x:Null}" />
-            <TextBox x:Name="total_text1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                     Text="0"
-                      Foreground="#FFB22121"
-                     Background="Black"
-                     FontSize="48" BorderThickness="2" Focusable="false" Cursor="Arrow" Margin="0,36.09,0,0"
-                     BorderBrush="{x:Null}" />
-        </StackPanel>-->
-
-        <ToolBarTray Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0">
-            <ToolBar Height="28" Name="tbFile" Visibility="Collapsed" >
-                <Button Style="{StaticResource TButtonStyle}" Click="btnNew_Click" ToolTip="New File (Ctrl+N)">
-                    <Image Source="Images/NewDocumentHS.png" />
-                </Button>
-                <Button Style="{StaticResource TButtonStyle}" Click="btnOpen_Click" ToolTip="Open File (Ctrl+O)">
-                    <Image Source="Images/openHS.png" />
-                </Button>
-                <Button Style="{StaticResource TButtonStyle}" Click="btnSave_Click" ToolTip="Save File (Ctrl+S)" IsEnabled="False" Name="btnSave">
-                    <Image Source="Images/saveHS.png" />
-                </Button>
-                <Button Style="{StaticResource TButtonStyle}" Click="btnSave_As_Click" ToolTip="Save File As">
-                    <Image Source="Images/saveAsHS.png" />
-                </Button>
-            </ToolBar>
-            <ToolBar Height="28" Name="tbEdit" Visibility="Collapsed">
-                <Button Style="{StaticResource TButtonStyle}" Name="btnCut" Click="btnCut_Click" ToolTip="Cut (Ctrl+X)" IsEnabled="False" >
-                    <Image Source="Images/CutHS.png" />
-                </Button>
-                <Button Style="{StaticResource TButtonStyle}" Name="btnCopy" Click="btnCopy_Click" ToolTip="Copy (Ctrl+C)" IsEnabled="False">
-                    <Image Source="Images/CopyHS.png" />
-                </Button>
-                <Button Style="{StaticResource TButtonStyle}" Name="btnCopyAsImage" ToolTip="Copy As Image" Click="btnCopyAsImage_Click" IsEnabled="False">
-                    <Image Source="Images/CopyAsImage.png" />
-                </Button>
-                <Button Style="{StaticResource TButtonStyle}" Name="btnPaste" Click="btnPaste_Click" ToolTip="Paste (Ctrl+V)" IsEnabled="False">
-                    <Image Source="Images/PasteHS.png" />
-                </Button>
-                <Button Style="{StaticResource TButtonStyle}" Name="btnFlatten" Click="btnFlatten_Click" ToolTip="Flatten Circuit">
-                    <Image Source="Images/Steamroller-32x32.png" />
-                </Button>
-                <Button Style="{StaticResource TButtonStyle}" Name="btnAlignTopLeft" ToolTip="Align Circuit to Upper-Left" Click="btnAlignTopLeft_Click">
-                    <Image Source="Images/CanvasScaleHS.png" />
-                </Button>
-
-            </ToolBar>
-            <ToolBar Height="28" Name="tbPrinting">
-
-                <Button Style="{StaticResource TButtonStyle}" Name="btnPrint" Click="btnPrint_Click" ToolTip="Print Circuit (Ctrl+P)">
-                    <Image Source="Images/PrintHS.png" />
-                </Button>
-
-                <Button Style="{StaticResource TButtonStyle}" Name="btnSaveAsImage" ToolTip="Save Circuit as Image" Click="btnSaveAsImage_Click">
-                    <Image Source="Images/SaveAsImage.png" />
-                </Button>
-
-                <Button Style="{StaticResource TButtonStyle}" Name="btnChart" ToolTip="Show Logical Analyzer (Oscilloscope)" Click="btnChart_Click">
-                    <Image Source="Images/LegendHS.png" />
-                </Button>
+            </Grid>
+        </Viewbox>
+        <Button Content="Button" Canvas.Left="92" Canvas.Top="236" Width="75" Click="Button_Click"/>
 
 
-            </ToolBar>
+        <Canvas x:Name="Animation_Pannel" Height="40" Canvas.Left="-378" Canvas.Top="295" Width="253" RenderTransformOrigin="0.5,0.5" >
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-70.601"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+        </Canvas>
 
-            <ToolBar Height="28" Name="tbIC" Visibility="Collapsed">
-                <Button Style="{StaticResource TButtonStyle}" Click="btnCreateIC_Click" ToolTip="Create IC">
-                    <Image Source="Images/ram.png" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" />
-                </Button>
-                <Button Style="{StaticResource TButtonStyle}" Click="btnImportIC_Click" ToolTip="Import IC">
-                    <Image Source="Images/ImportXMLHS.png" />
-                </Button>
+    </Canvas>
 
-
-            </ToolBar>
-            <ToolBar Height="28" Name="tbVis">
-                <ToggleButton Name="btnShowHideToolbars" IsChecked="True" Style="{StaticResource TgButtonStyle}" ToolTip="Show or Hide Tools" Checked="btnShowHideToolbars_Checked" Unchecked="btnShowHideToolbars_Unchecked">
-                    <Image Source="Images/BehindTextHS.png" />
-                </ToggleButton>
-                <ToggleButton Name="btnShowTrueFalse" IsChecked="True" ToolTip="Show or Hide True/False Coloration" Checked="btnShowTrueFalse_Checked" Unchecked="btnShowTrueFalse_Unchecked">
-                    <Image Source="Images/wire_color.png">
-                        <Image.RenderTransform>
-                            <RotateTransform Angle="90" CenterX="8" CenterY="8"  />
-                        </Image.RenderTransform>
-                    </Image>
-                </ToggleButton>
-                <ToggleButton Name="btnUserMode" ToolTip="End-User Mode" Checked="btnUserMode_Checked" Unchecked="btnUserMode_Unchecked">
-                    <Image Source="Images/ProtectFormHS.png" />
-                </ToggleButton>
-
-            </ToolBar>
-
-        </ToolBarTray>
-
-
-
- 
-        
-        
-        <StackPanel Name="spAppInfo" Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" Background="#EEEEEE">
-            <TextBlock Name="lblAppTitle" Margin="10,0,0,0" />
-            <TextBlock Name="lblAppVersion" Margin="10,0,0,0" />
-            <TextBlock Name="lblAppCopyright" Margin="10,0,0,0" />
-            <TextBlock Name="lblLink"  Margin="10,0,0,0"></TextBlock>
-        </StackPanel>
-        <TextBlock Name="lblInfoLine" Background="#EEEEEE" Grid.Row="2" Grid.ColumnSpan="2"  Padding="10,0,0,0" Visibility="Hidden" />
-
-        <Canvas x:Name="adornerLayer" Visibility="Collapsed"/>
-    </Grid>
 </Window>

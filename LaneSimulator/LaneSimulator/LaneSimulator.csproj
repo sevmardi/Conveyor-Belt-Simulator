@@ -101,6 +101,9 @@
       <DependentUpon>ConnectPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utilities\InfoLine.cs" />
+    <Compile Include="Views\SchedulerPanel.xaml.cs">
+      <DependentUpon>SchedulerPanel.xaml</DependentUpon>
+    </Compile>
     <Page Include="Lanes\GH-Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -158,6 +161,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ConnectPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SchedulerPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

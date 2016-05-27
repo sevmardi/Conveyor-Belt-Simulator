@@ -3,22 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" Background="Transparent">
+    
+    
     <UserControl.Resources>
         <Storyboard x:Key="Storyboard1">
-            <DoubleAnimationUsingPath Duration="0:0:2" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
+            <DoubleAnimationUsingPath    Duration="0:0:2" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M1.5,-18.667014 L8.1669813,-54.00002 L31.833186,-94.666719 L60.166999,-116.33299"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath Duration="0:0:2" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
+            <DoubleAnimationUsingPath  Duration="0:0:2" Source="Y" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M1.5,-18.667014 L8.1669813,-54.00002 L31.833186,-94.666719 L60.166999,-116.33299"/>
                 </DoubleAnimationUsingPath.PathGeometry>
             </DoubleAnimationUsingPath>
         </Storyboard>
         <Storyboard x:Key="Storyboard2">
-            <DoubleAnimationUsingPath Duration="0:0:2" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
+            <DoubleAnimationUsingPath  Duration="0:0:2" Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ObjectToMove">
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry Figures="M62.25,-115.75 L110,-134 L149,-129 L172.25,-122"/>
                 </DoubleAnimationUsingPath.PathGeometry>
@@ -301,7 +303,7 @@
 
 
     <Canvas x:Name="LaneTopSection" Width="744" Height="1052">
-        <Canvas x:Name="lane">
+        <Canvas x:Name="lane" d:IsLocked="True">
             <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
                     <PathGeometry Figures="m 60.28756 552.08218 45.1466 -97.56912 c 29.0294 14.34618 53.51348 36.49707 70.68158 63.73488 l 0.231 0.39961 c 0 0 -66.47528 74.36714 -78.93698 88.30989 0 0 -3.4166 -35.77924 -37.1222 -54.87526" FillRule="nonzero"/>
@@ -429,7 +431,6 @@
                 <WrapPanel x:Name="tray_Wrap" Orientation="Horizontal"/>
             </ScrollViewer>
         </Canvas>
-
         <Canvas x:Name="Sensors">
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-243.75" Canvas.Top="420.25" Width="6" x:Name="_0102_S1"/>
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-234" Canvas.Top="392" Width="6" x:Name="_0102_S2"/>
@@ -481,8 +482,6 @@
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="888.792" Canvas.Top="249.125" Width="6" x:Name="_1101_S3_Copy6"/>
 
         </Canvas>
-
-
         <Canvas x:Name="Motors">
             <Ellipse Height="6" Canvas.Left="-291" Canvas.Top="389.5" Width="6" x:Name="_0102_D1" RenderTransformOrigin="0.5,0.5" Fill="#FFDACF84">
                 <Ellipse.RenderTransform>
@@ -687,9 +686,6 @@
             </Ellipse>
 
         </Canvas>
-
-
-
         <Rectangle x:Name="ObjectToMove" Height="31" Canvas.Left="-316.5" Stroke="Black" Canvas.Top="431.5" Width="42" Fill="#FFDA6C11" RenderTransformOrigin="0.5,0.5">
 
             <Rectangle.RenderTransform>
@@ -701,10 +697,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-
-
         <!--<local:Tray x:Name="tray" Canvas.Left="-319" Canvas.Top="468" Height="45" Width="45"></local:Tray>-->
-
         <Canvas x:Name="Sections" d:IsLocked="True">
             <Path x:Name="SectionA" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5"
 	              Canvas.Left="-140" StrokeThickness="2" Canvas.Top="161.6" Width="2" Stretch="Fill" />
@@ -740,8 +733,6 @@
 
 
         </Canvas>
-
-
         <Canvas x:Name="Paths">
             <Path x:Name="StartPointPath" Data="M-294,428.33333 L-287.33333,393.00034 -263.66823,352.33366 -235.33574,330.6674" Height="97.666" Canvas.Left="-294" Stretch="Fill" Canvas.Top="330.667" Width="58.667" RenderTransformOrigin="0.5,0.5">
                 <Path.RenderTransform>
@@ -774,9 +765,6 @@
             <Path x:Name="_15B" Data="M511.5,287.25 L687.25,287.25" Height="0" Canvas.Left="818.25" Stretch="Fill" Canvas.Top="371" Width="69.875"/>
             <Path x:Name="Ending" Data="M888.25,367.125 L917.25,350.5 925.375,325" Height="42.125" Canvas.Left="888.25" Stretch="Fill" Canvas.Top="325" Width="37.125"/>
         </Canvas>
-
-
-
 
         <Viewbox Stretch="Fill" Width="114.193" HorizontalAlignment="Right" Margin="0,27.177,-0.193,70.831">
             <Grid Height="96.907" Width="138.264">

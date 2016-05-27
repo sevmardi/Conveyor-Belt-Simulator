@@ -29,8 +29,8 @@
             </Canvas.Background>
             <Rectangle Name="dragSelect" Stroke="Blue" StrokeThickness="1" HorizontalAlignment="Left" Margin="0,0,0,0" Visibility="Hidden" />
 
-            <lanes:SectionA Grid.Row="0" Grid.Column="1" x:Name="SectionA" Canvas.Left="-50" Canvas.Top="250"/>
-            <lanes:SectionB Grid.Row="0" Grid.Column="1" x:Name="SectionB" Canvas.Left="290" Canvas.Top="225"/>
+            <!--<lanes:SectionA Grid.Row="0" Grid.Column="1" x:Name="SectionA" Canvas.Left="-50" Canvas.Top="250"/>
+            <lanes:SectionB Grid.Row="0" Grid.Column="1" x:Name="SectionB" Canvas.Left="290" Canvas.Top="225"/>-->
             
             
             <!--<Viewbox Stretch="Fill" Width="114" HorizontalAlignment="Right" Canvas.Left="1600" Canvas.Top="25">
