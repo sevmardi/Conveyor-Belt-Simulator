@@ -16,6 +16,7 @@ namespace LaneSimulator.Utilities.Selector
         public ObjectSelector()
         {
             InitializeComponent();
+
             Tray.DataContext = new Tray();
         }
 
@@ -35,6 +36,8 @@ namespace LaneSimulator.Utilities.Selector
         {
             //call the bove stated Adddragdrop method and pass 
         }
+
+
     }
 
     public class ExpanderHeightConverter : IMultiValueConverter

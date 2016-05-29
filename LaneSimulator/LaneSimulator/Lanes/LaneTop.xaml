@@ -431,7 +431,7 @@
                 <WrapPanel x:Name="tray_Wrap" Orientation="Horizontal"/>
             </ScrollViewer>
         </Canvas>
-        <Canvas x:Name="Sensors">
+        <Canvas x:Name="Sensors" d:IsLocked="True">
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-243.75" Canvas.Top="420.25" Width="6" x:Name="_0102_S1"/>
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-234" Canvas.Top="392" Width="6" x:Name="_0102_S2"/>
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-218.75" Canvas.Top="371" Width="6" x:Name="_0103_S1"/>
@@ -482,7 +482,7 @@
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="888.792" Canvas.Top="249.125" Width="6" x:Name="_1101_S3_Copy6"/>
 
         </Canvas>
-        <Canvas x:Name="Motors">
+        <Canvas x:Name="Motors" d:IsLocked="True">
             <Ellipse Height="6" Canvas.Left="-291" Canvas.Top="389.5" Width="6" x:Name="_0102_D1" RenderTransformOrigin="0.5,0.5" Fill="#FFDACF84">
                 <Ellipse.RenderTransform>
                     <TransformGroup>
@@ -686,7 +686,7 @@
             </Ellipse>
 
         </Canvas>
-        <Rectangle x:Name="ObjectToMove" Height="31" Canvas.Left="-316.5" Stroke="Black" Canvas.Top="431.5" Width="42" Fill="#FFDA6C11" RenderTransformOrigin="0.5,0.5">
+        <Rectangle x:Name="ObjectToMove" Height="31" Canvas.Left="-316.5" Stroke="Black" Canvas.Top="431.5" Width="42" Fill="#FFDA6C11" RenderTransformOrigin="0.5,0.5" >
 
             <Rectangle.RenderTransform>
                 <TransformGroup>
@@ -697,6 +697,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
+        
         <!--<local:Tray x:Name="tray" Canvas.Left="-319" Canvas.Top="468" Height="45" Width="45"></local:Tray>-->
         <Canvas x:Name="Sections" d:IsLocked="True">
             <Path x:Name="SectionA" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5"
@@ -733,7 +734,7 @@
 
 
         </Canvas>
-        <Canvas x:Name="Paths">
+        <Canvas x:Name="Paths" d:IsLocked="True">
             <Path x:Name="StartPointPath" Data="M-294,428.33333 L-287.33333,393.00034 -263.66823,352.33366 -235.33574,330.6674" Height="97.666" Canvas.Left="-294" Stretch="Fill" Canvas.Top="330.667" Width="58.667" RenderTransformOrigin="0.5,0.5">
                 <Path.RenderTransform>
                     <TransformGroup>
@@ -766,7 +767,7 @@
             <Path x:Name="Ending" Data="M888.25,367.125 L917.25,350.5 925.375,325" Height="42.125" Canvas.Left="888.25" Stretch="Fill" Canvas.Top="325" Width="37.125"/>
         </Canvas>
 
-        <Viewbox Stretch="Fill" Width="114.193" HorizontalAlignment="Right" Margin="0,27.177,-0.193,70.831">
+        <Viewbox Stretch="Fill" Width="114.193" HorizontalAlignment="Right" Margin="0,27.177,-0.193,70.831" d:IsLocked="True">
             <Grid Height="96.907" Width="138.264">
                 <TextBox x:Name="textBox1_Copy1" Height="42.634" HorizontalContentAlignment="Center"
                      VerticalContentAlignment="Center" Text="Total" FontFamily="/WpfApplication1;component/Fonts/#LCD"
@@ -778,6 +779,11 @@
                      BorderBrush="{x:Null}"/>
             </Grid>
         </Viewbox>
+        
+        <Canvas x:Name="LongPaths">
+            <Path x:Name="LongPathA" Data="M-294.66667,425 L-288.66632,393.66667 -264.66464,353.66588 -235.32901,331.66522 -181.32602,317.33128 -125.32307,327.33176 -101.6554,341.33199 -61.98609,378.33258 -20.650348,382.66599 27.019488,382.66599 63.354985,382.66599 99.690847,382.66599 142.02637,382.66599 225.69802,382.66599 269.03357,382.66599 314.70293,382.66599 369.37247,382.66599 421.37586,382.66599 471.0458,382.66599 511.04818,382.66599 620.72137,382.66599 686.05823,382.66599 815.39919,382.66599 864.06906,381.99931&#xD;&#xA;898.73775,354.66554 922.07211,316.66492" Height="108.333" Canvas.Left="-294.667" Stretch="Fill" Canvas.Top="316.667" Width="1216.667" d:IsLocked="True"/>
+
+        </Canvas>
 
 
 

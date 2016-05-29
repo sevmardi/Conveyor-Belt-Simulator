@@ -49,29 +49,29 @@ namespace LaneSimulator
 
            // drag/drop for edit or full
             DragDropHelper.ItemDropped += new EventHandler<DragDropEventArgs>(DragDropHelper_ItemDropped);
-            
-            //Grid1.Children.Remove(SSLComponents);
-            //sslObjects = new ShadowBox();
-            //sslObjects.Margin = new Thickness(20, 20, 20, 20);
-            //sslObjects.Children.Add(SSLComponents);
-            //SSLComponents.Background = Brushes.Transparent;
-            //sslObjects.VerticalAlignment = VerticalAlignment.Center;
-            //sslObjects.HorizontalAlignment = HorizontalAlignment.Left;
-            //Grid1.Children.Add(sslObjects);
-            //Grid.SetColumn(sslObjects, 1);
-            //Grid.SetRow(sslObjects, 1);
+
+            Grid1.Children.Remove(SSLComponents);
+            sslObjects = new ShadowBox();
+            sslObjects.Margin = new Thickness(20, 20, 20, 20);
+            sslObjects.Children.Add(SSLComponents);
+            SSLComponents.Background = Brushes.Transparent;
+            sslObjects.VerticalAlignment = VerticalAlignment.Center;
+            sslObjects.HorizontalAlignment = HorizontalAlignment.Left;
+            Grid1.Children.Add(sslObjects);
+            Grid.SetColumn(sslObjects, 1);
+            Grid.SetRow(sslObjects, 1);
 
             // Everybody gets zoom
-            //sbZoom = new ShadowBox();
-            //sbZoom.Margin = new Thickness(20);
-            //Grid1.Children.Remove(spZoom);
-            //sbZoom.Children.Add(spZoom);
-            //spZoom.Background = Brushes.Transparent;
-            //sbZoom.VerticalAlignment = VerticalAlignment.Top;
-            //sbZoom.HorizontalAlignment = HorizontalAlignment.Right;
-            //Grid1.Children.Add(sbZoom);
-            //Grid.SetColumn(sbZoom, 1);
-            //Grid.SetRow(sbZoom, 1);
+            sbZoom = new ShadowBox();
+            sbZoom.Margin = new Thickness(20);
+            Grid1.Children.Remove(spZoom);
+            sbZoom.Children.Add(spZoom);
+            spZoom.Background = Brushes.Transparent;
+            sbZoom.VerticalAlignment = VerticalAlignment.Top;
+            sbZoom.HorizontalAlignment = HorizontalAlignment.Right;
+            Grid1.Children.Add(sbZoom);
+            Grid.SetColumn(sbZoom, 1);
+            Grid.SetRow(sbZoom, 1);
 
             //Speed of simulation
             //Grid1.Children.Remove(spSpeed);
@@ -102,10 +102,10 @@ namespace LaneSimulator
 
            this.Loaded += (sender2, e2) =>
            {
-             
-               //lblAppTitle.Text = APP_TITLE;
-               //lblAppVersion.Text = APP_VERSION;
-               //lblAppCopyright.Text = APP_COPYRIGHT;
+
+               lblAppTitle.Text = APP_TITLE;
+               lblAppVersion.Text = APP_VERSION;
+               lblAppCopyright.Text = APP_COPYRIGHT;
 
            };
 
@@ -113,10 +113,13 @@ namespace LaneSimulator
 
         private void DragDropHelper_ItemDropped(object sender, DragDropEventArgs e)
         {
-            //if (e.DropTarget.IsDescendantOf(SSLCanvas) && this.IsActive)
-            //{
-                
-            //}
+            if (e.DropTarget.IsDescendantOf(SSLCanvas) && this.IsActive)
+            {
+
+                SSLCanvas.AddTray();
+                SSLCanvas.UpdateLayout();
+
+            }
         }
 
 
@@ -168,9 +171,7 @@ namespace LaneSimulator
         {
          //   _plcCalls.StopBtnInput();
             StopStoryboard1();
-            StopStorboard2();
-            StopStorboard3();
-            StopStoryboard4();
+
         }
 
         private void StartAnimationBtn_Click(object sender, RoutedEventArgs e)
@@ -235,23 +236,7 @@ namespace LaneSimulator
             if (sb1 != null) sb1.Pause();
         }
 
-        private void StopStorboard2()
-        {
-            var sb2 = FindResource("Storyboard2") as Storyboard;
-            if (sb2 != null) sb2.Pause();
-        }
 
-        private void StopStorboard3()
-        {
-            var sb3 = FindResource("Storyboard3") as Storyboard;
-            if (sb3 != null) sb3.Pause(); 
-        }
-
-        private void StopStoryboard4()
-        {
-            var sb4 = FindResource("Storyboard4") as Storyboard;
-            if (sb4 != null) sb4.Pause();
-        }
         
         private void MyStoryboardCompleted(object sender, EventArgs e)
         {
@@ -269,14 +254,6 @@ namespace LaneSimulator
             OtherSB.Begin();
         }
 
-        private void Timeline_OnCompleted4(object sender, EventArgs e)
-        {
-
-            var thing = this.FindResource("Storyboard4");
-
-            var OtherSB = (Storyboard)thing;
-            OtherSB.Begin();
-        }
 
         private void MainWindow1Closing(object sender, CancelEventArgs e)
         {
@@ -303,14 +280,14 @@ namespace LaneSimulator
         {
             if (String.IsNullOrEmpty(InfoLine.GetInstance().CurrentInfoLine) || !this.IsActive)
             {
-                //lblInfoLine.Visibility = Visibility.Collapsed;
-                //spAppInfo.Visibility = Visibility.Visible;
+                lblInfoLine.Visibility = Visibility.Collapsed;
+                spAppInfo.Visibility = Visibility.Visible;
             }
             else
             {
-                //lblInfoLine.Text = InfoLine.GetInstance().CurrentInfoLine;
-                //lblInfoLine.Visibility = Visibility.Visible;
-                //spAppInfo.Visibility = Visibility.Collapsed;
+                lblInfoLine.Text = InfoLine.GetInstance().CurrentInfoLine;
+                lblInfoLine.Visibility = Visibility.Visible;
+                spAppInfo.Visibility = Visibility.Collapsed;
             }
 
         }
@@ -414,29 +391,106 @@ namespace LaneSimulator
         {
         }
 
-          
-
-        private void btnActualSize_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void btnFitToScreen_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
          #endregion
 
         private void slZoom_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            //SSLCanvas.Zoom = slZoom.Value;
+            SSLCanvas.Zoom = slZoom.Value;
         }
 
-        private void SectionB_Loaded(object sender, RoutedEventArgs e)
+        private void AnimateZoom(double dest, Point? zoomCenter)
         {
+            if (dest < slZoom.Minimum)
+                dest = slZoom.Minimum;
+            
+            if (dest > slZoom.Maximum)
+                dest = slZoom.Maximum;
 
+            PointAnimation pa = null;
+
+            if (zoomCenter.HasValue)
+            {
+                SSLCanvas.SetZoomCenter();
+                pa = new PointAnimation(SSLCanvas.ZoomCenter, zoomCenter.Value, new Duration(new TimeSpan(0, 0, 1)));
+
+                pa.AccelerationRatio = 0.2;
+                pa.DecelerationRatio = 0.2;
+
+            }
+
+            DoubleAnimation da = new DoubleAnimation(dest, new Duration(new TimeSpan(0, 0, 1)));
+            da.AccelerationRatio = 0.2;
+            da.DecelerationRatio = 0.2;
+
+            Storyboard sb = new Storyboard();
+            sb.Children.Add(da);
+            if (pa != null)
+            {
+                sb.Children.Add(pa);
+                Storyboard.SetTarget(pa, SSLCanvas);
+                Storyboard.SetTargetProperty(pa, new PropertyPath(SSLCanvas.ZoomCenterProperty));
+                SSLCanvas.UseZoomCenter = true;
+            }
+
+            Storyboard.SetTarget(da, slZoom);
+            Storyboard.SetTargetProperty(da, new PropertyPath(Slider.ValueProperty));
+            sb.FillBehavior = FillBehavior.Stop;
+
+            sb.Begin();
+
+            BackgroundWorker finishani = new BackgroundWorker();
+
+            finishani.DoWork += (sender2, e2) =>
+            {
+                System.Threading.Thread.Sleep(900);
+            };
+
+            finishani.RunWorkerCompleted += (sender2, e2) =>
+            {
+                if (zoomCenter.HasValue)
+                    SSLCanvas.ZoomCenter = zoomCenter.Value;
+
+                slZoom.Value = dest;
+            };
+
+            finishani.RunWorkerAsync();
         }
 
+        private void btnActualSize_Click(object sender, RoutedEventArgs e)
+        {
+            AnimateZoom(1, null);
+        }
+
+        private void btnFitToScreen_Click(object sender, RoutedEventArgs e)
+        {
+            Rect bounds;
+            bounds = SSLCanvas.GetBounds(64, SSLCanvas.selected.Count > 1);
+
+
+            double minx = bounds.Left;
+            double miny = bounds.Top;
+            double maxx = bounds.Right;
+            double maxy = bounds.Bottom;
+
+            double wid = SSLCanvas.ActualWidth / (maxx - minx);
+            double hei = SSLCanvas.ActualHeight / (maxy - miny);
+
+
+            AnimateZoom(Math.Min(wid, hei), new Point(minx + (maxx - minx) / 2.0,
+                miny + (maxy - miny) / 2.0));
+
+            BackgroundWorker resetzc = new BackgroundWorker();
+            resetzc.DoWork += (sender2, e2) =>
+            {
+                System.Threading.Thread.Sleep(1500);
+            };
+            resetzc.RunWorkerCompleted += (sender2, e2) =>
+            {
+                //gateCanvas.UseZoomCenter = false;
+            };
+            resetzc.RunWorkerAsync();
+
+        }
 
         private void AddToAnimation()
         {
@@ -444,7 +498,7 @@ namespace LaneSimulator
 
             var sb1 = FindResource("Storyboard1") as Storyboard;
 
-            sb1.Begin(tray);
+            //sb1.Begin(tray);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -453,14 +507,7 @@ namespace LaneSimulator
 
             //Tray tray = new Tray();
 
-            this.Animation_Pannel.Children.Add((UIElement)tray);
-            Canvas.SetLeft((UIElement)tray, 220.0);
-            Canvas.SetTop((UIElement)tray, 4.0);
-            var sb1 = FindResource("Storyboard1") as Storyboard;
-
-            sb1.Children.Add((Timeline)sb1);
-
-            sb1.Begin();
+         
 
         }
     }

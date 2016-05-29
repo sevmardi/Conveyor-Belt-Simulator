@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 
@@ -16,7 +17,7 @@ namespace LaneSimulator
     /// </summary>
     public partial class SSLCanvas : UserControl
     {
-        public BindingList<Tray> selected = new BindingList<Tray>();
+        public BindingList<Gate> selected = new BindingList<Gate>();
 
 
         private DragState dragging = DragState.NONE;
@@ -112,7 +113,7 @@ namespace LaneSimulator
                 {
                         case DragState.MOVE:
 
-                        foreach (Tray tray in selected)
+                        foreach (Gate g in selected)
                         {
 
                             if (e.LeftButton == MouseButtonState.Pressed)
@@ -223,7 +224,8 @@ namespace LaneSimulator
 
         public void AddTray()
         {
-            
+            ClearSelection();
+ 
         }
 
         public enum SELECTED_OBJECTS
@@ -305,6 +307,40 @@ namespace LaneSimulator
         public void RemoveObject()
         {
           
+        }
+
+
+        public Rect GetBounds(double padding, bool selectedOnly)
+        {
+            if (selectedOnly)
+                return GetBounds(selected, padding);
+            else
+                return GetBounds(selected, padding);
+        }
+
+        private static Rect GetBounds(IEnumerable<Gate> gts, double padding)
+        {
+            double minx = 0, maxx = 0, miny = 0, maxy = 0;
+            bool fst = true;
+            foreach (Gate g in gts)
+            {
+                if (fst)
+                {
+                    minx = g.Margin.Left;
+                    maxx = g.Margin.Left + g.Width;
+                    miny = g.Margin.Top;
+                    maxy = g.Margin.Top + g.Height;
+                    fst = false;
+                }
+
+                minx = Math.Min(minx, g.Margin.Left - padding);
+                maxx = Math.Max(maxx, g.Margin.Left + g.Width + padding);
+                miny = Math.Min(miny, g.Margin.Top - padding);
+                maxy = Math.Max(maxy, g.Margin.Top + g.Height + padding);
+            }
+
+            return new Rect(minx, miny, maxx - minx, maxy - miny);
+
         }
 
     }
