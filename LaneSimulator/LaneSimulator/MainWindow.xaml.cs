@@ -27,7 +27,7 @@ namespace LaneSimulator
         public static string APP_VERSION;
         public static string APP_COPYRIGHT;
         private bool Ispaused = false;
-        private ShadowBox sbZoom, sbSpeed, sslObjects, counter, SSL;
+        private ShadowBox sbZoom, sbSpeed, sslObjects, total, SSL, counter;
         private readonly SectionA _sectionA;
         private readonly SSLCanvas _sslCanvas;
         private double T = 0.0;
@@ -86,16 +86,29 @@ namespace LaneSimulator
             //Grid.SetRow(sbSpeed, 1);
 
             //TraysCounter
-            //Grid1.Children.Remove(traysCounter);
-            //counter = new ShadowBox();
-            //counter.Margin = new Thickness(20, 20, 175, 20);
-            //counter.Children.Add(traysCounter);
-            //traysCounter.Background = Brushes.Transparent;
-            //counter.VerticalAlignment = VerticalAlignment.Top;
-            //counter.HorizontalAlignment = HorizontalAlignment.Right;
-            //Grid1.Children.Add(counter);
-            //Grid.SetColumn(counter, 1);
-            //Grid.SetRow(counter, 1);
+            Grid1.Children.Remove(traysCounter);
+            total = new ShadowBox();
+            total.Margin = new Thickness(20, 20, 175, 20);
+            total.Children.Add(traysCounter);
+            traysCounter.Background = Brushes.Transparent;
+            total.VerticalAlignment = VerticalAlignment.Top;
+            total.HorizontalAlignment = HorizontalAlignment.Right;
+            Grid1.Children.Add(total);
+            Grid.SetColumn(total, 1);
+            Grid.SetRow(total, 1);
+
+            //Timer
+            Grid1.Children.Remove(Timer);
+            counter = new ShadowBox();
+            counter.Margin = new Thickness(20, 20, 175, 20);
+            counter.Children.Add(Timer);
+            Timer.Background = Brushes.Transparent;
+            counter.VerticalAlignment = VerticalAlignment.Top;
+            counter.HorizontalAlignment = HorizontalAlignment.Right;
+            Grid1.Children.Add(counter);
+            Grid.SetColumn(counter, 1);
+            Grid.SetRow(counter, 1);
+
 
 
          

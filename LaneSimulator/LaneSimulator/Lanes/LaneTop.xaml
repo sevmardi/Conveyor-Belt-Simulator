@@ -767,18 +767,7 @@
             <Path x:Name="Ending" Data="M888.25,367.125 L917.25,350.5 925.375,325" Height="42.125" Canvas.Left="888.25" Stretch="Fill" Canvas.Top="325" Width="37.125"/>
         </Canvas>
 
-        <Viewbox Stretch="Fill" Width="114.193" HorizontalAlignment="Right" Margin="0,27.177,-0.193,70.831" d:IsLocked="True">
-            <Grid Height="96.907" Width="138.264">
-                <TextBox x:Name="textBox1_Copy1" Height="42.634" HorizontalContentAlignment="Center"
-                     VerticalContentAlignment="Center" Text="Total" FontFamily="/WpfApplication1;component/Fonts/#LCD"
-                     Foreground="#FFB22121" Background="Black" FontSize="29.333" BorderThickness="2" Focusable="false"
-                     Cursor="Arrow" VerticalAlignment="Top" BorderBrush="{x:Null}"/>
-                <TextBox x:Name="total_text1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="0"
-                     FontFamily="/WpfApplication1;component/Fonts/#LCD" Foreground="#FFB22121" Background="Black"
-                     FontSize="48" BorderThickness="2" Focusable="false" Cursor="Arrow" Margin="0,36.09,0,0"
-                     BorderBrush="{x:Null}"/>
-            </Grid>
-        </Viewbox>
+       
         
         <Canvas x:Name="LongPaths">
             <Path x:Name="LongPathA" Data="M-294.66667,425 L-288.66632,393.66667 -264.66464,353.66588 -235.32901,331.66522 -181.32602,317.33128 -125.32307,327.33176 -101.6554,341.33199 -61.98609,378.33258 -20.650348,382.66599 27.019488,382.66599 63.354985,382.66599 99.690847,382.66599 142.02637,382.66599 225.69802,382.66599 269.03357,382.66599 314.70293,382.66599 369.37247,382.66599 421.37586,382.66599 471.0458,382.66599 511.04818,382.66599 620.72137,382.66599 686.05823,382.66599 815.39919,382.66599 864.06906,381.99931&#xD;&#xA;898.73775,354.66554 922.07211,316.66492" Height="108.333" Canvas.Left="-294.667" Stretch="Fill" Canvas.Top="316.667" Width="1216.667" d:IsLocked="True"/>

@@ -28,7 +28,7 @@ namespace LaneSimulator.Lanes
 
         private void Total()
         {
-           total_text1.Text= (this.tray_Wrap.Children.Count).ToString();
+         // total_text1.Text= (this.tray_Wrap.Children.Count).ToString();
         }
 
         private void storyboard_Completed()
