@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Media;
 using LaneSimulator.Models.Components;
 
 namespace LaneSimulator.Utilities.Selector
@@ -29,13 +30,21 @@ namespace LaneSimulator.Utilities.Selector
 
         private void AddDragDropObject(int pos, Tray tray)
         {
-            
+           
+            DragDrop.DragDropHelper.SetIsDragSource(tray, true);
+            DragDrop.DragDropHelper.SetDragDropControl(tray, new DragDrop.ObjectDragDropAdorner());
+            DragDrop.DragDropHelper.SetDropTarget(tray, "SSLCanvas");
+            DragDrop.DragDropHelper.SetAdornerLayer(tray, "adornerLayer");
+
+
+            //ScaleTransform st = new ScaleTransform();
+            //st.CenterX = tray.Width / 2.0;
+            //st.CenterY = tray.Height / 2.0;
+
+
         }
 
-        private void AddDragDropObject(int pos)
-        {
-            //call the bove stated Adddragdrop method and pass 
-        }
+
 
 
     }

@@ -50,7 +50,7 @@
             <DoubleAnimationUsingPath 
                 Duration="0:0:3" 
                 Source="X" 
-                Completed="Timeline_OnCompleted" 
+               
                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
                 Storyboard.TargetName="ObjectToMove">
 
@@ -63,7 +63,7 @@
             <DoubleAnimationUsingPath 
                 Duration="0:0:3" 
                 Source="Y" 
-                Completed="Timeline_OnCompleted" 
+               
                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" 
                 Storyboard.TargetName="ObjectToMove">
 
@@ -163,19 +163,18 @@
             </StackPanel>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal" Name="Timer">
+            <Border BorderBrush="#FF539D3F" BorderThickness="2" CornerRadius="5" Height="56.911" Width="116.667">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFA1D8A5" Offset="0" />
+                        <GradientStop Color="White" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <TextBlock x:Name="Timer_Lable" FontFamily="/WpfApplication1;component/Fonts/#LCD" FontSize="48"
+                           Text="0.0"
+                           TextAlignment="Center" TextWrapping="Wrap" Foreground="#FF9F2323" />
+            </Border>
 
-           
-                <Border BorderBrush="#FF539D3F" BorderThickness="2" CornerRadius="5" Height="56.911" Width="116.667">
-                    <Border.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFA1D8A5" Offset="0"/>
-                            <GradientStop Color="White" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Border.Background>
-                    <TextBlock x:Name="Timer_Lable" FontFamily="/WpfApplication1;component/Fonts/#LCD" FontSize="48" Text="0.0"
-                       TextAlignment="Center" TextWrapping="Wrap" Foreground="#FF9F2323"/>
-                </Border>
-            
         </StackPanel>
         
 

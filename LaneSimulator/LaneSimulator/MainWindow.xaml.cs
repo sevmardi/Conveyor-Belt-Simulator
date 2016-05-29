@@ -108,10 +108,7 @@ namespace LaneSimulator
             Grid1.Children.Add(counter);
             Grid.SetColumn(counter, 1);
             Grid.SetRow(counter, 1);
-
-
-
-         
+ 
 
            this.Loaded += (sender2, e2) =>
            {
@@ -162,7 +159,7 @@ namespace LaneSimulator
         public void ResetTimer()
         {
             T = 0.0;
-           // Timer_Lable.Text = "0.00";
+            Timer_Lable.Text = "0.00";
         //    tray_Wrap.Children.Clear();
             Total();
         }
@@ -172,7 +169,7 @@ namespace LaneSimulator
         /// </summary>
         private void Total()
         {
-         //   this.total_text1.Text = (this.tray_Wrap.Children.Count).ToString();
+           //this.total_text1.Text = (this.tray_Wrap.Children.Count).ToString();
         }
 
         private void btnRest_Click(object sender, RoutedEventArgs e)
@@ -259,14 +256,6 @@ namespace LaneSimulator
             OtherSB.Begin();
         }
 
-        private void Timeline_OnCompleted(object sender, EventArgs e)
-        {
-            var thing = this.FindResource("Storyboard3");
-
-            var OtherSB = (Storyboard)thing;
-            OtherSB.Begin();
-        }
-
 
         private void MainWindow1Closing(object sender, CancelEventArgs e)
         {
@@ -284,8 +273,7 @@ namespace LaneSimulator
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            //_sslCanvas.Timer_Lable.Text = (this.T = this.T + 0.1).ToString("0.00",
-            //    (IFormatProvider)CultureInfo.InvariantCulture);
+            Timer_Lable.Text = (this.T = this.T + 0.1).ToString("0.00",(IFormatProvider)CultureInfo.InvariantCulture);
         }
 
 
