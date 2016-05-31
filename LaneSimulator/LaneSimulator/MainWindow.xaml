@@ -105,13 +105,6 @@
 
 
 
-
-
-
-
-
-
-
     <Grid Name="Grid1">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -126,9 +119,6 @@
 
         <local:SSLCanvas x:Name="SSLCanvas" Grid.Column="1" Grid.Row="1" d:IsLocked="True"/>
         <selector:ObjectSelector x:Name="SSLComponents" Grid.Row="1"  />
-
-
-
 
         <StackPanel Orientation="Horizontal" Name="spZoom">
             <Image Source="Images/ZoomHS.png" Height="20" />
@@ -184,21 +174,6 @@
             <Image Source="Images/hare.png" Height="20"  />
         </StackPanel>-->
 
-        <!--<StackPanel Grid.Row="0" Orientation="Horizontal" Name="traysCounter">
-
-            <TextBox x:Name="textBox1_Copy1" Height="42.634" HorizontalContentAlignment="Center"
-                     VerticalContentAlignment="Center" Text="Total"
-                   
-                     Foreground="#FFB22121" Background="Black" FontSize="29.333" BorderThickness="2"
-                     Focusable="false"
-                     Cursor="Arrow" VerticalAlignment="Top" BorderBrush="{x:Null}" />
-            <TextBox x:Name="total_text1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                     Text="0"
-                      Foreground="#FFB22121"
-                     Background="Black"
-                     FontSize="48" BorderThickness="2" Focusable="false" Cursor="Arrow" Margin="0,36.09,0,0"
-                     BorderBrush="{x:Null}" />
-        </StackPanel>-->
 
         <ToolBarTray Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0">
             <ToolBar Height="28" Name="tbFile" Visibility="Collapsed" >
