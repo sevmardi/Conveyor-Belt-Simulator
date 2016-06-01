@@ -115,10 +115,7 @@
             <Image Source="Images/hare.png" Height="20"  />
         </StackPanel>-->
 
-        <Canvas Grid.Row="1" Grid.Column="1">
-            <lane:LaneTop />
-        </Canvas>
-        
+       
         
         <ToolBarTray Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0">
             <ToolBar Height="28" Name="tbFile" Visibility="Collapsed" >
