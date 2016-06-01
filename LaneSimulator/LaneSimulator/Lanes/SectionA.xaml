@@ -17,9 +17,66 @@
                 </Path.Data>
             </Path>
         </Canvas>
-        <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="240" Canvas.Top="200" Width="6" x:Name="_0102_S1"/>
-        <Path x:Name="StartPointPath" Data="M-294,428.33333 L-287.33333,393.00034 -263.66823,352.33366 -235.33574,330.6674" Height="97.666" Canvas.Left="187.333" Stretch="Fill" Canvas.Top="108.334" Width="58.667"/>
-        <Path x:Name="_2" Data="M-233.25,331.25 L-185.5,313 -146.5,318 -123.25,325" Height="18.25" Canvas.Left="250.833" Stretch="Fill" Canvas.Top="96" Width="110"/>
+        <Canvas x:Name="sensors">
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="240" Canvas.Top="200" Width="6" x:Name="_0102_S1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="247" Canvas.Top="179" Width="6" x:Name="_0102_S2"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="262" Canvas.Top="158" Width="6" x:Name="_0103_S1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="277" Canvas.Top="150" Width="6" x:Name="_0104_S1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="303" Canvas.Top="144" Width="6" x:Name="_0105_S1"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="330" Canvas.Top="150" Width="6" x:Name="_0105_S2"/>
+        </Canvas>
+        <Canvas  x:Name="motors">
+            <Ellipse Height="6" Canvas.Left="165" Canvas.Top="175" Width="6" x:Name="_0102_D1" RenderTransformOrigin="0.5,0.5" Fill="#FFDACF84">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-15.12"/>
+                        <TranslateTransform X="12.923" Y="23.369"/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse Height="6" Canvas.Left="189" Canvas.Top="135" Width="6" x:Name="_0103_D1" RenderTransformOrigin="0.5,0.5" Fill="#FFDACF84">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-15.12"/>
+                        <TranslateTransform X="1.658" Y="18.493"/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse Height="6" Canvas.Left="226" Canvas.Top="109" Width="6" x:Name="_0104_D1" RenderTransformOrigin="0.5,0.5" Fill="#FFDACF84">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-15.12"/>
+                        <TranslateTransform X="-6.405" Y="9.742"/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse Height="6" Canvas.Left="305" Canvas.Top="101" Width="6" x:Name="_0105_D1" RenderTransformOrigin="0.5,0.5" Fill="#FFDACF84">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-15.12"/>
+                        <TranslateTransform X="-11.226" Y="-10.587"/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="354" Canvas.Top="125" Width="6" x:Name="_0301_D2" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-15.12"/>
+                        <TranslateTransform X="-6.662" Y="-24.199"/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+        </Canvas>
 
     </Canvas>
 

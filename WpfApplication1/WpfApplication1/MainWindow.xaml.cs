@@ -25,9 +25,13 @@ namespace WpfApplication1
     {
         private double T = 0.0;
         private DispatcherTimer Timer1 = new DispatcherTimer();
-        
+        private ObjectToMove _objectToMove;
+
         public MainWindow()
         {
+            _objectToMove = new ObjectToMove();
+            _objectToMove.Visibility = Visibility.Hidden;
+          
             InitializeComponent();
             this.Timer1.Interval = new TimeSpan(0, 0, 0, 0, 100);
             this.Timer1.Tick += new EventHandler(this.Timer1_Tick);
@@ -37,26 +41,42 @@ namespace WpfApplication1
         {
             var sb1 = FindResource("LongPathAnimation") as Storyboard;
 
-            //ObjectToMove objectToMove = new ObjectToMove();
-            //objectToMove.RenderTransformOrigin = new Point(0.5, 0.5);
-            //objectToMove.HorizontalAlignment = HorizontalAlignment.Left;
-            //RotateTransform myRotateTransform = new RotateTransform(0);
-            //TranslateTransform myTranslateTransform = new TranslateTransform();
-            //objectToMove.RenderTransform = myTranslateTransform;
-            //objectToMove.RenderTransform = myRotateTransform;
 
-
-            sb1.Begin(ObjectToMove);
+            _objectToMove.RenderTransformOrigin = new Point(0.5, 0.5);
+            _objectToMove.HorizontalAlignment = HorizontalAlignment.Left;
+            RotateTransform myRotateTransform = new RotateTransform(0);
+            TranslateTransform myTranslateTransform = new TranslateTransform();
+            _objectToMove.RenderTransform = myTranslateTransform;
+            _objectToMove.RenderTransform = myRotateTransform;
+            
+            
+            sb1.Begin(_objectToMove);
 
             Timer1.Start();
            
         }
 
+        private void test()
+        {
+
+            PathGeometry animationPath = new PathGeometry();
+            PathFigure pFigure = new PathFigure();
+            pFigure.StartPoint = new Point(10, 100);
+
+            DoubleAnimationUsingPath dbp = new DoubleAnimationUsingPath();
+
+            dbp.Completed += Timeline_OnCompleted;
+            dbp.Duration = TimeSpan.FromMilliseconds(3);
+            dbp.PathGeometry = animationPath;
+            dbp.Source = PathAnimationSource.Angle;
+        }
+
+
+
         private void Total()
         {
-            ObjectToMove objectToMove = new ObjectToMove();
 
-            this.Steel_Wrap.Children.Add((UIElement)objectToMove);
+            this.Steel_Wrap.Children.Add((UIElement)_objectToMove);
             total_text1.Text = (Steel_Wrap.Children.Count).ToString();
         }
 
@@ -65,13 +85,12 @@ namespace WpfApplication1
 
            // MessageBox.Show(" Complted");
           
-     
+
             Total();
             var sb1 = FindResource("LongPathAnimation") as Storyboard;
-            sb1.Stop(ObjectToMove);
+            sb1.Stop();
             Timer1.Stop();
-            ObjectToMove = null;
-
+            _objectToMove = null;
 
         }
 

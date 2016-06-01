@@ -5,6 +5,14 @@
         Title="MainWindow" Height="850" Width="1050">
 
     <Window.Resources>
+
+        <ControlTemplate TargetType="Control" x:Key="objecttomove">
+            
+
+            
+        </ControlTemplate>
+        
+        
         <Storyboard x:Key="LongPathAnimation">
             <DoubleAnimationUsingPath 
                 Completed="Timeline_OnCompleted" 
@@ -30,7 +38,6 @@
             </DoubleAnimationUsingPath>
         </Storyboard>
 
-
     </Window.Resources>
 
     <!--<Window.Triggers>
@@ -40,7 +47,7 @@
 
         
     </Window.Triggers>-->
-
+    
 
     <Canvas x:Name="LaneTopSection" Width="744" Height="1052">
         <Canvas x:Name="lane" >
@@ -429,7 +436,7 @@
         </Canvas>
         
         
-        <Rectangle x:Name="ObjectToMove" Height="31" Canvas.Left="-316.5" Stroke="Black" Canvas.Top="431.5" Width="42" Fill="#FFDA6C11" RenderTransformOrigin="0.5,0.5" >
+        <!--<Rectangle x:Name="ObjectToMove" Height="31" Canvas.Left="-316.5" Stroke="Black" Canvas.Top="431.5" Width="42" Fill="#FFDA6C11" RenderTransformOrigin="0.5,0.5" >
 
             <Rectangle.RenderTransform>
                 <TransformGroup>
@@ -439,7 +446,7 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </Rectangle.RenderTransform>
-        </Rectangle>
+        </Rectangle>-->
 
         <!--<wpfApplication1:ObjectToMove x:Name="ObjectToMove" Canvas.Left="-319" Canvas.Top="468" Height="45" Width="45"></wpfApplication1:ObjectToMove>-->
         
@@ -550,10 +557,11 @@
             </Border>
         </Viewbox>
 
-        <Button Content="Button" Canvas.Left="220" Canvas.Top="95" Width="75" Click="ButtonBase_OnClick"/>
+        <Button Content="Start" Canvas.Left="220" Canvas.Top="95" Width="75" Click="ButtonBase_OnClick"/>
         <Button Content="Tray" Canvas.Left="345" Canvas.Top="95" Width="75" Click="MakeTrayBtn_Click"/>
 
 
+        
 
     </Canvas>
 

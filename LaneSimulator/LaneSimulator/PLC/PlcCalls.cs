@@ -23,10 +23,15 @@ namespace LaneSimulator.PLC
         {
             Client = new S7Client();
         }
+
+        /// <summary>
+        /// This executes a method to make contact with the PLC
+        /// </summary>
+        /// <param name="ipAdress"></param>
+        /// <param name="rack"></param>
+        /// <param name="slot"></param>
         public void ConnectToPlc(string ipAdress, int rack, int slot )
         {
-          
-
             Client.ConnectTo(ipAdress, rack, slot);
         }
 
@@ -37,7 +42,6 @@ namespace LaneSimulator.PLC
         {
             Client.Disconnect();
             Client = null;
-          
         }
 
         /// <summary>

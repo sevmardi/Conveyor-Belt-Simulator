@@ -285,7 +285,7 @@
         	</DoubleAnimationUsingPath>
         </Storyboard>
     </UserControl.Resources>
-    <UserControl.Triggers>
+    <!--<UserControl.Triggers>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
             <BeginStoryboard Storyboard="{StaticResource Storyboard2}"/>
@@ -312,7 +312,7 @@
             <BeginStoryboard Storyboard="{StaticResource Storyboard23}"/>
             <BeginStoryboard Storyboard="{StaticResource LongPathAnimation}"/>
         </EventTrigger>
-    </UserControl.Triggers>
+    </UserControl.Triggers>-->
 
 
     <Canvas x:Name="LaneTopSection" Width="744" Height="1052">
@@ -495,7 +495,7 @@
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="888.792" Canvas.Top="249.125" Width="6" x:Name="_1101_S3_Copy6"/>
 
         </Canvas>
-        <Canvas x:Name="Motors" d:IsLocked="True">
+        <Canvas x:Name="Motors">
             <Ellipse Height="6" Canvas.Left="-291" Canvas.Top="389.5" Width="6" x:Name="_0102_D1" RenderTransformOrigin="0.5,0.5" Fill="#FFDACF84">
                 <Ellipse.RenderTransform>
                     <TransformGroup>
@@ -546,6 +546,8 @@
                     </TransformGroup>
                 </Ellipse.RenderTransform>
             </Ellipse>
+            
+            
             <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="-56.667" Canvas.Top="377" Width="6" x:Name="_0302_D2" RenderTransformOrigin="0.5,0.5">
                 <Ellipse.RenderTransform>
                     <TransformGroup>
@@ -786,7 +788,7 @@
             <Path x:Name="LongPathA" Data="M-294.66667,425 L-288.66632,393.66667 -264.66464,353.66588 -235.32901,331.66522 -181.32602,317.33128 -125.32307,327.33176 -101.6554,341.33199 -61.98609,378.33258 -20.650348,382.66599 27.019488,382.66599 63.354985,382.66599 99.690847,382.66599 142.02637,382.66599 225.69802,382.66599 269.03357,382.66599 314.70293,382.66599 369.37247,382.66599 421.37586,382.66599 471.0458,382.66599 511.04818,382.66599 620.72137,382.66599 686.05823,382.66599 815.39919,382.66599 864.06906,381.99931&#xD;&#xA;898.73775,354.66554 922.07211,316.66492" Height="108.333" Canvas.Left="-294.667" Stretch="Fill" Canvas.Top="316.667" Width="1216.667"/>
         </Canvas>
 
-
+        <Button Content="Start" Canvas.Left="220" Canvas.Top="95" Width="75" Click="ButtonBase_OnClick"/>
 
     </Canvas>
 

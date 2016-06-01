@@ -16,63 +16,6 @@
     WindowStartupLocation="CenterScreen" >
 
     <Window.Resources>
-        <Storyboard x:Key="Storyboard1" >
-            <DoubleAnimationUsingPath 
-                Duration="0:0:3" 
-               
-                Completed="MyStoryboardCompleted" 
-                Source="X" 
-                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
-                Storyboard.TargetName="ObjectToMove"
-               
-                >
-                <DoubleAnimationUsingPath.PathGeometry>
-                    <PathGeometry Figures="M1.5,-18.667014 L8.1669813,-54.00002 L31.833186,-94.666719 L60.166999,-116.33299"/>
-                </DoubleAnimationUsingPath.PathGeometry>
-
-            </DoubleAnimationUsingPath>
-            <DoubleAnimationUsingPath 
-                Duration="0:0:3"   
-                Completed="MyStoryboardCompleted"  
-                Source="Y"
-                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" 
-                Storyboard.TargetName="ObjectToMove"
-                >
-
-                <DoubleAnimationUsingPath.PathGeometry>
-                    <PathGeometry Figures="M1.5,-18.667014 L8.1669813,-54.00002 L31.833186,-94.666719 L60.166999,-116.33299"/>
-                </DoubleAnimationUsingPath.PathGeometry>
-
-            </DoubleAnimationUsingPath>
-        </Storyboard>
-
-        <Storyboard x:Key="Storyboard2">
-            <DoubleAnimationUsingPath 
-                Duration="0:0:3" 
-                Source="X" 
-               
-                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
-                Storyboard.TargetName="ObjectToMove">
-
-                <DoubleAnimationUsingPath.PathGeometry>
-                    <PathGeometry Figures="M62.25,-115.75 L110,-134 L149,-129 L172.25,-122"/>
-                </DoubleAnimationUsingPath.PathGeometry>
-
-            </DoubleAnimationUsingPath>
-
-            <DoubleAnimationUsingPath 
-                Duration="0:0:3" 
-                Source="Y" 
-               
-                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" 
-                Storyboard.TargetName="ObjectToMove">
-
-                <DoubleAnimationUsingPath.PathGeometry>
-                    <PathGeometry Figures="M62.25,-115.75 L110,-134 L149,-129 L172.25,-122"/>
-                </DoubleAnimationUsingPath.PathGeometry>
-
-            </DoubleAnimationUsingPath>
-        </Storyboard>
 
 
 
@@ -103,8 +46,6 @@
 
 
 
-
-
     <Grid Name="Grid1">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -116,11 +57,12 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-
+  
+        
         <local:SSLCanvas x:Name="SSLCanvas" Grid.Column="1" Grid.Row="1" d:IsLocked="True"/>
-        <selector:ObjectSelector x:Name="SSLComponents" Grid.Row="1"  />
+        <selector:ObjectSelector x:Name="SSLComponents" Grid.Row="1" Grid.Column="0" />
 
-        <StackPanel Orientation="Horizontal" Name="spZoom">
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="spZoom">
             <Image Source="Images/ZoomHS.png" Height="20" />
             <Slider Name="slZoom" Minimum="0.01" Maximum="5" Value="1" SmallChange="0.01"
                     LargeChange="0.1" ToolTip="Adjust circuit zoom"
@@ -136,8 +78,7 @@
 
         </StackPanel>
 
-
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Name="traysCounter">
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="traysCounter">
                 
                     <Grid Height="96.907" Width="138.264">
                         <TextBox x:Name="textBox1_Copy1" Height="42.634" HorizontalContentAlignment="Center"
@@ -152,7 +93,7 @@
              
             </StackPanel>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Name="Timer">
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="Timer">
             <Border BorderBrush="#FF539D3F" BorderThickness="2" CornerRadius="5" Height="56.911" Width="116.667">
                 <Border.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -174,7 +115,11 @@
             <Image Source="Images/hare.png" Height="20"  />
         </StackPanel>-->
 
-
+        <Canvas Grid.Row="1" Grid.Column="1">
+            <lane:LaneTop />
+        </Canvas>
+        
+        
         <ToolBarTray Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0">
             <ToolBar Height="28" Name="tbFile" Visibility="Collapsed" >
                 <Button Style="{StaticResource TButtonStyle}" Click="btnNew_Click" ToolTip="New File (Ctrl+N)">
@@ -256,11 +201,6 @@
             </ToolBar>
 
         </ToolBarTray>
-
-
-
-
-
 
         <StackPanel Name="spAppInfo" Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" Background="#EEEEEE">
             <TextBlock Name="lblAppTitle" Margin="10,0,0,0" />

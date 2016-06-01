@@ -104,7 +104,7 @@ namespace LaneSimulator
             counter.Children.Add(Timer);
             Timer.Background = Brushes.Transparent;
             counter.VerticalAlignment = VerticalAlignment.Top;
-            counter.HorizontalAlignment = HorizontalAlignment.Right;
+            counter.HorizontalAlignment = HorizontalAlignment.Left;
             Grid1.Children.Add(counter);
             Grid.SetColumn(counter, 1);
             Grid.SetRow(counter, 1);
@@ -112,11 +112,9 @@ namespace LaneSimulator
 
            this.Loaded += (sender2, e2) =>
            {
-
                lblAppTitle.Text = APP_TITLE;
                lblAppVersion.Text = APP_VERSION;
                lblAppCopyright.Text = APP_COPYRIGHT;
-
            };
 
         }
@@ -125,13 +123,10 @@ namespace LaneSimulator
         {
             if (e.DropTarget.IsDescendantOf(SSLCanvas) && this.IsActive)
             {
-
                 SSLCanvas.AddTray();
                 SSLCanvas.UpdateLayout();
-
             }
         }
-
 
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -149,7 +144,6 @@ namespace LaneSimulator
             {
                 //do something
                 MessageBox.Show("Connected!");
-              
             }
             else
 
@@ -181,7 +175,6 @@ namespace LaneSimulator
         {
          //   _plcCalls.StopBtnInput();
             StopStoryboard1();
-
         }
 
         private void StartAnimationBtn_Click(object sender, RoutedEventArgs e)
@@ -348,9 +341,7 @@ namespace LaneSimulator
   
         }
 
-        private void btnChart_Click(object sender, RoutedEventArgs e)
-        {
-        }
+
 
         private void btnImportIC_Click(object sender, RoutedEventArgs e)
         {
@@ -507,9 +498,13 @@ namespace LaneSimulator
             //AddToAnimation();
 
             //Tray tray = new Tray();
-
-         
-
         }
+
+        private void btnChart_Click(object sender, RoutedEventArgs e)
+        {
+            SchedulerPanel schedulerPanel = new SchedulerPanel();
+            schedulerPanel.Show();
+        }
+
     }
 }
