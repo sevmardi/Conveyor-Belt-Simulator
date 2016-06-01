@@ -1,0 +1,175 @@
+﻿<Window x:Class="WpfApplication3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:WpfApplication3"
+        Title="Window1" Height="300" Width="300"
+        ContentRendered="Window_ContentRendered">
+
+    <!--<Window.Resources>
+        <ControlTemplate TargetType="Control" x:Key="RectangleTemplate">
+            <Rectangle Height="20" Width="30" Fill="Red">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+                <Rectangle.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimationUsingPath
+                                    Duration="0:0:3"
+                                    Source="X"
+                                    Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)">
+                                    <DoubleAnimationUsingPath.PathGeometry>
+                                        <PathGeometry
+                                            Figures="M1.5,-18.667014 L8.1669813,-54.00002 L31.833186,-94.666719 L60.166999,-116.33299" />
+                                    </DoubleAnimationUsingPath.PathGeometry>
+                                </DoubleAnimationUsingPath>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Rectangle.Triggers>
+            </Rectangle>
+        </ControlTemplate>
+    </Window.Resources>-->
+
+    <Style TargetType="{x:Type controls:ExitButton}">
+    <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+    <Setter Property="RenderTransform">
+        <Setter.Value>
+                <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        <SkewTransform AngleX="0" AngleY="0"/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform X="0" Y="0"/>
+                </TransformGroup>
+        </Setter.Value>
+    </Setter>
+    <Setter Property="Template">
+        <Setter.Value>
+            <ControlTemplate TargetType="{x:Type controls:ExitButton}">
+                <ControlTemplate.Resources>
+                    <Storyboard x:Key="OnMouseEnter">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="{x:Null}" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                    <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1.1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="{x:Null}" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                    <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                    <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1.1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                    </Storyboard>
+                </ControlTemplate.Resources>
+                <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+
+                    <Viewbox x:Name="ControlViewBox">
+                        <Grid x:Name="ExitApplication" Width="35" Height="50">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5" />
+                                <RowDefinition Height="25" />
+                                <RowDefinition Height="15" />
+                            </Grid.RowDefinitions>
+
+                            <Viewbox Grid.Row="1" Width="25" x:Name="ImageViewBox">
+                                <Canvas Width="23" Height="23" HorizontalAlignment="Center">
+                                    <Path Width="22.9708" Height="22.9703" Canvas.Left="4.06802e-005" Canvas.Top="0" Stretch="Fill" Data="F1 M 16.1087,1.25732C 16.1087,1.25732 12.4594,4.90935 11.4834,5.88135L 11.4834,5.88135C 10.5141,4.91203 6.86068,1.25871 6.86068,1.25871L 6.86068,1.25871C 5.18604,-0.416016 2.93538,-0.42131 1.25407,1.26131L 1.25407,1.26131C -0.417969,2.93335 -0.417969,5.18799 1.25407,6.86272L 1.25407,6.86272C 1.25407,6.86272 4.90739,10.5146 5.87939,11.4866L 5.87939,11.4866C 4.91138,12.4561 1.25806,16.1067 1.25806,16.1067L 1.25806,16.1067C -0.415283,17.7827 -0.415283,20.0374 1.26204,21.7134L 1.26204,21.7134C 2.9327,23.388 5.18604,23.3853 6.86068,21.7107L 6.86068,21.7107C 6.86068,21.7107 10.5114,18.0614 11.4834,17.0894L 11.4834,17.0894C 12.4527,18.0614 16.1087,21.7174 16.1087,21.7174L 16.1087,21.7174C 17.7861,23.3893 20.0367,23.388 21.7113,21.7134L 21.7113,21.7134C 23.3901,20.0347 23.3887,17.7853 21.7167,16.112L 21.7167,16.112C 21.7167,16.112 18.0607,12.4561 17.0887,11.4841L 17.0887,11.4841C 18.0607,10.5107 21.714,6.86003 21.714,6.86003L 21.714,6.86003C 23.3887,5.18269 23.3901,2.93335 21.7167,1.25732L 21.7167,1.25732C 20.878,0.418701 19.8953,0 18.9141,0L 18.9141,0C 17.9314,0 16.9487,0.418701 16.1087,1.25732 Z ">
+                                        <Path.Fill>
+                                            <LinearGradientBrush StartPoint="0.945183,0.945154" EndPoint="0.0547729,0.0547262">
+                                                <LinearGradientBrush.GradientStops>
+                                                    <GradientStop Color="#FFB12702" Offset="0"/>
+                                                    <GradientStop Color="#FFD02F00" Offset="0.093399"/>
+                                                    <GradientStop Color="#FFE87A5F" Offset="1"/>
+                                                </LinearGradientBrush.GradientStops>
+                                            </LinearGradientBrush>
+                                        </Path.Fill>
+                                    </Path>
+                                    <Path Width="9.9987" Height="6.8707" Canvas.Left="11.246" Canvas.Top="0.665356" Stretch="Fill" Data="F1 M 18.9114,0.665359C 18.0847,0.663986 17.2727,1.03606 16.5807,1.72803L 11.9567,6.35466L 11.246,7.06404L 11.7194,7.53606L 12.4287,6.82666L 17.0567,2.20134C 18.262,1.03606 19.5647,1.03467 20.7727,2.20271L 21.2447,1.72932C 20.5553,1.03865 19.7434,0.665359 18.9194,0.665359L 18.9114,0.665359 Z ">
+                                        <Path.Fill>
+                                            <LinearGradientBrush StartPoint="0.616568,0.713077" EndPoint="1.02849,0.713077">
+                                                <LinearGradientBrush.RelativeTransform>
+                                                    <TransformGroup>
+                                                        <SkewTransform CenterX="0.616568" CenterY="0.713077" AngleX="21.0093" AngleY="0"/>
+                                                        <RotateTransform CenterX="0.616568" CenterY="0.713077" Angle="235.505"/>
+                                                    </TransformGroup>
+                                                </LinearGradientBrush.RelativeTransform>
+                                                <LinearGradientBrush.GradientStops>
+                                                    <GradientStop Color="#FFC12900" Offset="0"/>
+                                                    <GradientStop Color="#FFFFE4DE" Offset="1"/>
+                                                </LinearGradientBrush.GradientStops>
+                                            </LinearGradientBrush>
+                                        </Path.Fill>
+                                    </Path>
+                                    <Path Width="5.72795" Height="5.72534" Canvas.Left="0.660726" Canvas.Top="0.665359" Stretch="Fill" Data="F1 M 1.72607,1.73332C 1.03402,2.42268 0.662028,3.23601 0.660726,4.05998L 0.660726,4.05998C 0.662028,4.88802 1.0367,5.69865 1.73136,6.3907L 2.20207,5.91731C 1.0367,4.7093 1.0367,3.40935 2.19938,2.20671L 2.19938,2.20671C 3.40739,1.03735 4.70874,1.03606 5.91675,2.20532L 6.38867,1.73071C 5.69401,1.03735 4.88338,0.665359 4.05672,0.665359L 4.05672,0.665359C 3.22868,0.665359 2.41805,1.03735 1.72607,1.73332 Z ">
+                                        <Path.Fill>
+                                            <LinearGradientBrush StartPoint="0.593564,0.59328" EndPoint="1.16939,0.59328">
+                                                <LinearGradientBrush.RelativeTransform>
+                                                    <TransformGroup>
+                                                        <SkewTransform CenterX="0.593564" CenterY="0.59328" AngleX="0.0259795" AngleY="0"/>
+                                                        <RotateTransform CenterX="0.593564" CenterY="0.59328" Angle="225.013"/>
+                                                    </TransformGroup>
+                                                </LinearGradientBrush.RelativeTransform>
+                                                <LinearGradientBrush.GradientStops>
+                                                    <GradientStop Color="#FFC12900" Offset="0"/>
+                                                    <GradientStop Color="#FFFFE4DE" Offset="1"/>
+                                                </LinearGradientBrush.GradientStops>
+                                            </LinearGradientBrush>
+                                        </Path.Fill>
+                                    </Path>
+                                    <Path Width="6.86931" Height="9.99202" Canvas.Left="0.66471" Canvas.Top="11.2507" Stretch="Fill" Data="F1 M 6.3527,11.9561L 1.73136,16.5827C 1.0367,17.2734 0.663411,18.0867 0.664714,18.9106L 0.664714,18.9106C 0.663411,19.7374 1.03939,20.5507 1.73275,21.2427L 2.20605,20.7707L 2.20467,20.7707C 1.0367,19.5614 1.0367,18.2613 2.20207,17.0547L 6.82739,12.4321L 7.53402,11.7227L 7.06201,11.2507L 6.3527,11.9561 Z ">
+                                        <Path.Fill>
+                                            <LinearGradientBrush StartPoint="0.713103,0.616728" EndPoint="1.12533,0.616728">
+                                                <LinearGradientBrush.RelativeTransform>
+                                                    <TransformGroup>
+                                                        <SkewTransform CenterX="0.713103" CenterY="0.616728" AngleX="-20.9846" AngleY="0"/>
+                                                        <RotateTransform CenterX="0.713103" CenterY="0.616728" Angle="214.508"/>
+                                                    </TransformGroup>
+                                                </LinearGradientBrush.RelativeTransform>
+                                                <LinearGradientBrush.GradientStops>
+                                                    <GradientStop Color="#FFC12900" Offset="0"/>
+                                                    <GradientStop Color="#FFFFE4DE" Offset="1"/>
+                                                </LinearGradientBrush.GradientStops>
+                                            </LinearGradientBrush>
+                                        </Path.Fill>
+                                    </Path>
+                                </Canvas>
+                            </Viewbox>
+                            <TextBlock Grid.Row="2" Text="exit" HorizontalAlignment="Center" FontFamily="Calibri" Foreground="#FFFFFFFF" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" FontSize="18">
+                            <TextBlock.RenderTransform>
+                                        <TransformGroup>
+                                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                                <SkewTransform AngleX="0" AngleY="0"/>
+                                                <RotateTransform Angle="0"/>
+                                                <TranslateTransform X="0" Y="0"/>
+                                        </TransformGroup>
+                                </TextBlock.RenderTransform></TextBlock>
+                        </Grid>
+                    </Viewbox>
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Trigger.EnterActions>
+                            <BeginStoryboard Storyboard="{StaticResource OnMouseEnter}" x:Name="OnMouseEnter_BeginStoryboard"/>
+                        </Trigger.EnterActions>
+                        <Setter Property="BitmapEffect">
+                            <Setter.Value>
+                                <OuterGlowBitmapEffect GlowColor="Blue" GlowSize="4"/>
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                    <Trigger Property="IsPressed" Value="True">
+                        <Setter Property="BitmapEffect">
+                            <Setter.Value>
+                                <OuterGlowBitmapEffect GlowColor="Blue" GlowSize="8"/>
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+        </Setter.Value>
+    </Setter>
+</Style>
+
+</Window>

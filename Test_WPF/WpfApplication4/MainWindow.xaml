@@ -1,0 +1,71 @@
+﻿<Window x:Class="WpfApplication4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.Resources>
+            <PathGeometry x:Key="path1" 
+                        Figures="M0,0 L10,10 C20,100 30,10 60,120 C30,130 20,170 120,175" />
+            <PathGeometry x:Key="path2" 
+                        Figures="M120,175 C130,150 140,180 160,130 C170,150 175,170 190,120 C200,80 200,60 40,40" />
+            <Storyboard x:Key="sb1">
+                <DoubleAnimationUsingPath Storyboard.TargetName="rectTranslateTransform"
+                                        Storyboard.TargetProperty="X"
+                                        PathGeometry="{StaticResource path1}"
+                                        Source="X" 
+                                        Duration="0:0:2" />
+                <DoubleAnimationUsingPath Storyboard.TargetName="rectTranslateTransform"
+                                        Storyboard.TargetProperty="Y"
+                                        PathGeometry="{StaticResource path1}"
+                                        Source="Y" 
+                                        Duration="0:0:2" />
+                <DoubleAnimationUsingPath Storyboard.TargetName="rectTranslateTransform"
+                                        Storyboard.TargetProperty="X"
+                                        PathGeometry="{StaticResource path2}"
+                                        Source="X" 
+                                        Duration="0:0:2"
+                                        BeginTime="0:0:3"/>
+                <DoubleAnimationUsingPath Storyboard.TargetName="rectTranslateTransform"
+                                        Storyboard.TargetProperty="Y"
+                                        PathGeometry="{StaticResource path2}"
+                                        Source="Y" 
+                                        Duration="0:0:2"
+                                        BeginTime="0:0:3"/>
+            </Storyboard>
+            
+            
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Path Data="M0,0 L10,10 C20,100 30,10 60,120 C30,130 20,170 120,175" Stroke="Green" StrokeThickness="2" />
+        <Path Data="M120,175 C130,150 140,180 160,130 C170,150 175,170 190,120 C200,80 200,60 40,40" Stroke="Blue" StrokeThickness="2" />
+        <Canvas>
+            <Rectangle Fill="Red" 
+                    Stroke="DarkRed" StrokeThickness="1"
+                    Height="15" Width="15" 
+                    Canvas.Left="0" Canvas.Top="0" 
+                    x:Name="rect1" >
+                <Rectangle.RenderTransform>
+                    <TranslateTransform x:Name="rectTranslateTransform"  />
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Button x:Name="btn" Content="Button" Canvas.Left="434" Canvas.Top="198" Width="75"/>
+        </Canvas>
+        <Button Content="Animate" Grid.Row="1">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="ButtonBase.Click">
+                    <BeginStoryboard Storyboard="{StaticResource sb1}" />
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+    </Grid>
+
+    <Window.Resources>
+        <Storyboard x:Key="PlayAnimation" Storyboard.TargetProperty="(Canvas.Left)">
+            <DoubleAnimation From="0" To="100" Duration="0:0:1"/>
+        </Storyboard>
+    </Window.Resources>
+
+</Window>
