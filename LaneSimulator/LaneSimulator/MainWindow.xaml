@@ -207,6 +207,7 @@
         </StackPanel>
         <TextBlock Name="lblInfoLine" Background="#EEEEEE" Grid.Row="2" Grid.ColumnSpan="2"  Padding="10,0,0,0" Visibility="Hidden" />
 
+
         <Canvas x:Name="adornerLayer" Visibility="Collapsed"/>
     </Grid>
 
