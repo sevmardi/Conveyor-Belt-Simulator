@@ -37,9 +37,10 @@
 
         <Storyboard x:Key="LongPathAnimation" Name="longshit">
             <DoubleAnimationUsingPath 
-
+                
                 Duration="0:0:03.0" 
                 Source="X" 
+                Completed="Timeline_OnCompleted"
                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)" 
                 >
 

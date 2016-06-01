@@ -47,7 +47,7 @@ namespace WpfApplication1
             Animation_Pannel.Children.Add(_objectToMove);
             sb1.Begin(_objectToMove);
 
-           // Timer1.Start();
+            Timer1.Start();
            
         }
 
@@ -57,7 +57,8 @@ namespace WpfApplication1
         private void Total()
         {
 
-            this.Steel_Wrap.Children.Add((UIElement)_objectToMove);
+            Steel_Wrap.Children.Add((UIElement)_objectToMove);
+            Steel_Wrap.Children.Remove((UIElement)_objectToMove);
             total_text1.Text = (Steel_Wrap.Children.Count).ToString();
         }
 
@@ -68,10 +69,10 @@ namespace WpfApplication1
           
 
             Total();
-            var sb1 = FindResource("LongPathAnimation") as Storyboard;
-            sb1.Stop();
-            Timer1.Stop();
-            _objectToMove = null;
+           // var sb1 = FindResource("LongPathAnimation") as Storyboard;
+          
+          
+            //_objectToMove = null;
 
         }
 
