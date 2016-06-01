@@ -29,8 +29,8 @@ namespace WpfApplication1
 
         public MainWindow()
         {
-            _objectToMove = new ObjectToMove();
-            _objectToMove.Visibility = Visibility.Hidden;
+            
+            
           
             InitializeComponent();
             this.Timer1.Interval = new TimeSpan(0, 0, 0, 0, 100);
@@ -39,20 +39,15 @@ namespace WpfApplication1
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
+
+            var _objectToMove = new ObjectToMove();
+
             var sb1 = FindResource("LongPathAnimation") as Storyboard;
 
-
-            _objectToMove.RenderTransformOrigin = new Point(0.5, 0.5);
-            _objectToMove.HorizontalAlignment = HorizontalAlignment.Left;
-            RotateTransform myRotateTransform = new RotateTransform(0);
-            TranslateTransform myTranslateTransform = new TranslateTransform();
-            _objectToMove.RenderTransform = myTranslateTransform;
-            _objectToMove.RenderTransform = myRotateTransform;
-            
-            
+            Animation_Pannel.Children.Add(_objectToMove);
             sb1.Begin(_objectToMove);
 
-            Timer1.Start();
+           // Timer1.Start();
            
         }
 
