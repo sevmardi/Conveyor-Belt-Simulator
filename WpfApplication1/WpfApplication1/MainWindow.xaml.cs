@@ -56,20 +56,6 @@ namespace WpfApplication1
            
         }
 
-        private void test()
-        {
-
-            PathGeometry animationPath = new PathGeometry();
-            PathFigure pFigure = new PathFigure();
-            pFigure.StartPoint = new Point(10, 100);
-
-            DoubleAnimationUsingPath dbp = new DoubleAnimationUsingPath();
-
-            dbp.Completed += Timeline_OnCompleted;
-            dbp.Duration = TimeSpan.FromMilliseconds(3);
-            dbp.PathGeometry = animationPath;
-            dbp.Source = PathAnimationSource.Angle;
-        }
 
 
 

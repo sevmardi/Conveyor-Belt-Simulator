@@ -1,24 +1,20 @@
-﻿<Window x:Class="WpfApplication1.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:wpfApplication1="clr-namespace:WpfApplication1"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WpfApplication1.MainWindow"
         Title="MainWindow" Height="850" Width="1050">
 
     <Window.Resources>
 
-        <ControlTemplate TargetType="Control" x:Key="objecttomove">
-            
 
-            
-        </ControlTemplate>
-        
-        
+
         <Storyboard x:Key="LongPathAnimation">
             <DoubleAnimationUsingPath 
-                Completed="Timeline_OnCompleted" 
-                Duration="0:0:03.0" 
-                Source="X" 
-                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
+        		Completed="Timeline_OnCompleted" 
+        		Duration="0:0:03.0" 
+        		Source="X" 
+        		Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
                 >
 
                 <DoubleAnimationUsingPath.PathGeometry>
@@ -28,8 +24,8 @@
 
             <DoubleAnimationUsingPath 
                
-                Duration="0:0:03.0" Source="Y" 
-                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" 
+        		Duration="0:0:03.0" Source="Y" 
+        		Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" 
                 >
 
                 <DoubleAnimationUsingPath.PathGeometry>
@@ -40,6 +36,7 @@
 
     </Window.Resources>
 
+
     <!--<Window.Triggers>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <BeginStoryboard Storyboard="{StaticResource LongPathAnimation}"/>
@@ -47,10 +44,10 @@
 
         
     </Window.Triggers>-->
-    
+
 
     <Canvas x:Name="LaneTopSection" Width="744" Height="1052">
-        <Canvas x:Name="lane" >
+        <Canvas x:Name="lane" d:IsLocked="True" >
             <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Canvas.Left="-199.5" Canvas.Top="-181.5">
                 <Path.Data>
                     <PathGeometry Figures="m 60.28756 552.08218 45.1466 -97.56912 c 29.0294 14.34618 53.51348 36.49707 70.68158 63.73488 l 0.231 0.39961 c 0 0 -66.47528 74.36714 -78.93698 88.30989 0 0 -3.4166 -35.77924 -37.1222 -54.87526" FillRule="nonzero"/>
@@ -178,7 +175,7 @@
                 <WrapPanel x:Name="tray_Wrap" Orientation="Horizontal"/>
             </ScrollViewer>
         </Canvas>
-        <Canvas x:Name="Sensors" >
+        <Canvas x:Name="Sensors" d:IsLocked="True" >
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-243.75" Canvas.Top="420.25" Width="6" x:Name="_0102_S1"/>
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-234" Canvas.Top="392" Width="6" x:Name="_0102_S2"/>
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-218.75" Canvas.Top="371" Width="6" x:Name="_0103_S1"/>
@@ -230,7 +227,7 @@
 
         </Canvas>
 
-        <Canvas x:Name="Motors" >
+        <Canvas x:Name="Motors" d:IsLocked="True" >
             <Ellipse Height="6" Canvas.Left="-291" Canvas.Top="389.5" Width="6" x:Name="_0102_D1" RenderTransformOrigin="0.5,0.5" Fill="#FFDACF84">
                 <Ellipse.RenderTransform>
                     <TransformGroup>
@@ -434,8 +431,8 @@
             </Ellipse>
 
         </Canvas>
-        
-        
+
+
         <!--<Rectangle x:Name="ObjectToMove" Height="31" Canvas.Left="-316.5" Stroke="Black" Canvas.Top="431.5" Width="42" Fill="#FFDA6C11" RenderTransformOrigin="0.5,0.5" >
 
             <Rectangle.RenderTransform>
@@ -449,44 +446,32 @@
         </Rectangle>-->
 
         <!--<wpfApplication1:ObjectToMove x:Name="ObjectToMove" Canvas.Left="-319" Canvas.Top="468" Height="45" Width="45"></wpfApplication1:ObjectToMove>-->
-        
-        
-        <Canvas x:Name="Sections" >
-            <Path x:Name="SectionA" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5"
-	              Canvas.Left="-140" StrokeThickness="2" Canvas.Top="161.6" Width="2" Stretch="Fill" />
-            <Path x:Name="SectionB" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5"
-	              Canvas.Left="138" StrokeThickness="2" Canvas.Top="161.6" Width="2" Stretch="Fill" />
-            <TextBlock Height="28.666" Canvas.Left="-164.667" TextWrapping="Wrap" Canvas.Top="519.667" Width="57.667">
-	            <Run Language="nl-nl" Text="Section-A" />
-            </TextBlock>
-            <TextBlock Height="28.666" Canvas.Left="91" TextWrapping="Wrap" Canvas.Top="519.667" Width="57.667">
-	            <Run Language="nl-nl" Text="Section-B" />
-            </TextBlock>
-            <Path x:Name="SectionC" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5"
-	              Canvas.Left="318" StrokeThickness="2" Canvas.Top="162" Width="2" Stretch="Fill" />
-            <TextBlock Height="29" Canvas.Left="271" TextWrapping="Wrap" Canvas.Top="520" Width="58">
-	            <Run Language="nl-nl" Text="Section-C" />
-            </TextBlock>
-            <Path x:Name="SectionD" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5"
-	              Canvas.Left="554" StrokeThickness="2" Canvas.Top="161.6" Width="2" Stretch="Fill" />
-            <TextBlock Height="29" Canvas.Left="498" TextWrapping="Wrap" Canvas.Top="520" Width="58">
-	            <Run Language="nl-nl" Text="Section-D" />
-            </TextBlock>
-            <Path x:Name="SectionE" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5"
-	              Canvas.Left="682.5" StrokeThickness="2" Canvas.Top="161.6" Width="2" Stretch="Fill" />
-            <TextBlock Height="29" Canvas.Left="626" TextWrapping="Wrap" Canvas.Top="520" Width="58">
-	            <Run Language="nl-nl" Text="Section-E" />
-            </TextBlock>
-            <Path x:Name="SectionF" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5"
-	              Canvas.Left="816.25" StrokeThickness="2" Canvas.Top="162" Width="2" Stretch="Fill" />
 
-            <TextBlock Height="29" Canvas.Left="737.75" TextWrapping="Wrap" Canvas.Top="519.333" Width="58">
-	            <Run Language="nl-nl" Text="Section-F" />
-            </TextBlock>
+
+        <Canvas x:Name="Sections" d:IsLocked="True" >
+            <Path x:Name="SectionA" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5"
+				Canvas.Left="-140" StrokeThickness="2" Canvas.Top="161.6" Width="2" Stretch="Fill" />
+            <Path x:Name="SectionB" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5"
+				Canvas.Left="138" StrokeThickness="2" Canvas.Top="161.6" Width="2" Stretch="Fill" />
+            <TextBlock Height="28.666" Canvas.Left="-164.667" TextWrapping="Wrap" Canvas.Top="519.667" Width="57.667"><Run Language="nl-nl" Text="Section-A" /></TextBlock>
+            <TextBlock Height="28.666" Canvas.Left="91" TextWrapping="Wrap" Canvas.Top="519.667" Width="57.667"><Run Language="nl-nl" Text="Section-B" /></TextBlock>
+            <Path x:Name="SectionC" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5"
+				Canvas.Left="318" StrokeThickness="2" Canvas.Top="162" Width="2" Stretch="Fill" />
+            <TextBlock Height="29" Canvas.Left="271" TextWrapping="Wrap" Canvas.Top="520" Width="58"><Run Language="nl-nl" Text="Section-C" /></TextBlock>
+            <Path x:Name="SectionD" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5"
+				Canvas.Left="554" StrokeThickness="2" Canvas.Top="161.6" Width="2" Stretch="Fill" />
+            <TextBlock Height="29" Canvas.Left="498" TextWrapping="Wrap" Canvas.Top="520" Width="58"><Run Language="nl-nl" Text="Section-D" /></TextBlock>
+            <Path x:Name="SectionE" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5"
+				Canvas.Left="682.5" StrokeThickness="2" Canvas.Top="161.6" Width="2" Stretch="Fill" />
+            <TextBlock Height="29" Canvas.Left="626" TextWrapping="Wrap" Canvas.Top="520" Width="58"><Run Language="nl-nl" Text="Section-E" /></TextBlock>
+            <Path x:Name="SectionF" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5"
+				Canvas.Left="816.25" StrokeThickness="2" Canvas.Top="162" Width="2" Stretch="Fill" />
+
+            <TextBlock Height="29" Canvas.Left="737.75" TextWrapping="Wrap" Canvas.Top="519.333" Width="58"><Run Language="nl-nl" Text="Section-F" /></TextBlock>
 
 
         </Canvas>
-        <Canvas x:Name="Paths" >
+        <Canvas x:Name="Paths" d:IsLocked="True" >
             <Path x:Name="StartPointPath" Data="M-294,428.33333 L-287.33333,393.00034 -263.66823,352.33366 -235.33574,330.6674" Height="97.666" Canvas.Left="-294" Stretch="Fill" Canvas.Top="330.667" Width="58.667" RenderTransformOrigin="0.5,0.5">
                 <Path.RenderTransform>
                     <TransformGroup>
@@ -521,30 +506,30 @@
 
 
 
-        <Canvas x:Name="LongPaths">
-            <Path x:Name="LongPathA" Data="M-294.66667,425 L-288.66632,393.66667 -264.66464,353.66588 -235.32901,331.66522 -181.32602,317.33128 -125.32307,327.33176 -101.6554,341.33199 -61.98609,378.33258 -20.650348,382.66599 27.019488,382.66599 63.354985,382.66599 99.690847,382.66599 142.02637,382.66599 225.69802,382.66599 269.03357,382.66599 314.70293,382.66599 369.37247,382.66599 421.37586,382.66599 471.0458,382.66599 511.04818,382.66599 620.72137,382.66599 686.05823,382.66599 815.39919,382.66599 864.06906,381.99931&#xD;&#xA;898.73775,354.66554 922.07211,316.66492" Height="108.333" Canvas.Left="-294.667" Stretch="Fill" Canvas.Top="316.667" Width="1216.667" />
+        <Canvas x:Name="LongPaths" d:IsLocked="True">
+            <Path x:Name="LongPathA" Data="M-294.66667,425 L-288.66632,393.66667 -264.66464,353.66588 -235.32901,331.66522 -181.32602,317.33128 -125.32307,327.33176 -101.6554,341.33199 -61.98609,378.33258 -20.650348,382.66599 27.019488,382.66599 63.354985,382.66599 99.690847,382.66599 142.02637,382.66599 225.69802,382.66599 269.03357,382.66599 314.70293,382.66599 369.37247,382.66599 421.37586,382.66599 471.0458,382.66599 511.04818,382.66599 620.72137,382.66599 686.05823,382.66599 815.39919,382.66599 864.06906,381.99931&#xA;898.73775,354.66554 922.07211,316.66492" Height="108.333" Canvas.Left="-294.667" Stretch="Fill" Canvas.Top="316.667" Width="1216.667" />
 
         </Canvas>
 
-        <Viewbox Stretch="Fill" Width="114.193" HorizontalAlignment="Right" Margin="0,27.177,-0.193,70.831">
+        <Viewbox Stretch="Fill" Width="114.193" HorizontalAlignment="Right" Margin="0,27.177,-0.193,70.831" d:IsLocked="True">
             <Grid Height="96.907" Width="138.264">
                 <TextBox x:Name="textBox1_Copy1" Height="42.634" HorizontalContentAlignment="Center"
-                     VerticalContentAlignment="Center" Text="Total" FontFamily="/WpfApplication1;component/Fonts/#LCD"
-                     Foreground="#FFB22121" Background="Black" FontSize="29.333" BorderThickness="2" Focusable="false"
-                     Cursor="Arrow" VerticalAlignment="Top" BorderBrush="{x:Null}"/>
+					VerticalContentAlignment="Center" Text="Total" FontFamily="/WpfApplication1;component/Fonts/#LCD"
+					Foreground="#FFB22121" Background="Black" FontSize="29.333" BorderThickness="2" Focusable="false"
+					Cursor="Arrow" VerticalAlignment="Top" BorderBrush="{x:Null}"/>
                 <TextBox x:Name="total_text1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="0"
-                     FontFamily="/WpfApplication1;component/Fonts/#LCD" Foreground="#FFB22121" Background="Black"
-                     FontSize="48" BorderThickness="2" Focusable="false" Cursor="Arrow" Margin="0,36.09,0,0"
-                     BorderBrush="{x:Null}"/>
+					FontFamily="/WpfApplication1;component/Fonts/#LCD" Foreground="#FFB22121" Background="Black"
+					FontSize="48" BorderThickness="2" Focusable="false" Cursor="Arrow" Margin="0,36.09,0,0"
+					BorderBrush="{x:Null}"/>
             </Grid>
         </Viewbox>
-        <Border BorderBrush="#FF55933F" BorderThickness="2" CornerRadius="5" Canvas.Left="880" Canvas.Top="260" Height="75" Width="120">
+        <Border BorderBrush="#FF55933F" BorderThickness="2" CornerRadius="5" Canvas.Left="880" Canvas.Top="260" Height="75" Width="120" d:IsLocked="True">
             <ScrollViewer x:Name="Steel_Panel">
                 <WrapPanel x:Name="Steel_Wrap" Orientation="Horizontal"/>
             </ScrollViewer>
         </Border>
 
-        <Viewbox HorizontalAlignment="Right" Margin="0,120.835,0,0.502" Stretch="Fill" Width="114">
+        <Viewbox HorizontalAlignment="Right" Margin="0,120.835,0,0.502" Stretch="Fill" Width="114" d:IsLocked="True">
             <Border BorderBrush="#FF539D3F" BorderThickness="2" CornerRadius="5" Height="56.911" Width="116.667">
                 <Border.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -553,7 +538,7 @@
                     </LinearGradientBrush>
                 </Border.Background>
                 <TextBlock x:Name="Timer_Lable" FontFamily="/WpfApplication1;component/Fonts/#LCD" FontSize="48" Text="0.0"
-                       TextAlignment="Center" TextWrapping="Wrap" Foreground="#FF9F2323"/>
+					TextAlignment="Center" TextWrapping="Wrap" Foreground="#FF9F2323"/>
             </Border>
         </Viewbox>
 
@@ -561,7 +546,10 @@
         <Button Content="Tray" Canvas.Left="345" Canvas.Top="95" Width="75" Click="MakeTrayBtn_Click"/>
 
 
-        
+        <Canvas x:Name="Animation_Pannel" Height="294" Canvas.Left="-375" Canvas.Top="176" Width="1580"  >
+
+
+        </Canvas>
 
     </Canvas>
 
