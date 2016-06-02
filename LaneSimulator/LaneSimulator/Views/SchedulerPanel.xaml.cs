@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using LaneSimulator.Lanes;
+using LaneSimulator.Models.Components;
 
 namespace LaneSimulator.Views
 {
@@ -7,10 +9,14 @@ namespace LaneSimulator.Views
     /// </summary>
     public partial class SchedulerPanel : Window
     {
+        private LaneTop _laneTop;
+
         public SchedulerPanel()
         {
             InitializeComponent();
-           // _trays = -1;
+            _laneTop = new LaneTop();
+         
+            // _trays = -1;
         }
 
         protected int _trays;
@@ -18,7 +24,9 @@ namespace LaneSimulator.Views
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
             _trays = (int) bitSlider.Value;
-            Close();
+            test(_trays);
+           
+             Close();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
@@ -33,6 +41,22 @@ namespace LaneSimulator.Views
         public int trays
         {
             get { return _trays; }
+        }
+
+        public void test(int numberOfTrays)
+        {
+            //for (int i = 0; i < numberOfTrays; i++)
+            //{
+            //    Tray tray = new Tray();
+            //    _laneTop.AnimationPannel.Children.Add(tray);
+            //    _laneTop.sb1.Begin(tray);
+            //}
+            
+            _laneTop.TaskRunner();
+
+
+            //MessageBox.Show("number of trays is " + numberOfTrays);
+    
         }
     }
 }

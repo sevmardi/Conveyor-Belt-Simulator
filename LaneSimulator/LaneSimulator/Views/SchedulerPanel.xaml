@@ -15,7 +15,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Label Margin="10,10,10,10">How many Trays?</Label>
-        <Slider Grid.Column="1" Margin="10,10,10,10" Name="bitSlider" Minimum="1" Maximum="5000" Value="10" SmallChange="1" LargeChange="1" IsSnapToTickEnabled="True"    TickFrequency="1" />
+        <Slider Grid.Column="1" Margin="10,10,10,10" Name="bitSlider" Minimum="1" Maximum="500" Value="10" SmallChange="1" LargeChange="1" IsSnapToTickEnabled="True"    TickFrequency="1" />
         <Label Grid.Column="2" Margin="10,10,10,10" Name="lblBits" Content="{Binding ElementName=bitSlider, Path=Value}">
         </Label>
 

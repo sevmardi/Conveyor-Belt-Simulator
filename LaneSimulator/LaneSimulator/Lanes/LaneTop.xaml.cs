@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LaneSimulator.Models.Components;
 using LaneSimulator.PLC;
+using LaneSimulator.Views;
 using Snap7;
 
 namespace LaneSimulator.Lanes
@@ -28,7 +29,7 @@ namespace LaneSimulator.Lanes
         private readonly PlcCalls _plcCalls;
         private static readonly byte[] Buffer = new byte[500];
         private static int _res;
-        private Storyboard sb1;
+        public Storyboard sb1;
         private S7Client myclient;
         int amount = 1;
         int DBNumber = 0;
@@ -77,8 +78,8 @@ namespace LaneSimulator.Lanes
                         {
                             _0102_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
                         }));
-
                     }
+                    
                 }
             }
             catch (Exception)
@@ -147,7 +148,12 @@ namespace LaneSimulator.Lanes
                 }
             }
         }
-#endregion
+
+       
+        
+        
+        
+        #endregion
         
         #region Sensoren
         
@@ -228,12 +234,12 @@ namespace LaneSimulator.Lanes
 
         public void _0102_S2Write(object source, ElapsedEventArgs e)
         {
-            Buffer[0] = 1;
+             Buffer[0] = 1;
             _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0102_S2, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
 
-            Buffer[0] = 0;
+            //Buffer[0] = 0;
 
-            _res = _plcCalls.Client.WriteArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._0103_D1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+            //_res = _plcCalls.Client.WriteArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._0103_D1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
 
             Dispatcher.Invoke((Action)(() =>
             {
@@ -403,8 +409,42 @@ namespace LaneSimulator.Lanes
             }));
         }
 
+        
+        public void _0301_S1_TurnOFF()
+        {
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0301_S1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+            
+            if (_res == 0)
+            {
+                if (Buffer[0] == 1)
+                {
+                    Buffer[0] = 0;
+                    _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0301_S1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+
+                    Dispatcher.Invoke((Action)(() =>
+                    {
+                        _0301_S1.Fill = new SolidColorBrush(Colors.DarkGray);
+
+                    }));
+
+                 //   _0301_D1_Motor();
+
+                }
+            }
+        }
+
+        public void _0301_S1_Write()
+        {
+            Buffer[0] = 1;
+            _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0301_S1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
 
 
+            Dispatcher.Invoke((Action)(() =>
+            {
+                _0301_S1.Fill = new SolidColorBrush(Colors.Red);
+                //_0103_D1.Fill = new SolidColorBrush(Colors.DarkGray);
+            }));
+        }
 
 
 
@@ -613,18 +653,14 @@ namespace LaneSimulator.Lanes
 
             }
        
-                
-                
-            
-
-        
 
         private void MakeTrayBtn_Click(object sender, RoutedEventArgs e)
         {
-            Tray tray = new Tray();
-            AnimationPannel.Children.Add(tray);
-            sb1.Begin(tray);
-          //  Executor();
+            //Tray tray = new Tray();
+            //AnimationPannel.Children.Add(tray);
+            //sb1.Begin(tray);
+            TaskRunner();
+            // Executor();
         }
 
         private void storyboard_Completed(object sender, EventArgs eventArgs)
@@ -634,7 +670,23 @@ namespace LaneSimulator.Lanes
 
         private void StopSimBtn_Click(object sender, RoutedEventArgs e)
         {
-            sb1.Stop();
+            SchedulerPanel schedulerPanel = new SchedulerPanel();
+            schedulerPanel.Show();
+        }
+
+
+        public void TaskRunner()
+        {
+            int testtrays = 5;
+            for (int i = 0; i < testtrays; i++)
+            {
+                Tray tray = new Tray();
+                AnimationPannel.Children.Add(tray);
+                sb1.Begin(tray);
+            }
+
+
+
         }
     }
 }
