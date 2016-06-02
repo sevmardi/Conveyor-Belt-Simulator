@@ -20,19 +20,7 @@ namespace LaneSimulator.Views
         }
 
         protected int _trays;
-        
-        private void btnOK_Click(object sender, RoutedEventArgs e)
-        {
-            _trays = (int) bitSlider.Value;
-            test(_trays);
-           
-             Close();
-        }
 
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
 
         /// <summary>
         /// Number of trays selected by the user.  This is set when the user
@@ -43,20 +31,18 @@ namespace LaneSimulator.Views
             get { return _trays; }
         }
 
-        public void test(int numberOfTrays)
+
+        private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            //for (int i = 0; i < numberOfTrays; i++)
-            //{
-            //    Tray tray = new Tray();
-            //    _laneTop.AnimationPannel.Children.Add(tray);
-            //    _laneTop.sb1.Begin(tray);
-            //}
-            
-            _laneTop.TaskRunner();
-
-
-            //MessageBox.Show("number of trays is " + numberOfTrays);
-    
+            _trays = (int) bitSlider.Value;
+             Close();
         }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+
     }
 }
