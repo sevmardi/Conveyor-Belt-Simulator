@@ -656,10 +656,10 @@ namespace LaneSimulator.Lanes
 
         private void MakeTrayBtn_Click(object sender, RoutedEventArgs e)
         {
-            //Tray tray = new Tray();
-            //AnimationPannel.Children.Add(tray);
-            //sb1.Begin(tray);
-            TaskRunner();
+            Tray tray = new Tray();
+            AnimationPannel.Children.Add(tray);
+            sb1.Begin(tray);
+          //  TaskRunner();
             // Executor();
         }
 

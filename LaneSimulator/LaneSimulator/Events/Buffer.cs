@@ -35,7 +35,7 @@ namespace LaneSimulator.Events
         {
             lock (this)
             {
-                if (!ReachingPoint)
+                if ( ! ReachingPoint)
                     Monitor.Wait(this);
                 ReachingPoint = false;
                 this.tray = tray;
