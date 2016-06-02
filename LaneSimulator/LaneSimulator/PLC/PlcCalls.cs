@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Windows;
 using Snap7;
 
 namespace LaneSimulator.PLC
@@ -25,6 +26,19 @@ namespace LaneSimulator.PLC
         }
 
         /// <summary>
+        /// TEMP 
+        /// </summary>
+        public  void EstablishContact()
+        {
+          
+            Client.ConnectTo("192.168.2.16", 0, 0);
+
+            MessageBox.Show(Client.Connected() ? "Connection Established" : "Something went wrong");
+        }
+
+
+
+        /// <summary>
         /// This executes a method to make contact with the PLC
         /// </summary>
         /// <param name="ipAdress"></param>
@@ -32,7 +46,9 @@ namespace LaneSimulator.PLC
         /// <param name="slot"></param>
         public void ConnectToPlc(string ipAdress, int rack, int slot )
         {
-            Client.ConnectTo(ipAdress, rack, slot);
+            //Client.ConnectTo(ipAdress, rack, slot);
+            Client.ConnectTo("192.168.2.16", 0, 0);
+            MessageBox.Show(Client.Connected() ? "Connection Established" : "Something went wrong");
         }
 
         /// <summary>

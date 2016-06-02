@@ -43,28 +43,31 @@ namespace LaneSimulator.PLC
         public static int _0304_S1 = 165;
         public static int _0304_S2 = 166;
         public static int _0304_S3 = 167;
-        //section C
         public static int _0701_S1 = 163;
+        
+        //section C
         public static int _0701_S2 = 40;
         public static int _0702_S1 = 41;
         public static int _0702_S2 = 42;
+        
         //section D
         public static int _1001_S1 = 272;
         public static int _1001_S2 = 273;
         public static int _1002_S1 = 274;
         public static int _1002_S2 = 275;
         public static int _1003_S1 = 400;
+        public static int _1004_S1 = 280;
+        public static int _1003_S3 = 415;
         public static int _1003_S4 = 412;
         public static int _1003_S5 = 413;
         public static int _1003_S2 = 401;
-        public static int _1004_S1 = 280;
-        public static int _1003_S3 = 415;
         public static int _1004_S2 = 281;
 
         // SECTION E
         public static int _1101_S1 = 292;
         public static int _1101_S2 = 293;
         public static int _1101_S3 = 294;
+
         public static int _1102_S1 = 295;
         public static int _1102_S2 = 420;
         public static int _1102_S3 = 421;
@@ -73,6 +76,7 @@ namespace LaneSimulator.PLC
         public static int _1601_S1 = 432;
         public static int _1601_S2 = 433;
         public static int _1601_S3 = 434;
+
         public static int _1602_S1 = 435;
         public static int _1602_S2 = 316;
         public static int _1602_S3 = 317;
