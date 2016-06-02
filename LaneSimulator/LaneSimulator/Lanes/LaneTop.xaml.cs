@@ -571,6 +571,41 @@ namespace LaneSimulator.Lanes
                     _0304_S2.Fill = new SolidColorBrush(Colors.Red);
                     _0304_S3.Fill = new SolidColorBrush(Colors.Red);
                     _0701_S1.Fill = new SolidColorBrush(Colors.Red);
+                    _0702_S1.Fill = new SolidColorBrush(Colors.Red);
+                    _0701_S2.Fill = new SolidColorBrush(Colors.Red);
+                    _0702_S2.Fill = new SolidColorBrush(Colors.Red);
+                    _1001_S1.Fill = new SolidColorBrush(Colors.Red);
+                    _1001_S2.Fill = new SolidColorBrush(Colors.Red);
+                    _1002_S2.Fill = new SolidColorBrush(Colors.Red);
+                    _1003_S1.Fill = new SolidColorBrush(Colors.Red);
+                    _1004_S1.Fill = new SolidColorBrush(Colors.Red);
+                    _1003_S3.Fill = new SolidColorBrush(Colors.Red);
+                    _1003_S4.Fill = new SolidColorBrush(Colors.Red);
+                    _1003_S5.Fill = new SolidColorBrush(Colors.Red);
+                    _1003_S2.Fill = new SolidColorBrush(Colors.Red);
+                    _1101_S1.Fill = new SolidColorBrush(Colors.Red);
+                    _1101_S2.Fill = new SolidColorBrush(Colors.Red);
+                    _1101_S3.Fill = new SolidColorBrush(Colors.Red);
+                    _1102_S1.Fill = new SolidColorBrush(Colors.Red);
+                    _1102_S2.Fill = new SolidColorBrush(Colors.Red);
+                    _1102_S3.Fill = new SolidColorBrush(Colors.Red);
+                    _1002_S1.Fill = new SolidColorBrush(Colors.Red);
+                    _1004_S2.Fill = new SolidColorBrush(Colors.Red);
+                    _1601_S1.Fill = new SolidColorBrush(Colors.Red);
+                    _1601_S2.Fill = new SolidColorBrush(Colors.Red);
+                    _1601_S3.Fill = new SolidColorBrush(Colors.Red);
+                    _1602_S1.Fill = new SolidColorBrush(Colors.Red);
+                    _1602_S2.Fill = new SolidColorBrush(Colors.Red);
+                    _1602_S3.Fill = new SolidColorBrush(Colors.Red);
+                    _1701_S1.Fill = new SolidColorBrush(Colors.Red);
+                    _1702_S1.Fill = new SolidColorBrush(Colors.Red);
+                    _1701_S2.Fill = new SolidColorBrush(Colors.Red);
+                    _1702_S2.Fill = new SolidColorBrush(Colors.Red);
+                    _1701_S3T.Fill = new SolidColorBrush(Colors.Red);
+                    _1702_S3T.Fill = new SolidColorBrush(Colors.Red);
+
+
+
 
 
                     ContactPlcBtn.IsEnabled = false;

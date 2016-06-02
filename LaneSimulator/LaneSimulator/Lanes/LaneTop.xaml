@@ -518,11 +518,11 @@
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="450" Canvas.Top="381" Width="6" x:Name="_1003_S4"/>
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="478" Canvas.Top="381" Width="6" x:Name="_1003_S5"/>
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="876.292" Canvas.Top="419" Width="6" x:Name="_1701_S2"/>
-            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="888.792" Canvas.Top="419" Width="6" x:Name="_1101_S3_Copy2"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="888.792" Canvas.Top="419" Width="6" x:Name="_1701_S3T"/>
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="882.125" Canvas.Top="345.333" Width="6" x:Name="SafetySensorReclaim"/>
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="882.125" Canvas.Top="334.333" Width="6" x:Name="SafetySensorReject"/>
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="876.292" Canvas.Top="249.125" Width="6" x:Name="_1702_S2"/>
-            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="888.792" Canvas.Top="249.125" Width="6" x:Name="_1101_S3_Copy6"/>
+            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="888.792" Canvas.Top="249.125" Width="6" x:Name="_1702_S3T"/>
 
         </Canvas>
         <Canvas x:Name="Motors" d:IsLocked="True">
