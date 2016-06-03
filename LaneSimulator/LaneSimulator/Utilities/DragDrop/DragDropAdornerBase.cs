@@ -19,6 +19,7 @@ namespace LaneSimulator.Utilities.DragDrop
             RotateTransform rotate = new RotateTransform(0f);
             TranslateTransform trans = new TranslateTransform(0f, 0f);
             TransformGroup transGroup = new TransformGroup();
+           
             transGroup.Children.Add(scale);
             transGroup.Children.Add(skew);
             transGroup.Children.Add(rotate);

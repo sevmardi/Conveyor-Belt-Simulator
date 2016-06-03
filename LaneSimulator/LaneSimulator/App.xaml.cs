@@ -13,5 +13,6 @@ namespace LaneSimulator
     /// </summary>
     public partial class App : Application
     {
+
     }
 }
