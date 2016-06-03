@@ -6,16 +6,11 @@
     
     
     <Canvas Name="svg139554" Width="1538.2694" Height="729.59559">
-        <Canvas.RenderTransform>
-            <TranslateTransform X="350" Y="0"/>
-        </Canvas.RenderTransform>
-        
+       
        
         <!--Unknown tag: sodipodi:namedview-->
         <Canvas Name="g139562">
-            <Canvas.RenderTransform>
-                <MatrixTransform Matrix="1.25 0 0 -1.25 -197.1231 961.58875"/>
-            </Canvas.RenderTransform>
+    
             <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path139746" Fill="#FFD3BC5F">
                 <Path.Data>
                     <PathGeometry Figures="m 66.611178 552.33853 c -4.36996 0.6305 -8.8334 0.97293 -13.3752 0.97293 -18.11465 0 -35.027 -5.21161 -49.34949 -14.18974 l 21.64732 -36.67733 c 8.2963 5.25686 18.12667 8.31294 28.67512 8.31294 2.7121 0 5.37755 -0.20365 7.98106 -0.59283 l 2.23539 -0.38916 c 4.72288 -0.91109 9.2226 -2.43913 13.41755 -4.49964 l 35.933612 77.65818 c -12.53504 5.94167 -26.095762 10.06571 -40.347392 12.0342 0 0 -2.27764 -21.55688 -4.54327 -42.98252 l -2.2747 0.35297 z" FillRule="nonzero"/>
@@ -191,28 +186,12 @@
                     <PathGeometry Figures="m 533.75029 460.32226 69.82793 69.72991 -69.82793 0 0 -69.72991 z" FillRule="nonzero"/>
                 </Path.Data>
             </Path>
-            <Rectangle Name="object_to_move" Fill="LightBlue" Height="27" Canvas.Left="-67" Stroke="Black" Canvas.Top="411" Width="62"/>
-           
+
         </Canvas>
         <Button Content="Start System"  Canvas.Left="342" Canvas.Top="86" Width="75" Click="btnStartSystem_Click"/>
         <Button Content="Reset"  Canvas.Left="447" Canvas.Top="86" Width="75" Click="btnRest_Click" />
         <Button Content="Stop System"  Canvas.Left="554" Canvas.Top="86" Width="74" Click="btnStopSystem_Click" />
-        
-        <Ellipse Fill="#FFBCBCCF" Height="6" Canvas.Left="-197" Canvas.Top="376" Width="6" x:Name="_0102_S1"/>
-        <Ellipse Fill="#FFBCBCCF" Height="6" Canvas.Left="-188" Canvas.Top="354" Width="6" x:Name="_0102_S2"/>
-        <Ellipse Fill="#FFBCBCCF" Height="6" Canvas.Left="-176" Canvas.Top="340" Width="6" x:Name="_0103_S1"/>
-        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="-160" Canvas.Top="328" Width="6" x:Name="_0104_S1"/>
-        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="-139" Canvas.Top="322" Width="6" x:Name="_0105_S1"/>
-        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="-118" Canvas.Top="325" Width="6" x:Name="_0105_S2"/>
-        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="-95" Canvas.Top="336" Width="6" x:Name="_0301_S1"/>
-        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="-81" Canvas.Top="354" Width="6" x:Name="_0301_S2"/>
-        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="-67" Canvas.Top="376" Width="6" x:Name="_0302_S1"/>
-        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Top="386" Width="6" x:Name="_0303_S1" Canvas.Left="25"/>
-        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="58" Canvas.Top="386" Width="6" x:Name="_0304_S1"/>
-        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="84" Canvas.Top="386" Width="6" x:Name="_0304_S2"/>
-        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="113" Canvas.Top="386" Width="6" x:Name="_0304_S3"/>
-        <Ellipse Fill="#FFC2C2C5" Height="6" Canvas.Left="160" Canvas.Top="386" Width="6" x:Name="_0701_S1"/>
-        
+
         <Button Content="Connect to PLC"  Canvas.Left="464" Canvas.Top="27" Width="140" Click="btnConnectToPLC_Click" Height="37"/>
         <Button Content="Disconnect"  Canvas.Left="655" Canvas.Top="27" Width="140" Click="btnDisconnect_Click" Height="37"/>
     </Canvas>

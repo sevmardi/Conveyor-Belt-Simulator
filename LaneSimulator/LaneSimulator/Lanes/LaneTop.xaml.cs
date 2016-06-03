@@ -137,22 +137,132 @@ namespace LaneSimulator.Lanes
 
         public void _0105_D1Motor()
         {
-            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._0105_D1, _plcCalls.Amount,
-                _plcCalls.Wordlen, Buffer);
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._0105_D1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
 
             if (_res == 0)
             {
                 if (Buffer[0] == 1)
                 {
-                    //   main._0105_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
+                       _0105_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
                 }
             }
         }
 
-       
-        
-        
-        
+        public void _0301_D1Motor()
+        {
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._0301_D1, _plcCalls.Amount,
+                _plcCalls.Wordlen, Buffer);
+
+                if (_res == 0)
+                {
+                    try
+                    {
+                        if (Buffer[0] == 1)
+                        {
+                            _0301_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Motor not working!");
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("Motor not working!");
+                    }
+
+                }
+                else
+                    MessageBox.Show("Connection must be established first");
+        }
+
+        public void _0302_D1Motor()
+        {
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._0302_D1, _plcCalls.Amount,
+               _plcCalls.Wordlen, Buffer);
+
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        _0302_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Motor not working!");
+                    }
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Motor not working!");
+                }
+
+            }
+            else
+                MessageBox.Show("Connection must be established first");
+
+        }
+
+
+        public void _0303_D1Motor()
+        {
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._0303_D1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        _0303_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Motor not working!");
+                    }
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Motor not working!");
+                }
+            }
+            else
+                MessageBox.Show("Connection must be established first");
+        }
+
+        public void _0304_D1Motor()
+        {
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._0304_D1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        _0304_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Motor not working!");
+                    }
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Motor not working!");
+                }
+            }
+            else
+                MessageBox.Show("Connection must be established first");
+        }
+
+
         #endregion
         
         #region Sensoren
@@ -410,7 +520,7 @@ namespace LaneSimulator.Lanes
         }
 
         
-        public void _0301_S1_TurnOFF()
+        public void _0301_S1_TurnOff()
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0301_S1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
             
@@ -426,8 +536,8 @@ namespace LaneSimulator.Lanes
                         _0301_S1.Fill = new SolidColorBrush(Colors.DarkGray);
 
                     }));
-
-                 //   _0301_D1_Motor();
+      
+                    _0301_D1Motor();
 
                 }
             }
@@ -438,13 +548,66 @@ namespace LaneSimulator.Lanes
             Buffer[0] = 1;
             _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0301_S1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
 
-
             Dispatcher.Invoke((Action)(() =>
             {
                 _0301_S1.Fill = new SolidColorBrush(Colors.Red);
-                //_0103_D1.Fill = new SolidColorBrush(Colors.DarkGray);
+                
             }));
         }
+
+        public void _0301_S2_TurnOff()
+        {
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0301_S2, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        Buffer[0] = 0;
+                        
+                        _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0301_S2, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+
+                        Dispatcher.Invoke((Action)(() =>
+                        {
+                            _0301_S1.Fill = new SolidColorBrush(Colors.DarkGray);
+
+                        }));
+
+                      //  _0301_D1Motor();
+
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("");
+                }
+            }
+            else
+                MessageBox.Show("");
+
+        }
+
+        public void _0301_S2_TurnOn()
+        {
+            Buffer[0] = 1;
+
+            _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0301_S2, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+
+            Dispatcher.Invoke((Action)(() =>
+            {
+                _0301_S2.Fill = new SolidColorBrush(Colors.Red);
+
+            }));
+        }
+
+
+
+
+
+
+
 
 
 
