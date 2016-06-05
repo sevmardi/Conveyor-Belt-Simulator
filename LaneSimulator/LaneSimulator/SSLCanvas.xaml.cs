@@ -29,7 +29,7 @@ namespace LaneSimulator
         private double T = 0.0;
         private bool _mute;
         private Brush oldBackground;
-        private Tray _tray;
+        private SmallTray _smallTray;
 
         private const double ANGLE_SNAP_DEG = 10;
         private const double DELTA_SNAP = 5;
@@ -216,9 +216,9 @@ namespace LaneSimulator
 
         }
 
-        public void AddObject(Tray tray)
+        public void AddObject(SmallTray smallTray)
         {
-            tray = new Tray();
+            smallTray = new SmallTray();
 
         }
 
@@ -302,7 +302,7 @@ namespace LaneSimulator
 
 
         /// <summary>
-        /// Remove a given tray from the canvas. 
+        /// Remove a given SmallTray from the canvas. 
         /// </summary>
         public void RemoveObject()
         {

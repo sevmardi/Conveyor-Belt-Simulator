@@ -5,12 +5,12 @@ using System.Windows.Media;
 namespace LaneSimulator.Models.Components
 {
     /// <summary>
-    /// Interaction logic for Tray.xaml
+    /// Interaction logic for SmallTray.xaml
     /// </summary>
-    public partial class Tray : UserControl
+    public partial class SmallTray : UserControl
     {
       
-        public Tray()
+        public SmallTray()
         {
             InitializeComponent();           
         }
@@ -30,12 +30,12 @@ namespace LaneSimulator.Models.Components
         public TranslateTransform TrayTranslateTransform { get; set; }
 
 
-        public bool IsColliding(Tray otherTray)
+        public bool IsColliding(SmallTray otherSmallTray)
         {
             bool ret = false;
 
-            var dx = otherTray.TrayTranslateTransform.X - TrayTranslateTransform.X;
-            var dY = otherTray.TrayTranslateTransform.Y - TrayTranslateTransform.Y;
+            var dx = otherSmallTray.TrayTranslateTransform.X - TrayTranslateTransform.X;
+            var dY = otherSmallTray.TrayTranslateTransform.Y - TrayTranslateTransform.Y;
 
             var h = Math.Sqrt(dx*dx + dY*dY);
 
@@ -44,7 +44,7 @@ namespace LaneSimulator.Models.Components
             return ret;
         }
 
-        public void RresolveCollision(Tray other)
+        public void RresolveCollision(SmallTray other)
         {
             //
         }

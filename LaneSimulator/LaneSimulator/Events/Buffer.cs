@@ -6,14 +6,14 @@ namespace LaneSimulator.Events
 {
    public class Buffer
     {
-        private Tray tray;
+        private SmallTray smallTray;
         private bool ReachingPoint = true;
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="tray"></param>
-        public void Read(ref Tray tray)
+        /// <param name="smallTray"></param>
+        public void Read(ref SmallTray smallTray)
         {
             lock (this)
             {
@@ -21,7 +21,7 @@ namespace LaneSimulator.Events
                 {
                     Monitor.Wait(this);
                     ReachingPoint = true;
-                    tray = this.tray;
+                    smallTray = this.smallTray;
                     Monitor.Pulse(this);
                 }
             }
@@ -30,15 +30,15 @@ namespace LaneSimulator.Events
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="tray"></param>
-        public void Write(Tray tray)
+        /// <param name="smallTray"></param>
+        public void Write(SmallTray smallTray)
         {
             lock (this)
             {
                 if ( ! ReachingPoint)
                     Monitor.Wait(this);
                 ReachingPoint = false;
-                this.tray = tray;
+                this.smallTray = smallTray;
                 Monitor.Pulse(this);
             }
         }

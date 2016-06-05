@@ -18,28 +18,28 @@ namespace LaneSimulator.Utilities.Selector
         {
             InitializeComponent();
 
-            Tray.DataContext = new Tray();
+            Tray.DataContext = new SmallTray();
         }
 
-        private void SetInfoLine(Tray tray)
+        private void SetInfoLine(SmallTray smallTray)
         {
             string inf = "Left-drag and place at the beginning of the lane ";
 
-            InfoLine.SetInfo(tray, inf);
+            InfoLine.SetInfo(smallTray, inf);
         }
 
-        private void AddDragDropObject(int pos, Tray tray)
+        private void AddDragDropObject(int pos, SmallTray smallTray)
         {
            
-            DragDrop.DragDropHelper.SetIsDragSource(tray, true);
-            DragDrop.DragDropHelper.SetDragDropControl(tray, new DragDrop.ObjectDragDropAdorner());
-            DragDrop.DragDropHelper.SetDropTarget(tray, "SSLCanvas");
-            DragDrop.DragDropHelper.SetAdornerLayer(tray, "adornerLayer");
+            DragDrop.DragDropHelper.SetIsDragSource(smallTray, true);
+            DragDrop.DragDropHelper.SetDragDropControl(smallTray, new DragDrop.ObjectDragDropAdorner());
+            DragDrop.DragDropHelper.SetDropTarget(smallTray, "SSLCanvas");
+            DragDrop.DragDropHelper.SetAdornerLayer(smallTray, "adornerLayer");
 
 
             //ScaleTransform st = new ScaleTransform();
-            //st.CenterX = tray.Width / 2.0;
-            //st.CenterY = tray.Height / 2.0;
+            //st.CenterX = SmallTray.Width / 2.0;
+            //st.CenterY = SmallTray.Height / 2.0;
 
 
         }

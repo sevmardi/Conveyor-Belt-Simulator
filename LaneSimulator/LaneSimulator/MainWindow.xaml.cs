@@ -185,7 +185,7 @@ namespace LaneSimulator
 
             if (sub1 != null)
             {
-                //Storyboard.SetTargetName(sub1, Tray);
+                //Storyboard.SetTargetName(sub1, SmallTray);
                 sub1.Begin();
               //  Timer1.Start();
                 //CreateNewObject();
@@ -486,7 +486,7 @@ namespace LaneSimulator
 
         private void AddToAnimation()
         {
-         //   var tray = new Tray();
+         //   var tray = new SmallTray();
 
             var sb1 = FindResource("Storyboard1") as Storyboard;
 
@@ -497,7 +497,7 @@ namespace LaneSimulator
         {
             //AddToAnimation();
 
-            //Tray tray = new Tray();
+            //SmallTray tray = new SmallTray();
         }
 
         private void btnChart_Click(object sender, RoutedEventArgs e)

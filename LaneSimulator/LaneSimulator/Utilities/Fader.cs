@@ -47,7 +47,7 @@ namespace LaneSimulator.Utilities
             }
         }
 
-        public static void AnimateObjectOpacity(double dest, params Tray[] target)
+        public static void AnimateObjectOpacity(double dest, params SmallTray[] target)
         {
             if (dest > 0)
                 foreach (UIElement t in target)

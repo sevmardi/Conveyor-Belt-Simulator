@@ -70,9 +70,9 @@
 
         <StackPanel Orientation="Vertical">
 
-            <Expander Header="Trays" IsExpanded="True">
+            <Expander Header="SmallTrays" IsExpanded="True">
 
-                <trays:Tray x:Name="Tray" VerticalAlignment="Top"
+                <trays:SmallTray x:Name="Tray" VerticalAlignment="Top"
                             dragDrop:DragDropHelper.IsDragSource="true"
                             dragDrop:DragDropHelper.DragDropControl="{StaticResource ObjectAdorner}"
                             dragDrop:DragDropHelper.DropTarget="gateCanvas"

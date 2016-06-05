@@ -827,9 +827,9 @@ namespace LaneSimulator.Lanes
 
         private void MakeTrayBtn_Click(object sender, RoutedEventArgs e)
         {
-            Tray tray = new Tray();
-            AnimationPannel.Children.Add(tray);
-            sb1.Begin(tray);
+            SmallTray smallTray = new SmallTray();
+            AnimationPannel.Children.Add(smallTray);
+            sb1.Begin(smallTray);
             //  TaskRunner();
             Executor();
             AddTrayBtn.IsEnabled = false;
@@ -838,7 +838,7 @@ namespace LaneSimulator.Lanes
 
         private void storyboard_Completed(object sender, EventArgs eventArgs)
         {
-            // Tray tray =  (Tray) this.Animation_Pannel.Children[0];
+            // SmallTray tray =  (SmallTray) this.Animation_Pannel.Children[0];
         }
 
         private void StopSimBtn_Click(object sender, RoutedEventArgs e)
@@ -853,9 +853,9 @@ namespace LaneSimulator.Lanes
             int testtrays = 5;
             for (int i = 0; i < testtrays; i++)
             {
-                Tray tray = new Tray();
-                AnimationPannel.Children.Add(tray);
-                sb1.Begin(tray);
+                SmallTray smallTray = new SmallTray();
+                AnimationPannel.Children.Add(smallTray);
+                sb1.Begin(smallTray);
             }
 
         }

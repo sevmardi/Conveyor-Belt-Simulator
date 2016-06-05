@@ -78,8 +78,11 @@
       <DependentUpon>SectionC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Libs\snap7.net.cs" />
-    <Compile Include="Models\Components\Tray.xaml.cs">
-      <DependentUpon>Tray.xaml</DependentUpon>
+    <Compile Include="Models\Components\LargeTray.xaml.cs">
+      <DependentUpon>LargeTray.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Components\SmallTray.xaml.cs">
+      <DependentUpon>SmallTray.xaml</DependentUpon>
     </Compile>
     <Compile Include="PLC\PlcCalls.cs" />
     <Compile Include="PLC\PLCTags.cs" />
@@ -145,7 +148,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Models\Components\Tray.xaml">
+    <Page Include="Models\Components\LargeTray.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Models\Components\SmallTray.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
