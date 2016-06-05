@@ -29,7 +29,7 @@ namespace LaneSimulator.Lanes
         private readonly PlcCalls _plcCalls;
         private static readonly byte[] Buffer = new byte[500];
         private static int _res;
-        public Storyboard sb1;
+        
         private S7Client myclient;
         int amount = 1;
         int DBNumber = 0;
@@ -37,12 +37,13 @@ namespace LaneSimulator.Lanes
         int wordlen = S7Client.S7WLBit;
         byte[] buffer = new byte[10];
         int res;
-       
+        private SmallTray _smallTray;
         public LaneTop()
         {
             InitializeComponent();
             _plcCalls = new PlcCalls();
-            sb1 = FindResource("LongPathAnimation") as Storyboard; 
+        //    _smallTray = new SmallTray();
+           
         }
 
         public void Executor()
@@ -285,6 +286,66 @@ namespace LaneSimulator.Lanes
                 MessageBox.Show("Connection must be established first");
         }
 
+        public void _0702_D1Motor()
+        {
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._0304_D1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+        }
+
+        public void _1001_D1()
+        {
+            
+        }
+
+        public void _1002_D1()
+        {
+            
+        }
+
+        public void _1003_D2Motor()
+        {
+            
+        }
+
+        public void _1003_D1Motor()
+        {
+
+        }
+        public void _1003_D3Motor()
+        {
+
+        }
+
+        public void _1003_D4Motor()
+        {
+
+        }
+
+        public void _1004_D1Motor()
+        {
+
+        }
+
+        public void _1004_D2Motor()
+        {
+
+        }
+        public void _1004_D3Motor()
+        {
+
+        }
+
+        public void _1701_D1()
+        {
+
+
+        }
+
+        public void _1702_D1()
+        {
+
+
+
+        }
 
         #endregion
         
@@ -310,7 +371,7 @@ namespace LaneSimulator.Lanes
                         }
                         else
                         {
-                            sb1.Stop();
+                          
                             MessageBox.Show("Sensor #0102S1 on false");
                         }
 
@@ -621,7 +682,380 @@ namespace LaneSimulator.Lanes
             }));
         }
 
+        public void _0302_S1_TurnOff()
+        {
+            
+        }
 
+        public void _0302_S1_TurnOn()
+        {
+
+        }
+        public void _0303_S1_TurnOff()
+        {
+
+        }
+        public void _0303_S1_TurnOn()
+        {
+
+        }
+
+        public void _0304_S1_TurnOff()
+        {
+
+        }
+        public void _0304_S1_TurnOn()
+        {
+
+        }
+
+        public void _0304_S2_TurnOff()
+        {
+
+        }
+
+        public void _0304_S2_TurnOn()
+        {
+
+        }
+
+        public void _0304_S3_TurnOff()
+        {
+
+        }
+
+        public void _0304_S3_TurnOn()
+        {
+
+        }
+        public void _0701_S1_TurnOff()
+        {
+            //
+        }
+        public void _0701_S1_TurnOn()
+        {
+            //
+        }
+
+        public void _0701_S2_TurnOff()
+        {
+            //
+        }
+
+        public void _0701_S2_TurnOn()
+        {
+            //
+        }
+        public void _0702_S1_TurnOff()
+        {
+            //
+        }
+
+        public void _0702_S1_TurnOn()
+        {
+            //
+        }
+
+        public void _0702_S2_TurnOff()
+        {
+            //
+        }
+
+        public void _0702_S2_TurnOn()
+        {
+            //
+        }
+
+        public void _1001_S1_TurnOff()
+        {
+            //
+        }
+
+        public void _1001_S1_TurnOn()
+        {
+            //
+        }
+
+        public void _1001_S2_TurnOff()
+        {
+            //
+        }
+
+        public void _1001_S2_TurnOn()
+        {
+            //
+        }
+
+        public void _1002_S1_TurnOff()
+        {
+            //
+        }
+
+        public void _1002_S1_TurnOn()
+        {
+            //
+        }
+
+        public void _1002_S2_TurnOff()
+        {
+                //
+        }
+
+        public void _1002_S2_TurnOn()
+        {
+            //
+        }
+
+
+        public void _1004_S1_TurnOff()
+        {
+            //
+        }
+
+        public void _1004_S1_TurnOn()
+        {
+            //
+        }
+
+        public void _1003_S1_TurnOff()
+        {
+            //
+
+        }
+
+        public void _1003_S1_TurnOn()
+        {
+            //
+        }
+
+        public void _1003_S3_TurnOff()
+        {
+            //
+        }
+
+        public void _1003_S3_TurnOn()
+        {
+            //
+        }
+
+        public void _1003_S4_TurnOff()
+        {
+            //
+        }
+
+        public void _1003_S4_TurnOn()
+        {
+            //
+        }
+
+
+        public void _1003_S5_TurnOff()
+        {
+            //
+        }
+
+        public void _1003_S5_TurnOn()
+        {
+            //
+        }
+
+        public void _1003_S2_TurnOff()
+        {
+            //
+        }
+
+        public void _1003_S2_TurnOn()
+        {
+            //
+        }
+
+        public void _1004_S2_TurnOff()
+        {
+            //
+        }
+        
+        public void _1004_S2_TurnOn()
+        {
+            //
+        }
+
+        public void _1101_S1_TurnOff()
+        {
+            //
+        }
+
+        public void _1101_S1_TurnOn()
+        {
+            //
+        }
+
+        public void _1102_S1_TurnOff()
+        {
+            //
+        }
+
+        public void _1102_S1_TurnOn()
+        {
+            //
+        }
+
+        public void _1101_S2_TurnOff()
+        {
+            //
+        }
+
+        public void _1101_S2_TurnOn()
+        {
+            //
+        }
+
+        public void _1102_S2_TurnOff()
+        {
+            //
+        }
+
+        public void _1102_S2_TurnOn()
+        {
+            //
+        }
+
+        public void _1101_S3_TurnOff()
+        {
+            //
+        }
+
+        public void _1101_S3_TurnOn()
+        {
+            //
+        }
+
+        public void _1102_S3_TurnOff()
+        {
+            //
+        }
+
+        public void _1102_S3_TurnOn()
+        {
+            //
+        }
+
+        public void _1601_S1_TurnOff()
+        {
+            //
+        }
+
+        public void _1601_S1_TurnOn()
+        {
+            //
+        }
+
+        public void _1601_S2_TurnOff()
+        {
+            //
+        }
+
+        public void _1601_S2_TurnOn()
+        {
+            //
+        }
+
+        public void _1601_S3_TurnOff()
+        {
+            //
+        }
+
+        public void _1601_S3_TurnOn()
+        {
+            //
+        }
+
+        public void _1701_S1_TurnOff()
+        {
+            //
+        }
+
+        public void _1701_S1_TurnOn()
+        {
+            //
+        }
+
+        public void _1602_S1_TurnOff()
+        {
+            //
+        }
+
+        public void _1602_S1_TurnOn()
+        {
+            //
+        }
+
+        public void _1602_S2_TurnOff()
+        {
+            //
+        }
+        public void _1602_S2_TurnOn()
+        {
+            //
+        }
+
+        public void _1602_S3_TurnOff()
+        {
+            //
+        }
+
+        public void _1602_S3_TurnOn()
+        {
+            //
+        }
+
+        public void _1702_S1_TurnOff()
+        {
+            //
+        }
+
+        public void _1702_S1_TurnOn()
+        {
+            //
+        }
+
+        public void _1701_S2_TurnOff()
+        {
+            //
+        }
+        public void _1701_S2_TurnOn()
+        {
+            //
+        }
+
+        public void _1701_S3T_TurnOff()
+        {
+            //
+        }
+
+        public void _1701_S3T_TurnOn()
+        {
+            //
+        }
+
+        public void _1702_S2_TurnOff()
+        {
+            //
+        }
+
+        public void _1702_S2_TurnOn()
+        {
+            //
+        }
+
+        public void _1703_S3T_TurnOff()
+        {
+            //
+        }
+
+        public void _1703_S3T_TurnOn()
+        {
+            //
+        }
 
         #endregion
 
@@ -750,10 +1184,8 @@ namespace LaneSimulator.Lanes
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            _plcCalls.EstablishContact();
+                  _plcCalls.EstablishContact();
           
-
-      
                // myclient.ConnectTo("192.168.2.16", 0, 0);
               
                 if (_plcCalls.Client.Connected())
@@ -823,22 +1255,38 @@ namespace LaneSimulator.Lanes
                 }
 
             }
-       
 
+
+        private void addnewtray()
+        {
+             _smallTray = new SmallTray();
+            AnimationPannel.Children.Add(_smallTray);
+          
+            var sb1 = FindResource("SectionA_SB") as Storyboard;
+            sb1.Begin(_smallTray);
+
+
+        }
         private void MakeTrayBtn_Click(object sender, RoutedEventArgs e)
         {
-            SmallTray smallTray = new SmallTray();
-            AnimationPannel.Children.Add(smallTray);
-            sb1.Begin(smallTray);
-            //  TaskRunner();
-            Executor();
-            AddTrayBtn.IsEnabled = false;
-            addbuttontimer();
+
+            addnewtray();
+
+            //Executor();
+            //AddTrayBtn.IsEnabled = false;
+            //addbuttontimer();
+        }
+
+        private void test()
+        {
+           
         }
 
         private void storyboard_Completed(object sender, EventArgs eventArgs)
         {
-            // SmallTray tray =  (SmallTray) this.Animation_Pannel.Children[0];
+            var sb2 = FindResource("SectionB_SB") as Storyboard;
+
+            sb2.Begin(_smallTray);
         }
 
         private void StopSimBtn_Click(object sender, RoutedEventArgs e)
@@ -855,7 +1303,7 @@ namespace LaneSimulator.Lanes
             {
                 SmallTray smallTray = new SmallTray();
                 AnimationPannel.Children.Add(smallTray);
-                sb1.Begin(smallTray);
+              
             }
 
         }
@@ -878,5 +1326,28 @@ namespace LaneSimulator.Lanes
             }));
            
         }
+
+        private void SectionA_SB_Completed(object sender, EventArgs e)
+        {
+          
+            test();
+
+        }   
+
+        private void SectionB_SB_Completed(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void SectionC_SB_Completed(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void SectionD_SB_Not_Approved_Completed(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

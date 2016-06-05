@@ -17,7 +17,7 @@
                 <TranslateTransform/>
             </TransformGroup>
         </Grid.RenderTransform>
-        <Image Margin="-2,-5,0,-1" Source="../../Images/tray_object.png" RenderTransformOrigin="0.5,0.5" >
+        <Image Margin="8,5,3,11" Source="../../Images/tray_object.png" RenderTransformOrigin="0.5,0.5" >
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
