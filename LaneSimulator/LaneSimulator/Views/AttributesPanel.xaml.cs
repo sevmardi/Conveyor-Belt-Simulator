@@ -30,9 +30,6 @@ namespace LaneSimulator.Views
 
         }
 
-        private void ReadIOBtn(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }

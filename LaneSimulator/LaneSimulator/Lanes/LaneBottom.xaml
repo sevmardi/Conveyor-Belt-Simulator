@@ -1,9 +1,146 @@
-﻿<UserControl x:Class="LaneSimulator.Lanes.LaneBottom"
+﻿<UserControl
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="LaneSimulator.Lanes.LaneBottom"
              >
-    <Grid>
-            
-    </Grid>
+
+
+	<Canvas x:Name="svg3502" Width="744.09448819" Height="1052.3622047">
+		
+		<Canvas x:Name="layer1">
+			<Canvas x:Name="laneBottom">
+				<Canvas.RenderTransform>
+					<MatrixTransform Matrix="-1.25 0 0 -1.25 1007.6864 1030.4378"/>
+				</Canvas.RenderTransform>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397468" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 916.683 254.76341 c 4.36996 -0.6305 8.8334 -0.97293 13.3752 -0.97293 18.11465 0 35.027 5.21161 49.34949 14.18974 l -21.64732 36.67733 c -8.2963 -5.25686 -18.12667 -8.31294 -28.67512 -8.31294 -2.7121 0 -5.37755 0.20365 -7.98106 0.59283 l -2.23539 0.38916 c -4.72288 0.91109 -9.2226 2.43913 -13.41755 4.49964 l -35.93361 -77.65818 c 12.53504 -5.94167 26.09576 -10.06571 40.34739 -12.0342 0 0 2.27764 21.55688 4.54327 42.98252 l 2.2747 -0.35297 z" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397508" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 1004.6063 291.11371 c 11.7053 15.57599 18.6547 34.92001 18.6622 55.85692 l -35.53991 0 -5.06525 0.0242 c -0.63507 -11.45345 -4.86922 -21.94001 -11.58023 -30.3706 l -1.44647 -1.74223 c -2.94008 -3.38942 -6.29329 -6.40776 -9.98888 -8.9736 l 43.53754 -73.76493 c 13.1896 8.30539 24.8875 18.76176 34.6019 30.87743 0 0 -17.3968 13.23944 -34.6108 26.3386 l 1.4299 1.75428 z" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397527" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 537.26113 346.82839 34.34831 0 0 -69.82794 -34.34831 0 0 69.82794 z" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397547" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 536.12981 277.00045 -34.34831 0 0 69.82794 34.34831 0 0 -69.82794 z" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397583" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 379.90827 205.79426 c 38.44368 0.10559 69.58057 31.27415 69.63486 69.7299 l -69.82793 0 0 -54.86891 0 -13.01016 0 -1.85083 0.19307 0 z" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="_09155" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 329.99468 275.57347 48.58934 0 0 -69.82793 -48.58934 0 0 69.82793 z" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="_09166" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 328.96443 205.74404 -48.58934 0 0 69.82794 48.58934 0 0 -69.82794 z" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="_09251" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 230.75098 275.57347 48.58934 0 0 -69.82793 -48.58934 0 0 69.82793 z" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="_09262" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 229.64984 205.74404 -48.58936 0 0 69.82794 48.58936 0 0 -69.82794 z" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="_10040" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 131.37754 275.57347 48.58934 0 0 -69.82793 -48.58934 0 0 69.82793 z" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397704" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 500.75879 277.00045 -50.04799 0 0 69.82794 50.04799 0 0 -69.82794 z" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397744" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 449.54389 346.77968 -69.82793 -69.72991 69.82793 0 0 69.72991 z" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="_10051" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 130.09689 275.57347 -69.818891 0 0 -69.82793 69.818891 0 0 69.82793 z" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397787" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 117.59809 263.06865 -44.819785 0 0 -44.81979 44.819785 0 0 44.81979 z" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397809" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 768.53564 347.00034 -94.92962 0 0 -69.86866 94.92962 0 0 69.86866 z" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397849" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 771.64616 277.27694 36.87191 0 62.32503 69.72236 -100.95576 0 0 -69.74499 1.75882 0.0226 z" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397926" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 607.07443 270.05611 0 6.94478 -34.36489 0 0 69.82794 34.36489 0 0 0.1599 0 6.78489 31.91824 0 0 -83.71751 -31.91824 0 z" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397944" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 672.4204 353.77317 -31.91824 0 0 -83.7175 31.91824 0 0 83.7175 z" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1397989" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 1024.7763 346.97094 43.5377 0 c -0.6744 -30.93022 -11.4414 -59.36853 -29.1278 -82.17137 l -33.3799 25.40184 c 11.9001 15.82789 18.9641 35.4887 18.97 56.76953" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1398025" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 843.47126 312.56078 c 13.01467 14.5593 25.97803 29.0613 30.40076 34.00892 0 0 2.72124 -28.49563 29.5666 -43.70507 l -17.54745 -37.92328 c -19.1585 10.35383 -34.27895 27.22704 -42.41991 47.61943" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1398063" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 885.25716 263.5717 -17.77678 -38.41802 c -23.1211 11.42479 -42.62201 29.06882 -56.29587 50.76297 l -0.18403 0.31676 c 0 0 15.53072 17.37553 31.34655 35.06934 8.34762 -20.43762 23.62341 -37.33197 42.91013 -47.73105" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path1398103" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 930.05869 252.28161 c 18.39362 0 35.56859 5.28853 50.11595 14.3994 l 21.08756 -35.73002 c -21.04842 -12.78086 -45.75185 -20.14348 -72.17809 -20.14348 -5.74697 0 -11.40815 0.36201 -16.97265 1.03931 l 4.37747 41.4213 c 4.43321 -0.63805 8.96144 -0.98651 13.56976 -0.98651" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path2107540" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="M -4.3935364 311.61198 -60.138848 273.48356 c -13.423464 21.7394 -21.178271 47.35093 -21.178271 74.77709 0 0.33486 0.0016 0.66823 0.0049 1.00309 l -0.0049 0.14783 1.016686 0 55.896143 0 10.139614 -0.0121 c -0.0049 -0.37862 -0.009 -0.75875 -0.009 -1.13887 0 -13.36312 3.608142 -25.877 9.8801777 -36.64866" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path2107581" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m 58.570615 205.7448 c -24.74569 0.45101 -47.94525 7.21779 -68.0706303 18.74215 l 33.9681913 59.33987 c 10.018947 -5.33077 21.419613 -8.40947 33.535271 -8.51958 l 0.67879 -0.003 0 -13.84582 0 -47.32831 0 -6.80148 0 -1.58383 -0.111622 0 z" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+				<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="path2107622" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+					<Path.Data>
+						<PathGeometry Figures="m -10.807056 225.2377 c -19.689454 11.55301 -36.360555 27.69464 -48.541073 46.96023 l 55.7196542 38.11032 C 2.9165771 299.58336 12.152656 290.68517 23.140007 284.54287 L -10.807056 225.2377 Z" FillRule="nonzero"/>
+					</Path.Data>
+				</Path>
+			</Canvas>
+		</Canvas>
+        
+        
+	</Canvas>
+    
 </UserControl>
