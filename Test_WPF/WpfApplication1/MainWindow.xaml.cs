@@ -29,7 +29,7 @@ namespace WpfApplication1
         {
             InitializeComponent();
              
-            object_to_move.Visibility = Visibility.Hidden;
+           // object_to_move.Visibility = Visibility.Hidden;
          
         }
 
@@ -53,21 +53,7 @@ namespace WpfApplication1
             {
                 buffer[0] = 1;
                 myclient.WriteArea(S7Client.S7AreaPE, DBNumber, 448, amount, wordlen, buffer);
-                object_to_move.Visibility = Visibility.Visible;
-                _0102_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0102_S2.Fill = new SolidColorBrush(Colors.Red);
-                _0103_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0104_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0105_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0105_S2.Fill = new SolidColorBrush(Colors.Red);
-                _0301_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0301_S2.Fill = new SolidColorBrush(Colors.Red);
-                _0302_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0303_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0304_S1.Fill = new SolidColorBrush(Colors.Red);
-                _0304_S2.Fill = new SolidColorBrush(Colors.Red);
-                _0304_S3.Fill = new SolidColorBrush(Colors.Red);
-                _0701_S1.Fill = new SolidColorBrush(Colors.Red);
+             
 
                 StartAnimation();
             }
@@ -88,7 +74,7 @@ namespace WpfApplication1
 
         private void btnRest_Click(object sender, RoutedEventArgs e)
         {
-            object_to_move.Visibility = Visibility.Visible;
+           // object_to_move.Visibility = Visibility.Visible;
             buffer[0] = 1;
             myclient.WriteArea(S7Client.S7AreaMK, DBNumber, 7997, amount, wordlen, buffer);
         }
@@ -105,7 +91,7 @@ namespace WpfApplication1
         {
             buffer[0] = 0;
             myclient.WriteArea(S7Client.S7AreaPE, DBNumber, 448, amount, wordlen, buffer);
-            object_to_move.Visibility = Visibility.Hidden;
+          //  object_to_move.Visibility = Visibility.Hidden;
            
         }
 
@@ -138,7 +124,7 @@ namespace WpfApplication1
             daPath.PathGeometry = path139798;
             daPath.PathGeometry = path139750;
             daPath.Source = PathAnimationSource.X;
-            object_to_move.BeginAnimation(Canvas.LeftProperty, daPath);
+            //object_to_move.BeginAnimation(Canvas.LeftProperty, daPath);
         }
         
     }

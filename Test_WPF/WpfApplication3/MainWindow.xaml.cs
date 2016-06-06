@@ -46,7 +46,7 @@ namespace WpfApplication3
         private void Window_ContentRendered(object sender, EventArgs e)
         {
             Control box = new Control { Template = (ControlTemplate)Resources["RectangleTemplate"] };
-            root.Children.Add(box);
+           // root.Children.Add(box);
             timer();
             
         }
@@ -69,7 +69,7 @@ namespace WpfApplication3
             {
 
                 Control box = new Control { Template = (ControlTemplate)Resources["RectangleTemplate"] };
-                root.Children.Add(box);
+                //root.Children.Add(box);
 
             });
 

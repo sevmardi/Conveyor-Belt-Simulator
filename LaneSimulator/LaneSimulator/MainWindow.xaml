@@ -16,12 +16,6 @@
     WindowStartupLocation="CenterScreen" >
 
     <Window.Resources>
-
-
-
-
-
-
         <Style x:Key="TgButtonStyle" TargetType="{x:Type ToggleButton}">
             <Setter Property="ToolTipService.ShowOnDisabled" Value="True" />
             <Style.Triggers>
@@ -30,7 +24,8 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
-        <Style x:Key="TButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+        <Style x:Key="TButtonStyle" TargetType="{x:Type Button}"
+               BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
 
             <Setter Property="ToolTipService.ShowOnDisabled" Value="True" />
             <Style.Triggers>
@@ -39,8 +34,6 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
-
-
 
     </Window.Resources>
 
@@ -207,7 +200,8 @@
         </StackPanel>
         <TextBlock Name="lblInfoLine" Background="#EEEEEE" Grid.Row="2" Grid.ColumnSpan="2"  Padding="10,0,0,0" Visibility="Hidden" />
 
-
+     
+        
         <Canvas x:Name="adornerLayer" Visibility="Collapsed"/>
     </Grid>
 

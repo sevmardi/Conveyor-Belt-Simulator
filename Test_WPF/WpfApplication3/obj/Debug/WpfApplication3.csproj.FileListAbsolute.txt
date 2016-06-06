@@ -54,3 +54,7 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\T
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\WpfApplication3\obj\Debug\ObjectToMove.g.cs
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\WpfApplication3\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\Test_WPF\WpfApplication3\obj\Debug\WpfApplication3_MarkupCompile.lref
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\Test_WPF\WpfApplication3\obj\Debug\ObjectToMove.baml
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\Test_WPF\WpfApplication3\obj\Debug\ObjectToMove.g.cs
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\Test_WPF\WpfApplication3\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\Test_WPF\WpfApplication3\obj\Debug\WpfApplication3_MarkupCompile.lref

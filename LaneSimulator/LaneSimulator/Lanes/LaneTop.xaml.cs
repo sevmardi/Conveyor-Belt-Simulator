@@ -15,6 +15,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using LaneSimulator.Models.Components;
 using LaneSimulator.PLC;
 using LaneSimulator.Views;
@@ -1762,7 +1763,7 @@ namespace LaneSimulator.Lanes
         private void addnewtray()
         {
              _smallTray = new SmallTray();
-            AnimationPannel.Children.Add(_smallTray);
+             TestGrid.Children.Add(_smallTray);
           
             var sb1 = FindResource("SectionA_SB") as Storyboard;
             sb1.Begin(_smallTray);
@@ -1779,25 +1780,25 @@ namespace LaneSimulator.Lanes
             //addbuttontimer();
         }
 
-        private void test()
-        {
-           
-        }
+   
 
         private void storyboard_Completed(object sender, EventArgs eventArgs)
         {
-            var sb2 = FindResource("SectionB_SB") as Storyboard;
-
-            sb2.Begin(_smallTray);
+         
         }
 
         private void StopSimBtn_Click(object sender, RoutedEventArgs e)
         {
-            SchedulerPanel schedulerPanel = new SchedulerPanel();
-            schedulerPanel.Show();
+          //  SchedulerPanel schedulerPanel = new SchedulerPanel();
+            //schedulerPanel.Show();
+          
+            var sb1 = FindResource("SectionA_SB") as Storyboard;
+            TestGrid.Children.Remove(_smallTray);
+            sb1.Stop();
+            
         }
 
-
+   
         public void TaskRunner()
         {
             int testtrays = 5;
@@ -1832,7 +1833,7 @@ namespace LaneSimulator.Lanes
         private void SectionA_SB_Completed(object sender, EventArgs e)
         {
           
-            test();
+     
 
         }   
 
