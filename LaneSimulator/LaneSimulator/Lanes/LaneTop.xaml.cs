@@ -1156,38 +1156,123 @@ namespace LaneSimulator.Lanes
 
         public void _0701_S2_TurnOff()
         {
-            //
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0701_S2, _plcCalls.Amount,
+                _plcCalls.Wordlen, Buffer);
+
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        Buffer[0] = 0;
+
+                        _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0701_S2,
+                            _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+
+                        Dispatcher.Invoke((Action)(() => { _0701_S2.Fill = new SolidColorBrush(Colors.DarkGray); }));
+                    }
+                }
+                catch (Exception)
+                {
+                    //ignore
+                }
+            }
         }
 
         public void _0701_S2_TurnOn()
         {
-            //
+            Buffer[0] = 1;
+
+            _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0701_S2, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+
+            Dispatcher.Invoke((Action)(() =>
+            {
+                _0701_S2.Fill = new SolidColorBrush(Colors.Red);
+            }));
         }
+
         public void _0702_S1_TurnOff()
         {
-            //
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0702_S1, _plcCalls.Amount,
+              _plcCalls.Wordlen, Buffer);
+
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        Buffer[0] = 0;
+
+                        _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0702_S1,
+                            _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+
+                        Dispatcher.Invoke((Action)(() => { _0702_S1.Fill = new SolidColorBrush(Colors.DarkGray); }));
+                    }
+                }
+                catch (Exception)
+                {
+                    //ignore
+                }
+            }
         }
 
         public void _0702_S1_TurnOn()
         {
-            //
+            Buffer[0] = 1;
+
+            _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0702_S1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+
+            Dispatcher.Invoke((Action)(() =>
+            {
+                _0702_S1.Fill = new SolidColorBrush(Colors.Red);
+            }));
         }
 
         public void _0702_S2_TurnOff()
         {
-            //
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0702_S2, _plcCalls.Amount,
+            _plcCalls.Wordlen, Buffer);
+
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        Buffer[0] = 0;
+
+                        _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0702_S2,
+                            _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+
+                        Dispatcher.Invoke((Action)(() => { _0702_S2.Fill = new SolidColorBrush(Colors.DarkGray); }));
+                    }
+                }
+                catch (Exception)
+                {
+                    //ignore
+                }
+            }
         }
 
         public void _0702_S2_TurnOn()
         {
-            //
+            Buffer[0] = 1;
+
+            _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0702_S2, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+
+            Dispatcher.Invoke((Action)(() =>
+            {
+                _0702_S2.Fill = new SolidColorBrush(Colors.Red);
+            }));
         }
 
         public void _1001_S1_TurnOff()
         {
             //
         }
-
+        s
         public void _1001_S1_TurnOn()
         {
             //
