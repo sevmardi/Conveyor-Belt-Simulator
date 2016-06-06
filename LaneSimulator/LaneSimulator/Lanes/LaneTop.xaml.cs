@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -80,7 +81,7 @@ namespace LaneSimulator.Lanes
                 }
                 catch (Exception)
                 {
-                    throw;
+                    //ignore
                 }
             }
 
@@ -288,63 +289,303 @@ namespace LaneSimulator.Lanes
 
         public void _0702_D1Motor()
         {
-            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._0304_D1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._0702_D1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        Dispatcher.Invoke((Action)(() =>
+                        {
+                            _0702_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
+                        }));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Motor _0702_D1 is not working!");
+                    }
+                }
+                catch (Exception)
+                {
+                    //ignore
+                }
+            }
         }
 
-        public void _1001_D1()
+        public void _1001_D1Motor()
         {
-            
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._1001_D1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        Dispatcher.Invoke((Action)(() =>
+                        {
+                            _1001_D1.Fill = new SolidColorBrush(Colors.Chartreuse);
+                        }));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Motor _1001_D1 is not working!");
+                    }
+                }
+                catch (Exception)
+                {
+                    //ignore
+                }
+            }
         }
 
-        public void _1002_D1()
+        public void _1002_D1Motor()
         {
-            
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._1002_D1, _plcCalls.Amount,
+                _plcCalls.Wordlen, Buffer);
+
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        Dispatcher.Invoke((Action) (() => { _1002_D1.Fill = new SolidColorBrush(Colors.Chartreuse); }));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Motor _1002_D1 is not working!");
+                    }
+                }
+                catch (Exception)
+                {
+                    //ignore
+                }
+            }
         }
 
         public void _1003_D2Motor()
         {
-            
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._1003_D2, _plcCalls.Amount,
+               _plcCalls.Wordlen, Buffer);
+
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        Dispatcher.Invoke((Action)(() => { _1003_D2.Fill = new SolidColorBrush(Colors.Chartreuse); }));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Motor _1003_D2 is not working!");
+                    }
+                }
+                catch (Exception)
+                {
+                    //ignore
+                }
+            }
         }
 
         public void _1003_D1Motor()
         {
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._1003_D1, _plcCalls.Amount,
+                _plcCalls.Wordlen, Buffer);
 
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        Dispatcher.Invoke((Action) (() => { _1003_D1.Fill = new SolidColorBrush(Colors.Chartreuse); }));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Motor _1003_D1 is not working!");
+                    }
+                }
+                catch (Exception)
+                {
+                    //ignore
+                }
+            }
         }
+
         public void _1003_D3Motor()
         {
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._1003_D3, _plcCalls.Amount,
+               _plcCalls.Wordlen, Buffer);
 
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        Dispatcher.Invoke((Action)(() => { _1003_D3.Fill = new SolidColorBrush(Colors.Chartreuse); }));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Motor _1003_D3 is not working!");
+                    }
+                }
+                catch (Exception)
+                {
+                    //ignore
+                }
+            }
         }
 
         public void _1003_D4Motor()
         {
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._1003_D4, _plcCalls.Amount,
+                _plcCalls.Wordlen, Buffer);
 
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        Dispatcher.Invoke((Action) (() => { _1003_D4.Fill = new SolidColorBrush(Colors.Chartreuse); }));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Motor _1003_D4 is not working!");
+                    }
+                }
+                catch (Exception)
+                {
+                    //ignore
+                }
+            }
         }
 
         public void _1004_D1Motor()
         {
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._1004_D1, _plcCalls.Amount,
+                _plcCalls.Wordlen, Buffer);
 
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        Dispatcher.Invoke((Action) (() => { _1004_D1.Fill = new SolidColorBrush(Colors.Chartreuse); }));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Motor _1004_D1 is not working!");
+                    }
+                }
+                catch (Exception)
+                {
+                    //ignore
+                }
+            }
         }
 
         public void _1004_D2Motor()
         {
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._1004_D2, _plcCalls.Amount,
+                _plcCalls.Wordlen, Buffer);
 
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        Dispatcher.Invoke((Action) (() => { _1004_D2.Fill = new SolidColorBrush(Colors.Chartreuse); }));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Motor _1004_D2 is not working!");
+                    }
+                }
+                catch (Exception)
+                {
+                    //ignore
+                }
+            }
         }
+
         public void _1004_D3Motor()
         {
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._1004_D3, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
 
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        Dispatcher.Invoke((Action)(() => { _1004_D3.Fill = new SolidColorBrush(Colors.Chartreuse); }));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Motor _1004_D2 is not working!");
+                    }
+                }
+                catch (Exception)
+                {
+                    //ignore
+                }
+            }
         }
 
-        public void _1701_D1()
+        public void _1701_D1Motor()
         {
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._1701_D1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
 
-
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        Dispatcher.Invoke((Action)(() => { _1701_D1.Fill = new SolidColorBrush(Colors.Chartreuse); }));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Motor _1004_D2 is not working!");
+                    }
+                }
+                catch (Exception)
+                {
+                    //ignore
+                }
+            }
         }
 
-        public void _1702_D1()
+        public void _1702_D1Motor()
         {
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._1702_D1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
 
-
-
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        Dispatcher.Invoke((Action)(() => { _1701_D2.Fill = new SolidColorBrush(Colors.Chartreuse); }));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Motor _1702_D1 is not working!");
+                    }
+                }
+                catch (Exception)
+                {
+                    //ignore
+                }
+            }
         }
 
         #endregion
