@@ -62,9 +62,6 @@
     <Compile Include="Gate.xaml.cs">
       <DependentUpon>Gate.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Lanes\GH-Window.xaml.cs">
-      <DependentUpon>GH-Window.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Lanes\LaneBottom.xaml.cs">
       <DependentUpon>LaneBottom.xaml</DependentUpon>
     </Compile>
@@ -116,10 +113,6 @@
       <DependentUpon>SchedulerPanel.xaml</DependentUpon>
     </Compile>
     <Page Include="Gate.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Lanes\GH-Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

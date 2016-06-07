@@ -4,15 +4,16 @@
              xmlns:dragDrop="clr-namespace:LaneSimulator.Utilities.DragDrop"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:lanes="clr-namespace:LaneSimulator.Lanes"
-             xmlns:trays="clr-namespace:LaneSimulator.Models.Components">
+             xmlns:trays="clr-namespace:LaneSimulator.Models.Components"
+             xmlns:selector="clr-namespace:LaneSimulator.Utilities.Selector">
 
-    
+
     <UserControl.Resources>
-        <dragDrop:ObjectDragDropAdorner x:Key="ObjectAdorner"/>
-        <!--<selector:ExpanderHeightConverter x:Key="ExpanderHeightConverter" />-->
-        
+        <dragDrop:ObjectDragDropAdorner x:Key="ObjectAdorner" />
+        <selector:ExpanderHeightConverter x:Key="ExpanderHeightConverter" />
+
         <Style TargetType="{x:Type Expander}">
-            <!--<Setter Property="Height">
+            <Setter Property="Height">
                 <Setter.Value>
                     <MultiBinding Converter="{StaticResource ExpanderHeightConverter}">
                         <Binding Path="Content.ActualHeight" RelativeSource="{RelativeSource Self}" />
@@ -20,7 +21,7 @@
                     </MultiBinding>
 
                 </Setter.Value>
-            </Setter>-->
+            </Setter>
             <Setter Property="Tag">
                 <Setter.Value>
                     <sys:Double>1</sys:Double>
@@ -40,11 +41,11 @@
                     <Trigger.EnterActions>
                         <BeginStoryboard>
                             <Storyboard>
-                                <DoubleAnimation 
-                                                 Storyboard.TargetProperty="Tag"
-                                                 From="0"
-                                                 To="1"
-                                                 Duration="0:0:0.25" />
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="Tag"
+                                    From="0"
+                                    To="1"
+                                    Duration="0:0:0.25" />
                             </Storyboard>
                         </BeginStoryboard>
                     </Trigger.EnterActions>
@@ -52,11 +53,11 @@
                     <Trigger.ExitActions>
                         <BeginStoryboard>
                             <Storyboard>
-                                <DoubleAnimation 
-                                                 Storyboard.TargetProperty="Tag"
-                                                 From="1"
-                                                 To="0"
-                                                 Duration="0:0:0.25" />
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="Tag"
+                                    From="1"
+                                    To="0"
+                                    Duration="0:0:0.25" />
                             </Storyboard>
                         </BeginStoryboard>
                     </Trigger.ExitActions>
@@ -73,11 +74,11 @@
             <Expander Header="SmallTrays" IsExpanded="True">
 
                 <trays:SmallTray x:Name="Tray" VerticalAlignment="Top"
-                            dragDrop:DragDropHelper.IsDragSource="true"
-                            dragDrop:DragDropHelper.DragDropControl="{StaticResource ObjectAdorner}"
-                            dragDrop:DragDropHelper.DropTarget="gateCanvas"
-                            dragDrop:DragDropHelper.AdornerLayer="adornerLayer" />
-            </Expander>
+                                 dragDrop:DragDropHelper.IsDragSource="true"
+                                 dragDrop:DragDropHelper.DragDropControl="{StaticResource ObjectAdorner}"
+                                 dragDrop:DragDropHelper.DropTarget="gateCanvas"
+                                 dragDrop:DragDropHelper.AdornerLayer="adornerLayer" />
+                </Expander>
             <!--<Expander Header="Lane Sections" IsExpanded="True">
 
                 <lanes:SectionA x:Name="SectionA" VerticalAlignment="Top"

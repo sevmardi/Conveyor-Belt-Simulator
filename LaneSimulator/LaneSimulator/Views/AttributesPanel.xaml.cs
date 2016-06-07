@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LaneSimulator.PLC;
+using Snap7;
 
 namespace LaneSimulator.Views
 {
@@ -20,16 +22,28 @@ namespace LaneSimulator.Views
     /// </summary>
     public partial class AttributesPanel
     {
+        private readonly PlcCalls _plcCalls;
+        int amount = 1;
+        int DBNumber = 0;
+        int area;
+        int wordlen = S7Client.S7WLBit;
+        private static readonly byte[] Buffer = new byte[500];
+        private static int _res;
+
         public AttributesPanel()
         {
             InitializeComponent();
+            _plcCalls = new PlcCalls();
         }
 
         private void WriteIOBtn(object sender, RoutedEventArgs e)
         {
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0102_S1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
 
+            Close();
         }
 
+        
         
     }
 }

@@ -15,9 +15,26 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Button Content="Save" HorizontalAlignment="Left" Margin="48,39,0,0" Grid.Row="1" VerticalAlignment="Top" Width="82" Grid.Column="2" Height="30" Click="WriteIOBtn" Grid.RowSpan="2"/>
-        <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="24,43,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" IsDropDownOpen="True" ToolTip="Choose" IsSynchronizedWithCurrentItem="False" Height="22"/>
-        <Label Content="Operand Identifier" HorizontalAlignment="Left" Margin="13,39,0,0" Grid.Row="1" VerticalAlignment="Top" Width="113" Height="26"/>
 
+        <Label Content="Change value" HorizontalAlignment="Left" Margin="13,39,0,0" Grid.Row="1" VerticalAlignment="Top" Width="113" Height="26"/>
+
+        <ComboBox 
+            Grid.Column="1" 
+            HorizontalAlignment="Left" 
+            Margin="24,43,0,0" Grid.Row="1" 
+            VerticalAlignment="Top" 
+            Width="120" 
+            IsDropDownOpen="True" 
+            ToolTip="Choose" 
+            IsSynchronizedWithCurrentItem="False" 
+            Height="22"
+            IsEditable="False"
+            >
+            <ComboBoxItem Content="True"/>
+            <ComboBoxItem Content="False"/>
+        </ComboBox>
+        
+        
 
 
 

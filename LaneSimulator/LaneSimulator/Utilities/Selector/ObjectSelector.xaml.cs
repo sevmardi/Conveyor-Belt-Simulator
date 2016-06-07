@@ -37,10 +37,8 @@ namespace LaneSimulator.Utilities.Selector
             DragDrop.DragDropHelper.SetAdornerLayer(smallTray, "adornerLayer");
 
 
-            //ScaleTransform st = new ScaleTransform();
-            //st.CenterX = SmallTray.Width / 2.0;
-            //st.CenterY = SmallTray.Height / 2.0;
-
+           
+           
 
         }
 

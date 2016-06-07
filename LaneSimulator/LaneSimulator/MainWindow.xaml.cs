@@ -109,6 +109,17 @@ namespace LaneSimulator
             Grid.SetColumn(counter, 1);
             Grid.SetRow(counter, 1);
  
+            // SSL
+            //Grid1.Children.Remove(LaneTop);
+            //SSL = new ShadowBox();
+            //SSL.Margin = new Thickness(20, 20, 175, 20);
+            //SSL.Children.Add(LaneTop);
+            //LaneTop.Background = Brushes.Transparent;
+            //SSL.VerticalAlignment = VerticalAlignment.Center;
+            //SSL.HorizontalAlignment = HorizontalAlignment.Center;
+            //Grid1.Children.Add(SSL);
+            //Grid.SetColumn(SSL, 1);
+            //Grid.SetRow(SSL, 1);
 
            this.Loaded += (sender2, e2) =>
            {
