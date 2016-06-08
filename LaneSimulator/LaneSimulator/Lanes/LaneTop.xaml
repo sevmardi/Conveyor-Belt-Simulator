@@ -212,7 +212,7 @@
             <DoubleAnimationUsingPath
                 Duration="0:0:35.0"
                 Source="X"
-                Completed="storyboard_Completed"
+            
                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)">
                 
                 <DoubleAnimationUsingPath.PathGeometry>
@@ -565,7 +565,6 @@
 
         </Canvas>
        
-        
         <Canvas x:Name="Motors">
             <Ellipse Height="6" Canvas.Left="-291" Canvas.Top="389.5" Width="6" x:Name="_0102_D1" RenderTransformOrigin="0.5,0.5" Fill="#FFDACF84">
                 <Ellipse.RenderTransform>
@@ -793,7 +792,6 @@
 
         </Canvas>
         
-        
         <Canvas x:Name="Sections">
             <Path x:Name="SectionA" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5"
 	              Canvas.Left="-140" StrokeThickness="2" Canvas.Top="161.6" Width="2" Stretch="Fill" />
@@ -817,9 +815,6 @@
 
 
         </Canvas>
-
-
-
 
         <Button Content="Contact PLC" Canvas.Left="180" Canvas.Top="95" Width="75" Click="ButtonBase_OnClick" x:Name="ContactPlcBtn"/>
         <Button Content="Add SmallTray" Canvas.Left="310" Canvas.Top="95" Width="75" Click="MakeTrayBtn_Click" RenderTransformOrigin="0.067,0.75" x:Name="AddTrayBtn"/>

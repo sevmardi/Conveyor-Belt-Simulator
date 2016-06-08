@@ -8,5 +8,3 @@ C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\UnitTest\bin\
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\UnitTest\obj\Debug\UnitTest.dll
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\UnitTest\obj\Debug\UnitTest.pdb
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\UnitTest\bin\Debug\UnitTest.dll.CodeAnalysisLog.xml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\UnitTest\bin\Debug\UnitTest.dll.lastcodeanalysissucceeded

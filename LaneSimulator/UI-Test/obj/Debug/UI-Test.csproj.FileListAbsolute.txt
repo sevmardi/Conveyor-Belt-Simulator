@@ -13,5 +13,3 @@ C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project
 C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\LaneSimulator\UI-Test\obj\Debug\UI-Test.csprojResolveAssemblyReference.cache
 C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\LaneSimulator\UI-Test\obj\Debug\UI-Test.dll
 C:\Users\win7_ubuntu\Documents\Visual Studio 2012\Projects\Scarabee_lane_project\LaneSimulator\UI-Test\obj\Debug\UI-Test.pdb
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\UI-Test\bin\Debug\UI-Test.dll.CodeAnalysisLog.xml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\UI-Test\bin\Debug\UI-Test.dll.lastcodeanalysissucceeded

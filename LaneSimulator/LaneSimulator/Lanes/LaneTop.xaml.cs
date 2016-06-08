@@ -44,7 +44,7 @@ namespace LaneSimulator.Lanes
         {
             InitializeComponent();
             _plcCalls = new PlcCalls();
-        //    _smallTray = new SmallTray();
+            //_smallTray = new SmallTray();
             _storyboard = new Storyboard();
            
         }
@@ -1702,12 +1702,38 @@ namespace LaneSimulator.Lanes
 
         public void _1102_S1_TurnOff()
         {
-            //
+            res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1102_S1, _plcCalls.Amount,
+                _plcCalls.Wordlen, Buffer);
+
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        Buffer[0] = 0;
+
+                        _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1102_S1,
+                            _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+
+                        Dispatcher.Invoke((Action)(() => { _1102_S1.Fill = new SolidColorBrush(Colors.DarkGray); }));
+                    }
+                }
+                catch (Exception)
+                {
+                    throw new ArgumentException();
+                }
+            }
         }
 
         public void _1102_S1_TurnOn()
         {
-            //
+            Buffer[0] = 1;
+
+            _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1102_S1, _plcCalls.Amount,
+                _plcCalls.Wordlen, Buffer);
+
+            Dispatcher.Invoke((Action) (() => { _1102_S1.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
         public void _1101_S2_TurnOff()
@@ -2085,10 +2111,6 @@ namespace LaneSimulator.Lanes
             //addbuttontimer();
         }
 
-        private void storyboard_Completed(object sender, EventArgs eventArgs)
-        {
-         
-        }
 
         private void StopSimBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -2135,22 +2157,10 @@ namespace LaneSimulator.Lanes
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
         private void SectionA_SB_Completed(object sender, EventArgs e)
         {
-          
-
+            var sb2 = FindResource("SectionB_SB") as Storyboard;
+            sb2.Begin();
         }   
 
         private void SectionB_SB_Completed(object sender, EventArgs e)

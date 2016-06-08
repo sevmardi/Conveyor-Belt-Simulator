@@ -81,6 +81,9 @@
     <Compile Include="Models\Components\LargeTray.xaml.cs">
       <DependentUpon>LargeTray.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Components\Sensor.xaml.cs">
+      <DependentUpon>Sensor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\Components\SmallTray.xaml.cs">
       <DependentUpon>SmallTray.xaml</DependentUpon>
     </Compile>
@@ -149,6 +152,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Models\Components\LargeTray.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Models\Components\Sensor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

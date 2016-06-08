@@ -10,10 +10,11 @@
 
     <UserControl.Resources>
         <dragDrop:ObjectDragDropAdorner x:Key="ObjectAdorner" />
-        <selector:ExpanderHeightConverter x:Key="ExpanderHeightConverter" />
-
+      
         <Style TargetType="{x:Type Expander}">
-            <Setter Property="Height">
+            
+            
+            <!--<Setter Property="Height">
                 <Setter.Value>
                     <MultiBinding Converter="{StaticResource ExpanderHeightConverter}">
                         <Binding Path="Content.ActualHeight" RelativeSource="{RelativeSource Self}" />
@@ -21,12 +22,14 @@
                     </MultiBinding>
 
                 </Setter.Value>
-            </Setter>
+            </Setter>-->
+            
             <Setter Property="Tag">
                 <Setter.Value>
                     <sys:Double>1</sys:Double>
                 </Setter.Value>
             </Setter>
+            
             <Setter Property="Background">
                 <Setter.Value>
                     <LinearGradientBrush MappingMode="Absolute" StartPoint="55,0" EndPoint="55,22">
@@ -78,7 +81,8 @@
                                  dragDrop:DragDropHelper.DragDropControl="{StaticResource ObjectAdorner}"
                                  dragDrop:DragDropHelper.DropTarget="gateCanvas"
                                  dragDrop:DragDropHelper.AdornerLayer="adornerLayer" />
-                </Expander>
+            </Expander>
+
             <!--<Expander Header="Lane Sections" IsExpanded="True">
 
                 <lanes:SectionA x:Name="SectionA" VerticalAlignment="Top"
