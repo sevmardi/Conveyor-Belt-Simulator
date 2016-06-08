@@ -1,10 +1,34 @@
 ﻿<UserControl x:Class="LaneSimulator.Models.Components.LargeTray"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-
-           
             >
-    <Grid>
-            
+
+    <UserControl.RenderTransform>
+        <TransformGroup>
+            <TranslateTransform/>
+        </TransformGroup>
+    </UserControl.RenderTransform>
+
+    <Grid x:Name="LayoutRoot" Height="95" Width="50" RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="90"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        
+        <Image Margin="-12.262,11.262,-8.738,23.738" Source="../../Images/tray_object.png" RenderTransformOrigin="0.5,0.5" >
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        
     </Grid>
 </UserControl>

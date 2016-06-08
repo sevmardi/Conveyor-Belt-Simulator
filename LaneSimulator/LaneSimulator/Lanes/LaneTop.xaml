@@ -369,7 +369,7 @@
     			</ScrollViewer>
     		</Canvas>
 
-        <Canvas x:Name="laneBottom" d:IsHidden="True" Visibility="Hidden">
+        <Canvas x:Name="laneBottom">
             <Canvas.RenderTransform>
                 <MatrixTransform Matrix="-1.25 0 0 -1.25 1007.6864 1030.4378"/>
             </Canvas.RenderTransform>
