@@ -2,7 +2,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         
-             xmlns:lanes="clr-namespace:LaneSimulator.Lanes">
+             >
 
 
 
@@ -10,7 +10,7 @@
                   SizeChanged="Scroller_SizeChanged" 
                   LayoutUpdated="Scroller_LayoutUpdated"
                   ScrollChanged="Scroller_ScrollChanged">
-        <Canvas Name="GC" >
+        <Canvas Name="GC"  MouseDown="SSLCanvas_MouseDown" MouseUp="SSLCanvas_MouseUp" MouseMove="SSLCanvas_MouseMove">
 
          
             <Canvas.Background>
@@ -28,36 +28,6 @@
 
             </Canvas.Background>
             <Rectangle Name="dragSelect" Stroke="Blue" StrokeThickness="1" HorizontalAlignment="Left" Margin="0,0,0,0" Visibility="Hidden" />
-
-            <!--<lanes:SectionA Grid.Row="0" Grid.Column="1" x:Name="SectionA" Canvas.Left="-50" Canvas.Top="250"/>
-            <lanes:SectionB Grid.Row="0" Grid.Column="1" x:Name="SectionB" Canvas.Left="290" Canvas.Top="225"/>-->
-            
-            
-            <!--<Viewbox Stretch="Fill" Width="114" HorizontalAlignment="Right" Canvas.Left="1600" Canvas.Top="25">
-                <Grid Height="96.907" Width="138.264">
-                    <TextBox x:Name="textBox1_Copy1" Height="42.634" HorizontalContentAlignment="Center"
-					VerticalContentAlignment="Center" Text="Total" FontFamily="/WpfApplication1;component/Fonts/#LCD"
-					Foreground="#FFB22121" Background="Black" FontSize="29.333" BorderThickness="2" Focusable="false"
-					Cursor="Arrow" VerticalAlignment="Top" BorderBrush="{x:Null}"/>
-                    <TextBox x:Name="total_text1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="0"
-					FontFamily="/WpfApplication1;component/Fonts/#LCD" Foreground="#FFB22121" Background="Black"
-					FontSize="48" BorderThickness="2" Focusable="false" Cursor="Arrow" Margin="0,36.09,0,0"
-					BorderBrush="{x:Null}"/>
-                </Grid>
-            </Viewbox>-->
-
-            <!--<Viewbox HorizontalAlignment="Right" Stretch="Fill" Width="114" Canvas.Left="1600" Canvas.Top="150">
-                <Border BorderBrush="#FF539D3F" BorderThickness="2" CornerRadius="5" Height="56.911" Width="116.667">
-                    <Border.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="BurlyWood" Offset="0"/>
-                            <GradientStop Color="White" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Border.Background>
-                    <TextBlock x:Name="Timer_Lable" FontFamily="/WpfApplication1;component/Fonts/#LCD" FontSize="48" Text="0.0"
-					TextAlignment="Center" TextWrapping="Wrap" Foreground="#FF9F2323" HorizontalAlignment="Left" Width="113"/>
-                </Border>
-            </Viewbox>-->
 
         </Canvas>
     </ScrollViewer>

@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 using LaneSimulator.Models.Components;
+using LaneSimulator.Utilities;
 
 namespace LaneSimulator
 {
@@ -30,6 +31,7 @@ namespace LaneSimulator
         private bool _mute;
         private Brush oldBackground;
         private SmallTray _smallTray;
+        private bool _iso = false;
 
         private const double ANGLE_SNAP_DEG = 10;
         private const double DELTA_SNAP = 5;
@@ -87,6 +89,28 @@ namespace LaneSimulator
         //        return GetBounds(gates.Values, padding);
         //}
 
+        //mouse down event for canvas clicks
+        private void SSLCanvas_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            // only come here if the uigate doesn't handle it
+            ClearSelection();
+
+            // prepare for a dragging selection
+            Point mp2 = e.GetPosition(GC);
+            sp = new Point(mp2.X, mp2.Y);
+
+            ReadyToSelect = true;
+
+            if (_iso)
+            {
+                _iso = false;
+                //foreach (KeyValuePair<AbstractGate, Gate> pair in gates)
+                //{
+                //    Gate value = pair.Value;
+                //    Fader.AnimateOpacity(1, value);
+                //}
+            }
+        }
 
         //mouse up event for canvas clicks
         private void SSLCanvas_MouseUp(object sender, MouseButtonEventArgs e)
@@ -97,8 +121,12 @@ namespace LaneSimulator
             dragSelect.Margin = new Thickness(0, 0, 0, 0);
             dragSelect.Visibility = Visibility.Hidden;
 
+           
             ReadyToSelect = false;
+
+
         }
+
 
         private void SSLCanvas_MouseMove(object sender, MouseEventArgs e)
         {
@@ -107,30 +135,27 @@ namespace LaneSimulator
             if (e.LeftButton == MouseButtonState.Pressed || e.RightButton == MouseButtonState.Pressed)
             {
                 GC.BringIntoView(new Rect(new Point(mp2.X - 10, mp2.Y - 10),
-                 new Point(mp2.X + 10, mp2.Y + 10)));
+                    new Point(mp2.X + 10, mp2.Y + 10)));
 
                 switch (dragging)
                 {
-                        case DragState.MOVE:
+                    case DragState.MOVE:
 
                         foreach (Gate g in selected)
                         {
-
                             if (e.LeftButton == MouseButtonState.Pressed)
                             {
-
                             }
 
                             if (e.RightButton == MouseButtonState.Pressed)
                             {
-
                             }
                         }
                         break;
 
-                        case DragState.NONE:
-                            // not dragging
-                            // creating a selection rectangle
+                    case DragState.NONE:
+                        // not dragging
+                        // creating a selection rectangle
 
                         if (ReadyToSelect)
                         {
@@ -149,7 +174,6 @@ namespace LaneSimulator
                         }
                         break;
                 }
-
             }
         }
 
