@@ -13,7 +13,7 @@
                 Duration="0:0:2" 
                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)" 
               
-                Completed="SectionA_SB_Completed">
+               >
                 
 				<DoubleAnimationUsingPath.PathGeometry>
 					<PathGeometry Figures="M8.875,-22.062 L17.166948,-55.666845 L40.499749,-94.333016 L76.832786,-120.00001 L121.83299,-130.00001 L165.12499,-128.875"/>
@@ -62,9 +62,9 @@
 			<DoubleAnimationUsingPath 
                 Duration="0:0:2" 
                 Source="X" 
-                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
-                Storyboard.TargetName="rectangle"
-                Completed="SectionC_SB_Completed">
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)" 
+               
+               >
 			
                 <DoubleAnimationUsingPath.PathGeometry>
 					<PathGeometry Figures="M443.969,-67.25 L543.75,-67.25 L620.875,-67.25"/>
@@ -74,8 +74,8 @@
 			<DoubleAnimationUsingPath 
                 Duration="0:0:2" 
                 Source="Y" 
-                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" 
-                Storyboard.TargetName="rectangle">
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)" 
+            >
 				
                 <DoubleAnimationUsingPath.PathGeometry>
 					<PathGeometry Figures="M443.969,-67.25 L543.75,-67.25 L620.875,-67.25"/>
@@ -513,6 +513,7 @@
             </Path>
         </Canvas>
 
+       
         <Canvas x:Name="Sensors">
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-243.75" Canvas.Top="420.25" Width="6" x:Name="_0102_S1"/>
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-234" Canvas.Top="392" Width="6" x:Name="_0102_S2"/>

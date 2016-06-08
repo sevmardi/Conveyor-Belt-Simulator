@@ -2102,14 +2102,34 @@ namespace LaneSimulator.Lanes
             _smallTray = new SmallTray();
             TestGrid.Children.Add(_smallTray);
 
-            var sb1 = FindResource("SectionA_SB") as Storyboard;
-            sb1.Begin(_smallTray);
+            //var sb1 = FindResource("SectionA_SB") as Storyboard;
+
+            //sb1.Begin(_smallTray);
+            var storyBoardsToRun = new[] { "SectionA_SB", "SectionB_SB" };
 
 
+            storyBoardsToRun.Select(sbName => FindResource(sbName) as Storyboard);
+
+
+    
             //Executor();
             //AddTrayBtn.IsEnabled = false;
             //addbuttontimer();
+           }
+        //from http://stackoverflow.com/questions/37697300/pass-newly-created-object-to-multiple-storyboards
+        public static Task BeginAsync(Storyboard sb, FrameworkContentElement element)
+        {
+            var source = new TaskCompletionSource<object>();
+
+            sb.Completed += delegate
+            {
+                source.SetResult(null);
+            };
+
+            sb.Begin(element);
+            return source.Task;
         }
+
 
 
         private void StopSimBtn_Click(object sender, RoutedEventArgs e)
@@ -2165,7 +2185,7 @@ namespace LaneSimulator.Lanes
 
         private void SectionB_SB_Completed(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
         private void SectionC_SB_Completed(object sender, EventArgs e)
