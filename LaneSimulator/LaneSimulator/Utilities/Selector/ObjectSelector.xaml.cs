@@ -18,7 +18,8 @@ namespace LaneSimulator.Utilities.Selector
         {
             InitializeComponent();
 
-            tbTray.DataContext = new SmallTray();
+            SmallTray.DataContext = new SmallTray();
+            LargeTray.DataContext = new LargeTray();
         }
 
         private void SetInfoLine(SmallTray smallTray)

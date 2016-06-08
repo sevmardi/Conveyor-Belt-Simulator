@@ -2108,10 +2108,10 @@ namespace LaneSimulator.Lanes
             var storyBoardsToRun = new[] { "SectionA_SB", "SectionB_SB" };
 
 
-            storyBoardsToRun
-                .Select(sbName => FindResource(sbName) as Storyboard)
-                .ToList()
-               .ForEach(async sb => await sb.BeginAsync(_smallTray));
+            //storyBoardsToRun
+            //    .Select(sbName => FindResource(sbName) as Storyboard)
+            //    .ToList()
+            //     .ForEach(async sb => await sb.BeginAsync(_smallTray));
 
 
 
@@ -2120,22 +2120,7 @@ namespace LaneSimulator.Lanes
             //addbuttontimer();
         }
 
-        public static class StoryBoardExtensions
-        {
-            //from http://stackoverflow.com/questions/37697300/pass-newly-created-object-to-multiple-storyboards
-            public static Task BeginAsync(  Storyboard sb, FrameworkContentElement element)
-            {
-                var source = new TaskCompletionSource<object>();
 
-                sb.Completed += delegate
-                {
-                    source.SetResult(null);
-                };
-
-                sb.Begin(element);
-                return source.Task;
-            }
-        }
 
 
         private void StopSimBtn_Click(object sender, RoutedEventArgs e)
@@ -2205,4 +2190,22 @@ namespace LaneSimulator.Lanes
         }
 
     }
+
+    public static class StoryBoardExtensions
+    {
+        //from http://stackoverflow.com/questions/37697300/pass-newly-created-object-to-multiple-storyboards
+        public static Task BeginAsync(this Storyboard sb, FrameworkContentElement element)
+        {
+            var source = new TaskCompletionSource<object>();
+
+            sb.Completed += delegate
+            {
+                source.SetResult(null);
+            };
+
+            sb.Begin(element);
+            return source.Task;
+        }
+    }
+
 }

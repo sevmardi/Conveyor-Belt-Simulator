@@ -30,8 +30,6 @@ namespace WpfApplication1
         public MainWindow()
         {
             
-            
-          
             InitializeComponent();
             this.Timer1.Interval = new TimeSpan(0, 0, 0, 0, 100);
             this.Timer1.Tick += new EventHandler(this.Timer1_Tick);
@@ -42,7 +40,7 @@ namespace WpfApplication1
 
             var _objectToMove = new ObjectToMove();
 
-            var sb1 = FindResource("LongPathAnimation") as Storyboard;
+            var sb1 = FindResource("SectionA_SB") as Storyboard;
 
             Animation_Pannel.Children.Add(_objectToMove);
             sb1.Begin(_objectToMove);
@@ -87,6 +85,11 @@ namespace WpfApplication1
         private void MakeTrayBtn_Click(object sender, RoutedEventArgs e)
         {
           
+        }
+
+        private void StopAnimation(object sender, RoutedEventArgs e)
+        {
+           // I must be able to stop the animation or pause it and then resume it. But HOW? 
         }
     }
 }

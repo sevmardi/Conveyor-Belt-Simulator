@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI-Test", "UI-Test\UI-Test.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{2F8FD530-1FB5-4AC1-8935-62AE4C5051AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gates", "Gates\Gates.csproj", "{1F729760-EEDB-4CAC-A6D3-65CC60131D1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{2F8FD530-1FB5-4AC1-8935-62AE4C5051AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F8FD530-1FB5-4AC1-8935-62AE4C5051AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F8FD530-1FB5-4AC1-8935-62AE4C5051AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F729760-EEDB-4CAC-A6D3-65CC60131D1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F729760-EEDB-4CAC-A6D3-65CC60131D1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F729760-EEDB-4CAC-A6D3-65CC60131D1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F729760-EEDB-4CAC-A6D3-65CC60131D1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

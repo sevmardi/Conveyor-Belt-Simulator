@@ -74,25 +74,24 @@
 
         <StackPanel Orientation="Vertical">
 
-            <Expander Header="SmallTrays" IsExpanded="True">
+            <Expander Header="Trays" IsExpanded="True">
+                <StackPanel Orientation="Vertical">
+                    <trays:SmallTray x:Name="SmallTray" VerticalAlignment="Top"
+                                     dragDrop:DragDropHelper.IsDragSource="true"
+                                     dragDrop:DragDropHelper.DragDropControl="{StaticResource ObjectAdorner}"
+                                     dragDrop:DragDropHelper.DropTarget="gateCanvas"
+                                     dragDrop:DragDropHelper.AdornerLayer="adornerLayer" />
 
-                <trays:SmallTray x:Name="tbTray" VerticalAlignment="Top"
-                                 dragDrop:DragDropHelper.IsDragSource="true"
-                                 dragDrop:DragDropHelper.DragDropControl="{StaticResource ObjectAdorner}"
-                                 dragDrop:DragDropHelper.DropTarget="gateCanvas"
-                                 dragDrop:DragDropHelper.AdornerLayer="adornerLayer" />
+                    <trays:LargeTray x:Name="LargeTray" VerticalAlignment="Top"
+                                     dragDrop:DragDropHelper.IsDragSource="true"
+                                     dragDrop:DragDropHelper.DragDropControl="{StaticResource ObjectAdorner}"
+                                     dragDrop:DragDropHelper.DropTarget="gateCanvas"
+                                     dragDrop:DragDropHelper.AdornerLayer="adornerLayer" />
+                </StackPanel>
+
             </Expander>
-
-            <!--<Expander Header="Lane Sections" IsExpanded="True">
-
-                <lanes:SectionA x:Name="SectionA" VerticalAlignment="Top"
-                            dragDrop:DragDropHelper.IsDragSource="true"
-                            dragDrop:DragDropHelper.DragDropControl="{StaticResource ObjectAdorner}"
-                            dragDrop:DragDropHelper.DropTarget="gateCanvas"
-                            dragDrop:DragDropHelper.AdornerLayer="adornerLayer" />
-            </Expander>-->
-
         </StackPanel>
+
     </ScrollViewer>
 
 </UserControl>

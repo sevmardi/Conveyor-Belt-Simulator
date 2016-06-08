@@ -99,67 +99,7 @@ namespace WpfApplication5
 
         private void testingmethodonmsdn()
         {
-            NameScope.SetNameScope(this, new NameScope());
-
-            EllipseGeometry animatedEllipseGeometry =
-             new EllipseGeometry(new Point(10, 100), 15, 15);
-
-            this.RegisterName("AnimatedEllipseGeometry", animatedEllipseGeometry);
-
-            Path ellipsePath = new Path();
-            ellipsePath.Data = animatedEllipseGeometry;
-            ellipsePath.Fill = Brushes.Blue;
-            ellipsePath.Margin = new Thickness(15);
-
-            Canvas mainPanel = new Canvas();
-            mainPanel.Width = 400;
-            mainPanel.Height = 400;
-            mainPanel.Children.Add(ellipsePath);
-            this.Content = mainPanel;
-
-            PathGeometry animationPath = new PathGeometry();
-            PathFigure pFigure = new PathFigure();
-            pFigure.StartPoint = new Point(10, 100);
-            PolyBezierSegment pBezierSegment = new PolyBezierSegment();
-            pBezierSegment.Points.Add(new Point(35, 0));
-            pBezierSegment.Points.Add(new Point(135, 0));
-            pBezierSegment.Points.Add(new Point(160, 100));
-            pBezierSegment.Points.Add(new Point(180, 190));
-            pBezierSegment.Points.Add(new Point(285, 200));
-            pBezierSegment.Points.Add(new Point(310, 100));
-            pFigure.Segments.Add(pBezierSegment);
-            animationPath.Figures.Add(pFigure);
-
-            // Freeze the PathGeometry for performance benefits.
-            animationPath.Freeze();
-
-            // Create a PointAnimationgUsingPath to move
-            // the EllipseGeometry along the animation path.
-            PointAnimationUsingPath centerPointAnimation = new PointAnimationUsingPath();
-            centerPointAnimation.PathGeometry = animationPath;
-            centerPointAnimation.Duration = TimeSpan.FromSeconds(5);
-            centerPointAnimation.RepeatBehavior = RepeatBehavior.Forever;
-
-
-
-            // Set the animation to target the Center property
-            // of the EllipseGeometry named "AnimatedEllipseGeometry".
-            Storyboard.SetTargetName(centerPointAnimation, "AnimatedEllipseGeometry");
-            Storyboard.SetTargetProperty(centerPointAnimation,
-                new PropertyPath(EllipseGeometry.CenterProperty));
-
-            // Create a Storyboard to contain and apply the animation.
-            Storyboard pathAnimationStoryboard = new Storyboard();
-            pathAnimationStoryboard.RepeatBehavior = RepeatBehavior.Forever;
-            pathAnimationStoryboard.AutoReverse = true;
-            pathAnimationStoryboard.Children.Add(centerPointAnimation);
-
-            // Start the Storyboard when ellipsePath is loaded.
-            ellipsePath.Loaded += delegate(object sender, RoutedEventArgs e)
-            {
-                // Start the storyboard.
-                pathAnimationStoryboard.Begin(this);
-            };
+            var x1 = Canvas.GetLeft(e1);
 
 
         }
