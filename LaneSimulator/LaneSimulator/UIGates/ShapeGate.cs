@@ -56,7 +56,7 @@ namespace LaneSimulator.UIGates
 
         public double Acceleration { get; set; }
 
-        public double speed { get; set; }
+        public double Speed { get; set; }
 
         public TranslateTransform TrayTranslateTransform { get; set; }
 

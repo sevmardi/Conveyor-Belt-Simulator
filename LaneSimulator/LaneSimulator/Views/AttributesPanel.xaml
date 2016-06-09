@@ -1,7 +1,7 @@
 ﻿<Window x:Class="LaneSimulator.Views.AttributesPanel"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="AttributesPanel" Height="150" Width="500">
+        Title="AttributesPanel" Height="150" Width="500" ResizeMode="NoResize"  WindowStartupLocation="CenterScreen" >
     <Grid Background="WhiteSmoke">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="126" />
@@ -14,7 +14,7 @@
             <RowDefinition Height="49*"/>
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Button Content="Save" HorizontalAlignment="Left" Margin="48,39,0,0" Grid.Row="1" VerticalAlignment="Top" Width="82" Grid.Column="2" Height="30" Click="WriteIOBtn" Grid.RowSpan="2"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="48,39,0,0" Grid.Row="1" VerticalAlignment="Top" Width="82" Grid.Column="2" Height="30" Click="WriteIoBtn" Grid.RowSpan="2"/>
 
         <Label Content="Change value" HorizontalAlignment="Left" Margin="13,39,0,0" Grid.Row="1" VerticalAlignment="Top" Width="113" Height="26"/>
 

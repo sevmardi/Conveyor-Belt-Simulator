@@ -3,10 +3,13 @@ using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Shapes;
 using LaneSimulator.PLC;
 using LaneSimulator.UIGates;
+using LaneSimulator.Views;
 using Snap7;
 
 namespace LaneSimulator.Lanes
@@ -2083,23 +2086,18 @@ namespace LaneSimulator.Lanes
         private void MakeTrayBtn_Click(object sender, RoutedEventArgs e)
         {
 
-            _element = new SmallTray();
-            TestGrid.Children.Add(_element);
+            //_element = new SmallTray();
+            //TestGrid.Children.Add(_element);
 
-            var sb1 = FindResource("SectionA_SB") as Storyboard;
+            //var sb1 = FindResource("SectionA_SB") as Storyboard;
 
-            sb1.Begin(_element, true);
-           // var storyBoardsToRun = new[] { "SectionA_SB", "SectionB_SB" };
-
-
-            //storyBoardsToRun
-            //    .Select(sbName => FindResource(sbName) as Storyboard)
-            //    .ToList()
-            //     .ForEach(async sb => await sb.BeginAsync(_smallTray));
+            //sb1.Begin(_element, true);
 
 
 
-            //Executor();
+
+
+            Executor();
             //AddTrayBtn.IsEnabled = false;
             //addbuttontimer();
         }
@@ -2172,6 +2170,32 @@ namespace LaneSimulator.Lanes
             throw new NotImplementedException();
         }
 
+        // 1- select a sensor
+        // 2. check the name 
+        // 3. send the name along for saving. 
+        private void Grid_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+            //AttributesPanel atrPanel = new AttributesPanel();
+            //atrPanel.Show();
+           
+            // this solutions from http://stackoverflow.com/questions/23507052/how-to-select-xaml-object-by-xname
+            foreach (UIElement item in Sensors.Children )
+            {
+                Ellipse el = (Ellipse)item;
+
+                if (el.Name == "_0102_S1")
+                {
+
+                }
+                if (el.Name == "_0102_S2")
+                {
+                    MessageBox.Show("nice");
+                }
+               
+            }
+        }
+
+        
     }
 
     public static class StoryBoardExtensions

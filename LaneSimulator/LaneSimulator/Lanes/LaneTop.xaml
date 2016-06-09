@@ -515,7 +515,9 @@
 
        
         <Canvas x:Name="Sensors">
-            <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-243.75" Canvas.Top="420.25" Width="6" x:Name="_0102_S1"/>
+            <Ellipse Fill="#FFA8A19F" Height="11.25" Canvas.Left="-248.125" Canvas.Top="415" Width="10" x:Name="_0102_S1"   MouseDown="Grid_MouseDown_1" RenderTransformOrigin="-0.167,0.417"/>
+            
+            
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-234" Canvas.Top="392" Width="6" x:Name="_0102_S2"/>
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-218.75" Canvas.Top="371" Width="6" x:Name="_0103_S1"/>
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="-203.75" Canvas.Top="362.75" Width="6" x:Name="_0104_S1"/>

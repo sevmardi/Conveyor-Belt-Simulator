@@ -17,14 +17,14 @@ using System.Windows.Shapes;
 namespace LaneSimulator
 {
     /// <summary>
-    /// Interaction logic for Gate.xaml
+    /// A graphical wrapper around a single gate; Provides resizing and selection capabilities.
     /// </summary>
     public partial class Gate : UserControl
     {
 
         private DropShadowEffect glow;
         private bool _sel;
-
+        protected Gates.AbstractGate _gate;
 
         public Gate()
         {
@@ -60,6 +60,17 @@ namespace LaneSimulator
             }
         }
 
+        /// <summary>
+        /// The gate "behind" this visual gate
+        /// </summary>
+        public Gates.AbstractGate AbGate
+        {
+            get
+            {
+                return _gate;
+            }
+        }
+
         public void Gate_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             topGrid.Width = Width;
@@ -85,6 +96,8 @@ namespace LaneSimulator
 
         protected static readonly DependencyProperty ExtraHeightProperty =
             DependencyProperty.Register("ExtraHeight", typeof(double), typeof(Gate));
+
+
 
 
     }
