@@ -8,6 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
+using Gates;
 using LaneSimulator.UIGates;
 using LaneSimulator.Utilities;
 
@@ -19,8 +20,7 @@ namespace LaneSimulator
     public partial class SSLCanvas : UserControl
     {
         public BindingList<Gate> selected = new BindingList<Gate>();
-
-
+        private Dictionary<Gates.AbstractGate, Gate> gates = new Dictionary<Gates.AbstractGate, Gate>();
         private DragState dragging = DragState.NONE;
         private bool ReadyToSelect = false;
         private Point mp;
@@ -39,6 +39,16 @@ namespace LaneSimulator
 
 
 
+        /// <summary>
+        /// All UI Gates on this canvas.
+        /// </summary>
+        public IEnumerable<Gate> Gates
+        {
+            get
+            {
+                return gates.Values;
+            }
+        }
 
         public SSLCanvas()
         {
@@ -47,47 +57,62 @@ namespace LaneSimulator
             Timer1.Tick += new EventHandler(this.Timer1_Tick);
         }
 
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         protected enum DragState
         {
             NONE, MOVE
         }
 
 
-        public void Scroller_LayoutUpdated(object sender, EventArgs e)
-        {
-            if (!_mute && !DisableSizeCanvas)
-                SizeCanvas();
-        }
-        private void Scroller_ScrollChanged(object sender, ScrollChangedEventArgs e)
-        {
-            if (!_mute && !DisableSizeCanvas)
-                SizeCanvas();
-        }
 
-        private void Scroller_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
 
-            if (dragging == DragState.MOVE)
+
+
+
+
+        private static Rect GetBounds(IEnumerable<Gate> gts, double padding)
+        {
+            double minx = 0, maxx = 0, miny = 0, maxy = 0;
+            bool fst = true;
+            foreach (Gate g in gts)
             {
-                System.Threading.Thread.Sleep(100); // don't let them scroll themselves into oblivion
+                if (fst)
+                {
+                    minx = g.Margin.Left;
+                    maxx = g.Margin.Left + g.Width;
+                    miny = g.Margin.Top;
+                    maxy = g.Margin.Top + g.Height;
+                    fst = false;
+                }
+
+                minx = Math.Min(minx, g.Margin.Left - padding);
+                maxx = Math.Max(maxx, g.Margin.Left + g.Width + padding);
+                miny = Math.Min(miny, g.Margin.Top - padding);
+                maxy = Math.Max(maxy, g.Margin.Top + g.Height + padding);
             }
+
+            return new Rect(minx, miny, maxx - minx, maxy - miny);
         }
 
-        public bool DisableSizeCanvas { get; set; }
-
-        private void Timer1_Tick(object sender, EventArgs e)
+        /// <summary>
+        /// Determine the extent of visual gates on this canvas, taking into account
+        /// any requested padding, and whether all gates should be considered or
+        /// only selected gates.
+        /// </summary>
+        /// <param name="padding"></param>
+        /// <param name="selectedOnly"></param>
+        /// <returns></returns>
+        public Rect GetBounds(double padding, bool selectedOnly)
         {
-            //Timer_Lable.Text = (this.T = this.T + 0.1).ToString("0.00",
-            //    (IFormatProvider)CultureInfo.InvariantCulture);
+            if (selectedOnly)
+                return GetBounds(selected, padding);
+            else
+                return GetBounds(gates.Values, padding);
         }
-
-        //public Rect GetBounds(double padding, bool selectedOnly)
-        //{
-        //    if (selectedOnly)
-        //        return GetBounds(selected, padding);
-        //    else
-        //        return GetBounds(gates.Values, padding);
-        //}
 
         //mouse down event for canvas clicks
         private void SSLCanvas_MouseDown(object sender, MouseButtonEventArgs e)
@@ -104,11 +129,11 @@ namespace LaneSimulator
             if (_iso)
             {
                 _iso = false;
-                //foreach (KeyValuePair<AbstractGate, Gate> pair in gates)
-                //{
-                //    Gate value = pair.Value;
-                //    Fader.AnimateOpacity(1, value);
-                //}
+                foreach (KeyValuePair<AbstractGate, Gate> pair in gates)
+                {
+                    Gate value = pair.Value;
+                    Fader.AnimateOpacity(1, value);
+                }
             }
         }
 
@@ -121,10 +146,7 @@ namespace LaneSimulator
             dragSelect.Margin = new Thickness(0, 0, 0, 0);
             dragSelect.Visibility = Visibility.Hidden;
 
-           
             ReadyToSelect = false;
-
-
         }
 
 
@@ -177,39 +199,41 @@ namespace LaneSimulator
             }
         }
 
-        // Green Team Notes:  This clears selection
+        /// <summary>
+        /// Clear the selection.  This empties the selected list and sets selected to false
+        /// on all gates which were in it.
+        /// </summary>
+        /// 
         public void ClearSelection()
         {
-            //foreach (Gate g in selected)
-            //    g.Selected = false;
+            foreach (Gate g in selected)
+                g.Selected = false;
 
-            //selected.Clear();
+            selected.Clear();
         }
 
         public void SelectAll()
         {
-            //ClearSelection();
+            ClearSelection();
 
-            //foreach (Gate g in gates.Values)
-            //{
-            //    g.Selected = true;
-            //    selected.Add(g);
-            //}
+            foreach (Gate g in gates.Values)
+            {
+                g.Selected = true;
+                selected.Add(g);
+            }
         }
 
         public void SizeCanvas()
         {
-            // green team notes:  increased size to make scroll bars visible on start
             // this will ensure the mouse center zoom method works on start up
-            double maxx = (Scroller.ViewportWidth / _zoom);
-            double maxy = (Scroller.ViewportHeight / _zoom);
+            var maxx = Scroller.ViewportWidth/_zoom;
+            var maxy = Scroller.ViewportHeight/_zoom;
 
-            //foreach (Gate g in gates.Values)
-            //{
-            //    maxx = Math.Max(maxx, g.Margin.Left + g.Width + 64);
-            //    maxy = Math.Max(maxy, g.Margin.Top + g.Height + 64);
-
-            //}
+            foreach (var g in gates.Values)
+            {
+                maxx = Math.Max(maxx, g.Margin.Left + g.Width + 64);
+                maxy = Math.Max(maxy, g.Margin.Top + g.Height + 64);
+            }
 
             GC.Width = maxx;
             GC.Height = maxy;
@@ -252,14 +276,26 @@ namespace LaneSimulator
  
         }
 
-        public enum SELECTED_OBJECTS
+        public enum SELECTED_GATES
         {
+            /// <summary>
+            /// All gates in the canvas
+            /// </summary>
             ALL,
 
+            /// <summary>
+            /// Only those selected gates in the canvas, if any
+            /// </summary>
             SELECTED,
 
+            /// <summary>
+            /// If 2 or more gates are selected, use selected gates.
+            /// Otherwise, use all gates.
+            /// </summary>
             SELECTED_IF_TWO_OR_MORE
         }
+
+
 
         public void SetZoomCenter()
         {
@@ -295,18 +331,12 @@ namespace LaneSimulator
         /// 
         public double Zoom
         {
-
-            get
-            {
-                return _zoom;
-            }
+            get { return _zoom; }
 
             set
             {
-
-
-                double centerX = (Scroller.HorizontalOffset + Scroller.ViewportWidth / 2.0) / _zoom;
-                double centerY = (Scroller.VerticalOffset + Scroller.ViewportHeight / 2.0) / _zoom;
+                double centerX = (Scroller.HorizontalOffset + Scroller.ViewportWidth/2.0)/_zoom;
+                double centerY = (Scroller.VerticalOffset + Scroller.ViewportHeight/2.0)/_zoom;
                 _zoom = value;
                 GC.LayoutTransform = new ScaleTransform(value, value);
                 if (UseZoomCenter)
@@ -317,54 +347,72 @@ namespace LaneSimulator
 
                 if (!double.IsNaN(centerX))
                 {
-                    Scroller.ScrollToHorizontalOffset((centerX * _zoom) - Scroller.ViewportWidth / 2.0);
-                    Scroller.ScrollToVerticalOffset((centerY * _zoom) - Scroller.ViewportHeight / 2.0);
+                    Scroller.ScrollToHorizontalOffset((centerX*_zoom) - Scroller.ViewportWidth/2.0);
+                    Scroller.ScrollToVerticalOffset((centerY*_zoom) - Scroller.ViewportHeight/2.0);
                 }
-
             }
         }
 
+        /// <summary>
+        /// Given a point on the canvas, find the nearest "snap" point.  Useful
+        /// for placing new gates.
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public Point GetNearestSnapTo(Point p)
+        {
+            return new Point(Math.Round(p.X / GRID_SIZE) * GRID_SIZE,
+                                        Math.Round(p.Y / GRID_SIZE) * GRID_SIZE);
+        }
 
         /// <summary>
-        /// Remove a given SmallTray from the canvas. 
+        /// Remove a given gate from the canvas. 
         /// </summary>
-        public void RemoveObject()
+        public void RemoveGate(Gate uigate)
         {
+           // uigate.MouseDown -= new MouseButtonEventHandler(uigate_MouseDown);
           
         }
 
-
-        public Rect GetBounds(double padding, bool selectedOnly)
+        /// <summary>
+        /// Given a relative point on the GateCanvas control,
+        /// adjust it using the current zoom and scroll settings
+        /// to reflect an actual point on the unscrolled, unzoomed canvas.
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public Point TranslateScrolledPoint(Point p)
         {
-            if (selectedOnly)
-                return GetBounds(selected, padding);
-            else
-                return GetBounds(selected, padding);
+            Point np = new Point();
+            np.X = Scroller.HorizontalOffset + p.X;
+            np.Y = Scroller.VerticalOffset + p.Y;
+            np.X /= _zoom;
+            np.Y /= _zoom;
+            return np;
         }
 
-        private static Rect GetBounds(IEnumerable<Gate> gts, double padding)
+
+        public bool DisableSizeCanvas { get; set; }
+
+
+        public void Scroller_LayoutUpdated(object sender, EventArgs e)
         {
-            double minx = 0, maxx = 0, miny = 0, maxy = 0;
-            bool fst = true;
-            foreach (Gate g in gts)
+            if (!_mute && !DisableSizeCanvas)
+                SizeCanvas();
+        }
+
+        private void Scroller_ScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
+            if (!_mute && !DisableSizeCanvas)
+                SizeCanvas();
+        }
+
+        private void Scroller_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (dragging == DragState.MOVE)
             {
-                if (fst)
-                {
-                    minx = g.Margin.Left;
-                    maxx = g.Margin.Left + g.Width;
-                    miny = g.Margin.Top;
-                    maxy = g.Margin.Top + g.Height;
-                    fst = false;
-                }
-
-                minx = Math.Min(minx, g.Margin.Left - padding);
-                maxx = Math.Max(maxx, g.Margin.Left + g.Width + padding);
-                miny = Math.Min(miny, g.Margin.Top - padding);
-                maxy = Math.Max(maxy, g.Margin.Top + g.Height + padding);
+                System.Threading.Thread.Sleep(100); // don't let them scroll themselves into oblivion
             }
-
-            return new Rect(minx, miny, maxx - minx, maxy - miny);
-
         }
 
     }

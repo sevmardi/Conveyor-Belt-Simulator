@@ -25,8 +25,9 @@ namespace LaneSimulator
         public static string APP_TITLE;
         public static string APP_VERSION;
         public static string APP_COPYRIGHT;
+
         private bool Ispaused = false;
-        private ShadowBox sbZoom, sbSpeed, sslObjects, total, SSL, counter;
+        private ShadowBox sbZoom, sbSpeed, sslObjects, total, SSL, counter, btnsPanelBox;
         private readonly SectionA _sectionA;
         private readonly SSLCanvas _sslCanvas;
         private double T = 0.0;
@@ -44,6 +45,9 @@ namespace LaneSimulator
             _sslCanvas = new SSLCanvas();
      
            _plcCalls = new PlcCalls();
+
+           // everybody gets view keys
+        //   this.PreviewKeyDown += new KeyEventHandler(Window1_View_KeyDown);
 
 
            // drag/drop for edit or full
@@ -120,6 +124,19 @@ namespace LaneSimulator
             //Grid.SetColumn(SSL, 1);
             //Grid.SetRow(SSL, 1);
 
+            Grid1.Children.Remove(ButtonsPanel);
+            btnsPanelBox = new ShadowBox();
+            btnsPanelBox.Margin = new Thickness(20, 20, 175, 20);
+            btnsPanelBox.Children.Add(ButtonsPanel);
+            ButtonsPanel.Background = Brushes.Transparent;
+            btnsPanelBox.VerticalAlignment = VerticalAlignment.Bottom;
+            btnsPanelBox.HorizontalAlignment = HorizontalAlignment.Center;
+            Grid1.Children.Add(btnsPanelBox);
+            Grid.SetColumn(btnsPanelBox, 1);
+            Grid.SetRow(btnsPanelBox, 1);
+
+
+
            this.Loaded += (sender2, e2) =>
            {
                lblAppTitle.Text = APP_TITLE;
@@ -127,12 +144,36 @@ namespace LaneSimulator
                lblAppCopyright.Text = APP_COPYRIGHT;
            };
 
+           this.PreviewMouseWheel += (sender, e2) =>
+           {
+               if (Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl))
+               {
+                   SSLCanvas.UseZoomCenter = true;
+                   double centerX = (Mouse.GetPosition(this).X + SSLCanvas.Scroller.HorizontalOffset) / SSLCanvas.Zoom;
+                   double centerY = (Mouse.GetPosition(this).Y + SSLCanvas.Scroller.VerticalOffset) / SSLCanvas.Zoom;
+                   SSLCanvas.ZoomCenter = new Point(centerX, centerY);
+
+                   if (e2.Delta > 0)
+                       slZoom.Value += 0.1;
+                   else
+                       slZoom.Value -= 0.1;
+
+                   e2.Handled = true;
+               }
+           };
+
+
         }
 
         private void DragDropHelper_ItemDropped(object sender, DragDropEventArgs e)
         {
             if (e.DropTarget.IsDescendantOf(SSLCanvas) && this.IsActive)
             {
+                Gate newgate = null;
+                newgate = ((Gate)e.Content).CreateUserInstance();
+              //  SSLCanvas.AddGate(newgate, new GateLocation(SSLCanvas.GetNearestSnapTo(SSLCanvas.TranslateScrolledPoint(e.Position))));
+
+               
                 SSLCanvas.AddTray();
                 SSLCanvas.UpdateLayout();
             }
@@ -371,6 +412,7 @@ namespace LaneSimulator
 
         private void btnShowTrueFalse_Checked(object sender, RoutedEventArgs e)
         {
+            //SSLCanvas.ShowTrueFalse = true;
         }
 
         private void btnShowTrueFalse_Unchecked(object sender, RoutedEventArgs e)
@@ -517,6 +559,16 @@ namespace LaneSimulator
         }
 
         private void Image_Off_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void StopButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Reset_Button_OnClick(object sender, RoutedEventArgs e)
         {
             throw new NotImplementedException();
         }

@@ -11,7 +11,7 @@
     xmlns:lane="clr-namespace:LaneSimulator.Lanes"
     Title="Lane Simulator" Height="500" Width="650"
     Icon="Images/ram.png"
-    Loaded="Window_Loaded"
+
     WindowStartupLocation="CenterScreen" >
 
     <Window.Resources>
@@ -691,14 +691,30 @@
         </StackPanel>-->
 
 
-        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="LED">
+<!--        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="LED">
             <Grid x:Name="LayoutRoot">
                 <Image Name="Images_On" Margin="8" Source="Images/LED_ON.png" />
                 <Image MouseUp="Image_Off_MouseUp" Name="Image_Off" Margin="8" Source="Images/LED_OFF.png" Opacity="1" Cursor="Hand" />
             </Grid>
 
+        </StackPanel>-->
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Name="ButtonsPanel" Orientation="Horizontal">
+            <Button x:Name="StopButton" Click="StopButton_OnClick" 
+                    Width="68" ToolTip="Stop" IsEnabled="True">
+                <Image Height="54.322" Source="Images/dialog-stop_icon.png" Stretch="Fill" Width="54.322" />
+            </Button>
+
+            <Button Click="Reset_Button_OnClick" Name="Reset_Button" 
+                    Width="68" ToolTip="Reset" IsEnabled="True">
+                <Image Height="48.653" Source="Images/undo_256.png" Stretch="Fill" Width="48.653" />
+            </Button>
+
+            <Button Click="StartAnimationBtn_Click" Name="Play_Button" 
+                    Width="68" ToolTip="Play" IsEnabled="True">
+                <Image Height="51.072" Source="Images/Play1Hot.png" Stretch="Fill" Width="51.072" />
+            </Button>
         </StackPanel>
-        
 
         <ToolBarTray Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0" d:IsLocked="True">
             <ToolBar Height="28" Name="tbFile" Visibility="Collapsed" >
@@ -790,7 +806,9 @@
         </StackPanel>
         <TextBlock Name="lblInfoLine" Background="#EEEEEE" Grid.Row="2" Grid.ColumnSpan="2"  Padding="10,0,0,0" Visibility="Hidden" d:IsLocked="True" />
 
-     
+
+
+        
         
         <Canvas x:Name="adornerLayer" Visibility="Collapsed" d:IsLocked="True"/>
        

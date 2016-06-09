@@ -8,6 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("changelog.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/led_off.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/led_on.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/play1hot.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/undo_256.png")]
 
 

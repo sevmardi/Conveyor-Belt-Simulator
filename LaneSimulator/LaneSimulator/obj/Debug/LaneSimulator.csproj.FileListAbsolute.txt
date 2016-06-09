@@ -143,19 +143,19 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\L
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Gate.baml
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Gate.g.cs
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\LaneSimulator.csprojResolveAssemblyReference.cache
-C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Models\Components\SmallTray.baml
-C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Models\Components\SmallTray.g.cs
-C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Models\Components\LargeTray.baml
-C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Models\Components\LargeTray.g.cs
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Lanes\LaneBottom.baml
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Lanes\LaneBottom.g.cs
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Lanes\LaneBottom.baml
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Lanes\LaneBottom.g.cs
-C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Models\Components\Sensor.baml
-C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\Models\Components\Sensor.g.cs
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\Sensor.baml
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\Sensor.g.cs
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\bin\Debug\Gates.exe
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\bin\Debug\Gates.pdb
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\SimpleTray.baml
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\SimpleTray.g.cs
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\Sensor.baml
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\SimpleTray.baml
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\Sensor.g.cs
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\SimpleTray.g.cs
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\bin\Debug\Gates.exe
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\bin\Debug\Gates.pdb

@@ -266,6 +266,15 @@
       <Name>Gates</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\dialog-stop_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\led_off.png" />
+    <Resource Include="Images\led_on.png" />
+    <Resource Include="Images\play1hot.png" />
+    <Resource Include="Images\undo_256.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
