@@ -1,24 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Windows.Threading;
 using LaneSimulator.PLC;
 using LaneSimulator.UIGates;
-using LaneSimulator.Views;
 using Snap7;
 
 namespace LaneSimulator.Lanes
@@ -32,14 +20,13 @@ namespace LaneSimulator.Lanes
         private static readonly byte[] Buffer = new byte[500];
         private static int _res;
         private Storyboard _storyboard;
-        private S7Client myclient;
-        int amount = 1;
-        int DBNumber = 0;
-        int area;
-        int wordlen = S7Client.S7WLBit;
-        byte[] buffer = new byte[10];
-        int res;
-        private SmallTray _smallTray;
+
+
+        private FrameworkElement _element;
+     
+        //private SmallTray _smallTray;
+       
+        
         public LaneTop()
         {
             InitializeComponent();
@@ -1630,7 +1617,7 @@ namespace LaneSimulator.Lanes
 
         public void _1004_S2_TurnOff()
         {
-            res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1004_S2, _plcCalls.Amount,
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1004_S2, _plcCalls.Amount,
                  _plcCalls.Wordlen, Buffer);
 
             if (_res == 0)
@@ -1666,7 +1653,7 @@ namespace LaneSimulator.Lanes
 
         public void _1101_S1_TurnOff()
         {
-            res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1101_S1, _plcCalls.Amount,
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1101_S1, _plcCalls.Amount,
                  _plcCalls.Wordlen, Buffer);
 
             if (_res == 0)
@@ -1702,7 +1689,7 @@ namespace LaneSimulator.Lanes
 
         public void _1102_S1_TurnOff()
         {
-            res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1102_S1, _plcCalls.Amount,
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1102_S1, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
 
             if (_res == 0)
@@ -2092,20 +2079,17 @@ namespace LaneSimulator.Lanes
                 }
 
             }
-
-
-
-        
+ 
         private void MakeTrayBtn_Click(object sender, RoutedEventArgs e)
         {
 
-            _smallTray = new SmallTray();
-            TestGrid.Children.Add(_smallTray);
+            _element = new SmallTray();
+            TestGrid.Children.Add(_element);
 
-            //var sb1 = FindResource("SectionA_SB") as Storyboard;
+            var sb1 = FindResource("SectionA_SB") as Storyboard;
 
-            //sb1.Begin(_smallTray);
-            var storyBoardsToRun = new[] { "SectionA_SB", "SectionB_SB" };
+            sb1.Begin(_element, true);
+           // var storyBoardsToRun = new[] { "SectionA_SB", "SectionB_SB" };
 
 
             //storyBoardsToRun
@@ -2125,15 +2109,16 @@ namespace LaneSimulator.Lanes
 
         private void StopSimBtn_Click(object sender, RoutedEventArgs e)
         {
-          //  SchedulerPanel schedulerPanel = new SchedulerPanel();
+            //  SchedulerPanel schedulerPanel = new SchedulerPanel();
             //schedulerPanel.Show();
    
             //var sb1 = FindResource("SectionA_SB") as Storyboard;
             //TestGrid.Children.Remove(_smallTray);
             //sb1.Stop();
 
-            
-            
+            var sb1 = FindResource("SectionA_SB") as Storyboard;
+            sb1.Pause(_element);
+ 
         }
 
         public void TaskRunner()
@@ -2143,9 +2128,7 @@ namespace LaneSimulator.Lanes
             {
                 SmallTray smallTray = new SmallTray();
                 AnimationPannel.Children.Add(smallTray);
-              
             }
-
         }
 
         protected void addbuttontimer()

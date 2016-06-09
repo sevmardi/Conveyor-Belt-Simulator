@@ -84,9 +84,7 @@
     <Compile Include="UIGates\Sensor.xaml.cs">
       <DependentUpon>Sensor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UIGates\SmallTray.xaml.cs">
-      <DependentUpon>SmallTray.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="UIGates\ShapeGate.cs" />
     <Compile Include="PLC\PlcCalls.cs" />
     <Compile Include="PLC\PLCTags.cs" />
     <Compile Include="SSLCanvas.xaml.cs">
@@ -152,10 +150,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UIGates\Sensor.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UIGates\SmallTray.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -259,7 +253,12 @@
   <ItemGroup>
     <Resource Include="ChangeLog.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Gates\Gates.csproj">
+      <Project>{1f729760-eedb-4cac-a6d3-65cc60131d1d}</Project>
+      <Name>Gates</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

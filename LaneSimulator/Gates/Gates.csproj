@@ -58,6 +58,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Trays\SmallTray.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PropagationThread.cs" />
@@ -89,7 +90,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SyncQueue\" />
-    <Folder Include="Trays\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

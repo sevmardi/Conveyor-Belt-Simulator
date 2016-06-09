@@ -11,7 +11,7 @@
     xmlns:lane="clr-namespace:LaneSimulator.Lanes"
     Title="Lane Simulator" Height="500" Width="650"
     Icon="Images/ram.png"
-
+    Loaded="Window_Loaded"
     WindowStartupLocation="CenterScreen" >
 
     <Window.Resources>

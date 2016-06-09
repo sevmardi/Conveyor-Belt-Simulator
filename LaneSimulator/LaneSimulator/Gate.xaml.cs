@@ -29,6 +29,13 @@ namespace LaneSimulator
         public Gate()
         {
             InitializeComponent();
+
+            glow = new DropShadowEffect();
+            glow.ShadowDepth = 0;
+            glow.Color = Colors.Blue;
+            glow.BlurRadius = 5;
+
+            IsReadOnly = false;
         }
 
 
