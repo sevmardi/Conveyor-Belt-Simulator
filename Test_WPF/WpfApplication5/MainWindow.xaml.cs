@@ -33,36 +33,44 @@ namespace WpfApplication5
 
         private void AddAnimation()
         {
-            ObjectToMove move = new ObjectToMove();
-            
-            //Ellipse ellipse = new Ellipse();
-            //ellipse.Fill = Color;
-            //ellipse.Width = 40.0;
-            //ellipse.Height = 40.0;
-            //ellipse.Stroke = (Brush)Brushes.Black;
-            //ellipse.StrokeThickness = 1.5;
+           
+
+        }
+
+        private void storyboard_Completed(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            //ObjectToMove move = new ObjectToMove();
+
+            Ellipse ellipse = new Ellipse();
+          //  ellipse.Fill = Color;
+            ellipse.Width = 40.0;
+            ellipse.Height = 40.0;
+            ellipse.Stroke = (Brush)Brushes.Black;
+            ellipse.StrokeThickness = 1.5;
 
 
             DoubleAnimationUsingPath path1 = new DoubleAnimationUsingPath();
 
 
-            this.Animation_Path.Children.Add((UIElement)move);
-            Canvas.SetLeft((UIElement)move, 220.0);
-            Canvas.SetTop((UIElement)move, 4.0);
+            this.Animation_Path.Children.Add((UIElement)ellipse);
+            Canvas.SetLeft((UIElement)ellipse, 350.0);
+            Canvas.SetTop((UIElement)ellipse, 4.0);
             this.Slist.Add(_storyboard);
-
-
-
-
 
             _storyboard = this.Slist[this.Slist.Count - 1];
 
-           // storyboard.Completed += new EventHandler(this.storyboard_Completed);
+            // storyboard.Completed += new EventHandler(this.storyboard_Completed);
 
-            DoubleAnimation doubleAnimation = new DoubleAnimation(500, 0.0, (Duration)TimeSpan.FromSeconds(10));
+            DoubleAnimation doubleAnimation = new DoubleAnimation(1000, 0.0, (Duration)TimeSpan.FromSeconds(10));
 
 
-            Storyboard.SetTarget((DependencyObject)doubleAnimation, (DependencyObject)move);
+            Storyboard.SetTarget((DependencyObject)doubleAnimation, (DependencyObject)ellipse);
             Storyboard.SetTargetProperty((DependencyObject)doubleAnimation, new PropertyPath((object)Canvas.LeftProperty));
 
             _storyboard.Children.Add((Timeline)doubleAnimation);
@@ -80,29 +88,8 @@ namespace WpfApplication5
                 _storyboard.Begin();
 
 
-
         }
 
-        private void storyboard_Completed(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        private void Button_Click_5(object sender, RoutedEventArgs e)
-        {
-          AddAnimation();
-           // testingmethodonmsdn();
-        }
-
-
-
-        private void testingmethodonmsdn()
-        {
-            var x1 = Canvas.GetLeft(e1);
-
-
-        }
 
 
         private void Button_Click_6(object sender, RoutedEventArgs e)

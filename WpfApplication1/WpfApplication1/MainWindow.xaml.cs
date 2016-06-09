@@ -26,7 +26,7 @@ namespace WpfApplication1
         private double T = 0.0;
         private DispatcherTimer Timer1 = new DispatcherTimer();
         private ObjectToMove _objectToMove;
-
+        private FrameworkContentElement _moElement;
         public MainWindow()
         {
             
@@ -38,19 +38,34 @@ namespace WpfApplication1
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
 
-            var _objectToMove = new ObjectToMove();
+            //var _objectToMove = new ObjectToMove();
 
-            var sb1 = FindResource("SectionA_SB") as Storyboard;
+            //var sb1 = FindResource("SectionA_SB") as Storyboard;
 
-            Animation_Pannel.Children.Add(_objectToMove);
-            sb1.Begin(_objectToMove);
+            //Animation_Pannel.Children.Add(_objectToMove);
+            //sb1.Begin(_objectToMove);
 
-            Timer1.Start();
+            //Timer1.Start();
+
+            var _moElement = new ObjectToMove();
+            Animation_Pannel.Children.Add(_moElement);
+
+            var storyBoardsToRun = new[] { "Storyboard1", "Storyboard2" };
+
+            storyBoardsToRun
+                .Select(sbName => FindResource(sbName) as Storyboard)
+                .ToList()
+                .ForEach(async sb => await sb.BeginAsync(_moElement));
            
         }
 
 
+        public void SectionAas()
+        {
+            var sb1 = FindResource("SectionA_SB") as Storyboard;
+            sb1.Begin(_objectToMove);
 
+        }
 
         private void Total()
         {
@@ -90,6 +105,20 @@ namespace WpfApplication1
         private void StopAnimation(object sender, RoutedEventArgs e)
         {
            // I must be able to stop the animation or pause it and then resume it. But HOW? 
+        }
+    }
+
+    public static class StoryBoardExtensions
+    {
+        public static Task BeginAsync(this Storyboard sb, FrameworkContentElement element)
+        {
+            var source = new TaskCompletionSource<object>();
+            sb.Completed += delegate
+            {
+                source.SetResult(null);
+            };
+            sb.Begin(element);
+            return source.Task;
         }
     }
 }

@@ -20,9 +20,31 @@ namespace WpfApplication5
     /// </summary>
     public partial class ObjectToMove : UserControl
     {
+        private Point position;
+        private int destination; 
+
         public ObjectToMove()
         {
             InitializeComponent();
+            this.position = position;
         }
+
+        
+        public int getDestination()
+        {
+            return this.destination;
+        }
+
+
+        public void setPosition(int x, int y)
+        {
+            this.position.X = x;
+            this.position.Y = y;
+        }
+        public void setDestination(int destination)
+        {
+            this.destination = destination;
+        }
+
     }
 }
