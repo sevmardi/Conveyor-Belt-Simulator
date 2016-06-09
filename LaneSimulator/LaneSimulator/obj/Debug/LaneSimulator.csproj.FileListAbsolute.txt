@@ -157,3 +157,5 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\L
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\Sensor.g.cs
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\bin\Debug\Gates.exe
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\bin\Debug\Gates.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\SimpleTray.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\SimpleTray.g.cs

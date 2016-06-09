@@ -90,6 +90,9 @@
     <Compile Include="SSLCanvas.xaml.cs">
       <DependentUpon>SSLCanvas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UIGates\SimpleTray.xaml.cs">
+      <DependentUpon>SimpleTray.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\DragDrop\DragDropAdornerBase.cs" />
     <Compile Include="Utilities\DragDrop\DragDropHelper.cs" />
     <Compile Include="Utilities\DragDrop\DropPreviewAdorner.cs" />
@@ -154,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SSLCanvas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIGates\SimpleTray.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

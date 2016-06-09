@@ -2086,23 +2086,32 @@ namespace LaneSimulator.Lanes
         private void MakeTrayBtn_Click(object sender, RoutedEventArgs e)
         {
 
-            //_element = new SmallTray();
-            //TestGrid.Children.Add(_element);
+            _element = new SimpleTray();
+          //  TestGrid.Children.Add(_element);
+            this.TestGrid.Children.Add((UIElement)_element);
+            var sb1 = FindResource("SectionA_SB") as Storyboard;
+            sb1.Completed += new EventHandler(this.storyboard_Completed);
+            sb1.Begin(_element, true);
+            
 
-            //var sb1 = FindResource("SectionA_SB") as Storyboard;
-
-            //sb1.Begin(_element, true);
-
-
-
-
-
-            Executor();
-            //AddTrayBtn.IsEnabled = false;
-            //addbuttontimer();
+//            Executor();
+//            AddTrayBtn.IsEnabled = false;
+//            addbuttontimer();
         }
 
+        private void storyboard_Completed(object sender, EventArgs e)
+        {
+            var sb2 = FindResource("SectionB_SB") as Storyboard;
+            sb2.Completed += new EventHandler(this.storyboard_Completed2);
+            sb2.Begin(_element);
+         
+        }
 
+        private void storyboard_Completed2(object sender, EventArgs e)
+        {
+            var sb2 = FindResource("SectionC_SB") as Storyboard;
+            sb2.Begin(_element);
+        }
 
 
         private void StopSimBtn_Click(object sender, RoutedEventArgs e)
@@ -2114,8 +2123,8 @@ namespace LaneSimulator.Lanes
             //TestGrid.Children.Remove(_smallTray);
             //sb1.Stop();
 
-            var sb1 = FindResource("SectionA_SB") as Storyboard;
-            sb1.Pause(_element);
+            //var sb1 = FindResource("SectionB_SB") as Storyboard;
+            //sb1.Pause(_element);
  
         }
 

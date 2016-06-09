@@ -634,9 +634,6 @@
         </Canvas>
 
 
-
-
-
         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="spZoom" d:IsLocked="True">
             <Image Source="Images/ZoomHS.png" Height="20" />
             <Slider Name="slZoom" Minimum="0.01" Maximum="5" Value="1" SmallChange="0.01"
@@ -693,8 +690,16 @@
             <Image Source="Images/hare.png" Height="20"  />
         </StackPanel>-->
 
-       
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="LED">
+            <Grid x:Name="LayoutRoot">
+                <Image Name="Images_On" Margin="8" Source="Images/LED_ON.png" />
+                <Image MouseUp="Image_Off_MouseUp" Name="Image_Off" Margin="8" Source="Images/LED_OFF.png" Opacity="1" Cursor="Hand" />
+            </Grid>
+
+        </StackPanel>
         
+
         <ToolBarTray Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0" d:IsLocked="True">
             <ToolBar Height="28" Name="tbFile" Visibility="Collapsed" >
                 <Button Style="{StaticResource TButtonStyle}" Click="btnNew_Click" ToolTip="New File (Ctrl+N)">

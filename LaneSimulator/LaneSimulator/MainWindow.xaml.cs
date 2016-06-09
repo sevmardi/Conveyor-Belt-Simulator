@@ -516,5 +516,9 @@ namespace LaneSimulator
             schedulerPanel.Show();
         }
 
+        private void Image_Off_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

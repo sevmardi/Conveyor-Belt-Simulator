@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\App.xaml
-15-2080260712
+16-1372273219
 
-34-601260384
+35-2072899274
 15258224424
-Gate.xaml;Lanes\LaneBottom.xaml;Lanes\LaneTop.xaml;Lanes\SectionA.xaml;Lanes\SectionB.xaml;Lanes\SectionC.xaml;MainWindow.xaml;UIGates\Sensor.xaml;SSLCanvas.xaml;Utilities\DragDrop\ObjectDragDropAdorner.xaml;Utilities\Selector\ObjectSelector.xaml;Utilities\ShadowBox\ShadowBox.xaml;Views\AttributesPanel.xaml;Views\ConnectPanel.xaml;Views\SchedulerPanel.xaml;
+Gate.xaml;Lanes\LaneBottom.xaml;Lanes\LaneTop.xaml;Lanes\SectionA.xaml;Lanes\SectionB.xaml;Lanes\SectionC.xaml;MainWindow.xaml;UIGates\Sensor.xaml;SSLCanvas.xaml;UIGates\SimpleTray.xaml;Utilities\DragDrop\ObjectDragDropAdorner.xaml;Utilities\Selector\ObjectSelector.xaml;Utilities\ShadowBox\ShadowBox.xaml;Views\AttributesPanel.xaml;Views\ConnectPanel.xaml;Views\SchedulerPanel.xaml;
 
 False
 
