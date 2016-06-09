@@ -8,7 +8,6 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
 using LaneSimulator.Lanes;
-using LaneSimulator.Models.Components;
 using LaneSimulator.PLC;
 using LaneSimulator.Utilities;
 using LaneSimulator.Utilities.DragDrop;

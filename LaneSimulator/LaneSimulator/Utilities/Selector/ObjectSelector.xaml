@@ -4,8 +4,8 @@
              xmlns:dragDrop="clr-namespace:LaneSimulator.Utilities.DragDrop"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:lanes="clr-namespace:LaneSimulator.Lanes"
-             xmlns:trays="clr-namespace:LaneSimulator.Models.Components"
-             xmlns:selector="clr-namespace:LaneSimulator.Utilities.Selector">
+             xmlns:selector="clr-namespace:LaneSimulator.Utilities.Selector"
+             xmlns:uiGates="clr-namespace:LaneSimulator.UIGates">
 
 
     <UserControl.Resources>
@@ -76,17 +76,13 @@
 
             <Expander Header="Trays" IsExpanded="True">
                 <StackPanel Orientation="Vertical">
-                    <trays:SmallTray x:Name="SmallTray" VerticalAlignment="Top"
+                    <uiGates:SmallTray x:Name="SmallTray" VerticalAlignment="Top"
                                      dragDrop:DragDropHelper.IsDragSource="true"
                                      dragDrop:DragDropHelper.DragDropControl="{StaticResource ObjectAdorner}"
                                      dragDrop:DragDropHelper.DropTarget="gateCanvas"
                                      dragDrop:DragDropHelper.AdornerLayer="adornerLayer" />
 
-                    <trays:LargeTray x:Name="LargeTray" VerticalAlignment="Top"
-                                     dragDrop:DragDropHelper.IsDragSource="true"
-                                     dragDrop:DragDropHelper.DragDropControl="{StaticResource ObjectAdorner}"
-                                     dragDrop:DragDropHelper.DropTarget="gateCanvas"
-                                     dragDrop:DragDropHelper.AdornerLayer="adornerLayer" />
+
                 </StackPanel>
 
             </Expander>

@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
-using LaneSimulator.Models.Components;
+using LaneSimulator.UIGates;
 
 namespace LaneSimulator.Utilities.Selector
 {
@@ -19,7 +19,7 @@ namespace LaneSimulator.Utilities.Selector
             InitializeComponent();
 
             SmallTray.DataContext = new SmallTray();
-            LargeTray.DataContext = new LargeTray();
+           
         }
 
         private void SetInfoLine(SmallTray smallTray)

@@ -9,7 +9,6 @@
     xmlns:selector="clr-namespace:LaneSimulator.Utilities.Selector"
     xmlns:local="clr-namespace:LaneSimulator"
     xmlns:lane="clr-namespace:LaneSimulator.Lanes"
-    xmlns:components="clr-namespace:LaneSimulator.Models.Components"
     Title="Lane Simulator" Height="500" Width="650"
     Icon="Images/ram.png"
 

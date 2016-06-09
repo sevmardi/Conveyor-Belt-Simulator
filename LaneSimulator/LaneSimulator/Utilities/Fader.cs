@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Media.Animation;
-using LaneSimulator.Models.Components;
+using LaneSimulator.UIGates;
 
 namespace LaneSimulator.Utilities
 {

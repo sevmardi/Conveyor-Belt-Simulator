@@ -81,13 +81,10 @@
       <DependentUpon>SectionC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Libs\snap7.net.cs" />
-    <Compile Include="Models\Components\LargeTray.xaml.cs">
-      <DependentUpon>LargeTray.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Components\Sensor.xaml.cs">
+    <Compile Include="UIGates\Sensor.xaml.cs">
       <DependentUpon>Sensor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Components\SmallTray.xaml.cs">
+    <Compile Include="UIGates\SmallTray.xaml.cs">
       <DependentUpon>SmallTray.xaml</DependentUpon>
     </Compile>
     <Compile Include="PLC\PlcCalls.cs" />
@@ -154,15 +151,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Models\Components\LargeTray.xaml">
+    <Page Include="UIGates\Sensor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Models\Components\Sensor.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Models\Components\SmallTray.xaml">
+    <Page Include="UIGates\SmallTray.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -266,9 +259,7 @@
   <ItemGroup>
     <Resource Include="ChangeLog.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UIGates\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

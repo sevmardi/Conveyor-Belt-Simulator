@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using LaneSimulator.Lanes;
-using LaneSimulator.Models.Components;
 
 namespace LaneSimulator.Views
 {

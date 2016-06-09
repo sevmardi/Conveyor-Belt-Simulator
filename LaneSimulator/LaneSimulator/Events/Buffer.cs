@@ -1,6 +1,6 @@
 ﻿
 using System.Threading;
-using LaneSimulator.Models.Components;
+using LaneSimulator.UIGates;
 
 namespace LaneSimulator.Events
 {

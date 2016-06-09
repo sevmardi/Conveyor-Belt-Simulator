@@ -16,8 +16,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-using LaneSimulator.Models.Components;
 using LaneSimulator.PLC;
+using LaneSimulator.UIGates;
 using LaneSimulator.Views;
 using Snap7;
 

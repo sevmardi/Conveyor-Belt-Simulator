@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace LaneSimulator.Models.Components
+namespace LaneSimulator.UIGates
 {
     /// <summary>
     /// Interaction logic for SmallTray.xaml

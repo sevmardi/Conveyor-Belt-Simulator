@@ -1,4 +1,4 @@
-﻿namespace LaneSimulator.Models.Components
+﻿namespace LaneSimulator.UIGates
 {
     /// <summary>
     /// Interaction logic for Sensor.xaml
