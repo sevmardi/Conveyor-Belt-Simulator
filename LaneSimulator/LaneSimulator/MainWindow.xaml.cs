@@ -41,7 +41,7 @@ namespace LaneSimulator
             Timer1.Interval = new TimeSpan(0, 0, 0, 0, 100);
             Timer1.Tick += new EventHandler(this.Timer1_Tick);
             Closing += new CancelEventHandler(MainWindow1Closing);
-            _sectionA = new SectionA();
+           
             _sslCanvas = new SSLCanvas();
      
            _plcCalls = new PlcCalls();
@@ -279,10 +279,6 @@ namespace LaneSimulator
 
         }
 
-        private void SetMotorOnInSectionA()
-        {
-           _sectionA.Executor();
-        }
 
         private void StopStoryboard1()
         {
@@ -290,13 +286,11 @@ namespace LaneSimulator
             if (sb1 != null) sb1.Pause();
         }
 
-
-        
         private void MyStoryboardCompleted(object sender, EventArgs e)
         {
             var thing = this.FindResource("Storyboard2");
 
-            var OtherSB = (Storyboard)thing;
+            var OtherSB = (Storyboard) thing;
             OtherSB.Begin();
         }
 

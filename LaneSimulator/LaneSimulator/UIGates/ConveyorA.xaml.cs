@@ -6,7 +6,7 @@ namespace LaneSimulator.UIGates
     /// <summary>
     /// Interaction logic for Conveyor_A.xaml
     /// </summary>
-    internal partial class ConveyorA
+    partial class ConveyorA
     {
         #region attributes
 
