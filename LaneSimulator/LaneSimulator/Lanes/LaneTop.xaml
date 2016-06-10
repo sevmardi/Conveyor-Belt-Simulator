@@ -10,7 +10,7 @@
         <Storyboard x:Key="SectionA_SB">
 
             <DoubleAnimationUsingPath
-                Duration="0:0:1"
+                
                 Source="X"
                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)">
 
@@ -21,7 +21,7 @@
             </DoubleAnimationUsingPath>
 
             <DoubleAnimationUsingPath
-                Duration="0:0:1"
+               
                 Source="Y"
                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)">
                 <DoubleAnimationUsingPath.PathGeometry>

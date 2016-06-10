@@ -28,7 +28,7 @@ namespace LaneSimulator
 
         private bool Ispaused = false;
         private ShadowBox sbZoom, sbSpeed, sslObjects, total, SSL, counter, btnsPanelBox;
-        private readonly SectionA _sectionA;
+        
         private readonly SSLCanvas _sslCanvas;
         private double T = 0.0;
         private DispatcherTimer Timer1 = new DispatcherTimer();

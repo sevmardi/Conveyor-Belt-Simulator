@@ -1,4 +1,5 @@
-﻿<Application x:Class="LaneSimulator.App"
+﻿
+    <Application x:Class="LaneSimulator.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
            

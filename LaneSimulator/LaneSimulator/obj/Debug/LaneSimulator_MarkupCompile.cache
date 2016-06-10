@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\
 LaneSimulator
 none
 false
 DEBUG;TRACE
-C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\App.xaml
-16-1372273219
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\App.xaml
+14-622252268
 
-35-2072899274
-1547792937
-Gate.xaml;Lanes\LaneBottom.xaml;Lanes\LaneTop.xaml;Lanes\SectionA.xaml;Lanes\SectionB.xaml;Lanes\SectionC.xaml;MainWindow.xaml;UIGates\Sensor.xaml;SSLCanvas.xaml;UIGates\SimpleTray.xaml;Utilities\DragDrop\ObjectDragDropAdorner.xaml;Utilities\Selector\ObjectSelector.xaml;Utilities\ShadowBox\ShadowBox.xaml;Views\AttributesPanel.xaml;Views\ConnectPanel.xaml;Views\SchedulerPanel.xaml;
+35-1630343594
+15258224424
+Gate.xaml;Lanes\LaneBottom.xaml;Lanes\LaneTop.xaml;MainWindow.xaml;UIGates\ConveyorA.xaml;UIGates\Sensor.xaml;SSLCanvas.xaml;UIGates\SimpleTray.xaml;Utilities\DragDrop\ObjectDragDropAdorner.xaml;Utilities\Selector\ObjectSelector.xaml;Utilities\ShadowBox\ShadowBox.xaml;Views\AttributesPanel.xaml;Views\ConnectPanel.xaml;Views\SchedulerPanel.xaml;
 
-False
+True
 

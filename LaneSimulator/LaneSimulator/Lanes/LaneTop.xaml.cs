@@ -2090,7 +2090,9 @@ namespace LaneSimulator.Lanes
           //  TestGrid.Children.Add(_element);
             this.TestGrid.Children.Add((UIElement)_element);
             var sb1 = FindResource("SectionA_SB") as Storyboard;
+            sb1.Duration = TimeSpan.FromSeconds(3);
             sb1.Completed += new EventHandler(this.storyboard_Completed);
+            
             sb1.Begin(_element, true);
             
 
@@ -2116,15 +2118,7 @@ namespace LaneSimulator.Lanes
 
         private void StopSimBtn_Click(object sender, RoutedEventArgs e)
         {
-            //  SchedulerPanel schedulerPanel = new SchedulerPanel();
-            //schedulerPanel.Show();
-   
-            //var sb1 = FindResource("SectionA_SB") as Storyboard;
-            //TestGrid.Children.Remove(_smallTray);
-            //sb1.Stop();
-
-            //var sb1 = FindResource("SectionB_SB") as Storyboard;
-            //sb1.Pause(_element);
+            
  
         }
 
