@@ -6,25 +6,25 @@ namespace LaneSimulator.UIGates
     /// <summary>
     /// Interaction logic for Conveyor_A.xaml
     /// </summary>
-    partial class ConveyorA
+    partial class SectionA
     {
         #region attributes
 
         public static readonly DependencyProperty ForwardDependencyProperty = DependencyProperty.Register("Forward",
-            typeof(bool), typeof(ConveyorA), new PropertyMetadata(false));
+            typeof(bool), typeof(SectionA), new PropertyMetadata(false));
 
         public static readonly DependencyProperty BackwardsDependencyProperty = DependencyProperty.Register("Reverse",
-            typeof(bool), typeof(ConveyorA), new PropertyMetadata(false));
+            typeof(bool), typeof(SectionA), new PropertyMetadata(false));
 
         public static DependencyProperty MaxSpeeDependencyProperty = DependencyProperty.Register("MaxSpeed",
-            typeof(double), typeof(ConveyorA), new PropertyMetadata(new PropertyChangedCallback(MaxSpeedChanged)));
+            typeof(double), typeof(SectionA), new PropertyMetadata(new PropertyChangedCallback(MaxSpeedChanged)));
 
         double maxSpeed = 20.0;
 
         #endregion
 
         #region ctor
-        public ConveyorA()
+        public SectionA()
         {
             InitializeComponent();
 
@@ -61,8 +61,8 @@ namespace LaneSimulator.UIGates
         #region events
         public static void MaxSpeedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            ConveyorA conveyorA = d as ConveyorA;
-            if (conveyorA != null) conveyorA.MaxSpeed = (double)e.NewValue;
+            SectionA sectionA = d as SectionA;
+            if (sectionA != null) sectionA.MaxSpeed = (double)e.NewValue;
         }
 
         #endregion

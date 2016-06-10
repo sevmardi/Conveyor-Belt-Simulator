@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
+using LaneSimulator.Lanes;
 using LaneSimulator.PLC;
 using Snap7;
 
@@ -10,8 +12,8 @@ namespace LaneSimulator.Views
     public partial class AttributesPanel
     {
         private readonly PlcCalls _plcCalls;
-
-
+        private int s;
+        private Lanes.LaneTop _laneTop;
         private static readonly byte[] Buffer = new byte[500];
 
 
@@ -19,14 +21,36 @@ namespace LaneSimulator.Views
         {
             InitializeComponent();
             _plcCalls = new PlcCalls();
+            _laneTop = new LaneTop();
         }
 
         private void WriteIoBtn(object sender, RoutedEventArgs e)
         {
-            _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0102_S1, _plcCalls.Amount,
-                _plcCalls.Wordlen, Buffer);
 
-            Close();
+      //     s = int.Parse(Atri.Text);
+
+
+            try
+            {
+                Buffer[0] = Convert.ToByte(Atri.Text);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("shit happens");
+            }
+          
+
+
+
+            // Close();
+        }
+
+
+        public void ShowPanel()
+        {
+            AttributesPanel atrPanel = new AttributesPanel();
+            atrPanel.Show();
         }
     }
 }

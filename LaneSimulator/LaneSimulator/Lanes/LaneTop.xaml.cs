@@ -23,7 +23,7 @@ namespace LaneSimulator.Lanes
         private static readonly byte[] Buffer = new byte[500];
         private static int _res;
         private Storyboard _storyboard;
-
+        private AttributesPanel _attributesPanel;
 
         private FrameworkElement _element;
      
@@ -36,7 +36,7 @@ namespace LaneSimulator.Lanes
             _plcCalls = new PlcCalls();
             //_smallTray = new SmallTray();
             _storyboard = new Storyboard();
-           
+          
         }
 
         public void Executor()
@@ -1728,7 +1728,28 @@ namespace LaneSimulator.Lanes
 
         public void _1101_S2_TurnOff()
         {
-            //
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1102_S1, _plcCalls.Amount,
+                _plcCalls.Wordlen, Buffer);
+
+            if (_res == 0)
+            {
+                try
+                {
+                    if (Buffer[0] == 1)
+                    {
+                        Buffer[0] = 0;
+
+                        _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1102_S1,
+                            _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+
+                        Dispatcher.Invoke((Action)(() => { _1102_S1.Fill = new SolidColorBrush(Colors.DarkGray); }));
+                    }
+                }
+                catch (Exception)
+                {
+                    throw new ArgumentException();
+                }
+            }
         }
 
         public void _1101_S2_TurnOn()
@@ -2178,24 +2199,23 @@ namespace LaneSimulator.Lanes
         // 3. send the name along for saving. 
         private void Grid_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
-            //AttributesPanel atrPanel = new AttributesPanel();
-            //atrPanel.Show();
-           
+
+            _attributesPanel = new AttributesPanel();
+
+        _attributesPanel.ShowPanel();
+
             // this solutions from http://stackoverflow.com/questions/23507052/how-to-select-xaml-object-by-xname
-            foreach (UIElement item in Sensors.Children )
-            {
-                Ellipse el = (Ellipse)item;
-
-                if (el.Name == "_0102_S1")
-                {
-
-                }
-                if (el.Name == "_0102_S2")
-                {
-                    MessageBox.Show("nice");
-                }
-               
-            }
+//            foreach (UIElement item in Sensors.Children )
+//            {
+//                Ellipse el = (Ellipse)item;
+//
+//                if (el.Name == "_0102_S1")
+//                {
+//                    
+//                }
+//
+//               
+//            }
         }
 
         
