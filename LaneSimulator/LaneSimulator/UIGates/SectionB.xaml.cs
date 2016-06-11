@@ -24,5 +24,7 @@ namespace LaneSimulator.UIGates
         {
             InitializeComponent();
         }
+
+    
     }
 }
