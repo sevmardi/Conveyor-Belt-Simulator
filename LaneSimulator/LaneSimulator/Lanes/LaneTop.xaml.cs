@@ -2193,41 +2193,41 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action)(() => { _1701_S2.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-        public void _1701_S3T_TurnOff()
-        {
-            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1701_S3T, _plcCalls.Amount,
-         _plcCalls.Wordlen, Buffer);
+        //public void _1701_S3T_TurnOff()
+        //{
+        //    _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1701_S3T, _plcCalls.Amount,
+        // _plcCalls.Wordlen, Buffer);
 
-            if (_res == 0)
-            {
-                try
-                {
-                    if (Buffer[0] == 1)
-                    {
-                        Buffer[0] = 0;
+        //    if (_res == 0)
+        //    {
+        //        try
+        //        {
+        //            if (Buffer[0] == 1)
+        //            {
+        //                Buffer[0] = 0;
 
-                        _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1701_S2,
-                            _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+        //                _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1701_S2,
+        //                    _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
 
-                        Dispatcher.Invoke((Action)(() => { _1701_S3T.Fill = new SolidColorBrush(Colors.DarkGray); }));
-                    }
-                }
-                catch (Exception)
-                {
-                    throw new ArgumentException();
-                }
-            }
-        }
+        //                Dispatcher.Invoke((Action)(() => { _1701_S3T.Fill = new SolidColorBrush(Colors.DarkGray); }));
+        //            }
+        //        }
+        //        catch (Exception)
+        //        {
+        //            throw new ArgumentException();
+        //        }
+        //    }
+        //}
 
-        public void _1701_S3T_TurnOn()
-        {
-            Buffer[0] = 1;
+        //public void _1701_S3T_TurnOn()
+        //{
+        //    Buffer[0] = 1;
 
-            _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1701_S3T, _plcCalls.Amount,
-                _plcCalls.Wordlen, Buffer);
+        //    _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1701_S3T, _plcCalls.Amount,
+        //        _plcCalls.Wordlen, Buffer);
 
-            Dispatcher.Invoke((Action)(() => { _1701_S3T.Fill = new SolidColorBrush(Colors.Red); }));
-        }
+        //    Dispatcher.Invoke((Action)(() => { _1701_S3T.Fill = new SolidColorBrush(Colors.Red); }));
+        //}
 
         public void _1702_S2_TurnOff()
         {
@@ -2265,41 +2265,41 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action)(() => { _1702_S2.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-        public void _1703_S3T_TurnOff()
-        {
-            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1703_S3T, _plcCalls.Amount,
-               _plcCalls.Wordlen, Buffer);
+        //public void _1703_S3T_TurnOff()
+        //{
+        //    _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1703_S3T, _plcCalls.Amount,
+        //       _plcCalls.Wordlen, Buffer);
 
-            if (_res == 0)
-            {
-                try
-                {
-                    if (Buffer[0] == 1)
-                    {
-                        Buffer[0] = 0;
+        //    if (_res == 0)
+        //    {
+        //        try
+        //        {
+        //            if (Buffer[0] == 1)
+        //            {
+        //                Buffer[0] = 0;
 
-                        _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1703_S3T,
-                            _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+        //                _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1703_S3T,
+        //                    _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
 
-                        Dispatcher.Invoke((Action)(() => { _1703_S3T.Fill = new SolidColorBrush(Colors.DarkGray); }));
-                    }
-                }
-                catch (Exception)
-                {
-                    throw new ArgumentException();
-                }
-            }
-        }
+        //                Dispatcher.Invoke((Action)(() => { _1703_S3T.Fill = new SolidColorBrush(Colors.DarkGray); }));
+        //            }
+        //        }
+        //        catch (Exception)
+        //        {
+        //            throw new ArgumentException();
+        //        }
+        //    }
+        //}
 
-        public void _1703_S3T_TurnOn()
-        {
-            Buffer[0] = 1;
+        //public void _1703_S3T_TurnOn()
+        //{
+        //    Buffer[0] = 1;
 
-            _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1703_S3T, _plcCalls.Amount,
-                _plcCalls.Wordlen, Buffer);
+        //    _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1703_S3T, _plcCalls.Amount,
+        //        _plcCalls.Wordlen, Buffer);
 
-            Dispatcher.Invoke((Action)(() => { _1703_S3T.Fill = new SolidColorBrush(Colors.Red); }));
-        }
+        //    Dispatcher.Invoke((Action)(() => { _1703_S3T.Fill = new SolidColorBrush(Colors.Red); }));
+        //}
 
         #endregion
 

@@ -77,12 +77,10 @@
             <Expander Header="Trays" IsExpanded="True">
                 <StackPanel Orientation="Vertical">
                     <uiGates:SmallTray x:Name="SmallTray" VerticalAlignment="Top"
-                                     dragDrop:DragDropHelper.IsDragSource="true"
-                                     dragDrop:DragDropHelper.DragDropControl="{StaticResource ObjectAdorner}"
-                                     dragDrop:DragDropHelper.DropTarget="gateCanvas"
-                                     dragDrop:DragDropHelper.AdornerLayer="adornerLayer" />
-
-
+                                       dragDrop:DragDropHelper.IsDragSource="true"
+                                       dragDrop:DragDropHelper.DragDropControl="{StaticResource ObjectAdorner}"
+                                       dragDrop:DragDropHelper.DropTarget="gateCanvas"
+                                       dragDrop:DragDropHelper.AdornerLayer="adornerLayer" />
                 </StackPanel>
 
             </Expander>

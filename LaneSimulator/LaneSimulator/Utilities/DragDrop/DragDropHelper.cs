@@ -95,15 +95,15 @@ namespace LaneSimulator.Utilities.DragDrop
             {
                 if (Object.Equals(e.NewValue, true))
                 {
-                    //dragSource.PreviewMouseLeftButtonDown += Instance.DragSource_PreviewMouseLeftButtonDown;
-                    //dragSource.PreviewMouseLeftButtonUp += Instance.DragSource_PreviewMouseLeftButtonUp;
-                    //dragSource.PreviewMouseMove += Instance.DragSource_PreviewMouseMove;
+                    dragSource.PreviewMouseLeftButtonDown += Instance.DragSource_PreviewMouseLeftButtonDown;
+                    dragSource.PreviewMouseLeftButtonUp += Instance.DragSource_PreviewMouseLeftButtonUp;
+                    dragSource.PreviewMouseMove += Instance.DragSource_PreviewMouseMove;
                 }
                 else
                 {
-                    //dragSource.PreviewMouseLeftButtonDown -= Instance.DragSource_PreviewMouseLeftButtonDown;
-                    //dragSource.PreviewMouseLeftButtonUp -= Instance.DragSource_PreviewMouseLeftButtonUp;
-                    //dragSource.PreviewMouseMove -= Instance.DragSource_PreviewMouseMove;
+                    dragSource.PreviewMouseLeftButtonDown -= Instance.DragSource_PreviewMouseLeftButtonDown;
+                    dragSource.PreviewMouseLeftButtonUp -= Instance.DragSource_PreviewMouseLeftButtonUp;
+                    dragSource.PreviewMouseMove -= Instance.DragSource_PreviewMouseMove;
                 }
             }
         }

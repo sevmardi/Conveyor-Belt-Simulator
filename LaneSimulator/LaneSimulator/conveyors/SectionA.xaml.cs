@@ -1,7 +1,6 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 
-namespace LaneSimulator.UIGates
+namespace LaneSimulator.conveyors
 {
     /// <summary>
     /// Interaction logic for Conveyor_A.xaml

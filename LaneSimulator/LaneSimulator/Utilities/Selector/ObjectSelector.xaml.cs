@@ -24,7 +24,7 @@ namespace LaneSimulator.Utilities.Selector
 
         private void SetInfoLine(SmallTray smallTray)
         {
-            string inf = "Left-drag and place at the beginning of the lane ";
+            string inf = "Left-drag and place at the canvas ";
 
             InfoLine.SetInfo(smallTray, inf);
         }
@@ -36,10 +36,6 @@ namespace LaneSimulator.Utilities.Selector
             DragDrop.DragDropHelper.SetDragDropControl(smallTray, new DragDrop.ObjectDragDropAdorner());
             DragDrop.DragDropHelper.SetDropTarget(smallTray, "SSLCanvas");
             DragDrop.DragDropHelper.SetAdornerLayer(smallTray, "adornerLayer");
-
-
-           
-           
 
         }
 

@@ -36,7 +36,7 @@
                 Duration="0:0:2" 
                 Source="X" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)" 
            
-                Completed="SectionB_SB_Completed">
+                >
 				
                 <DoubleAnimationUsingPath.PathGeometry>
 					<PathGeometry Figures="M165.417,-129.08299 L205.33284,-105.24988 L250.833,-68.333024 L284.75,-67.250009 L329.74999,-67.250009 L402.49999,-67.250009 L442.49999,-67.250009"/>
@@ -89,7 +89,7 @@
                 Source="X" 
                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" 
                 Storyboard.TargetName="rectangle"
-                  Completed="SectionD_SB_Not_Approved_Completed" >
+                 >
                 
 				<DoubleAnimationUsingPath.PathGeometry>
 					<PathGeometry Figures="M622.47901,-67.354014 L672.45797,-67.354014 L727.62495,-67.354014 L815.83326,-67.354014 L859.167,-67.354014"/>

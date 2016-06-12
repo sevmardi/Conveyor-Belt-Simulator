@@ -68,12 +68,6 @@ namespace LaneSimulator
         }
 
 
-
-
-
-
-
-
         private static Rect GetBounds(IEnumerable<Gate> gts, double padding)
         {
             double minx = 0, maxx = 0, miny = 0, maxy = 0;
@@ -114,6 +108,19 @@ namespace LaneSimulator
                 return GetBounds(gates.Values, padding);
         }
 
+
+        //mouse up event for canvas clicks
+        private void SSLCanvas_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            dragging = DragState.NONE;
+            dragSelect.Width = 0;
+            dragSelect.Height = 0;
+            dragSelect.Margin = new Thickness(0, 0, 0, 0);
+            dragSelect.Visibility = Visibility.Hidden;
+
+            ReadyToSelect = false;
+        }
+
         //mouse down event for canvas clicks
         private void SSLCanvas_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -137,18 +144,6 @@ namespace LaneSimulator
             }
         }
 
-        //mouse up event for canvas clicks
-        private void SSLCanvas_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            dragging = DragState.NONE;
-            dragSelect.Width = 0;
-            dragSelect.Height = 0;
-            dragSelect.Margin = new Thickness(0, 0, 0, 0);
-            dragSelect.Visibility = Visibility.Hidden;
-
-            ReadyToSelect = false;
-        }
-
 
         private void SSLCanvas_MouseMove(object sender, MouseEventArgs e)
         {
@@ -167,6 +162,7 @@ namespace LaneSimulator
                         {
                             if (e.LeftButton == MouseButtonState.Pressed)
                             {
+
                             }
 
                             if (e.RightButton == MouseButtonState.Pressed)
@@ -365,13 +361,32 @@ namespace LaneSimulator
                                         Math.Round(p.Y / GRID_SIZE) * GRID_SIZE);
         }
 
-        /// <summary>
-        /// Remove a given gate from the canvas. 
-        /// </summary>
-        public void RemoveGate(Gate uigate)
+
+        public void AddGate(Gate uigate, GateLocation pos)
         {
-           // uigate.MouseDown -= new MouseButtonEventHandler(uigate_MouseDown);
-          
+/*            ClearSelection();
+            Gates.AbstractGate gate = uigate.AbGate;
+
+            gates[gate] = uigate;
+
+            uigate.Margin = new Thickness(pos.X, pos.Y, 0, 0);
+
+            GC.Children.Add(uigate);
+
+            uigate.RenderTransform = new RotateTransform(pos.Angle, uigate.Width / 2.0, uigate.Height / 2.0);
+
+
+            uigate.Tag = new GateLocation() { X = pos.X, Y = pos.Y, Angle = pos.Angle };*/
+            
+        }
+
+        public void AddGate(Gates.AbstractGate gate, GateLocation pos)
+        {
+            Gate uigate;
+
+            uigate = new UIGates.SmallTray((new Gates.Trays.SmallTray()));
+
+            AddGate(uigate, pos);
         }
 
         /// <summary>

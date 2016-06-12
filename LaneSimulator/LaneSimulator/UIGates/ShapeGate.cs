@@ -34,6 +34,7 @@ namespace LaneSimulator.UIGates
 
     public class SmallTray : ShapeGate
     {
+        #region collision and solve this
 
         public bool IsColliding(SmallTray otherSmallTray)
         {
@@ -42,7 +43,7 @@ namespace LaneSimulator.UIGates
             var dx = otherSmallTray.TrayTranslateTransform.X - TrayTranslateTransform.X;
             var dY = otherSmallTray.TrayTranslateTransform.Y - TrayTranslateTransform.Y;
 
-            var h = Math.Sqrt(dx*dx + dY*dY);
+            var h = Math.Sqrt(dx * dx + dY * dY);
 
             ret = (h < 40);
 
@@ -54,17 +55,20 @@ namespace LaneSimulator.UIGates
             //
         }
 
+        #endregion
+
+        #region props
         public double Acceleration { get; set; }
 
         public double Speed { get; set; }
 
         public TranslateTransform TrayTranslateTransform { get; set; }
+        #endregion
 
 
         public SmallTray() : this(new Gates.Trays.SmallTray()){}
 
-        public SmallTray(Gates.AbstractGate abgate) : 
-            base(abgate, "M 17,17 v 30 h 15 a 2,2 1 0 0 0,-30 h -15") 
+        public SmallTray(Gates.AbstractGate abgate) : base(abgate, "M 17,17 v 30 h 15 a 2,2 1 0 0 0,-30 h -15") 
         {
             this.SizeChanged += ShapeGate_SizeChanged; 
         }
