@@ -16,5 +16,5 @@ C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator
 1547792937
 conveyors\SectionA.xaml;conveyors\SectionB.xaml;conveyors\SectionC.xaml;conveyors\SectionD.xaml;conveyors\SectionE.xaml;conveyors\SectionF.xaml;Gate.xaml;Lanes\LaneBottom.xaml;Lanes\LaneTop.xaml;MainWindow.xaml;UIGates\Sensor.xaml;SSLCanvas.xaml;UIGates\SimpleTray.xaml;Utilities\DragDrop\ObjectDragDropAdorner.xaml;Utilities\Selector\ObjectSelector.xaml;Utilities\ShadowBox\ShadowBox.xaml;Views\AttributesPanel.xaml;Views\ConnectPanel.xaml;Views\SchedulerPanel.xaml;
 
-True
+False
 

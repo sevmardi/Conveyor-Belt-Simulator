@@ -46,6 +46,7 @@ namespace LaneSimulator.Utilities.DragDrop
 
         public virtual void StateChangedHandler(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
+
         }
 
     }

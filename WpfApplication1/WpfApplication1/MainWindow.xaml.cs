@@ -45,17 +45,17 @@ namespace WpfApplication1
             //Animation_Pannel.Children.Add(_objectToMove);
             //sb1.Begin(_objectToMove);
 
-            //Timer1.Start();
+            Timer1.Start();
 
-            var _moElement = new ObjectToMove();
-            Animation_Pannel.Children.Add(_moElement);
+            //var _moElement = new ObjectToMove();
+            //Animation_Pannel.Children.Add(_moElement);
 
-            var storyBoardsToRun = new[] { "Storyboard1", "Storyboard2" };
+            //var storyBoardsToRun = new[] { "Storyboard1", "Storyboard2" };
 
-            storyBoardsToRun
-                .Select(sbName => FindResource(sbName) as Storyboard)
-                .ToList()
-                .ForEach(async sb => await sb.BeginAsync(_moElement));
+            //storyBoardsToRun
+            //    .Select(sbName => FindResource(sbName) as Storyboard)
+            //    .ToList()
+            //    .ForEach(async sb => await sb.BeginAsync(_moElement));
            
         }
 
