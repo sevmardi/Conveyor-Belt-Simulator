@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Threading.Tasks;
+
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
@@ -2551,7 +2551,7 @@ namespace LaneSimulator.Lanes
 
         protected void addbuttontimer()
         {
-            Timer aTimer = new Timer();
+            var aTimer = new Timer();
             aTimer.Elapsed += new ElapsedEventHandler(addbutton);
             aTimer.Interval = 4100;
             aTimer.Enabled = true;

@@ -4,8 +4,10 @@
             >
     <UserControl.RenderTransform>
         <TransformGroup>
+            <ScaleTransform ScaleX="1.0" ScaleY="1.0"/>
             <TranslateTransform/>
         </TransformGroup>
+        
     </UserControl.RenderTransform>
 
     <Grid x:Name="LayoutRoot" Height="60" Width="60">

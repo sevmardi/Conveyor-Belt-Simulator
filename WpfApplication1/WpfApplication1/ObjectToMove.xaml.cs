@@ -18,11 +18,51 @@ namespace WpfApplication1
     /// <summary>
     /// Interaction logic for ObjectToMove.xaml
     /// </summary>
-    public partial class ObjectToMove : UserControl
+    public partial class ObjectToMove
     {
+        private Point position;
         public ObjectToMove()
         {
             InitializeComponent();
+        
+                
+        }
+
+        public bool Go
+        {
+            get { return (bool)GetValue(GoProperty); }
+            set { SetValue(GoProperty, value); }
+        }
+        public static readonly DependencyProperty GoProperty =
+         DependencyProperty.Register("Go", typeof(bool), typeof(ObjectToMove), new PropertyMetadata(false));
+
+        public TranslateTransform TrayTranslateTransform { get; set; }
+        public bool IsColliding(ObjectToMove otherSmallTray)
+        {
+            bool ret = false;
+
+            var dx = otherSmallTray.TrayTranslateTransform.X - TrayTranslateTransform.X;
+            var dY = otherSmallTray.TrayTranslateTransform.Y - TrayTranslateTransform.Y;
+
+            var h = Math.Sqrt(dx * dx + dY * dY);
+
+            ret = (h < 40);
+
+            return ret;
+
+        }
+
+        
+
+
+        public int getPositionX()
+        {
+            return this.position.X;
+        }
+
+        public int getPositionY()
+        {
+            return this.position.Y;
         }
     }
 }
