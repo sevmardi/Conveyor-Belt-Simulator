@@ -53,11 +53,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BoxData.cs" />
     <Compile Include="buffer.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="SectionA.xaml.cs">
       <DependentUpon>SectionA.xaml</DependentUpon>
     </Compile>
     <Compile Include="Semaphore.cs" />
+    <Compile Include="Viewmodel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

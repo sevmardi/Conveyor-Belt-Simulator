@@ -266,12 +266,6 @@ namespace LaneSimulator
 
         }
 
-        public void AddTray()
-        {
-            ClearSelection();
- 
-        }
-
         public enum SELECTED_GATES
         {
             /// <summary>
@@ -369,10 +363,11 @@ namespace LaneSimulator
 
             gates[gate] = uigate;
             uigate.Margin = new Thickness(pos.X, pos.Y, 0, 0);
+
             GC.Children.Add(uigate);
 
-            uigate.RenderTransform = new RotateTransform(pos.Angle, uigate.Width/2.0, uigate.Height/2.0);
-            uigate.Tag = new GateLocation() {X = pos.X, Y = pos.Y, Angle = pos.Angle};
+            //uigate.RenderTransform = new RotateTransform(pos.Angle, uigate.Width/2.0, uigate.Height/2.0);
+            //uigate.Tag = new GateLocation() {X = pos.X, Y = pos.Y, Angle = pos.Angle};
             
         }
 

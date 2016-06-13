@@ -41,7 +41,8 @@ namespace LaneSimulator
             Timer1.Interval = new TimeSpan(0, 0, 0, 0, 100);
             Timer1.Tick += new EventHandler(this.Timer1_Tick);
             Closing += new CancelEventHandler(MainWindow1Closing);
-           
+
+            InitializeLaneTop();
             _sslCanvas = new SSLCanvas();
      
            _plcCalls = new PlcCalls();
@@ -174,6 +175,11 @@ namespace LaneSimulator
            };
 
 
+        }
+
+        private void InitializeLaneTop()
+        {
+           
         }
 
         private void DragDropHelper_ItemDropped(object sender, DragDropEventArgs e)

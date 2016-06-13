@@ -5,6 +5,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WpfApplication1.MainWindow"
         Title="MainWindow" Height="850" Width="1050">
 
+    <Window.DataContext>
+        <wpfApplication1:Viewmodel/>
+
+    </Window.DataContext>
     <Window.Resources>
 
         <ControlTemplate TargetType="Control" x:Key="ConveyorATemplate">
@@ -62,25 +66,46 @@
         </ControlTemplate>
 
 
-
-            <ControlTemplate TargetType="Control" x:Key="ConveyorbTemplate">
+        <!--<ControlTemplate TargetType="Control" x:Key="ConveyorbTemplate">
             <wpfApplication1:SectionA>
                 <wpfApplication1:SectionA.RenderTransform>
                     <TransformGroup>
-                        <TranslateTransform/>
+                        <TranslateTransform />
                     </TransformGroup>
                 </wpfApplication1:SectionA.RenderTransform>
-
-    
             </wpfApplication1:SectionA>
-                
-            </ControlTemplate>
-
-        <Style x:Key="MyWindowStyle" TargetType="Window">
-            <Setter Property="WindowStyle" Value="None"></Setter>
-        </Style>
+        </ControlTemplate>-->
 
 
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         <Storyboard x:Key="SectionA_SB">
 
             <DoubleAnimationUsingPath
@@ -287,6 +312,127 @@
 
         <Button Content="Start" Canvas.Left="175" Canvas.Top="95" Width="75" Click="ButtonBase_OnClick" d:IsLocked="True"/>
         <Button Content="Stop" Canvas.Left="345" Canvas.Top="95" Width="75" Click="StopAnimation" d:IsLocked="True"/>
+
+
+        <Grid>
+            <ItemsControl x:Name="icA" ItemsSource="{Binding ItemsA}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Canvas Name="Canvas" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <DataTemplate.Triggers>
+                            
+                            <DataTrigger Binding="{Binding GoState}" Value="{x:Static wpfApplication1:StoryBoardState.Start}">
+                                <DataTrigger.EnterActions>
+                                    <BeginStoryboard Name="sb">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingPath
+                                                Duration="0:0:03.0"
+                                                Source="X"
+                                                Storyboard.TargetProperty="(Canvas.Left)">
+                                                <DoubleAnimationUsingPath.PathGeometry>
+                                                    <PathGeometry>
+                                                        <PathGeometry.Figures>
+                                                            <PathFigureCollection>
+                                                                <PathFigure StartPoint="0,100">
+                                                                    <PathFigure.Segments>
+                                                                        <PathSegmentCollection>
+                                                                            <BezierSegment Point1="100,0"
+                                                                                           Point2="200,200"
+                                                                                           Point3="300,100" />
+                                                                        </PathSegmentCollection>
+                                                                    </PathFigure.Segments>
+                                                                </PathFigure>
+                                                            </PathFigureCollection>
+                                                        </PathGeometry.Figures>
+                                                    </PathGeometry>
+                                                </DoubleAnimationUsingPath.PathGeometry>
+                                            </DoubleAnimationUsingPath>
+                                            <DoubleAnimationUsingPath
+
+                                                Duration="0:0:03.0" Source="Y"
+                                                Storyboard.TargetProperty="(Canvas.Top)">
+                                                <DoubleAnimationUsingPath.PathGeometry>
+                                                    <PathGeometry>
+                                                        <PathGeometry.Figures>
+                                                            <PathFigureCollection>
+                                                                <PathFigure StartPoint="0,100">
+                                                                    <PathFigure.Segments>
+                                                                        <PathSegmentCollection>
+                                                                            <BezierSegment Point1="100,0"
+                                                                                           Point2="200,200"
+                                                                                           Point3="300,100" />
+                                                                        </PathSegmentCollection>
+                                                                    </PathFigure.Segments>
+                                                                </PathFigure>
+                                                            </PathFigureCollection>
+                                                        </PathGeometry.Figures>
+                                                    </PathGeometry>
+                                                </DoubleAnimationUsingPath.PathGeometry>
+                                            </DoubleAnimationUsingPath>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </DataTrigger.EnterActions>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding GoState}"
+                                         Value="{x:Static wpfApplication1:StoryBoardState.Pause}">
+                                <DataTrigger.EnterActions>
+                                    <PauseStoryboard BeginStoryboardName="sbe" />
+                                </DataTrigger.EnterActions>
+                            </DataTrigger>
+
+                        </DataTemplate.Triggers>
+                        <Rectangle
+                            Height="30" Width="50" Fill="Green"
+                            Canvas.Left="{Binding (Canvas.Left)
+                        , Mode=TwoWay
+                        , RelativeSource={RelativeSource AncestorType={x:Type ContentPresenter}
+                        }}"
+                            Canvas.Top="{Binding (Canvas.Top)
+                        , Mode=TwoWay
+                        , RelativeSource={RelativeSource AncestorType={x:Type ContentPresenter}
+                        }}" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                
+            </ItemsControl>
+        </Grid>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

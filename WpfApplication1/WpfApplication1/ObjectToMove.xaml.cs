@@ -55,14 +55,5 @@ namespace WpfApplication1
         
 
 
-        public int getPositionX()
-        {
-            return this.position.X;
-        }
-
-        public int getPositionY()
-        {
-            return this.position.Y;
-        }
     }
 }

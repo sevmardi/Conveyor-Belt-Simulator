@@ -33,3 +33,6 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\W
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\WpfApplication1\WpfApplication1\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\WpfApplication1\WpfApplication1\obj\Debug\SectionA.baml
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\WpfApplication1\WpfApplication1\obj\Debug\SectionA.g.cs
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\WpfApplication1\WpfApplication1\obj\Debug\SectionA.baml
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\WpfApplication1\WpfApplication1\obj\Debug\SectionA.g.cs
+C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\WpfApplication1\WpfApplication1\obj\Debug\GeneratedInternalTypeHelper.g.cs

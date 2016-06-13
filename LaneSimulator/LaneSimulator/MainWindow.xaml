@@ -52,6 +52,7 @@
   
         
         <local:SSLCanvas x:Name="SSLCanvas" Grid.Column="1" Grid.Row="1" d:IsLocked="True"/>
+        
         <selector:ObjectSelector x:Name="SSLComponents" Grid.Row="1" Grid.Column="0" d:IsLocked="True" />
         <!--<lane:LaneTop x:Name="LaneTop"/>-->
 

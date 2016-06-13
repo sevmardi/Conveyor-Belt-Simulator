@@ -78,20 +78,23 @@ namespace WpfApplication1
             // sectionA.Children.Add(_sectionA);
             //_sectionA.SetCurrentValue(WpfApplication1.SectionA.StartProperty, true);
 
-            _objectToMove = new ObjectToMove { Template = (ControlTemplate)Resources["ConveyorATemplate"] };
-            sectionA.Children.Add(_objectToMove);
+            //_objectToMove = new ObjectToMove { Template = (ControlTemplate)Resources["ConveyorATemplate"] };
+            //sectionA.Children.Add(_objectToMove);
            
-            _objectToMove.TrayTranslateTransform = new TranslateTransform()
-            {
-                X = 3500,
-                Y = 300
-            };
-            _objectToMove.SetCurrentValue(ObjectToMove.GoProperty, true);
-            if(_objectToMove.IsColliding(_objectToMove))
-            {
-                MessageBox.Show("Colliding");
-            }
+            //_objectToMove.TrayTranslateTransform = new TranslateTransform()
+            //{
+            //    X = 3500,
+            //    Y = 300
+            //};
+            //_objectToMove.SetCurrentValue(ObjectToMove.GoProperty, true);
+            
+            //if(_objectToMove.IsColliding(_objectToMove))
+            //{
+            //    MessageBox.Show("Colliding");
+            //}
 
+            BoxData test = new BoxData();
+            var b = test.GoState == StoryBoardState.Start;
         }
 
         //private void Maketry(object sender, ElapsedEventArgs elapsedEventArgs)
