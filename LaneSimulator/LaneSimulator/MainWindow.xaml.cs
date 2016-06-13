@@ -170,11 +170,11 @@ namespace LaneSimulator
             if (e.DropTarget.IsDescendantOf(SSLCanvas) && this.IsActive)
             {
                 Gate newgate = null;
-                newgate = ((Gate)e.Content).CreateUserInstance();
-              //  SSLCanvas.AddGate(newgate, new GateLocation(SSLCanvas.GetNearestSnapTo(SSLCanvas.TranslateScrolledPoint(e.Position))));
 
+                newgate = ((Gate)e.Content).CreateUserInstance();
                
-                SSLCanvas.AddTray();
+                SSLCanvas.AddGate(newgate, new GateLocation(SSLCanvas.GetNearestSnapTo(SSLCanvas.TranslateScrolledPoint(e.Position))));
+
                 SSLCanvas.UpdateLayout();
             }
         }

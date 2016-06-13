@@ -147,18 +147,6 @@ C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\SimpleTray.g.cs
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\bin\Debug\Gates.exe
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\bin\Debug\Gates.pdb
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\SectionA.baml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\SectionA.g.cs
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\SectionB.baml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\SectionC.baml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\SectionD.baml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\SectionE.baml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\SectionF.baml
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\SectionB.g.cs
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\SectionC.g.cs
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\SectionD.g.cs
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\SectionE.g.cs
-C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\UIGates\SectionF.g.cs
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\conveyors\SectionA.baml
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\conveyors\SectionB.baml
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\conveyors\SectionC.baml
@@ -171,3 +159,15 @@ C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\conveyors\SectionD.g.cs
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\conveyors\SectionE.g.cs
 C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\conveyors\SectionF.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\conveyors\SectionA.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\conveyors\SectionB.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\conveyors\SectionC.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\conveyors\SectionD.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\conveyors\SectionE.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\conveyors\SectionF.baml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\conveyors\SectionA.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\conveyors\SectionB.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\conveyors\SectionC.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\conveyors\SectionD.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\conveyors\SectionE.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\conveyors\SectionF.g.cs

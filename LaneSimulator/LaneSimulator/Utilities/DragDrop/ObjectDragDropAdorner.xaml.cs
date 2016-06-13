@@ -3,6 +3,8 @@ using System.Windows.Media;
 
 namespace LaneSimulator.Utilities.DragDrop
 {
+
+    // FROM http://blogs.claritycon.com/blogs/lee_roth/archive/2009/03/31/generic-wpf-drag-and-drop-adorner.aspx
     /// <summary>
     /// Interaction logic for ObjectDragDropAdorner.xaml
     /// </summary>

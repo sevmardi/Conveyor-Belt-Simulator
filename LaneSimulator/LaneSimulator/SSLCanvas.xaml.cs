@@ -364,19 +364,15 @@ namespace LaneSimulator
 
         public void AddGate(Gate uigate, GateLocation pos)
         {
-/*            ClearSelection();
+            ClearSelection();
             Gates.AbstractGate gate = uigate.AbGate;
 
             gates[gate] = uigate;
-
             uigate.Margin = new Thickness(pos.X, pos.Y, 0, 0);
-
             GC.Children.Add(uigate);
 
-            uigate.RenderTransform = new RotateTransform(pos.Angle, uigate.Width / 2.0, uigate.Height / 2.0);
-
-
-            uigate.Tag = new GateLocation() { X = pos.X, Y = pos.Y, Angle = pos.Angle };*/
+            uigate.RenderTransform = new RotateTransform(pos.Angle, uigate.Width/2.0, uigate.Height/2.0);
+            uigate.Tag = new GateLocation() {X = pos.X, Y = pos.Y, Angle = pos.Angle};
             
         }
 
@@ -384,13 +380,13 @@ namespace LaneSimulator
         {
             Gate uigate;
 
-            uigate = new UIGates.SmallTray((new Gates.Trays.SmallTray()));
+            uigate = new UIGates.SmallTray((Gates.Trays.SmallTray)gate);
 
             AddGate(uigate, pos);
         }
 
         /// <summary>
-        /// Given a relative point on the GateCanvas control,
+        /// Given a relative point on the SSLCanvas control,
         /// adjust it using the current zoom and scroll settings
         /// to reflect an actual point on the unscrolled, unzoomed canvas.
         /// </summary>
