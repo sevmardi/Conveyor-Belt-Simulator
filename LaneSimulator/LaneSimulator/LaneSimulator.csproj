@@ -89,6 +89,7 @@
       <DependentUpon>LaneTop.xaml</DependentUpon>
     </Compile>
     <Compile Include="Libs\snap7.net.cs" />
+    <Compile Include="Model\Timer.cs" />
     <Compile Include="UIGates\Sensor.xaml.cs">
       <DependentUpon>Sensor.xaml</DependentUpon>
     </Compile>

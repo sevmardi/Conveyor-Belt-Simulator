@@ -2423,6 +2423,8 @@ namespace LaneSimulator.Lanes
             aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
         }
 
+
+
     #endregion
 
 
@@ -2513,7 +2515,7 @@ namespace LaneSimulator.Lanes
             sb1.Begin(_element, true);
             
 
-//            Executor();
+             Executor();
 //            AddTrayBtn.IsEnabled = false;
 //            addbuttontimer();
         }
@@ -2598,21 +2600,5 @@ namespace LaneSimulator.Lanes
         
     }
 
-    public static class StoryBoardExtensions
-    {
-        //from http://stackoverflow.com/questions/37697300/pass-newly-created-object-to-multiple-storyboards
-        public static Task BeginAsync(this Storyboard sb, FrameworkContentElement element)
-        {
-            var source = new TaskCompletionSource<object>();
-
-            sb.Completed += delegate
-            {
-                source.SetResult(null);
-            };
-
-            sb.Begin(element);
-            return source.Task;
-        }
-    }
 
 }

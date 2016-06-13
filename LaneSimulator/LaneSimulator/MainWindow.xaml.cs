@@ -27,7 +27,7 @@ namespace LaneSimulator
         public static string APP_COPYRIGHT;
 
         private bool Ispaused = false;
-        private ShadowBox sbZoom, sbSpeed, sslObjects, total, SSL, counter, btnsPanelBox;
+        private ShadowBox sbZoom, sbSpeed, sslObjects, total, SSL, timerBox, btnsPanelBox, counterBox;
         
         private readonly SSLCanvas _sslCanvas;
         private double T = 0.0;
@@ -102,15 +102,15 @@ namespace LaneSimulator
 
             //Timer
             Grid1.Children.Remove(Timer);
-            counter = new ShadowBox();
-            counter.Margin = new Thickness(20, 20, 175, 20);
-            counter.Children.Add(Timer);
+            timerBox = new ShadowBox();
+            timerBox.Margin = new Thickness(20, 20, 175, 20);
+            timerBox.Children.Add(Timer);
             Timer.Background = Brushes.Transparent;
-            counter.VerticalAlignment = VerticalAlignment.Top;
-            counter.HorizontalAlignment = HorizontalAlignment.Left;
-            Grid1.Children.Add(counter);
-            Grid.SetColumn(counter, 1);
-            Grid.SetRow(counter, 1);
+            timerBox.VerticalAlignment = VerticalAlignment.Top;
+            timerBox.HorizontalAlignment = HorizontalAlignment.Left;
+            Grid1.Children.Add(timerBox);
+            Grid.SetColumn(timerBox, 1);
+            Grid.SetRow(timerBox, 1);
  
             // SSL
             //Grid1.Children.Remove(LaneTop);
@@ -131,6 +131,17 @@ namespace LaneSimulator
             ButtonsPanel.Background = Brushes.Transparent;
             btnsPanelBox.VerticalAlignment = VerticalAlignment.Bottom;
             btnsPanelBox.HorizontalAlignment = HorizontalAlignment.Center;
+            Grid1.Children.Add(btnsPanelBox);
+            Grid.SetColumn(btnsPanelBox, 1);
+            Grid.SetRow(btnsPanelBox, 1);
+
+            Grid1.Children.Remove(Counter);
+            btnsPanelBox = new ShadowBox();
+            btnsPanelBox.Margin = new Thickness(20, 20, 175, 20);
+            btnsPanelBox.Children.Add(Counter);
+            Counter.Background = Brushes.Transparent;
+            btnsPanelBox.VerticalAlignment = VerticalAlignment.Top;
+            btnsPanelBox.HorizontalAlignment = HorizontalAlignment.Stretch;
             Grid1.Children.Add(btnsPanelBox);
             Grid.SetColumn(btnsPanelBox, 1);
             Grid.SetRow(btnsPanelBox, 1);
