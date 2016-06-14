@@ -8,7 +8,9 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
 using LaneSimulator.Lanes;
+using LaneSimulator.Model;
 using LaneSimulator.PLC;
+using LaneSimulator.UIGates;
 using LaneSimulator.Utilities;
 using LaneSimulator.Utilities.DragDrop;
 using LaneSimulator.Utilities.ShadowBox;
@@ -29,7 +31,7 @@ namespace LaneSimulator
         private bool Ispaused = false;
         private ShadowBox sbZoom, sbSpeed, sslObjects, total, SSL, timerBox, btnsPanelBox, counterBox;
         
-        private readonly SSLCanvas _sslCanvas;
+        private readonly Utilities.SSLCanvas _sslCanvas;
         private double T = 0.0;
         private DispatcherTimer Timer1 = new DispatcherTimer();
         private readonly PlcCalls _plcCalls;
@@ -43,7 +45,7 @@ namespace LaneSimulator
             Closing += new CancelEventHandler(MainWindow1Closing);
 
             InitializeLaneTop();
-            _sslCanvas = new SSLCanvas();
+            _sslCanvas = new Utilities.SSLCanvas();
      
            _plcCalls = new PlcCalls();
 
@@ -488,7 +490,7 @@ namespace LaneSimulator
             {
                 sb.Children.Add(pa);
                 Storyboard.SetTarget(pa, SSLCanvas);
-                Storyboard.SetTargetProperty(pa, new PropertyPath(SSLCanvas.ZoomCenterProperty));
+                Storyboard.SetTargetProperty(pa, new PropertyPath(Utilities.SSLCanvas.ZoomCenterProperty));
                 SSLCanvas.UseZoomCenter = true;
             }
 

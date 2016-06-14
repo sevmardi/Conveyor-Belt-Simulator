@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Globalization;
-
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 using Gates;
+using LaneSimulator.Model;
 using LaneSimulator.UIGates;
-using LaneSimulator.Utilities;
 
-namespace LaneSimulator
+namespace LaneSimulator.Utilities
 {
     /// <summary>
     /// Interaction logic for SSLCanvas.xaml

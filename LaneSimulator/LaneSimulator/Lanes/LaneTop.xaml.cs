@@ -2520,7 +2520,6 @@ namespace LaneSimulator.Lanes
             var sb2 = FindResource("SectionB_SB") as Storyboard;
             sb2.Completed += new EventHandler(this.storyboard_Completed2);
             sb2.Begin(_element);
-         
         }
 
         private void storyboard_Completed2(object sender, EventArgs e)

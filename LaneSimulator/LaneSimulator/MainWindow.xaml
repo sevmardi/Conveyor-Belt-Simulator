@@ -9,6 +9,7 @@
     xmlns:selector="clr-namespace:LaneSimulator.Utilities.Selector"
     xmlns:local="clr-namespace:LaneSimulator"
     xmlns:lane="clr-namespace:LaneSimulator.Lanes"
+    xmlns:utilities="clr-namespace:LaneSimulator.Utilities"
     Title="Lane Simulator" Height="500" Width="650"
     Icon="Images/ram.png"
 
@@ -51,7 +52,7 @@
 
   
         
-        <local:SSLCanvas x:Name="SSLCanvas" Grid.Column="1" Grid.Row="1"/>
+        <utilities:SSLCanvas x:Name="SSLCanvas" Grid.Column="1" Grid.Row="1"/>
         
         <selector:ObjectSelector x:Name="SSLComponents" Grid.Row="1" Grid.Column="0" />
         <!--<lane:LaneTop x:Name="LaneTop"/>-->

@@ -74,14 +74,14 @@
     <Compile Include="conveyors\SectionF.xaml.cs">
       <DependentUpon>SectionF.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EventDispatcher.cs" />
+    <Compile Include="Events\EventDispatcher.cs" />
     <Compile Include="Events\Buffer.cs" />
     <Compile Include="Events\Semaphore.cs" />
     <Compile Include="Events\TagsEvents.cs" />
-    <Compile Include="Gate.xaml.cs">
+    <Compile Include="UIGates\Gate.xaml.cs">
       <DependentUpon>Gate.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GateLocation.cs" />
+    <Compile Include="Model\GateLocation.cs" />
     <Compile Include="Lanes\LaneBottom.xaml.cs">
       <DependentUpon>LaneBottom.xaml</DependentUpon>
     </Compile>
@@ -96,9 +96,6 @@
     <Compile Include="UIGates\ShapeGate.cs" />
     <Compile Include="PLC\PlcCalls.cs" />
     <Compile Include="PLC\PLCTags.cs" />
-    <Compile Include="SSLCanvas.xaml.cs">
-      <DependentUpon>SSLCanvas.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UIGates\SimpleTray.xaml.cs">
       <DependentUpon>SimpleTray.xaml</DependentUpon>
     </Compile>
@@ -114,6 +111,9 @@
     </Compile>
     <Compile Include="Utilities\ShadowBox\ShadowBox.xaml.cs">
       <DependentUpon>ShadowBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\SSLCanvas.xaml.cs">
+      <DependentUpon>SSLCanvas.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AttributesPanel.xaml.cs">
       <DependentUpon>AttributesPanel.xaml</DependentUpon>
@@ -149,7 +149,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Gate.xaml">
+    <Page Include="UIGates\Gate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -177,10 +177,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SSLCanvas.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="UIGates\SimpleTray.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -196,6 +192,10 @@
     <Page Include="Utilities\ShadowBox\ShadowBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utilities\SSLCanvas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\AttributesPanel.xaml">
       <SubType>Designer</SubType>
