@@ -845,6 +845,22 @@
         </Canvas>
 
 
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="Counter">
+            <Border BorderBrush="#FF539D3F" BorderThickness="2" CornerRadius="5" Height="56.911" Width="116.667" >
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0" />
+                        <GradientStop Color="Black" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <TextBlock   x:Name="MouseClickOfUser" FontFamily="/WpfApplication1;component/Fonts/#LCD" FontSize="48"
+                           Text="0"
+                           TextAlignment="Center" TextWrapping="Wrap" Foreground="#FF9F2323" />
+            </Border>
+
+        </StackPanel>
+
+        
     </Canvas>
 
     

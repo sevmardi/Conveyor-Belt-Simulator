@@ -12,6 +12,7 @@ using LaneSimulator.UIGates;
 using LaneSimulator.Views;
 using Snap7;
 using System.Threading;
+using System.Threading.Tasks;
 using Timer = System.Timers.Timer;
 
 namespace LaneSimulator.Lanes
@@ -26,6 +27,7 @@ namespace LaneSimulator.Lanes
         private static int _res;
         private Storyboard _storyboard;
         private AttributesPanel _attributesPanel;
+        static int count = 0;
 
         private FrameworkElement _element;
      
@@ -2497,21 +2499,35 @@ namespace LaneSimulator.Lanes
         private void MakeTrayBtn_Click(object sender, RoutedEventArgs e)
         {
 
-            _element = new SimpleTray();
-          //  TestGrid.Children.Add(_element);
-            this.TestGrid.Children.Add((UIElement)_element);
-            
-            var sb1 = FindResource("SectionA_SB") as Storyboard;
+            //_element = new SimpleTray();
+            //var sb1 = FindResource("SectionA_SB") as Storyboard;
+            //sb1.Begin(_element, true);
+            //TestGrid.Children.Add(_element);
+
+            count++;
+
+            NumberOfClicksToProduceTray(count);
+
+            for (int i = 0; i < count; i++)
+            {
+                TheEnclosingMethod();
+                _element = new SimpleTray();
+                var sb1 = FindResource("SectionA_SB") as Storyboard;
+                sb1.Begin(_element, true);
+                TestGrid.Children.Add(_element);
+                
+            }
+
+            //  TestGrid.Children.Add(_element);
+            //  this.TestGrid.Children.Add((UIElement)_element);
+
+
             //sb1.Duration = TimeSpan.FromSeconds(3);
-         //   sb1.Completed += new EventHandler(this.storyboard_Completed);
-            
-        //    sb1.Begin(_element, true);
-            
+            //   sb1.Completed += new EventHandler(this.storyboard_Completed);
 
-
-           //  Executor();
-//            AddTrayBtn.IsEnabled = false;
-//            addbuttontimer();
+            //  Executor();
+            // AddTrayBtn.IsEnabled = false;
+           // addbuttontimer();
         }
 
         private void storyboard_Completed(object sender, EventArgs e)
@@ -2529,18 +2545,18 @@ namespace LaneSimulator.Lanes
 
         private void StopSimBtn_Click(object sender, RoutedEventArgs e)
         {
-                
+        
             
         }
 
-
-
-        public void NumberOfClicksToProduceTray()
+        public void NumberOfClicksToProduceTray(int count)
         {
-            // MouseClickOfUser.Text = 
-
+            MouseClickOfUser.Text = count.ToString();
         }
-        
+
+
+        #region 
+
         public void TaskRunner()
         {
             int testtrays = 5;
@@ -2550,6 +2566,9 @@ namespace LaneSimulator.Lanes
                 AnimationPannel.Children.Add(smallTray);
             }
         }
+
+        #endregion
+
 
         protected void addbuttontimer()
         {
@@ -2611,6 +2630,17 @@ namespace LaneSimulator.Lanes
             timer.Interval = TimeSpan.FromMilliseconds(millisecond);
             timer.Start();
         }
+
+
+        public async void TheEnclosingMethod()
+        {
+          //  tbkLabel.Text = "two seconds delay";
+
+            await Task.Delay(5000);
+      //      var page = new Page2();
+        //    page.Show();
+        }
+
 
         
     }

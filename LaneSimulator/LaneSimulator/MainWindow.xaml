@@ -104,19 +104,38 @@
         </StackPanel>
 
 
-        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="Counter">
-            <Border BorderBrush="#FF539D3F" BorderThickness="2" CornerRadius="5" Height="56.911" Width="116.667">
+        <!--<StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="Counter">
+            <Border BorderBrush="#FF539D3F" BorderThickness="2" CornerRadius="5" Height="56.911" Width="116.667" >
                 <Border.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0" />
                         <GradientStop Color="Black" Offset="1" />
                     </LinearGradientBrush>
                 </Border.Background>
-                <TextBlock x:Name="MouseClickOfUser" FontFamily="/WpfApplication1;component/Fonts/#LCD" FontSize="48"
-                           Text="0.0"
+                <TextBlock   x:Name="MouseClickOfUser" FontFamily="/WpfApplication1;component/Fonts/#LCD" FontSize="48"
+                           Text="0"
                            TextAlignment="Center" TextWrapping="Wrap" Foreground="#FF9F2323" />
             </Border>
 
+        </StackPanel>-->
+
+        
+        
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="Counter">
+
+            <Grid Height="96.907" Width="138.264">
+                <TextBox x:Name="textBox1_Copy2" Height="42.634" HorizontalContentAlignment="Center"
+                         VerticalContentAlignment="Center" Text="Trays"
+                         FontFamily="/WpfApplication1;component/Fonts/#LCD"
+                         Foreground="#FFB22121" Background="Black" FontSize="29.333" BorderThickness="2"
+                         Focusable="false"
+                         Cursor="Arrow" VerticalAlignment="Top" BorderBrush="{x:Null}" />
+                <TextBox x:Name="MouseClickOfUser" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                         Text="0"
+                         FontFamily="/WpfApplication1;component/Fonts/#LCD" Foreground="#FFB22121" Background="Black"
+                         FontSize="48" BorderThickness="2" Focusable="false" Cursor="Arrow" Margin="0,36.09,0,0"
+                         BorderBrush="{x:Null}" />
+            </Grid>
         </StackPanel>
 
 
@@ -147,13 +166,13 @@
             </Button>
 
 
-            <Button x:Name="StopButton" Click="StopButton_OnClick"
+            <Button Click="StopButton_OnClick" x:Name="StopButton" 
                     Width="68" ToolTip="Stop" IsEnabled="True">
                 <Image Height="54.322" Source="Images/dialog-stop_icon.png" Stretch="Fill" Width="54.322" />
             </Button>
 
 
-            <Button Click="StartAnimationBtn_Click" Name="Play_Button"
+            <Button Click="StartSystem_OnClick" Name="Play_Button"
                     Width="68" ToolTip="Play" IsEnabled="True">
                 <Image Height="51.072" Source="Images/Play1Hot.png" Stretch="Fill" Width="51.072" />
             </Button>

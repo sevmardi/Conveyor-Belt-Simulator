@@ -75,8 +75,17 @@ namespace WpfApplication3
             });
 
         }
+        static int count = 0;
 
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+          //  btn.Click += btn_Click;
+            count++;
+            MouseClickOfUser.Text = count.ToString();
+        }
         
+
+
 
     }
 }

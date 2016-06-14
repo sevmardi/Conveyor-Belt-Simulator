@@ -36,7 +36,8 @@ namespace LaneSimulator
         private DispatcherTimer Timer1 = new DispatcherTimer();
         private readonly PlcCalls _plcCalls;
         private LaneTop _laneTop;
-        
+        static int count = 0;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -108,7 +109,7 @@ namespace LaneSimulator
             timerBox.Margin = new Thickness(20, 20, 175, 20);
             timerBox.Children.Add(Timer);
             Timer.Background = Brushes.Transparent;
-            timerBox.VerticalAlignment = VerticalAlignment.Top;
+            timerBox.VerticalAlignment = VerticalAlignment.Bottom;
             timerBox.HorizontalAlignment = HorizontalAlignment.Left;
             Grid1.Children.Add(timerBox);
             Grid.SetColumn(timerBox, 1);
@@ -237,40 +238,13 @@ namespace LaneSimulator
         /// </summary>
         private void Total()
         {
-           this.total_text1.Text = (this.tray_Wrap.Children.Count).ToString();
+       //    this.total_text1.Text = (this.tray_Wrap.Children.Count).ToString();
         }
 
         public void NumberOfClicksToProduceTray()
         {
-           // MouseClickOfUser.Text = 
-        }
-        private void btnRest_Click(object sender, RoutedEventArgs e)
-        {
-            _plcCalls.ResetBtn();
-        }
-
-        private void btnStopSystem_Click(object sender, RoutedEventArgs e)
-        {
-         //   _plcCalls.StopBtnInput();
-            StopStoryboard1();
-        }
-
-        private void StartAnimationBtn_Click(object sender, RoutedEventArgs e)
-        {
-            ////https://msdn.microsoft.com/en-us/library/cc295328.aspx
-
-            var sub1 = FindResource("Storyboard1") as Storyboard;
-
-            if (sub1 != null)
-            {
-                //Storyboard.SetTargetName(sub1, SmallTray);
-                sub1.Begin();
-              //  Timer1.Start();
-                //CreateNewObject();
-
-              //   SetMotorOnInSectionA();
-            }
-
+            count++;
+            MouseClickOfUser.Text = count.ToString();
         }
 
 
@@ -307,19 +281,7 @@ namespace LaneSimulator
         }
 
 
-        private void StopStoryboard1()
-        {
-            var sb1 = FindResource("Storyboard1") as Storyboard;
-            if (sb1 != null) sb1.Pause();
-        }
 
-        private void MyStoryboardCompleted(object sender, EventArgs e)
-        {
-            var thing = this.FindResource("Storyboard2");
-
-            var OtherSB = (Storyboard) thing;
-            OtherSB.Begin();
-        }
 
 
         private void MainWindow1Closing(object sender, CancelEventArgs e)
@@ -557,21 +519,6 @@ namespace LaneSimulator
 
         }
 
-        private void AddToAnimation()
-        {
-         //   var tray = new SmallTray();
-
-            var sb1 = FindResource("Storyboard1") as Storyboard;
-
-            //sb1.Begin(tray);
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //AddToAnimation();
-
-            //SmallTray tray = new SmallTray();
-        }
 
         private void btnChart_Click(object sender, RoutedEventArgs e)
         {
@@ -590,6 +537,11 @@ namespace LaneSimulator
         }
 
         private void Reset_Button_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void StartSystem_OnClick(object sender, RoutedEventArgs e)
         {
             throw new NotImplementedException();
         }
