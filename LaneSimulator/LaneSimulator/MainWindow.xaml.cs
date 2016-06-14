@@ -52,7 +52,6 @@ namespace LaneSimulator
            // everybody gets view keys
         //   this.PreviewKeyDown += new KeyEventHandler(Window1_View_KeyDown);
 
-
            // drag/drop for edit or full
             DragDropHelper.ItemDropped += new EventHandler<DragDropEventArgs>(DragDropHelper_ItemDropped);
 
@@ -238,9 +237,13 @@ namespace LaneSimulator
         /// </summary>
         private void Total()
         {
-           //this.total_text1.Text = (this.tray_Wrap.Children.Count).ToString();
+           this.total_text1.Text = (this.tray_Wrap.Children.Count).ToString();
         }
 
+        public void NumberOfClicksToProduceTray()
+        {
+           // MouseClickOfUser.Text = 
+        }
         private void btnRest_Click(object sender, RoutedEventArgs e)
         {
             _plcCalls.ResetBtn();

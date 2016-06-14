@@ -2306,7 +2306,6 @@ namespace LaneSimulator.Lanes
 
         #endregion
 
-        
         #region timers
 
         protected void FirstSensor()
@@ -2421,7 +2420,6 @@ namespace LaneSimulator.Lanes
 
         #endregion
 
-
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
                   _plcCalls.EstablishContact();
@@ -2507,10 +2505,11 @@ namespace LaneSimulator.Lanes
             //sb1.Duration = TimeSpan.FromSeconds(3);
          //   sb1.Completed += new EventHandler(this.storyboard_Completed);
             
-            sb1.Begin(_element, true);
+        //    sb1.Begin(_element, true);
             
 
-             Executor();
+
+           //  Executor();
 //            AddTrayBtn.IsEnabled = false;
 //            addbuttontimer();
         }
@@ -2528,13 +2527,20 @@ namespace LaneSimulator.Lanes
             sb2.Begin(_element);
         }
 
-
         private void StopSimBtn_Click(object sender, RoutedEventArgs e)
         {
+                
             
- 
         }
 
+
+
+        public void NumberOfClicksToProduceTray()
+        {
+            // MouseClickOfUser.Text = 
+
+        }
+        
         public void TaskRunner()
         {
             int testtrays = 5;
