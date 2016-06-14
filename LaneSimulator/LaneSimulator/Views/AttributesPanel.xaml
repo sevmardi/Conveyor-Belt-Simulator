@@ -25,14 +25,14 @@
             Margin="10,43,0,0" Grid.Row="1" 
             VerticalAlignment="Top" 
             Width="120" 
-            IsDropDownOpen="True" 
+            
             ToolTip="Choose" 
             IsSynchronizedWithCurrentItem="False" 
             Height="22"
             IsEditable="False"
             >
-            <ComboBoxItem Content="1"/>
-            <ComboBoxItem Content="0"/>
+            <ComboBoxItem Content="True"/>
+            <ComboBoxItem Content="False"/>
         </ComboBox>
         
         

@@ -357,7 +357,7 @@ namespace LaneSimulator.Utilities
         public void AddGate(Gate uigate, GateLocation pos)
         {
             ClearSelection();
-            Gates.AbstractGate gate = uigate.AbGate;
+            AbstractGate gate = uigate.AbGate;
 
             gates[gate] = uigate;
             uigate.Margin = new Thickness(pos.X, pos.Y, 0, 0);

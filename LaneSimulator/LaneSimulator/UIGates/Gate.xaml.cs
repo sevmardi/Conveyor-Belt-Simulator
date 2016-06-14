@@ -25,7 +25,7 @@ namespace LaneSimulator.UIGates
             glow.Color = Colors.Blue;
             glow.BlurRadius = 5;
 
-            IsReadOnly = false;
+         //   IsReadOnly = false;
         }
 
 

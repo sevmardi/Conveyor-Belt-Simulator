@@ -2576,7 +2576,9 @@ namespace LaneSimulator.Lanes
             _attributesPanel = new AttributesPanel();
 
             _attributesPanel.ShowPanel();
-    
+
+          //  _0102_S1_TurnOff();
+
             // this solutions from http://stackoverflow.com/questions/23507052/how-to-select-xaml-object-by-xname
 //            foreach (UIElement item in Sensors.Children )
 //            {
