@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Gates.Trays
 {
-    public class SmallTray : AbstractGate
+    public class LargeTray : AbstractGate
     {
 
         public override string Name
         {
-            get { return "SmallTray"; }
+            get { return "LargeTray"; }
         }
 
         public override AbstractGate Clone()
@@ -20,11 +20,8 @@ namespace Gates.Trays
         }
 
         /// <summary>
-        /// Construct a smalltray 
+        /// construcotr 
         /// </summary>
-        public SmallTray() {}
-
-       
-
+        public LargeTray(){}
     }
 }

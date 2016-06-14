@@ -6,11 +6,13 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-
+using System.Windows.Threading;
 using LaneSimulator.PLC;
 using LaneSimulator.UIGates;
 using LaneSimulator.Views;
 using Snap7;
+using System.Threading;
+using Timer = System.Timers.Timer;
 
 namespace LaneSimulator.Lanes
 {
@@ -42,7 +44,6 @@ namespace LaneSimulator.Lanes
         public void Executor()
         {
             _0102_S1_TurnOff();
-           
             SecondSensorTimer();
             ThirdSensor();
             FourthSensor();
@@ -599,7 +600,8 @@ namespace LaneSimulator.Lanes
                             _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0102_S1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
 
                             _0102_S1.Fill = new SolidColorBrush(Colors.DarkGray);
-
+                            //DelayAction(800, new Action(() => { this._0102_D1Motor(); }));
+                       
                             _0102_D1Motor();
                         }
                         else
@@ -807,6 +809,7 @@ namespace LaneSimulator.Lanes
                     }));
                 }
             }
+
             SixthSensorWrite();
 
         }
@@ -2310,12 +2313,11 @@ namespace LaneSimulator.Lanes
         {
             Timer aTimer = new Timer();
             aTimer.Elapsed += new ElapsedEventHandler(_0102_S1_TurnOn);
-            aTimer.Interval = 1150;
+            aTimer.Interval = 400;
             aTimer.Enabled = true;
 
             aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
         }
-
 
         protected void SecondSensorTimer()
         {
@@ -2327,17 +2329,15 @@ namespace LaneSimulator.Lanes
             aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
         }
 
-
         protected void SecondSensorWrite()
         {
             Timer aTimer = new Timer();
             aTimer.Elapsed += new ElapsedEventHandler(_0102_S2_TurnOn);
-            aTimer.Interval = 3000;
+            aTimer.Interval = 900;
             aTimer.Enabled = true;
 
             aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
         }
-
 
         protected void ThirdSensor()
         {
@@ -2349,12 +2349,11 @@ namespace LaneSimulator.Lanes
             aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
         }
 
-
         protected void ThirdSensorWrite()
         {
             Timer aTimer = new Timer();
             aTimer.Elapsed += new ElapsedEventHandler(_0103_S1_TurnOn);
-            aTimer.Interval = 3500;
+            aTimer.Interval = 820;
             aTimer.Enabled = true;
 
             aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
@@ -2364,23 +2363,21 @@ namespace LaneSimulator.Lanes
         {
             Timer aTimer = new Timer();
             aTimer.Elapsed += new ElapsedEventHandler(_0104_S1_TurnOff);
-            aTimer.Interval = 2500;
+            aTimer.Interval = 3000;
             aTimer.Enabled = true;
 
             aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
         }
-
 
         protected void FourthSensorWrite()
         {
             Timer aTimer = new Timer();
             aTimer.Elapsed += new ElapsedEventHandler(_0104_S1_TurnOn);
-            aTimer.Interval = 3500;
+            aTimer.Interval = 650;
             aTimer.Enabled = true;
 
             aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
         }
-
 
         protected void FifthSensor()
         {
@@ -2396,7 +2393,7 @@ namespace LaneSimulator.Lanes
         {
             Timer aTimer = new Timer();
             aTimer.Elapsed += new ElapsedEventHandler(_0105_S1_TurnOn);
-            aTimer.Interval = 3800;
+            aTimer.Interval = 1000;
             aTimer.Enabled = true;
 
             aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
@@ -2412,20 +2409,17 @@ namespace LaneSimulator.Lanes
             aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
         }
 
-
         protected void SixthSensorWrite()
         {
             Timer aTimer = new Timer();
             aTimer.Elapsed += new ElapsedEventHandler(_0105_S2_TurnOn);
-            aTimer.Interval = 4100;
+            aTimer.Interval = 1000;
             aTimer.Enabled = true;
 
             aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
         }
 
-
-
-    #endregion
+        #endregion
 
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
@@ -2508,9 +2502,10 @@ namespace LaneSimulator.Lanes
             _element = new SimpleTray();
           //  TestGrid.Children.Add(_element);
             this.TestGrid.Children.Add((UIElement)_element);
+            
             var sb1 = FindResource("SectionA_SB") as Storyboard;
-            sb1.Duration = TimeSpan.FromSeconds(3);
-            sb1.Completed += new EventHandler(this.storyboard_Completed);
+            //sb1.Duration = TimeSpan.FromSeconds(3);
+         //   sb1.Completed += new EventHandler(this.storyboard_Completed);
             
             sb1.Begin(_element, true);
             
@@ -2595,6 +2590,19 @@ namespace LaneSimulator.Lanes
 //
 //               
 //            }
+        }
+
+        public static void DelayAction(int millisecond, Action action)
+        {
+            var timer = new DispatcherTimer();
+            timer.Tick += delegate
+            {
+                action.Invoke();
+                timer.Stop();
+            };
+
+            timer.Interval = TimeSpan.FromMilliseconds(millisecond);
+            timer.Start();
         }
 
         
