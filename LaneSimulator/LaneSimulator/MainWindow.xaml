@@ -51,13 +51,13 @@
 
   
         
-        <local:SSLCanvas x:Name="SSLCanvas" Grid.Column="1" Grid.Row="1" d:IsLocked="True"/>
+        <local:SSLCanvas x:Name="SSLCanvas" Grid.Column="1" Grid.Row="1"/>
         
-        <selector:ObjectSelector x:Name="SSLComponents" Grid.Row="1" Grid.Column="0" d:IsLocked="True" />
+        <selector:ObjectSelector x:Name="SSLComponents" Grid.Row="1" Grid.Column="0" />
         <!--<lane:LaneTop x:Name="LaneTop"/>-->
 
 
-        <Canvas x:Name="laneTop" Height="0" d:IsLocked="True">
+        <Canvas x:Name="laneTop" Height="0" Visibility="Hidden">
             <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Height="606.958" Canvas.Left="293.333" Canvas.Top="-64.373" Width="176.347">
                 <Path.Data>
                     <PathGeometry Figures="m 60.28756 552.08218 45.1466 -97.56912 c 29.0294 14.34618 53.51348 36.49707 70.68158 63.73488 l 0.231 0.39961 c 0 0 -66.47528 74.36714 -78.93698 88.30989 0 0 -3.4166 -35.77924 -37.1222 -54.87526" FillRule="nonzero"/>
@@ -186,7 +186,7 @@
             </ScrollViewer>
         </Canvas>
 
-        <Canvas x:Name="Sensors" d:IsLocked="True">
+        <Canvas x:Name="Sensors" Visibility="Hidden">
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="249.416" Canvas.Top="551.916" Width="6" x:Name="_0102_S1"/>
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="259.166" Canvas.Top="523.666" Width="6" x:Name="_0102_S2"/>
             <Ellipse Fill="#FFA8A19F" Height="6" Canvas.Left="274.416" Canvas.Top="502.666" Width="6" x:Name="_0103_S1"/>
@@ -238,7 +238,7 @@
 
         </Canvas>
 
-        <Canvas x:Name="Motors" d:IsLocked="True">
+        <Canvas x:Name="Motors" Visibility="Hidden">
             <Ellipse Height="6" Canvas.Left="204.833" Canvas.Top="526.167" Width="6" x:Name="_0102_D1" RenderTransformOrigin="0.5,0.5" Fill="#FFDACF84">
                 <Ellipse.RenderTransform>
                     <TransformGroup>
@@ -466,7 +466,7 @@
         </Canvas>
 
 
-        <Canvas x:Name="laneBottom" Grid.Column="1" Margin="489.736,119.093,-124.264,140.133" Grid.Row="1" Visibility="Hidden" d:IsLocked="True">
+        <Canvas x:Name="laneBottom" Grid.Column="1" Margin="489.736,119.093,-124.264,140.133" Grid.Row="1" Visibility="Hidden">
             <Canvas.RenderTransform>
                 <MatrixTransform Matrix="-1.25 0 0 -1.25 1007.6864 1030.4378"/>
             </Canvas.RenderTransform>
@@ -611,7 +611,8 @@
         </Canvas>
 
 
-        <Canvas x:Name="Sections" Grid.Column="1" Margin="364.236,57.593,1.236,201.633" Grid.Row="1" d:IsLocked="True">
+        
+        <Canvas x:Name="Sections" Grid.Column="1" Margin="364.236,57.593,1.236,201.633" Grid.Row="1" Visibility="Hidden">
             <Path x:Name="SectionA" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5" StrokeThickness="2" Canvas.Top="163.6" Width="2" Stretch="Fill" Canvas.Left="-4" />
             <Path x:Name="SectionB" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5"
 	              Canvas.Left="274" StrokeThickness="2" Canvas.Top="163.6" Width="2" Stretch="Fill" />
@@ -635,7 +636,7 @@
         </Canvas>
 
 
-        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="spZoom" d:IsLocked="True">
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="spZoom">
             <Image Source="Images/ZoomHS.png" Height="20" />
             <Slider Name="slZoom" Minimum="0.01" Maximum="5" Value="1" SmallChange="0.01"
                     LargeChange="0.1" ToolTip="Adjust circuit zoom"
@@ -651,7 +652,7 @@
 
         </StackPanel>
 
-        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="traysCounter" d:IsLocked="True">
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="traysCounter">
 
             <Grid Height="96.907" Width="138.264">
                 <TextBox x:Name="textBox1_Copy1" Height="42.634" HorizontalContentAlignment="Center"
@@ -669,7 +670,7 @@
 
         </StackPanel>
 
-        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="Timer" d:IsLocked="True">
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="Timer">
             <Border BorderBrush="#FF539D3F" BorderThickness="2" CornerRadius="5" Height="56.911" Width="116.667">
                 <Border.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -685,7 +686,7 @@
         </StackPanel>
 
 
-        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="Counter" d:IsLocked="True">
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="Counter">
             <Border BorderBrush="#FF539D3F" BorderThickness="2" CornerRadius="5" Height="56.911" Width="116.667">
                 <Border.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -739,7 +740,7 @@
       
         </StackPanel>
 
-        <ToolBarTray Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0" d:IsLocked="True">
+        <ToolBarTray Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0">
             <ToolBar Height="28" Name="tbFile" Visibility="Collapsed" >
                 <Button Style="{StaticResource TButtonStyle}" Click="btnNew_Click" ToolTip="New File (Ctrl+N)">
                     <Image Source="Images/NewDocumentHS.png" />
@@ -821,19 +822,19 @@
 
         </ToolBarTray>
 
-        <StackPanel Name="spAppInfo" Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" Background="#EEEEEE" d:IsLocked="True">
+        <StackPanel Name="spAppInfo" Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" Background="#EEEEEE">
             <TextBlock Name="lblAppTitle" Margin="10,0,0,0" />
             <TextBlock Name="lblAppVersion" Margin="10,0,0,0" />
             <TextBlock Name="lblAppCopyright" Margin="10,0,0,0" />
             <TextBlock Name="lblLink"  Margin="10,0,0,0"></TextBlock>
         </StackPanel>
-        <TextBlock Name="lblInfoLine" Background="#EEEEEE" Grid.Row="2" Grid.ColumnSpan="2"  Padding="10,0,0,0" Visibility="Hidden" d:IsLocked="True" />
+        <TextBlock Name="lblInfoLine" Background="#EEEEEE" Grid.Row="2" Grid.ColumnSpan="2"  Padding="10,0,0,0" Visibility="Hidden" />
 
 
 
         
         
-        <Canvas x:Name="adornerLayer" Visibility="Collapsed" d:IsLocked="True"/>
+        <Canvas x:Name="adornerLayer" Visibility="Collapsed"/>
        
     </Grid>
 

@@ -238,7 +238,7 @@
 
     <Canvas x:Name="LaneTopSection" Width="744" Height="1052">
 
-    	<Canvas x:Name="laneTop" Height="0">
+    	<Canvas x:Name="laneTop" Height="0" Canvas.Left="500">
     			<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Path1" Fill="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Height="606.958" Canvas.Left="-199.5" Canvas.Top="-181.5" Width="176.347">
     				<Path.Data>
     					<PathGeometry Figures="m 60.28756 552.08218 45.1466 -97.56912 c 29.0294 14.34618 53.51348 36.49707 70.68158 63.73488 l 0.231 0.39961 c 0 0 -66.47528 74.36714 -78.93698 88.30989 0 0 -3.4166 -35.77924 -37.1222 -54.87526" FillRule="nonzero"/>
@@ -367,7 +367,7 @@
     			</ScrollViewer>
     		</Canvas>
 
-        <Canvas x:Name="laneBottom">
+        <Canvas x:Name="laneBottom" Canvas.Left="500">
             <Canvas.RenderTransform>
                 <MatrixTransform Matrix="-1.25 0 0 -1.25 1007.6864 1030.4378"/>
             </Canvas.RenderTransform>
@@ -512,7 +512,7 @@
         </Canvas>
 
        
-        <Canvas x:Name="Sensors">
+        <Canvas x:Name="Sensors" Canvas.Left="500">
             <Ellipse Fill="#FFA8A19F" Height="11.25" Canvas.Left="-248.125" Canvas.Top="415" Width="10" x:Name="_0102_S1"   MouseDown="Grid_MouseDown_1" RenderTransformOrigin="-0.167,0.417"/>
             
             
@@ -566,7 +566,7 @@
 
         </Canvas>
        
-        <Canvas x:Name="Motors">
+        <Canvas x:Name="Motors" Canvas.Left="500">
             <Ellipse Height="6" Canvas.Left="-291" Canvas.Top="389.5" Width="6" x:Name="_0102_D1" RenderTransformOrigin="0.5,0.5" Fill="#FFDACF84">
                 <Ellipse.RenderTransform>
                     <TransformGroup>
@@ -793,7 +793,7 @@
 
         </Canvas>
         
-        <Canvas x:Name="Sections">
+        <Canvas x:Name="Sections" Canvas.Left="500">
             <Path x:Name="SectionA" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5"
 	              Canvas.Left="-140" StrokeThickness="2" Canvas.Top="161.6" Width="2" Stretch="Fill" />
             <Path x:Name="SectionB" Data="M13.5,0.5 L0,0 L2.0848923E-14,340.5 L8.5,340.5" Fill="#FFF0DBDB" Height="340.5"
@@ -817,10 +817,10 @@
 
         </Canvas>
 
-        <Button Content="Contact PLC" Canvas.Left="180" Canvas.Top="95" Width="75" Click="ButtonBase_OnClick" x:Name="ContactPlcBtn"/>
-        <Button Content="Add SmallTray" Canvas.Left="310" Canvas.Top="95" Width="75" Click="MakeTrayBtn_Click" RenderTransformOrigin="0.067,0.75" x:Name="AddTrayBtn"/>
-        <Button Content="Scheduler" Canvas.Left="415" Canvas.Top="95" Width="75" Click="StopSimBtn_Click" RenderTransformOrigin="0.067,0.75"/>
-        <Button Content="Stop" Canvas.Left="560" Canvas.Top="95" Width="75" Click="StopSimBtn_Click" RenderTransformOrigin="0.067,0.75"/>
+        <Button Content="Contact PLC" Canvas.Left="569" Canvas.Top="88.333" Width="75" Click="ButtonBase_OnClick" x:Name="ContactPlcBtn"/>
+        <Button Content="Add SmallTray" Canvas.Left="201.833" Canvas.Top="88.333" Width="75" Click="MakeTrayBtn_Click" RenderTransformOrigin="0.067,0.75" x:Name="AddTrayBtn"/>
+        <Button Content="Scheduler" Canvas.Left="326" Canvas.Top="88.333" Width="75" Click="StopSimBtn_Click" RenderTransformOrigin="0.067,0.75"/>
+        <Button Content="Stop" Canvas.Left="441.167" Canvas.Top="88.333" Width="75" Click="StopSimBtn_Click" RenderTransformOrigin="0.067,0.75"/>
 
         <Canvas x:Name="AnimationPannel" Height="175" Canvas.Left="-325" Canvas.Top="425" Width="1395"  />
         <Path x:Name="LongPathA" Data="M-294.66667,425 L-288.66632,393.66667 -264.66464,353.66588 -235.32901,331.66522 -181.32602,317.33128 -125.32307,327.33176 -101.6554,341.33199 -61.98609,378.33258 -20.650348,382.66599 27.019488,382.66599 63.354985,382.66599 99.690847,382.66599 142.02637,382.66599 225.69802,382.66599 269.03357,382.66599 314.70293,382.66599 369.37247,382.66599 421.37586,382.66599 471.0458,382.66599 511.04818,382.66599 620.72137,382.66599 686.05823,382.66599 815.39919,382.66599 864.06906,381.99931&#xA;898.73775,354.66554 922.07211,316.66492" Height="108.333" Canvas.Left="-295.5" Stretch="Fill" Canvas.Top="316.667" Width="1216.667" />

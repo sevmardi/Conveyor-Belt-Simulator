@@ -33,7 +33,7 @@ namespace LaneSimulator
         private double T = 0.0;
         private DispatcherTimer Timer1 = new DispatcherTimer();
         private readonly PlcCalls _plcCalls;
-        
+        private LaneTop _laneTop;
         
         public MainWindow()
         {
@@ -179,7 +179,12 @@ namespace LaneSimulator
 
         private void InitializeLaneTop()
         {
-           
+           _laneTop = new LaneTop();
+           SSLCanvas.GC.VerticalAlignment = VerticalAlignment.Center;
+           SSLCanvas.GC.HorizontalAlignment = HorizontalAlignment.Left;
+           SSLCanvas.GC.Children.Add(_laneTop);
+           SSLCanvas.UpdateLayout();
+            
         }
 
         private void DragDropHelper_ItemDropped(object sender, DragDropEventArgs e)
