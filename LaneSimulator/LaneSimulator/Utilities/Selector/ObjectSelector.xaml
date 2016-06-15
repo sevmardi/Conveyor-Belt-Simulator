@@ -81,7 +81,24 @@
                                        dragDrop:DragDropHelper.DragDropControl="{StaticResource ObjectAdorner}"
                                        dragDrop:DragDropHelper.DropTarget="SSLCanvas"
                                        dragDrop:DragDropHelper.AdornerLayer="adornerLayer" />
+
+                     <gates:SimpleTray x:Name="SimpleTray"
+                                       dragDrop:DragDropHelper.IsDragSource="true"
+                                         dragDrop:DragDropHelper.DragDropControl="{StaticResource ObjectAdorner}"
+                                       dragDrop:DragDropHelper.DropTarget="SSLCanvas"
+                                       dragDrop:DragDropHelper.AdornerLayer="adornerLayer"
+                                       />
+
+                    <gates:LargeTray x:Name="LargTray" VerticalAlignment="Top"
+                                       dragDrop:DragDropHelper.IsDragSource="true"
+                                       dragDrop:DragDropHelper.DragDropControl="{StaticResource ObjectAdorner}"
+                                       dragDrop:DragDropHelper.DropTarget="SSLCanvas"
+                                       dragDrop:DragDropHelper.AdornerLayer="adornerLayer" />
+                    
+
                 </StackPanel>
+                
+                
 
             </Expander>
         </StackPanel>

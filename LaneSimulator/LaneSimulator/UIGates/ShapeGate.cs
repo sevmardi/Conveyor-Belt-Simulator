@@ -74,12 +74,9 @@ namespace LaneSimulator.UIGates
 
     public class LargeTray : ShapeGate
     {
-//        public LargeTray() : this(new Gates.Trays.LargeTray()) { }
+        public LargeTray() : this(new Gates.Trays.LargeTray()) { }
 
-        public LargeTray(AbstractGate abgate, string path) : base(abgate, path)
-        {
-            //
-        }
+        public LargeTray(Gates.AbstractGate abgate) : base(abgate, "M 17,17 v 30 h 15 a 2,2 1 0 0 0,-30 h -15") { }
     }
 
 

@@ -42,6 +42,7 @@ namespace LaneSimulator.Lanes
             //_smallTray = new SmallTray();
             _storyboard = new Storyboard();
             InitializeSensors();
+            TestTimer();
         }
 
         private void InitializeSensors()
@@ -2518,7 +2519,7 @@ namespace LaneSimulator.Lanes
                     _1702_S3T.Fill = new SolidColorBrush(Colors.Red);
 
                     ContactPlcBtn.IsEnabled = false;
-                    TestTimer();
+                    
                 }
 
             }
