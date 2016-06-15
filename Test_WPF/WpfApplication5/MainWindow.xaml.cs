@@ -24,6 +24,7 @@ namespace WpfApplication5
         private List<Storyboard> Slist = new List<Storyboard>();
         private bool Ispaused = false;
         private Storyboard _storyboard;
+        private FrameworkElement _element;
 
         public MainWindow()
         {
@@ -45,21 +46,13 @@ namespace WpfApplication5
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            ObjectToMove move = new ObjectToMove();
-
-
-
-
-
-
-
-            Animation_Path.Children.Add((UIElement)move);
-     
-
+            // ObjectToMove move = new ObjectToMove();
+             _element = new ObjectToMove();
+             var sb1 = FindResource("SectionA_SB") as Storyboard;
+             sb1.Begin(_element, true);
+             Animation_Path.Children.Add(_element);
 
         }
-
-
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {

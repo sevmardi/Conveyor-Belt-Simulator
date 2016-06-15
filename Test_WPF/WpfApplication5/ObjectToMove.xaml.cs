@@ -18,7 +18,7 @@ namespace WpfApplication5
     /// <summary>
     /// Interaction logic for ObjectToMove.xaml
     /// </summary>
-    public partial class ObjectToMove : UserControl
+    public partial class ObjectToMove
     {
         private Point position;
         private int destination; 
@@ -35,7 +35,6 @@ namespace WpfApplication5
             return this.destination;
         }
 
-
         public void setPosition(int x, int y)
         {
             this.position.X = x;
@@ -44,6 +43,21 @@ namespace WpfApplication5
         public void setDestination(int destination)
         {
             this.destination = destination;
+        }
+
+        public TranslateTransform CarTranslateTransform { get; set; }
+
+        public bool IsColliding(ObjectToMove other)
+        {
+            bool ret = false;
+
+            var dX = other.CarTranslateTransform.X - this.CarTranslateTransform.X;
+            var dY = other.CarTranslateTransform.Y - this.CarTranslateTransform.Y;
+            var h = Math.Sqrt(dX * dX + dY * dY);
+
+            ret = (h < 40);
+
+            return ret;
         }
 
     }

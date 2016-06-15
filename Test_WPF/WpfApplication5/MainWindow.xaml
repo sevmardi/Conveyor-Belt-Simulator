@@ -1,8 +1,36 @@
 ﻿<Window x:Class="WpfApplication5.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-         xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+        
         Title="MainWindow" Height="800" Width="1200">
+  <Window.Resources>
+        <Storyboard x:Key="SectionA_SB">
+
+            <DoubleAnimationUsingPath
+                Source="X"
+                 Duration="0:0:5" 
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)">
+
+                <DoubleAnimationUsingPath.PathGeometry>
+                    <PathGeometry
+                        Figures="M8.875,-22.062 L17.166948,-55.666845 L40.499749,-94.333016 L76.832786,-120.00001 L121.83299,-130.00001 L165.12499,-128.875" />
+                </DoubleAnimationUsingPath.PathGeometry>
+            </DoubleAnimationUsingPath>
+
+            <DoubleAnimationUsingPath
+               
+                Source="Y"
+                Duration="0:0:5" 
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)">
+                <DoubleAnimationUsingPath.PathGeometry>
+                    <PathGeometry
+                        Figures="M8.875,-22.062 L17.166948,-55.666845 L40.499749,-94.333016 L76.832786,-120.00001 L121.83299,-130.00001 L165.12499,-128.875" />
+                </DoubleAnimationUsingPath.PathGeometry>
+            </DoubleAnimationUsingPath>
+        </Storyboard>
+
+    </Window.Resources>
+    
     <Grid>
         <Canvas x:Name="Animation_Path" Height="40.474" Left="3.409" Top="53.412" Margin="27,344,110,385" RenderTransformOrigin="0.5,0.5"/>
         <!--<Canvas x:Name="Animation_Path2" Height="40.474" Left="3.409" Top="53.412" Margin="300,344,624,385" RenderTransformOrigin="0.5,0.5"/>-->
