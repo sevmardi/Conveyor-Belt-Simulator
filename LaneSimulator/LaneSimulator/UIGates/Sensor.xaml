@@ -1,7 +1,8 @@
 ﻿<UserControl x:Class="LaneSimulator.UIGates.Sensor"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Grid>
-        <Ellipse Fill="#FFA8A19F" Height="6" Width="6"/>
+    <Grid x:Name="LayoutRoot">
+        <Image Name="Images_On" Margin="8" Source="../Images/LED_ON.png" />
+        <Image MouseUp="Image_Off_MouseUp" Name="Image_Off" Margin="8" Source="../Images/led_off.png" Opacity="1" Cursor="Hand" />
     </Grid>
 </UserControl>

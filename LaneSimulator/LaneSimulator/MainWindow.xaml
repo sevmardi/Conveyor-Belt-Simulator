@@ -10,6 +10,7 @@
     xmlns:local="clr-namespace:LaneSimulator"
     xmlns:lane="clr-namespace:LaneSimulator.Lanes"
     xmlns:utilities="clr-namespace:LaneSimulator.Utilities"
+    xmlns:uiGates="clr-namespace:LaneSimulator.UIGates"
     Title="Lane Simulator" Height="500" Width="650"
     Icon="Images/ram.png"
 
@@ -50,10 +51,10 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-  
-        
+
+
         <utilities:SSLCanvas x:Name="SSLCanvas" Grid.Column="1" Grid.Row="1"/>
-        
+
         <selector:ObjectSelector x:Name="SSLComponents" Grid.Row="1" Grid.Column="0" />
 
 
@@ -119,21 +120,22 @@
 
         </StackPanel>-->
 
-        
-        
+
+
         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="Counter">
 
             <Grid Height="96.907" Width="138.264">
                 <TextBox x:Name="textBox1_Copy2" Height="42.634" HorizontalContentAlignment="Center"
-                         VerticalContentAlignment="Center" Text="Trays"
-                         FontFamily="/WpfApplication1;component/Fonts/#LCD"
+                         VerticalContentAlignment="Center" 
+                         Text="Trays"
+                         
                          Foreground="#FFB22121" Background="Black" FontSize="29.333" BorderThickness="2"
                          Focusable="false"
-                         Cursor="Arrow" VerticalAlignment="Top" BorderBrush="{x:Null}" />
+                         VerticalAlignment="Top" BorderBrush="{x:Null}" />
                 <TextBox x:Name="MouseClickOfUser" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                          Text="0"
-                         FontFamily="/WpfApplication1;component/Fonts/#LCD" Foreground="#FFB22121" Background="Black"
-                         FontSize="48" BorderThickness="2" Focusable="false" Cursor="Arrow" Margin="0,36.09,0,0"
+                         Foreground="#FFB22121" Background="Black"
+                         FontSize="48" BorderThickness="2" Focusable="false" Margin="0,36.09,0,0"
                          BorderBrush="{x:Null}" />
             </Grid>
         </StackPanel>
@@ -146,17 +148,13 @@
         </StackPanel>-->
 
 
-<!--        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="LED">
-            <Grid x:Name="LayoutRoot">
-                <Image Name="Images_On" Margin="8" Source="Images/LED_ON.png" />
-                <Image MouseUp="Image_Off_MouseUp" Name="Image_Off" Margin="8" Source="Images/LED_OFF.png" Opacity="1" Cursor="Hand" />
-            </Grid>
+        <Canvas Grid.Row="0" Grid.Column="0"  Name="Sensor2">
+            <uiGates:Sensor  x:Name="Sensor1" Canvas.Left="540" Canvas.Top="160" Height="30" Width="30"/>
+        </Canvas>
 
-        </StackPanel>-->
+        
 
-            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="SimpelTray">
-            
-            </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="SimpelTray"/>
 
         <StackPanel Grid.Row="0" Grid.Column="0" Name="ButtonsPanel" Orientation="Horizontal">
 
@@ -272,10 +270,10 @@
 
 
 
-        
-        
+
+
         <Canvas x:Name="adornerLayer" Visibility="Collapsed"/>
-       
+
     </Grid>
 
 </Window>

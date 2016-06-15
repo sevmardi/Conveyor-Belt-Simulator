@@ -60,9 +60,7 @@ namespace LaneSimulator.UIGates
         #endregion
 
         #region props
-        public double Acceleration { get; set; }
 
-        public double Speed { get; set; }
 
         public TranslateTransform TrayTranslateTransform { get; set; }
         #endregion
@@ -71,9 +69,6 @@ namespace LaneSimulator.UIGates
         public SmallTray() : this(new Gates.Trays.SmallTray()){}
 
         public SmallTray(Gates.AbstractGate abgate) : base(abgate, "M 17,17 v 30 h 15 a 2,2 1 0 0 0,-30 h -15") { }
-
-   
-
     }
 
 
@@ -86,4 +81,6 @@ namespace LaneSimulator.UIGates
             //
         }
     }
+
+
 }

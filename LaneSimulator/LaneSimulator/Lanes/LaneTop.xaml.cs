@@ -2492,6 +2492,7 @@ namespace LaneSimulator.Lanes
                     _1702_S3T.Fill = new SolidColorBrush(Colors.Red);
 
                     ContactPlcBtn.IsEnabled = false;
+                    TestTimer();
                 }
 
             }
@@ -2508,15 +2509,12 @@ namespace LaneSimulator.Lanes
 
             NumberOfClicksToProduceTray(count);
 
-            for (int i = 0; i < count; i++)
-            {
-                TheEnclosingMethod();
-                _element = new SimpleTray();
-                var sb1 = FindResource("SectionA_SB") as Storyboard;
-                sb1.Begin(_element, true);
-                TestGrid.Children.Add(_element);
+            _element = new SimpleTray();
+            var sb1 = FindResource("SectionA_SB") as Storyboard;
+            sb1.Begin(_element, true);
+           
+            TestGrid.Children.Add(_element);
                 
-            }
 
             //  TestGrid.Children.Add(_element);
             //  this.TestGrid.Children.Add((UIElement)_element);
@@ -2549,6 +2547,7 @@ namespace LaneSimulator.Lanes
             
         }
 
+        
         public void NumberOfClicksToProduceTray(int count)
         {
             MouseClickOfUser.Text = count.ToString();
@@ -2585,13 +2584,7 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { AddTrayBtn.IsEnabled = true; }));
         }
 
-        private void SectionA_SB_Completed(object sender, EventArgs e)
-        {
-            var sb2 = FindResource("SectionB_SB") as Storyboard;
-            sb2.Begin();
-        }   
-
-
+   
         // 1- select a sensor
         // 2. check the name 
         // 3. send the name along for saving. 
@@ -2632,17 +2625,36 @@ namespace LaneSimulator.Lanes
         }
 
 
-        public async void TheEnclosingMethod()
-        {
-          //  tbkLabel.Text = "two seconds delay";
 
-            await Task.Delay(5000);
-      //      var page = new Page2();
-        //    page.Show();
+        public void TestTimer()
+        {
+            var aTimer = new Timer();
+            aTimer.Elapsed += new ElapsedEventHandler(MakeTrayBtn2_Click);
+            aTimer.Interval = 4100;
+            aTimer.Enabled = true;
+            aTimer.AutoReset = true;
+            // aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
+        }
+
+        private void MakeTrayBtn2_Click(object sender, ElapsedEventArgs e)
+        {
+            if (count > 0)
+            {
+                // 1. kijk of er ruimte is om een bak erbij te doen
+                // 2. zo wel, dan kan een nieuwe bak aanmaken. 
+                // count --;
+                // laat zien in text box. 
+                // zo niet, dan geberut er niks. 
+            }
+            else
+                MessageBox.Show("ncie");
+
+
         }
 
 
-        
+    
+
     }
 
 

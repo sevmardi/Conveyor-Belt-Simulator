@@ -51,6 +51,7 @@ namespace LaneSimulator.conveyors
         }
 
         public double Speed { get; set; }
+        public double Acceleration { get; set; }
         #endregion
 
         #region methods

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\obj\Debug\
 LaneSimulator
 none
 false
 DEBUG;TRACE
-C:\Users\HUNTED23\Documents\GitHub\scarabee_lane_sim\LaneSimulator\LaneSimulator\App.xaml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\scarabee_lane_sim\LaneSimulator\LaneSimulator\App.xaml
 19-515332766
 
-42592041319
-1547792937
+42-1995606194
+15258224424
 conveyors\SectionA.xaml;conveyors\SectionB.xaml;conveyors\SectionC.xaml;conveyors\SectionD.xaml;conveyors\SectionE.xaml;conveyors\SectionF.xaml;UIGates\Gate.xaml;Lanes\LaneBottom.xaml;Lanes\LaneTop.xaml;MainWindow.xaml;UIGates\Sensor.xaml;UIGates\SimpleTray.xaml;Utilities\DragDrop\ObjectDragDropAdorner.xaml;Utilities\Selector\ObjectSelector.xaml;Utilities\ShadowBox\ShadowBox.xaml;Utilities\SSLCanvas.xaml;Views\AttributesPanel.xaml;Views\ConnectPanel.xaml;Views\SchedulerPanel.xaml;
 
-True
+False
 
