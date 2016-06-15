@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,6 +13,7 @@ using LaneSimulator.Views;
 using Snap7;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Shapes;
 using Timer = System.Timers.Timer;
 
 namespace LaneSimulator.Lanes
@@ -28,7 +29,7 @@ namespace LaneSimulator.Lanes
         private Storyboard _storyboard;
         private AttributesPanel _attributesPanel;
         static int count = 0;
-
+        List<Sensor> SensorList = new List<Sensor>();
         private FrameworkElement _element;
      
         //private SmallTray _smallTray;
@@ -40,17 +41,42 @@ namespace LaneSimulator.Lanes
             _plcCalls = new PlcCalls();
             //_smallTray = new SmallTray();
             _storyboard = new Storyboard();
-          
+            InitializeSensors();
+        }
+
+        private void InitializeSensors()
+        {
+            //SensorList.Add(new Sensor());
+            //SensorList.Add(new Sensor());
+            //SensorList.Add(new Sensor());
+
+            //foreach (var sensor in SensorList)
+            //{
+            //    var ell = new Sensor()
+            //    {
+            //        Width = 2,
+            //        Height = 2,
+            //     //   Stroke = new SolidColorBrush(Colors.White),
+            //       // StrokeThickness = 2,
+            //        //     Fill = new SolidColorBrush(kart.BodyColor2),
+            //        Margin = new Thickness(-8, -8, 8, 8),
+            //        HorizontalAlignment = HorizontalAlignment.Left,
+            //        VerticalAlignment = VerticalAlignment.Top
+            //    };
+
+            //    TestGrid.Children.Add(sensor);
+            //}
+
         }
 
         public void Executor()
         {
-            _0102_S1_TurnOff();
-            SecondSensorTimer();
-            ThirdSensor();
-            FourthSensor();
-            FifthSensor();
-            SixthSensor();
+            //_0102_S1_TurnOff();
+            //SecondSensorTimer();
+            //ThirdSensor();
+            //FourthSensor();
+            //FifthSensor();
+            //SixthSensor();
         }
 
 
@@ -2614,7 +2640,10 @@ namespace LaneSimulator.Lanes
             // 3. send the name along for saving. 
             _attributesPanel = new AttributesPanel();
 
-            _attributesPanel.ShowPanel();
+            _attributesPanel.Show();
+
+         //   _0102_S1_TurnOff();
+
 
           //  _0102_S1_TurnOff();
 

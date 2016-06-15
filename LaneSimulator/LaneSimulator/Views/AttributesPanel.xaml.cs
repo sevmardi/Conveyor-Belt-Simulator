@@ -26,8 +26,7 @@ namespace LaneSimulator.Views
 
         private void WriteIoBtn(object sender, RoutedEventArgs e)
         {
-
-            s = Atri.Text;
+             s = Atri.Text;
             //MessageBox.Show(s);
             if (s == "True")
             {
@@ -36,8 +35,11 @@ namespace LaneSimulator.Views
             }
             if (s == "False")
             {
+              
+
+           //    MessageBox.Show(Atri.Text);
                 Buffer[0] = 0;
-                _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0102_S1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+                 _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0102_S1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
             }
 
             //else
@@ -57,10 +59,10 @@ namespace LaneSimulator.Views
         }
 
 
-        public void ShowPanel()
-        {
-            AttributesPanel atrPanel = new AttributesPanel();
-            atrPanel.Show();
-        }
+        //public void ShowPanel()
+        //{
+        //    AttributesPanel atrPanel = new AttributesPanel();
+        //    atrPanel.Show();
+        //}
     }
 }
