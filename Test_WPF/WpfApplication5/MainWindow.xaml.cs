@@ -45,47 +45,16 @@ namespace WpfApplication5
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            //ObjectToMove move = new ObjectToMove();
-
-            Ellipse ellipse = new Ellipse();
-          //  ellipse.Fill = Color;
-            ellipse.Width = 40.0;
-            ellipse.Height = 40.0;
-            ellipse.Stroke = (Brush)Brushes.Black;
-            ellipse.StrokeThickness = 1.5;
+            ObjectToMove move = new ObjectToMove();
 
 
-            DoubleAnimationUsingPath path1 = new DoubleAnimationUsingPath();
 
 
-            this.Animation_Path.Children.Add((UIElement)ellipse);
-            Canvas.SetLeft((UIElement)ellipse, 350.0);
-            Canvas.SetTop((UIElement)ellipse, 4.0);
-            this.Slist.Add(_storyboard);
-
-            _storyboard = this.Slist[this.Slist.Count - 1];
-
-            // storyboard.Completed += new EventHandler(this.storyboard_Completed);
-
-            DoubleAnimation doubleAnimation = new DoubleAnimation(1000, 0.0, (Duration)TimeSpan.FromSeconds(10));
 
 
-            Storyboard.SetTarget((DependencyObject)doubleAnimation, (DependencyObject)ellipse);
-            Storyboard.SetTargetProperty((DependencyObject)doubleAnimation, new PropertyPath((object)Canvas.LeftProperty));
 
-            _storyboard.Children.Add((Timeline)doubleAnimation);
-
-            if (Slist.Count == 0)
-            {
-                _storyboard.Begin();
-            }
-            else if (this.Ispaused)
-            {
-                _storyboard.Begin();
-                _storyboard.Pause();
-            }
-            else
-                _storyboard.Begin();
+            Animation_Path.Children.Add((UIElement)move);
+     
 
 
         }

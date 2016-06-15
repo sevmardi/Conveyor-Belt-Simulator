@@ -243,11 +243,10 @@
             <TextBlock Name="lblAppCopyright" Margin="10,0,0,0" />
             <TextBlock Name="lblLink"  Margin="10,0,0,0"></TextBlock>
         </StackPanel>
+
+        <!--<Canvas x:Name="AnimationPannel" Height="175" Canvas.Left="-325" Canvas.Top="425" Width="1395" />-->
+        
         <TextBlock Name="lblInfoLine" Background="#EEEEEE" Grid.Row="2" Grid.ColumnSpan="2"  Padding="10,0,0,0" Visibility="Hidden" />
-
-
-
-
 
         <Canvas x:Name="adornerLayer" Visibility="Collapsed"/>
 
