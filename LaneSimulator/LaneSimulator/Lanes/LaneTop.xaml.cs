@@ -2508,13 +2508,20 @@ namespace LaneSimulator.Lanes
             count++;
 
             NumberOfClicksToProduceTray(count);
-
-            _element = new SimpleTray();
-            var sb1 = FindResource("SectionA_SB") as Storyboard;
-            sb1.Begin(_element, true);
            
-            TestGrid.Children.Add(_element);
-                
+
+            //Task.Delay(2000).ContinueWith(_ =>
+            //{
+               
+            //});
+
+            //_element = new SimpleTray();
+            //var sb1 = FindResource("SectionA_SB") as Storyboard;
+            //sb1.Begin(_element, true);
+
+            //TestGrid.Children.Add(_element);
+
+  
 
             //  TestGrid.Children.Add(_element);
             //  this.TestGrid.Children.Add((UIElement)_element);
@@ -2550,7 +2557,9 @@ namespace LaneSimulator.Lanes
         
         public void NumberOfClicksToProduceTray(int count)
         {
-            MouseClickOfUser.Text = count.ToString();
+
+            Dispatcher.Invoke((Action)(() => { MouseClickOfUser.Text = count.ToString(); }));
+            
         }
 
 
@@ -2585,12 +2594,12 @@ namespace LaneSimulator.Lanes
         }
 
    
-        // 1- select a sensor
-        // 2. check the name 
-        // 3. send the name along for saving. 
+     
         private void Grid_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
-
+            // 1- select a sensor
+            // 2. check the name 
+            // 3. send the name along for saving. 
             _attributesPanel = new AttributesPanel();
 
             _attributesPanel.ShowPanel();
@@ -2630,7 +2639,7 @@ namespace LaneSimulator.Lanes
         {
             var aTimer = new Timer();
             aTimer.Elapsed += new ElapsedEventHandler(MakeTrayBtn2_Click);
-            aTimer.Interval = 4100;
+            aTimer.Interval = 1500;
             aTimer.Enabled = true;
             aTimer.AutoReset = true;
             // aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
@@ -2640,14 +2649,23 @@ namespace LaneSimulator.Lanes
         {
             if (count > 0)
             {
-                // 1. kijk of er ruimte is om een bak erbij te doen
-                // 2. zo wel, dan kan een nieuwe bak aanmaken. 
-                // count --;
-                // laat zien in text box. 
-                // zo niet, dan geberut er niks. 
+                Dispatcher.Invoke((Action)(() =>
+                {
+                    _element = new SimpleTray();
+                    var sb1 = FindResource("SectionA_SB") as Storyboard;
+                    sb1.Begin(_element, true);
+                    TestGrid.Children.Add(_element);
+                    count--;
+                    NumberOfClicksToProduceTray(count);
+                }));
+             
+                    // 1. kijk of er ruimte is om een bak erbij te doen
+                    // 2. zo wel, dan kan een nieuwe bak aanmaken. 
+                    // 3. count --;
+                    // 4. NumberOfClicksToProduceTray(count);
+                    // 5. laat zien in text box. 
+                    // 6. zo niet, dan geberut er niks. 
             }
-            else
-                MessageBox.Show("ncie");
 
 
         }
