@@ -20,7 +20,7 @@ namespace LaneSimulator.Lanes
     /// <summary>
     /// Interaction logic for LaneTop.xaml
     /// </summary>
-    public partial class LaneTop : UserControl
+    public partial class LaneTop
     {
         private readonly PlcCalls _plcCalls;
         private static readonly byte[] Buffer = new byte[500];
@@ -2496,7 +2496,21 @@ namespace LaneSimulator.Lanes
                 }
 
             }
- 
+
+
+        /// <summary>
+        /// Scheduler class 
+        /// </summary>
+        /// <param name="trays"></param>
+        public void spraier(int trays)
+        {
+            for (int i = 0; i < trays; i++)
+            {
+                count++;
+                NumberOfClicksToProduceTray(count);
+            }
+        }
+       
         private void MakeTrayBtn_Click(object sender, RoutedEventArgs e)
         {
 
@@ -2505,8 +2519,8 @@ namespace LaneSimulator.Lanes
             //sb1.Begin(_element, true);
             //TestGrid.Children.Add(_element);
 
-            count++;
 
+            count++;
             NumberOfClicksToProduceTray(count);
            
 
@@ -2557,9 +2571,7 @@ namespace LaneSimulator.Lanes
         
         public void NumberOfClicksToProduceTray(int count)
         {
-
             Dispatcher.Invoke((Action)(() => { MouseClickOfUser.Text = count.ToString(); }));
-            
         }
 
 
@@ -2645,6 +2657,7 @@ namespace LaneSimulator.Lanes
             // aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
         }
 
+       
         private void MakeTrayBtn2_Click(object sender, ElapsedEventArgs e)
         {
             if (count > 0)
@@ -2671,8 +2684,11 @@ namespace LaneSimulator.Lanes
         }
 
 
-    
-
+        private void SchedulerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            SchedulerPanel schedulerPanel = new SchedulerPanel();
+            schedulerPanel.Show();
+        }
     }
 
 

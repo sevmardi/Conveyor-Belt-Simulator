@@ -820,7 +820,7 @@
 
         <Button Content="Contact PLC" Canvas.Left="569" Canvas.Top="88.333" Width="75" Click="ButtonBase_OnClick" x:Name="ContactPlcBtn" d:IsLocked="True"/>
         <Button Content="Add SmallTray" Canvas.Left="201.833" Canvas.Top="88.333" Width="75" Click="MakeTrayBtn_Click" RenderTransformOrigin="0.067,0.75" x:Name="AddTrayBtn" d:IsLocked="True"/>
-        <Button Content="Scheduler" Canvas.Left="326" Canvas.Top="88.333" Width="75" Click="StopSimBtn_Click" RenderTransformOrigin="0.067,0.75" d:IsLocked="True"/>
+        <Button Content="Scheduler" Canvas.Left="326" Canvas.Top="88.333" Width="75" Click="SchedulerBtn_Click" RenderTransformOrigin="0.067,0.75" d:IsLocked="True"/>
         <Button Content="Stop" Canvas.Left="441.167" Canvas.Top="88.333" Width="75" Click="StopSimBtn_Click" RenderTransformOrigin="0.067,0.75" d:IsLocked="True"/>
 
         <Canvas x:Name="AnimationPannel" Height="175" Canvas.Left="-325" Canvas.Top="425" Width="1395" d:IsLocked="True"  />

@@ -34,6 +34,7 @@ namespace LaneSimulator.Views
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
             _trays = (int) bitSlider.Value;
+            _laneTop.spraier(_trays);
              Close();
         }
 
