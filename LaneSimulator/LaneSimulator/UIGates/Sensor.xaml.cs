@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
+using LaneSimulator.conveyors;
 
 namespace LaneSimulator.UIGates
 {
@@ -48,10 +49,20 @@ namespace LaneSimulator.UIGates
         public double Y { get; set; }
         
         public static DependencyProperty SizeProperty = DependencyProperty.Register("Size", typeof(double), typeof(Sensor), new PropertyMetadata(new PropertyChangedCallback(SizeChanged)));
-       
+       // public static DependencyProperty CollisionDetected = DependencyProperty.Register("CollisionDetected", typeof(bool), typeof(Sensor), new PropertyMetadata(new PropertyChangedCallback(SizeChanged)));
+
+        public static readonly DependencyProperty CollisionDetectedDependencyProperty = DependencyProperty.Register("CollisionDetected", typeof(bool), typeof(Sensor), new PropertyMetadata(false));
+
         public ScaleTransform SensorScaleTransform { get; set; }
         public TranslateTransform SensorTranslateTransform { get; set; }
         public RotateTransform SensorRotateTransform { get; set; }
+
+
+        public bool CollisionDetected
+        {
+            get { return (bool)GetValue(CollisionDetectedDependencyProperty); }
+            set { SetValue(CollisionDetectedDependencyProperty, value); }
+        }
 
         public double Size
         {
@@ -76,5 +87,7 @@ namespace LaneSimulator.UIGates
            Timer.Stop();
            Timer.Start();
         }
+
+
     }
 }

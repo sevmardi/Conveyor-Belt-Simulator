@@ -820,16 +820,16 @@
 
         </Canvas>
 
-        <Button Content="Contact PLC" Canvas.Left="569" Canvas.Top="88.333" Width="75" Click="ButtonBase_OnClick" x:Name="ContactPlcBtn" d:IsLocked="True"/>
-        <Button Content="Add SmallTray" Canvas.Left="201.833" Canvas.Top="88.333" Width="75" Click="MakeTrayBtn_Click" RenderTransformOrigin="0.067,0.75" x:Name="AddTrayBtn" d:IsLocked="True"/>
-        <Button Content="Scheduler" Canvas.Left="326" Canvas.Top="88.333" Width="75" Click="SchedulerBtn_Click" RenderTransformOrigin="0.067,0.75" d:IsLocked="True"/>
-        <Button Content="Stop" Canvas.Left="441.167" Canvas.Top="88.333" Width="75" Click="StopSimBtn_Click" RenderTransformOrigin="0.067,0.75" d:IsLocked="True"/>
+        <Button Content="Contact PLC" Canvas.Left="569" Canvas.Top="88.333" Width="75" Click="ButtonBase_OnClick" x:Name="ContactPlcBtn"/>
+        <Button Content="Add SmallTray" Canvas.Left="201.833" Canvas.Top="88.333" Width="75" Click="MakeTrayBtn_Click" RenderTransformOrigin="0.067,0.75" x:Name="AddTrayBtn"/>
+        <Button  Name="Scheduler"    Content="Scheduler" Canvas.Left="326" Canvas.Top="88.333" Width="75" Click="SchedulerBtn_Click" RenderTransformOrigin="0.067,0.75"/>
+        <Button Content="Stop" Canvas.Left="441.167" Canvas.Top="88.333" Width="75" Click="StopSimBtn_Click" RenderTransformOrigin="0.067,0.75"/>
 
-        <Canvas x:Name="AnimationPannel" Height="175" Canvas.Left="-325" Canvas.Top="425" Width="1395" d:IsLocked="True"  />
-        <Path x:Name="LongPathA" Data="M-294.66667,425 L-288.66632,393.66667 -264.66464,353.66588 -235.32901,331.66522 -181.32602,317.33128 -125.32307,327.33176 -101.6554,341.33199 -61.98609,378.33258 -20.650348,382.66599 27.019488,382.66599 63.354985,382.66599 99.690847,382.66599 142.02637,382.66599 225.69802,382.66599 269.03357,382.66599 314.70293,382.66599 369.37247,382.66599 421.37586,382.66599 471.0458,382.66599 511.04818,382.66599 620.72137,382.66599 686.05823,382.66599 815.39919,382.66599 864.06906,381.99931&#xA;898.73775,354.66554 922.07211,316.66492" Height="108.333" Canvas.Left="-295.5" Stretch="Fill" Canvas.Top="316.667" Width="1216.667" d:IsLocked="True" />
+        <Canvas x:Name="AnimationPannel" Height="175" Canvas.Left="-325" Canvas.Top="425" Width="1395"  />
+        <Path x:Name="LongPathA" Data="M-294.66667,425 L-288.66632,393.66667 -264.66464,353.66588 -235.32901,331.66522 -181.32602,317.33128 -125.32307,327.33176 -101.6554,341.33199 -61.98609,378.33258 -20.650348,382.66599 27.019488,382.66599 63.354985,382.66599 99.690847,382.66599 142.02637,382.66599 225.69802,382.66599 269.03357,382.66599 314.70293,382.66599 369.37247,382.66599 421.37586,382.66599 471.0458,382.66599 511.04818,382.66599 620.72137,382.66599 686.05823,382.66599 815.39919,382.66599 864.06906,381.99931&#xA;898.73775,354.66554 922.07211,316.66492" Height="108.333" Canvas.Left="-295.5" Stretch="Fill" Canvas.Top="316.667" Width="1216.667" />
 
 
-        <Canvas x:Name="Paths" d:IsLocked="True">
+        <Canvas x:Name="Paths">
             <Grid x:Name="TestGrid" Height="107.938" Canvas.Left="-398.625" Canvas.Top="375.75" Width="156.25">
                 <Path x:Name="SectionA_Path" Data="M-295.625,425.9375 L-287.33333,392.33283 -264.00131,353.66686 -227.66949,328 -182.67079,318.00005 -139.38024,319.12506" Stretch="Fill" Margin="-31,10,31,-10"/>
             </Grid>
