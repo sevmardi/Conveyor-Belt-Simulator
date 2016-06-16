@@ -35,7 +35,6 @@ namespace LaneSimulator.PLC
             MessageBox.Show(Client.Connected() ? "Connection Established" : "Something went wrong");
         }
 
-
         /// <summary>
         /// This executes a method to make contact with the PLC
         /// </summary>
@@ -44,8 +43,7 @@ namespace LaneSimulator.PLC
         /// <param name="slot"></param>
         public void ConnectToPlc(string ipAdress, int rack, int slot)
         {
-            //Client.ConnectTo(ipAdress, rack, slot);
-            Client.ConnectTo("192.168.2.16", 0, 0);
+            Client.ConnectTo(ipAdress, rack, slot);
             MessageBox.Show(Client.Connected() ? "Connection Established" : "Something went wrong");
         }
 

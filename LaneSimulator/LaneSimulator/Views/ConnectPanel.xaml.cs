@@ -29,46 +29,10 @@ namespace LaneSimulator.Views
                 DialogResult = true;
                 Close();
               
-                _plcCalls.StartUp();
-                _plcCalls.SectionA();
-            }
-
-            else
-            {
-                MessageBox.Show("Not right");
-                
+                _plcCalls.StartUp();  
             }
 
         }
-
-        //public  bool ConnectPLC()
-        //{
-
-        //    bool connected = false;
-
-        //    int Result;
-        //    int Rack = System.Convert.ToInt32(TxtRack.Text);
-        //    int Slot = System.Convert.ToInt32(TxtSlot.Text);
-
-        //    Result = Client.ConnectTo(TxtIP.Text, Rack, Slot);
-        //    // Make connection with PLC using IP, slot, etc..
-        //    if (Result == 0)
-        //    {
-        //        DialogResult = true;
-        //        MessageBox.Show("welcome");
-        //        this.Close();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Not right");
-
-        //    }
-
-        //    DialogResult = true;
-        //    this.Close();
-
-        //    return connected;
-        //} 
 
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

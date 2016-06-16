@@ -43,7 +43,7 @@ namespace LaneSimulator.Lanes
             _plcCalls = new PlcCalls();
             //_smallTray = new SmallTray();
             _storyboard = new Storyboard();
-            InitializeSensors();
+          
             TestTimer();
             
         }
@@ -2449,6 +2449,29 @@ namespace LaneSimulator.Lanes
 
             aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
         }
+
+
+        protected void _0301_S2_Timer()
+        {
+            Timer aTimer = new Timer();
+         //   aTimer.Elapsed += new ElapsedEventHandler(_0301_S1_TurnOff);
+            aTimer.Interval = 4500;
+            aTimer.Enabled = true;
+
+            aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
+        }
+
+
+        protected void _0301_S2_Timer_Write()
+        {
+            Timer aTimer = new Timer();
+          //  aTimer.Elapsed += new ElapsedEventHandler(_0301_S1_TurnOn());
+            aTimer.Interval = 1000;
+            aTimer.Enabled = true;
+
+            aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
+        }
+
 
         #endregion
 

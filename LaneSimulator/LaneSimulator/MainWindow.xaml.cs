@@ -203,7 +203,11 @@ namespace LaneSimulator
             }
         }
 
-
+        /// <summary>
+        /// Auth screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             DisplayConnectScreen();
@@ -214,11 +218,11 @@ namespace LaneSimulator
             ConnectPanel connectpanel = new ConnectPanel();
             connectpanel.Owner = this;
             connectpanel.ShowDialog();
-          
+
             if (connectpanel.DialogResult.HasValue && connectpanel.DialogResult.Value)
             {
                 //do something
-                MessageBox.Show("Connected!");
+                //   MessageBox.Show("Connected!");
             }
             else
 
@@ -288,12 +292,9 @@ namespace LaneSimulator
         {
             // only the orginal full window 
            
-            // e.Cancel = !QuerySave();
+         
             _plcCalls.Disconnect();
-            //StopStoryboard1();
-            //StopStorboard2();
-            //StopStorboard3();
-            //StopStoryboard4();
+   
             //_plcCalls.StopBtnInput();
             //MessageBox.Show("sure thing buddy");
         }
