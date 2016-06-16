@@ -18,8 +18,8 @@ namespace LaneSimulator.Utilities.Selector
         {
             InitializeComponent();
 
-            SmallTray.DataContext = new SmallTray();
-            LargTray.DataContext = new LargeTray();
+          //  SmallTray.DataContext = new SmallTray();
+           // LargTray.DataContext = new LargeTray();
             SimpleTray.DataContext = new SimpleTray();
         }
 

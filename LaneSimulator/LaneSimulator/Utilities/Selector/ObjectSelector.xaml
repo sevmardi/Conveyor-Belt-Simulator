@@ -76,11 +76,11 @@
 
             <Expander Header="Trays" IsExpanded="True">
                 <StackPanel Orientation="Vertical">
-                    <gates:SmallTray x:Name="SmallTray" VerticalAlignment="Top"
+                    <!--<gates:SmallTray x:Name="SmallTray" VerticalAlignment="Top"
                                        dragDrop:DragDropHelper.IsDragSource="true"
                                        dragDrop:DragDropHelper.DragDropControl="{StaticResource ObjectAdorner}"
                                        dragDrop:DragDropHelper.DropTarget="SSLCanvas"
-                                       dragDrop:DragDropHelper.AdornerLayer="adornerLayer" />
+                                       dragDrop:DragDropHelper.AdornerLayer="adornerLayer" />-->
 
                      <gates:SimpleTray x:Name="SimpleTray"
                                        dragDrop:DragDropHelper.IsDragSource="true"
@@ -89,11 +89,11 @@
                                        dragDrop:DragDropHelper.AdornerLayer="adornerLayer"
                                        />
 
-                    <gates:LargeTray x:Name="LargTray" VerticalAlignment="Top"
+                    <!--<gates:LargeTray x:Name="LargTray" VerticalAlignment="Top"
                                        dragDrop:DragDropHelper.IsDragSource="true"
                                        dragDrop:DragDropHelper.DragDropControl="{StaticResource ObjectAdorner}"
                                        dragDrop:DragDropHelper.DropTarget="SSLCanvas"
-                                       dragDrop:DragDropHelper.AdornerLayer="adornerLayer" />
+                                       dragDrop:DragDropHelper.AdornerLayer="adornerLayer" />-->
                     
 
                 </StackPanel>

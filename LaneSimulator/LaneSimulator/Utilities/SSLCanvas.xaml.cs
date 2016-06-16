@@ -7,6 +7,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 using Gates;
+using LaneSimulator.Lanes;
 using LaneSimulator.Model;
 using LaneSimulator.UIGates;
 
@@ -34,7 +35,7 @@ namespace LaneSimulator.Utilities
         private const double ANGLE_SNAP_DEG = 10;
         private const double DELTA_SNAP = 5;
         private const double GRID_SIZE = 32;
-
+        private LaneTop _laneTop;
 
 
         /// <summary>
@@ -50,10 +51,20 @@ namespace LaneSimulator.Utilities
 
         public SSLCanvas()
         {
+            //InitializeLaneTop();
             InitializeComponent();
             Timer1.Interval = new TimeSpan(0, 0, 0, 0, 100);
             Timer1.Tick += new EventHandler(this.Timer1_Tick);
         }
+
+//        private void InitializeLaneTop()
+//        {
+//            _laneTop = new LaneTop();
+//            GC.VerticalAlignment = VerticalAlignment.Center;
+//            GC.HorizontalAlignment = HorizontalAlignment.Left;
+//            GC.Children.Add(_laneTop);
+//            UpdateLayout();
+//        }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
@@ -258,11 +269,6 @@ namespace LaneSimulator.Utilities
 
         }
 
-        public void AddObject(SmallTray smallTray)
-        {
-            smallTray = new SmallTray();
-
-        }
 
         public enum SELECTED_GATES
         {

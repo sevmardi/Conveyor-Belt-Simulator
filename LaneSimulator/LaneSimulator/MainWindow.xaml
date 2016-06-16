@@ -5,7 +5,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ec="http://schemas.microsoft.com/expression/2010/controls" mc:Ignorable="d"
     x:Class="LaneSimulator.MainWindow"
-    Loaded="Window_Loaded"
+    
     xmlns:selector="clr-namespace:LaneSimulator.Utilities.Selector"
     xmlns:local="clr-namespace:LaneSimulator"
     xmlns:lane="clr-namespace:LaneSimulator.Lanes"
@@ -127,9 +127,9 @@
         </StackPanel>-->
 
 
-        <Canvas Grid.Row="0" Grid.Column="0"  Name="Sensor2">
+        <!--<Canvas Grid.Row="0" Grid.Column="0"  Name="Sensor2">
             <uiGates:Sensor  x:Name="Sensor1" Canvas.Left="540" Canvas.Top="160" Height="30" Width="30"/>
-        </Canvas>
+        </Canvas>-->
 
         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="SimpelTray"/>
 
@@ -218,22 +218,7 @@
 
 
             </ToolBar>
-            <ToolBar Height="28" Name="tbVis">
-                <ToggleButton Name="btnShowHideToolbars" IsChecked="True" Style="{StaticResource TgButtonStyle}" ToolTip="Show or Hide Tools" Checked="btnShowHideToolbars_Checked" Unchecked="btnShowHideToolbars_Unchecked">
-                    <Image Source="Images/BehindTextHS.png" />
-                </ToggleButton>
-                <ToggleButton Name="btnShowTrueFalse" IsChecked="True" ToolTip="Show or Hide True/False Coloration" Checked="btnShowTrueFalse_Checked" Unchecked="btnShowTrueFalse_Unchecked">
-                    <Image Source="Images/wire_color.png">
-                        <Image.RenderTransform>
-                            <RotateTransform Angle="90" CenterX="8" CenterY="8"  />
-                        </Image.RenderTransform>
-                    </Image>
-                </ToggleButton>
-                <ToggleButton Name="btnUserMode" ToolTip="End-User Mode" Checked="btnUserMode_Checked" Unchecked="btnUserMode_Unchecked">
-                    <Image Source="Images/ProtectFormHS.png" />
-                </ToggleButton>
 
-            </ToolBar>
 
         </ToolBarTray>
 

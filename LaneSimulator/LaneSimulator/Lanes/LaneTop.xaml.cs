@@ -2560,47 +2560,17 @@ namespace LaneSimulator.Lanes
            
             for (int i = 0; i < trays; i++)
             {
-                scheudler++;
-              //  NumberOfClicksToProduceTray(count);
+                count++;
+                NumberOfClicksToProduceTray(count);
             }
         }
        
         private void MakeTrayBtn_Click(object sender, RoutedEventArgs e)
         {
-
-            //_element = new SimpleTray();
-            //var sb1 = FindResource("SectionA_SB") as Storyboard;
-            //sb1.Begin(_element, true);
-            //TestGrid.Children.Add(_element);
-
-
             count++;
             NumberOfClicksToProduceTray(count);
             Scheduler.IsEnabled = false;
-
-            //Task.Delay(2000).ContinueWith(_ =>
-            //{
-
-            //});
-
-            //_element = new SimpleTray();
-            //var sb1 = FindResource("SectionA_SB") as Storyboard;
-            //sb1.Begin(_element, true);
-
-            //TestGrid.Children.Add(_element);
-
-
-
-            //  TestGrid.Children.Add(_element);
-            //  this.TestGrid.Children.Add((UIElement)_element);
-
-
-            //sb1.Duration = TimeSpan.FromSeconds(3);
-            //   sb1.Completed += new EventHandler(this.storyboard_Completed);
-
             //  Executor();
-            // AddTrayBtn.IsEnabled = false;
-            // addbuttontimer();
         }
 
         private void storyboard_Completed(object sender, EventArgs e)
@@ -2684,18 +2654,6 @@ namespace LaneSimulator.Lanes
 //            }
         }
 
-        public static void DelayAction(int millisecond, Action action)
-        {
-            var timer = new DispatcherTimer();
-            timer.Tick += delegate
-            {
-                action.Invoke();
-                timer.Stop();
-            };
-
-            timer.Interval = TimeSpan.FromMilliseconds(millisecond);
-            timer.Start();
-        }
 
 
 

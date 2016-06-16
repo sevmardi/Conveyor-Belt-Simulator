@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Globalization;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -41,6 +42,7 @@ namespace LaneSimulator
         public MainWindow()
         {
             InitializeComponent();
+           
             Timer1.Interval = new TimeSpan(0, 0, 0, 0, 100);
             Timer1.Tick += new EventHandler(this.Timer1_Tick);
             Closing += new CancelEventHandler(MainWindow1Closing);
@@ -49,6 +51,28 @@ namespace LaneSimulator
             _sslCanvas = new Utilities.SSLCanvas();
      
            _plcCalls = new PlcCalls();
+
+
+
+
+           AssemblyTitleAttribute title;
+           AssemblyCopyrightAttribute copyright;
+           Assembly aAssembly = Assembly.GetExecutingAssembly();
+
+
+           title = (AssemblyTitleAttribute)
+                   AssemblyTitleAttribute.GetCustomAttribute(
+               aAssembly, typeof(AssemblyTitleAttribute));
+
+           copyright = (AssemblyCopyrightAttribute)
+                   AssemblyCopyrightAttribute.GetCustomAttribute(
+               aAssembly, typeof(AssemblyCopyrightAttribute));
+           APP_TITLE = title.Title;
+           APP_VERSION = aAssembly.GetName().Version.ToString();
+           APP_COPYRIGHT = copyright.Copyright;
+
+
+
 
            // everybody gets view keys
         //   this.PreviewKeyDown += new KeyEventHandler(Window1_View_KeyDown);
@@ -115,17 +139,6 @@ namespace LaneSimulator
             Grid.SetColumn(timerBox, 1);
             Grid.SetRow(timerBox, 1);
  
-            // SSL
-            //Grid1.Children.Remove(LaneTop);
-            //SSL = new ShadowBox();
-            //SSL.Margin = new Thickness(20, 20, 175, 20);
-            //SSL.Children.Add(LaneTop);
-            //LaneTop.Background = Brushes.Transparent;
-            //SSL.VerticalAlignment = VerticalAlignment.Center;
-            //SSL.HorizontalAlignment = HorizontalAlignment.Center;
-            //Grid1.Children.Add(SSL);
-            //Grid.SetColumn(SSL, 1);
-            //Grid.SetRow(SSL, 1);
 
             Grid1.Children.Remove(ButtonsPanel);
             btnsPanelBox = new ShadowBox();
@@ -176,17 +189,18 @@ namespace LaneSimulator
                }
            };
 
+           InfoLine.GetInstance().PropertyChanged += InfoLine_PropertyChanged;
 
         }
 
         private void InitializeLaneTop()
         {
-           _laneTop = new LaneTop();
-           SSLCanvas.GC.VerticalAlignment = VerticalAlignment.Center;
-           SSLCanvas.GC.HorizontalAlignment = HorizontalAlignment.Left;
-           SSLCanvas.GC.Children.Add(_laneTop);
-           SSLCanvas.UpdateLayout();
-            
+            _laneTop = new LaneTop();
+            SSLCanvas.GC.VerticalAlignment = VerticalAlignment.Center;
+            SSLCanvas.GC.HorizontalAlignment = HorizontalAlignment.Left;
+            SSLCanvas.GC.Children.Add(_laneTop);
+            SSLCanvas.UpdateLayout();
+
         }
 
         private void DragDropHelper_ItemDropped(object sender, DragDropEventArgs e)
@@ -233,7 +247,6 @@ namespace LaneSimulator
         {
             T = 0.0;
             Timer_Lable.Text = "0.00";
-        //    tray_Wrap.Children.Clear();
             Total();
         }
 
@@ -332,6 +345,7 @@ namespace LaneSimulator
 
         private void btnOpen_Click(object sender, RoutedEventArgs e)
         {
+
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)

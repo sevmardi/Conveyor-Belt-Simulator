@@ -16,7 +16,7 @@ namespace LaneSimulator.UIGates
         private bool _sel;
         protected Gates.AbstractGate _gate;
 
-        public Gate()
+        public Gate(Gates.AbstractGate gate)
         {
             InitializeComponent();
 
@@ -24,6 +24,7 @@ namespace LaneSimulator.UIGates
             glow.ShadowDepth = 0;
             glow.Color = Colors.Blue;
             glow.BlurRadius = 5;
+            _gate = gate;
 
          //   IsReadOnly = false;
         }

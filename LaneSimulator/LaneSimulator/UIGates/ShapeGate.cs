@@ -14,7 +14,7 @@ namespace LaneSimulator.UIGates
         private Path ph;
 
 
-        public ShapeGate(Gates.AbstractGate abgate, string path)
+        public ShapeGate(Gates.AbstractGate abgate, string path) : base(abgate)
         {
             ph = new Path();
             ph.StrokeEndLineCap = PenLineCap.Square;
