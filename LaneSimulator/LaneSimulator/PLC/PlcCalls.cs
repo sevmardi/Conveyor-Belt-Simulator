@@ -587,8 +587,23 @@ namespace LaneSimulator.PLC
 
         }
 
+        /// <summary>
+        /// Degraded mode approval
+        /// </summary>
+        public void DegradedDecisionEventOk()
+        {
+            _buffer[0] = 1;
+            Client.WriteArea(S7Client.S7AreaPE, DbNumber, PLCTags.PushButtonOperatorOk, Amount, Wordlen, _buffer);
+        }
 
-
+        /// <summary>
+        /// Degraded mode not approved
+        /// </summary>
+        public void DegradedDecisionEventNotOk()
+        {
+            _buffer[0] = 1;
+            Client.WriteArea(S7Client.S7AreaPE, DbNumber, PLCTags.PushButtonOperatorNotOk, Amount, Wordlen, _buffer);
+        }
 
     }
 }

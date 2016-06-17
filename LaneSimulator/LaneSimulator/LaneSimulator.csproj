@@ -122,6 +122,12 @@
       <DependentUpon>ConnectPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utilities\InfoLine.cs" />
+    <Compile Include="Views\DegradedDecisionEventNotOk.xaml.cs">
+      <DependentUpon>DegradedDecisionEventNotOk.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DegradedDecisionEventOk.xaml.cs">
+      <DependentUpon>DegradedDecisionEventOk.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SchedulerPanel.xaml.cs">
       <DependentUpon>SchedulerPanel.xaml</DependentUpon>
     </Compile>
@@ -202,6 +208,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ConnectPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DegradedDecisionEventNotOk.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DegradedDecisionEventOk.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -296,7 +310,12 @@
     <Resource Include="Images\play1hot.png" />
     <Resource Include="Images\undo_256.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\push-button-red-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\push-button-green-512.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -8,9 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/led_off.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/led_on.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/play1hot.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/undo_256.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/push-button-green-512.png")]
 
 

@@ -25,8 +25,9 @@ namespace LaneSimulator.PLC
         public static int NoodstopXrayInput = 593;
         public static int SwitchDegradedModeInput = 288;
         public static int TechnicalErrorMerker = 169;
-
-
+        public static int PushButtonOperatorOk = 180;
+        public static int PushButtonOperatorNotOk = 181;
+        
         // LANE TOP - SENSORS
         //SECTION-A
         internal static int _0102_S1 = 16;

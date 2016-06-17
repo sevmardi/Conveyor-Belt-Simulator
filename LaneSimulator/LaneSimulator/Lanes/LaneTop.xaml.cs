@@ -615,7 +615,7 @@ namespace LaneSimulator.Lanes
 
         #endregion
         
-        #region Sensoren
+       
         
         public void _0102_S1_TurnOff()
         {
@@ -861,7 +861,7 @@ namespace LaneSimulator.Lanes
             }));
         }
 
-        public void _0301_S1_TurnOff()
+        public void _0301_S1_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0301_S1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
             
@@ -884,7 +884,7 @@ namespace LaneSimulator.Lanes
             }
         }
 
-        public void _0301_S1_TurnOn()
+        public void _0301_S1_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
             _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0301_S1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
@@ -896,7 +896,7 @@ namespace LaneSimulator.Lanes
             }));
         }
 
-        public void _0301_S2_TurnOff()
+        public void _0301_S2_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0301_S2, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -926,7 +926,7 @@ namespace LaneSimulator.Lanes
                 MessageBox.Show("");
         }
 
-        public void _0301_S2_TurnOn()
+        public void _0301_S2_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -939,7 +939,7 @@ namespace LaneSimulator.Lanes
             }));
         }
 
-        public void _0302_S1_TurnOff()
+        public void _0302_S1_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0302_S1, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -967,7 +967,7 @@ namespace LaneSimulator.Lanes
             }
         }
 
-        public void _0302_S1_TurnOn()
+        public void _0302_S1_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -979,8 +979,8 @@ namespace LaneSimulator.Lanes
 
             }));
         }
-       
-        public void _0303_S1_TurnOff()
+
+        public void _0303_S1_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0303_S1, _plcCalls.Amount,
               _plcCalls.Wordlen, Buffer);
@@ -1006,7 +1006,7 @@ namespace LaneSimulator.Lanes
             }
         }
 
-        public void _0303_S1_TurnOn()
+        public void _0303_S1_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -1019,7 +1019,7 @@ namespace LaneSimulator.Lanes
             }));
         }
 
-        public void _0304_S1_TurnOff()
+        public void _0304_S1_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0304_S1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
 
@@ -1043,7 +1043,7 @@ namespace LaneSimulator.Lanes
             }
         }
 
-        public void _0304_S1_TurnOn()
+        public void _0304_S1_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -1056,7 +1056,7 @@ namespace LaneSimulator.Lanes
             }));
         }
 
-        public void _0304_S2_TurnOff()
+        public void _0304_S2_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0304_S2, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
 
@@ -1080,7 +1080,7 @@ namespace LaneSimulator.Lanes
             }
         }
 
-        public void _0304_S2_TurnOn()
+        public void _0304_S2_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -1093,7 +1093,7 @@ namespace LaneSimulator.Lanes
             }));
         }
 
-        public void _0304_S3_TurnOff()
+        public void _0304_S3_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0304_S3, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -1119,7 +1119,7 @@ namespace LaneSimulator.Lanes
             }
         }
 
-        public void _0304_S3_TurnOn()
+        public void _0304_S3_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -2336,8 +2336,7 @@ namespace LaneSimulator.Lanes
         //    Dispatcher.Invoke((Action)(() => { _1703_S3T.Fill = new SolidColorBrush(Colors.Red); }));
         //}
 
-        #endregion
-
+       
         #region timers
 
         protected void FirstSensor()
@@ -2454,7 +2453,7 @@ namespace LaneSimulator.Lanes
         protected void _0301_S2_Timer()
         {
             Timer aTimer = new Timer();
-         //   aTimer.Elapsed += new ElapsedEventHandler(_0301_S1_TurnOff);
+           aTimer.Elapsed += new ElapsedEventHandler(_0301_S1_TurnOff);
             aTimer.Interval = 4500;
             aTimer.Enabled = true;
 
@@ -2465,13 +2464,14 @@ namespace LaneSimulator.Lanes
         protected void _0301_S2_Timer_Write()
         {
             Timer aTimer = new Timer();
-          //  aTimer.Elapsed += new ElapsedEventHandler(_0301_S1_TurnOn());
+            aTimer.Elapsed += new ElapsedEventHandler(_0301_S1_TurnOn);
             aTimer.Interval = 1000;
             aTimer.Enabled = true;
 
             aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
         }
 
+ 
 
         #endregion
 
@@ -2707,8 +2707,7 @@ namespace LaneSimulator.Lanes
 
         private void StopSimBtn_Click(object sender, RoutedEventArgs e)
         {
-            var sb1 = FindResource("SectionA_SB") as Storyboard;
-            sb1.Stop();
+            _plcCalls.DegradedDecisionEventOk();
         }
 
 

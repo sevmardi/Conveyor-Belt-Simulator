@@ -30,7 +30,7 @@ namespace LaneSimulator
         public static string APP_COPYRIGHT;
 
         private bool Ispaused = false;
-        private ShadowBox sbZoom, sbSpeed, sslObjects, total, SSL, timerBox, btnsPanelBox, counterBox;
+        private ShadowBox sbZoom, sbSpeed, sslObjects, total, SSL, timerBox, btnsPanelBox, counterBox, DegradedBtns;
         
         private readonly Utilities.SSLCanvas _sslCanvas;
         private double T = 0.0;
@@ -118,10 +118,10 @@ namespace LaneSimulator
             //TraysCounter
             Grid1.Children.Remove(traysCounter);
             total = new ShadowBox();
-            total.Margin = new Thickness(20, 20, 175, 20);
+            total.Margin = new Thickness(20);
             total.Children.Add(traysCounter);
             traysCounter.Background = Brushes.Transparent;
-            total.VerticalAlignment = VerticalAlignment.Top;
+            total.VerticalAlignment = VerticalAlignment.Bottom;
             total.HorizontalAlignment = HorizontalAlignment.Right;
             Grid1.Children.Add(total);
             Grid.SetColumn(total, 1);
@@ -139,7 +139,7 @@ namespace LaneSimulator
             Grid.SetColumn(timerBox, 1);
             Grid.SetRow(timerBox, 1);
  
-
+            // Control Panel - On/Off reset buttons
             Grid1.Children.Remove(ButtonsPanel);
             btnsPanelBox = new ShadowBox();
             btnsPanelBox.Margin = new Thickness(20, 20, 175, 20);
@@ -151,17 +151,29 @@ namespace LaneSimulator
             Grid.SetColumn(btnsPanelBox, 1);
             Grid.SetRow(btnsPanelBox, 1);
 
+            // Number of mouse clicks
             Grid1.Children.Remove(Counter);
             btnsPanelBox = new ShadowBox();
             btnsPanelBox.Margin = new Thickness(20, 20, 175, 20);
             btnsPanelBox.Children.Add(Counter);
             Counter.Background = Brushes.Transparent;
             btnsPanelBox.VerticalAlignment = VerticalAlignment.Top;
-            btnsPanelBox.HorizontalAlignment = HorizontalAlignment.Stretch;
+            btnsPanelBox.HorizontalAlignment = HorizontalAlignment.Left;
             Grid1.Children.Add(btnsPanelBox);
             Grid.SetColumn(btnsPanelBox, 1);
             Grid.SetRow(btnsPanelBox, 1);
 
+            // Degraded buttons
+            Grid1.Children.Remove(DegradedPanel);
+            DegradedBtns = new ShadowBox();
+            DegradedBtns.Margin = new Thickness(-20, 2, 2, 150);
+            DegradedBtns.Children.Add(DegradedPanel);
+            DegradedPanel.Background = Brushes.Transparent;
+            DegradedBtns.VerticalAlignment = VerticalAlignment.Top;
+            DegradedBtns.HorizontalAlignment = HorizontalAlignment.Stretch;
+            Grid1.Children.Add(DegradedBtns);
+            Grid.SetColumn(DegradedBtns, 1);
+            Grid.SetRow(DegradedBtns, 1);
 
 
            this.Loaded += (sender2, e2) =>
@@ -557,6 +569,16 @@ namespace LaneSimulator
         }
 
         private void StartSystem_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void NotApproved_OnClick(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void Approvel_OnClick(object sender, RoutedEventArgs e)
         {
             throw new NotImplementedException();
         }
