@@ -52,9 +52,6 @@ namespace LaneSimulator
      
            _plcCalls = new PlcCalls();
 
-
-
-
            AssemblyTitleAttribute title;
            AssemblyCopyrightAttribute copyright;
            Assembly aAssembly = Assembly.GetExecutingAssembly();
@@ -71,11 +68,6 @@ namespace LaneSimulator
            APP_VERSION = aAssembly.GetName().Version.ToString();
            APP_COPYRIGHT = copyright.Copyright;
 
-
-
-
-           // everybody gets view keys
-        //   this.PreviewKeyDown += new KeyEventHandler(Window1_View_KeyDown);
 
            // drag/drop for edit or full
             DragDropHelper.ItemDropped += new EventHandler<DragDropEventArgs>(DragDropHelper_ItemDropped);
@@ -347,106 +339,6 @@ namespace LaneSimulator
         }
 
        
-     
-     #region functions not implmented
-
-        private void btnNew_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnOpen_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnSave_Click(object sender, RoutedEventArgs e)
-        {
-   
-        }
-
-        private void btnSave_As_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void btnCut_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void btnCopy_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void btnPaste_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void btnFlatten_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void btnAlignTopLeft_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void btnCopyAsImage_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void btnPrint_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void btnSaveAsImage_Click(object sender, RoutedEventArgs e)
-        {
-  
-        }
-
-
-
-        private void btnImportIC_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void Image_MouseEnter(object sender, MouseEventArgs e)
-        {
-        }
-
-        private void btnCreateIC_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void Image_MouseLeave(object sender, MouseEventArgs e)
-        {
-        }
-
-        private void btnShowTrueFalse_Checked(object sender, RoutedEventArgs e)
-        {
-            //SSLCanvas.ShowTrueFalse = true;
-        }
-
-        private void btnShowTrueFalse_Unchecked(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void btnShowHideToolbars_Checked(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void btnShowHideToolbars_Unchecked(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void btnUserMode_Checked(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void btnUserMode_Unchecked(object sender, RoutedEventArgs e)
-        {
-        }
-
-         #endregion
-
         private void slZoom_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             SSLCanvas.Zoom = slZoom.Value;
@@ -553,19 +445,18 @@ namespace LaneSimulator
             schedulerPanel.Show();
         }
 
-        private void Image_Off_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         private void StopButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
+        {   
+             // Stop the PLC
+            // Stop the animation as  well. 
+            // When system is stopped all other buttons are not avialable
+            _plcCalls.StopBtnInput();
         }
 
         private void Reset_Button_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            _plcCalls.ResetBtn();
         }
 
         private void StartSystem_OnClick(object sender, RoutedEventArgs e)
@@ -578,17 +469,18 @@ namespace LaneSimulator
             }
             else
                 MessageBox.Show("not connected");
-
         }
 
         private void NotApproved_OnClick(object sender, RoutedEventArgs e)
         {
-           
+           //disapprove the tray and keep it moving forward [not approved]. 
+            _plcCalls.DegradedDecisionEventNotOk();
         }
 
         private void Approvel_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            // approve the tray and move it to another approval conveyor
+            _plcCalls.DegradedDecisionEventOk();
         }
     }
 }

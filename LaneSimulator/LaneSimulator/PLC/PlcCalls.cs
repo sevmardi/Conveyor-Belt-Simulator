@@ -114,7 +114,7 @@ namespace LaneSimulator.PLC
 
         /// <summary>
         /// The first startup in which amount of Inputs & meker(s) are set to true, this to avoid
-        /// any headahcs during simulation 
+        /// any headaches during simulation 
         /// </summary>
         public  void StartUp()
         {
@@ -593,6 +593,7 @@ namespace LaneSimulator.PLC
         public void DegradedDecisionEventOk()
         {
             _buffer[0] = 1;
+           
             Client.WriteArea(S7Client.S7AreaPE, DbNumber, PLCTags.PushButtonOperatorOk, Amount, Wordlen, _buffer);
         }
 

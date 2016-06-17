@@ -161,75 +161,31 @@
             </Button>
 
         </StackPanel>
-        
-        
+
 
         <ToolBarTray Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0">
-            <ToolBar Height="28" Name="tbFile" Visibility="Collapsed" >
-                <Button Style="{StaticResource TButtonStyle}" Click="btnNew_Click" ToolTip="New File (Ctrl+N)">
-                    <Image Source="Images/NewDocumentHS.png" />
-                </Button>
-                <Button Style="{StaticResource TButtonStyle}" Click="btnOpen_Click" ToolTip="Open File (Ctrl+O)">
-                    <Image Source="Images/openHS.png" />
-                </Button>
-                <Button Style="{StaticResource TButtonStyle}" Click="btnSave_Click" ToolTip="Save File (Ctrl+S)" IsEnabled="False" Name="btnSave">
-                    <Image Source="Images/saveHS.png" />
-                </Button>
-                <Button Style="{StaticResource TButtonStyle}" Click="btnSave_As_Click" ToolTip="Save File As">
-                    <Image Source="Images/saveAsHS.png" />
-                </Button>
-            </ToolBar>
-            <ToolBar Height="28" Name="tbEdit" Visibility="Collapsed">
-                <Button Style="{StaticResource TButtonStyle}" Name="btnCut" Click="btnCut_Click" ToolTip="Cut (Ctrl+X)" IsEnabled="False" >
-                    <Image Source="Images/CutHS.png" />
-                </Button>
-                <Button Style="{StaticResource TButtonStyle}" Name="btnCopy" Click="btnCopy_Click" ToolTip="Copy (Ctrl+C)" IsEnabled="False">
-                    <Image Source="Images/CopyHS.png" />
-                </Button>
-                <Button Style="{StaticResource TButtonStyle}" Name="btnCopyAsImage" ToolTip="Copy As Image" Click="btnCopyAsImage_Click" IsEnabled="False">
-                    <Image Source="Images/CopyAsImage.png" />
-                </Button>
-                <Button Style="{StaticResource TButtonStyle}" Name="btnPaste" Click="btnPaste_Click" ToolTip="Paste (Ctrl+V)" IsEnabled="False">
-                    <Image Source="Images/PasteHS.png" />
-                </Button>
-                <Button Style="{StaticResource TButtonStyle}" Name="btnFlatten" Click="btnFlatten_Click" ToolTip="Flatten Circuit">
-                    <Image Source="Images/Steamroller-32x32.png" />
-                </Button>
-                <Button Style="{StaticResource TButtonStyle}" Name="btnAlignTopLeft" ToolTip="Align Circuit to Upper-Left" Click="btnAlignTopLeft_Click">
-                    <Image Source="Images/CanvasScaleHS.png" />
-                </Button>
+            <ToolBar Height="40" Name="tbPrinting">
 
-            </ToolBar>
-            <ToolBar Height="28" Name="tbPrinting">
-
-                <Button Style="{StaticResource TButtonStyle}" Name="btnPrint" Click="btnPrint_Click" ToolTip="Print Circuit (Ctrl+P)">
-                    <Image Source="Images/PrintHS.png" />
-                </Button>
-
-                <Button Style="{StaticResource TButtonStyle}" Name="btnSaveAsImage" ToolTip="Save Circuit as Image" Click="btnSaveAsImage_Click">
-                    <Image Source="Images/SaveAsImage.png" />
-                </Button>
-
-                <Button Style="{StaticResource TButtonStyle}" Name="btnChart" ToolTip="Show Logical Analyzer (Oscilloscope)" Click="btnChart_Click">
+                <Button Style="{StaticResource TButtonStyle}" Name="btnChart"
+                        ToolTip="Show Logical Analyzer (Oscilloscope)" Click="btnChart_Click">
                     <Image Source="Images/LegendHS.png" />
                 </Button>
-
-
             </ToolBar>
-
-            <ToolBar Height="28" Name="tbIC" Visibility="Collapsed">
-                <Button Style="{StaticResource TButtonStyle}" Click="btnCreateIC_Click" ToolTip="Create IC">
-                    <Image Source="Images/ram.png" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" />
-                </Button>
-                <Button Style="{StaticResource TButtonStyle}" Click="btnImportIC_Click" ToolTip="Import IC">
-                    <Image Source="Images/ImportXMLHS.png" />
-                </Button>
-
-
-            </ToolBar>
-
-
         </ToolBarTray>
+
+        <!--<DockPanel Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_New" />
+                    <MenuItem Header="_Open" />
+                    <MenuItem Header="_Save" />
+                    <Separator />
+                    <MenuItem Header="_Exit" />
+                </MenuItem>
+            </Menu>
+            <TextBox AcceptsReturn="True" />
+        </DockPanel>-->
+        
 
         <StackPanel Name="spAppInfo" Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" Background="#EEEEEE">
             <TextBlock Name="lblAppTitle" Margin="10,0,0,0" />
