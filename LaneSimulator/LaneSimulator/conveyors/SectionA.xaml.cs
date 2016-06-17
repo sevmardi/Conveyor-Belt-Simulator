@@ -15,9 +15,9 @@ namespace LaneSimulator.conveyors
     {
 
         #region attributes
-        private static int _res;
-        private static readonly byte[] Buffer = new byte[500];
-        private readonly PlcCalls _plcCalls;
+         private PLCAbstract _plcAbstract;
+         private readonly byte[] _buffer = new byte[500];
+         private int _res;
 
         public static readonly DependencyProperty ForwardDependencyProperty = DependencyProperty.Register("Forward",
             typeof(bool), typeof(SectionA), new PropertyMetadata(false));
@@ -36,8 +36,8 @@ namespace LaneSimulator.conveyors
         public SectionA()
         {
             InitializeComponent();
-
-            Speed = 5.0;
+           
+            
         }
         #endregion
        
@@ -69,34 +69,30 @@ namespace LaneSimulator.conveyors
 
         //#region Motors
 
-        //public void _0102_D1Motor()
-        //{
-        //    _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._0102_D1, _plcCalls.Amount,
-        //        _plcCalls.Wordlen, Buffer);
+        public void _0102_D1Motor()
+        {
+            _res = _plcAbstract.Client.ReadArea(S7Client.S7AreaPA, _plcAbstract.DbNumber, PLCTags._0102_D1, _plcAbstract.Amount, _plcAbstract.Wordlen, _buffer);
 
-        //    if (_res == 0)
-        //    {
-        //        try
-        //        {
-        //            if (Buffer[0] == 1)
-        //            {
-        //                Dispatcher.Invoke((Action) (() => { _0102_D1.Fill = new SolidColorBrush(Colors.Chartreuse); }));
-        //            }
-        //        }
-        //        catch (Exception)
-        //        {
-        //            //ignore
-        //        }
-        //    }
+            if (_res == 0)
+            {
+                try
+                {
+                    if (_buffer[0] == 1)
+                    {
+                       // Dispatcher.Invoke((Action) (() => { _0102_D1.Fill = new SolidColorBrush(Colors.Chartreuse); }));
+                    }
+                }
+                catch (Exception)
+                {
+                    //ignore
+                }
+            }
 
-        //    else
-        //    {
-        //        MessageBox.Show("There is no Connection!! ");
-        //    }
-
-
-
-        //}
+            else
+            {
+                MessageBox.Show("There is no Connection!! ");
+            }
+        }
 
         //public void _0103_D1Motor()
         //{

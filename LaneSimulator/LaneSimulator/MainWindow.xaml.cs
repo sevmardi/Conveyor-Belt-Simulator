@@ -127,7 +127,7 @@ namespace LaneSimulator
             Grid.SetColumn(total, 1);
             Grid.SetRow(total, 1);
 
-            //Timer
+            //SensorTimerHandler
             Grid1.Children.Remove(Timer);
             timerBox = new ShadowBox();
             timerBox.Margin = new Thickness(20, 20, 175, 20);
@@ -166,11 +166,11 @@ namespace LaneSimulator
             // Degraded buttons
             Grid1.Children.Remove(DegradedPanel);
             DegradedBtns = new ShadowBox();
-            DegradedBtns.Margin = new Thickness(-20, 2, 2, 150);
+            DegradedBtns.Margin = new Thickness(-150, 200, 200, 200);
             DegradedBtns.Children.Add(DegradedPanel);
             DegradedPanel.Background = Brushes.Transparent;
             DegradedBtns.VerticalAlignment = VerticalAlignment.Top;
-            DegradedBtns.HorizontalAlignment = HorizontalAlignment.Stretch;
+            DegradedBtns.HorizontalAlignment = HorizontalAlignment.Center;
             Grid1.Children.Add(DegradedBtns);
             Grid.SetColumn(DegradedBtns, 1);
             Grid.SetRow(DegradedBtns, 1);

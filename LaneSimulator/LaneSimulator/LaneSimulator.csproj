@@ -78,6 +78,7 @@
     <Compile Include="Events\Buffer.cs" />
     <Compile Include="Events\Semaphore.cs" />
     <Compile Include="Events\TagsEvents.cs" />
+    <Compile Include="PLC\PLCAbstract.cs" />
     <Compile Include="UIGates\Gate.xaml.cs">
       <DependentUpon>Gate.xaml</DependentUpon>
     </Compile>
@@ -89,7 +90,7 @@
       <DependentUpon>LaneTop.xaml</DependentUpon>
     </Compile>
     <Compile Include="Libs\snap7.net.cs" />
-    <Compile Include="Model\Timer.cs" />
+    <Compile Include="Model\SensorTimerHandler.cs" />
     <Compile Include="UIGates\Sensor.xaml.cs">
       <DependentUpon>Sensor.xaml</DependentUpon>
     </Compile>

@@ -16,7 +16,7 @@ namespace LaneSimulator.PLC
         public  int DbNumber = 0;
         public  readonly int Wordlen = S7Client.S7WLBit;
         private  readonly byte[] _buffer = new byte[500];
-        private  bool _res;
+        private  int _res;
        
         static readonly S7Client.S7DataItem[] Items = new S7Client.S7DataItem[20];
 
@@ -46,10 +46,6 @@ namespace LaneSimulator.PLC
             MessageBox.Show(Client.Connected() ? "Connection Established" : "Something went wrong");
         }
 
-        public bool connected()
-        {
-            return _res;
-        }
 
         /// <summary>
         /// Disconnect from PLC 

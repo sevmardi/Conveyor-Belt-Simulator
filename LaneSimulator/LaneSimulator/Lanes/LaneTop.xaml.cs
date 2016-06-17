@@ -2,18 +2,14 @@
 using System.Collections.Generic;
 using System.Timers;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Threading;
+using LaneSimulator.Model;
 using LaneSimulator.PLC;
 using LaneSimulator.UIGates;
 using LaneSimulator.Views;
 using Snap7;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Shapes;
 using Timer = System.Timers.Timer;
 
 namespace LaneSimulator.Lanes
@@ -33,18 +29,15 @@ namespace LaneSimulator.Lanes
         static int scheudler = 0;
         List<Sensor> SensorList = new List<Sensor>();
         private FrameworkElement _element;
-     
-        //private SmallTray _smallTray;
-       
-        
+        private SensorTimerHandler _sensorTimerHandler;
+        private PLCAbstract _plcAbstract;   
         public LaneTop()
         {
             InitializeComponent();
             _plcCalls = new PlcCalls();
-           
-          
-          
-            
+           _sensorTimerHandler = new SensorTimerHandler();
+            _plcAbstract= new PLCAbstract();
+   
         }
 
         private void InitializeSensors()
@@ -74,7 +67,7 @@ namespace LaneSimulator.Lanes
 
         public void Executor()
         {
-            //_0102_S1_TurnOff();
+            _0102_S1_TurnOff();
             //SecondSensorTimer();
             //ThirdSensor();
             //FourthSensor();
@@ -90,9 +83,11 @@ namespace LaneSimulator.Lanes
 
 
         #region motoren
+
         public void _0102_D1Motor()
         {
-            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._0102_D1, _plcCalls.Amount,_plcCalls.Wordlen, Buffer);
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPA, _plcCalls.DbNumber, PLCTags._0102_D1, _plcCalls.Amount,
+                _plcCalls.Wordlen, Buffer);
 
             if (_res == 0)
             {
@@ -113,9 +108,6 @@ namespace LaneSimulator.Lanes
             {
                 MessageBox.Show("There is no Connection!! ");
             }
-        
-
-
         }
 
         public void _0103_D1Motor()
@@ -616,44 +608,70 @@ namespace LaneSimulator.Lanes
 
 
 
-        #region sensoren
+        #region Conveyor A - sensoren 
 
         public void _0102_S1_TurnOff()
         {
-            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0102_S1, _plcCalls.Amount,
-                _plcCalls.Wordlen, Buffer);
+            #region old method body 
 
-            if (_res == 0)
+//_res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0102_S1, _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+
+            //if (_res == 0)
+            //{
+            //    try
+            //    {
+            //        if (Buffer[0] == 1)
+            //        {
+            //            Buffer[0] = 0;
+
+            //            _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0102_S1,
+            //                _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+
+            //            _0102_S1.Fill = new SolidColorBrush(Colors.DarkGray);
+            //            //DelayAction(800, new Action(() => { this._0102_D1Motor(); }));
+
+            //            _0102_D1Motor();
+            //        }
+            //        else
+            //        {
+
+            //            MessageBox.Show("Sensor #0102S1 on false");
+            //        }
+
+            //    }
+            //    catch (Exception)
+            //    {
+
+            //        throw;
+            //    }
+
+            #endregion
+
+            try
             {
-                try
+                _res =  _plcAbstract.ReadSensorInput(PLCTags._0102_S1);
+
+                if (_res == 0)
                 {
                     if (Buffer[0] == 1)
                     {
                         Buffer[0] = 0;
-
-                        _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0102_S1,
-                            _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
-
+                        
+                        _plcAbstract.WriteSensorInput(PLCTags._0102_S1);
                         _0102_S1.Fill = new SolidColorBrush(Colors.DarkGray);
-                        //DelayAction(800, new Action(() => { this._0102_D1Motor(); }));
-
+                        
                         _0102_D1Motor();
                     }
                     else
-                    {
-
                         MessageBox.Show("Sensor #0102S1 on false");
-                    }
-
                 }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-
-                FirstSensor();
             }
+            catch
+            {
+                throw;
+            }
+            _sensorTimerHandler.Timer(400, _0102_S1_TurnOn);
+            // FirstSensor();  
         }
 
         public void _0102_S1_TurnOn(object source, ElapsedEventArgs e)
@@ -876,6 +894,11 @@ namespace LaneSimulator.Lanes
                 _0105_D1.Fill = new SolidColorBrush(Colors.DarkGray);
             }));
         }
+
+        #endregion
+
+
+        #region Conveyor B
 
         public void _0301_S1_TurnOff(object source, ElapsedEventArgs e)
         {
@@ -1201,6 +1224,11 @@ namespace LaneSimulator.Lanes
             }));
         }
 
+        #endregion
+
+
+        #region Section C
+
         public void _0701_S2_TurnOff()
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0701_S2, _plcCalls.Amount,
@@ -1318,6 +1346,10 @@ namespace LaneSimulator.Lanes
             }));
         }
 
+        #endregion
+
+        #region Section D
+
         public void _1001_S1_TurnOff()
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1001_S1, _plcCalls.Amount,
@@ -1351,10 +1383,7 @@ namespace LaneSimulator.Lanes
             _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1001_S1, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
 
-            Dispatcher.Invoke((Action) (() =>
-            {
-                _0702_S2.Fill = new SolidColorBrush(Colors.Red);
-            }));
+            Dispatcher.Invoke((Action) (() => { _0702_S2.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
         public void _1001_S2_TurnOff()
@@ -1390,10 +1419,7 @@ namespace LaneSimulator.Lanes
             _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1001_S2, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
 
-            Dispatcher.Invoke((Action) (() =>
-            {
-                _1001_S2.Fill = new SolidColorBrush(Colors.Red);
-            }));
+            Dispatcher.Invoke((Action) (() => { _1001_S2.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
         public void _1002_S1_TurnOff()
@@ -1429,10 +1455,7 @@ namespace LaneSimulator.Lanes
             _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1002_S1, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
 
-            Dispatcher.Invoke((Action) (() =>
-            {
-                _1002_S1.Fill = new SolidColorBrush(Colors.Red);
-            }));
+            Dispatcher.Invoke((Action) (() => { _1002_S1.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
         public void _1002_S2_TurnOff()
@@ -1726,6 +1749,13 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1003_S2.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
+        #endregion
+
+
+        #region Section E
+
+
+
         public void _1101_S1_TurnOff()
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1101_S1, _plcCalls.Amount,
@@ -1941,6 +1971,11 @@ namespace LaneSimulator.Lanes
 
             Dispatcher.Invoke((Action) (() => { _1102_S3.Fill = new SolidColorBrush(Colors.Red); }));
         }
+
+        #endregion
+
+
+        #region Section F
 
         public void _1601_S1_TurnOff()
         {
@@ -2158,6 +2193,11 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1602_S3.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
+        #endregion
+
+
+        #region Section G
+
         public void _1701_S1_TurnOff()
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1701_S1, _plcCalls.Amount,
@@ -2266,6 +2306,9 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1701_S2.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
+       
+
+
         //public void _1701_S3T_TurnOff()
         //{
         //    _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1701_S3T, _plcCalls.Amount,
@@ -2341,6 +2384,8 @@ namespace LaneSimulator.Lanes
         #endregion
 
 
+   
+
         //public void _1703_S3T_TurnOff()
         //{
         //    _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1703_S3T, _plcCalls.Amount,
@@ -2382,12 +2427,12 @@ namespace LaneSimulator.Lanes
 
         protected void FirstSensor()
         {
-            Timer aTimer = new Timer();
-            aTimer.Elapsed += new ElapsedEventHandler(_0102_S1_TurnOn);
-            aTimer.Interval = 400;
-            aTimer.Enabled = true;
+            //Timer aTimer = new Timer();
+            //aTimer.Elapsed += new ElapsedEventHandler(_0102_S1_TurnOn);
+            //aTimer.Interval = 400;
+            //aTimer.Enabled = true;
 
-            aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
+            //aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
         }
 
         protected void SecondSensorTimer()
@@ -2610,10 +2655,10 @@ namespace LaneSimulator.Lanes
        
         private void MakeTrayBtn_Click(object sender, RoutedEventArgs e)
         {
-            count++;
-            NumberOfClicksToProduceTray(count);
-            Scheduler.IsEnabled = false;
-            //  Executor();
+            //count++;
+            //NumberOfClicksToProduceTray(count);
+            //Scheduler.IsEnabled = false;
+              Executor();
         }
 
         private void storyboard_Completed(object sender, EventArgs e)
@@ -2695,9 +2740,6 @@ namespace LaneSimulator.Lanes
 //               
 //            }
         }
-
-
-
 
         public void TestTimer()
         {
