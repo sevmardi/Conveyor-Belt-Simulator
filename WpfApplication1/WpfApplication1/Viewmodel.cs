@@ -2,14 +2,17 @@
 
 namespace WpfApplication1
 {
-    public class Viewmodel
+    class ViewModel
     {
-        public ObservableCollection<BoxData> ItemsA { get; set; }
-
-        public Viewmodel()
+        public ViewModel()
         {
-            ItemsA = new ObservableCollection<BoxData> { new BoxData() };
+            ConveyorA = new ObservableCollection<ObjectToMove>();
+            ConveyorB = new ObservableCollection<ObjectToMove>();
+
         }
+
+        public ObservableCollection<ObjectToMove> ConveyorA { get; set; }
+        public ObservableCollection<ObjectToMove> ConveyorB { get; set; }
 
     }
 }

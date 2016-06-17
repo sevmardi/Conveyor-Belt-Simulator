@@ -5,9 +5,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ec="http://schemas.microsoft.com/expression/2010/controls" mc:Ignorable="d"
     x:Class="LaneSimulator.MainWindow"
-    
+    Loaded="Window_Loaded"
     xmlns:selector="clr-namespace:LaneSimulator.Utilities.Selector"
-
+        
    
     xmlns:utilities="clr-namespace:LaneSimulator.Utilities"
    

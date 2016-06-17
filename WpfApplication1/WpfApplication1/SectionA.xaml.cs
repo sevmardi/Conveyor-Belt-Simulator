@@ -25,11 +25,7 @@ namespace WpfApplication1
             InitializeComponent();
         }
 
-        public bool Start
-        {
-            get { return (bool)GetValue(StartProperty); }
-            set { SetValue(StartProperty, value); }
-        }
-        public static readonly DependencyProperty StartProperty = DependencyProperty.Register("Start", typeof(bool), typeof(SectionA), new PropertyMetadata(false));
     }
+
+    
 }

@@ -570,7 +570,15 @@ namespace LaneSimulator
 
         private void StartSystem_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+         //   _plcCalls.EstablishContact();
+
+            if (_plcCalls.Client.Connected())
+            {
+                _plcCalls.StartUp();
+            }
+            else
+                MessageBox.Show("not connected");
+
         }
 
         private void NotApproved_OnClick(object sender, RoutedEventArgs e)

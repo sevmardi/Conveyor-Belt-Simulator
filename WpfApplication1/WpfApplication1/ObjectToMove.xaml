@@ -10,10 +10,10 @@
         
     </UserControl.RenderTransform>
 
-    <Grid x:Name="LayoutRoot" Height="60" Width="60">
+    <Grid x:Name="LayoutRoot">
         <Rectangle 
             Name="rec"
-            Height="31" Canvas.Left="-316.5" Stroke="Black" Canvas.Top="431.5" Width="42" Fill="Aqua" RenderTransformOrigin="0.5,0.5" Margin="0,0,8,27">
+            Height="31" Stroke="Black"  Width="42" Fill="Blue" RenderTransformOrigin="0.5,0.5" >
         </Rectangle>
     </Grid>
 </UserControl>

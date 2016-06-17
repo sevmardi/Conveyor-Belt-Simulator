@@ -16,7 +16,7 @@ namespace LaneSimulator.PLC
         public  int DbNumber = 0;
         public  readonly int Wordlen = S7Client.S7WLBit;
         private  readonly byte[] _buffer = new byte[500];
-        private  int _res;
+        private  bool _res;
        
         static readonly S7Client.S7DataItem[] Items = new S7Client.S7DataItem[20];
 
@@ -31,8 +31,6 @@ namespace LaneSimulator.PLC
         public  void EstablishContact()
         {
             Client.ConnectTo("192.168.2.16", 0, 0);
-
-            MessageBox.Show(Client.Connected() ? "Connection Established" : "Something went wrong");
         }
 
         /// <summary>
@@ -44,7 +42,13 @@ namespace LaneSimulator.PLC
         public void ConnectToPlc(string ipAdress, int rack, int slot)
         {
             Client.ConnectTo(ipAdress, rack, slot);
+
             MessageBox.Show(Client.Connected() ? "Connection Established" : "Something went wrong");
+        }
+
+        public bool connected()
+        {
+            return _res;
         }
 
         /// <summary>

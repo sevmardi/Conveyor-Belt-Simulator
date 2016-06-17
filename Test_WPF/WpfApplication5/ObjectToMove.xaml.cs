@@ -55,7 +55,7 @@ namespace WpfApplication5
             var dY = other.CarTranslateTransform.Y - this.CarTranslateTransform.Y;
             var h = Math.Sqrt(dX * dX + dY * dY);
 
-            ret = (h < 40);
+            ret = (h < 150);
 
             return ret;
         }

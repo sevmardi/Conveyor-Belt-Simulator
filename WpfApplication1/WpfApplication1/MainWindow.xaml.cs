@@ -35,6 +35,7 @@ namespace WpfApplication1
         public ObservableCollection<ObjectToMove> topp { get; set; }
         protected int delay;
         List<ObjectToMove> objecttomovelist = new List<ObjectToMove>();
+        
         public MainWindow()
         {
             
@@ -53,12 +54,12 @@ namespace WpfApplication1
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
 
-            //var _objectToMove = new ObjectToMove();
+            var _objectToMove = new ObjectToMove();
 
-            //var sb1 = FindResource("SectionA_SB") as Storyboard;
+            var sb1 = FindResource("SectionA_SB") as Storyboard;
 
             //Animation_Pannel.Children.Add(_objectToMove);
-            //sb1.Begin(_objectToMove);
+            sb1.Begin(_objectToMove, true);
 
            // Timer1.Start();
 
@@ -93,8 +94,7 @@ namespace WpfApplication1
             //    MessageBox.Show("Colliding");
             //}
 
-            BoxData test = new BoxData();
-            var b = test.GoState == StoryBoardState.Start;
+          
         }
 
         //private void Maketry(object sender, ElapsedEventArgs elapsedEventArgs)
@@ -107,7 +107,7 @@ namespace WpfApplication1
         
         private void StopAnimation(object sender, RoutedEventArgs e)
         {
-            _sectionA.SetCurrentValue(WpfApplication1.SectionA.StartProperty, false);
+            //_sectionA.SetCurrentValue(WpfApplication1.SectionA.StartProperty, false);
           //  _objectToMove.SetCurrentValue(ObjectToMove.GoProperty, false);
         }
 
@@ -143,9 +143,9 @@ namespace WpfApplication1
         private void Total()
         {
 
-            Steel_Wrap.Children.Add((UIElement)_objectToMove);
-            Steel_Wrap.Children.Remove((UIElement)_objectToMove);
-            total_text1.Text = (Steel_Wrap.Children.Count).ToString();
+            //Steel_Wrap.Children.Add((UIElement)_objectToMove);
+            //Steel_Wrap.Children.Remove((UIElement)_objectToMove);
+            //total_text1.Text = (Steel_Wrap.Children.Count).ToString();
         }
 
         private void Timeline_OnCompleted(object sender, EventArgs e)
@@ -166,25 +166,89 @@ namespace WpfApplication1
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            this.Timer_Lable.Text = (this.T = this.T + 0.1).ToString("0.00", (IFormatProvider)CultureInfo.InvariantCulture);
+            //this.Timer_Lable.Text = (this.T = this.T + 0.1).ToString("0.00", (IFormatProvider)CultureInfo.InvariantCulture);
         }
 
 
-
-
-    }
-
-    public static class StoryBoardExtensions
-    {
-        public static Task BeginAsync(this Storyboard sb, FrameworkContentElement element)
+        private void Button1_OnClick(object sender, RoutedEventArgs e)
         {
-            var source = new TaskCompletionSource<object>();
-            sb.Completed += delegate
-            {
-                source.SetResult(null);
-            };
-            sb.Begin(element);
-            return source.Task;
+         
         }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     }
+
+
 }

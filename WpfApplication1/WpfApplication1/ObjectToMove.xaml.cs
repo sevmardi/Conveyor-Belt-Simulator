@@ -1,41 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using WpfApplication1.Annotations;
 
 namespace WpfApplication1
 {
     /// <summary>
     /// Interaction logic for ObjectToMove.xaml
     /// </summary>
-    public partial class ObjectToMove
+    public partial class ObjectToMove : INotifyPropertyChanged
     {
         private Point position;
         public ObjectToMove()
         {
-            InitializeComponent();
-        
-                
+            InitializeComponent();  
         }
 
-        public bool Go
-        {
-            get { return (bool)GetValue(GoProperty); }
-            set { SetValue(GoProperty, value); }
-        }
-        public static readonly DependencyProperty GoProperty =
-         DependencyProperty.Register("Go", typeof(bool), typeof(ObjectToMove), new PropertyMetadata(false));
-
+       
         public TranslateTransform TrayTranslateTransform { get; set; }
         public bool IsColliding(ObjectToMove otherSmallTray)
         {
@@ -52,8 +35,33 @@ namespace WpfApplication1
 
         }
 
+
+
+        public StoryBoardState GoState
+        {
+            get { return goState; }
+            set { goState = value; }
+        }
+
         
+        private StoryBoardState goState = StoryBoardState.Start;
 
 
+        private StoryBoardState stopState = StoryBoardState.Pause;
+
+        public StoryBoardState StopState
+        {
+            get { return stopState; }
+            set { stopState = value; }
+        }
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
+
+    public enum StoryBoardState { Start, Pause, Stop }
 }

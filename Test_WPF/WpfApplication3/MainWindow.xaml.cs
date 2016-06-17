@@ -15,6 +15,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApplication2;
 
 namespace WpfApplication3
 {
@@ -24,6 +25,8 @@ namespace WpfApplication3
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<ObjectToMove> kartList = new List<ObjectToMove>();
+
         public MainWindow()
         {
            
@@ -31,17 +34,9 @@ namespace WpfApplication3
     
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var sub = FindResource("ellipseSB") as Storyboard;
-            if (sub != null)
-            {
-               sub.Begin();
-               
 
-            }
-    
-        }
+
+
 
 
         private void Window_ContentRendered(object sender, EventArgs e)

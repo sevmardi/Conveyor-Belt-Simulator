@@ -9,11 +9,12 @@ namespace LaneSimulator.Views
     public partial class ConnectPanel
     {
         private readonly PlcCalls _plcCalls;
-
+        
         public ConnectPanel()
         {
             _plcCalls = new PlcCalls();
             InitializeComponent();
+            
         }
 
         private void ConnectBtn_Click(object sender, RoutedEventArgs e)
@@ -27,9 +28,9 @@ namespace LaneSimulator.Views
             if (_plcCalls.Client.Connected())
             {
                 DialogResult = true;
+                
                 Close();
-              
-                _plcCalls.StartUp();  
+               // _plcCalls.StartUp();  
             }
 
         }
