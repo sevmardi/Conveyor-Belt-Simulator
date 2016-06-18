@@ -1,19 +1,23 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using LaneSimulator.Annotations;
 
 namespace LaneSimulator.UIGates
 {
     /// <summary>
     /// Interaction logic for SimpleTray.xaml
     /// </summary>
-    public partial class SimpleTray
+    public partial class SimpleTray : INotifyPropertyChanged
     {
         public SimpleTray()
         {
             InitializeComponent();   
         }
+
        
 
         public double X{ get; set; }
@@ -56,7 +60,13 @@ namespace LaneSimulator.UIGates
         }
 
 
+        public event PropertyChangedEventHandler PropertyChanged;
 
-
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            var handler = PropertyChanged;
+            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

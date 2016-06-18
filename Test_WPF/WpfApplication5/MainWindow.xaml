@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         
         Title="MainWindow" Height="800" Width="1200">
-  <Window.Resources>
+    <Window.Resources>
         <Storyboard x:Key="SectionA_SB">
 
             <DoubleAnimationUsingPath
@@ -11,7 +11,7 @@
                  Duration="0:0:2" 
                 Completed="storyboard_Completed"
                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)">
-               
+
                 <DoubleAnimationUsingPath.PathGeometry>
                     <PathGeometry
                         Figures="M8.875,-22.062 L17.166948,-55.666845 L40.499749,-94.333016 L76.832786,-120.00001 L121.83299,-130.00001 L165.12499,-128.875" />
@@ -31,15 +31,17 @@
         </Storyboard>
 
     </Window.Resources>
-    
+
     <Grid>
-        <Canvas x:Name="Animation_Path" Height="40.474" Left="3.409" Top="53.412" Margin="27,344,110,385" RenderTransformOrigin="0.5,0.5"/>
+        <Canvas x:Name="Animation_Path" Height="40.474" Left="3.409" Top="53.412" Margin="27,344,110,385" MouseLeftButtonUp="OnMouseLeftButton"
+                RenderTransformOrigin="0.5,0.5"/>
         <!--<Canvas x:Name="Animation_Path2" Height="40.474" Left="3.409" Top="53.412" Margin="300,344,624,385" RenderTransformOrigin="0.5,0.5"/>-->
 
 
         <Button Content="Start" HorizontalAlignment="Left" Margin="588,252,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_5"/>
         <Button Content="Stop" HorizontalAlignment="Left" Margin="690,252,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_6"/>
-      
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="27" Margin="159,285,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+
 
     </Grid>
 </Window>

@@ -79,7 +79,9 @@
     <Compile Include="Events\Semaphore.cs" />
     <Compile Include="Events\TagsEvents.cs" />
     <Compile Include="Lanes\StoryboardsCompleted.cs" />
+    <Compile Include="Model\CollisionDetection.cs" />
     <Compile Include="PLC\PLCAbstract.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="UIGates\Gate.xaml.cs">
       <DependentUpon>Gate.xaml</DependentUpon>
     </Compile>

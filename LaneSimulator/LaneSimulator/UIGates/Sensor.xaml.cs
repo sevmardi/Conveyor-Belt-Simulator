@@ -45,36 +45,37 @@ namespace LaneSimulator.UIGates
         private DispatcherTimer Timer1 = new DispatcherTimer();
         private DispatcherTimer Timer = new DispatcherTimer();
         
+        public double Width { get; set; }
+        public double Height { get; set; }
         public double X { get; set; }
         public double Y { get; set; }
         
-        public static DependencyProperty SizeProperty = DependencyProperty.Register("Size", typeof(double), typeof(Sensor), new PropertyMetadata(new PropertyChangedCallback(SizeChanged)));
+     //   public static DependencyProperty SizeProperty = DependencyProperty.Register("Size", typeof(double), typeof(Sensor), new PropertyMetadata(new PropertyChangedCallback(SizeChanged)));
        // public static DependencyProperty CollisionDetected = DependencyProperty.Register("CollisionDetected", typeof(bool), typeof(Sensor), new PropertyMetadata(new PropertyChangedCallback(SizeChanged)));
 
-        public static readonly DependencyProperty CollisionDetectedDependencyProperty = DependencyProperty.Register("CollisionDetected", typeof(bool), typeof(Sensor), new PropertyMetadata(false));
+        //public static readonly DependencyProperty CollisionDetectedDependencyProperty = DependencyProperty.Register("CollisionDetected", typeof(bool), typeof(Sensor), new PropertyMetadata(false));
 
-        public ScaleTransform SensorScaleTransform { get; set; }
+       
         public TranslateTransform SensorTranslateTransform { get; set; }
-        public RotateTransform SensorRotateTransform { get; set; }
 
 
-        public bool CollisionDetected
+        public Sensor(Point p)
         {
-            get { return (bool)GetValue(CollisionDetectedDependencyProperty); }
-            set { SetValue(CollisionDetectedDependencyProperty, value); }
+            this.X = p.X;
+            this.Y = p.Y;
         }
 
-        public double Size
+        public Point GetPoint()
         {
-            get { return (double)GetValue(SizeProperty); }
-            set { SetValue(SizeProperty, value); }
+            return new Point(X, Y);
         }
 
-        public static void SizeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        public Rect GetRect()
         {
-            Sensor sensor = d as Sensor;
-            sensor.Size = (double)e.NewValue;
+            return new Rect(GetPoint(), new Size(Width, Height));
+
         }
+
 
         private void Image_Off_MouseUp(object sender, MouseButtonEventArgs e)
         {

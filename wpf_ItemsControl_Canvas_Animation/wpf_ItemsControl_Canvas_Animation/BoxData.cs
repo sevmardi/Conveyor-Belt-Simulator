@@ -11,7 +11,7 @@ namespace wpf_ItemsControl_Canvas_Animation
         public StoryBoardState GoState
         {
             get { return goState; }
-            set { goState = value; }
+            set { goState = value; NotifyPropertyChanged(); }
         }
 
         private StoryBoardState stopState = StoryBoardState.Pause;

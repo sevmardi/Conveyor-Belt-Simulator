@@ -58,17 +58,26 @@ namespace WpfApplication5
              kartList.Add(_element);
 
 
-             _element.CarTranslateTransform = new TranslateTransform()
-             {
-                 X = 5000,
-                 Y = 20
-             };
+             //_element.CarTranslateTransform = new TranslateTransform()
+             //{
+             //    X = 5000,
+             //    Y = 20
+             //};
 
              var sb1 = FindResource("SectionA_SB") as Storyboard;
              sb1.Begin(_element, true);
              
              Animation_Path.Children.Add(_element);
 
+            foreach (var moveableobjet in kartList)
+            {
+                if ( ! _element.Equals(moveableobjet))
+                {
+                    MessageBox.Show("collision detected");
+                    
+                }
+            }
+                
              //foreach (var otherobjecttomove in kartList)
              //{
              //    if (!_element.Equals(otherobjecttomove))
@@ -105,7 +114,16 @@ namespace WpfApplication5
 
 
 
+        public void OnMouseLeftButton(object sender, MouseButtonEventArgs e)
+        {
+            Point pt = e.GetPosition((UIElement) sender);
 
+            HitTestResult res = VisualTreeHelper.HitTest(Animation_Path, pt);
+            if (res != null)
+            {
+                MessageBox.Show("hit");
+            }   
+        }
 
     }
 }

@@ -2738,7 +2738,7 @@ namespace LaneSimulator.Lanes
         private void LaneTop_OnLoaded(object sender, RoutedEventArgs e)
         {
             TestTimer();
-            
+           
         }
 
 
@@ -2753,10 +2753,10 @@ namespace LaneSimulator.Lanes
                 {
                     _element = new SimpleTray();
 
-                    var sb1 = FindResource("SectionA_SB") as Storyboard;
+                    var sb1 = FindResource("LongPathAnimation") as Storyboard;
                     sb1.Begin(_element, true);
                     TestGrid.Children.Add(_element);
-
+                
                     count--;
                     NumberOfClicksToProduceTray(count);
 
@@ -2806,13 +2806,10 @@ namespace LaneSimulator.Lanes
 
         #endregion
 
-
-
-
-        private void Total(int count)
+        private void Total()
         {
            // total_text1.Text = (this.tray_Wrap.Children.Count).ToString();
-            Dispatcher.Invoke((Action)(() => { TotalofObjects.Text = count.ToString(); }));
+            Dispatcher.Invoke((Action)(() => { (TestGrid.Children.Count).ToString(); }));
         }
 
 
