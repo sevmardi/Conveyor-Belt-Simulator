@@ -69,17 +69,17 @@ namespace WpfApplication5
              
              Animation_Path.Children.Add(_element);
 
-             foreach (var otherobjecttomove in kartList)
-             {
-                 if (!_element.Equals(otherobjecttomove))
-                 {
-                     if (_element.IsColliding(otherobjecttomove))
-                     {
-                         MessageBox.Show("collision detected");
-                     }
+             //foreach (var otherobjecttomove in kartList)
+             //{
+             //    if (!_element.Equals(otherobjecttomove))
+             //    {
+             //        if (_element.IsColliding(otherobjecttomove))
+             //        {
+             //            MessageBox.Show("collision detected");
+             //        }
                      
-                 }
-             }
+             //    }
+             //}
             
 
         }
@@ -102,7 +102,10 @@ namespace WpfApplication5
             return collisiondetected;
         }
 
-    
+
+
+
+
 
     }
 }

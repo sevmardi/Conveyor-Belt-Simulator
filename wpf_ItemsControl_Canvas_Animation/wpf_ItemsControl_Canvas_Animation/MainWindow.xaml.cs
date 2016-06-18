@@ -18,13 +18,15 @@ namespace wpf_ItemsControl_Canvas_Animation
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-          
+              BoxData boxData = new BoxData();
+        
+             var test = boxData.StopState = StoryBoardState.Pause;
         }
 
         private void Storyboard_Completed(object sender, EventArgs e)
         {
-            MainWindowViewModel mwv = this.DataContext as MainWindowViewModel;
-            mwv.NextAnimation(mwv.ItemsA, mwv.ItemsB, mwv.ItemsA[0]);
+//            MainWindowViewModel mwv = this.DataContext as MainWindowViewModel;
+//            mwv.NextAnimation(mwv.ItemsA, mwv.ItemsB, mwv.ItemsA[0]);
         }
     }
 }

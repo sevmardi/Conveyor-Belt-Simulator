@@ -13,15 +13,17 @@
 
 
     <Grid>
-        <ItemsControl x:Name="icA" ItemsSource="{Binding ItemsA}"
-                     >
+
+        <ItemsControl x:Name="icA" ItemsSource="{Binding ItemsA}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <Canvas Name="Canvas"/>
+                    <Canvas Name="CanvasA" />
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
          
             <ItemsControl.Resources>
+            
+               
                 <Storyboard x:Key="AnimatePath">
                     <DoubleAnimationUsingPath 
                 Duration="0:0:03.0" 
@@ -67,22 +69,31 @@
                         </DoubleAnimationUsingPath.PathGeometry>
                     </DoubleAnimationUsingPath>
                 </Storyboard>
+
+
+
             </ItemsControl.Resources>
             <ItemsControl.ItemTemplate>
+            
                 <DataTemplate>
+                  
                     <DataTemplate.Triggers>
+                       
                         <DataTrigger Binding="{Binding GoState}" Value="{x:Static local:StoryBoardState.Start}">
                             <DataTrigger.EnterActions>
                                 <BeginStoryboard Name="sb" Storyboard="{StaticResource AnimatePath}"/>
                             </DataTrigger.EnterActions>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding GoState}" Value="{x:Static local:StoryBoardState.Pause}">
+                     
+                    <!--<DataTrigger Binding="{Binding GoState}" Value="{x:Static local:StoryBoardState.Pause}">
                             <DataTrigger.EnterActions>
                                 <PauseStoryboard BeginStoryboardName="sb" />
                             </DataTrigger.EnterActions>
-                        </DataTrigger>
+                        </DataTrigger>-->
 
                     </DataTemplate.Triggers>
+
+
                     <Rectangle 
                 Height="30"  Width="50"  Fill="Green"
                         Canvas.Left="{Binding (Canvas.Left)
@@ -95,7 +106,14 @@
                         }}"               
                         />
                 </DataTemplate>
+                
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="250,155,0,0" VerticalAlignment="Top" Width="75" Click="ButtonBase_OnClick"/>
+
+
+
+
+
     </Grid>
 </Window>

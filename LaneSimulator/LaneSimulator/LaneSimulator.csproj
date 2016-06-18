@@ -78,6 +78,7 @@
     <Compile Include="Events\Buffer.cs" />
     <Compile Include="Events\Semaphore.cs" />
     <Compile Include="Events\TagsEvents.cs" />
+    <Compile Include="Lanes\StoryboardsCompleted.cs" />
     <Compile Include="PLC\PLCAbstract.cs" />
     <Compile Include="UIGates\Gate.xaml.cs">
       <DependentUpon>Gate.xaml</DependentUpon>

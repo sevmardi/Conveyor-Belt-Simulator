@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Timers;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
@@ -31,12 +32,14 @@ namespace LaneSimulator.Lanes
         private FrameworkElement _element;
         private SensorTimerHandler _sensorTimerHandler;
         private PLCAbstract _plcAbstract;   
+       
         public LaneTop()
         {
             InitializeComponent();
             _plcCalls = new PlcCalls();
            _sensorTimerHandler = new SensorTimerHandler();
             _plcAbstract= new PLCAbstract();
+            
    
         }
 
@@ -67,7 +70,7 @@ namespace LaneSimulator.Lanes
 
         public void Executor()
         {
-            _0102_S1_TurnOff();
+       //     _0102_S1_TurnOff();
             //SecondSensorTimer();
             //ThirdSensor();
             //FourthSensor();
@@ -75,11 +78,6 @@ namespace LaneSimulator.Lanes
             //SixthSensor();
         }
 
-
-        private void Total()
-        {
-         // total_text1.Text= (this.tray_Wrap.Children.Count).ToString();
-        }
 
 
         #region motoren
@@ -2564,7 +2562,7 @@ namespace LaneSimulator.Lanes
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
                   _plcCalls.EstablishContact();
-                  TestTimer();
+               
                // myclient.ConnectTo("192.168.2.16", 0, 0);
               
                 if (_plcCalls.Client.Connected())
@@ -2652,33 +2650,13 @@ namespace LaneSimulator.Lanes
             NumberOfClicksToProduceTray(count);
 
         }
-       
-        private void MakeTrayBtn_Click(object sender, RoutedEventArgs e)
-        {
-            //count++;
-            //NumberOfClicksToProduceTray(count);
-            //Scheduler.IsEnabled = false;
-              Executor();
-        }
 
-        private void storyboard_Completed(object sender, EventArgs e)
-        {
-            var sb2 = FindResource("SectionB_SB") as Storyboard;
-            sb2.Completed += new EventHandler(this.storyboard_Completed2);
-            sb2.Begin(_element);
-        }
 
-        private void storyboard_Completed2(object sender, EventArgs e)
-        {
-            var sb2 = FindResource("SectionC_SB") as Storyboard;
-            sb2.Begin(_element);
-        }
 
-  
-        
         public void NumberOfClicksToProduceTray(int count)
         {
             Dispatcher.Invoke((Action)(() => { MouseClickOfUser.Text = count.ToString(); }));
+            
         }
 
 
@@ -2697,15 +2675,6 @@ namespace LaneSimulator.Lanes
         #endregion
 
 
-        protected void addbuttontimer()
-        {
-            var aTimer = new Timer();
-            aTimer.Elapsed += new ElapsedEventHandler(addbutton);
-            aTimer.Interval = 4100;
-            aTimer.Enabled = true;
-
-            aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
-        }
 
         public void addbutton(object source, ElapsedEventArgs e)
         {
@@ -2741,6 +2710,7 @@ namespace LaneSimulator.Lanes
 //            }
         }
 
+      
         public void TestTimer()
         {
             var aTimer = new Timer();
@@ -2748,46 +2718,11 @@ namespace LaneSimulator.Lanes
             aTimer.Interval = 1500;
             aTimer.Enabled = true;
             aTimer.AutoReset = true;
-            // aTimer.Elapsed += (s, e) => { aTimer.Stop(); };
+          
         }
 
        
-        private void MakeTrayBtn2_Click(object sender, ElapsedEventArgs e)
-        {
-            if (count > 0)
-            {
-                Dispatcher.Invoke((Action)(() =>
-                {
-                    _element = new SimpleTray();
-
-                    var sb1 = FindResource("SectionA_SB") as Storyboard;
-                    sb1.Begin(_element, true);
-                    TestGrid.Children.Add(_element);
-                   
-                    count--;
-                    NumberOfClicksToProduceTray(count);
-                    
-                }));
-                    // 1. kijk of er ruimte is om een bak erbij te doen
-                    // 2. zo wel, dan kan een nieuwe bak aanmaken. 
-                    // 3. count --;
-                    // 4. NumberOfClicksToProduceTray(count);
-                    // 5. laat zien in text box. 
-                    // 6. zo niet, dan geberut er niks. 
-            }
-
-            //if (count == 0)
-            //{
-            //    Dispatcher.Invoke((Action)(() =>
-            //    {
-            //        Scheduler.IsEnabled = true;
-
-            //    }));
-                
-            //}
-
-
-        }
+      
 
         private void StopSimBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -2800,8 +2735,98 @@ namespace LaneSimulator.Lanes
             _schedulerPanel.Show();
         }
 
+        private void LaneTop_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            TestTimer();
+            
+        }
 
-   
+
+        private void MakeTrayBtn2_Click(object sender, ElapsedEventArgs e)
+        {
+            var moveTopUpDuration = TimeSpan.FromSeconds(1);
+
+
+            if (count > 0)
+            {
+                Dispatcher.Invoke((Action)(() =>
+                {
+                    _element = new SimpleTray();
+
+                    var sb1 = FindResource("SectionA_SB") as Storyboard;
+                    sb1.Begin(_element, true);
+                    TestGrid.Children.Add(_element);
+
+                    count--;
+                    NumberOfClicksToProduceTray(count);
+
+
+                   
+
+                }));
+                // 1. kijk of er ruimte is om een bak erbij te doen
+                // 2. zo wel, dan kan een nieuwe bak aanmaken. 
+                // 3. count --;
+                // 4. NumberOfClicksToProduceTray(count);
+                // 5. laat zien in text box. 
+                // 6. zo niet, dan geberut er niks. 
+            }
+
+ 
+
+
+        }
+
+        private void MakeTrayBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+            count++;
+            NumberOfClicksToProduceTray(count);
+          
+            
+            // Executor();
+        }
+
+        #region storyboard completed
+
+        private void StoryBoardSectionACompleted(object sender, EventArgs e)
+        {
+            var sb1 = FindResource("SectionB_SB") as Storyboard;
+
+            sb1.Begin(_element);
+            sb1.Completed += StoryBoardSectionBCompleted;
+        }
+
+        private void StoryBoardSectionBCompleted(object sender, EventArgs e)
+        {
+            var sb3 = FindResource("SectionB_SB") as Storyboard;
+
+            sb3.Begin(_element);
+        }
+
+        #endregion
+
+
+
+
+        private void Total(int count)
+        {
+           // total_text1.Text = (this.tray_Wrap.Children.Count).ToString();
+            Dispatcher.Invoke((Action)(() => { TotalofObjects.Text = count.ToString(); }));
+        }
+
+
+
+
+        // building Queue 
+        // from http://stackoverflow.com/a/1607741/3641381
+
+
+
+       
+
+
+
 
 
 
