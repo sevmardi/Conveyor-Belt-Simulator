@@ -51,20 +51,20 @@ namespace LaneSimulator.Utilities
 
         public SSLCanvas()
         {
-            //InitializeLaneTop();
+            InitializeLaneTop();
             InitializeComponent();
             Timer1.Interval = new TimeSpan(0, 0, 0, 0, 100);
-            Timer1.Tick += new EventHandler(this.Timer1_Tick);
+            Timer1.Tick += Timer1_Tick;
         }
 
-//        private void InitializeLaneTop()
-//        {
-//            _laneTop = new LaneTop();
-//            GC.VerticalAlignment = VerticalAlignment.Center;
-//            GC.HorizontalAlignment = HorizontalAlignment.Left;
-//            GC.Children.Add(_laneTop);
-//            UpdateLayout();
-//        }
+        private void InitializeLaneTop()
+        {
+            //_laneTop = new LaneTop();
+            //GC.VerticalAlignment = VerticalAlignment.Center;
+            //GC.HorizontalAlignment = HorizontalAlignment.Left;
+            //GC.Children.Add(_laneTop);
+            //UpdateLayout();
+        }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
@@ -171,11 +171,67 @@ namespace LaneSimulator.Utilities
                         {
                             if (e.LeftButton == MouseButtonState.Pressed)
                             {
+                                double dx = mp2.X - mp.X;
+                                double dy = mp2.Y - mp.Y;
+                                ((GateLocation)g.Tag).X = ((GateLocation)g.Tag).X + dx;
+                                ((GateLocation)g.Tag).Y = ((GateLocation)g.Tag).Y + dy;
+                                double cx = ((GateLocation)g.Tag).X % GRID_SIZE;
+                                double cy = ((GateLocation)g.Tag).Y % GRID_SIZE;
 
+                                Point op = new Point(g.Margin.Left, g.Margin.Top);
+
+                                if ((Math.Abs(cx) < DELTA_SNAP || Math.Abs(GRID_SIZE - cx) < DELTA_SNAP) &&
+                                    (Math.Abs(cy) < DELTA_SNAP || Math.Abs(GRID_SIZE - cy) < DELTA_SNAP))
+                                {
+                                    g.Margin = new Thickness(Math.Round(g.Margin.Left / GRID_SIZE) * GRID_SIZE,
+                                        Math.Round(g.Margin.Top / GRID_SIZE) * GRID_SIZE, 0, 0);
+
+                                }
+                                else
+                                {
+                                    g.Margin = new Thickness(((GateLocation)g.Tag).X, ((GateLocation)g.Tag).Y, 0, 0);
+                                }
+
+                                Point np = new Point(g.Margin.Left, g.Margin.Top);
+              
+
+                                SizeCanvas();
+                                g.BringIntoView(); // still needed because gate larger than 20px block
                             }
 
                             if (e.RightButton == MouseButtonState.Pressed)
                             {
+                                Gate rotateSrc = selected[selected.Count - 1];
+                                Point mpp = rotateSrc.TranslatePoint(new Point(32, 32), GC);
+                                double dx = mp2.X - mpp.X;
+                                double dy = mp2.Y - mpp.Y;
+
+
+                                double newtheta = Math.Atan2(dy, dx) * (180.0 / Math.PI);
+
+                                dx = mp.X - mpp.X;
+                                dy = mp.Y - mpp.Y;
+                                double theta = Math.Atan2(dy, dx) * (180.0 / Math.PI);
+
+
+                                // the snap-to messes up the rotation
+                                // so we store smooth angle in the tag
+                                // and actual snapped angle in the transform
+                                double na = ((GateLocation)g.Tag).Angle + newtheta - theta;
+                                if (na < 0) na += 360;
+                                if (na >= 360) na -= 360;
+                                ((GateLocation)g.Tag).Angle = na;
+
+                                double or = ((RotateTransform)g.RenderTransform).Angle;
+
+                                // snap-to corners
+                                if (na >= 360 - ANGLE_SNAP_DEG || na <= ANGLE_SNAP_DEG) na = 0;
+                                if (na >= 270 - ANGLE_SNAP_DEG && na <= 270 + ANGLE_SNAP_DEG) na = 270;
+                                if (na >= 180 - ANGLE_SNAP_DEG && na <= 180 + ANGLE_SNAP_DEG) na = 180;
+                                if (na >= 90 - ANGLE_SNAP_DEG && na <= 90 + ANGLE_SNAP_DEG) na = 90;
+
+
+                                ((RotateTransform)g.RenderTransform).Angle = na;
                             }
                         }
                         break;
@@ -197,7 +253,26 @@ namespace LaneSimulator.Utilities
                             dragSelect.Height = height;
                             dragSelect.Visibility = Visibility.Visible;
 
+                            // select any gates inside the rectangle
                             Rect select = new Rect(x1, y1, width, height);
+                            foreach (Gate g in gates.Values)
+                            {
+                                Rect grect = new Rect(g.Margin.Left, g.Margin.Top, g.Width, g.Height);
+                                if (select.IntersectsWith(grect) && !g.Selected)
+                                {
+                                    g.Selected = true;
+                                    selected.Add(g);
+                                }
+
+                                // this is not the same as just "not" or else the above
+                                if (!select.IntersectsWith(grect) && g.Selected)
+                                {
+                                    g.Selected = false;
+                                    selected.Remove(g);
+                                }
+
+
+                            }
                         }
                         break;
                 }

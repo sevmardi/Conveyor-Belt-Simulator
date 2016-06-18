@@ -847,7 +847,7 @@
         </Canvas>
 
 
-        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="Counter">
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="Counter" Canvas.Left="-224.667">
             <Border BorderBrush="#FF539D3F" BorderThickness="2" CornerRadius="5" Height="56.911" Width="116.667" >
                 <Border.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/push-button-green-512.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/logicity-crystal-reports-scheduler.png")]
 
 

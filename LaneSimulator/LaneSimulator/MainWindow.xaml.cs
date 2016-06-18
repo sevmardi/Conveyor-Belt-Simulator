@@ -30,7 +30,7 @@ namespace LaneSimulator
         public static string APP_COPYRIGHT;
 
         private bool Ispaused = false;
-        private ShadowBox sbZoom, sbSpeed, sslObjects, total, SSL, timerBox, btnsPanelBox, counterBox, DegradedBtns;
+        private ShadowBox sbZoom, sbSpeed, sslObjects, total, SSL, timerBox, btnsPanelBox, counterBox, DegradedBtns, LaneStatus;
         
         private readonly Utilities.SSLCanvas _sslCanvas;
         private double T = 0.0;
@@ -95,19 +95,7 @@ namespace LaneSimulator
             Grid.SetColumn(sbZoom, 1);
             Grid.SetRow(sbZoom, 1);
 
-            //Speed of simulation
-            //Grid1.Children.Remove(spSpeed);
-            //sbSpeed = new ShadowBox();
-            //sbSpeed.Margin = new Thickness(20, 20, 175, 20);
-            //sbSpeed.Children.Add(spSpeed);
-            //spSpeed.Background = Brushes.Transparent;
-            //sbSpeed.VerticalAlignment = VerticalAlignment.Top;
-            //sbSpeed.HorizontalAlignment = HorizontalAlignment.Right;
-            //Grid1.Children.Add(sbSpeed);
-            //Grid.SetColumn(sbSpeed, 1);
-            //Grid.SetRow(sbSpeed, 1);
-
-            //TraysCounter
+            //TraysCounter - NUmber of trays been on the lane
             Grid1.Children.Remove(traysCounter);
             total = new ShadowBox();
             total.Margin = new Thickness(20);
@@ -166,6 +154,17 @@ namespace LaneSimulator
             Grid1.Children.Add(DegradedBtns);
             Grid.SetColumn(DegradedBtns, 1);
             Grid.SetRow(DegradedBtns, 1);
+
+            Grid1.Children.Remove(Status);
+            LaneStatus = new ShadowBox();
+            LaneStatus.Margin = new Thickness(20, 20, 175, 20);
+            LaneStatus.Children.Add(Status);
+            Status.Background = Brushes.Transparent;
+            LaneStatus.VerticalAlignment = VerticalAlignment.Top;
+            LaneStatus.HorizontalAlignment = HorizontalAlignment.Center;
+            Grid1.Children.Add(LaneStatus);
+            Grid.SetColumn(LaneStatus, 1);
+            Grid.SetRow(LaneStatus, 1);
 
 
            this.Loaded += (sender2, e2) =>
