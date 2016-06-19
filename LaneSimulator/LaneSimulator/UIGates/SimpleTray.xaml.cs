@@ -18,7 +18,17 @@ namespace LaneSimulator.UIGates
             InitializeComponent();   
         }
 
-       
+        private StoryBoardState _starteState = StoryBoardState.Start;
+        private StoryBoardState _resumeState = StoryBoardState.Resume;
+
+
+        public StoryBoardState StartState
+        {
+            get { return _starteState; }
+            set { _starteState = value; NotifyPropertyChanged(); }
+        }
+
+
 
         public double X{ get; set; }
         public double Y { get; set; }
@@ -46,27 +56,18 @@ namespace LaneSimulator.UIGates
             return new Rect(GetPoint(), new Size(Width, Height));
         }
 
-        public bool IsColliding(SimpleTray other)
-        {
-            bool ret = false;
-
-            var dX = other.TrayTranslateTransform.X - this.TrayTranslateTransform.X;
-            var dY = other.TrayTranslateTransform.Y - this.TrayTranslateTransform.Y;
-            var h = Math.Sqrt(dX*dX + dY*dY);
-
-            ret = (h < 40);
-
-            return ret;
-        }
-
-
         public event PropertyChangedEventHandler PropertyChanged;
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
-            var handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+            if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
+    }
+
+
+    public enum StoryBoardState
+    {
+        Start, 
+        Pause,
+        Resume
     }
 }

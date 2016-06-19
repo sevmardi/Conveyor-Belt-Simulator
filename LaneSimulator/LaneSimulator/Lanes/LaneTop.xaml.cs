@@ -2660,19 +2660,6 @@ namespace LaneSimulator.Lanes
         }
 
 
-        #region 
-
-        public void TaskRunner()
-        {
-            int testtrays = 5;
-            for (int i = 0; i < testtrays; i++)
-            {
-                SmallTray smallTray = new SmallTray();
-                AnimationPannel.Children.Add(smallTray);
-            }
-        }
-
-        #endregion
 
 
 
@@ -2753,16 +2740,12 @@ namespace LaneSimulator.Lanes
                 {
                     _element = new SimpleTray();
 
-                    var sb1 = FindResource("LongPathAnimation") as Storyboard;
+                    var sb1 = FindResource("LongNotApprovedStoryBoard") as Storyboard;
                     sb1.Begin(_element, true);
-                    TestGrid.Children.Add(_element);
+                    PanelForNotApproved.Children.Add(_element);
                 
                     count--;
                     NumberOfClicksToProduceTray(count);
-
-
-                   
-
                 }));
                 // 1. kijk of er ruimte is om een bak erbij te doen
                 // 2. zo wel, dan kan een nieuwe bak aanmaken. 
@@ -2772,9 +2755,6 @@ namespace LaneSimulator.Lanes
                 // 6. zo niet, dan geberut er niks. 
             }
 
- 
-
-
         }
 
         private void MakeTrayBtn_Click(object sender, RoutedEventArgs e)
@@ -2782,8 +2762,6 @@ namespace LaneSimulator.Lanes
 
             count++;
             NumberOfClicksToProduceTray(count);
-          
-            
             // Executor();
         }
 
@@ -2791,17 +2769,12 @@ namespace LaneSimulator.Lanes
 
         private void StoryBoardSectionACompleted(object sender, EventArgs e)
         {
-            var sb1 = FindResource("SectionB_SB") as Storyboard;
 
-            sb1.Begin(_element);
-            sb1.Completed += StoryBoardSectionBCompleted;
         }
 
         private void StoryBoardSectionBCompleted(object sender, EventArgs e)
         {
-            var sb3 = FindResource("SectionB_SB") as Storyboard;
-
-            sb3.Begin(_element);
+          
         }
 
         #endregion
@@ -2809,7 +2782,7 @@ namespace LaneSimulator.Lanes
         private void Total()
         {
            // total_text1.Text = (this.tray_Wrap.Children.Count).ToString();
-            Dispatcher.Invoke((Action)(() => { (TestGrid.Children.Count).ToString(); }));
+            Dispatcher.Invoke((Action)(() => { (AnimationPanel.Children.Count).ToString(); }));
         }
 
 
@@ -2819,9 +2792,13 @@ namespace LaneSimulator.Lanes
         // from http://stackoverflow.com/a/1607741/3641381
 
 
+        //viewmodel 
 
-       
 
+
+        Queue<Object[]> animationQueue = new Queue<Object[]>();
+
+      
 
 
 
