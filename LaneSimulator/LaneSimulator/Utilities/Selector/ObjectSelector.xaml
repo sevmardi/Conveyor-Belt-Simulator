@@ -89,6 +89,12 @@
                                        dragDrop:DragDropHelper.AdornerLayer="adornerLayer"
                                        />
 
+                    <!--<Button Click="Button_Click_3" x:Name="Steel_Button" Height="26.94" Canvas.Left="742.412"
+                    Canvas.Top="68.783" Width="27.003" ToolTip="Steel" Cursor="Hand" BorderBrush="{x:Null}"
+                    Background="{x:Null}">
+                        <Image Height="20.838" Source="Images/AL.png" Stretch="Fill" Width="13.514"/>
+                    </Button>-->
+
                     <!--<gates:LargeTray x:Name="LargTray" VerticalAlignment="Top"
                                        dragDrop:DragDropHelper.IsDragSource="true"
                                        dragDrop:DragDropHelper.DragDropControl="{StaticResource ObjectAdorner}"

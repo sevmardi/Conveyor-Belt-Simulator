@@ -2725,7 +2725,6 @@ namespace LaneSimulator.Lanes
         private void LaneTop_OnLoaded(object sender, RoutedEventArgs e)
         {
             TestTimer();
-           
         }
 
 
@@ -2740,9 +2739,9 @@ namespace LaneSimulator.Lanes
                 {
                     _element = new SimpleTray();
 
-                    var sb1 = FindResource("LongNotApprovedStoryBoard") as Storyboard;
+                    var sb1 = FindResource("LongApprovedSB") as Storyboard;
                     sb1.Begin(_element, true);
-                    PanelForNotApproved.Children.Add(_element);
+                    PanelForApproved.Children.Add(_element);
                 
                     count--;
                     NumberOfClicksToProduceTray(count);
