@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Globalization;
 using System.Reflection;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -172,6 +173,7 @@ namespace LaneSimulator
                lblAppTitle.Text = APP_TITLE;
                lblAppVersion.Text = APP_VERSION;
                lblAppCopyright.Text = APP_COPYRIGHT;
+
            };
 
            this.PreviewMouseWheel += (sender, e2) =>
@@ -203,7 +205,6 @@ namespace LaneSimulator
             SSLCanvas.GC.HorizontalAlignment = HorizontalAlignment.Left;
             SSLCanvas.GC.Children.Add(_laneTop);
             SSLCanvas.UpdateLayout();
-
         }
 
         private void DragDropHelper_ItemDropped(object sender, DragDropEventArgs e)
@@ -212,9 +213,10 @@ namespace LaneSimulator
             {
                 Gate newgate = null;
 
-                newgate = ((Gate)e.Content).CreateUserInstance();
-               
-                SSLCanvas.AddGate(newgate, new GateLocation(SSLCanvas.GetNearestSnapTo(SSLCanvas.TranslateScrolledPoint(e.Position))));
+                newgate = ((Gate) e.Content).CreateUserInstance();
+
+                SSLCanvas.AddGate(newgate,
+                    new GateLocation(SSLCanvas.GetNearestSnapTo(SSLCanvas.TranslateScrolledPoint(e.Position))));
 
                 SSLCanvas.UpdateLayout();
             }
@@ -258,7 +260,9 @@ namespace LaneSimulator
         /// </summary>
         private void Total()
         {
-       //    this.total_text1.Text = (this.tray_Wrap.Children.Count).ToString();
+       //   this.total_text1.Text = (this.tray_Wrap.Children.Count).ToString();
+
+         // Dispatcher.Invoke((Action)(() => { (AnimationPanel.Children.Count).ToString(); }));
         }
 
         public void NumberOfClicksToProduceTray()
@@ -268,51 +272,12 @@ namespace LaneSimulator
         }
 
 
-        private void btnStartSystem_Click(object sender, RoutedEventArgs e)
-        {
-                _plcCalls.StartUp();
-                //_plcCalls.SectionA();
-                //_plcCalls.SectionB();
-                //_plcCalls.SectionC();
-                //_plcCalls.SectionD();
-                //_plcCalls.SectionE();
-                //_plcCalls.SectionF();
-                //_plcCalls.SectionG();
-
-                //ObjectToMove.Visibility = Visibility.Visible;
-
-                // Sensors section-A
-                //_0102_S1.Fill = new SolidColorBrush(Colors.Red);
-                //_0102_S2.Fill = new SolidColorBrush(Colors.Red);
-                //_0103_S1.Fill = new SolidColorBrush(Colors.Red);
-                //_0104_S1.Fill = new SolidColorBrush(Colors.Red);
-                //_0105_S1.Fill = new SolidColorBrush(Colors.Red);
-                //_0105_S2.Fill = new SolidColorBrush(Colors.Red);
-                //_0301_S1.Fill = new SolidColorBrush(Colors.Red);
-                //_0301_S2.Fill = new SolidColorBrush(Colors.Red);
-                //_0302_S1.Fill = new SolidColorBrush(Colors.Red);
-
-                //_0303_S1.Fill = new SolidColorBrush(Colors.Red);
-                //_0304_S1.Fill = new SolidColorBrush(Colors.Red);
-                //_0304_S2.Fill = new SolidColorBrush(Colors.Red);
-                //_0304_S3.Fill = new SolidColorBrush(Colors.Red);
-                //_0701_S1.Fill = new SolidColorBrush(Colors.Red);
-
-        }
-
-
-
-
-
         private void MainWindow1Closing(object sender, CancelEventArgs e)
         {
-            // only the orginal full window 
-           
-         
             _plcCalls.Disconnect();
-   
-            //_plcCalls.StopBtnInput();
-            //MessageBox.Show("sure thing buddy");
+  
+            _plcCalls.StopBtnInput();
+        //    MessageBox.Show("System is stopped");
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
@@ -334,10 +299,8 @@ namespace LaneSimulator
                 lblInfoLine.Visibility = Visibility.Visible;
                 spAppInfo.Visibility = Visibility.Collapsed;
             }
-
         }
 
-       
         private void slZoom_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             SSLCanvas.Zoom = slZoom.Value;
@@ -347,7 +310,7 @@ namespace LaneSimulator
         {
             if (dest < slZoom.Minimum)
                 dest = slZoom.Minimum;
-            
+
             if (dest > slZoom.Maximum)
                 dest = slZoom.Maximum;
 
@@ -360,7 +323,6 @@ namespace LaneSimulator
 
                 pa.AccelerationRatio = 0.2;
                 pa.DecelerationRatio = 0.2;
-
             }
 
             DoubleAnimation da = new DoubleAnimation(dest, new Duration(new TimeSpan(0, 0, 1)));
@@ -385,10 +347,7 @@ namespace LaneSimulator
 
             BackgroundWorker finishani = new BackgroundWorker();
 
-            finishani.DoWork += (sender2, e2) =>
-            {
-                System.Threading.Thread.Sleep(900);
-            };
+            finishani.DoWork += (sender2, e2) => { System.Threading.Thread.Sleep(900); };
 
             finishani.RunWorkerCompleted += (sender2, e2) =>
             {
@@ -444,7 +403,6 @@ namespace LaneSimulator
             schedulerPanel.Show();
         }
 
-
         private void StopButton_OnClick(object sender, RoutedEventArgs e)
         {   
              // Stop the PLC
@@ -460,14 +418,8 @@ namespace LaneSimulator
 
         private void StartSystem_OnClick(object sender, RoutedEventArgs e)
         {
-         //   _plcCalls.EstablishContact();
-
-            if (_plcCalls.Client.Connected())
-            {
-                _plcCalls.StartUp();
-            }
-            else
-                MessageBox.Show("not connected");
+            _laneTop.StartSystem();
+            SSLOperational();
         }
 
         private void NotApproved_OnClick(object sender, RoutedEventArgs e)
@@ -481,5 +433,32 @@ namespace LaneSimulator
             // approve the tray and move it to another approval conveyor
             _plcCalls.DegradedDecisionEventOk();
         }
+
+        public void TrayTimer()
+        {
+            var aTimer = new Timer();
+           // aTimer.Elapsed += new ElapsedEventHandler(MakeTrayBtn2_Click);
+            aTimer.Interval = 2500;
+            aTimer.Enabled = true;
+            aTimer.AutoReset = true;
+        }
+
+
+        public void NumberOfClicksToProduceTray(int count)
+        {
+            Dispatcher.Invoke((Action) (() => { MouseClickOfUser.Text = count.ToString(); }));
+        }
+
+        public void SSLOperational()
+        {
+            LaneStatusName.Text = "NIce";
+        }
+       
+    }
+
+    public enum DegradedMode
+    {
+        Approved,
+        NotApproved
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Snap7;
+﻿using Snap7;
 
 namespace LaneSimulator.PLC
 {
@@ -19,10 +14,13 @@ namespace LaneSimulator.PLC
         public readonly int Wordlen = S7Client.S7WLBit;
         private readonly byte[] _buffer = new byte[500];
         private int _res;
-
+        private readonly PlcCalls _plcCalls;
+       
         public PLCAbstract()
         {
             Client = new S7Client();
+            _plcCalls = new PlcCalls();
+            _plcCalls.EstablishContact();
         }
 
         /// <summary>
@@ -32,7 +30,7 @@ namespace LaneSimulator.PLC
         public int WriteSensorInput(int address)
         {
             _buffer[0] = 1;
-            _res = Client.ReadArea(S7Client.S7AreaPA, DbNumber, address, Amount, Wordlen, _buffer);
+            _res = Client.ReadArea(S7Client.S7AreaPE, DbNumber, address, Amount, Wordlen, _buffer);
 
             return _res;
         }
@@ -44,7 +42,7 @@ namespace LaneSimulator.PLC
         /// <returns></returns>
         public int ReadSensorInput(int address)
         {
-            _res = Client.ReadArea(S7Client.S7AreaPA, DbNumber, address, Amount, Wordlen, _buffer);
+            _res = Client.ReadArea(S7Client.S7AreaPE, DbNumber, address, Amount, Wordlen, _buffer);
 
             return _res;
         }

@@ -606,5 +606,13 @@ namespace LaneSimulator.PLC
             Client.WriteArea(S7Client.S7AreaPE, DbNumber, PLCTags.PushButtonOperatorNotOk, Amount, Wordlen, _buffer);
         }
 
+
+        public void SSLOperational()
+        {
+            _buffer[0] = 1;
+            // If not connected show it in Red  
+            // if connect show in Blue 
+            // Any other errors idk
+        }
     }
 }

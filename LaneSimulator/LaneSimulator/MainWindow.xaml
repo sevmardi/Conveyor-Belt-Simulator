@@ -132,7 +132,7 @@
                 <TextBox x:Name="LaneStatusName" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                         
                          Foreground="Blue" Background="White"
-                         FontSize="20" BorderThickness="2" Focusable="false" Margin="0,36.09,0,0"
+                         FontSize="30" BorderThickness="2" Focusable="false" Margin="0,36.09,0,0"
                          BorderBrush="{x:Null}" />
             </Grid>
         </StackPanel>

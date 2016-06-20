@@ -15,7 +15,7 @@ namespace LaneSimulator.Lanes
 
         public void StoryboardSectionACompleted()
         {
-    
+            //
         }
 
     }

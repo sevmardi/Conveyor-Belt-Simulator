@@ -50,12 +50,7 @@ namespace LaneSimulator.UIGates
         public double X { get; set; }
         public double Y { get; set; }
         
-     //   public static DependencyProperty SizeProperty = DependencyProperty.Register("Size", typeof(double), typeof(Sensor), new PropertyMetadata(new PropertyChangedCallback(SizeChanged)));
-       // public static DependencyProperty CollisionDetected = DependencyProperty.Register("CollisionDetected", typeof(bool), typeof(Sensor), new PropertyMetadata(new PropertyChangedCallback(SizeChanged)));
-
-        //public static readonly DependencyProperty CollisionDetectedDependencyProperty = DependencyProperty.Register("CollisionDetected", typeof(bool), typeof(Sensor), new PropertyMetadata(false));
-
-       
+ 
         public TranslateTransform SensorTranslateTransform { get; set; }
 
 
