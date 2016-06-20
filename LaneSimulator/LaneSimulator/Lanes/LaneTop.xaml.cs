@@ -567,7 +567,8 @@ namespace LaneSimulator.Lanes
         {
             #region old method body 
 
-            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0102_S1, _plcCalls.Amount,_plcCalls.Wordlen, Buffer);
+            _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0102_S1, _plcCalls.Amount,
+                _plcCalls.Wordlen, Buffer);
 
             if (_res == 0)
             {
@@ -577,7 +578,8 @@ namespace LaneSimulator.Lanes
                     {
                         Buffer[0] = 0;
 
-                        _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0102_S1,_plcCalls.Amount, _plcCalls.Wordlen, Buffer);
+                        _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._0102_S1,
+                            _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
 
                         _0102_S1.Fill = new SolidColorBrush(Colors.DarkGray);
                         //DelayAction(800, new Action(() => { this._0102_D1Motor(); }));
@@ -627,12 +629,8 @@ namespace LaneSimulator.Lanes
 
             #endregion
 
-
-
-                //    _sensorTimerHandler.Timer(400, _0102_S1_TurnOn);
-                // FirstSensor();  
-
-            
+            //    _sensorTimerHandler.Timer(400, _0102_S1_TurnOn);
+            // FirstSensor();  
         }
 
         public void _0102_S1_TurnOn(object source, ElapsedEventArgs e)
@@ -1296,11 +1294,19 @@ namespace LaneSimulator.Lanes
 
 
 
-        public void Executor4()
+        public void Executor4()  
         {
             _sensorTimerHandler.Timer(18000, _1001_S1_TurnOff);
-            //_sensorTimerHandler.Timer(19000, _1001_S2_TurnOff);
-            //_sensorTimerHandler.Timer(20000, _1002_S1_TurnOff);
+            _sensorTimerHandler.Timer(19000, _1001_S2_TurnOff);
+            _sensorTimerHandler.Timer(20000, _1002_S1_TurnOff);
+            _sensorTimerHandler.Timer(21000, _1002_S2_TurnOff);
+            _sensorTimerHandler.Timer(21000, _1004_S1_TurnOff);
+            _sensorTimerHandler.Timer(21500, _1003_S1_TurnOff);
+            _sensorTimerHandler.Timer(21500, _1003_S3_TurnOff);
+            _sensorTimerHandler.Timer(21500, _1003_S4_TurnOff);
+            _sensorTimerHandler.Timer(21500, _1003_S5_TurnOff);
+            _sensorTimerHandler.Timer(22500, _1003_S2_TurnOff);
+            _sensorTimerHandler.Timer(21500, _1004_S2_TurnOff); 
         }
 
         #region Section D
@@ -1367,6 +1373,7 @@ namespace LaneSimulator.Lanes
                     //ignore
                 }
             }
+            _sensorTimerHandler.Timer(650, _1001_S2_TurnOn);
         }
 
         public void _1001_S2_TurnOn(object source, ElapsedEventArgs e)
@@ -1404,6 +1411,7 @@ namespace LaneSimulator.Lanes
                     //ignore
                 }
             }
+            _sensorTimerHandler.Timer(650, _1002_S1_TurnOn);
         }
 
         public void _1002_S1_TurnOn(object source, ElapsedEventArgs e)
@@ -1416,8 +1424,7 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1002_S1.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-       
-        
+    
         public void _1002_S2_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1002_S2, _plcCalls.Amount,
@@ -1442,6 +1449,7 @@ namespace LaneSimulator.Lanes
                     //ignore
                 }
             }
+            _sensorTimerHandler.Timer(650, _1002_S2_TurnOn);
         }
 
         public void _1002_S2_TurnOn(object source, ElapsedEventArgs e)
@@ -1454,7 +1462,7 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1002_S2.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-       
+
         public void _1004_S1_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1004_S1, _plcCalls.Amount,
@@ -1479,6 +1487,7 @@ namespace LaneSimulator.Lanes
                     //ignore
                 }
             }
+            _sensorTimerHandler.Timer(21000, _1004_S1_TurnOn);
         }
 
         public void _1004_S1_TurnOn(object source, ElapsedEventArgs e)
@@ -1491,7 +1500,7 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1004_S1.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-       
+     
         public void _1003_S1_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1003_S1, _plcCalls.Amount,
@@ -1516,6 +1525,7 @@ namespace LaneSimulator.Lanes
                     //ignore
                 }
             }
+            _sensorTimerHandler.Timer(21500, _1003_S1_TurnOn);
         }
 
         public void _1003_S1_TurnOn(object source, ElapsedEventArgs e)
@@ -1528,6 +1538,7 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1003_S1.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
+ 
         public void _1003_S3_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1003_S1, _plcCalls.Amount,
@@ -1552,9 +1563,10 @@ namespace LaneSimulator.Lanes
                     //ignore
                 }
             }
+            _sensorTimerHandler.Timer(650, _1003_S3_TurnOn);
         }
 
-        public void _1003_S3_TurnOn()
+        public void _1003_S3_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -1564,7 +1576,7 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1003_S3.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-        public void _1003_S4_TurnOff()
+        public void _1003_S4_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1003_S4, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -1588,9 +1600,10 @@ namespace LaneSimulator.Lanes
                     //ignore
                 }
             }
+            _sensorTimerHandler.Timer(650, _1003_S4_TurnOn);
         }
 
-        public void _1003_S4_TurnOn()
+        public void _1003_S4_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -1600,7 +1613,8 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1003_S4.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-        public void _1003_S5_TurnOff()
+
+        public void _1003_S5_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1003_S5, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -1624,9 +1638,10 @@ namespace LaneSimulator.Lanes
                     throw new ArgumentException();
                 }
             }
+            _sensorTimerHandler.Timer(650, _1003_S5_TurnOn);
         }
 
-        public void _1003_S5_TurnOn()
+        public void _1003_S5_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -1636,7 +1651,8 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1003_S5.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-        public void _1003_S2_TurnOff()
+      
+        public void _1003_S2_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1003_S2, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -1660,11 +1676,10 @@ namespace LaneSimulator.Lanes
                     throw new ArgumentException();
                 }
             }
-            else
-                MessageBox.Show("Connection Must be established first");
+            _sensorTimerHandler.Timer(650, _1003_S2_TurnOn);
         }
 
-        public void _1003_S2_TurnOn()
+        public void _1003_S2_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -1674,7 +1689,8 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1003_S2.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-        public void _1004_S2_TurnOff()
+
+        public void _1004_S2_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1004_S2, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -1698,9 +1714,10 @@ namespace LaneSimulator.Lanes
                     throw new ArgumentException();
                 }
             }
+            _sensorTimerHandler.Timer(650, _1004_S2_TurnOn);
         }
 
-        public void _1004_S2_TurnOn()
+        public void _1004_S2_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -1713,11 +1730,19 @@ namespace LaneSimulator.Lanes
         #endregion
 
 
+        public void ExecutorE()
+        {
+            _sensorTimerHandler.Timer(22500, _1101_S1_TurnOff);
+            _sensorTimerHandler.Timer(22500, _1102_S1_TurnOff);
+            _sensorTimerHandler.Timer(23500, _1101_S2_TurnOff);
+            _sensorTimerHandler.Timer(23500, _1102_S2_TurnOff);
+            _sensorTimerHandler.Timer(24500, _1101_S3_TurnOff);
+            _sensorTimerHandler.Timer(24500, _1102_S3_TurnOff); 
+        }
+
+
         #region Section E
-
-
-
-        public void _1101_S1_TurnOff()
+        public void _1101_S1_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1101_S1, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -1741,9 +1766,10 @@ namespace LaneSimulator.Lanes
                     throw new ArgumentException();
                 }
             }
+            _sensorTimerHandler.Timer(21500, _1101_S1_TurnOn); 
         }
 
-        public void _1101_S1_TurnOn()
+        public void _1101_S1_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -1753,7 +1779,8 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1101_S1.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-        public void _1102_S1_TurnOff()
+
+        public void _1102_S1_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1102_S1, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -1777,9 +1804,10 @@ namespace LaneSimulator.Lanes
                     throw new ArgumentException();
                 }
             }
+            _sensorTimerHandler.Timer(650, _1102_S1_TurnOn); 
         }
 
-        public void _1102_S1_TurnOn()
+        public void _1102_S1_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -1789,7 +1817,8 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1102_S1.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-        public void _1101_S2_TurnOff()
+
+        public void _1101_S2_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1102_S1, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -1813,9 +1842,10 @@ namespace LaneSimulator.Lanes
                     throw new ArgumentException();
                 }
             }
+            _sensorTimerHandler.Timer(650, _1101_S2_TurnOn); 
         }
 
-        public void _1101_S2_TurnOn()
+        public void _1101_S2_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -1825,7 +1855,8 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1101_S2.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-        public void _1102_S2_TurnOff()
+        
+        public void _1102_S2_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1102_S1, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -1849,9 +1880,10 @@ namespace LaneSimulator.Lanes
                     throw new ArgumentException();
                 }
             }
+            _sensorTimerHandler.Timer(650, _1102_S2_TurnOn); 
         }
 
-        public void _1102_S2_TurnOn()
+        public void _1102_S2_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -1861,7 +1893,8 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1102_S2.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-        public void _1101_S3_TurnOff()
+        
+        public void _1101_S3_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1101_S3, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -1885,9 +1918,10 @@ namespace LaneSimulator.Lanes
                     throw new ArgumentException();
                 }
             }
+            _sensorTimerHandler.Timer(650, _1101_S3_TurnOn); 
         }
 
-        public void _1101_S3_TurnOn()
+        public void _1101_S3_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -1897,7 +1931,8 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1101_S3.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-        public void _1102_S3_TurnOff()
+        
+        public void _1102_S3_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1102_S3, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -1923,7 +1958,7 @@ namespace LaneSimulator.Lanes
             }
         }
 
-        public void _1102_S3_TurnOn()
+        public void _1102_S3_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -1935,10 +1970,21 @@ namespace LaneSimulator.Lanes
 
         #endregion
 
+        // fix the time of those
+        public void ExecutorF()
+        {
+            _sensorTimerHandler.Timer(22500, _1601_S1_TurnOff);
+            _sensorTimerHandler.Timer(22500, _1601_S2_TurnOff);
+            _sensorTimerHandler.Timer(23500, _1601_S3_TurnOff);
+            _sensorTimerHandler.Timer(23500, _1602_S1_TurnOff);
+            _sensorTimerHandler.Timer(24500, _1602_S2_TurnOff);
+            _sensorTimerHandler.Timer(24500, _1602_S3_TurnOff);
+        }
+
 
         #region Section F
 
-        public void _1601_S1_TurnOff()
+        public void _1601_S1_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1601_S1, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -1962,9 +2008,10 @@ namespace LaneSimulator.Lanes
                     throw new ArgumentException();
                 }
             }
+            _sensorTimerHandler.Timer(650, _1601_S1_TurnOn);
         }
 
-        public void _1601_S1_TurnOn()
+        public void _1601_S1_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -1974,7 +2021,8 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1601_S1.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-        public void _1601_S2_TurnOff()
+        
+        public void _1601_S2_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1601_S2, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -1998,9 +2046,10 @@ namespace LaneSimulator.Lanes
                     throw new ArgumentException();
                 }
             }
+            _sensorTimerHandler.Timer(650, _1601_S2_TurnOn);
         }
 
-        public void _1601_S2_TurnOn()
+        public void _1601_S2_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -2010,7 +2059,8 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1601_S2.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-        public void _1601_S3_TurnOff()
+       
+        public void _1601_S3_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1601_S3, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -2034,9 +2084,10 @@ namespace LaneSimulator.Lanes
                     throw new ArgumentException();
                 }
             }
+            _sensorTimerHandler.Timer(650, _1601_S3_TurnOn);
         }
 
-        public void _1601_S3_TurnOn()
+        public void _1601_S3_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -2046,7 +2097,8 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1601_S3.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-        public void _1602_S1_TurnOff()
+        
+        public void _1602_S1_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1602_S1, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -2070,9 +2122,10 @@ namespace LaneSimulator.Lanes
                     throw new ArgumentException();
                 }
             }
+            _sensorTimerHandler.Timer(650, _1602_S1_TurnOn);
         }
 
-        public void _1602_S1_TurnOn()
+        public void _1602_S1_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -2082,7 +2135,8 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1602_S1.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-        public void _1602_S2_TurnOff()
+       
+        public void _1602_S2_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1602_S2, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -2106,9 +2160,10 @@ namespace LaneSimulator.Lanes
                     throw new ArgumentException();
                 }
             }
+            _sensorTimerHandler.Timer(650, _1602_S2_TurnOn);
         }
 
-        public void _1602_S2_TurnOn()
+        public void _1602_S2_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -2118,7 +2173,8 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1602_S2.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-        public void _1602_S3_TurnOff()
+       
+        public void _1602_S3_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1602_S3, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -2142,9 +2198,10 @@ namespace LaneSimulator.Lanes
                     throw new ArgumentException();
                 }
             }
+            _sensorTimerHandler.Timer(650, _1602_S3_TurnOn);
         }
 
-        public void _1602_S3_TurnOn()
+        public void _1602_S3_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -2157,9 +2214,19 @@ namespace LaneSimulator.Lanes
         #endregion
 
 
+        public void ExecutorG()
+        {
+            _sensorTimerHandler.Timer(22500, _1701_S1_TurnOff);
+            _sensorTimerHandler.Timer(22500, _1702_S1_TurnOff);
+            _sensorTimerHandler.Timer(23500, _1701_S2_TurnOff);
+            _sensorTimerHandler.Timer(23500, _1702_S2_TurnOff);
+ 
+
+        }
+
         #region Section G
 
-        public void _1701_S1_TurnOff()
+        public void _1701_S1_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1701_S1, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -2183,9 +2250,10 @@ namespace LaneSimulator.Lanes
                     throw new ArgumentException();
                 }
             }
+            _sensorTimerHandler.Timer(650, _1701_S1_TurnOn);
         }
 
-        public void _1701_S1_TurnOn()
+        public void _1701_S1_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -2195,8 +2263,8 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1701_S1.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-      
-        public void _1702_S1_TurnOff()
+
+        public void _1702_S1_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1702_S1, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -2220,9 +2288,10 @@ namespace LaneSimulator.Lanes
                     throw new ArgumentException();
                 }
             }
+            _sensorTimerHandler.Timer(650, _1702_S1_TurnOn);
         }
 
-        public void _1702_S1_TurnOn()
+        public void _1702_S1_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -2232,8 +2301,8 @@ namespace LaneSimulator.Lanes
             Dispatcher.Invoke((Action) (() => { _1702_S1.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
-        
-        public void _1701_S2_TurnOff()
+
+        public void _1701_S2_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1701_S2, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -2257,9 +2326,10 @@ namespace LaneSimulator.Lanes
                     throw new ArgumentException();
                 }
             }
+            _sensorTimerHandler.Timer(650, _1701_S2_TurnOn);
         }
 
-        public void _1701_S2_TurnOn()
+        public void _1701_S2_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -2270,7 +2340,7 @@ namespace LaneSimulator.Lanes
         }
 
 
-        public void _1702_S2_TurnOff()
+        public void _1702_S2_TurnOff(object source, ElapsedEventArgs e)
         {
             _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1702_S2, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
@@ -2294,9 +2364,10 @@ namespace LaneSimulator.Lanes
                     throw new ArgumentException();
                 }
             }
+            _sensorTimerHandler.Timer(650, _1702_S2_TurnOn);
         }
 
-        public void _1702_S2_TurnOn()
+        public void _1702_S2_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
 
@@ -2418,16 +2489,10 @@ namespace LaneSimulator.Lanes
           
         }
 
-       
-      
 
         private void StopSimBtn_Click(object sender, RoutedEventArgs e)
         {
-         
-             //   _0102_S1_TurnOff();
-          
-
-            
+            //   _0102_S1_TurnOff();
         }
 
         private void SchedulerBtn_Click(object sender, RoutedEventArgs e)
@@ -2439,7 +2504,6 @@ namespace LaneSimulator.Lanes
         private void LaneTop_OnLoaded(object sender, RoutedEventArgs e)
         {
             TestTimer();
-            
         }
 
 
