@@ -26,15 +26,11 @@ namespace WpfApplication5
        
         private ObjectToMove _element;
         List<ObjectToMove> kartList = new List<ObjectToMove>();
-       
-        
+
+
         public MainWindow()
         {
             InitializeComponent();
-
-
- 
-
         }
 
 

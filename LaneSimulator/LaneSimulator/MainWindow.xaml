@@ -53,7 +53,7 @@
 
         <utilities:SSLCanvas x:Name="SSLCanvas" Grid.Column="1" Grid.Row="1"/>
 
-        <selector:ObjectSelector x:Name="SSLComponents" Grid.Row="1" Grid.Column="0" />
+        <!--<selector:ObjectSelector x:Name="SSLComponents" Grid.Row="1" Grid.Column="0" />-->
 
         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Name="spZoom">
             <Image Source="Images/ZoomHS.png" Height="20" />
@@ -192,6 +192,15 @@
             </ToolBar>
         </ToolBarTray>
 
+
+        <Button Click="TrayGenerator_Click" x:Name="Generator" Height="50"
+                Width="50" ToolTip="Trays" Cursor="Hand" 
+                   >
+            <Image Height="25" Source="Images/tray_object.png" Stretch="Fill" Width="30"/>
+        </Button>
+        
+        
+        
         <!--<DockPanel Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0">
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="_File">

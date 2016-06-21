@@ -2426,22 +2426,18 @@ namespace LaneSimulator.Lanes
         /// <param name="trays"></param>
         public void spraier(int trays)
         {
-           
             //for (int i = 0; i < trays; i++)
             //{
-                count += trays;
-               
+            count += trays;
+
             //}
             NumberOfClicksToProduceTray(count);
-
         }
-
 
 
         public void NumberOfClicksToProduceTray(int count)
         {
-            Dispatcher.Invoke((Action)(() => { MouseClickOfUser.Text = count.ToString(); }));
-            
+            Dispatcher.Invoke((Action) (() => { MouseClickOfUser.Text = count.ToString(); }));
         }
 
      
@@ -2473,14 +2469,14 @@ namespace LaneSimulator.Lanes
         }
 
       
-        public void TestTimer()
-        {
-            var aTimer = new Timer();
-            aTimer.Elapsed += new ElapsedEventHandler(MakeTrayBtn2_Click);
-            aTimer.Interval = 2500;
-            aTimer.Enabled = true;
-            aTimer.AutoReset = true;
-        }
+//        public void TestTimer()
+//        {
+//            var aTimer = new Timer();
+//            aTimer.Elapsed += new ElapsedEventHandler(MakeTrayBtn2_Click);
+//            aTimer.Interval = 2500;
+//            aTimer.Enabled = true;
+//            aTimer.AutoReset = true;
+//        }
 
 
         private void SchedulerBtn_Click(object sender, RoutedEventArgs e)
@@ -2491,12 +2487,25 @@ namespace LaneSimulator.Lanes
 
         private void LaneTop_OnLoaded(object sender, RoutedEventArgs e)
         {
-            TestTimer();
+//            TestTimer();
             Total();
         }
 
 
-        private void MakeTrayBtn2_Click(object sender, ElapsedEventArgs e)
+        public void test()
+        {
+            Dispatcher.Invoke((Action)(() =>
+            {             
+                var sb1 = FindResource("LongApprovedSB") as Storyboard;
+                sb1.Begin(_element, true);
+                PanelForApproved.Children.Add(_element);
+
+                MainExecutor();
+           
+            }));
+        }
+
+       /* private void MakeTrayBtn2_Click(object sender, ElapsedEventArgs e)
         {
             var moveTopUpDuration = TimeSpan.FromSeconds(1);
 
@@ -2527,7 +2536,7 @@ namespace LaneSimulator.Lanes
                 // 6. zo niet, dan geberut er niks. 
             }
 
-        }
+        }*/
 
         private void MakeTrayBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -2561,8 +2570,6 @@ namespace LaneSimulator.Lanes
         // building Queue 
         // from http://stackoverflow.com/a/1607741/3641381
 
-
-        //viewmodel 
 
 
         public void StartSystem()

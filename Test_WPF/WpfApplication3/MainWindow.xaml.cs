@@ -1,21 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfApplication2;
 
 namespace WpfApplication3
 {
@@ -23,9 +11,9 @@ namespace WpfApplication3
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
-        List<ObjectToMove> kartList = new List<ObjectToMove>();
+       
 
         public MainWindow()
         {
@@ -33,6 +21,51 @@ namespace WpfApplication3
             InitializeComponent();
     
         }
+
+        public static double GetMovingObjectPos(DependencyObject obj)
+        {
+            return (double)obj.GetValue(MovingObjectPosProperty);
+        }
+
+        public static void SetMovingObjectPos(DependencyObject obj, double value)
+        {
+            obj.SetValue(MovingObjectPosProperty, value);
+        }
+
+        // Using a DependencyProperty as the backing store for MovingObject.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MovingObjectPosProperty =
+            DependencyProperty.RegisterAttached("MovingObjectPos", typeof(double), typeof(MainWindow), new PropertyMetadata(0.0, new PropertyChangedCallback(MovingObjectPosChanged)));
+
+
+        private static void MovingObjectPosChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            double leftOfMovingObject = (double)e.NewValue;
+            Path beam = (Path)d;
+
+            System.Diagnostics.Debug.WriteLine("Left = " + e.NewValue.ToString());
+
+            double leftOfBeam = Canvas.GetLeft(beam);
+            double widthOfBeam = 20.0;
+
+            if (leftOfMovingObject > leftOfBeam && leftOfMovingObject < leftOfBeam + widthOfBeam)
+            {
+                System.Diagnostics.Debug.WriteLine("Hit >>>>> = " + e.NewValue.ToString());
+
+                beam.Fill = Brushes.Gray;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -72,12 +105,7 @@ namespace WpfApplication3
         }
         static int count = 0;
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        {
-          //  btn.Click += btn_Click;
-            count++;
-            MouseClickOfUser.Text = count.ToString();
-        }
+
         
 
 

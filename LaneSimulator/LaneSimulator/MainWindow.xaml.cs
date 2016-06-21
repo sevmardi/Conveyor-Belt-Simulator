@@ -31,7 +31,8 @@ namespace LaneSimulator
         public static string APP_COPYRIGHT;
 
         private bool Ispaused = false;
-        private ShadowBox sbZoom, sbSpeed, sslObjects, total, SSL, timerBox, btnsPanelBox, counterBox, DegradedBtns, LaneStatus;
+        private ShadowBox sbZoom, sbSpeed, sslObjects, total, SSL, timerBox, btnsPanelBox, counterBox, DegradedBtns, LaneStatus,
+        trayGenerator;
         
         private readonly Utilities.SSLCanvas _sslCanvas;
         private double T = 0.0;
@@ -39,7 +40,8 @@ namespace LaneSimulator
         private readonly PlcCalls _plcCalls;
         private LaneTop _laneTop;
         static int count = 0;
-
+        private FrameworkElement _element;
+     
         public MainWindow()
         {
             InitializeComponent();
@@ -73,16 +75,16 @@ namespace LaneSimulator
            // drag/drop for edit or full
             DragDropHelper.ItemDropped += new EventHandler<DragDropEventArgs>(DragDropHelper_ItemDropped);
 
-            Grid1.Children.Remove(SSLComponents);
-            sslObjects = new ShadowBox();
-            sslObjects.Margin = new Thickness(20, 20, 20, 20);
-            sslObjects.Children.Add(SSLComponents);
-            SSLComponents.Background = Brushes.Transparent;
-            sslObjects.VerticalAlignment = VerticalAlignment.Center;
-            sslObjects.HorizontalAlignment = HorizontalAlignment.Left;
-            Grid1.Children.Add(sslObjects);
-            Grid.SetColumn(sslObjects, 1);
-            Grid.SetRow(sslObjects, 1);
+            //Grid1.Children.Remove(SSLComponents);
+            //sslObjects = new ShadowBox();
+            //sslObjects.Margin = new Thickness(20, 20, 20, 20);
+            //sslObjects.Children.Add(SSLComponents);
+            //SSLComponents.Background = Brushes.Transparent;
+            //sslObjects.VerticalAlignment = VerticalAlignment.Center;
+            //sslObjects.HorizontalAlignment = HorizontalAlignment.Left;
+            //Grid1.Children.Add(sslObjects);
+            //Grid.SetColumn(sslObjects, 1);
+            //Grid.SetRow(sslObjects, 1);
 
             // Everybody gets zoom
             sbZoom = new ShadowBox();
@@ -168,6 +170,18 @@ namespace LaneSimulator
             Grid.SetRow(LaneStatus, 1);
 
 
+            Grid1.Children.Remove(Generator);
+            trayGenerator = new ShadowBox();
+            trayGenerator.Margin = new Thickness(20, 20, 175, 20);
+            trayGenerator.Children.Add(Generator);
+            Generator.Background = Brushes.Transparent;
+            trayGenerator.VerticalAlignment = VerticalAlignment.Center;
+            trayGenerator.HorizontalAlignment = HorizontalAlignment.Left;
+            Grid1.Children.Add(trayGenerator);
+            Grid.SetColumn(trayGenerator, 1);
+            Grid.SetRow(trayGenerator, 1);
+
+
            this.Loaded += (sender2, e2) =>
            {
                lblAppTitle.Text = APP_TITLE;
@@ -230,6 +244,7 @@ namespace LaneSimulator
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             DisplayConnectScreen();
+           
         }
 
         private void DisplayConnectScreen()
@@ -265,11 +280,11 @@ namespace LaneSimulator
          // Dispatcher.Invoke((Action)(() => { (AnimationPanel.Children.Count).ToString(); }));
         }
 
-        public void NumberOfClicksToProduceTray()
-        {
-            count++;
-            MouseClickOfUser.Text = count.ToString();
-        }
+        //public void NumberOfClicksToProduceTray()
+        //{
+        //    count++;
+        //    MouseClickOfUser.Text = count.ToString();
+        //}
 
 
         private void MainWindow1Closing(object sender, CancelEventArgs e)
@@ -419,6 +434,7 @@ namespace LaneSimulator
         private void StartSystem_OnClick(object sender, RoutedEventArgs e)
         {
             _laneTop.StartSystem();
+            TrayTimer();
             SSLOperational();
         }
 
@@ -434,16 +450,6 @@ namespace LaneSimulator
             _plcCalls.DegradedDecisionEventOk();
         }
 
-        public void TrayTimer()
-        {
-            var aTimer = new Timer();
-           // aTimer.Elapsed += new ElapsedEventHandler(MakeTrayBtn2_Click);
-            aTimer.Interval = 2500;
-            aTimer.Enabled = true;
-            aTimer.AutoReset = true;
-        }
-
-
         public void NumberOfClicksToProduceTray(int count)
         {
             Dispatcher.Invoke((Action) (() => { MouseClickOfUser.Text = count.ToString(); }));
@@ -451,16 +457,38 @@ namespace LaneSimulator
 
         public void SSLOperational()
         {
-           
-
             LaneStatusName.Text = "";
         }
-       
+
+
+        private void TrayGenerator_Click(object sender, RoutedEventArgs e)
+        {
+            count++;
+            NumberOfClicksToProduceTray(count);
+        }
+
+        public void TimerForTrays(object sender, ElapsedEventArgs e)
+        {
+            if (count > 0)
+            {
+                _element = new SimpleTray();
+                _laneTop.test();
+                count--;
+                NumberOfClicksToProduceTray(count);
+            }
+        }
+
+
+        public void TrayTimer()
+        {
+            var aTimer = new Timer();
+            aTimer.Elapsed += new ElapsedEventHandler(TimerForTrays);
+            aTimer.Interval = 2500;
+            aTimer.Enabled = true;
+            aTimer.AutoReset = true;
+        }
+
+
     }
 
-    public enum DegradedMode
-    {
-        Approved,
-        NotApproved
-    }
 }
