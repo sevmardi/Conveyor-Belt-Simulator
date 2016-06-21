@@ -1296,17 +1296,19 @@ namespace LaneSimulator.Lanes
 
         public void ExecutorD()
         {
-            _sensorTimerHandler.Timer(18000, _1001_S1_TurnOff);
-            _sensorTimerHandler.Timer(19000, _1001_S2_TurnOff);
-            //_sensorTimerHandler.Timer(20000, _1002_S1_TurnOff);
-            //_sensorTimerHandler.Timer(21000, _1002_S2_TurnOff);
-            //_sensorTimerHandler.Timer(21000, _1004_S1_TurnOff);
-            //_sensorTimerHandler.Timer(21500, _1003_S1_TurnOff);
-            //_sensorTimerHandler.Timer(21500, _1003_S3_TurnOff);
-            //_sensorTimerHandler.Timer(21500, _1003_S4_TurnOff);
+            //_sensorTimerHandler.Timer(18000, _1001_S1_TurnOff);
+            //_sensorTimerHandler.Timer(18500, _1001_S2_TurnOff);
+            //_sensorTimerHandler.Timer(19200, _1002_S1_TurnOff);
+            _sensorTimerHandler.Timer(19700, _1002_S2_TurnOff);
+                _sensorTimerHandler.Timer(19710, _1004_S1_TurnOff);
+            _sensorTimerHandler.Timer(19720, _1003_S1_TurnOff);
+
+            _sensorTimerHandler.Timer(20100, _1003_S3_TurnOff);
+            _sensorTimerHandler.Timer(19760, _1003_S4_TurnOff);
+          
             //_sensorTimerHandler.Timer(21500, _1003_S5_TurnOff);
             //_sensorTimerHandler.Timer(22500, _1003_S2_TurnOff);
-            //_sensorTimerHandler.Timer(21500, _1004_S2_TurnOff);
+            _sensorTimerHandler.Timer(21500, _1004_S2_TurnOff);
         }
 
         #region Section D
@@ -1487,7 +1489,7 @@ namespace LaneSimulator.Lanes
                     //ignore
                 }
             }
-            _sensorTimerHandler.Timer(21000, _1004_S1_TurnOn);
+            _sensorTimerHandler.Timer(650, _1004_S1_TurnOn);
         }
 
         public void _1004_S1_TurnOn(object source, ElapsedEventArgs e)
@@ -1525,7 +1527,7 @@ namespace LaneSimulator.Lanes
                     //ignore
                 }
             }
-            _sensorTimerHandler.Timer(21500, _1003_S1_TurnOn);
+            _sensorTimerHandler.Timer(650, _1003_S1_TurnOn);
         }
 
         public void _1003_S1_TurnOn(object source, ElapsedEventArgs e)
@@ -1732,11 +1734,12 @@ namespace LaneSimulator.Lanes
 
         public void ExecutorE()
         {
-            _sensorTimerHandler.Timer(22500, _1101_S1_TurnOff);
+         //   _sensorTimerHandler.Timer(22500, _1101_S1_TurnOff);
             _sensorTimerHandler.Timer(22500, _1102_S1_TurnOff);
             _sensorTimerHandler.Timer(23500, _1101_S2_TurnOff);
             _sensorTimerHandler.Timer(23500, _1102_S2_TurnOff);
-            _sensorTimerHandler.Timer(24500, _1101_S3_TurnOff);
+      //      _sensorTimerHandler.Timer(24500, _1101_S3_TurnOff);
+           
             _sensorTimerHandler.Timer(24500, _1102_S3_TurnOff); 
         }
 
@@ -2639,11 +2642,11 @@ namespace LaneSimulator.Lanes
 
         public void MainExecutor()
         {
-           //ExecutorA();
-           // ExecutorB();
-          //  ExecutorC();
-           ExecutorD();
-            //ExecutorE();
+        //   ExecutorA();
+         //  ExecutorB();
+          // ExecutorC();
+        // ExecutorD();
+          ExecutorE();
             //ExecutorF();
             //ExecutorG();
         }
