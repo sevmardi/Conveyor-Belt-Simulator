@@ -4,7 +4,7 @@ using LaneSimulator.UIGates;
 
 namespace LaneSimulator.Model
 {
-    class ViewModel
+    public class ViewModel
     {
         public ViewModel()
         {

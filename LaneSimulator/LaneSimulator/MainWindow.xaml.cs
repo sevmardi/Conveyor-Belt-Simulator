@@ -453,7 +453,7 @@ namespace LaneSimulator
         {
            
 
-            LaneStatusName.Text = "NIce";
+            LaneStatusName.Text = "";
         }
        
     }

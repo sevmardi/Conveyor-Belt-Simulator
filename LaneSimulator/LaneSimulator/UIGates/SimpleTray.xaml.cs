@@ -15,7 +15,7 @@ namespace LaneSimulator.UIGates
     {
         public SimpleTray()
         {
-            InitializeComponent();   
+            InitializeComponent();
         }
 
         private StoryBoardState _starteState = StoryBoardState.Start;
@@ -25,12 +25,15 @@ namespace LaneSimulator.UIGates
         public StoryBoardState StartState
         {
             get { return _starteState; }
-            set { _starteState = value; NotifyPropertyChanged(); }
+            set
+            {
+                _starteState = value;
+                NotifyPropertyChanged();
+            }
         }
 
 
-
-        public double X{ get; set; }
+        public double X { get; set; }
         public double Y { get; set; }
         public double Width { get; set; }
         public double Height { get; set; }
@@ -57,6 +60,7 @@ namespace LaneSimulator.UIGates
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
             if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(propertyName));

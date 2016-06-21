@@ -87,8 +87,15 @@ namespace LaneSimulator.PLC
         public void StopBtnInput()
         {
             _buffer[0] = 0;
-            Client.WriteArea(S7Client.S7AreaPE, DbNumber, PLCTags.StopButtonInput, Amount, Wordlen, _buffer);
-            Client.WriteArea(S7Client.S7AreaPE, DbNumber, PLCTags.StartButtonInput, Amount, Wordlen, _buffer);
+            try
+            {
+                Client.WriteArea(S7Client.S7AreaPE, DbNumber, PLCTags.StopButtonInput, Amount, Wordlen, _buffer);
+                Client.WriteArea(S7Client.S7AreaPE, DbNumber, PLCTags.StartButtonInput, Amount, Wordlen, _buffer);
+            }
+            catch (Exception)
+            {
+                new ArgumentException("Connection was not established");
+            }
         }
 
 

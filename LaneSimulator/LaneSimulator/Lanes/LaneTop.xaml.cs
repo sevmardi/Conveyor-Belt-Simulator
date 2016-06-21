@@ -69,7 +69,7 @@ namespace LaneSimulator.Lanes
 
         }
 
-        public void Executor()
+        public void ExecutorA()
         {
             _0102_S1_TurnOff();
             _sensorTimerHandler.Timer(1500, _0102_S2_TurnOff);
@@ -80,23 +80,10 @@ namespace LaneSimulator.Lanes
         }
 
         
-        public void Executor2()
-        {
-            _sensorTimerHandler.Timer(6000, _0301_S1_TurnOff);
-            _sensorTimerHandler.Timer(7000, _0301_S2_TurnOff);
-            _sensorTimerHandler.Timer(8000, _0302_S1_TurnOff);
-
-            _sensorTimerHandler.Timer(8500, _0303_S1_TurnOff);
-            _sensorTimerHandler.Timer(9000, _0304_S1_TurnOff);
-            _sensorTimerHandler.Timer(9000, _0304_S2_TurnOff);
-
-            _sensorTimerHandler.Timer(10500, _0304_S3_TurnOff);
-            _sensorTimerHandler.Timer(12000, _0701_S1_TurnOff);
-        }
 
 
 
-        public void Executor3()
+        public void ExecutorC()
         {
             _sensorTimerHandler.Timer(15500, _0701_S2_TurnOff);
             _sensorTimerHandler.Timer(16000, _0702_S1_TurnOff);
@@ -670,9 +657,9 @@ namespace LaneSimulator.Lanes
 
                 }
             }
-            _sensorTimerHandler.Timer(900, _0102_S2_TurnOn);
+            _sensorTimerHandler.Timer(650, _0102_S2_TurnOn);
 
-        //   SecondSensorWrite();
+              //   SecondSensorWrite();
         }
 
         public void _0102_S2_TurnOn(object source, ElapsedEventArgs e)
@@ -708,7 +695,7 @@ namespace LaneSimulator.Lanes
                 }
             }
 
-            _sensorTimerHandler.Timer(820, _0103_S1_TurnOn);
+            _sensorTimerHandler.Timer(650, _0103_S1_TurnOn);
         }
 
         public void _0103_S1_TurnOn(object source, ElapsedEventArgs e)
@@ -781,7 +768,7 @@ namespace LaneSimulator.Lanes
                     _0105_D1Motor();
                 }
             }
-            _sensorTimerHandler.Timer(800, _0105_S1_TurnOn);
+            _sensorTimerHandler.Timer(650, _0105_S1_TurnOn);
         }
 
         public void _0105_S1_TurnOn(object source, ElapsedEventArgs e)
@@ -821,7 +808,7 @@ namespace LaneSimulator.Lanes
                     }));
                 }
             }
-            _sensorTimerHandler.Timer(1000, _0105_S2_TurnOn);
+            _sensorTimerHandler.Timer(650, _0105_S2_TurnOn);
            
 
         }
@@ -841,6 +828,20 @@ namespace LaneSimulator.Lanes
 
         #endregion
 
+
+
+        public void ExecutorB()
+        {
+            _sensorTimerHandler.Timer(6000, _0301_S1_TurnOff);
+            _sensorTimerHandler.Timer(7000, _0301_S2_TurnOff);
+            _sensorTimerHandler.Timer(8000, _0302_S1_TurnOff);
+            _sensorTimerHandler.Timer(8200, _0303_S1_TurnOff);
+            _sensorTimerHandler.Timer(8300, _0304_S1_TurnOff);
+            _sensorTimerHandler.Timer(8400, _0304_S2_TurnOff);
+
+            _sensorTimerHandler.Timer(10200, _0304_S3_TurnOff);
+            _sensorTimerHandler.Timer(12000, _0701_S1_TurnOff);
+        }
 
         #region Conveyor B
 
@@ -867,7 +868,7 @@ namespace LaneSimulator.Lanes
 
                 }
             }
-            _sensorTimerHandler.Timer(1000, _0301_S1_TurnOn);
+            _sensorTimerHandler.Timer(650, _0301_S1_TurnOn);
         }
         public void _0301_S1_TurnOn(object source, ElapsedEventArgs e)
         {
@@ -904,7 +905,7 @@ namespace LaneSimulator.Lanes
                     }));
                 }
             }
-            _sensorTimerHandler.Timer(1000, _0301_S2_TurnOn);
+            _sensorTimerHandler.Timer(650, _0301_S2_TurnOn);
         }
         public void _0301_S2_TurnOn(object source, ElapsedEventArgs e)
         {
@@ -949,7 +950,7 @@ namespace LaneSimulator.Lanes
                     new ArgumentException();
                 }
             }
-            _sensorTimerHandler.Timer(1000, _0302_S1_TurnOn);
+            _sensorTimerHandler.Timer(650, _0302_S1_TurnOn);
         }
         public void _0302_S1_TurnOn(object source, ElapsedEventArgs e)
         {
@@ -991,7 +992,7 @@ namespace LaneSimulator.Lanes
                     //ignore
                 }
             }
-            _sensorTimerHandler.Timer(1000, _0303_S1_TurnOn);
+            _sensorTimerHandler.Timer(500, _0303_S1_TurnOn);
         }     
         public void _0303_S1_TurnOn(object source, ElapsedEventArgs e)
         {
@@ -1027,7 +1028,7 @@ namespace LaneSimulator.Lanes
                     //ignore
                 }
             }
-            _sensorTimerHandler.Timer(1000, _0304_S1_TurnOn);
+            _sensorTimerHandler.Timer(500, _0304_S1_TurnOn);
         }
         public void _0304_S1_TurnOn(object source, ElapsedEventArgs e)
         {
@@ -1063,7 +1064,7 @@ namespace LaneSimulator.Lanes
                     //ignore
                 }
             }
-           _sensorTimerHandler.Timer(1000, _0304_S2_TurnOn);
+           _sensorTimerHandler.Timer(650, _0304_S2_TurnOn);
         }
         public void _0304_S2_TurnOn(object source, ElapsedEventArgs e)
         {
@@ -1105,7 +1106,7 @@ namespace LaneSimulator.Lanes
                     //ignore
                 }
             }
-            _sensorTimerHandler.Timer(1000, _0304_S3_TurnOn);
+            _sensorTimerHandler.Timer(650, _0304_S3_TurnOn);
         }
         public void _0304_S3_TurnOn(object source, ElapsedEventArgs e)
         {
@@ -1145,8 +1146,9 @@ namespace LaneSimulator.Lanes
                     //ignore
                 }
             }
-            _sensorTimerHandler.Timer(2000, _0701_S1_TurnOn);
+            _sensorTimerHandler.Timer(650, _0701_S1_TurnOn);
         }
+
         public void _0701_S1_TurnOn(object source, ElapsedEventArgs e)
         {
             Buffer[0] = 1;
@@ -1292,21 +1294,19 @@ namespace LaneSimulator.Lanes
 
         #endregion
 
-
-
-        public void Executor4()  
+        public void ExecutorD()
         {
             _sensorTimerHandler.Timer(18000, _1001_S1_TurnOff);
             _sensorTimerHandler.Timer(19000, _1001_S2_TurnOff);
-            _sensorTimerHandler.Timer(20000, _1002_S1_TurnOff);
-            _sensorTimerHandler.Timer(21000, _1002_S2_TurnOff);
-            _sensorTimerHandler.Timer(21000, _1004_S1_TurnOff);
-            _sensorTimerHandler.Timer(21500, _1003_S1_TurnOff);
-            _sensorTimerHandler.Timer(21500, _1003_S3_TurnOff);
-            _sensorTimerHandler.Timer(21500, _1003_S4_TurnOff);
-            _sensorTimerHandler.Timer(21500, _1003_S5_TurnOff);
-            _sensorTimerHandler.Timer(22500, _1003_S2_TurnOff);
-            _sensorTimerHandler.Timer(21500, _1004_S2_TurnOff); 
+            //_sensorTimerHandler.Timer(20000, _1002_S1_TurnOff);
+            //_sensorTimerHandler.Timer(21000, _1002_S2_TurnOff);
+            //_sensorTimerHandler.Timer(21000, _1004_S1_TurnOff);
+            //_sensorTimerHandler.Timer(21500, _1003_S1_TurnOff);
+            //_sensorTimerHandler.Timer(21500, _1003_S3_TurnOff);
+            //_sensorTimerHandler.Timer(21500, _1003_S4_TurnOff);
+            //_sensorTimerHandler.Timer(21500, _1003_S5_TurnOff);
+            //_sensorTimerHandler.Timer(22500, _1003_S2_TurnOff);
+            //_sensorTimerHandler.Timer(21500, _1004_S2_TurnOff);
         }
 
         #region Section D
@@ -1345,7 +1345,7 @@ namespace LaneSimulator.Lanes
             _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1001_S1, _plcCalls.Amount,
                 _plcCalls.Wordlen, Buffer);
 
-            Dispatcher.Invoke((Action) (() => { _0702_S2.Fill = new SolidColorBrush(Colors.Red); }));
+            Dispatcher.Invoke((Action)(() => { _1001_S1.Fill = new SolidColorBrush(Colors.Red); }));
         }
 
 
@@ -2213,15 +2213,12 @@ namespace LaneSimulator.Lanes
 
         #endregion
 
-
         public void ExecutorG()
         {
             _sensorTimerHandler.Timer(22500, _1701_S1_TurnOff);
             _sensorTimerHandler.Timer(22500, _1702_S1_TurnOff);
             _sensorTimerHandler.Timer(23500, _1701_S2_TurnOff);
             _sensorTimerHandler.Timer(23500, _1702_S2_TurnOff);
- 
-
         }
 
         #region Section G
@@ -2444,12 +2441,6 @@ namespace LaneSimulator.Lanes
             
         }
 
-
-
-
-
-
-   
      
         private void Grid_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
@@ -2486,14 +2477,8 @@ namespace LaneSimulator.Lanes
             aTimer.Interval = 2500;
             aTimer.Enabled = true;
             aTimer.AutoReset = true;
-          
         }
 
-
-        private void StopSimBtn_Click(object sender, RoutedEventArgs e)
-        {
-            //   _0102_S1_TurnOff();
-        }
 
         private void SchedulerBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -2504,6 +2489,7 @@ namespace LaneSimulator.Lanes
         private void LaneTop_OnLoaded(object sender, RoutedEventArgs e)
         {
             TestTimer();
+            Total();
         }
 
 
@@ -2518,13 +2504,15 @@ namespace LaneSimulator.Lanes
                 {
                     _element = new SimpleTray();
 
+                    //ViewModel vm = this.DataContext as ViewModel;
+
+                    //vm.ApprovedCollection.Add(new SimpleTray());
+
                     var sb1 = FindResource("LongApprovedSB") as Storyboard;
                     sb1.Begin(_element, true);
                     PanelForApproved.Children.Add(_element);
-                   
-                    //Executor();
-                    //Executor2();
-                 //   Executor3();
+                    
+                    MainExecutor();
                     count--;
                     NumberOfClicksToProduceTray(count);
                 }));
@@ -2540,10 +2528,8 @@ namespace LaneSimulator.Lanes
 
         private void MakeTrayBtn_Click(object sender, RoutedEventArgs e)
         {
-
             count++;
             NumberOfClicksToProduceTray(count);
-         
         }
 
         #region storyboard completed
@@ -2574,10 +2560,6 @@ namespace LaneSimulator.Lanes
 
 
         //viewmodel 
-
-
-
-
 
 
         public void StartSystem()
@@ -2655,9 +2637,16 @@ namespace LaneSimulator.Lanes
         }
 
 
-
-
-
+        public void MainExecutor()
+        {
+           //ExecutorA();
+           // ExecutorB();
+          //  ExecutorC();
+           ExecutorD();
+            //ExecutorE();
+            //ExecutorF();
+            //ExecutorG();
+        }
 
 
 
