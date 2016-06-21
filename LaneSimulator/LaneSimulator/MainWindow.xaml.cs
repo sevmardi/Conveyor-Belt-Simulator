@@ -45,7 +45,7 @@ namespace LaneSimulator
         public MainWindow()
         {
             InitializeComponent();
-           
+          
             Timer1.Interval = new TimeSpan(0, 0, 0, 0, 100);
             Timer1.Tick += new EventHandler(this.Timer1_Tick);
             Closing += new CancelEventHandler(MainWindow1Closing);
@@ -244,7 +244,6 @@ namespace LaneSimulator
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             DisplayConnectScreen();
-           
         }
 
         private void DisplayConnectScreen()
@@ -275,9 +274,8 @@ namespace LaneSimulator
         /// </summary>
         private void Total()
         {
-       //   this.total_text1.Text = (this.tray_Wrap.Children.Count).ToString();
-
-         // Dispatcher.Invoke((Action)(() => { (AnimationPanel.Children.Count).ToString(); }));
+            Dispatcher.Invoke(
+                (Action) (() => { total_text1.Text = (_laneTop.PanelForApproved.Children.Count).ToString(); }));
         }
 
         //public void NumberOfClicksToProduceTray()
@@ -290,14 +288,13 @@ namespace LaneSimulator
         private void MainWindow1Closing(object sender, CancelEventArgs e)
         {
             _plcCalls.Disconnect();
-  
+
             _plcCalls.StopBtnInput();
-        //    MessageBox.Show("System is stopped");
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            Timer_Lable.Text = (this.T = this.T + 0.1).ToString("0.00",(IFormatProvider)CultureInfo.InvariantCulture);
+            Timer_Lable.Text = (this.T = this.T + 0.1).ToString("0.00", (IFormatProvider) CultureInfo.InvariantCulture);
         }
 
 
@@ -419,11 +416,12 @@ namespace LaneSimulator
         }
 
         private void StopButton_OnClick(object sender, RoutedEventArgs e)
-        {   
-             // Stop the PLC
+        {
+            // Stop the PLC
             // Stop the animation as  well. 
             // When system is stopped all other buttons are not avialable
             _plcCalls.StopBtnInput();
+            _laneTop.StopSystem();
         }
 
         private void Reset_Button_OnClick(object sender, RoutedEventArgs e)
@@ -441,7 +439,7 @@ namespace LaneSimulator
         private void NotApproved_OnClick(object sender, RoutedEventArgs e)
         {
            //disapprove the tray and keep it moving forward [not approved]. 
-            _plcCalls.DegradedDecisionEventNotOk();
+          //  _plcCalls.DegradedDecisionEventNotOk();
         }
 
         private void Approvel_OnClick(object sender, RoutedEventArgs e)
@@ -464,16 +462,10 @@ namespace LaneSimulator
                 if (_plcCalls._buffer[0] == 1)
                 {
                     LaneStatusName.Text = "Functional";
-                   
                 }
                 else
                     LaneStatusName.Text = "System not connected!";
-
-              
-                //MessageBox.Show("System not connected!");
             }
-
-            //_plcCalls.SSLOperational();
         }
 
 
@@ -481,18 +473,17 @@ namespace LaneSimulator
         {
             count++;
             NumberOfClicksToProduceTray(count);
+            Total();
         }
 
         public void TimerForTrays(object sender, ElapsedEventArgs e)
         {
-        
             if (count > 0)
             {
                 _laneTop.test();
                 count--;
                 NumberOfClicksToProduceTray(count);
             }
-            
         }
 
 

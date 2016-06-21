@@ -42,32 +42,9 @@ namespace LaneSimulator.Lanes
             _plcCalls = new PlcCalls();
             _sensorTimerHandler = new SensorTimerHandler();
             _plcAbstract = new PLCAbstract();
+            _plcCalls.EstablishContact();
         }
 
-        private void InitializeSensors()
-        {
-            //SensorList.Add(new Sensor());
-            //SensorList.Add(new Sensor());
-            //SensorList.Add(new Sensor());
-
-            //foreach (var sensor in SensorList)
-            //{
-            //    var ell = new Sensor()
-            //    {
-            //        Width = 2,
-            //        Height = 2,
-            //     //   Stroke = new SolidColorBrush(Colors.White),
-            //       // StrokeThickness = 2,
-            //        //     Fill = new SolidColorBrush(kart.BodyColor2),
-            //        Margin = new Thickness(-8, -8, 8, 8),
-            //        HorizontalAlignment = HorizontalAlignment.Left,
-            //        VerticalAlignment = VerticalAlignment.Top
-            //    };
-
-            //    TestGrid.Children.Add(sensor);
-            //}
-
-        }
 
         public void ExecutorA()
         {
@@ -78,10 +55,6 @@ namespace LaneSimulator.Lanes
             _sensorTimerHandler.Timer(4500, _0105_S1_TurnOff);
             _sensorTimerHandler.Timer(5300, _0105_S2_TurnOff);
         }
-
-        
-
-
 
         public void ExecutorC()
         {
@@ -828,8 +801,6 @@ namespace LaneSimulator.Lanes
 
         #endregion
 
-
-
         public void ExecutorB()
         {
             _sensorTimerHandler.Timer(6000, _0301_S1_TurnOff);
@@ -1305,7 +1276,7 @@ namespace LaneSimulator.Lanes
 
             _sensorTimerHandler.Timer(20100, _1003_S3_TurnOff);
             _sensorTimerHandler.Timer(19760, _1003_S4_TurnOff);
-          
+
             //_sensorTimerHandler.Timer(21500, _1003_S5_TurnOff);
             //_sensorTimerHandler.Timer(22500, _1003_S2_TurnOff);
             _sensorTimerHandler.Timer(21500, _1004_S2_TurnOff);
@@ -1731,18 +1702,17 @@ namespace LaneSimulator.Lanes
 
         #endregion
 
-
         public void ExecutorE()
         {
-         //   _sensorTimerHandler.Timer(22500, _1101_S1_TurnOff);
-         
+            //   _sensorTimerHandler.Timer(22500, _1101_S1_TurnOff);
+
             _sensorTimerHandler.Timer(28500, _1102_S1_TurnOff);
 
             //        _sensorTimerHandler.Timer(23500, _1101_S2_TurnOff);
             _sensorTimerHandler.Timer(29000, _1102_S2_TurnOff);
-      //      _sensorTimerHandler.Timer(24500, _1101_S3_TurnOff);
+            //      _sensorTimerHandler.Timer(24500, _1101_S3_TurnOff);
 
-            _sensorTimerHandler.Timer(29500, _1102_S3_TurnOff); 
+            _sensorTimerHandler.Timer(29500, _1102_S3_TurnOff);
         }
 
 
@@ -1975,12 +1945,12 @@ namespace LaneSimulator.Lanes
 
         #endregion
 
-        // fix the time of those
+        
         public void ExecutorF()
         {
-          //  _sensorTimerHandler.Timer(22500, _1601_S1_TurnOff);
-          //  _sensorTimerHandler.Timer(22500, _1601_S2_TurnOff);
-          //  _sensorTimerHandler.Timer(23500, _1601_S3_TurnOff);
+            //  _sensorTimerHandler.Timer(22500, _1601_S1_TurnOff);
+            //  _sensorTimerHandler.Timer(22500, _1601_S2_TurnOff);
+            //  _sensorTimerHandler.Timer(23500, _1601_S3_TurnOff);
             _sensorTimerHandler.Timer(29500, _1602_S1_TurnOff);
             _sensorTimerHandler.Timer(30000, _1602_S2_TurnOff);
             _sensorTimerHandler.Timer(31000, _1602_S3_TurnOff);
@@ -2220,8 +2190,8 @@ namespace LaneSimulator.Lanes
 
         public void ExecutorG()
         {
-        //    _sensorTimerHandler.Timer(22500, _1701_S1_TurnOff);
-         //   _sensorTimerHandler.Timer(22500, _1702_S1_TurnOff);
+            //    _sensorTimerHandler.Timer(22500, _1701_S1_TurnOff);
+            //   _sensorTimerHandler.Timer(22500, _1702_S1_TurnOff);
 
             _sensorTimerHandler.Timer(32000, _1701_S2_TurnOff);
             _sensorTimerHandler.Timer(33000, _1702_S2_TurnOff);
@@ -2385,63 +2355,8 @@ namespace LaneSimulator.Lanes
 
    
 
-        //public void _1703_S3T_TurnOff()
-        //{
-        //    _res = _plcCalls.Client.ReadArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1703_S3T, _plcCalls.Amount,
-        //       _plcCalls.Wordlen, Buffer);
-
-        //    if (_res == 0)
-        //    {
-        //        try
-        //        {
-        //            if (Buffer[0] == 1)
-        //            {
-        //                Buffer[0] = 0;
-
-        //                _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1703_S3T,
-        //                    _plcCalls.Amount, _plcCalls.Wordlen, Buffer);
-
-        //                Dispatcher.Invoke((Action)(() => { _1703_S3T.Fill = new SolidColorBrush(Colors.DarkGray); }));
-        //            }
-        //        }
-        //        catch (Exception)
-        //        {
-        //            throw new ArgumentException();
-        //        }
-        //    }
-        //}
-
-        //public void _1703_S3T_TurnOn()
-        //{
-        //    Buffer[0] = 1;
-
-        //    _plcCalls.Client.WriteArea(S7Client.S7AreaPE, _plcCalls.DbNumber, PLCTags._1703_S3T, _plcCalls.Amount,
-        //        _plcCalls.Wordlen, Buffer);
-
-        //    Dispatcher.Invoke((Action)(() => { _1703_S3T.Fill = new SolidColorBrush(Colors.Red); }));
-        //}
 
 
-
-        /// <summary>
-        /// Scheduler class 
-        /// </summary>
-        /// <param name="trays"></param>
-        public void spraier(int trays)
-        {
-            //for (int i = 0; i < trays; i++)
-            //{
-            count += trays;
-
-            //}
-            NumberOfClicksToProduceTray(count);
-        }
-
-
-        public void NumberOfClicksToProduceTray(int count)
-        {
-            Dispatcher.Invoke((Action) (() => { MouseClickOfUser.Text = count.ToString(); }));
-        }
 
      
         private void Grid_MouseDown_1(object sender, MouseButtonEventArgs e)
@@ -2482,22 +2397,11 @@ namespace LaneSimulator.Lanes
 //        }
 
 
-        private void SchedulerBtn_Click(object sender, RoutedEventArgs e)
-        {
-            _schedulerPanel = new SchedulerPanel();
-            _schedulerPanel.Show();
-        }
-
-        private void LaneTop_OnLoaded(object sender, RoutedEventArgs e)
-        {
-//            TestTimer();
-            Total();
-        }
 
 
         public void test()
         {
-            Dispatcher.Invoke((Action)(() =>
+            Dispatcher.Invoke((Action) (() =>
             {
                 _element = new SimpleTray();
                 var sb1 = FindResource("LongApprovedSB") as Storyboard;
@@ -2505,8 +2409,12 @@ namespace LaneSimulator.Lanes
                 PanelForApproved.Children.Add(_element);
 
                 MainExecutor();
-           
             }));
+        }
+
+        public void StopSystem()
+        {
+            PanelForApproved.Children.Remove(_element);
         }
 
        /* private void MakeTrayBtn2_Click(object sender, ElapsedEventArgs e)
@@ -2542,11 +2450,7 @@ namespace LaneSimulator.Lanes
 
         }*/
 
-        //private void MakeTrayBtn_Click(object sender, RoutedEventArgs e)
-        //{
-        //    count++;
-        //    NumberOfClicksToProduceTray(count);
-        //}
+
 
         #region storyboard completed
 
@@ -2653,13 +2557,13 @@ namespace LaneSimulator.Lanes
 
         public void MainExecutor()
         {
-            ExecutorA();
-            ExecutorB();
-            ExecutorC();
-            ExecutorD();
-            ExecutorE();
-            ExecutorF();
-            ExecutorG();
+//            ExecutorA();
+//            ExecutorB();
+//            ExecutorC();
+//            ExecutorD();
+//            ExecutorE();
+//            ExecutorF();
+//            ExecutorG();
         }
 
 
