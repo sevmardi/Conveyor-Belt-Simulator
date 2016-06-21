@@ -131,7 +131,7 @@
 
     <Canvas x:Name="LaneTopSection" Width="744" Height="1052">
 
-        <Canvas x:Name="laneBottom" Canvas.Left="500" Visibility="Hidden" d:IsLocked="True">
+        <Canvas x:Name="laneBottom" Canvas.Left="500" d:IsLocked="True">
             <Canvas.RenderTransform>
                 <MatrixTransform Matrix="-1.25 0 0 -1.25 1007.6864 1030.4378"/>
             </Canvas.RenderTransform>

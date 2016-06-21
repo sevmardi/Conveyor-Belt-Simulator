@@ -17,7 +17,7 @@ namespace LaneSimulator.PLC
         public  int Amount = 1;
         public  int DbNumber = 0;
         public  readonly int Wordlen = S7Client.S7WLBit;
-        private  readonly byte[] _buffer = new byte[500];
+        public  readonly byte[] _buffer = new byte[500];
         private  int _res;
        
         static readonly S7Client.S7DataItem[] Items = new S7Client.S7DataItem[20];

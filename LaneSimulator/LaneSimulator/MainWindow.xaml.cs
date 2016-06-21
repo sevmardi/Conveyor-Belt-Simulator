@@ -461,13 +461,12 @@ namespace LaneSimulator
 
             if (result == 0)
             {
-                if (_buffer[0] == 1)
+                if (_plcCalls._buffer[0] == 1)
                 {
                     LaneStatusName.Text = "Functional";
                 }
                 LaneStatusName.Text = "System not connected!";
             }
-         
         }
 
 
