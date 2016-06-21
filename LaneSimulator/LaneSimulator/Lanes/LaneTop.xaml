@@ -709,7 +709,7 @@
    
        
         <!--<Button Content="Add SmallTray" Canvas.Left="201.833" Canvas.Top="88.333" Width="75" Click="MakeTrayBtn_Click" RenderTransformOrigin="0.067,0.75" x:Name="AddTrayBtn"/>-->
-        <Button  Name="Scheduler"    Content="Scheduler" Canvas.Left="326" Canvas.Top="88.333" Width="75" Click="SchedulerBtn_Click" RenderTransformOrigin="0.067,0.75"/>
+       <!-- <Button  Name="Scheduler"    Content="Scheduler" Canvas.Left="326" Canvas.Top="88.333" Width="75" Click="SchedulerBtn_Click" RenderTransformOrigin="0.067,0.75"/>-->
 
 
         <Canvas x:Name="AnimationPanel" Canvas.Left="-313.125" Canvas.Top="408.5" Height="107.938" Width="156.25" d:IsLocked="True">
