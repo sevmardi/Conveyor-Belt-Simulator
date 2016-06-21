@@ -612,29 +612,16 @@ namespace LaneSimulator.PLC
         public void DegradedDecisionEventNotOk()
         {
             _buffer[0] = 1;
+
             Client.WriteArea(S7Client.S7AreaPE, DbNumber, PLCTags.PushButtonOperatorNotOk, Amount, Wordlen, _buffer);
         }
 
 
         public int SSLOperational()
         {
-            int sslOperational = 1;
-            _buffer[0] = 1;
-            // If not connected show it in Red  
-            // if connect show in Blue 
-            // Any other errors idk
             _res = Client.ReadArea(S7Client.S7AreaMK, DbNumber, PLCTags._1001_S1, Amount, Wordlen, _buffer);
 
-            if (_res == 0)
-            {
-                if (_buffer[0] == 1)
-                {
-
-                    return sslOperational = 0;
-                }
-
-            }
-            return sslOperational;
+            return _res;
         }
     }
 }

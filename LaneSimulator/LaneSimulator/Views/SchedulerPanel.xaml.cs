@@ -8,12 +8,12 @@ namespace LaneSimulator.Views
     /// </summary>
     public partial class SchedulerPanel : Window
     {
-        private LaneTop _laneTop;
+        private MainWindow _laneTop;
 
         public SchedulerPanel()
         {
             InitializeComponent();
-            _laneTop = new LaneTop();
+            _laneTop = new MainWindow();
          
             // _trays = -1;
         }

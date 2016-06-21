@@ -33,7 +33,7 @@ namespace LaneSimulator
         private bool Ispaused = false;
         private ShadowBox sbZoom, sbSpeed, sslObjects, total, SSL, timerBox, btnsPanelBox, counterBox, DegradedBtns, LaneStatus,
         trayGenerator;
-        
+        private readonly byte[] _buffer = new byte[500];
         private readonly Utilities.SSLCanvas _sslCanvas;
         private double T = 0.0;
         private DispatcherTimer Timer1 = new DispatcherTimer();
@@ -457,7 +457,17 @@ namespace LaneSimulator
 
         public void SSLOperational()
         {
-            LaneStatusName.Text = "";
+            var result = _plcCalls.SSLOperational();
+
+            if (result == 0)
+            {
+                if (_buffer[0] == 1)
+                {
+                    LaneStatusName.Text = "Functional";
+                }
+                LaneStatusName.Text = "System not connected!";
+            }
+         
         }
 
 
@@ -487,6 +497,13 @@ namespace LaneSimulator
             aTimer.Enabled = true;
             aTimer.AutoReset = true;
         }
+
+        public void spraier(int trays)
+        {
+            count += trays;
+            NumberOfClicksToProduceTray(count);
+        }
+
 
 
     }

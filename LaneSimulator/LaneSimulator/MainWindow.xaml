@@ -186,7 +186,7 @@
             <ToolBar Height="40" Name="tbPrinting">
 
                 <Button Style="{StaticResource TButtonStyle}" Name="btnChart"
-                        ToolTip="Show Logical Analyzer (Oscilloscope)" Click="btnChart_Click">
+                        ToolTip="Show Scheduler" Click="btnChart_Click">
                     <Image Source="Images/logicity-crystal-reports-scheduler.png" />
                 </Button>
             </ToolBar>

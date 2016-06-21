@@ -2538,11 +2538,11 @@ namespace LaneSimulator.Lanes
 
         }*/
 
-        private void MakeTrayBtn_Click(object sender, RoutedEventArgs e)
-        {
-            count++;
-            NumberOfClicksToProduceTray(count);
-        }
+        //private void MakeTrayBtn_Click(object sender, RoutedEventArgs e)
+        //{
+        //    count++;
+        //    NumberOfClicksToProduceTray(count);
+        //}
 
         #region storyboard completed
 
