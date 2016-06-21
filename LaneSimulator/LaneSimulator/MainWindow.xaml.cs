@@ -464,9 +464,16 @@ namespace LaneSimulator
                 if (_plcCalls._buffer[0] == 1)
                 {
                     LaneStatusName.Text = "Functional";
+                   
                 }
-                LaneStatusName.Text = "System not connected!";
+                else
+                    LaneStatusName.Text = "System not connected!";
+
+              
+                //MessageBox.Show("System not connected!");
             }
+
+            //_plcCalls.SSLOperational();
         }
 
 
@@ -478,13 +485,14 @@ namespace LaneSimulator
 
         public void TimerForTrays(object sender, ElapsedEventArgs e)
         {
+        
             if (count > 0)
             {
-                _element = new SimpleTray();
                 _laneTop.test();
                 count--;
                 NumberOfClicksToProduceTray(count);
             }
+            
         }
 
 

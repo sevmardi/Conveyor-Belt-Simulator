@@ -5,7 +5,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ec="http://schemas.microsoft.com/expression/2010/controls" mc:Ignorable="d"
     x:Class="LaneSimulator.MainWindow"
-   
+    Loaded="Window_Loaded"
     xmlns:selector="clr-namespace:LaneSimulator.Utilities.Selector"
         
    
@@ -132,7 +132,7 @@
                 <TextBox x:Name="LaneStatusName" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                         
                          Foreground="Blue" Background="White"
-                         FontSize="30" BorderThickness="2" Focusable="false" Margin="0,36.09,0,0"
+                         FontSize="15" BorderThickness="2" Focusable="false" Margin="0,36.09,0,0"
                          BorderBrush="{x:Null}" />
             </Grid>
         </StackPanel>

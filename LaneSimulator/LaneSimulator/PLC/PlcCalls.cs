@@ -25,6 +25,7 @@ namespace LaneSimulator.PLC
         public PlcCalls()
         {
             Client = new S7Client();
+            EstablishContact();
         }
 
         /// <summary>
@@ -619,7 +620,7 @@ namespace LaneSimulator.PLC
 
         public int SSLOperational()
         {
-            _res = Client.ReadArea(S7Client.S7AreaMK, DbNumber, PLCTags._1001_S1, Amount, Wordlen, _buffer);
+            _res = Client.ReadArea(S7Client.S7AreaMK, DbNumber, PLCTags.SSLOperational, Amount, Wordlen, _buffer);
 
             return _res;
         }

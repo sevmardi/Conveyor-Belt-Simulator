@@ -2495,7 +2495,8 @@ namespace LaneSimulator.Lanes
         public void test()
         {
             Dispatcher.Invoke((Action)(() =>
-            {             
+            {
+                _element = new SimpleTray();
                 var sb1 = FindResource("LongApprovedSB") as Storyboard;
                 sb1.Begin(_element, true);
                 PanelForApproved.Children.Add(_element);
@@ -2649,11 +2650,11 @@ namespace LaneSimulator.Lanes
 
         public void MainExecutor()
         {
-        //   ExecutorA();
+          ExecutorA();
          //  ExecutorB();
           // ExecutorC();
         // ExecutorD();
-          ExecutorE();
+         // ExecutorE();
             //ExecutorF();
             //ExecutorG();
         }

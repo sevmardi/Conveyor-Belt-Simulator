@@ -27,7 +27,7 @@ namespace LaneSimulator.PLC
         public static int TechnicalErrorMerker = 169;
         public static int PushButtonOperatorOk = 180;
         public static int PushButtonOperatorNotOk = 181;
-        public static int SSLOperational = 00;
+        public static int SSLOperational = 2715;
         // LANE TOP - SENSORS
         //SECTION-A
         internal static int _0102_S1 = 16;
