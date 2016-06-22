@@ -670,7 +670,7 @@
                     </TransformGroup>
                 </Ellipse.RenderTransform>
             </Ellipse>
-            <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="854.5" Canvas.Top="324.333" Width="6" x:Name="_1701_D2" RenderTransformOrigin="0.5,0.5">
+            <Ellipse Fill="#FFDACF84" Height="6" Canvas.Left="854.5" Canvas.Top="324.333" Width="6" x:Name="_1702_D1" RenderTransformOrigin="0.5,0.5">
                 <Ellipse.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
