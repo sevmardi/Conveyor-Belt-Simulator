@@ -10,7 +10,8 @@
    
 
     <Canvas>
-        <Path local:MainWindow.MovingObjectPos="{Binding (Canvas.Left), ElementName=ElpObj}"  Fill="Red" Stretch="Fill" Stroke="Black" HorizontalAlignment="Left" Canvas.Left="100" Canvas.Top="50" Width="39" Data="M19.5,0.5 L19.5,147.5 M0.5,148.5 L38.5,148.5 L38.5,169.5 L0.5,169.5 z">
+        <Path local:MainWindow.MovingObjectPos="{Binding (Canvas.Left), ElementName=ElpObj}" 
+              Fill="Red" Stretch="Fill" Stroke="Black" HorizontalAlignment="Left" Canvas.Left="100" Canvas.Top="50" Width="39" Data="M19.5,0.5 L19.5,147.5 M0.5,148.5 L38.5,148.5 L38.5,169.5 L0.5,169.5 z">
 
         </Path>
         
@@ -20,16 +21,17 @@
         <Path local:MainWindow.MovingObjectPos="{Binding (Canvas.Left), ElementName=ElpObj}"  Fill="Red" Stretch="Fill" Stroke="Black" HorizontalAlignment="Left" Canvas.Left="300" Canvas.Top="50" Width="39" Data="M19.5,0.5 L19.5,147.5 M0.5,148.5 L38.5,148.5 L38.5,169.5 L0.5,169.5 z">
 
         </Path>
-        <Path local:MainWindow.MovingObjectPos="{Binding (Canvas.Left), ElementName=ElpObj}"  Fill="Red" Stretch="Fill" Stroke="Black" HorizontalAlignment="Left" Canvas.Left="400" Canvas.Top="50" Width="39" Data="M19.5,0.5 L19.5,147.5 M0.5,148.5 L38.5,148.5 L38.5,169.5 L0.5,169.5 z">
+        <Path local:MainWindow.MovingObjectPos="{Binding (Canvas.Left), ElementName=ElpObj}"  
+              Fill="Red" Stretch="Fill" Stroke="Black" HorizontalAlignment="Left" Canvas.Left="400" Canvas.Top="50" Width="39" Data="M19.5,0.5 L19.5,147.5 M0.5,148.5 L38.5,148.5 L38.5,169.5 L0.5,169.5 z">
 
         </Path>
         
         <Ellipse x:Name="ElpObj" Fill="Pink" Stroke="Black" HorizontalAlignment="Right" VerticalAlignment="Top" Width="57" Height="51" Canvas.Left="701" Canvas.Top="115">
             <Ellipse.Triggers>
-                <EventTrigger>
+                <EventTrigger RoutedEvent="Loaded">
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Left)" To="50" By="-2.0"/>
+                            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Left)" To="50" By="-2.0" Duration="0:0:10"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>

@@ -45,7 +45,7 @@ namespace WpfApplication3
             System.Diagnostics.Debug.WriteLine("Left = " + e.NewValue.ToString());
 
             double leftOfBeam = Canvas.GetLeft(beam);
-            double widthOfBeam = 20.0;
+            double widthOfBeam = 30.0;
 
             if (leftOfMovingObject > leftOfBeam && leftOfMovingObject < leftOfBeam + widthOfBeam)
             {
