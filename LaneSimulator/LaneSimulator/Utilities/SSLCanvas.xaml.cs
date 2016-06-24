@@ -7,9 +7,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 using Gates;
-using LaneSimulator.Lanes;
 using LaneSimulator.Model;
 using LaneSimulator.UIGates;
+using LaneTop = LaneSimulator.UIGates.LaneTop;
 
 namespace LaneSimulator.Utilities
 {
@@ -454,7 +454,7 @@ namespace LaneSimulator.Utilities
         {
             Gate uigate;
 
-            uigate = new UIGates.SmallTray((Gates.Trays.SmallTray)gate);
+            uigate = new SmallTray((Gates.Trays.SmallTray)gate);
 
             AddGate(uigate, pos);
         }

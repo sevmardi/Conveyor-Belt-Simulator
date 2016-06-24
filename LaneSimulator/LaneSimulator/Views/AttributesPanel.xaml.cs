@@ -1,8 +1,5 @@
-﻿using System;
-using System.Windows;
-using LaneSimulator.Lanes;
+﻿using System.Windows;
 using LaneSimulator.PLC;
-using Snap7;
 
 namespace LaneSimulator.Views
 {

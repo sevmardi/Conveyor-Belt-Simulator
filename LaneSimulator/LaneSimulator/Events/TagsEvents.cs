@@ -5,6 +5,10 @@ using System.Timers;
 
 namespace LaneSimulator.Events
 {
+
+    /// <summary>
+    /// NOT USED
+    /// </summary>
     class TagsEvents
     {
         public delegate void DataChangedEventHandler(string address, double newValue);

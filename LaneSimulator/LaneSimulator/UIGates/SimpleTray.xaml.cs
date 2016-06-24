@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
-using LaneSimulator.Annotations;
+using LaneSimulator.Model;
 
 namespace LaneSimulator.UIGates
 {
@@ -13,10 +13,13 @@ namespace LaneSimulator.UIGates
     /// </summary>
     public partial class SimpleTray : INotifyPropertyChanged
     {
+        public ObservableCollection<Behaviour> Behaviours { get; private set; } 
         public SimpleTray()
         {
             InitializeComponent();
+            Behaviours = new ObservableCollection<Behaviour>();
         }
+
 
         private StoryBoardState _starteState = StoryBoardState.Start;
         private StoryBoardState _resumeState = StoryBoardState.Resume;

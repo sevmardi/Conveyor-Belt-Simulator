@@ -8,6 +8,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/actualsizehs.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/behindtexths.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/canvasscalehs.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/deletehs.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/dialog-stop_icon.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/grab.cur")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/grabbing.cur")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/hare.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/help.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/large_tray_object.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/led_off.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/led_on.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/legendhs.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/logicity-crystal-reports-scheduler.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/pagewidthhs.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/play1hot.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/push-button-green-513.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/push-button-red-512.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/ram.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/tray_object.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/undo_256.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/zoomhs.png")]
 
 

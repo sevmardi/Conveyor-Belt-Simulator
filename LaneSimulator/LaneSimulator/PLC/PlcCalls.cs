@@ -88,15 +88,7 @@ namespace LaneSimulator.PLC
         public void StopBtnInput()
         {
             _buffer[0] = 0;
-            try
-            {
-                Client.WriteArea(S7Client.S7AreaPE, DbNumber, PLCTags.StopButtonInput, Amount, Wordlen, _buffer);
-                Client.WriteArea(S7Client.S7AreaPE, DbNumber, PLCTags.StartButtonInput, Amount, Wordlen, _buffer);
-            }
-            catch (Exception)
-            {
-                new ArgumentException("Connection was not established");
-            }
+            _res = Client.WriteArea(S7Client.S7AreaPE, DbNumber, PLCTags.StopButtonInput, Amount, Wordlen, _buffer);
         }
 
 
@@ -617,10 +609,14 @@ namespace LaneSimulator.PLC
             Client.WriteArea(S7Client.S7AreaPE, DbNumber, PLCTags.PushButtonOperatorNotOk, Amount, Wordlen, _buffer);
         }
 
-
-        public int SSLOperational()
+        /// <summary>
+        /// Fetch SSL status
+        /// </summary>
+        /// <returns></returns>
+        public int SslOperational()
         {
-            _res = Client.ReadArea(S7Client.S7AreaMK, DbNumber, PLCTags.SSLOperational, Amount, Wordlen, _buffer);
+            if (Client != null)
+                _res = Client.ReadArea(S7Client.S7AreaMK, DbNumber, PLCTags.SSLOperational, Amount, Wordlen, _buffer);
 
             return _res;
         }

@@ -76,30 +76,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="conveyors\SectionA.xaml.cs">
-      <DependentUpon>SectionA.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="conveyors\SectionB.xaml.cs">
-      <DependentUpon>SectionB.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="conveyors\SectionC.xaml.cs">
-      <DependentUpon>SectionC.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="conveyors\SectionD.xaml.cs">
-      <DependentUpon>SectionD.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="conveyors\SectionE.xaml.cs">
-      <DependentUpon>SectionE.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="conveyors\SectionF.xaml.cs">
-      <DependentUpon>SectionF.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Events\EventDispatcher.cs" />
     <Compile Include="Events\Buffer.cs" />
     <Compile Include="Events\Semaphore.cs" />
     <Compile Include="Events\TagsEvents.cs" />
-    <Compile Include="Lanes\StoryboardsCompleted.cs" />
+    <Compile Include="Model\Behaviour.cs" />
     <Compile Include="Model\CollisionDetection.cs" />
+    <Compile Include="Model\ObservableList.cs" />
     <Compile Include="Model\ViewModel.cs" />
     <Compile Include="PLC\PLCAbstract.cs" />
     <Compile Include="Properties\Annotations.cs" />
@@ -107,14 +90,17 @@
       <DependentUpon>Gate.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\GateLocation.cs" />
-    <Compile Include="Lanes\LaneBottom.xaml.cs">
-      <DependentUpon>LaneBottom.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Lanes\LaneTop.xaml.cs">
-      <DependentUpon>LaneTop.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Libs\snap7.net.cs" />
     <Compile Include="Model\SensorTimerHandler.cs" />
+    <Compile Include="UIGates\LaneBottom.xaml.cs">
+      <DependentUpon>LaneBottom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIGates\LaneTop.xaml.cs">
+      <DependentUpon>LaneTop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIGates\SectionA.xaml.cs">
+      <DependentUpon>SectionA.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UIGates\Sensor.xaml.cs">
       <DependentUpon>Sensor.xaml</DependentUpon>
     </Compile>
@@ -156,39 +142,7 @@
     <Compile Include="Views\SchedulerPanel.xaml.cs">
       <DependentUpon>SchedulerPanel.xaml</DependentUpon>
     </Compile>
-    <Page Include="conveyors\SectionA.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="conveyors\SectionB.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="conveyors\SectionC.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="conveyors\SectionD.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="conveyors\SectionE.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="conveyors\SectionF.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="UIGates\Gate.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Lanes\LaneBottom.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Lanes\LaneTop.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -204,6 +158,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UIGates\LaneBottom.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIGates\LaneTop.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UIGates\SectionA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UIGates\Sensor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -268,6 +234,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -279,46 +246,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\ActualSizeHS.png" />
-    <Resource Include="Images\BehindTextHS.png" />
-    <Resource Include="Images\CanvasScaleHS.png" />
-    <Resource Include="Images\CopyAsImage.png" />
-    <Resource Include="Images\CopyHS.png" />
-    <Resource Include="Images\CutHS.png" />
-    <Resource Include="Images\DeleteHS.png" />
-    <Resource Include="Images\Edit_RedoHS.png" />
-    <Resource Include="Images\Edit_UndoHS.png" />
-    <Resource Include="Images\Hard_Drive.png" />
-    <Resource Include="Images\hare.png" />
-    <Resource Include="Images\Help.png" />
-    <Resource Include="Images\ImportXMLHS.png" />
-    <Resource Include="Images\InsertPictureHS.png" />
-    <Resource Include="Images\LegendHS.png" />
-    <Resource Include="Images\NewDocumentHS.png" />
-    <Resource Include="Images\openHS.png" />
-    <Resource Include="Images\PageWidthHS.png" />
-    <Resource Include="Images\PasteHS.png" />
-    <Resource Include="Images\PauseHS.png" />
-    <Resource Include="Images\PrintHS.png" />
-    <Resource Include="Images\PrintPreviewHS.png" />
-    <Resource Include="Images\PrintSetupHS.png" />
-    <Resource Include="Images\ProtectFormHS.png" />
-    <Resource Include="Images\ram.ico" />
-    <Resource Include="Images\ram.png" />
-    <Resource Include="Images\RecordHS.png" />
-    <Resource Include="Images\RefreshDocViewHS.png" />
-    <Resource Include="Images\saveAsHS.png" />
-    <Resource Include="Images\SaveAsImage.png" />
-    <Resource Include="Images\saveHS.png" />
-    <Resource Include="Images\Steamroller-32x32.png" />
-    <Resource Include="Images\turtle.png" />
-    <Resource Include="Images\wire_color.png" />
-    <Resource Include="Images\ZoomHS.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\tray_object.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="ChangeLog.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -328,22 +255,28 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\ActualSizeHS.png" />
+    <Resource Include="Images\BehindTextHS.png" />
+    <Resource Include="Images\CanvasScaleHS.png" />
+    <Resource Include="Images\DeleteHS.png" />
     <Resource Include="Images\dialog-stop_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <Resource Include="Images\grab.cur" />
+    <Resource Include="Images\grabbing.cur" />
+    <Resource Include="Images\hare.png" />
+    <Resource Include="Images\Help.png" />
+    <Resource Include="Images\large_tray_object.png" />
     <Resource Include="Images\led_off.png" />
     <Resource Include="Images\led_on.png" />
-    <Resource Include="Images\play1hot.png" />
-    <Resource Include="Images\undo_256.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\push-button-red-512.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\push-button-green-512.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <Resource Include="Images\LegendHS.png" />
     <Resource Include="Images\logicity-crystal-reports-scheduler.png" />
+    <Resource Include="Images\PageWidthHS.png" />
+    <Resource Include="Images\play1hot.png" />
+    <Resource Include="Images\push-button-green-513.png" />
+    <Resource Include="Images\push-button-red-512.png" />
+    <Resource Include="Images\ram.png" />
+    <Resource Include="Images\tray_object.png" />
+    <Resource Include="Images\undo_256.png" />
+    <Resource Include="Images\ZoomHS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
